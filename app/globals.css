@@ -1,26 +1,116 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --white: #ffffff;
+  --black: #000000;
+  --greylight: #f7f7f7;
+  --grey: #e0e2d5;
+  --teal: #2abcaf;
+  --blue: #221e53;
+
+  --background: var(--white);
+  --foreground: var(--blue);
 }
 
 @theme inline {
+  --color-white: var(--white);
+  --color-black: var(--black);
+  --color-greylight: var(--greylight);
+  --color-grey: var(--grey);
+  --color-teal: var(--teal);
+  --color-blue: var(--blue);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-poppins);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Meet Our Team — slick slider */
+.team-slider .slick-list {
+  margin: 0 -0.5rem;
+  padding: 12px 0 20px;
+}
+
+.team-slider .slick-slide > div {
+  padding: 0 0.5rem;
+}
+
+.team-slider .slick-dots {
+  bottom: -2rem;
+}
+
+.team-slider .slick-dots li {
+  margin: 0 4px;
+}
+
+.team-slider .slick-dots li button:before {
+  font-size: 10px;
+  color: var(--grey);
+  opacity: 1;
+}
+
+.team-slider .slick-dots li.slick-active button:before {
+  color: var(--teal);
+}
+
+/* Manufacturer logos — slick slider */
+.brands-slider .slick-track {
+  display: flex !important;
+  align-items: center;
+}
+
+.brands-slider .slick-slide {
+  height: inherit !important;
+}
+
+.brands-slider .slick-slide > div {
+  height: 100%;
+}
+
+/* Federal contractor — slick slider */
+.federal-slider .slick-list {
+  margin: 0 -0.5rem;
+  overflow: hidden;
+  padding: 28px 0 32px;
+}
+
+.federal-slider .slick-track {
+  display: flex !important;
+  align-items: stretch;
+}
+
+.federal-slider .slick-slide {
+  height: auto !important;
+}
+
+.federal-slider .slick-slide > div {
+  height: 100%;
+  padding: 0 0.25rem;
+}
+
+.federal-slider .slick-dots {
+  bottom: 0;
+}
+
+.federal-slider .slick-dots li {
+  margin: 0 4px;
+}
+
+.federal-slider .slick-dots li button:before {
+  font-size: 10px;
+  color: var(--grey);
+  opacity: 1;
+}
+
+.federal-slider .slick-dots li.slick-active button:before {
+  color: var(--teal);
 }
