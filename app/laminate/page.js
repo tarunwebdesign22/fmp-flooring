@@ -1,5 +1,6 @@
 import CtaSection from "@/components/CtaSection";
 import FaqSection from "@/components/FaqSection";
+import ImageGallerySection from "@/components/ImageGallerySection";
 import {
   ServiceBenefitsSection,
   ServiceHighlightsStrip,
@@ -34,6 +35,22 @@ const heroContent = [
       { label: "Home", href: "/" },
       { label: "Laminate Services" },
     ],
+    form: {
+      title: "Free In-Home Estimate",
+      description: "Fill out the form below and we'll get back to you shortly.",
+      buttonText: "Get My Free Estimate",
+      defaultService: "Laminate",
+      services: [
+        "Luxury Vinyl Plank",
+        "Broadloom Carpet",
+        "Carpet Tile",
+        "Ceramic Flooring",
+        "Rubber",
+        "Hardwood",
+        "Laminate",
+        "VCT",
+      ],
+    },
   },
 ];
 
@@ -248,6 +265,53 @@ const faqContent = [
   },
 ];
 
+const galleryContent = [
+  {
+    eyebrow: "Project Gallery",
+    title: "Laminate Flooring Gallery",
+    description:
+      "Browse real laminate installations — wood-look finishes, living spaces, and professional project results from FMP Flooring.",
+    images: [
+      {
+        src: "/images/laminate-gallery/Professional-Laminate-Flooring-Installation.png.webp",
+        alt: "Professional laminate flooring installation",
+      },
+      {
+        src: "/images/laminate-gallery/Laminating-Services-installation.png.webp",
+        alt: "Laminate services installation",
+      },
+      {
+        src: "/images/laminate-gallery/1.jpg",
+        alt: "Laminate flooring project 1",
+      },
+      {
+        src: "/images/laminate-gallery/2.jpg",
+        alt: "Laminate flooring project 2",
+      },
+      {
+        src: "/images/laminate-gallery/3.jpg",
+        alt: "Laminate flooring project 3",
+      },
+      {
+        src: "/images/laminate-gallery/8.jpg",
+        alt: "Laminate flooring project 8",
+      },
+      {
+        src: "/images/laminate-gallery/06 Jul 2023-3.jpg",
+        alt: "Laminate flooring installation July 2023",
+      },
+      {
+        src: "/images/laminate-gallery/06 Jul 2023-4.jpg",
+        alt: "Completed laminate flooring project",
+      },
+      {
+        src: "/images/laminate-gallery/06 Jul 2023-5.jpg",
+        alt: "Laminate flooring detail",
+      },
+    ],
+  },
+];
+
 const ctaContent = [
   {
     headlineWhite: "Get a Free",
@@ -274,6 +338,7 @@ export default function LaminatePage() {
       <ServiceApplicationsSection content={applicationsContent} />
       <ServiceCompareSection content={compareContent} />
       <ServiceInstallSection content={installContent} />
+      <ImageGallerySection content={galleryContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
       <CtaSection content={ctaContent} />

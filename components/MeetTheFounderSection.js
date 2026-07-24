@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 
@@ -28,7 +29,7 @@ const valueIcons = {
   ),
 };
 
-function FounderVideo({ src }) {
+function FounderVideo({ src, poster }) {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [aspectRatio, setAspectRatio] = useState("16 / 9");
@@ -50,7 +51,9 @@ function FounderVideo({ src }) {
       setAspectRatio(`${video.videoWidth} / ${video.videoHeight}`);
     }
 
-    seekToStart();
+    if (!playing) {
+      seekToStart();
+    }
   };
 
   const togglePlay = async () => {
@@ -70,17 +73,22 @@ function FounderVideo({ src }) {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-xl bg-blue/10 shadow-lg">
+    <div
+      className="relative overflow-hidden rounded-xl bg-blue/10 shadow-lg"
+      style={{ aspectRatio }}
+    >
       <video
         ref={videoRef}
-        className="w-full object-contain"
-        style={{ aspectRatio }}
+        className="absolute inset-0 h-full w-full object-cover"
         src={encodeURI(src)}
+        poster={poster ? encodeURI(poster) : undefined}
         playsInline
         preload="metadata"
         controls={playing}
         onLoadedMetadata={handleLoadedMetadata}
-        onLoadedData={seekToStart}
+        onLoadedData={() => {
+          if (!playing) seekToStart();
+        }}
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
         onEnded={() => {
@@ -89,12 +97,23 @@ function FounderVideo({ src }) {
         }}
       />
 
+      {!playing && poster ? (
+        <Image
+          src={encodeURI(poster)}
+          alt="Meet the Founder video thumbnail"
+          fill
+          className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          priority
+        />
+      ) : null}
+
       {!playing && (
         <button
           type="button"
           onClick={togglePlay}
           aria-label="Play video"
-          className="absolute inset-0 flex items-center justify-center bg-blue/20 transition-colors hover:bg-blue/30"
+          className="absolute inset-0 z-10 flex items-center justify-center bg-blue/25 transition-colors hover:bg-blue/35"
         >
           <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-md sm:h-20 sm:w-20">
             <svg
@@ -161,7 +180,7 @@ export default function MeetTheFounderSection({ content }) {
               </Link>
             </div>
 
-            <FounderVideo src={item.videoSrc} />
+            <FounderVideo src={item.videoSrc} poster={item.videoPoster} />
           </div>
         </section>
       ))}

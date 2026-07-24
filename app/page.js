@@ -159,6 +159,7 @@ const founderContent = [
     buttonText: "Learn More About Our Story",
     buttonHref: "/about",
     videoSrc: "/images/MicrosoftTeams-video (1).webm",
+    videoPoster: "/images/Hero-Image.jpg",
   },
 ];
 
