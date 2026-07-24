@@ -31,12 +31,36 @@ const valueIcons = {
 function FounderVideo({ src }) {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
+  const [aspectRatio, setAspectRatio] = useState("16 / 9");
+  const START_TIME = 2;
+
+  const seekToStart = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (Number.isFinite(video.duration) && video.duration > START_TIME) {
+      video.currentTime = START_TIME;
+    }
+  };
+
+  const handleLoadedMetadata = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.videoWidth && video.videoHeight) {
+      setAspectRatio(`${video.videoWidth} / ${video.videoHeight}`);
+    }
+
+    seekToStart();
+  };
 
   const togglePlay = async () => {
     const video = videoRef.current;
     if (!video) return;
 
     if (video.paused) {
+      if (video.currentTime < START_TIME) {
+        seekToStart();
+      }
       await video.play();
       setPlaying(true);
     } else {
@@ -49,13 +73,20 @@ function FounderVideo({ src }) {
     <div className="relative overflow-hidden rounded-xl bg-blue/10 shadow-lg">
       <video
         ref={videoRef}
-        className="aspect-[4/3] w-full object-cover sm:aspect-[16/11]"
-        src={src}
+        className="w-full object-contain"
+        style={{ aspectRatio }}
+        src={encodeURI(src)}
         playsInline
+        preload="metadata"
         controls={playing}
+        onLoadedMetadata={handleLoadedMetadata}
+        onLoadedData={seekToStart}
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
-        onEnded={() => setPlaying(false)}
+        onEnded={() => {
+          setPlaying(false);
+          seekToStart();
+        }}
       />
 
       {!playing && (
