@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <ScrollToTopButton />
       </body>
     </html>
   );
