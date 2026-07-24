@@ -1,11 +1,29 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+function getBrandGrid(width) {
+  if (width < 768) return { rows: 1, slidesPerRow: 2 };
+  if (width < 1024) return { rows: 2, slidesPerRow: 3 };
+  return { rows: 2, slidesPerRow: 4 };
+}
+
 export default function BrandsSection({ content }) {
+  const [grid, setGrid] = useState({ rows: 1, slidesPerRow: 2 });
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const update = () => setGrid(getBrandGrid(window.innerWidth));
+    update();
+    setReady(true);
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -14,44 +32,10 @@ export default function BrandsSection({ content }) {
     autoplaySpeed: 2800,
     arrows: false,
     pauseOnHover: true,
-    rows: 2,
-    slidesPerRow: 4,
+    rows: grid.rows,
+    slidesPerRow: grid.slidesPerRow,
     slidesToShow: 1,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          rows: 2,
-          slidesPerRow: 4,
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          rows: 2,
-          slidesPerRow: 3,
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          rows: 2,
-          slidesPerRow: 2,
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          rows: 2,
-          slidesPerRow: 2,
-          slidesToShow: 1,
-        },
-      },
-    ],
   };
 
   return (
@@ -75,21 +59,33 @@ export default function BrandsSection({ content }) {
 
             <div className="overflow-hidden rounded-2xl bg-white px-3 py-5 shadow-[0_6px_24px_rgba(0,0,0,0.08)] sm:px-5 sm:py-7 lg:px-6 lg:py-8">
               <div className="brands-slider">
-                <Slider {...settings}>
-                  {section.logos.map((brand) => (
-                    <div key={brand.name}>
-                      <div className="flex h-28 items-center justify-center border border-grey/70 px-3 py-3 sm:h-32 sm:px-4 sm:py-4 lg:h-36 lg:px-5">
-                        <Image
-                          src={brand.logo}
-                          alt={brand.name}
-                          width={220}
-                          height={220}
-                          className="h-20 w-auto max-w-[160px] object-contain sm:h-24 sm:max-w-[190px] lg:h-28 lg:max-w-[210px]"
-                        />
+                {ready ? (
+                  <Slider key={`${grid.rows}-${grid.slidesPerRow}`} {...settings}>
+                    {section.logos.map((brand) => (
+                      <div key={brand.name}>
+                        <div className="flex h-28 items-center justify-center border border-grey/70 px-3 py-3 sm:h-32 sm:px-4 sm:py-4 lg:h-36 lg:px-5">
+                          <Image
+                            src={brand.logo}
+                            alt={brand.name}
+                            width={220}
+                            height={220}
+                            className="h-20 w-auto max-w-[160px] object-contain sm:h-24 sm:max-w-[190px] lg:h-28 lg:max-w-[210px]"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </Slider>
+                    ))}
+                  </Slider>
+                ) : (
+                  <div className="flex h-28 items-center justify-center">
+                    <Image
+                      src={section.logos[0].logo}
+                      alt={section.logos[0].name}
+                      width={220}
+                      height={220}
+                      className="h-20 w-auto max-w-[160px] object-contain"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>

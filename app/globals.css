@@ -89,12 +89,12 @@ body {
 }
 
 .federal-slider .slick-track {
-  display: flex !important;
   align-items: stretch;
 }
 
 .federal-slider .slick-slide {
   height: auto !important;
+  float: left;
 }
 
 .federal-slider .slick-slide > div {

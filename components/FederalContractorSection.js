@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -63,14 +63,14 @@ function ArrowButton({ direction, onClick }) {
 
 function SectorCard({ sector }) {
   return (
-    <article className="mx-2 rounded-2xl bg-blue shadow-[0_6px_24px_rgba(0,0,0,0.1)]">
+    <article className="mx-1 rounded-2xl bg-blue shadow-[0_6px_24px_rgba(0,0,0,0.1)] sm:mx-2">
       <div className="relative aspect-[16/11] overflow-hidden rounded-t-2xl bg-greylight">
         <Image
           src={sector.image}
           alt={sector.title}
           fill
           className="object-cover"
-          sizes="(max-width: 768px) 100vw, 30vw"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
 
@@ -86,19 +86,30 @@ function SectorCard({ sector }) {
   );
 }
 
+function getFederalSlidesToShow(width) {
+  return width < 1024 ? 1 : 2;
+}
+
 export default function FederalContractorSection({ content }) {
   const sliderRef = useRef(null);
+  const [slidesToShow, setSlidesToShow] = useState(1);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const update = () => setSlidesToShow(getFederalSlidesToShow(window.innerWidth));
+    update();
+    setReady(true);
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 450,
-    slidesToShow: 2,
+    slidesToShow,
     slidesToScroll: 1,
     arrows: false,
-    responsive: [
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
-    ],
   };
 
   return (
@@ -106,7 +117,6 @@ export default function FederalContractorSection({ content }) {
       {content.map((section) => (
         <section key={section.headlineBlue} className="bg-white py-14 sm:py-16 lg:py-20">
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-[minmax(0,35fr)_minmax(0,65fr)] lg:gap-12 lg:px-10">
-            {/* Left — 35% */}
             <div className="min-w-0">
               <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
                 <span className="block text-blue">{section.headlineBlue}</span>
@@ -129,19 +139,24 @@ export default function FederalContractorSection({ content }) {
               </Link>
             </div>
 
-            {/* Right — 65% */}
-            <div className="relative min-w-0 px-6 sm:px-8">
+            <div className="relative min-w-0 px-8 sm:px-10">
               <ArrowButton direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
               <ArrowButton direction="next" onClick={() => sliderRef.current?.slickNext()} />
 
               <div className="federal-slider w-full overflow-hidden">
-                <Slider ref={sliderRef} {...settings}>
-                  {section.sectors.map((sector) => (
-                    <div key={sector.title} className="h-auto">
-                      <SectorCard sector={sector} />
-                    </div>
-                  ))}
-                </Slider>
+                {ready ? (
+                  <Slider key={slidesToShow} ref={sliderRef} {...settings}>
+                    {section.sectors.map((sector) => (
+                      <div key={sector.title} className="h-auto">
+                        <SectorCard sector={sector} />
+                      </div>
+                    ))}
+                  </Slider>
+                ) : (
+                  <div className="mx-auto max-w-md">
+                    <SectorCard sector={section.sectors[0]} />
+                  </div>
+                )}
               </div>
             </div>
           </div>

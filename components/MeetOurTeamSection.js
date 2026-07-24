@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -36,14 +36,14 @@ function ArrowButton({ direction, onClick }) {
 
 function TeamCard({ member }) {
   return (
-    <article className="mx-2 overflow-hidden rounded-2xl bg-white shadow-[0_6px_24px_rgba(0,0,0,0.08)]">
+    <article className="mx-1 overflow-hidden rounded-2xl bg-white shadow-[0_6px_24px_rgba(0,0,0,0.08)] sm:mx-2">
       <div className="relative aspect-[4/3] bg-greylight">
         <Image
           src={member.image}
           alt={member.name}
           fill
           className="object-cover object-top"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
       </div>
 
@@ -56,21 +56,33 @@ function TeamCard({ member }) {
   );
 }
 
+function getTeamSlidesToShow(width) {
+  if (width < 768) return 1;
+  if (width < 1024) return 2;
+  if (width < 1280) return 3;
+  return 4;
+}
+
 export default function MeetOurTeamSection({ content }) {
   const sliderRef = useRef(null);
+  const [slidesToShow, setSlidesToShow] = useState(1);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const update = () => setSlidesToShow(getTeamSlidesToShow(window.innerWidth));
+    update();
+    setReady(true);
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 450,
-    slidesToShow: 4,
+    slidesToShow,
     slidesToScroll: 1,
     arrows: false,
-    responsive: [
-      { breakpoint: 1280, settings: { slidesToShow: 3 } },
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
   };
 
   return (
@@ -92,18 +104,24 @@ export default function MeetOurTeamSection({ content }) {
               <p className="mt-4 text-[15px] leading-7 text-blue/70">{section.description}</p>
             </div>
 
-            <div className="relative px-8 sm:px-12">
+            <div className="relative px-10 sm:px-12">
               <ArrowButton direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
               <ArrowButton direction="next" onClick={() => sliderRef.current?.slickNext()} />
 
               <div className="team-slider">
-                <Slider ref={sliderRef} {...settings}>
-                  {section.members.map((member) => (
-                    <div key={member.name}>
-                      <TeamCard member={member} />
-                    </div>
-                  ))}
-                </Slider>
+                {ready ? (
+                  <Slider key={slidesToShow} ref={sliderRef} {...settings}>
+                    {section.members.map((member) => (
+                      <div key={member.name}>
+                        <TeamCard member={member} />
+                      </div>
+                    ))}
+                  </Slider>
+                ) : (
+                  <div className="mx-auto max-w-sm">
+                    <TeamCard member={section.members[0]} />
+                  </div>
+                )}
               </div>
             </div>
           </div>

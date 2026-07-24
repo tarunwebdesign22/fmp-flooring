@@ -163,10 +163,13 @@ export default function ExploreVideosSection({ content }) {
         <div
           role="tablist"
           aria-label="Video categories"
-          className="mx-auto flex max-w-4xl overflow-hidden rounded-lg border border-teal"
+          className="mx-auto grid max-w-4xl grid-cols-2 overflow-hidden rounded-lg border border-teal sm:flex"
         >
           {section.tabs.map((tab, index) => {
             const isActive = tab.id === activeTab;
+            const isRightCol = index % 2 === 1;
+            const isBottomRow = index >= 2;
+
             return (
               <button
                 key={tab.id}
@@ -174,16 +177,18 @@ export default function ExploreVideosSection({ content }) {
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex flex-1 items-center justify-center gap-2 px-3 py-3.5 text-xs font-bold uppercase tracking-wide transition-colors sm:gap-2.5 sm:px-4 sm:text-sm ${
+                className={`flex items-center justify-center gap-2 px-3 py-3.5 text-xs font-bold uppercase tracking-wide transition-colors sm:flex-1 sm:gap-2.5 sm:px-4 sm:text-sm ${
                   isActive
                     ? "bg-teal text-white"
                     : "bg-white text-blue hover:bg-greylight"
-                } ${index > 0 ? "border-l border-teal" : ""}`}
+                } ${isRightCol ? "border-l border-teal" : ""} ${
+                  isBottomRow ? "border-t border-teal sm:border-t-0" : ""
+                } ${index > 0 ? "sm:border-l sm:border-teal" : ""}`}
               >
-                <span className={isActive ? "text-white" : "text-blue"}>
+                <span className={`shrink-0 ${isActive ? "text-white" : "text-blue"}`}>
                   {tabIcons[tab.icon] || tabIcons.showroom}
                 </span>
-                <span className="text-[10px] sm:text-sm">{tab.label}</span>
+                <span className="truncate text-[11px] sm:text-sm">{tab.label}</span>
               </button>
             );
           })}
