@@ -1,16 +1,20 @@
 import BeforeAfterSection from "@/components/BeforeAfterSection";
 import BrandsSection from "@/components/BrandsSection";
+import ComparisonSection from "@/components/ComparisonSection";
 import CtaSection from "@/components/CtaSection";
+import EducationalResourcesSection from "@/components/EducationalResourcesSection";
 import ExploreVideosSection from "@/components/ExploreVideosSection";
 import FaqSection from "@/components/FaqSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import FederalContractorSection from "@/components/FederalContractorSection";
+import FinancingSection from "@/components/FinancingSection";
 import HeroSection from "@/components/HeroSection";
 import LatestProjectsSection from "@/components/LatestProjectsSection";
 import MeetOurTeamSection from "@/components/MeetOurTeamSection";
 import MeetTheFounderSection from "@/components/MeetTheFounderSection";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import WhyChooseSection from "@/components/WhyChooseSection";
 
 const heroContent = [
   {
@@ -75,48 +79,56 @@ const featuresContent = [
     title: "Dustless Tile Removal",
     description:
       "Qualifying purchases include advanced containment systems that minimize dust and disruption.",
+    image: "/images/features/1.jpg",
   },
   {
     icon: "wrench",
     title: "Professional Floor Prep Included",
     description:
       "Subfloors properly prepared to ensure stability, longevity, and flawless finished installations.",
+    image: "/images/features/2.jpg",
   },
   {
     icon: "paintbrush",
     title: "Painted Wall Base",
     description:
       "Clean, finished wall bases professionally painted for a polished, move-in-ready appearance.",
+    image: "/images/features/3.jpg",
   },
   {
     icon: "layers",
     title: '½" Premium Carpet Pad on All Carpet Installations',
     description:
       "Thicker premium padding improves comfort, durability, sound reduction, and carpet performance.",
+    image: "/images/features/6.jpg",
   },
   {
     icon: "wind",
     title: "Free Air-Duct Cleaning (Included with Qualified Purchases)",
     description:
       "Improves indoor air quality while removing construction dust at no cost.",
+    image: "/images/features/04-1.jpg",
   },
   {
     icon: "user",
     title: "Manager Check-In During Install",
     description:
       "On-site management oversight ensures quality standards, timelines, and customer communication.",
+    image: "/images/features/Renwick Oak01.jpg",
   },
   {
     icon: "search",
     title: "Final Walkthrough with a Flooring Expert",
     description:
       "Detailed inspection confirms craftsmanship, addresses questions, and ensures complete satisfaction.",
+    image: "/images/features/67700 - 433RB Bloomington Oak-01.png",
   },
   {
     icon: "shield",
     title: "Lifetime Labor Guarantee",
     description:
       "Installation workmanship guaranteed for life, providing long-term confidence and protection.",
+    image: "/images/features/13.jpg",
   },
 ];
 
@@ -147,6 +159,24 @@ const founderContent = [
     buttonText: "Learn More About Our Story",
     buttonHref: "/about",
     videoSrc: "/images/dummyvideo.webm",
+  },
+];
+
+const financingContent = [
+  {
+    eyebrow: "Flexible Payment Options",
+    title: "Financing Available",
+    description:
+      "Buy now and pay over time! We offer several different financing programs.",
+    backgroundImage: "/images/01-1.jpg",
+    benefits: [
+      { icon: "approvals", title: "Fast Approvals*" },
+      { icon: "noPayments", title: "No Payments*" },
+      { icon: "zeroPercent", title: "0% Financing" },
+    ],
+    buttonText: "Explore Financing Options",
+    buttonHref: "/financing",
+    footnote: "*Subject to credit approval. Terms and conditions apply.",
   },
 ];
 
@@ -249,6 +279,33 @@ const brandsContent = [
         name: "Chesapeake",
         logo: "/images/manufacturer/Chesapeake-150x150.png",
       },
+      {
+        name: "American Olean",
+        logo: "/images/manufacturer/AMERICAN-OLEAN-150x150.png",
+      },
+      {
+        name: "Crossville",
+        logo: "/images/manufacturer/CROSSVILLE-150x150.png",
+      },
+      { name: "Daltile", logo: "/images/manufacturer/DALTILE--150x150.png" },
+      {
+        name: "EF Contract",
+        logo: "/images/manufacturer/EF-Contract-150x150.png",
+      },
+      {
+        name: "Johnsonite",
+        logo: "/images/manufacturer/JOHNSONITE-150x150.png",
+      },
+      {
+        name: "Louisville Tile",
+        logo: "/images/manufacturer/Louisville-Tile-150x150.png",
+      },
+      { name: "Milliken", logo: "/images/manufacturer/Milliken-150x150.png" },
+      {
+        name: "Portobello",
+        logo: "/images/manufacturer/Portobello-1-150x150.png",
+      },
+      { name: "Schluter", logo: "/images/manufacturer/SCHLUTER-150x150.png" },
     ],
   },
 ];
@@ -311,7 +368,7 @@ const videosContent = [
             title: "Showroom tour 1",
             src: "/images/dummyvideo.webm",
             poster:
-              "https://images.unsplash.com/photo-1615874959474-d609967a2f00?w=800&h=450&fit=crop",
+              "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&h=450&fit=crop",
             duration: "1:24",
           },
           {
@@ -367,7 +424,7 @@ const videosContent = [
             title: "Installation 1",
             src: "/images/dummyvideo.webm",
             poster:
-              "https://images.unsplash.com/photo-1581858726788-75bc0f1421d0?w=800&h=450&fit=crop",
+              "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=450&fit=crop",
             duration: "1:35",
           },
           {
@@ -514,6 +571,150 @@ const beforeAfterContent = [
   },
 ];
 
+const whyChooseContent = [
+  {
+    eyebrow: "Why Choose Us",
+    title: "Why Choose FMP?",
+    description:
+      "Family owned since 1995 — we bring warehouse pricing, expert installation, and honest guidance to every residential and commercial project.",
+    items: [
+      {
+        icon: "professionals",
+        title: "Experienced Professionals",
+        description:
+          "Skilled installers with years of industry experience, delivering careful, long-lasting results on every job.",
+      },
+      {
+        icon: "selection",
+        title: "Wide Range of Options",
+        description:
+          "Carpet, carpet tile, LVP, laminate, hardwood, ceramic, VCT, rubber, and more — all under one roof.",
+      },
+      {
+        icon: "pricing",
+        title: "Affordable & Transparent Pricing",
+        description:
+          "No hidden fees. No surprises. Clear estimates and cost-effective solutions without cutting quality.",
+      },
+      {
+        icon: "expertise",
+        title: "Residential & Commercial Expertise",
+        description:
+          "Homes, offices, retail, and large commercial spaces — we understand each project and deliver accordingly.",
+      },
+      {
+        icon: "quality",
+        title: "Quality Materials & Workmanship",
+        description:
+          "Trusted materials and proven installation techniques for durability, performance, and lasting appeal.",
+      },
+      {
+        icon: "satisfaction",
+        title: "Customer Satisfaction First",
+        description:
+          "Clear communication, on-time completion, and dependable service — your satisfaction is our priority.",
+      },
+    ],
+  },
+];
+
+const whyBuyDirectContent = [
+  {
+    eyebrow: "Buy Direct Advantage",
+    title: "Why Buy Direct?",
+    description:
+      "Skip the retail markups. When you buy direct from FMP, you get warehouse pricing, a fuller selection, and professional installation — without the middleman.",
+    featureLabel: "Compare",
+    traditionalLabel: "Traditional Retail",
+    directLabel: "Buy Direct with FMP",
+    rows: [
+      {
+        feature: "Pricing",
+        traditional: "Retail markups & middlemen",
+        direct: "Warehouse / direct pricing",
+      },
+      {
+        feature: "Product selection",
+        traditional: "Limited showroom samples",
+        direct: "Full warehouse inventory",
+      },
+      {
+        feature: "Transparent estimates",
+        traditional: false,
+        direct: true,
+      },
+      {
+        feature: "Free in-home consultation",
+        traditional: false,
+        direct: true,
+      },
+      {
+        feature: "Expert installation available",
+        traditional: "Often upsold separately",
+        direct: true,
+      },
+      {
+        feature: "Residential & commercial",
+        traditional: "Mostly residential focus",
+        direct: true,
+      },
+      {
+        feature: "Family-owned accountability",
+        traditional: false,
+        direct: true,
+      },
+    ],
+    footnote:
+      "We bring our floors to you — so you never pay more for the same quality materials and craftsmanship.",
+  },
+];
+
+const educationalResourcesContent = [
+  {
+    eyebrow: "From Our Blog",
+    title: "Educational Resources",
+    description:
+      "Guides and tips to help you choose smarter — from LVP vs. laminate to wear layers, care, and everyday flooring advice.",
+    buttonText: "View All Articles",
+    buttonHref: "/blog",
+    posts: [
+      {
+        title: "LVP vs. Laminate: Which Flooring Is Right for You?",
+        excerpt:
+          "Compare durability, water resistance, cost, and style so you can pick the best fit for kitchens, living rooms, and high-traffic spaces.",
+        category: "Comparisons",
+        date: "2025-03-15",
+        dateLabel: "March 15, 2025",
+        image:
+          "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=500&fit=crop",
+        href: "/blog/lvp-vs-laminate",
+      },
+      {
+        title: "Understanding Wear Layers: The Key to Durable Vinyl",
+        excerpt:
+          "Learn what mil thickness means, how wear layers protect against scratches and stains, and which rating fits your home or commercial space.",
+        category: "Guides",
+        date: "2025-03-08",
+        dateLabel: "March 8, 2025",
+        image:
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=500&fit=crop",
+        href: "/blog/understanding-wear-layers",
+      },
+      {
+        title: "Flooring Tips: Care, Cleaning & Longevity",
+        excerpt:
+          "Simple maintenance habits that protect your investment — from daily sweeping to moisture-safe mopping and high-traffic area tips.",
+        category: "Tips",
+        date: "2025-03-06",
+        dateLabel: "March 6, 2025",
+        image:
+          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=500&fit=crop",
+        href: "/blog/flooring-care-tips",
+      },
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <main className="flex flex-1 flex-col">
@@ -521,12 +722,17 @@ export default function Home() {
       <FeaturesSection title="Included with Features" features={featuresContent} />
       <FederalContractorSection content={federalContent} />
       <MeetTheFounderSection content={founderContent} />
+      <FinancingSection content={financingContent} />
       <ExploreVideosSection content={videosContent} />
       <ProcessSection content={processContent} />
       <BeforeAfterSection content={beforeAfterContent} />
       <BrandsSection content={brandsContent} />
       <MeetOurTeamSection content={teamContent} />
+      <WhyChooseSection content={whyChooseContent} />
+      <ComparisonSection content={whyBuyDirectContent} />
+      
       <LatestProjectsSection content={latestProjectsContent} />
+      <EducationalResourcesSection content={educationalResourcesContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
       <CtaSection content={ctaContent} />

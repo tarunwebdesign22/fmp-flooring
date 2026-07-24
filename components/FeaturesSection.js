@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const iconMap = {
   wind: (
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -57,19 +59,39 @@ export default function FeaturesSection({ title, features }) {
           {features.map((feature) => (
             <li
               key={feature.title}
-              className="flex flex-col items-center rounded-lg bg-greylight px-5 py-8 text-center"
+              className="relative flex min-h-[280px] flex-col items-center overflow-hidden rounded-lg px-5 py-8 text-center shadow-[0_6px_24px_rgba(0,0,0,0.1)]"
             >
-              <span className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-teal text-white">
-                {iconMap[feature.icon]}
-              </span>
+              {feature.image ? (
+                <>
+                  <Image
+                    src={encodeURI(feature.image)}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div
+                    className="absolute inset-0 bg-black/75"
+                    aria-hidden="true"
+                  />
+                </>
+              ) : (
+                <div className="absolute inset-0 bg-greylight" aria-hidden="true" />
+              )}
 
-              <h3 className="text-sm font-bold uppercase leading-snug tracking-wide text-blue">
-                {feature.title}
-              </h3>
+              <div className="relative z-10 flex h-full flex-col items-center">
+                <span className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-teal text-white">
+                  {iconMap[feature.icon]}
+                </span>
 
-              <span className="mt-3 mb-3 block h-px w-10 bg-teal" aria-hidden="true" />
+                <h3 className="text-sm font-bold uppercase leading-snug tracking-wide text-white">
+                  {feature.title}
+                </h3>
 
-              <p className="text-sm leading-6 text-blue/75">{feature.description}</p>
+                <span className="mt-3 mb-3 block h-px w-10 bg-teal" aria-hidden="true" />
+
+                <p className="text-sm leading-6 text-white/90">{feature.description}</p>
+              </div>
             </li>
           ))}
         </ul>

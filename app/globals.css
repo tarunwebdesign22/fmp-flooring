@@ -62,18 +62,23 @@ body {
   color: var(--teal);
 }
 
-/* Manufacturer logos — slick slider */
-.brands-slider .slick-track {
-  display: flex !important;
-  align-items: center;
+/* Manufacturer logos — slick slider (2-row grid) */
+.brands-slider .slick-list {
+  margin: 0;
 }
 
 .brands-slider .slick-slide {
-  height: inherit !important;
+  height: auto;
 }
 
 .brands-slider .slick-slide > div {
+  display: flex !important;
   height: 100%;
+}
+
+.brands-slider .slick-slide > div > div {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Federal contractor — slick slider */

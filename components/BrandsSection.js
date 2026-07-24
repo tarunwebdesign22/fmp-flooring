@@ -9,18 +9,48 @@ export default function BrandsSection({ content }) {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 1,
+    speed: 600,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 2800,
     arrows: false,
     pauseOnHover: true,
+    rows: 2,
+    slidesPerRow: 4,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     responsive: [
-      { breakpoint: 1280, settings: { slidesToShow: 5 } },
-      { breakpoint: 1024, settings: { slidesToShow: 4 } },
-      { breakpoint: 768, settings: { slidesToShow: 3 } },
-      { breakpoint: 480, settings: { slidesToShow: 2 } },
+      {
+        breakpoint: 1280,
+        settings: {
+          rows: 2,
+          slidesPerRow: 4,
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          rows: 2,
+          slidesPerRow: 3,
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          rows: 2,
+          slidesPerRow: 2,
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          rows: 2,
+          slidesPerRow: 2,
+          slidesToShow: 1,
+        },
+      },
     ],
   };
 
@@ -43,18 +73,18 @@ export default function BrandsSection({ content }) {
               <p className="mt-4 text-[15px] leading-7 text-blue/70">{section.description}</p>
             </div>
 
-            <div className="overflow-hidden rounded-2xl bg-white px-2 py-4 shadow-[0_6px_24px_rgba(0,0,0,0.08)] sm:px-4 sm:py-6">
+            <div className="overflow-hidden rounded-2xl bg-white px-3 py-5 shadow-[0_6px_24px_rgba(0,0,0,0.08)] sm:px-5 sm:py-7 lg:px-6 lg:py-8">
               <div className="brands-slider">
                 <Slider {...settings}>
                   {section.logos.map((brand) => (
                     <div key={brand.name}>
-                      <div className="flex h-24 items-center justify-center border-r border-grey px-4 last:border-r-0 sm:h-28">
+                      <div className="flex h-28 items-center justify-center border border-grey/70 px-3 py-3 sm:h-32 sm:px-4 sm:py-4 lg:h-36 lg:px-5">
                         <Image
                           src={brand.logo}
                           alt={brand.name}
-                          width={150}
-                          height={150}
-                          className="h-16 w-auto max-w-[120px] object-contain sm:h-20 sm:max-w-[140px]"
+                          width={220}
+                          height={220}
+                          className="h-20 w-auto max-w-[160px] object-contain sm:h-24 sm:max-w-[190px] lg:h-28 lg:max-w-[210px]"
                         />
                       </div>
                     </div>

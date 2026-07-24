@@ -48,7 +48,15 @@ function CloseIcon() {
   );
 }
 
+const FALLBACK_POSTER = "/images/Hero-Image.jpg";
+
 function VideoCard({ video, onPlay }) {
+  const [posterSrc, setPosterSrc] = useState(video.poster);
+
+  useEffect(() => {
+    setPosterSrc(video.poster);
+  }, [video.poster]);
+
   return (
     <button
       type="button"
@@ -57,11 +65,16 @@ function VideoCard({ video, onPlay }) {
       aria-label={`Play video ${video.title || video.duration}`}
     >
       <Image
-        src={video.poster}
+        src={posterSrc}
         alt={video.title || "Video thumbnail"}
         fill
         className="object-cover transition-transform duration-300 group-hover:scale-105"
         sizes="(max-width: 768px) 100vw, 33vw"
+        onError={() => {
+          if (posterSrc !== FALLBACK_POSTER) {
+            setPosterSrc(FALLBACK_POSTER);
+          }
+        }}
       />
 
       <span className="absolute inset-0 flex items-center justify-center bg-blue/20 transition-colors group-hover:bg-blue/30">

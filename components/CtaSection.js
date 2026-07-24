@@ -35,7 +35,7 @@ export default function CtaSection({ content }) {
           />
 
           <div
-            className="absolute inset-0 bg-gradient-to-r from-blue via-blue/90 to-blue/25 sm:via-blue/80 sm:to-transparent"
+            className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/25 sm:via-black/80 sm:to-transparent"
             aria-hidden="true"
           />
 
