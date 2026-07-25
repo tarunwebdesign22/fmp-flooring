@@ -131,11 +131,11 @@ export default function HeroSection({ content }) {
   return (
     <div className="relative">
       {/* Top bar */}
-      <div className="bg-black py-2.5 text-center">
+      {/* <div className="bg-black py-2.5 text-center">
         <p className="px-4 text-xs font-semibold tracking-[0.14em] text-white uppercase sm:text-sm">
           {section.topBar}
         </p>
-      </div>
+      </div> */}
 
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
@@ -148,13 +148,13 @@ export default function HeroSection({ content }) {
           sizes="100vw"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-blue via-blue/85 to-blue/25 lg:via-blue/75 lg:to-transparent"
+          className="absolute inset-0 bg-black/75"
           aria-hidden="true"
         />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 sm:px-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12 lg:px-10 lg:py-16 xl:py-20">
           {/* Left content */}
-          <div className="min-w-0 pb-4 lg:pb-10">
+          <div className="min-w-0 pb-0">
             <p className="text-base font-medium text-teal sm:text-lg">{section.welcome}</p>
             <h1 className="mt-1 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
               {section.headline}
@@ -165,7 +165,7 @@ export default function HeroSection({ content }) {
               {section.trustBadges.map((badge) => (
                 <li
                   key={badge.label}
-                  className="flex items-center gap-2.5 rounded-lg border border-white/25 bg-blue/35 px-3 py-3 backdrop-blur-[2px]"
+                  className="flex items-center gap-2.5 rounded-lg border border-white/20 bg-white/10 px-3 py-3 backdrop-blur-[2px]"
                 >
                   <span className="shrink-0 text-teal">
                     {trustIcons[badge.icon]}
@@ -181,23 +181,35 @@ export default function HeroSection({ content }) {
               {section.tagline}
             </p>
 
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              {section.ctas.map((cta) => (
-                <Link
-                  key={cta.label}
-                  href={cta.href}
-                  className="inline-flex items-center justify-center gap-2 rounded bg-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-blue"
-                >
-                  {cta.label}
-                  <span aria-hidden="true">→</span>
-                </Link>
-              ))}
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              {section.ctas.map((cta, index) =>
+                index === 0 ? (
+                  <Link
+                    key={cta.label}
+                    href={cta.href}
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-blue"
+                  >
+                    {cta.label}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                ) : (
+                  <Link
+                    key={cta.label}
+                    href={cta.href}
+                    className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/75 px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-teal hover:bg-teal hover:text-white"
+                  >
+                    {cta.label}
+                  </Link>
+                )
+              )}
             </div>
           </div>
 
           {/* Estimate form */}
-          <div className="min-w-0 lg:justify-self-end lg:w-full lg:max-w-md">
-            <div className="rounded-2xl bg-white p-6 shadow-[0_16px_50px_rgba(0,0,0,0.25)] sm:p-7">
+          <div className="min-w-0 lg:w-full lg:max-w-md lg:justify-self-end">
+            <div className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(0,0,0,0.35)]">
+              <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
+              <div className="p-6 sm:p-7">
               <h2 className="text-2xl font-bold text-blue">
                 {section.form.title}
               </h2>
@@ -279,38 +291,39 @@ export default function HeroSection({ content }) {
 
                   <button
                     type="submit"
-                    className="mt-1 flex w-full items-center justify-center gap-2 rounded bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
+                    className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
                   >
                     {section.form.buttonText}
                     <span aria-hidden="true">→</span>
                   </button>
                 </form>
               )}
+              </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Bottom product ribbon */}
-      <div className="relative z-10 -mt-6 px-4 sm:-mt-8 sm:px-6 lg:px-10">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_rgba(34,30,83,0.12)]">
-          <ul className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7">
-            {section.products.map((product, index) => (
-              <li
-                key={product.label}
-                className={`flex flex-col items-center justify-center gap-2 px-3 py-5 text-center ${
-                  index > 0 ? "border-l border-grey/60" : ""
-                }`}
-              >
-                <span className="text-blue">{serviceIcons[product.icon]}</span>
-                <span className="text-[11px] font-bold uppercase leading-tight tracking-wide text-blue">
-                  {product.label}
-                </span>
-              </li>
-            ))}
-          </ul>
+        {/* Product strip — inside banner */}
+        <div className="relative z-10 px-4 pb-8 sm:px-6 sm:pb-10 lg:px-10 lg:pb-12">
+          <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_rgba(34,30,83,0.18)]">
+            <ul className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7">
+              {section.products.map((product, index) => (
+                <li
+                  key={product.label}
+                  className={`flex flex-col items-center justify-center gap-2 px-3 py-5 text-center ${
+                    index > 0 ? "border-l border-grey/60" : ""
+                  }`}
+                >
+                  <span className="text-blue">{serviceIcons[product.icon]}</span>
+                  <span className="text-[11px] font-bold uppercase leading-tight tracking-wide text-blue">
+                    {product.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import CtaSection from "@/components/CtaSection";
 import FaqSection from "@/components/FaqSection";
+import FederalMarquee from "@/components/FederalMarquee";
 import ImageGallerySection from "@/components/ImageGallerySection";
 import {
   ServiceBenefitsSection,
@@ -341,6 +342,7 @@ export default function LaminatePage() {
       <ImageGallerySection content={galleryContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
+      <FederalMarquee />
       <CtaSection content={ctaContent} />
     </main>
   );

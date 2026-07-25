@@ -38,7 +38,7 @@ function ComparisonCell({ value, highlight }) {
   if (value === true) {
     return (
       <span className="inline-flex items-center justify-center">
-        <CheckIcon className={highlight ? "text-teal" : "text-blue"} />
+        <CheckIcon className={highlight ? "text-[#fdbf3e]" : "text-blue"} />
         <span className="sr-only">Yes</span>
       </span>
     );
@@ -101,7 +101,7 @@ export default function ComparisonSection({ content }) {
             <div className="border-l border-white/15 px-6 py-5 text-center text-sm font-bold uppercase tracking-wide text-white/80">
               {section.traditionalLabel}
             </div>
-            <div className="border-l border-white/15 bg-teal px-6 py-5 text-center text-sm font-bold uppercase tracking-wide">
+            <div className="border-l border-white/15 bg-[#fdbf3e] px-6 py-5 text-center text-sm font-bold uppercase tracking-wide text-blue">
               {section.directLabel}
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function ComparisonSection({ content }) {
                 <div className="flex items-center justify-center border-l border-grey/60 px-6 py-4 text-center">
                   <ComparisonCell value={row.traditional} />
                 </div>
-                <div className="flex items-center justify-center border-l border-grey/60 bg-teal/5 px-6 py-4 text-center">
+                <div className="flex items-center justify-center border-l border-grey/60 bg-[#fdbf3e]/10 px-6 py-4 text-center">
                   <ComparisonCell value={row.direct} highlight />
                 </div>
               </li>
@@ -145,8 +145,8 @@ export default function ComparisonSection({ content }) {
                   </p>
                   <ComparisonCell value={row.traditional} />
                 </div>
-                <div className="bg-teal/5 px-4 py-4">
-                  <p className="mb-2 text-[11px] font-bold uppercase tracking-wide text-teal">
+                <div className="bg-[#fdbf3e]/10 px-4 py-4">
+                  <p className="mb-2 text-[11px] font-bold uppercase tracking-wide text-[#fdbf3e]">
                     {section.directLabel}
                   </p>
                   <ComparisonCell value={row.direct} highlight />

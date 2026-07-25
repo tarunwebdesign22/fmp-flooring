@@ -1,9 +1,95 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+function ArrowButton({ direction, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={direction === "prev" ? "Previous testimonials" : "Next testimonials"}
+      className="absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-sm transition-colors hover:border-teal hover:bg-teal hover:text-white"
+      style={{ [direction === "prev" ? "left" : "right"]: 0 }}
+    >
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        aria-hidden="true"
+      >
+        {direction === "prev" ? (
+          <path d="M15 6l-6 6 6 6" />
+        ) : (
+          <path d="M9 6l6 6-6 6" />
+        )}
+      </svg>
+    </button>
+  );
+}
+
+function TestimonialCard({ item }) {
+  return (
+    <article className="mx-1 flex h-full flex-col rounded-2xl border border-white/20 bg-white/10 px-6 py-5 text-left shadow-[0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-md sm:mx-2 sm:px-7 sm:py-6">
+      <span
+        className="mb-1 font-serif text-6xl leading-none text-[#fdbf3e] sm:text-7xl"
+        aria-hidden="true"
+      >
+        “
+      </span>
+
+      <blockquote className="flex-1 text-[15px] leading-7 text-white/90 italic sm:text-base sm:leading-7">
+        {item.quote}
+      </blockquote>
+
+      <div className="mt-4">
+        <span className="mb-2 block h-px w-10 bg-[#fdbf3e]" aria-hidden="true" />
+        <cite className="not-italic text-sm font-bold tracking-wide text-white">
+          {item.author}
+        </cite>
+      </div>
+    </article>
+  );
+}
+
+function getTestimonialSlidesToShow(width) {
+  if (width < 768) return 1;
+  return 2;
+}
 
 export default function TestimonialsSection({ content }) {
-  const section = content[0];
+  const section = content?.[0];
+  const sliderRef = useRef(null);
+  const [slidesToShow, setSlidesToShow] = useState(1);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const update = () => setSlidesToShow(getTestimonialSlidesToShow(window.innerWidth));
+    update();
+    setReady(true);
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   if (!section) return null;
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 450,
+    slidesToShow,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+  };
 
   return (
     <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24">
@@ -29,32 +115,28 @@ export default function TestimonialsSection({ content }) {
           <span className="mx-auto mt-3 block h-1 w-14 bg-teal" aria-hidden="true" />
         </div>
 
-        <ul className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
-          {section.items.map((item) => (
-            <li
-              key={item.author}
-              className="flex flex-col items-center text-center"
-            >
-              <span
-                className="mb-4 font-serif text-5xl leading-none text-teal"
-                aria-hidden="true"
-              >
-                “
-              </span>
+        <div className="relative px-10 sm:px-12">
+          <ArrowButton direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
+          <ArrowButton direction="next" onClick={() => sliderRef.current?.slickNext()} />
 
-              <blockquote className="max-w-sm text-[15px] leading-8 text-white/85 italic sm:text-base sm:leading-8">
-                {item.quote}
-              </blockquote>
-
-              <div className="mt-6 flex flex-col items-center">
-                <span className="mb-3 block h-px w-10 bg-teal" aria-hidden="true" />
-                <cite className="not-italic text-sm font-bold tracking-wide text-white">
-                  {item.author}
-                </cite>
+          <div className="testimonials-slider">
+            {ready ? (
+              <Slider key={slidesToShow} ref={sliderRef} {...settings}>
+                {section.items.map((item) => (
+                  <div key={item.author} className="h-full">
+                    <TestimonialCard item={item} />
+                  </div>
+                ))}
+              </Slider>
+            ) : (
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                {section.items.slice(0, slidesToShow).map((item) => (
+                  <TestimonialCard key={item.author} item={item} />
+                ))}
               </div>
-            </li>
-          ))}
-        </ul>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );

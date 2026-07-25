@@ -78,11 +78,11 @@ function PhoneIcon() {
   );
 }
 
-function MenuSquare({ color = "teal" }) {
+function MenuSquare({ color = "yellow" }) {
   return (
     <span
       className={`inline-block h-2 w-2 shrink-0 ${
-        color === "blue" ? "bg-blue" : "bg-teal"
+        color === "blue" ? "bg-blue" : "bg-[#fdbf3e]"
       }`}
       aria-hidden="true"
     />
@@ -160,10 +160,10 @@ export default function Header() {
             <Image
               src="/images/FMP-Flooring-fiNAL-lOGO-scaled.png"
               alt="FMP Flooring"
-              width={120}
-              height={140}
+              width={180}
+              height={200}
               priority
-              className="h-[64px] w-auto object-contain object-left sm:h-[72px] lg:h-[80px]"
+              className="h-[88px] w-auto object-contain object-left sm:h-[100px] lg:h-[112px]"
             />
           </Link>
 
@@ -174,10 +174,10 @@ export default function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[12px] font-semibold text-blue transition-colors hover:text-teal 2xl:text-[13px]"
+                    className="group inline-flex items-center gap-1.5 whitespace-nowrap text-[12px] font-semibold text-blue transition-colors hover:text-[#fdbf3e] 2xl:text-[13px]"
                   >
                     <MenuSquare color={link.square} />
-                    <span className="border-b border-transparent group-hover:border-teal">
+                    <span className="border-b border-transparent group-hover:border-[#fdbf3e]">
                       {link.label}
                     </span>
                   </Link>
@@ -200,7 +200,7 @@ export default function Header() {
               aria-controls="mobile-menu"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               onClick={() => setMenuOpen((open) => !open)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-grey text-blue transition-colors hover:border-teal hover:text-teal xl:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-grey text-blue transition-colors hover:border-[#fdbf3e] hover:text-[#fdbf3e] xl:hidden"
             >
               {menuOpen ? (
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -233,7 +233,7 @@ export default function Header() {
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-3 rounded-sm px-2 py-2.5 text-[15px] font-semibold text-blue transition-colors hover:bg-greylight hover:text-teal"
+                  className="flex items-center gap-3 rounded-sm px-2 py-2.5 text-[15px] font-semibold text-blue transition-colors hover:bg-greylight hover:text-[#fdbf3e]"
                 >
                   <MenuSquare color={link.square} />
                   {link.label}
@@ -251,7 +251,7 @@ export default function Header() {
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-3 rounded-sm px-2 py-2 text-sm font-medium text-blue/80 transition-colors hover:bg-greylight hover:text-teal"
+                  className="flex items-center gap-3 rounded-sm px-2 py-2 text-sm font-medium text-blue/80 transition-colors hover:bg-greylight hover:text-[#fdbf3e]"
                 >
                   <span className="inline-block h-2 w-2 shrink-0 bg-grey" aria-hidden="true" />
                   {link.label}

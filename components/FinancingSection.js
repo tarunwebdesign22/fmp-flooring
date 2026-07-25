@@ -71,7 +71,7 @@ export default function FinancingSection({ content }) {
             <div className="mt-8 flex justify-center lg:justify-start">
               <Link
                 href={section.buttonHref}
-                className="inline-flex items-center gap-2 rounded border-2 border-teal px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-teal transition-all hover:bg-teal hover:text-blue"
+                className="inline-flex items-center gap-2 rounded border-2 border-[#fdbf3e] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-all hover:bg-[#fdbf3e] hover:text-blue"
               >
                 {section.buttonText}
                 <span aria-hidden="true">→</span>
@@ -95,7 +95,7 @@ export default function FinancingSection({ content }) {
                 className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-teal/70 to-transparent opacity-70"
                 aria-hidden="true"
               />
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-teal/40 bg-teal/10 text-white transition-colors group-hover:border-teal group-hover:bg-teal/20 sm:mx-auto lg:mx-0">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#fdbf3e]/50 bg-[#fdbf3e]/15 text-[#fdbf3e] transition-colors group-hover:border-[#fdbf3e] group-hover:bg-[#fdbf3e]/25 sm:mx-auto lg:mx-0">
                 {benefitIcons[benefit.icon] || benefitIcons.approvals}
               </span>
               <h3 className="text-base font-bold tracking-wide text-white sm:text-lg">

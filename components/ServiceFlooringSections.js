@@ -105,7 +105,7 @@ export function ServiceBenefitsSection({ content }) {
               key={item.title}
               className="flex flex-col rounded-xl border border-grey/60 bg-white px-6 py-7 shadow-[0_4px_18px_rgba(34,30,83,0.05)] transition-shadow hover:shadow-[0_8px_28px_rgba(34,30,83,0.1)]"
             >
-              <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-teal text-white">
+              <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#fdbf3e] text-blue">
                 {benefitIcons[item.icon] || benefitIcons.durable}
               </span>
               <h3 className="text-base font-bold text-blue">{item.title}</h3>
@@ -156,7 +156,7 @@ export function ServiceHighlightsStrip({ content }) {
         <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
           {section.items.map((item) => (
             <li key={item.title} className="flex items-center gap-4 text-white">
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-teal text-teal">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-[#fdbf3e] text-[#fdbf3e]">
                 {highlightIcons[item.icon] || highlightIcons.installation}
               </span>
               <span className="text-sm font-bold uppercase tracking-wide">{item.title}</span>

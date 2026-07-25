@@ -7,12 +7,15 @@ import ExploreVideosSection from "@/components/ExploreVideosSection";
 import FaqSection from "@/components/FaqSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import FederalContractorSection from "@/components/FederalContractorSection";
+import FederalMarquee from "@/components/FederalMarquee";
 import FinancingSection from "@/components/FinancingSection";
+import GoogleReviewsSection from "@/components/GoogleReviewsSection";
 import HeroSection from "@/components/HeroSection";
 import LatestProjectsSection from "@/components/LatestProjectsSection";
 import MeetOurTeamSection from "@/components/MeetOurTeamSection";
 import MeetTheFounderSection from "@/components/MeetTheFounderSection";
 import ProcessSection from "@/components/ProcessSection";
+import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 
@@ -313,6 +316,10 @@ const brandsContent = [
 
 const federalContent = [
   {
+    marqueeItems: [
+      "Federal & State Flooring Contractor",
+      "Direct Importer & Distributor – No Middlemen",
+    ],
     headlineBlue: "Federal & State",
     headlineTeal: "Flooring Contractor",
     description:
@@ -549,6 +556,75 @@ const testimonialsContent = [
   },
 ];
 
+const statsContent = [
+  {
+    items: [
+      { value: "1,000+", label: "Happy Customer" },
+      { value: "5", label: "Company Rating", stars: 5 },
+      { value: "10+", label: "Years Experience" },
+    ],
+  },
+];
+
+const googleReviewsContent = [
+  {
+    eyebrow: "Customer Reviews",
+    title: "FMP Flooring LLC Reviews",
+    rating: "5.0",
+    reviewCount: "50+",
+    description:
+      "See what homeowners and commercial clients say about our flooring products, installation, and service across Concord and the greater Charlotte area.",
+    viewAllHref:
+      "https://www.google.com/maps/search/?api=1&query=FMP+Flooring+LLC+4013+Dearborn+Pl+Concord+NC+28027",
+    writeReviewHref:
+      "https://www.google.com/maps/search/?api=1&query=FMP+Flooring+LLC+4013+Dearborn+Pl+Concord+NC+28027",
+    reviews: [
+      {
+        author: "Emily R.",
+        date: "2 months ago",
+        rating: 5,
+        avatarColor: "#2abcaf",
+        text: "FMP Flooring LLC transformed my living room with their stunning laminate flooring. The installation was quick, and the team was professional and courteous. I couldn't be happier with the results!",
+      },
+      {
+        author: "Lewis Bennett",
+        date: "3 months ago",
+        rating: 5,
+        avatarColor: "#221e53",
+        text: "Exceptional service from start to finish. They helped us choose the perfect flooring for our high-traffic space. The laminate has held up tremendously well, and cleaning it is a breeze.",
+      },
+      {
+        author: "Mike J.",
+        date: "4 months ago",
+        rating: 5,
+        avatarColor: "#4285F4",
+        text: "We chose FMP Flooring for our new laminate flooring and the results exceeded expectations. Installation was quick and hassle-free — we've received so many compliments on the new look.",
+      },
+      {
+        author: "Lisa R.",
+        date: "5 months ago",
+        rating: 5,
+        avatarColor: "#EA4335",
+        text: "Attention to detail and commitment to quality throughout the project. Delivered on time, and the new laminate looks fantastic and is incredibly durable. Game-changer for our office.",
+      },
+      {
+        author: "Jason P.",
+        date: "6 months ago",
+        rating: 5,
+        avatarColor: "#FBBC05",
+        text: "The carpet tiles we installed in our office improved the look of our space and are incredibly easy to maintain. Top-notch service and great product advice.",
+      },
+      {
+        author: "Mark T.",
+        date: "7 months ago",
+        rating: 5,
+        avatarColor: "#34A853",
+        text: "Impressed with the selection and quality. The flooring we chose looks amazing and fits perfectly with our home's aesthetic. Highly recommend FMP Flooring LLC!",
+      },
+    ],
+  },
+];
+
 const latestProjectsContent = [
   {
     title: "Our Latest Project",
@@ -720,22 +796,25 @@ export default function Home() {
   return (
     <main className="flex flex-1 flex-col">
       <HeroSection content={heroContent} />
-      <FeaturesSection title="Included with Features" features={featuresContent} />
-      <FederalContractorSection content={federalContent} />
-      <MeetTheFounderSection content={founderContent} />
       <FinancingSection content={financingContent} />
-      <ExploreVideosSection content={videosContent} />
+      <FederalContractorSection content={federalContent} />
       <ProcessSection content={processContent} />
-      <BeforeAfterSection content={beforeAfterContent} />
+      <MeetTheFounderSection content={founderContent} />
+      <FeaturesSection title="Included with Features" features={featuresContent} />
+      <ExploreVideosSection content={videosContent} />
+      <StatsSection content={statsContent} />
+      <GoogleReviewsSection content={googleReviewsContent} />
       <BrandsSection content={brandsContent} />
+      <BeforeAfterSection content={beforeAfterContent} />
       <MeetOurTeamSection content={teamContent} />
+      <FederalMarquee items={federalContent[0].marqueeItems} />
       <WhyChooseSection content={whyChooseContent} />
       <ComparisonSection content={whyBuyDirectContent} />
-      
       <LatestProjectsSection content={latestProjectsContent} />
       <EducationalResourcesSection content={educationalResourcesContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
+      <FederalMarquee items={federalContent[0].marqueeItems} />
       <CtaSection content={ctaContent} />
     </main>
   );

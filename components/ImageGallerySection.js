@@ -66,7 +66,7 @@ function GalleryLightbox({ images, index, onClose, onPrev, onNext }) {
               e.stopPropagation();
               onPrev();
             }}
-            className="absolute left-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-teal sm:left-6"
+            className="absolute left-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-[#fdbf3e] hover:text-blue sm:left-6"
             aria-label="Previous image"
           >
             <ArrowIcon direction="prev" />
@@ -77,7 +77,7 @@ function GalleryLightbox({ images, index, onClose, onPrev, onNext }) {
               e.stopPropagation();
               onNext();
             }}
-            className="absolute right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-teal sm:right-6"
+            className="absolute right-3 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-[#fdbf3e] hover:text-blue sm:right-6"
             aria-label="Next image"
           >
             <ArrowIcon direction="next" />
@@ -158,7 +158,7 @@ export default function ImageGallerySection({ content }) {
               <button
                 type="button"
                 onClick={() => openAt(index)}
-                className="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-greylight shadow-[0_4px_18px_rgba(34,30,83,0.06)] transition-shadow hover:shadow-[0_8px_28px_rgba(34,30,83,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-teal"
+                className="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl bg-greylight shadow-[0_4px_18px_rgba(34,30,83,0.06)] transition-shadow hover:shadow-[0_8px_28px_rgba(34,30,83,0.12)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#fdbf3e]"
                 aria-label={`View ${image.alt || `image ${index + 1}`}`}
               >
                 <Image
@@ -173,7 +173,7 @@ export default function ImageGallerySection({ content }) {
                   }
                 />
                 <span className="absolute inset-0 bg-blue/0 transition-colors group-hover:bg-blue/25" />
-                <span className="absolute right-3 bottom-3 rounded bg-teal px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-white opacity-0 transition-opacity group-hover:opacity-100">
+                <span className="absolute right-3 bottom-3 rounded bg-[#fdbf3e] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-blue opacity-0 transition-opacity group-hover:opacity-100">
                   View
                 </span>
               </button>

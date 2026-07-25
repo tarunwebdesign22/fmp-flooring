@@ -86,7 +86,7 @@ export function ServiceTipsSection({ content }) {
               key={tip}
               className="flex gap-4 rounded-xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal text-sm font-bold text-blue">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fdbf3e] text-sm font-bold text-blue">
                 {index + 1}
               </span>
               <p className="text-sm leading-6 text-white/90">{tip}</p>
@@ -126,7 +126,7 @@ export function ServiceApplicationsSection({ content }) {
               key={item}
               className="flex items-center gap-3 rounded-xl border border-grey/60 bg-white px-5 py-4 shadow-[0_4px_16px_rgba(34,30,83,0.04)]"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal/15 text-teal">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fdbf3e]/20 text-[#fdbf3e]">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                   <path d="m5 12 5 5L20 7" />
                 </svg>
@@ -143,7 +143,7 @@ export function ServiceApplicationsSection({ content }) {
 function CellValue({ value }) {
   if (value === true) {
     return (
-      <span className="inline-flex text-teal" aria-label="Yes">
+      <span className="inline-flex text-[#fdbf3e]" aria-label="Yes">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
           <path d="m5 12 5 5L20 7" />
         </svg>
@@ -191,7 +191,7 @@ export function ServiceCompareSection({ content }) {
               <div
                 key={column}
                 className={`border-l border-white/15 px-6 py-5 text-center text-sm font-bold uppercase tracking-wide ${
-                  index === 0 ? "bg-teal" : "text-white/85"
+                  index === 0 ? "bg-[#fdbf3e] text-blue" : "text-white/85"
                 }`}
               >
                 {column}
@@ -214,7 +214,7 @@ export function ServiceCompareSection({ content }) {
                     key={`${row.feature}-${valueIndex}`}
                     className={`flex items-center justify-center border-l border-grey/60 px-6 py-4 text-center text-sm ${
                       valueIndex === 0
-                        ? "bg-teal/5 font-semibold text-blue"
+                        ? "bg-[#fdbf3e]/10 font-semibold text-blue"
                         : "text-blue/70"
                     }`}
                   >
@@ -289,7 +289,7 @@ export function ServiceInstallSection({ content }) {
           <ul className="mt-4 space-y-3">
             {section.services?.map((service) => (
               <li key={service} className="flex items-start gap-3 text-sm leading-6 text-blue/75">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal text-white">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#fdbf3e] text-blue">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden="true">
                     <path d="m5 12 5 5L20 7" />
                   </svg>

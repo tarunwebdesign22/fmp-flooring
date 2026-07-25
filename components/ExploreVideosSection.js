@@ -152,7 +152,7 @@ export default function ExploreVideosSection({ content }) {
   const currentTab = section.tabs.find((tab) => tab.id === activeTab) || section.tabs[0];
 
   return (
-    <section className="bg-greylight py-14 sm:py-16 lg:py-20">
+    <section className="bg-[color-mix(in_srgb,#fdbf3e_22%,white)] py-14 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-8 text-center sm:mb-10">
           <h2 className="text-3xl font-bold text-blue sm:text-4xl">{section.title}</h2>
@@ -179,13 +179,13 @@ export default function ExploreVideosSection({ content }) {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center justify-center gap-2 px-3 py-3.5 text-xs font-bold uppercase tracking-wide transition-colors sm:flex-1 sm:gap-2.5 sm:px-4 sm:text-sm ${
                   isActive
-                    ? "bg-teal text-white"
+                    ? "bg-[#fdbf3e] text-blue"
                     : "bg-white text-blue hover:bg-greylight"
                 } ${isRightCol ? "border-l border-teal" : ""} ${
                   isBottomRow ? "border-t border-teal sm:border-t-0" : ""
                 } ${index > 0 ? "sm:border-l sm:border-teal" : ""}`}
               >
-                <span className={`shrink-0 ${isActive ? "text-white" : "text-blue"}`}>
+                <span className="shrink-0 text-blue">
                   {tabIcons[tab.icon] || tabIcons.showroom}
                 </span>
                 <span className="truncate text-[11px] sm:text-sm">{tab.label}</span>

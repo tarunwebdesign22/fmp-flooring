@@ -41,20 +41,29 @@ export default function BrandsSection({ content }) {
   return (
     <>
       {content.map((section) => (
-        <section key={section.eyebrow} className="bg-greylight py-14 sm:py-16 lg:py-20">
-          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <section key={section.eyebrow} className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-20">
+          <Image
+            src="/images/clientbg.jpg"
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
+
+          <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
             <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
               <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
                 {section.eyebrow}
               </p>
               <span className="mx-auto mt-2 block h-0.5 w-12 bg-teal" aria-hidden="true" />
-              <h2 className="mt-4 text-3xl font-bold leading-tight text-blue sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
                 {section.headline}
                 {section.headlineAccent ? (
                   <span className="text-teal">{section.headlineAccent}</span>
                 ) : null}
               </h2>
-              <p className="mt-4 text-[15px] leading-7 text-blue/70">{section.description}</p>
+              <p className="mt-4 text-[15px] leading-7 text-white/80">{section.description}</p>
             </div>
 
             <div className="overflow-hidden rounded-2xl bg-white px-3 py-5 shadow-[0_6px_24px_rgba(0,0,0,0.08)] sm:px-5 sm:py-7 lg:px-6 lg:py-8">

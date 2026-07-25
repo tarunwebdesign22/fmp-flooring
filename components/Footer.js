@@ -19,9 +19,9 @@ const usefulLinks = [
 
 function SectionHeading({ children }) {
   return (
-    <h2 className="mb-5 text-lg font-semibold text-teal">
+    <h2 className="mb-5 text-lg font-semibold text-[#fdbf3e]">
       {children}
-      <span className="mt-2 block h-0.5 w-10 bg-teal" aria-hidden="true" />
+      <span className="mt-2 block h-0.5 w-10 bg-[#fdbf3e]" aria-hidden="true" />
     </h2>
   );
 }
@@ -112,7 +112,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="flex h-9 w-9 items-center justify-center rounded bg-[#2a2660] text-white transition-colors hover:bg-teal"
+              className="flex h-9 w-9 items-center justify-center rounded bg-[#2a2660] text-white transition-colors hover:bg-[#fdbf3e] hover:text-blue"
             >
               <FacebookIcon />
             </a>
@@ -121,7 +121,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="flex h-9 w-9 items-center justify-center rounded bg-[#2a2660] text-white transition-colors hover:bg-teal"
+              className="flex h-9 w-9 items-center justify-center rounded bg-[#2a2660] text-white transition-colors hover:bg-[#fdbf3e] hover:text-blue"
             >
               <InstagramIcon />
             </a>
@@ -130,7 +130,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              className="flex h-9 w-9 items-center justify-center rounded bg-[#2a2660] text-white transition-colors hover:bg-teal"
+              className="flex h-9 w-9 items-center justify-center rounded bg-[#2a2660] text-white transition-colors hover:bg-[#fdbf3e] hover:text-blue"
             >
               <YouTubeIcon />
             </a>
@@ -144,7 +144,7 @@ export default function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-[15px] text-white/90 transition-colors hover:text-teal"
+                  className="text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
                 >
                   {link.label}
                 </Link>
@@ -160,7 +160,7 @@ export default function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-[15px] text-white/90 transition-colors hover:text-teal"
+                  className="text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
                 >
                   {link.label}
                 </Link>
@@ -173,7 +173,7 @@ export default function Footer() {
           <SectionHeading>Contact us</SectionHeading>
           <ul className="space-y-4">
             <li className="flex gap-3">
-              <span className="mt-0.5 shrink-0 text-teal">
+              <span className="mt-0.5 shrink-0 text-[#fdbf3e]">
                 <MapPinIcon />
               </span>
               <span className="text-[15px] leading-6 text-white/90">
@@ -181,30 +181,30 @@ export default function Footer() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="mt-0.5 shrink-0 text-teal">
+              <span className="mt-0.5 shrink-0 text-[#fdbf3e]">
                 <PhoneIcon />
               </span>
               <a
                 href="tel:+19802521648"
-                className="text-[15px] text-white/90 transition-colors hover:text-teal"
+                className="text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
               >
                 +1 9802521648
               </a>
             </li>
             <li className="flex gap-3">
-              <span className="mt-0.5 shrink-0 text-teal">
+              <span className="mt-0.5 shrink-0 text-[#fdbf3e]">
                 <MailIcon />
               </span>
               <a
                 href="mailto:flooring@furnishmyplace.com"
-                className="break-all text-[15px] text-white/90 transition-colors hover:text-teal"
+                className="break-all text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
               >
                 flooring@furnishmyplace.com
               </a>
             </li>
           </ul>
 
-          <a
+          {/* <a
             href="https://www.thumbtack.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -220,28 +220,28 @@ export default function Footer() {
               <p className="truncate text-sm font-semibold text-black">
                 FMP Flooring LLC
               </p>
-              <div className="mt-1 flex items-center gap-1 text-teal">
+              <div className="mt-1 flex items-center gap-1 text-[#fdbf3e]">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <StarIcon key={i} />
                 ))}
               </div>
               <p className="mt-0.5 text-xs text-black/50">69 reviews</p>
             </div>
-          </a>
+          </a> */}
         </div>
       </div>
 
-      <div className="border-t border-teal">
+      <div className="border-t border-[#fdbf3e]">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-sm text-white/85 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
           <p>Copyright © {year} FMP Flooring LLC, All rights reserved.</p>
           <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
-            <Link href="/terms-of-service" className="transition-colors hover:text-teal">
+            <Link href="/terms-of-service" className="transition-colors hover:text-[#fdbf3e]">
               Terms of Service
             </Link>
-            <span className="text-teal" aria-hidden="true">
+            <span className="text-[#fdbf3e]" aria-hidden="true">
               |
             </span>
-            <Link href="/privacy-policy" className="transition-colors hover:text-teal">
+            <Link href="/privacy-policy" className="transition-colors hover:text-[#fdbf3e]">
               Privacy Policy
             </Link>
           </p>

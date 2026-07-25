@@ -119,3 +119,65 @@ body {
 .federal-slider .slick-dots li.slick-active button:before {
   color: var(--teal);
 }
+
+/* Federal contractor — yellow marquee */
+.federal-marquee {
+  animation: federal-marquee-scroll 28s linear infinite;
+}
+
+.federal-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes federal-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .federal-marquee {
+    animation: none;
+  }
+}
+
+/* Testimonials — slick slider */
+.testimonials-slider .slick-list {
+  margin: 0 -0.5rem;
+  padding: 4px 0 28px;
+}
+
+.testimonials-slider .slick-track {
+  display: flex !important;
+  align-items: stretch;
+}
+
+.testimonials-slider .slick-slide {
+  height: auto !important;
+}
+
+.testimonials-slider .slick-slide > div {
+  height: 100%;
+  padding: 0 0.5rem;
+}
+
+.testimonials-slider .slick-dots {
+  bottom: 0;
+}
+
+.testimonials-slider .slick-dots li {
+  margin: 0 4px;
+}
+
+.testimonials-slider .slick-dots li button:before {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  opacity: 1;
+}
+
+.testimonials-slider .slick-dots li.slick-active button:before {
+  color: var(--teal);
+}

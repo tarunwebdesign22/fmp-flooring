@@ -80,7 +80,7 @@ export default function FeaturesSection({ title, features }) {
               )}
 
               <div className="relative z-10 flex h-full flex-col items-center">
-                <span className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-teal text-white">
+                <span className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#fdbf3e] text-blue">
                   {iconMap[feature.icon]}
                 </span>
 

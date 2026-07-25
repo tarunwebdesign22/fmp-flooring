@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
+import FederalMarquee from "@/components/FederalMarquee";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -75,7 +76,7 @@ function SectorCard({ sector }) {
       </div>
 
       <div className="relative rounded-b-2xl px-5 pb-7 pt-11 text-center sm:px-6">
-        <span className="absolute left-1/2 top-0 z-10 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[3px] border-teal bg-white text-teal shadow-sm">
+        <span className="absolute left-1/2 top-0 z-10 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[3px] border-[#fdbf3e] bg-white text-[#fdbf3e] shadow-sm">
           {sectorIcons[sector.icon] || sectorIcons.offices}
         </span>
 
@@ -115,48 +116,52 @@ export default function FederalContractorSection({ content }) {
   return (
     <>
       {content.map((section) => (
-        <section key={section.headlineBlue} className="bg-white py-14 sm:py-16 lg:py-20">
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-[minmax(0,35fr)_minmax(0,65fr)] lg:gap-12 lg:px-10">
-            <div className="min-w-0">
-              <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
-                <span className="block text-blue">{section.headlineBlue}</span>
-                <span className="block text-teal">{section.headlineTeal}</span>
-              </h2>
-              <span className="mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
+        <section key={section.headlineBlue} className="bg-white">
+          <FederalMarquee items={section.marqueeItems} />
 
-              <p className="mt-6 text-[15px] leading-7 text-blue/70">
-                {section.description}
-              </p>
+          <div className="py-14 sm:py-16 lg:py-20">
+            <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-[minmax(0,35fr)_minmax(0,65fr)] lg:gap-12 lg:px-10">
+              <div className="min-w-0">
+                <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
+                  <span className="block text-blue">{section.headlineBlue}</span>
+                  <span className="block text-teal">{section.headlineTeal}</span>
+                </h2>
+                <span className="mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
 
-              <div className="mt-6 border-t border-grey" aria-hidden="true" />
+                <p className="mt-6 text-[15px] leading-7 text-blue/70">
+                  {section.description}
+                </p>
 
-              <Link
-                href={section.buttonHref}
-                className="mt-6 inline-flex items-center gap-2 rounded border border-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
-              >
-                {section.buttonText}
-                <span aria-hidden="true">→</span>
-              </Link>
-            </div>
+                <div className="mt-6 border-t border-grey" aria-hidden="true" />
 
-            <div className="relative min-w-0 px-8 sm:px-10">
-              <ArrowButton direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
-              <ArrowButton direction="next" onClick={() => sliderRef.current?.slickNext()} />
+                <Link
+                  href={section.buttonHref}
+                  className="mt-6 inline-flex items-center gap-2 rounded border border-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
+                >
+                  {section.buttonText}
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
 
-              <div className="federal-slider w-full overflow-hidden">
-                {ready ? (
-                  <Slider key={slidesToShow} ref={sliderRef} {...settings}>
-                    {section.sectors.map((sector) => (
-                      <div key={sector.title} className="h-auto">
-                        <SectorCard sector={sector} />
-                      </div>
-                    ))}
-                  </Slider>
-                ) : (
-                  <div className="mx-auto max-w-md">
-                    <SectorCard sector={section.sectors[0]} />
-                  </div>
-                )}
+              <div className="relative min-w-0 px-8 sm:px-10">
+                <ArrowButton direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
+                <ArrowButton direction="next" onClick={() => sliderRef.current?.slickNext()} />
+
+                <div className="federal-slider w-full overflow-hidden">
+                  {ready ? (
+                    <Slider key={slidesToShow} ref={sliderRef} {...settings}>
+                      {section.sectors.map((sector) => (
+                        <div key={sector.title} className="h-auto">
+                          <SectorCard sector={sector} />
+                        </div>
+                      ))}
+                    </Slider>
+                  ) : (
+                    <div className="mx-auto max-w-md">
+                      <SectorCard sector={section.sectors[0]} />
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
