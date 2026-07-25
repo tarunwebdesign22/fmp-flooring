@@ -169,7 +169,7 @@ const financingContent = [
     title: "Financing Available",
     description:
       "Buy now and pay over time! We offer several different financing programs.",
-    backgroundImage: "/images/01-1.jpg",
+    backgroundImage: "/images/finance-banner.webp",
     benefits: [
       { icon: "approvals", title: "Fast Approvals*" },
       { icon: "noPayments", title: "No Payments*" },
