@@ -33,7 +33,7 @@ export default function FinancingSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-20">
+    <section className="relative isolate overflow-hidden pt-24 pb-14 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
       <Image
         src={section.backgroundImage}
         alt=""

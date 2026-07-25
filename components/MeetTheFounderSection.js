@@ -32,7 +32,7 @@ const valueIcons = {
 function FounderVideo({ src, poster }) {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
-  const [aspectRatio, setAspectRatio] = useState("16 / 9");
+  const [aspectRatio, setAspectRatio] = useState("609 / 842");
   const START_TIME = 2;
 
   const seekToStart = () => {
@@ -73,62 +73,64 @@ function FounderVideo({ src, poster }) {
   };
 
   return (
-    <div
-      className="relative overflow-hidden rounded-xl bg-blue/10 shadow-lg"
-      style={{ aspectRatio }}
-    >
-      <video
-        ref={videoRef}
-        className="absolute inset-0 h-full w-full object-cover"
-        src={encodeURI(src)}
-        poster={poster ? encodeURI(poster) : undefined}
-        playsInline
-        preload="metadata"
-        controls={playing}
-        onLoadedMetadata={handleLoadedMetadata}
-        onLoadedData={() => {
-          if (!playing) seekToStart();
-        }}
-        onPlay={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
-        onEnded={() => {
-          setPlaying(false);
-          seekToStart();
-        }}
-      />
-
-      {!playing && poster ? (
-        <Image
-          src={encodeURI(poster)}
-          alt="Meet the Founder video thumbnail"
-          fill
-          className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          priority
+    <div className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
+      <div
+        className="relative overflow-hidden rounded-xl bg-blue/10 shadow-lg"
+        style={{ aspectRatio }}
+      >
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-contain bg-black"
+          src={encodeURI(src)}
+          poster={poster ? encodeURI(poster) : undefined}
+          playsInline
+          preload="metadata"
+          controls={playing}
+          onLoadedMetadata={handleLoadedMetadata}
+          onLoadedData={() => {
+            if (!playing) seekToStart();
+          }}
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          onEnded={() => {
+            setPlaying(false);
+            seekToStart();
+          }}
         />
-      ) : null}
 
-      {!playing && (
-        <button
-          type="button"
-          onClick={togglePlay}
-          aria-label="Play video"
-          className="absolute inset-0 z-10 flex items-center justify-center bg-blue/25 transition-colors hover:bg-blue/35"
-        >
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-md sm:h-20 sm:w-20">
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="ml-1 text-teal"
-              aria-hidden="true"
-            >
-              <path d="M8 5.5v13l11-6.5L8 5.5z" />
-            </svg>
-          </span>
-        </button>
-      )}
+        {!playing && poster ? (
+          <Image
+            src={encodeURI(poster)}
+            alt="Meet the Founder video thumbnail"
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            priority
+          />
+        ) : null}
+
+        {!playing && (
+          <button
+            type="button"
+            onClick={togglePlay}
+            aria-label="Play video"
+            className="absolute inset-0 z-10 flex items-center justify-center bg-blue/25 transition-colors hover:bg-blue/35"
+          >
+            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-md sm:h-20 sm:w-20">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="ml-1 text-teal"
+                aria-hidden="true"
+              >
+                <path d="M8 5.5v13l11-6.5L8 5.5z" />
+              </svg>
+            </span>
+          </button>
+        )}
+      </div>
     </div>
   );
 }
@@ -138,8 +140,8 @@ export default function MeetTheFounderSection({ content }) {
     <>
       {content.map((item) => (
         <section key={item.eyebrow} className="bg-greylight py-14 sm:py-16 lg:py-20">
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-2 lg:gap-14 lg:px-10">
-            <div>
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:gap-12 lg:px-10">
+            <div className="min-w-0">
               <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
                 {item.eyebrow}
               </p>

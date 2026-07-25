@@ -152,7 +152,7 @@ export default function HeroSection({ content }) {
           aria-hidden="true"
         />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 sm:px-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12 lg:px-10 lg:py-16 xl:py-20">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 pb-16 sm:px-8 sm:pb-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12 lg:px-10 lg:py-16 lg:pb-24 xl:py-20 xl:pb-24">
           {/* Left content */}
           <div className="min-w-0 pb-0">
             <p className="text-base font-medium text-teal sm:text-lg">{section.welcome}</p>
@@ -302,28 +302,28 @@ export default function HeroSection({ content }) {
             </div>
           </div>
         </div>
-
-        {/* Product strip — inside banner */}
-        <div className="relative z-10 px-4 pb-8 sm:px-6 sm:pb-10 lg:px-10 lg:pb-12">
-          <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_rgba(34,30,83,0.18)]">
-            <ul className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7">
-              {section.products.map((product, index) => (
-                <li
-                  key={product.label}
-                  className={`flex flex-col items-center justify-center gap-2 px-3 py-5 text-center ${
-                    index > 0 ? "border-l border-grey/60" : ""
-                  }`}
-                >
-                  <span className="text-blue">{serviceIcons[product.icon]}</span>
-                  <span className="text-[11px] font-bold uppercase leading-tight tracking-wide text-blue">
-                    {product.label}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
       </section>
+
+      {/* Product strip — half over hero, half over next section */}
+      <div className="relative z-20 -mt-14 -mb-14 px-4 sm:-mt-16 sm:-mb-16 sm:px-6 lg:px-10">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_rgba(34,30,83,0.18)]">
+          <ul className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7">
+            {section.products.map((product, index) => (
+              <li
+                key={product.label}
+                className={`flex flex-col items-center justify-center gap-2 px-3 py-5 text-center ${
+                  index > 0 ? "border-l border-grey/60" : ""
+                }`}
+              >
+                <span className="text-blue">{serviceIcons[product.icon]}</span>
+                <span className="text-[11px] font-bold uppercase leading-tight tracking-wide text-blue">
+                  {product.label}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
