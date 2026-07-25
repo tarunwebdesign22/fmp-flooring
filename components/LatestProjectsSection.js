@@ -1,9 +1,11 @@
-import Image from "next/image";
-
 export default function LatestProjectsSection({ content }) {
-  const section = content[0];
+  const section = content?.[0];
 
   if (!section) return null;
+
+  const embedUrl =
+    section.embedUrl ||
+    "https://trusty.app/embed/project-map/37869d9b-531a-4f71-aaef-2a6d1006f3f3";
 
   return (
     <section className="bg-white py-14 sm:py-16 lg:py-20">
@@ -14,13 +16,14 @@ export default function LatestProjectsSection({ content }) {
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-grey shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
-          <Image
-            src={section.image}
-            alt={section.title}
-            width={1600}
-            height={900}
-            className="h-auto w-full object-cover object-top"
-            sizes="(max-width: 1280px) 100vw, 1280px"
+          <iframe
+            src={embedUrl}
+            title={section.title || "Our Latest Projects Map"}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="block w-full border-0"
+            style={{ height: "800px" }}
+            allowFullScreen
           />
         </div>
       </div>

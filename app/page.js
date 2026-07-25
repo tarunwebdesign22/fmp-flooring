@@ -628,7 +628,7 @@ const googleReviewsContent = [
 const latestProjectsContent = [
   {
     title: "Our Latest Project",
-    image: "/images/latest-project-image.png",
+    embedUrl: "https://trusty.app/embed/project-map/37869d9b-531a-4f71-aaef-2a6d1006f3f3",
   },
 ];
 
