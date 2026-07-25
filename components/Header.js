@@ -155,7 +155,7 @@ export default function Header() {
 
       {/* Main header */}
       <div className="border-b border-grey">
-        <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:gap-6 lg:px-10 lg:py-4">
+        <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 sm:px-6 lg:gap-6 lg:px-10">
           <Link href="/" className="shrink-0" aria-label="FMP Flooring home">
             <Image
               src="/images/FMP-Flooring-fiNAL-lOGO-scaled.png"
