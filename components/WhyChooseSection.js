@@ -71,7 +71,7 @@ export default function WhyChooseSection({ content }) {
               key={item.title}
               className="flex flex-col rounded-xl border border-grey/60 bg-greylight px-6 py-7 transition-shadow hover:shadow-[0_8px_28px_rgba(34,30,83,0.08)]"
             >
-              <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-teal text-white">
+              <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#fdbf3e] text-blue">
                 {chooseIcons[item.icon] || chooseIcons.quality}
               </span>
               <h3 className="text-base font-bold text-blue">{item.title}</h3>
