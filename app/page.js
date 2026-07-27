@@ -558,6 +558,8 @@ const testimonialsContent = [
 
 const statsContent = [
   {
+    eyebrow: "Our Track Record",
+    title: "Trusted Flooring Results",
     items: [
       { value: "1,000+", label: "Happy Customer" },
       { value: "5", label: "Company Rating", stars: 5 },

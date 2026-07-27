@@ -147,7 +147,7 @@ export default function GoogleReviewsSection({ content }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded bg-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
             >
-              Leave a Google Review
+              Write a Google Review
             </Link>
           ) : null}
         </div>

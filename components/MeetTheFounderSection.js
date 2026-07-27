@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const valueIcons = {
   quality: (
@@ -30,6 +30,7 @@ const valueIcons = {
 };
 
 function FounderVideo({ src, poster }) {
+  const containerRef = useRef(null);
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [aspectRatio, setAspectRatio] = useState("609 / 842");
@@ -64,16 +65,54 @@ function FounderVideo({ src, poster }) {
       if (video.currentTime < START_TIME) {
         seekToStart();
       }
-      await video.play();
-      setPlaying(true);
+      try {
+        await video.play();
+        setPlaying(true);
+      } catch {
+        // Ignore browser autoplay/playback policy rejections.
+      }
     } else {
       video.pause();
       setPlaying(false);
     }
   };
 
+  useEffect(() => {
+    const container = containerRef.current;
+    const video = videoRef.current;
+    if (!container || !video) return undefined;
+
+    const playWhenVisible = async () => {
+      if (video.currentTime < START_TIME) {
+        seekToStart();
+      }
+      video.muted = true;
+      try {
+        await video.play();
+        setPlaying(true);
+      } catch {
+        // If autoplay is blocked, keep the manual play button visible.
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          playWhenVisible();
+        } else if (!video.paused) {
+          video.pause();
+          setPlaying(false);
+        }
+      },
+      { threshold: 0.45 }
+    );
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
+    <div ref={containerRef} className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
       <div
         className="relative overflow-hidden rounded-xl bg-blue/10 shadow-lg"
         style={{ aspectRatio }}
@@ -84,6 +123,7 @@ function FounderVideo({ src, poster }) {
           src={encodeURI(src)}
           poster={poster ? encodeURI(poster) : undefined}
           playsInline
+          muted
           preload="metadata"
           controls={playing}
           onLoadedMetadata={handleLoadedMetadata}

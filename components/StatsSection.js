@@ -118,6 +118,22 @@ export default function StatsSection({ content }) {
   return (
     <section ref={sectionRef} className="bg-white py-12 sm:py-14 lg:py-16">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        {(section.eyebrow || section.title) && (
+          <div className="mb-10 text-center sm:mb-12">
+            {section.eyebrow ? (
+              <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
+                {section.eyebrow}
+              </p>
+            ) : null}
+            {section.title ? (
+              <h2 className="mt-3 text-3xl font-bold text-blue sm:text-4xl">
+                {section.title}
+              </h2>
+            ) : null}
+            <span className="mx-auto mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
+          </div>
+        )}
+
         <ul className="grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8">
           {section.items.map((item) => (
             <StatItem

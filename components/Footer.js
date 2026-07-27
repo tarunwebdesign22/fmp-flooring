@@ -17,6 +17,29 @@ const usefulLinks = [
   { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
+const certifications = [
+  {
+    src: "/images/certifications/Made-USA-150x150.webp",
+    alt: "Made in USA",
+  },
+  {
+    src: "/images/certifications/Licensed-Bonded-Insured-150x150.webp",
+    alt: "Licensed, Bonded & Insured",
+  },
+  {
+    src: "/images/certifications/Limited-Lifetime-Warranty-150x150.webp",
+    alt: "Limited Lifetime Warranty",
+  },
+  {
+    src: "/images/certifications/Locally-Owned-150x150.webp",
+    alt: "Locally Owned",
+  },
+  {
+    src: "/images/certifications/2-1-150x150.webp",
+    alt: "Certification badge",
+  },
+];
+
 function SectionHeading({ children }) {
   return (
     <h2 className="mb-5 text-lg font-semibold text-[#fdbf3e]">
@@ -74,14 +97,6 @@ function MailIcon() {
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
       <rect x="3" y="5" width="18" height="14" rx="2" />
       <path d="m3 7 9 7 9-7" />
-    </svg>
-  );
-}
-
-function StarIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.8 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9L12 2.5z" />
     </svg>
   );
 }
@@ -153,81 +168,77 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
-          <SectionHeading>Useful Links</SectionHeading>
-          <ul className="space-y-3">
-            {usefulLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <SectionHeading>Contact us</SectionHeading>
-          <ul className="space-y-4">
-            <li className="flex gap-3">
-              <span className="mt-0.5 shrink-0 text-[#fdbf3e]">
-                <MapPinIcon />
-              </span>
-              <span className="text-[15px] leading-6 text-white/90">
-                4013 Dearborn Pl, Concord, NC 28027, United States
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-0.5 shrink-0 text-[#fdbf3e]">
-                <PhoneIcon />
-              </span>
-              <a
-                href="tel:+19802521648"
-                className="text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
-              >
-                +1 9802521648
-              </a>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-0.5 shrink-0 text-[#fdbf3e]">
-                <MailIcon />
-              </span>
-              <a
-                href="mailto:flooring@furnishmyplace.com"
-                className="break-all text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
-              >
-                flooring@furnishmyplace.com
-              </a>
-            </li>
-          </ul>
-
-          {/* <a
-            href="https://www.thumbtack.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 flex items-start gap-3 rounded-lg bg-white p-3 text-blue shadow-sm transition-opacity hover:opacity-95"
-          >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-[#009fd9] text-xs font-bold text-white">
-              tt
-            </div>
-            <div className="min-w-0">
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-[#009fd9]">
-                Thumbtack
-              </p>
-              <p className="truncate text-sm font-semibold text-black">
-                FMP Flooring LLC
-              </p>
-              <div className="mt-1 flex items-center gap-1 text-[#fdbf3e]">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <StarIcon key={i} />
+        <div className="lg:col-span-2">
+          <div className="grid gap-10 sm:grid-cols-2 sm:gap-8">
+            <div>
+              <SectionHeading>Useful Links</SectionHeading>
+              <ul className="space-y-3">
+                {usefulLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
                 ))}
-              </div>
-              <p className="mt-0.5 text-xs text-black/50">69 reviews</p>
+              </ul>
             </div>
-          </a> */}
+
+            <div>
+              <SectionHeading>Contact us</SectionHeading>
+              <ul className="space-y-4">
+                <li className="flex gap-3">
+                  <span className="mt-0.5 shrink-0 text-[#fdbf3e]">
+                    <MapPinIcon />
+                  </span>
+                  <span className="text-[15px] leading-6 text-white/90">
+                    4013 Dearborn Pl, Concord, NC 28027, United States
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-0.5 shrink-0 text-[#fdbf3e]">
+                    <PhoneIcon />
+                  </span>
+                  <a
+                    href="tel:+19802521648"
+                    className="text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
+                  >
+                    +1 9802521648
+                  </a>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-0.5 shrink-0 text-[#fdbf3e]">
+                    <MailIcon />
+                  </span>
+                  <a
+                    href="mailto:flooring@furnishmyplace.com"
+                    className="break-all text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
+                  >
+                    flooring@furnishmyplace.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+            {certifications.map((cert) => (
+              <div
+                key={cert.src}
+                className="flex h-16 w-16 items-center justify-center rounded-md bg-white p-1.5 shadow-sm sm:h-[72px] sm:w-[72px]"
+              >
+                <Image
+                  src={cert.src}
+                  alt={cert.alt}
+                  width={72}
+                  height={72}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

@@ -148,7 +148,7 @@ export default function HeroSection({ content }) {
           sizes="100vw"
         />
         <div
-          className="absolute inset-0 bg-black/75"
+          className="absolute inset-0 bg-black/60"
           aria-hidden="true"
         />
 
