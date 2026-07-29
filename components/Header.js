@@ -26,7 +26,7 @@ const resourceLinks = [
   { label: "Financing", href: "/financing" },
   { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/careers" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 const socialLinks = [

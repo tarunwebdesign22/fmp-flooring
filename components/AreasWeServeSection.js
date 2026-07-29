@@ -67,13 +67,13 @@ export default function AreasWeServeSection({
   );
 
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-        <h2 className="text-center text-3xl font-bold text-blue sm:text-4xl lg:text-[2.75rem]">
+    <section className="bg-greylight">
+      <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
+        <h2 className="text-center text-2xl font-bold text-blue sm:text-3xl lg:text-4xl">
           {title}
         </h2>
 
-        <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-2 sm:mt-14 sm:gap-x-12 md:grid-cols-4 lg:mt-16 lg:gap-x-16">
+        <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-2 sm:mt-10 sm:gap-x-12 md:grid-cols-4 lg:mt-12 lg:gap-x-16">
           {columnLists.map((column, colIndex) => (
             <ul key={colIndex} className="space-y-3 sm:space-y-3.5">
               {column.map((area) => (

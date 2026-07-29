@@ -160,7 +160,7 @@ const founderContent = [
       },
     ],
     buttonText: "Learn More About Our Story",
-    buttonHref: "/about",
+    buttonHref: "/about-us",
     videoSrc: "/images/MicrosoftTeams-video (1).webm",
     videoPoster: "/images/founder-portrait.png",
   },

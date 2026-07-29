@@ -11,8 +11,8 @@ const serviceLinks = [
 ];
 
 const usefulLinks = [
-  { label: "About us", href: "/about" },
-  { label: "Contact us", href: "/contact" },
+  { label: "About us", href: "/about-us" },
+  { label: "Contact us", href: "/contact-us" },
   { label: "Blogs", href: "/blog" },
   { label: "Privacy Policy", href: "/privacy-policy" },
 ];
@@ -246,8 +246,8 @@ export default function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-sm text-white/85 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
           <p>Copyright © {year} FMP Flooring LLC, All rights reserved.</p>
           <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
-            <Link href="/terms-of-service" className="transition-colors hover:text-[#fdbf3e]">
-              Terms of Service
+            <Link href="/terms-and-conditions" className="transition-colors hover:text-[#fdbf3e]">
+              Terms & Conditions
             </Link>
             <span className="text-[#fdbf3e]" aria-hidden="true">
               |
