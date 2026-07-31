@@ -3,37 +3,96 @@ import BrandsSection from "@/components/homev2/BrandsSection";
 import ComparisonSection from "@/components/homev2/ComparisonSection";
 import CtaSection from "@/components/homev2/CtaSection";
 import EducationalResourcesSection from "@/components/homev2/EducationalResourcesSection";
+import EducationalVideosSection from "@/components/homev2/EducationalVideosSection";
 import ExploreVideosSection from "@/components/homev2/ExploreVideosSection";
 import FaqSection from "@/components/homev2/FaqSection";
 import FeaturesSection from "@/components/homev2/FeaturesSection";
 import FederalContractorSection from "@/components/homev2/FederalContractorSection";
 import FederalMarquee from "@/components/homev2/FederalMarquee";
-import FinancingSection from "@/components/homev2/FinancingSection";
 import GoogleReviewsSection from "@/components/homev2/GoogleReviewsSection";
 import HeroSection from "@/components/homev2/HeroSection";
 import LatestProjectsSection from "@/components/homev2/LatestProjectsSection";
 import MeetOurTeamSection from "@/components/homev2/MeetOurTeamSection";
 import MeetTheFounderSection from "@/components/homev2/MeetTheFounderSection";
 import ProcessSection from "@/components/homev2/ProcessSection";
-import StatsSection from "@/components/homev2/StatsSection";
 import TestimonialsSection from "@/components/homev2/TestimonialsSection";
 import WhyChooseSection from "@/components/homev2/WhyChooseSection";
 
 const heroContent = [
   {
     topBar: "Federal & State Flooring Contractor",
-    welcome: "Welcome to",
-    headline: "FMP Flooring LLC",
-    backgroundImage: "/images/Hero-Image.jpg",
-    tagline: "Premium flooring solutions for homes and businesses.",
-    trustBadges: [
-      { icon: "experience", label: "25+ Years of Experience" },
-      { icon: "family", label: "Family Owned & Operated" },
-      { icon: "quality", label: "Quality Flooring You Can Trust" },
-    ],
-    ctas: [
-      { label: "Explore Commercial Projects", href: "/commercial" },
-      { label: "Explore Residential Projects", href: "/residential" },
+    slides: [
+      {
+        id: "financing",
+        type: "financing",
+        backgroundImage: "/images/finance-banner.webp",
+        eyebrow: "Flexible Payment Options",
+        title: "Financing Available",
+        description:
+          "Buy now and pay over time! We offer several different financing programs.",
+        benefits: [
+          { icon: "approvals", title: "Fast Approvals*" },
+          { icon: "noPayments", title: "No Payments*" },
+          { icon: "zeroPercent", title: "0% Financing" },
+        ],
+        buttonText: "Explore Financing Options",
+        buttonHref: "/financing",
+        footnote: "*Subject to credit approval. Terms and conditions apply.",
+      },
+      {
+        id: "luxury-vinyl-plank",
+        type: "service",
+        backgroundImage: "/images/features/1.jpg",
+        icon: "plank",
+        eyebrow: "Featured Service",
+        title: "Luxury Vinyl Plank",
+        description:
+          "Waterproof, scratch-resistant, and beautifully realistic wood looks — built for busy homes and demanding commercial spaces.",
+        bullets: [
+          "100% waterproof construction",
+          "Pet and kid friendly wear layers",
+          "Warm, quiet underfoot",
+          "Fast professional installation",
+        ],
+        buttonText: "Explore Luxury Vinyl Plank",
+        buttonHref: "/luxury-vinyl-plank",
+      },
+      {
+        id: "broadloom-carpet",
+        type: "service",
+        backgroundImage: "/images/features/6.jpg",
+        icon: "carpet",
+        eyebrow: "Featured Service",
+        title: "Broadloom Carpet",
+        description:
+          "Soft, sound-absorbing comfort with premium padding included on every carpet installation we complete.",
+        bullets: [
+          '½" premium pad included',
+          "Stain-resistant fiber options",
+          "Residential and commercial grades",
+          "Seamless wall-to-wall coverage",
+        ],
+        buttonText: "Explore Broadloom Carpet",
+        buttonHref: "/broadloom-carpet",
+      },
+      {
+        id: "hardwood",
+        type: "service",
+        backgroundImage: "/images/features/Renwick Oak01.jpg",
+        icon: "hardwood",
+        eyebrow: "Featured Service",
+        title: "Hardwood Flooring",
+        description:
+          "Timeless solid and engineered hardwood that adds lasting warmth, character, and resale value to any space.",
+        bullets: [
+          "Solid and engineered options",
+          "Wide plank and classic widths",
+          "Refinishable for decades of use",
+          "Expert subfloor preparation",
+        ],
+        buttonText: "Explore Hardwood",
+        buttonHref: "/hardwood",
+      },
     ],
     form: {
       title: "Free In-Home Estimate",
@@ -50,14 +109,12 @@ const heroContent = [
         "VCT",
       ],
     },
-    products: [
-      { icon: "plank", label: "Luxury Vinyl Plank" },
-      { icon: "carpet", label: "Broadloom Carpet" },
-      { icon: "tile", label: "Carpet Tile" },
-      { icon: "ceramic", label: "Ceramic Flooring" },
-      { icon: "rubber", label: "Rubber" },
-      { icon: "hardwood", label: "Hardwood" },
-      { icon: "vct", label: "VCT" },
+    stats: [
+      { value: "1,000+", label: "Happy Customer" },
+      { value: "5", label: "Company Rating" },
+      { value: "10+", label: "Years Experience" },
+      { value: "500+", label: "Projects Completed" },
+      { value: "100%", label: "Satisfaction Focus" },
     ],
   },
 ];
@@ -78,35 +135,46 @@ const ctaContent = [
 
 const featuresContent = [
   {
+    eyebrow: "Our Work Process",
     title: "Service Highlights",
-    subtitle: "A hassle-free installation experience:",
-    buttonText: "Start Your Project Today",
-    buttonHref: "/estimate",
-    steps: [
+    subtitle:
+      "From preparation to installation, our experienced team handles every detail to deliver a seamless flooring experience.",
+    cards: [
       {
         step: "01",
-        title: "Furniture Moving",
-        icon: "furniture",
-        description: "We move furniture before installation.",
+        title: "Furniture Moving Included",
+        description:
+          "We carefully move your furniture before installation begins, saving you time and effort.",
+        image: "/images/process-feature/01-furniture-moving.jpg",
+        imageAlt:
+          "Professional crew wrapping and moving furniture before flooring installation",
       },
       {
         step: "02",
-        title: "Floor Preparation",
-        icon: "floorPrep",
-        description: "We prepare the floor before installation.",
+        title: "Expert Floor Preparation",
+        description:
+          "We prepare your subfloor to create the ideal foundation for long-lasting, beautiful flooring.",
+        image: "/images/process-feature/02-floor-preparation.jpg",
+        imageAlt:
+          "Installer checking floor level and moisture with professional tools",
       },
       {
         step: "03",
-        title: "Full-Service Handling",
-        icon: "challenges",
+        title: "Complete Installation Solutions",
         description:
-          "We handle all flooring preparation and installation challenges.",
+          "From floor preparation to overcoming installation challenges, our experienced team handles it all.",
+        image: "/images/process-feature/03-installation.jpg",
+        imageAlt:
+          "Professional installer fitting luxury vinyl plank flooring into place",
       },
       {
         step: "04",
-        title: "Hassle-Free Install",
-        icon: "hassleFree",
-        description: "We ensure a hassle-free installation process.",
+        title: "Hassle-Free Experience",
+        description:
+          "We manage every step of the installation process, ensuring a smooth, efficient, and stress-free experience.",
+        image: "/images/process-feature/04-final-walkthrough.jpg",
+        imageAlt:
+          "Final walkthrough with homeowner after newly installed flooring",
       },
     ],
   },
@@ -140,24 +208,7 @@ const founderContent = [
     buttonHref: "/about-us",
     videoSrc: "/images/MicrosoftTeams-video (1).webm",
     videoPoster: "/images/founder-portrait.png",
-  },
-];
-
-const financingContent = [
-  {
-    eyebrow: "Flexible Payment Options",
-    title: "Financing Available",
-    description:
-      "Buy now and pay over time! We offer several different financing programs.",
-    backgroundImage: "/images/finance-banner.webp",
-    benefits: [
-      { icon: "approvals", title: "Fast Approvals*" },
-      { icon: "noPayments", title: "No Payments*" },
-      { icon: "zeroPercent", title: "0% Financing" },
-    ],
-    buttonText: "Explore Financing Options",
-    buttonHref: "/financing",
-    footnote: "*Subject to credit approval. Terms and conditions apply.",
+    videoAspectRatio: "576 / 1024",
   },
 ];
 
@@ -617,18 +668,6 @@ const testimonialsContent = [
   },
 ];
 
-const statsContent = [
-  {
-    eyebrow: "Our Track Record",
-    title: "Trusted Flooring Results",
-    items: [
-      { value: "1,000+", label: "Happy Customer" },
-      { value: "5", label: "Company Rating", stars: 5 },
-      { value: "10+", label: "Years Experience" },
-    ],
-  },
-];
-
 const googleReviewsContent = [
   {
     eyebrow: "Customer Reviews",
@@ -855,18 +894,83 @@ const educationalResourcesContent = [
   },
 ];
 
+const educationalVideosContent = [
+  {
+    eyebrow: "Watch & Learn",
+    title: "Educational Videos",
+    description:
+      "Short videos covering flooring tips, product education, and installation insights to help you make confident decisions.",
+    videos: [
+      {
+        title: "Showroom tour 1",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&h=450&fit=crop",
+        duration: "1:24",
+      },
+      {
+        title: "Showroom tour 2",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=450&fit=crop",
+        duration: "1:18",
+      },
+      {
+        title: "Showroom tour 3",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=450&fit=crop",
+        duration: "1:35",
+      },
+      {
+        title: "Warehouse overview 1",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=450&fit=crop",
+        duration: "1:18",
+      },
+      {
+        title: "Warehouse overview 2",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=450&fit=crop",
+        duration: "1:42",
+      },
+      {
+        title: "Installation 1",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=450&fit=crop",
+        duration: "1:35",
+      },
+      {
+        title: "Installation 2",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=450&fit=crop",
+        duration: "2:10",
+      },
+      {
+        title: "Customer story 1",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=450&fit=crop",
+        duration: "0:58",
+      },
+    ],
+  },
+];
+
 export default function HomeV2() {
   return (
     <main className="flex flex-1 flex-col">
       <FederalMarquee items={federalContent[0].marqueeItems} />
       <HeroSection content={heroContent} />
-      <FinancingSection content={financingContent} />
       <FederalContractorSection content={federalContent} />
       <ProcessSection content={processContent} />
       <MeetTheFounderSection content={founderContent} />
       <FeaturesSection content={featuresContent} />
       <ExploreVideosSection content={videosContent} />
-      <StatsSection content={statsContent} />
       <GoogleReviewsSection content={googleReviewsContent} />
       <BrandsSection content={brandsContent} />
       <BeforeAfterSection content={beforeAfterContent} />
@@ -876,6 +980,7 @@ export default function HomeV2() {
       <ComparisonSection content={whyBuyDirectContent} />
       <LatestProjectsSection content={latestProjectsContent} />
       <EducationalResourcesSection content={educationalResourcesContent} />
+      <EducationalVideosSection content={educationalVideosContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />

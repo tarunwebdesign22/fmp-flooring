@@ -29,12 +29,17 @@ const valueIcons = {
   ),
 };
 
-function FounderVideo({ src, poster }) {
+const DEFAULT_VIDEO_ASPECT_RATIO = "576 / 1024";
+
+function FounderVideo({ src, poster, aspectRatio: fixedAspectRatio }) {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
-  const [aspectRatio, setAspectRatio] = useState("609 / 842");
+  const [measuredAspectRatio, setMeasuredAspectRatio] = useState(null);
   const START_TIME = 2;
+
+  const aspectRatio =
+    fixedAspectRatio || measuredAspectRatio || DEFAULT_VIDEO_ASPECT_RATIO;
 
   const seekToStart = () => {
     const video = videoRef.current;
@@ -48,8 +53,8 @@ function FounderVideo({ src, poster }) {
     const video = videoRef.current;
     if (!video) return;
 
-    if (video.videoWidth && video.videoHeight) {
-      setAspectRatio(`${video.videoWidth} / ${video.videoHeight}`);
+    if (!fixedAspectRatio && video.videoWidth && video.videoHeight) {
+      setMeasuredAspectRatio(`${video.videoWidth} / ${video.videoHeight}`);
     }
 
     if (!playing) {
@@ -222,7 +227,11 @@ export default function MeetTheFounderSection({ content }) {
               </Link>
             </div>
 
-            <FounderVideo src={item.videoSrc} poster={item.videoPoster} />
+            <FounderVideo
+              src={item.videoSrc}
+              poster={item.videoPoster}
+              aspectRatio={item.videoAspectRatio}
+            />
           </div>
         </section>
       ))}

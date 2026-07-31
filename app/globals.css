@@ -183,3 +183,25 @@ body {
 .testimonials-slider .slick-dots li.slick-active button:before {
   color: var(--teal);
 }
+
+/* Home v2 — hero slider content transition */
+.hero-slide-content {
+  animation: hero-slide-fade 0.6s ease-out;
+}
+
+@keyframes hero-slide-fade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide-content {
+    animation: none;
+  }
+}
