@@ -1,7 +1,4 @@
 import { Poppins } from "next/font/google";
-import AreasWeServeSection from "@/components/AreasWeServeSection";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import "./globals.css";
 
@@ -25,10 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
-        <Header />
         {children}
-        <AreasWeServeSection />
-        <Footer />
         <ScrollToTopButton />
       </body>
     </html>
