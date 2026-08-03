@@ -17,7 +17,7 @@ function MarqueeTrack({ items, hidden = false }) {
     >
       {items.map((item, index) => (
         <span key={`${item}-${index}`} className="flex items-center">
-          <span className="whitespace-nowrap text-lg font-extrabold uppercase tracking-[0.08em] text-blue sm:text-xl md:text-2xl">
+          <span className="whitespace-nowrap text-[17px] font-extrabold uppercase tracking-[0.08em] text-blue">
             {item}
           </span>
           <MarqueeSeparator />
