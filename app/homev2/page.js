@@ -5,6 +5,7 @@ import CtaSection from "@/components/homev2/CtaSection";
 import EducationalResourcesSection from "@/components/homev2/EducationalResourcesSection";
 import EducationalVideosSection from "@/components/homev2/EducationalVideosSection";
 import ExploreVideosSection from "@/components/homev2/ExploreVideosSection";
+import FacebookFeedSection from "@/components/homev2/FacebookFeedSection";
 import FaqSection from "@/components/homev2/FaqSection";
 import FeaturesSection from "@/components/homev2/FeaturesSection";
 import FederalContractorSection from "@/components/homev2/FederalContractorSection";
@@ -727,6 +728,18 @@ const googleReviewsContent = [
   },
 ];
 
+const facebookFeedContent = [
+  {
+    eyebrow: "Social Updates",
+    title: "Follow Us on Facebook",
+    description:
+      "See the latest project photos, flooring tips, and community updates from FMP Flooring.",
+    pageUrl: "https://www.facebook.com/people/FMP-Flooring/100084480100386/",
+    embedPageUrl: "https://www.facebook.com/profile.php?id=100084480100386",
+    buttonText: "Visit Our Facebook Page",
+  },
+];
+
 const latestProjectsContent = [
   {
     title: "Our Latest Project",
@@ -973,6 +986,7 @@ export default function HomeV2() {
       <ExploreVideosSection content={videosContent} />
       <GoogleReviewsSection content={googleReviewsContent} />
       <BrandsSection content={brandsContent} />
+      <FacebookFeedSection content={facebookFeedContent} />
       <BeforeAfterSection content={beforeAfterContent} />
       <MeetOurTeamSection content={teamContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />

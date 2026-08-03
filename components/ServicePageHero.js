@@ -24,6 +24,32 @@ const fieldIcons = {
   ),
 };
 
+const benefitIcons = {
+  approvals: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <path d="M21 12a9 9 0 1 1-2.6-6.3" />
+      <path d="M21 4v5h-5" />
+      <path d="m9 12 2.2 2.2L15.5 10" />
+    </svg>
+  ),
+  noPayments: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <rect x="2.5" y="6" width="19" height="12" rx="2.5" />
+      <path d="M2.5 10h19" />
+      <path d="M6.5 14.5h3.5" />
+      <path d="M4.5 4.5 19.5 19.5" />
+    </svg>
+  ),
+  zeroPercent: (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9 15.5 15 8.5" />
+      <circle cx="9.2" cy="9.2" r="1.35" />
+      <circle cx="14.8" cy="14.8" r="1.35" />
+    </svg>
+  ),
+};
+
 function EstimateForm({ form }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -138,87 +164,186 @@ function EstimateForm({ form }) {
   );
 }
 
+function FinancingContent({ financing }) {
+  if (!financing) return null;
+
+  return (
+    <div className="min-w-0">
+      <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal">
+        {financing.eyebrow}
+      </p>
+      <h1 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+        {financing.title}
+      </h1>
+      <span className="mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
+
+      <p className="mt-5 max-w-xl text-base leading-7 text-white/85">
+        {financing.description}
+      </p>
+
+      {financing.benefits?.length ? (
+        <ul className="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-3">
+          {financing.benefits.map((benefit) => (
+            <li
+              key={benefit.title}
+              className="flex items-center gap-3 rounded-lg border border-white/20 bg-black/30 px-3 py-3 backdrop-blur-[2px]"
+            >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#fdbf3e]/50 bg-[#fdbf3e]/15 text-[#fdbf3e]">
+                {benefitIcons[benefit.icon] || benefitIcons.approvals}
+              </span>
+              <span className="text-[13px] font-bold leading-snug text-white">
+                {benefit.title}
+              </span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+
+      {financing.buttonText && financing.buttonHref ? (
+        <div className="mt-7">
+          <Link
+            href={financing.buttonHref}
+            className="inline-flex items-center gap-2 rounded-lg border-2 border-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+          >
+            {financing.buttonText}
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      ) : null}
+
+      {financing.footnote ? (
+        <p className="mt-5 text-xs leading-5 text-white/55">{financing.footnote}</p>
+      ) : null}
+    </div>
+  );
+}
+
+function ServiceContent({ section }) {
+  return (
+    <div className="min-w-0">
+      {section.eyebrow ? (
+        <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal">
+          {section.eyebrow}
+        </p>
+      ) : null}
+
+      <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+        {section.title}
+      </h1>
+
+      {section.description ? (
+        <p className="mt-5 max-w-2xl text-sm leading-5 text-white/85 sm:text-[15px] sm:leading-6 lg:text-base lg:leading-6">
+          {section.description}
+        </p>
+      ) : null}
+
+      {section.buttonText && section.buttonHref ? (
+        <Link
+          href={section.buttonHref}
+          className="mt-8 inline-flex items-center gap-2 rounded border-2 border-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+        >
+          {section.buttonText}
+          <span aria-hidden="true">→</span>
+        </Link>
+      ) : null}
+    </div>
+  );
+}
+
+function BreadcrumbStrip({ breadcrumbs }) {
+  if (!breadcrumbs?.length) return null;
+
+  return (
+    <div className="bg-black">
+      <div className="mx-auto max-w-7xl px-6 py-2.5 sm:px-8 lg:px-10">
+        <nav aria-label="Breadcrumb">
+          <ol className="flex flex-wrap items-center gap-2 text-sm text-white/70">
+            {breadcrumbs.map((crumb, index) => (
+              <li key={crumb.label} className="flex items-center gap-2">
+                {index > 0 ? <span aria-hidden="true">/</span> : null}
+                {crumb.href ? (
+                  <Link
+                    href={crumb.href}
+                    className="transition-colors hover:text-[#fdbf3e]"
+                  >
+                    {crumb.label}
+                  </Link>
+                ) : (
+                  <span className="text-[#fdbf3e]">{crumb.label}</span>
+                )}
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </div>
+    </div>
+  );
+}
+
 export default function ServicePageHero({ content }) {
   const section = content?.[0];
   if (!section) return null;
 
   const hasForm = Boolean(section.form);
+  const hasFinancing = Boolean(section.financing);
+  const formOnLeft = hasFinancing || section.formPosition === "left";
+  const backgroundImage =
+    section.backgroundImage ||
+    section.financing?.backgroundImage ||
+    "/images/01-1.jpg";
 
   return (
-    <section className="relative isolate overflow-hidden">
-      <Image
-        src={section.backgroundImage}
-        alt=""
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
-      />
-      <div
-        className="absolute inset-0 bg-gradient-to-r from-blue/95 via-blue/85 to-blue/55"
-        aria-hidden="true"
-      />
+    <div>
+      <BreadcrumbStrip breadcrumbs={section.breadcrumbs} />
 
-      <div
-        className={`relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20 ${
-          hasForm
-            ? "grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12"
-            : ""
-        }`}
-      >
-        <div className="min-w-0">
-          {section.breadcrumbs?.length ? (
-            <nav aria-label="Breadcrumb" className="mb-5">
-              <ol className="flex flex-wrap items-center gap-2 text-sm text-white/70">
-                {section.breadcrumbs.map((crumb, index) => (
-                  <li key={crumb.label} className="flex items-center gap-2">
-                    {index > 0 ? <span aria-hidden="true">/</span> : null}
-                    {crumb.href ? (
-                      <Link href={crumb.href} className="transition-colors hover:text-teal">
-                        {crumb.label}
-                      </Link>
-                    ) : (
-                      <span className="text-teal">{crumb.label}</span>
-                    )}
-                  </li>
-                ))}
-              </ol>
-            </nav>
-          ) : null}
+      <section className="relative isolate overflow-hidden">
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div
+          className="absolute inset-0 bg-black/65"
+          aria-hidden="true"
+        />
 
-          {section.eyebrow ? (
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal">
-              {section.eyebrow}
-            </p>
-          ) : null}
-
-          <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-            {section.title}
-          </h1>
-
-          {section.description ? (
-            <p className="mt-5 max-w-2xl text-sm leading-5 text-white/85 sm:text-[15px] sm:leading-6 lg:text-base lg:leading-6">
-              {section.description}
-            </p>
-          ) : null}
-
-          {section.buttonText && section.buttonHref ? (
-            <Link
-              href={section.buttonHref}
-              className="mt-8 inline-flex items-center gap-2 rounded border-2 border-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-blue"
-            >
-              {section.buttonText}
-              <span aria-hidden="true">→</span>
-            </Link>
-          ) : null}
+        <div
+          className={`relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20 ${
+            hasForm
+              ? "grid items-center gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-12"
+              : ""
+          }`}
+        >
+          {hasForm && formOnLeft ? (
+            <>
+              <div className="min-w-0 lg:w-full lg:max-w-md">
+                <EstimateForm form={section.form} />
+              </div>
+              {hasFinancing ? (
+                <FinancingContent financing={section.financing} />
+              ) : (
+                <ServiceContent section={section} />
+              )}
+            </>
+          ) : (
+            <>
+              {hasFinancing ? (
+                <FinancingContent financing={section.financing} />
+              ) : (
+                <ServiceContent section={section} />
+              )}
+              {hasForm ? (
+                <div className="min-w-0 lg:w-full lg:max-w-md lg:justify-self-end">
+                  <EstimateForm form={section.form} />
+                </div>
+              ) : null}
+            </>
+          )}
         </div>
-
-        {hasForm ? (
-          <div className="min-w-0 lg:w-full lg:max-w-md lg:justify-self-end">
-            <EstimateForm form={section.form} />
-          </div>
-        ) : null}
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

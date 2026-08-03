@@ -19,14 +19,6 @@ function CloseIcon() {
   );
 }
 
-function YouTubeIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M23 12.2s0-3.2-.4-4.7c-.2-.9-.9-1.6-1.8-1.8C18.5 5.2 12 5.2 12 5.2s-6.5 0-8.8.5c-.9.2-1.6.9-1.8 1.8C1 9 1 12.2 1 12.2s0 3.2.4 4.7c.2.9.9 1.6 1.8 1.8 2.3.5 8.8.5 8.8.5s6.5 0 8.8-.5c.9-.2 1.6-.9 1.8-1.8.4-1.5.4-4.7.4-4.7zM9.8 15.5v-6.6l5.7 3.3-5.7 3.3z" />
-    </svg>
-  );
-}
-
 function VideoCard({ video, onPlay }) {
   return (
     <article className="group overflow-hidden rounded-xl bg-white shadow-[0_6px_24px_rgba(34,30,83,0.08)]">
@@ -44,7 +36,7 @@ function VideoCard({ video, onPlay }) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
         <span className="absolute inset-0 flex items-center justify-center bg-blue/25 transition-colors group-hover:bg-blue/35">
-          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#ff0000] text-white shadow-md">
+          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#fdbf3e] text-blue shadow-md">
             <PlayIcon />
           </span>
         </span>
@@ -56,10 +48,6 @@ function VideoCard({ video, onPlay }) {
       </button>
 
       <div className="px-4 py-3.5">
-        <div className="mb-1.5 flex items-center gap-1.5 text-[#ff0000]">
-          <YouTubeIcon />
-          <span className="text-[11px] font-bold uppercase tracking-wide">YouTube</span>
-        </div>
         <h3 className="line-clamp-2 text-sm font-bold leading-snug text-blue">
           {video.title}
         </h3>

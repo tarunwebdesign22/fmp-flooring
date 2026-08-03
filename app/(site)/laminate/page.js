@@ -1,3 +1,4 @@
+import CommercialProjectsSection from "@/components/CommercialProjectsSection";
 import CtaSection from "@/components/CtaSection";
 import FaqSection from "@/components/FaqSection";
 import FederalMarquee from "@/components/FederalMarquee";
@@ -25,17 +26,25 @@ export const metadata = {
 
 const heroContent = [
   {
-    eyebrow: "Flooring Services",
-    title: "Laminate Flooring",
-    description:
-      "Durable & affordable laminate floors with the look of natural hardwood or tile — installed by FMP Flooring professionals.",
-    backgroundImage: "/images/01-1.jpg",
-    buttonText: "Get a Free Quote",
-    buttonHref: "/estimate",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Laminate Services" },
     ],
+    backgroundImage: "/images/finance-banner.webp",
+    financing: {
+      eyebrow: "Flexible Payment Options",
+      title: "Financing Available",
+      description:
+        "Buy now and pay over time! We offer several different financing programs for your laminate flooring project.",
+      benefits: [
+        { icon: "approvals", title: "Fast Approvals*" },
+        { icon: "noPayments", title: "No Payments*" },
+        { icon: "zeroPercent", title: "0% Financing" },
+      ],
+      buttonText: "Explore Financing Options",
+      buttonHref: "/financing",
+      footnote: "*Subject to credit approval. Terms and conditions apply.",
+    },
     form: {
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
@@ -313,6 +322,70 @@ const galleryContent = [
   },
 ];
 
+const commercialProjectsContent = [
+  {
+    eyebrow: "Featured Project",
+    title: "Our Recent Commercial Flooring Projects",
+    items: [
+      {
+        title: "Cumberland County",
+        image: "/images/commercial-projects/cumberland-county.png",
+        badge: "Latest",
+        buttonText: "Explore More",
+        href: "#",
+      },
+      {
+        title: "Probition Office (Jacksonville)",
+        image: "/images/commercial-projects/probition-office-jacksonville.jpg",
+        buttonText: "Explore More",
+        href: "#",
+      },
+      {
+        title: "Hollings Cancer Center Charleston",
+        image: "/images/commercial-projects/hollings-cancer-center-charleston.png",
+        buttonText: "Explore More",
+        href: "#",
+      },
+      {
+        title: "Stanley Community",
+        image: "/images/commercial-projects/stanley-community.png",
+        buttonText: "Explore More",
+        href: "#",
+      },
+      {
+        title: "Hendersonville County",
+        image: "/images/commercial-projects/hendersonville-county.png",
+        buttonText: "Explore More",
+        href: "#",
+      },
+      {
+        title: "United Housing",
+        image: "/images/commercial-projects/united-housing.png",
+        buttonText: "Explore More",
+        href: "#",
+      },
+      {
+        title: "Pitt County",
+        image: "/images/commercial-projects/pitt-county.png",
+        buttonText: "Explore More",
+        href: "#",
+      },
+      {
+        title: "Johnsonville Elementary",
+        image: "/images/commercial-projects/johnsonville-elementary.png",
+        buttonText: "Explore More",
+        href: "#",
+      },
+      {
+        title: "Orange County",
+        image: "/images/commercial-projects/orange-county.png",
+        buttonText: "Explore More",
+        href: "#",
+      },
+    ],
+  },
+];
+
 const ctaContent = [
   {
     headlineWhite: "Get a Free",
@@ -339,6 +412,7 @@ export default function LaminatePage() {
       <ServiceApplicationsSection content={applicationsContent} />
       <ServiceCompareSection content={compareContent} />
       <ServiceInstallSection content={installContent} />
+      <CommercialProjectsSection content={commercialProjectsContent} />
       <ImageGallerySection content={galleryContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
