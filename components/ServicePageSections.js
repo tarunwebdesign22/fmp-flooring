@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { OfferBadge } from "@/components/ServiceFlooringSections";
 
 export function ServiceTypesSection({ content }) {
   const section = content?.[0];
@@ -269,6 +270,7 @@ export function ServiceInstallSection({ content }) {
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
+            <OfferBadge offer={section.offer} />
           </div>
         ) : null}
 

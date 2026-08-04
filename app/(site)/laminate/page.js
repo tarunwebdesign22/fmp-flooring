@@ -2,7 +2,10 @@ import CommercialProjectsSection from "@/components/CommercialProjectsSection";
 import CtaSection from "@/components/CtaSection";
 import FaqSection from "@/components/FaqSection";
 import FederalMarquee from "@/components/FederalMarquee";
+import FinanceBannerSection from "@/components/FinanceBannerSection";
 import ImageGallerySection from "@/components/ImageGallerySection";
+import MailingListSection from "@/components/MailingListSection";
+import SeniorDiscountSection from "@/components/SeniorDiscountSection";
 import {
   ServiceBenefitsSection,
   ServiceHighlightsStrip,
@@ -16,6 +19,7 @@ import {
   ServiceTipsSection,
   ServiceTypesSection,
 } from "@/components/ServicePageSections";
+import SimpleProcessSection from "@/components/SimpleProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 
 export const metadata = {
@@ -31,6 +35,20 @@ const heroContent = [
       { label: "Laminate Services" },
     ],
     slides: [
+      {
+        id: "laminate-service",
+        backgroundImage: "/images/laminate-page-banner.webp",
+        financing: {
+          eyebrow: "Laminate Services",
+          titleBefore: "We Offer High-Quality Laminate Flooring — ",
+          titleHighlightValue: "65%  Off Sale",
+          titleAfter: "",
+          description:
+            "Upgrade your space with professional laminate flooring installation designed for busy homes and light commercial spaces.",
+          buttonText: "Get My Free Estimate",
+          buttonHref: "/estimate",
+        },
+      },
       {
         id: "laminate-financing",
         backgroundImage: "/images/finance-banner.webp",
@@ -49,24 +67,13 @@ const heroContent = [
           footnote: "*Subject to credit approval. Terms and conditions apply.",
         },
       },
-      {
-        id: "laminate-service",
-        backgroundImage: "/images/laminate-page-banner.webp",
-        financing: {
-          eyebrow: "Laminate Services",
-          title: "We Offer High-Quality Laminate Flooring",
-          description:
-            "Upgrade your space with professional laminate flooring installation designed for busy homes and light commercial spaces.",
-          buttonText: "Get My Free Estimate",
-          buttonHref: "/estimate",
-        },
-      },
     ],
     form: {
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
       defaultService: "Laminate",
+      highlight: "Free Installation & 50% Off Vinyl",
       services: [
         "Luxury Vinyl Plank",
         "Broadloom Carpet",
@@ -91,8 +98,71 @@ const introContent = [
     ],
     image: "/images/features/Renwick Oak01.jpg",
     imageAlt: "Wood-look laminate flooring in a modern living space",
+    offer: {
+      topLabel: "Huge Savings",
+      value: "65",
+      suffix: "%",
+      offLabel: "Off",
+      bottomLabel: "Special Offer!",
+    },
     buttonText: "Schedule Consultation",
     buttonHref: "/estimate",
+  },
+];
+
+const mailingListContent = [
+  {
+    lineOne: "Join Our Mailing List Today &",
+    highlight: "GET $99 OFF",
+    lineTwo: "Your Next Install!",
+    placeholder: "Email*",
+    buttonText: "Subscribe",
+    successMessage: "Thanks for subscribing! Check your inbox soon.",
+  },
+];
+
+const simpleProcessContent = [
+  {
+    title: "Get Brand New Laminate in 3 Simple Steps",
+    steps: [
+      {
+        number: "1",
+        title: "Schedule a Free In-Home Consult with a Flooring Expert",
+        image: "/images/process-feature/04-final-walkthrough.jpg",
+        imageAlt: "Scheduling a free in-home flooring consultation",
+        buttonText: "Get Started Now",
+        buttonHref: "/estimate",
+      },
+      {
+        number: "2",
+        title: "No Surprises, No Hidden Fees",
+        description:
+          "A flooring expert will bring samples, help you pick the right floors, measure your rooms, and give you an All-Inclusive Price Estimate.",
+        image: "/images/process-feature/02-floor-preparation.jpg",
+        imageAlt: "Flooring expert reviewing samples and estimate with homeowners",
+      },
+      {
+        number: "3",
+        title: "Schedule-Friendly Installation",
+        description:
+          "Upon approval, you will be able to finance your purchase and schedule your professional installation.",
+        image: "/images/process-feature/03-installation.jpg",
+        imageAlt: "Professional crew installing laminate flooring",
+      },
+    ],
+  },
+];
+
+const financeBannerContent = [
+  {
+    title: "Floors Now, Pay Over Time",
+    description: "Convenient monthly payments for your budget¹",
+    buttonText: "View Financing Options",
+    buttonHref: "/financing",
+    backgroundImage: "/images/finance-banner.webp",
+    footnote: "¹With approved credit.",
+    footnoteLinkText: "Details",
+    footnoteHref: "/financing",
   },
 ];
 
@@ -236,6 +306,12 @@ const installContent = [
     ],
     image: "/images/features/2.jpg",
     imageAlt: "Professional laminate flooring installation",
+    offer: {
+      topLabel: "Interest Free",
+      value: "60",
+      rightLines: ["Month", "", ""],
+      bottomLabel: "Financing",
+    },
   },
 ];
 
@@ -289,6 +365,44 @@ const faqContent = [
           "With proper care, laminate flooring can last 15–25 years or longer.",
       },
     ],
+  },
+];
+
+const seniorDiscountContent = [
+  {
+    highlight: "Save 10%",
+    title: "Senior Citizen Discounts",
+    description: "Save an additional 10%",
+    buttonText: "Free In-Home Estimate",
+    buttonHref: "/estimate",
+    image: "/images/103.webp",
+    imageAlt: "Senior couple reviewing flooring options at home",
+  },
+];
+
+const healthcareDiscountContent = [
+  {
+    theme: "yellow",
+    highlight: "Save 10%",
+    title: "Healthcare Workers",
+    description: "Save an additional 10%",
+    buttonText: "Free In-Home Estimate",
+    buttonHref: "/estimate",
+    image: "/images/105.webp",
+    imageAlt: "Healthcare worker smiling outdoors",
+  },
+];
+
+const militaryDiscountContent = [
+  {
+    theme: "teal",
+    highlight: "Save 10%",
+    title: "Military & Veterans",
+    description: "Save an additional 10%",
+    buttonText: "Free In-Home Estimate",
+    buttonHref: "/estimate",
+    image: "/images/106.webp",
+    imageAlt: "Thank you for your service chalkboard with American flag",
   },
 ];
 
@@ -421,7 +535,11 @@ export default function LaminatePage() {
   return (
     <main className="flex flex-1 flex-col">
       <ServicePageHero content={heroContent} />
+      <FederalMarquee />
       <ServiceIntroSection content={introContent} />
+      <MailingListSection content={mailingListContent} />
+      <SimpleProcessSection content={simpleProcessContent} />
+      <FinanceBannerSection content={financeBannerContent} />
       <ServiceBenefitsSection content={benefitsContent} />
       <ServiceHighlightsStrip content={highlightsContent} />
       <ServiceTypesSection content={typesContent} />
@@ -430,6 +548,9 @@ export default function LaminatePage() {
       <ServiceCompareSection content={compareContent} />
       <ServiceInstallSection content={installContent} />
       <CommercialProjectsSection content={commercialProjectsContent} />
+      <SeniorDiscountSection content={seniorDiscountContent} />
+      <SeniorDiscountSection content={healthcareDiscountContent} />
+      <SeniorDiscountSection content={militaryDiscountContent} />
       <ImageGallerySection content={galleryContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />

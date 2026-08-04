@@ -1,6 +1,63 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export function OfferBadge({ offer }) {
+  if (!offer) return null;
+
+  const {
+    topLabel = "Huge Savings",
+    value = "65",
+    suffix = "%",
+    offLabel = "Off",
+    rightLines,
+    bottomLabel = "Special Offer!",
+  } = offer;
+
+  const isFinance = Array.isArray(rightLines) && rightLines.length > 0;
+
+  return (
+    <div
+      className={`absolute top-3 left-3 z-10 drop-shadow-[0_8px_18px_rgba(0,0,0,0.28)] sm:top-4 sm:left-4 ${
+        isFinance ? "w-[9.5rem] sm:w-[11rem]" : "w-[7.25rem] sm:w-[8.5rem]"
+      }`}
+    >
+      <div className="relative z-20 rounded-t-md bg-teal px-2 py-1.5 text-center text-[10px] font-extrabold uppercase tracking-[0.08em] text-white sm:text-[11px]">
+        {topLabel}
+      </div>
+      <div className="relative z-10 -my-1 rounded-md bg-[#fdbf3e] px-2 py-2 text-center sm:py-2.5">
+        <div className="flex items-center justify-center gap-1 leading-none text-blue">
+          <span
+            className={`font-black tracking-tight ${
+              isFinance
+                ? "text-[2.5rem] sm:text-[3rem]"
+                : "text-[2.35rem] sm:text-[2.75rem]"
+            }`}
+          >
+            {value}
+          </span>
+          {isFinance ? (
+            <span className="flex flex-col items-start text-left text-[9px] font-extrabold uppercase leading-[1.15] tracking-wide sm:text-[10px]">
+              {rightLines.map((line) => (
+                <span key={line}>{line}</span>
+              ))}
+            </span>
+          ) : (
+            <span className="mt-1 flex flex-col items-start text-left">
+              <span className="text-base font-black leading-none sm:text-lg">{suffix}</span>
+              <span className="text-[11px] font-extrabold uppercase leading-tight tracking-wide sm:text-xs">
+                {offLabel}
+              </span>
+            </span>
+          )}
+        </div>
+      </div>
+      <div className="relative z-20 rounded-b-md bg-blue px-2 py-1.5 text-center text-[10px] font-extrabold uppercase tracking-[0.06em] text-white sm:text-[11px]">
+        {bottomLabel}
+      </div>
+    </div>
+  );
+}
+
 export function ServiceIntroSection({ content }) {
   const section = content?.[0];
   if (!section) return null;
@@ -43,6 +100,7 @@ export function ServiceIntroSection({ content }) {
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
+            <OfferBadge offer={section.offer} />
           </div>
         ) : null}
       </div>

@@ -3,15 +3,15 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-function ProjectStepCard({ card, index, visible }) {
+function ProjectStepCard({ card, index, visible, total }) {
   const step = card.step || String(index + 1).padStart(2, "0");
-  const rowLayoutClass = "md:flex-row";
+  const isLastCentered = index === total - 1 && total % 2 === 1;
 
   return (
     <li
-      className={`group flex h-full flex-col overflow-hidden rounded-[18px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(34,30,83,0.14)] ${rowLayoutClass} ${
-        visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-      }`}
+      className={`group flex h-full flex-col overflow-hidden rounded-[18px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(34,30,83,0.14)] md:flex-row ${
+        isLastCentered ? "md:col-span-2 md:mx-auto md:w-[calc(50%-0.75rem)]" : ""
+      } ${visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}
       style={{ transitionDelay: visible ? `${index * 80}ms` : "0ms" }}
     >
       <div className="relative aspect-[16/10] overflow-hidden bg-greylight md:h-auto md:w-[42%] md:shrink-0 md:aspect-auto">
@@ -20,7 +20,7 @@ function ProjectStepCard({ card, index, visible }) {
           alt={card.imageAlt || card.title}
           fill
           className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
-          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 20vw"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
         <span className="absolute top-3 left-3 z-10 inline-flex h-10 min-w-10 items-center justify-center rounded-full bg-teal px-2.5 text-sm font-bold text-white shadow-md">
           {step}
@@ -91,12 +91,13 @@ export default function HowWeManageProjectsSection({ content }) {
           ) : null}
         </div>
 
-        <ol className="mx-auto mt-10 grid w-full grid-cols-1 gap-6 sm:mt-12 lg:w-[70%] xl:w-[65%]">
+        <ol className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 md:grid-cols-2">
           {section.steps.map((card, index) => (
             <ProjectStepCard
               key={card.title}
               card={card}
               index={index}
+              total={section.steps.length}
               visible={visible}
             />
           ))}

@@ -761,7 +761,7 @@ const googleReviewsContent = [
 const facebookFeedContent = [
   {
     eyebrow: "Social Updates",
-    title: "Follow Us on Social",
+    title: "Follow Us On Social Media",
     description:
       "See the latest project photos, flooring tips, and community updates from FMP Flooring on Facebook and Instagram.",
     pageUrl: "https://www.facebook.com/people/FMP-Flooring/100084480100386/",
@@ -946,7 +946,7 @@ const educationalVideosContent = [
     title: "Educational Videos",
     description:
       "Short videos covering flooring tips, product education, and installation insights to help you make confident decisions.",
-    buttonText: "View Our Channel",
+    buttonText: "View Our Youtube Channel",
     buttonHref: "https://www.youtube.com/@furnishmyplace4954",
     videos: [
       {

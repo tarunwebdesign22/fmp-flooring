@@ -70,96 +70,106 @@ function EstimateForm({ form }) {
   };
 
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-[0_16px_50px_rgba(0,0,0,0.25)] sm:p-7">
-      <h2 className="text-2xl font-bold text-blue">{form.title}</h2>
-      <span className="mt-2 block h-0.5 w-12 bg-teal" aria-hidden="true" />
-      <p className="mt-3 text-sm text-blue/65">{form.description}</p>
+    <div className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(0,0,0,0.25)]">
+      {form.highlight ? (
+        <div className="bg-[#fdbf3e] px-5 py-3 text-center">
+          <p className="text-sm font-extrabold uppercase tracking-wide text-blue sm:text-[15px]">
+            {form.highlight}
+          </p>
+        </div>
+      ) : null}
 
-      {submitted ? (
-        <p className="mt-8 rounded-lg bg-greylight px-4 py-6 text-center text-sm font-medium text-blue">
-          Thank you! We&apos;ll get back to you shortly.
-        </p>
-      ) : (
-        <form onSubmit={handleSubmit} className="mt-6 space-y-3.5">
-          <label className="relative block">
-            <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-              {fieldIcons.name}
-            </span>
-            <input
-              type="text"
-              name="name"
-              required
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Full Name"
-              className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-            />
-          </label>
+      <div className="p-6 sm:p-7">
+        <h2 className="text-2xl font-bold text-blue">{form.title}</h2>
+        <span className="mt-2 block h-0.5 w-12 bg-teal" aria-hidden="true" />
+        <p className="mt-3 text-sm text-blue/65">{form.description}</p>
 
-          <label className="relative block">
-            <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-              {fieldIcons.phone}
-            </span>
-            <input
-              type="tel"
-              name="phone"
-              required
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Phone Number"
-              className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-            />
-          </label>
+        {submitted ? (
+          <p className="mt-8 rounded-lg bg-greylight px-4 py-6 text-center text-sm font-medium text-blue">
+            Thank you! We&apos;ll get back to you shortly.
+          </p>
+        ) : (
+          <form onSubmit={handleSubmit} className="mt-6 space-y-3.5">
+            <label className="relative block">
+              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                {fieldIcons.name}
+              </span>
+              <input
+                type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Full Name"
+                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+              />
+            </label>
 
-          <label className="relative block">
-            <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-              {fieldIcons.email}
-            </span>
-            <input
-              type="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Email Address"
-              className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-            />
-          </label>
+            <label className="relative block">
+              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                {fieldIcons.phone}
+              </span>
+              <input
+                type="tel"
+                name="phone"
+                required
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Phone Number"
+                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+              />
+            </label>
 
-          <label className="relative block">
-            <select
-              name="service"
-              required
-              value={formData.service}
-              onChange={handleChange}
-              className="w-full appearance-none rounded-lg border border-grey bg-white py-3 pr-10 pl-3 text-sm text-blue outline-none transition-colors focus:border-teal"
-            >
-              <option value="" disabled>
-                Service Interested In
-              </option>
-              {form.services.map((service) => (
-                <option key={service} value={service}>
-                  {service}
+            <label className="relative block">
+              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                {fieldIcons.email}
+              </span>
+              <input
+                type="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email Address"
+                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+              />
+            </label>
+
+            <label className="relative block">
+              <select
+                name="service"
+                required
+                value={formData.service}
+                onChange={handleChange}
+                className="w-full appearance-none rounded-lg border border-grey bg-white py-3 pr-10 pl-3 text-sm text-blue outline-none transition-colors focus:border-teal"
+              >
+                <option value="" disabled>
+                  Service Interested In
                 </option>
-              ))}
-            </select>
-            <span
-              className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-blue/45"
-              aria-hidden="true"
-            >
-              ▾
-            </span>
-          </label>
+                {form.services.map((service) => (
+                  <option key={service} value={service}>
+                    {service}
+                  </option>
+                ))}
+              </select>
+              <span
+                className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-blue/45"
+                aria-hidden="true"
+              >
+                ▾
+              </span>
+            </label>
 
-          <button
-            type="submit"
-            className="mt-1 flex w-full items-center justify-center gap-2 rounded bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
-          >
-            {form.buttonText}
-            <span aria-hidden="true">→</span>
-          </button>
-        </form>
-      )}
+            <button
+              type="submit"
+              className="mt-1 flex w-full items-center justify-center gap-2 rounded bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
+            >
+              {form.buttonText}
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+        )}
+      </div>
     </div>
   );
 }
@@ -173,7 +183,15 @@ function FinancingContent({ financing }) {
         {financing.eyebrow}
       </p>
       <h1 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-        {financing.title}
+        {financing.titleHighlightValue ? (
+          <>
+            {financing.titleBefore}
+            <span className="text-[#fdbf3e]">{financing.titleHighlightValue}</span>
+            {financing.titleAfter}
+          </>
+        ) : (
+          financing.title
+        )}
       </h1>
       <span className="mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
 

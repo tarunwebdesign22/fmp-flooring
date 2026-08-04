@@ -132,7 +132,7 @@ export default function Footer() {
           </p>
           <div className="mt-6 flex items-center gap-3">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/people/FMP-Flooring/100084480100386/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -141,7 +141,7 @@ export default function Footer() {
               <FacebookIcon />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/fmpflooring/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -150,7 +150,7 @@ export default function Footer() {
               <InstagramIcon />
             </a>
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/@furnishmyplace4954"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
@@ -269,7 +269,21 @@ export default function Footer() {
 
       <div className="border-t border-[#fdbf3e]">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-sm text-white/85 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
-          <p>Copyright © {year} FMP Flooring LLC, All rights reserved.</p>
+          <p>
+            Copyright © {year} FMP Flooring LLC, All rights reserved.{" "}
+            <span className="text-white/50" aria-hidden="true">
+              |
+            </span>{" "}
+            Developed by{" "}
+            <a
+              href="https://tech2globe.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-[#fdbf3e]"
+            >
+              Tech2Globe
+            </a>
+          </p>
           <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <Link href="/terms-and-conditions" className="transition-colors hover:text-[#fdbf3e]">
               Terms & Conditions
