@@ -375,7 +375,7 @@ const seniorDiscountContent = [
     description: "Save an additional 10%",
     buttonText: "Free In-Home Estimate",
     buttonHref: "/estimate",
-    image: "/images/103.webp",
+    image: "/images/senior-citizen.avif",
     imageAlt: "Senior couple reviewing flooring options at home",
   },
 ];
@@ -388,7 +388,7 @@ const healthcareDiscountContent = [
     description: "Save an additional 10%",
     buttonText: "Free In-Home Estimate",
     buttonHref: "/estimate",
-    image: "/images/105.webp",
+    image: "/images/heathcare.jpg",
     imageAlt: "Healthcare worker smiling outdoors",
   },
 ];
@@ -401,7 +401,7 @@ const militaryDiscountContent = [
     description: "Save an additional 10%",
     buttonText: "Free In-Home Estimate",
     buttonHref: "/estimate",
-    image: "/images/106.webp",
+    image: "/images/miltary.webp",
     imageAlt: "Thank you for your service chalkboard with American flag",
   },
 ];
@@ -542,14 +542,16 @@ export default function LaminatePage() {
       <FinanceBannerSection content={financeBannerContent} />
       <ServiceBenefitsSection content={benefitsContent} />
       <ServiceHighlightsStrip content={highlightsContent} />
+      <SeniorDiscountSection content={seniorDiscountContent} />
       <ServiceTypesSection content={typesContent} />
       <ServiceTipsSection content={tipsContent} />
       <ServiceApplicationsSection content={applicationsContent} />
+      <SeniorDiscountSection content={healthcareDiscountContent} />
       <ServiceCompareSection content={compareContent} />
       <ServiceInstallSection content={installContent} />
       <CommercialProjectsSection content={commercialProjectsContent} />
-      <SeniorDiscountSection content={seniorDiscountContent} />
-      <SeniorDiscountSection content={healthcareDiscountContent} />
+      
+      
       <SeniorDiscountSection content={militaryDiscountContent} />
       <ImageGallerySection content={galleryContent} />
       <TestimonialsSection content={testimonialsContent} />

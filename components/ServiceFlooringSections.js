@@ -144,9 +144,20 @@ export function ServiceBenefitsSection({ content }) {
   const section = content?.[0];
   if (!section) return null;
 
+  const backgroundImage = section.backgroundImage || "/images/comparision-bg.jpg";
+
   return (
-    <section className="bg-greylight py-14 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+    <section className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-20">
+      <Image
+        src={backgroundImage}
+        alt=""
+        fill
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-white/85" aria-hidden="true" />
+
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-10 text-center sm:mb-12">
           {section.eyebrow ? (
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">

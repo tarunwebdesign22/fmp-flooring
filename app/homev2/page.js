@@ -19,6 +19,7 @@ import MeetTheFounderSection from "@/components/homev2/MeetTheFounderSection";
 import ProcessSection from "@/components/homev2/ProcessSection";
 import TestimonialsSection from "@/components/homev2/TestimonialsSection";
 import WhyChooseSection from "@/components/homev2/WhyChooseSection";
+import SeniorDiscountSection from "@/components/SeniorDiscountSection";
 
 const heroContent = [
   {
@@ -1009,6 +1010,44 @@ const educationalVideosContent = [
   },
 ];
 
+const seniorDiscountContent = [
+  {
+    highlight: "Save 10%",
+    title: "Senior Citizen Discounts",
+    description: "Save an additional 10%",
+    buttonText: "Free In-Home Estimate",
+    buttonHref: "/estimate",
+    image: "/images/senior-citizen.avif",
+    imageAlt: "Senior couple reviewing flooring options at home",
+  },
+];
+
+const healthcareDiscountContent = [
+  {
+    theme: "yellow",
+    highlight: "Save 10%",
+    title: "Healthcare Workers",
+    description: "Save an additional 10%",
+    buttonText: "Free In-Home Estimate",
+    buttonHref: "/estimate",
+    image: "/images/heathcare.jpg",
+    imageAlt: "Healthcare worker smiling outdoors",
+  },
+];
+
+const militaryDiscountContent = [
+  {
+    theme: "teal",
+    highlight: "Save 10%",
+    title: "Military & Veterans",
+    description: "Save an additional 10%",
+    buttonText: "Free In-Home Estimate",
+    buttonHref: "/estimate",
+    image: "/images/miltary.webp",
+    imageAlt: "Thank you for your service chalkboard with American flag",
+  },
+];
+
 export default function HomeV2() {
   return (
     <main className="flex flex-1 flex-col">
@@ -1025,12 +1064,18 @@ export default function HomeV2() {
       <FacebookFeedSection content={facebookFeedContent} />
       <BeforeAfterSection content={beforeAfterContent} />
       <MeetOurTeamSection content={teamContent} />
+      <SeniorDiscountSection content={seniorDiscountContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />
       <WhyChooseSection content={whyChooseContent} />
+      
       <ComparisonSection content={whyBuyDirectContent} />
+      
+      <SeniorDiscountSection content={healthcareDiscountContent} />
+      
       <LatestProjectsSection content={latestProjectsContent} />
       <EducationalResourcesSection content={educationalResourcesContent} />
       <EducationalVideosSection content={educationalVideosContent} />
+      <SeniorDiscountSection content={militaryDiscountContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />

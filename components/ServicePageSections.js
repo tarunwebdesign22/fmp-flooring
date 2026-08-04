@@ -104,7 +104,7 @@ export function ServiceApplicationsSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="bg-greylight py-14 sm:py-16 lg:py-20">
+    <section className="bg-[#fff6df] py-14 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-10 text-center sm:mb-12">
           {section.eyebrow ? (
