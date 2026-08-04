@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 function PlayIcon() {
@@ -15,6 +16,14 @@ function CloseIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
       <path d="M6 6l12 12M18 6 6 18" />
+    </svg>
+  );
+}
+
+function ArrowIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+      <path d="M5 12h14M13 6l6 6-6 6" />
     </svg>
   );
 }
@@ -140,6 +149,20 @@ export default function EducationalVideosSection({ content }) {
             </li>
           ))}
         </ul>
+
+        {section.buttonText && section.buttonHref ? (
+          <div className="mt-10 text-center">
+            <Link
+              href={section.buttonHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded border border-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
+            >
+              {section.buttonText}
+              <ArrowIcon />
+            </Link>
+          </div>
+        ) : null}
       </div>
 
       <YouTubeModal video={activeVideo} onClose={() => setActiveVideo(null)} />

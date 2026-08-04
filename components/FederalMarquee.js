@@ -17,7 +17,7 @@ function MarqueeTrack({ items, hidden = false }) {
     >
       {items.map((item, index) => (
         <span key={`${item}-${index}`} className="flex items-center">
-          <span className="whitespace-nowrap text-[17px] font-extrabold uppercase tracking-[0.08em] text-blue">
+          <span className="whitespace-nowrap text-[13px] font-extrabold uppercase tracking-[0.08em] text-blue sm:text-[14px] md:text-[15px]">
             {item}
           </span>
           <MarqueeSeparator />
@@ -34,7 +34,7 @@ export default function FederalMarquee({ items = DEFAULT_ITEMS }) {
 
   return (
     <div
-      className="overflow-hidden bg-[#fdbf3e] py-3.5 sm:py-4"
+      className="overflow-hidden bg-[#fdbf3e] py-2 sm:py-2.5"
       aria-label={items.join(". ")}
     >
       <div className="federal-marquee flex w-max">

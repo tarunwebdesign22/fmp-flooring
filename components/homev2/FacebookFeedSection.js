@@ -7,11 +7,21 @@ const FACEBOOK_PAGE_URL =
   "https://www.facebook.com/people/FMP-Flooring/100084480100386/";
 const FACEBOOK_EMBED_PAGE_URL =
   "https://www.facebook.com/profile.php?id=100084480100386";
+const INSTAGRAM_URL = "https://www.instagram.com/fmpflooring/";
+const INSTAGRAM_EMBED_URL = "https://www.instagram.com/fmpflooring/embed";
 
 function FacebookIcon() {
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M14 8h3V5h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z" />
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm11 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
     </svg>
   );
 }
@@ -28,6 +38,18 @@ function buildPageEmbedSrc(pageUrl, width) {
     show_facepile: "true",
   });
   return `https://www.facebook.com/plugins/page.php?${params.toString()}`;
+}
+
+function SocialCard({ title, children, action }) {
+  return (
+    <div className="flex h-full flex-col">
+      <h3 className="mb-4 text-center text-lg font-bold text-blue">{title}</h3>
+      <div className="flex-1 overflow-hidden rounded-[18px] bg-white p-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] sm:p-3">
+        {children}
+      </div>
+      {action ? <div className="mt-6 flex justify-center">{action}</div> : null}
+    </div>
+  );
 }
 
 export default function FacebookFeedSection({ content }) {
@@ -54,6 +76,8 @@ export default function FacebookFeedSection({ content }) {
 
   const pageUrl = section.pageUrl || FACEBOOK_PAGE_URL;
   const embedPageUrl = section.embedPageUrl || FACEBOOK_EMBED_PAGE_URL;
+  const instagramUrl = section.instagramUrl || INSTAGRAM_URL;
+  const instagramEmbedUrl = section.instagramEmbedUrl || INSTAGRAM_EMBED_URL;
   const pageEmbedSrc = buildPageEmbedSrc(embedPageUrl, pageWidth);
 
   return (
@@ -76,38 +100,66 @@ export default function FacebookFeedSection({ content }) {
           ) : null}
         </div>
 
-        <div className="mx-auto max-w-[520px]">
-          <div
-            ref={pageWrapRef}
-            className="overflow-hidden rounded-[18px] bg-white p-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] sm:p-3"
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-8">
+          <SocialCard
+            title="Facebook"
+            action={
+              <Link
+                href={pageUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded border border-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
+              >
+                <FacebookIcon />
+                {section.buttonText || "Visit Our Facebook Page"}
+                <span aria-hidden="true">→</span>
+              </Link>
+            }
+          >
+            <div ref={pageWrapRef}>
+              <iframe
+                key={pageEmbedSrc}
+                title="FMP Flooring Facebook timeline"
+                src={pageEmbedSrc}
+                width={pageWidth}
+                height={720}
+                style={{ border: "none", overflow: "hidden", maxWidth: "100%" }}
+                scrolling="no"
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                className="mx-auto block min-h-[720px]"
+              />
+            </div>
+          </SocialCard>
+
+          <SocialCard
+            title="Instagram"
+            action={
+              <Link
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded border border-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
+              >
+                <InstagramIcon />
+                {section.instagramButtonText || "Visit Our Instagram"}
+                <span aria-hidden="true">→</span>
+              </Link>
+            }
           >
             <iframe
-              key={pageEmbedSrc}
-              title="FMP Flooring Facebook timeline"
-              src={pageEmbedSrc}
-              width={pageWidth}
+              title="FMP Flooring Instagram"
+              src={instagramEmbedUrl}
+              width="100%"
               height={720}
               style={{ border: "none", overflow: "hidden", maxWidth: "100%" }}
               scrolling="no"
               frameBorder="0"
-              allowFullScreen
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              className="mx-auto block min-h-[720px]"
+              allow="clipboard-write; encrypted-media; picture-in-picture; web-share"
+              className="mx-auto block min-h-[720px] w-full"
             />
-          </div>
-
-          <div className="mt-8 flex justify-center">
-            <Link
-              href={pageUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded border border-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
-            >
-              <FacebookIcon />
-              {section.buttonText || "Visit Our Facebook Page"}
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
+          </SocialCard>
         </div>
       </div>
     </section>

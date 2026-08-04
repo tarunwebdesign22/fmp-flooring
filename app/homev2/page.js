@@ -9,6 +9,7 @@ import FacebookFeedSection from "@/components/homev2/FacebookFeedSection";
 import FaqSection from "@/components/homev2/FaqSection";
 import FeaturesSection from "@/components/homev2/FeaturesSection";
 import FederalContractorSection from "@/components/homev2/FederalContractorSection";
+import HowWeManageProjectsSection from "@/components/homev2/HowWeManageProjectsSection";
 import FederalMarquee from "@/components/homev2/FederalMarquee";
 import GoogleReviewsSection from "@/components/homev2/GoogleReviewsSection";
 import HeroSection from "@/components/homev2/HeroSection";
@@ -43,7 +44,7 @@ const heroContent = [
       {
         id: "luxury-vinyl-plank",
         type: "service",
-        backgroundImage: "/images/features/1.jpg",
+        backgroundImage: "/images/lvp-banner.webp",
         icon: "plank",
         eyebrow: "Featured Service",
         title: "Luxury Vinyl Plank",
@@ -61,7 +62,7 @@ const heroContent = [
       {
         id: "broadloom-carpet",
         type: "service",
-        backgroundImage: "/images/features/6.jpg",
+        backgroundImage: "/images/bc-banner.webp",
         icon: "carpet",
         eyebrow: "Featured Service",
         title: "Broadloom Carpet",
@@ -79,7 +80,7 @@ const heroContent = [
       {
         id: "hardwood",
         type: "service",
-        backgroundImage: "/images/features/Renwick Oak01.jpg",
+        backgroundImage: "/images/hardwood-banner.webp",
         icon: "hardwood",
         eyebrow: "Featured Service",
         title: "Hardwood Flooring",
@@ -136,46 +137,75 @@ const ctaContent = [
 
 const featuresContent = [
   {
-    eyebrow: "Our Work Process",
+    eyebrow: "Our Work USP",
     title: "Service Highlights",
-    subtitle:
-      "From preparation to installation, our experienced team handles every detail to deliver a seamless flooring experience.",
     cards: [
       {
+        icon: "furniture",
+        title: "We move furniture before installation.",
+      },
+      {
+        icon: "preparation",
+        title: "We prepare the floor before installation.",
+      },
+      {
+        icon: "challenges",
+        title: "We handle all flooring preparation and installation challenges.",
+      },
+      {
+        icon: "hassleFree",
+        title: "We ensure a hassle-free installation process.",
+      },
+    ],
+  },
+];
+
+const howWeManageProjectsContent = [
+  {
+    eyebrow: "Project Management",
+    title: "How We Manage Every Project",
+    description:
+      "A clear, step-by-step process so every flooring project stays organized, efficient, and stress-free from start to finish.",
+    steps: [
+      {
         step: "01",
-        title: "Furniture Moving Included",
+        title: "Moving Furniture",
         description:
-          "We carefully move your furniture before installation begins, saving you time and effort.",
+          "We carefully move and protect your furniture so installation can begin with a clear, ready workspace.",
         image: "/images/process-feature/01-furniture-moving.jpg",
-        imageAlt:
-          "Professional crew wrapping and moving furniture before flooring installation",
+        imageAlt: "Crew moving and protecting furniture before flooring work",
       },
       {
         step: "02",
-        title: "Expert Floor Preparation",
+        title: "Floor Preparation",
         description:
-          "We prepare your subfloor to create the ideal foundation for long-lasting, beautiful flooring.",
+          "Subfloors are inspected, leveled, and prepared to create a solid foundation for lasting results.",
         image: "/images/process-feature/02-floor-preparation.jpg",
-        imageAlt:
-          "Installer checking floor level and moisture with professional tools",
+        imageAlt: "Technician preparing and leveling the subfloor",
       },
       {
         step: "03",
-        title: "Complete Installation Solutions",
+        title: "Flooring Installation",
         description:
-          "From floor preparation to overcoming installation challenges, our experienced team handles it all.",
+          "Our installers lay your flooring with precision for a clean, professional finish throughout the space.",
         image: "/images/process-feature/03-installation.jpg",
-        imageAlt:
-          "Professional installer fitting luxury vinyl plank flooring into place",
+        imageAlt: "Professional installing new flooring planks",
       },
       {
         step: "04",
-        title: "Hassle-Free Experience",
+        title: "Bathroom & Toilet Removal/Reinstallation",
         description:
-          "We manage every step of the installation process, ensuring a smooth, efficient, and stress-free experience.",
-        image: "/images/process-feature/04-final-walkthrough.jpg",
-        imageAlt:
-          "Final walkthrough with homeowner after newly installed flooring",
+          "When required, we remove and reinstall toilets and bathroom fixtures for a seamless flooring transition.",
+        image: "/images/process-feature/how-to-replace-bathroom-tiles.jpg",
+        imageAlt: "Bathroom tile and fixture work for flooring installation",
+      },
+      {
+        step: "05",
+        title: "Trim Installation & Finishing",
+        description:
+          "Baseboards, trim, and finishing details are installed for a polished, complete look.",
+        image: "/images/process-feature/06-trim-finishing.jpg",
+        imageAlt: "Finished flooring with trim and final walkthrough",
       },
     ],
   },
@@ -731,12 +761,15 @@ const googleReviewsContent = [
 const facebookFeedContent = [
   {
     eyebrow: "Social Updates",
-    title: "Follow Us on Facebook",
+    title: "Follow Us on Social",
     description:
-      "See the latest project photos, flooring tips, and community updates from FMP Flooring.",
+      "See the latest project photos, flooring tips, and community updates from FMP Flooring on Facebook and Instagram.",
     pageUrl: "https://www.facebook.com/people/FMP-Flooring/100084480100386/",
     embedPageUrl: "https://www.facebook.com/profile.php?id=100084480100386",
     buttonText: "Visit Our Facebook Page",
+    instagramUrl: "https://www.instagram.com/fmpflooring/",
+    instagramEmbedUrl: "https://www.instagram.com/fmpflooring/embed",
+    instagramButtonText: "Visit Our Instagram",
   },
 ];
 
@@ -913,6 +946,8 @@ const educationalVideosContent = [
     title: "Educational Videos",
     description:
       "Short videos covering flooring tips, product education, and installation insights to help you make confident decisions.",
+    buttonText: "View Our Channel",
+    buttonHref: "https://www.youtube.com/@furnishmyplace4954",
     videos: [
       {
         title: "Showroom tour 1",
@@ -983,6 +1018,7 @@ export default function HomeV2() {
       <ProcessSection content={processContent} />
       <MeetTheFounderSection content={founderContent} />
       <FeaturesSection content={featuresContent} />
+      <HowWeManageProjectsSection content={howWeManageProjectsContent} />
       <ExploreVideosSection content={videosContent} />
       <GoogleReviewsSection content={googleReviewsContent} />
       <BrandsSection content={brandsContent} />

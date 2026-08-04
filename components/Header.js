@@ -220,7 +220,7 @@ export default function Header() {
 
           {/* Desktop main menu */}
           <nav aria-label="Primary" className="hidden min-w-0 flex-1 xl:block">
-            <ul className="flex flex-wrap items-center justify-center gap-x-[13px] gap-y-2 2xl:gap-x-[17px]">
+            <ul className="flex flex-wrap items-center justify-center gap-x-[18px] gap-y-2 2xl:gap-x-[22px]">
               {primaryLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -240,9 +240,15 @@ export default function Header() {
           <div className="ml-auto flex items-center gap-3">
             <Link
               href="#"
-              className="hidden rounded-sm border border-teal px-4 py-2.5 text-sm font-bold text-teal transition-colors hover:bg-teal hover:text-white sm:inline-flex"
+              className="hidden items-center gap-1.5 rounded-sm border border-teal px-4 py-1.5 text-sm font-bold leading-tight text-teal transition-colors hover:bg-teal hover:text-white sm:inline-flex"
             >
-              In Stock Specials
+              <span className="flex flex-col items-center text-center">
+                <span>In Stock</span>
+                <span>Specials</span>
+              </span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
             </Link>
 
             <button
@@ -314,9 +320,15 @@ export default function Header() {
           <Link
             href="#"
             onClick={() => setMenuOpen(false)}
-            className="mt-5 flex w-full items-center justify-center rounded-sm border border-teal px-4 py-3 text-center text-sm font-bold text-teal transition-colors hover:bg-teal hover:text-white sm:hidden"
+            className="mt-5 flex w-full items-center justify-center gap-1.5 rounded-sm border border-teal px-4 py-2.5 text-sm font-bold leading-tight text-teal transition-colors hover:bg-teal hover:text-white sm:hidden"
           >
-            In Stock Specials
+            <span className="flex flex-col items-center text-center">
+              <span>In Stock</span>
+              <span>Specials</span>
+            </span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
           </Link>
         </div>
       </div>

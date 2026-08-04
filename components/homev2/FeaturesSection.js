@@ -1,53 +1,57 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-function FeatureCard({ card, index, visible, total }) {
-  const step = card.step || String(index + 1).padStart(2, "0");
+const featureIcons = {
+  furniture: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <path d="M4 10h16v7H4z" />
+      <path d="M6 10V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2" />
+      <path d="M6 17v2M18 17v2" />
+      <path d="M4 13h16" />
+    </svg>
+  ),
+  preparation: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <path d="M3 20h18" />
+      <path d="M5 20V11l7-5 7 5v9" />
+      <path d="M9 20v-5h6v5" />
+      <path d="M10 8.5 12 7l2 1.5" />
+    </svg>
+  ),
+  challenges: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6l-2.5 2.5-2.5-2.5 2.5-2.5z" />
+    </svg>
+  ),
+  hassleFree: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <path d="M12 3 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-3z" />
+      <path d="m9 12 2.2 2.2L15.5 10" />
+    </svg>
+  ),
+};
+
+function FeatureCard({ card, index, visible }) {
+  const icon = featureIcons[card.icon] || featureIcons.hassleFree;
 
   return (
     <li
-      className={`group relative flex h-full flex-col overflow-hidden rounded-[18px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_16px_40px_rgba(34,30,83,0.14)] ${
+      className={`group flex h-full flex-col items-center rounded-[18px] border border-[#fdbf3e]/35 bg-[#fdbf3e]/10 px-6 py-8 text-center shadow-[0_8px_28px_rgba(34,30,83,0.06)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-teal/40 hover:shadow-[0_14px_36px_rgba(34,30,83,0.12)] sm:px-7 sm:py-9 ${
         visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
       style={{ transitionDelay: visible ? `${index * 90}ms` : "0ms" }}
     >
-      {index < total - 1 ? (
-        <span
-          className="pointer-events-none absolute top-[4.75rem] right-[-1rem] z-20 hidden h-0.5 w-8 bg-teal/35 lg:block"
-          aria-hidden="true"
-        />
-      ) : null}
-
-      <div className="relative aspect-video overflow-hidden bg-greylight">
-        <Image
-          src={card.image}
-          alt={card.imageAlt || card.title}
-          fill
-          className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-        />
-        <span className="absolute top-3 left-3 z-10 inline-flex h-10 min-w-10 items-center justify-center rounded-full bg-teal px-2.5 text-sm font-bold text-white shadow-md">
-          {step}
-        </span>
-      </div>
-
-      <div className="flex flex-1 flex-col px-6 py-6 sm:px-7 sm:py-7">
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-teal">
-          Step {step}
-        </p>
-        <h3 className="mt-2 text-lg font-bold leading-snug text-blue sm:text-xl">
-          {card.title}
-        </h3>
-        <span
-          className="mt-3 mb-3 block h-0.5 w-10 bg-teal transition-colors duration-300 group-hover:bg-[#fdbf3e]"
-          aria-hidden="true"
-        />
-        <p className="text-sm leading-6 text-blue/70 sm:text-[15px] sm:leading-7">
-          {card.description}
-        </p>
-      </div>
+      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+        {icon}
+      </span>
+      <span
+        className="mt-5 mb-4 block h-0.5 w-10 bg-teal transition-colors duration-300 group-hover:bg-[#fdbf3e]"
+        aria-hidden="true"
+      />
+      <h3 className="text-base font-bold leading-snug text-blue sm:text-[17px] sm:leading-6">
+        {card.title}
+      </h3>
     </li>
   );
 }
@@ -97,17 +101,16 @@ export default function FeaturesSection({ content }) {
           ) : null}
         </div>
 
-        <ol className="mt-10 grid grid-cols-1 gap-7 sm:mt-12 sm:grid-cols-2 sm:gap-8 lg:mt-14 lg:grid-cols-4 lg:gap-8">
+        <ul className="mt-10 grid grid-cols-1 gap-6 sm:mt-12 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-7">
           {section.cards.map((card, index) => (
             <FeatureCard
               key={card.title}
               card={card}
               index={index}
-              total={section.cards.length}
               visible={visible}
             />
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   );
