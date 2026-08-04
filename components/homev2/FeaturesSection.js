@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const featureIcons = {
@@ -37,19 +38,19 @@ function FeatureCard({ card, index, visible }) {
 
   return (
     <li
-      className={`group flex h-full flex-col items-center rounded-[18px] border border-[#fdbf3e]/35 bg-[#fdbf3e]/10 px-6 py-8 text-center shadow-[0_8px_28px_rgba(34,30,83,0.06)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-teal/40 hover:shadow-[0_14px_36px_rgba(34,30,83,0.12)] sm:px-7 sm:py-9 ${
+      className={`group flex h-full flex-col items-center rounded-[18px] border border-[#fdbf3e]/40 bg-white/10 px-6 py-8 text-center shadow-[0_8px_28px_rgba(0,0,0,0.18)] backdrop-blur-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#fdbf3e] hover:bg-white/15 hover:shadow-[0_14px_36px_rgba(0,0,0,0.25)] sm:px-7 sm:py-9 ${
         visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
       style={{ transitionDelay: visible ? `${index * 90}ms` : "0ms" }}
     >
-      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-teal/10 text-teal transition-colors duration-300 group-hover:bg-teal group-hover:text-white">
+      <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[#fdbf3e]/50 bg-[#fdbf3e]/15 text-[#fdbf3e] transition-colors duration-300 group-hover:bg-[#fdbf3e] group-hover:text-blue">
         {icon}
       </span>
       <span
         className="mt-5 mb-4 block h-0.5 w-10 bg-teal transition-colors duration-300 group-hover:bg-[#fdbf3e]"
         aria-hidden="true"
       />
-      <h3 className="text-base font-bold leading-snug text-blue sm:text-[17px] sm:leading-6">
+      <h3 className="text-base font-bold leading-snug text-white sm:text-[17px] sm:leading-6">
         {card.title}
       </h3>
     </li>
@@ -81,21 +82,39 @@ export default function FeaturesSection({ content }) {
 
   if (!section?.cards?.length) return null;
 
+  const backgroundImage =
+    section.backgroundImage || "/images/comparision-bg.jpg";
+
   return (
-    <section ref={sectionRef} className="bg-white py-14 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+    <section
+      ref={sectionRef}
+      className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-20"
+    >
+      <Image
+        src={backgroundImage}
+        alt=""
+        fill
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-blue/95 via-blue/90 to-blue/85"
+        aria-hidden="true"
+      />
+
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-3xl text-center">
           {section.eyebrow ? (
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
               {section.eyebrow}
             </p>
           ) : null}
-          <h2 className="mt-3 text-3xl font-bold text-blue sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
             {section.title}
           </h2>
           <span className="mx-auto mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
           {section.subtitle ? (
-            <p className="mt-5 text-[15px] leading-7 text-blue/70 sm:text-base">
+            <p className="mt-5 text-[15px] leading-7 text-white/75 sm:text-base">
               {section.subtitle}
             </p>
           ) : null}

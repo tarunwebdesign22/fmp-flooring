@@ -30,6 +30,7 @@ export default function CtaSection({ content }) {
             alt=""
             fill
             priority
+            quality={90}
             className="object-cover object-center"
             sizes="100vw"
           />

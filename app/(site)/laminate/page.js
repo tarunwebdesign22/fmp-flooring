@@ -527,7 +527,7 @@ const ctaContent = [
     phoneHref: "tel:+19802521648",
     buttonText: "Free In-Home Estimate",
     buttonHref: "/estimate",
-    backgroundImage: "/images/cta-bg.jpg",
+    backgroundImage: "/images/Hero-Image.jpg",
   },
 ];
 
