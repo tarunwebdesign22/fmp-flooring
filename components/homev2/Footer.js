@@ -17,6 +17,15 @@ const usefulLinks = [
   { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
+const proSolutionsLinks = [
+  { label: "Residential Home Builders", href: "#" },
+  { label: "Property Management", href: "#" },
+  { label: "Real Estate Agents", href: "#" },
+  { label: "Contractors & Trade Pros", href: "#" },
+  { label: "Commercial Managers", href: "#" },
+  { label: "Flooring & Carpet Outlets", href: "#" },
+];
+
 const certifications = [
   {
     src: "/images/certifications/Made-USA-150x150.webp",
@@ -106,7 +115,7 @@ export default function Footer() {
 
   return (
     <footer className="mt-auto bg-blue text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:px-8 lg:grid-cols-4 lg:gap-8 lg:px-10 lg:py-16">
+      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-14 sm:px-8 lg:grid-cols-4 lg:gap-7 lg:px-10 lg:py-16">
         <div>
           <Link href="/" aria-label="FMP Flooring home" className="inline-block">
             <Image
@@ -153,10 +162,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <SectionHeading>Our Services</SectionHeading>
+          <SectionHeading>Pro Solutions</SectionHeading>
           <ul className="space-y-3">
-            {serviceLinks.map((link) => (
-              <li key={link.href}>
+            {proSolutionsLinks.map((link) => (
+              <li key={link.label}>
                 <Link
                   href={link.href}
                   className="text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
@@ -169,10 +178,26 @@ export default function Footer() {
         </div>
 
         <div className="lg:col-span-2">
-          <div className="grid gap-10 sm:grid-cols-2 sm:gap-8">
+          <div className="grid gap-8 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-6">
+            <div>
+              <SectionHeading>Our Services</SectionHeading>
+              <ul className="space-y-2.5">
+                {serviceLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-[15px] text-white/90 transition-colors hover:text-[#fdbf3e]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <div>
               <SectionHeading>Useful Links</SectionHeading>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {usefulLinks.map((link) => (
                   <li key={link.href}>
                     <Link
@@ -188,7 +213,7 @@ export default function Footer() {
 
             <div>
               <SectionHeading>Contact us</SectionHeading>
-              <ul className="space-y-4">
+              <ul className="space-y-3.5">
                 <li className="flex gap-3">
                   <span className="mt-0.5 shrink-0 text-[#fdbf3e]">
                     <MapPinIcon />

@@ -113,10 +113,10 @@ const heroContent = [
     },
     stats: [
       { value: "1,000+", label: "Happy Customer" },
-      { value: "5", label: "Company Rating" },
+      { text: "Federal & State", label: "Flooring Contractor" },
       { value: "10+", label: "Years Experience" },
       { value: "500+", label: "Projects Completed" },
-      { value: "100%", label: "Satisfaction Focus" },
+      { text: "No Middlemen", label: "Direct Importer & Distributor" },
     ],
   },
 ];

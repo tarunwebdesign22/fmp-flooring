@@ -186,8 +186,9 @@ function useCountUp(target, enabled, duration = 1600) {
   return value;
 }
 
-function HeroStatItem({ value, label, stars, animate, showDivider }) {
-  const { target, suffix, hasComma } = parseStatValue(value);
+function HeroStatItem({ value, label, text, stars, animate, showDivider }) {
+  const hasTextOnly = Boolean(text);
+  const { target, suffix, hasComma } = parseStatValue(value || "0");
   const current = useCountUp(target, animate);
   const display = animate ? formatStatValue(current, hasComma, suffix) : value;
 
@@ -199,13 +200,28 @@ function HeroStatItem({ value, label, stars, animate, showDivider }) {
           : ""
       }`}
     >
-      <p className="text-2xl font-bold tracking-tight text-teal sm:text-3xl lg:text-[2.3rem]">
-        {display}
-      </p>
-      <p className="mt-1.5 text-xs font-bold tracking-wide text-blue sm:text-sm">
-        {label}
-      </p>
-      {stars ? (
+      {hasTextOnly ? (
+        <>
+          <p className="text-base font-bold leading-tight tracking-wide text-teal sm:text-lg lg:text-xl">
+            {text}
+          </p>
+          {label ? (
+            <p className="mt-1.5 text-xs font-bold tracking-wide text-blue sm:text-sm">
+              {label}
+            </p>
+          ) : null}
+        </>
+      ) : (
+        <>
+          <p className="text-2xl font-bold tracking-tight text-teal sm:text-3xl lg:text-[2.3rem]">
+            {display}
+          </p>
+          <p className="mt-1.5 text-xs font-bold tracking-wide text-blue sm:text-sm">
+            {label}
+          </p>
+        </>
+      )}
+      {stars && !hasTextOnly ? (
         <span
           className="mt-1.5 inline-flex items-center gap-0.5 text-[#fdbf3e]"
           aria-label={`${stars} out of 5 stars`}
@@ -252,9 +268,10 @@ function HeroStatsStrip({ items }) {
         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
           {items.map((item, index) => (
             <HeroStatItem
-              key={item.label}
+              key={item.label || item.text || `${index}`}
               value={item.value}
               label={item.label}
+              text={item.text}
               stars={item.stars}
               animate={inView}
               showDivider={index > 0}

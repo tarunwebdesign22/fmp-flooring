@@ -280,6 +280,47 @@ function BreadcrumbStrip({ breadcrumbs }) {
   );
 }
 
+function SliderControls({ slides, activeSlide, setActiveSlide }) {
+  if (!slides?.length || slides.length < 2) return null;
+
+  return (
+    <div className="mt-6 flex items-center gap-3">
+      <button
+        type="button"
+        onClick={() =>
+          setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length)
+        }
+        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-black/35 text-white transition-colors hover:bg-black/60"
+        aria-label="Previous slide"
+      >
+        ‹
+      </button>
+      <div className="flex items-center gap-2">
+        {slides.map((slide, index) => (
+          <button
+            key={slide.id || `slide-${index}`}
+            type="button"
+            onClick={() => setActiveSlide(index)}
+            className={`h-2.5 rounded-full transition-all ${
+              index === activeSlide ? "w-8 bg-[#fdbf3e]" : "w-2.5 bg-white/55"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+            aria-current={index === activeSlide ? "true" : undefined}
+          />
+        ))}
+      </div>
+      <button
+        type="button"
+        onClick={() => setActiveSlide((prev) => (prev + 1) % slides.length)}
+        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-black/35 text-white transition-colors hover:bg-black/60"
+        aria-label="Next slide"
+      >
+        ›
+      </button>
+    </div>
+  );
+}
+
 export default function ServicePageHero({ content }) {
   const section = content?.[0];
   const slides = section?.slides || [];
@@ -331,17 +372,45 @@ export default function ServicePageHero({ content }) {
                 <EstimateForm form={form} />
               </div>
               {hasFinancing ? (
-                <FinancingContent financing={current.financing} />
+                <div className="min-w-0">
+                  <FinancingContent financing={current.financing} />
+                  <SliderControls
+                    slides={slides}
+                    activeSlide={activeSlide}
+                    setActiveSlide={setActiveSlide}
+                  />
+                </div>
               ) : (
-                <ServiceContent section={current} />
+                <div className="min-w-0">
+                  <ServiceContent section={current} />
+                  <SliderControls
+                    slides={slides}
+                    activeSlide={activeSlide}
+                    setActiveSlide={setActiveSlide}
+                  />
+                </div>
               )}
             </>
           ) : (
             <>
               {hasFinancing ? (
-                <FinancingContent financing={current.financing} />
+                <div className="min-w-0">
+                  <FinancingContent financing={current.financing} />
+                  <SliderControls
+                    slides={slides}
+                    activeSlide={activeSlide}
+                    setActiveSlide={setActiveSlide}
+                  />
+                </div>
               ) : (
-                <ServiceContent section={current} />
+                <div className="min-w-0">
+                  <ServiceContent section={current} />
+                  <SliderControls
+                    slides={slides}
+                    activeSlide={activeSlide}
+                    setActiveSlide={setActiveSlide}
+                  />
+                </div>
               )}
               {hasForm ? (
                 <div className="min-w-0 lg:w-full lg:max-w-md lg:justify-self-end">
@@ -352,42 +421,6 @@ export default function ServicePageHero({ content }) {
           )}
         </div>
 
-        {hasSlides && slides.length > 1 ? (
-          <div className="pointer-events-none absolute inset-x-0 bottom-5 z-20 flex items-center justify-center gap-3">
-            <button
-              type="button"
-              onClick={() =>
-                setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length)
-              }
-              className="pointer-events-auto inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-black/35 text-white transition-colors hover:bg-black/60"
-              aria-label="Previous slide"
-            >
-              ‹
-            </button>
-            <div className="flex items-center gap-2">
-              {slides.map((slide, index) => (
-                <button
-                  key={slide.id || `slide-${index}`}
-                  type="button"
-                  onClick={() => setActiveSlide(index)}
-                  className={`pointer-events-auto h-2.5 rounded-full transition-all ${
-                    index === activeSlide ? "w-8 bg-[#fdbf3e]" : "w-2.5 bg-white/55"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                  aria-current={index === activeSlide ? "true" : undefined}
-                />
-              ))}
-            </div>
-            <button
-              type="button"
-              onClick={() => setActiveSlide((prev) => (prev + 1) % slides.length)}
-              className="pointer-events-auto inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-black/35 text-white transition-colors hover:bg-black/60"
-              aria-label="Next slide"
-            >
-              ›
-            </button>
-          </div>
-        ) : null}
       </section>
     </div>
   );
