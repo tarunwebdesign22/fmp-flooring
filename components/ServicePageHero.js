@@ -282,12 +282,20 @@ function BreadcrumbStrip({ breadcrumbs }) {
 
 export default function ServicePageHero({ content }) {
   const section = content?.[0];
+  const slides = section?.slides || [];
+  const hasSlides = slides.length > 0;
+  const [activeSlide, setActiveSlide] = useState(0);
   if (!section) return null;
 
-  const hasForm = Boolean(section.form);
-  const hasFinancing = Boolean(section.financing);
-  const formOnLeft = hasFinancing || section.formPosition === "left";
+  const current = hasSlides ? slides[activeSlide] : section;
+  const form = current.form || section.form;
+  const hasForm = Boolean(form);
+  const hasFinancing = Boolean(current.financing);
+  const formOnLeft =
+    current.formPosition === "left" || (hasFinancing && current.formPosition !== "right");
   const backgroundImage =
+    current.backgroundImage ||
+    current.financing?.backgroundImage ||
     section.backgroundImage ||
     section.financing?.backgroundImage ||
     "/images/01-1.jpg";
@@ -320,29 +328,66 @@ export default function ServicePageHero({ content }) {
           {hasForm && formOnLeft ? (
             <>
               <div className="min-w-0 lg:w-full lg:max-w-md">
-                <EstimateForm form={section.form} />
+                <EstimateForm form={form} />
               </div>
               {hasFinancing ? (
-                <FinancingContent financing={section.financing} />
+                <FinancingContent financing={current.financing} />
               ) : (
-                <ServiceContent section={section} />
+                <ServiceContent section={current} />
               )}
             </>
           ) : (
             <>
               {hasFinancing ? (
-                <FinancingContent financing={section.financing} />
+                <FinancingContent financing={current.financing} />
               ) : (
-                <ServiceContent section={section} />
+                <ServiceContent section={current} />
               )}
               {hasForm ? (
                 <div className="min-w-0 lg:w-full lg:max-w-md lg:justify-self-end">
-                  <EstimateForm form={section.form} />
+                  <EstimateForm form={form} />
                 </div>
               ) : null}
             </>
           )}
         </div>
+
+        {hasSlides && slides.length > 1 ? (
+          <div className="pointer-events-none absolute inset-x-0 bottom-5 z-20 flex items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={() =>
+                setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length)
+              }
+              className="pointer-events-auto inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-black/35 text-white transition-colors hover:bg-black/60"
+              aria-label="Previous slide"
+            >
+              ‹
+            </button>
+            <div className="flex items-center gap-2">
+              {slides.map((slide, index) => (
+                <button
+                  key={slide.id || `slide-${index}`}
+                  type="button"
+                  onClick={() => setActiveSlide(index)}
+                  className={`pointer-events-auto h-2.5 rounded-full transition-all ${
+                    index === activeSlide ? "w-8 bg-[#fdbf3e]" : "w-2.5 bg-white/55"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                  aria-current={index === activeSlide ? "true" : undefined}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => setActiveSlide((prev) => (prev + 1) % slides.length)}
+              className="pointer-events-auto inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-black/35 text-white transition-colors hover:bg-black/60"
+              aria-label="Next slide"
+            >
+              ›
+            </button>
+          </div>
+        ) : null}
       </section>
     </div>
   );

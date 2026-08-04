@@ -30,21 +30,38 @@ const heroContent = [
       { label: "Home", href: "/" },
       { label: "Laminate Services" },
     ],
-    backgroundImage: "/images/finance-banner.webp",
-    financing: {
-      eyebrow: "Flexible Payment Options",
-      title: "Financing Available",
-      description:
-        "Buy now and pay over time! We offer several different financing programs for your laminate flooring project.",
-      benefits: [
-        { icon: "approvals", title: "Fast Approvals*" },
-        { icon: "noPayments", title: "No Payments*" },
-        { icon: "zeroPercent", title: "0% Financing" },
-      ],
-      buttonText: "Explore Financing Options",
-      buttonHref: "/financing",
-      footnote: "*Subject to credit approval. Terms and conditions apply.",
-    },
+    slides: [
+      {
+        id: "laminate-financing",
+        backgroundImage: "/images/finance-banner.webp",
+        financing: {
+          eyebrow: "Flexible Payment Options",
+          title: "Financing Available",
+          description:
+            "Buy now and pay over time! We offer several different financing programs for your laminate flooring project.",
+          benefits: [
+            { icon: "approvals", title: "Fast Approvals*" },
+            { icon: "noPayments", title: "No Payments*" },
+            { icon: "zeroPercent", title: "0% Financing" },
+          ],
+          buttonText: "Explore Financing Options",
+          buttonHref: "/financing",
+          footnote: "*Subject to credit approval. Terms and conditions apply.",
+        },
+      },
+      {
+        id: "laminate-service",
+        backgroundImage: "/images/laminate-page-banner.webp",
+        financing: {
+          eyebrow: "Laminate Services",
+          title: "We Offer High-Quality Laminate Flooring",
+          description:
+            "Upgrade your space with professional laminate flooring installation designed for busy homes and light commercial spaces.",
+          buttonText: "Get My Free Estimate",
+          buttonHref: "/estimate",
+        },
+      },
+    ],
     form: {
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
