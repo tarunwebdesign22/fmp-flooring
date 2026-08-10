@@ -6,7 +6,7 @@ export function ServiceTypesSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="bg-white py-14 sm:py-16 lg:py-20">
+    <section className="bg-white py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-10 text-center sm:mb-12">
           {section.eyebrow ? (
@@ -53,7 +53,7 @@ export function ServiceTipsSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-20">
+    <section className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-[70px]">
       {section.backgroundImage ? (
         <>
           <Image
@@ -104,7 +104,7 @@ export function ServiceApplicationsSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="bg-[#fff6df] py-14 sm:py-16 lg:py-20">
+    <section className="bg-[#fff1d5] py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-10 text-center sm:mb-12">
           {section.eyebrow ? (
@@ -168,7 +168,7 @@ export function ServiceCompareSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="bg-white py-14 sm:py-16 lg:py-20">
+    <section className="bg-white py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-10 text-center sm:mb-12">
           {section.eyebrow ? (
@@ -215,7 +215,7 @@ export function ServiceCompareSection({ content }) {
                     key={`${row.feature}-${valueIndex}`}
                     className={`flex items-center justify-center border-l border-grey/60 px-6 py-4 text-center text-sm ${
                       valueIndex === 0
-                        ? "bg-[#fdbf3e]/10 font-semibold text-blue"
+                        ? "bg-[#fff1d5] font-semibold text-blue"
                         : "text-blue/70"
                     }`}
                   >
@@ -259,7 +259,7 @@ export function ServiceInstallSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="bg-greylight py-14 sm:py-16 lg:py-20">
+    <section className="bg-greylight py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-2 lg:gap-14 lg:px-10">
         {section.image ? (
           <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_12px_40px_rgba(34,30,83,0.12)] lg:order-1">

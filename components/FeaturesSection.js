@@ -48,7 +48,7 @@ const iconMap = {
 
 export default function FeaturesSection({ title, features }) {
   return (
-    <section className="bg-white py-14 sm:py-16 lg:py-20">
+    <section className="bg-white py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-10 text-center sm:mb-12">
           <h2 className="text-2xl font-bold text-blue sm:text-3xl">{title}</h2>

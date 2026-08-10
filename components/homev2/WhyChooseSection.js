@@ -48,7 +48,7 @@ export default function WhyChooseSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="bg-white py-14 sm:py-16 lg:py-20">
+    <section className="bg-white py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-10 text-center sm:mb-12">
           <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">

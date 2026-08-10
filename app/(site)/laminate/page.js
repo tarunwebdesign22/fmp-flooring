@@ -375,7 +375,7 @@ const seniorDiscountContent = [
     description: "Save an additional 10%",
     buttonText: "Free In-Home Estimate",
     buttonHref: "/estimate",
-    image: "/images/senior-citizen.avif",
+    image: "/images/old-flooring-image.jpg",
     imageAlt: "Senior couple reviewing flooring options at home",
   },
 ];

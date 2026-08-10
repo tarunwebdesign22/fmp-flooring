@@ -4,8 +4,8 @@ import Link from "next/link";
 function PhoneIcon() {
   return (
     <svg
-      width="18"
-      height="18"
+      width="16"
+      height="16"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -29,46 +29,45 @@ export default function CtaSection({ content }) {
             src={item.backgroundImage}
             alt=""
             fill
-            priority
             quality={90}
-            className="object-cover object-center"
+            className="object-cover object-bottom"
             sizes="100vw"
           />
 
           <div
-            className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/25 sm:via-black/80 sm:to-transparent"
+            className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/30 sm:via-black/80 sm:to-black/20"
             aria-hidden="true"
           />
 
-          <div className="relative mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-            <div className="max-w-xl lg:max-w-2xl">
-              <h2 className="text-3xl font-bold uppercase leading-tight tracking-wide text-white sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-6 py-12 sm:px-8 sm:py-16 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 lg:px-10 lg:py-[60px]">
+            <div className="min-w-0 max-w-xl lg:max-w-2xl">
+              <h2 className="text-2xl font-bold uppercase leading-tight tracking-wide text-white sm:text-3xl lg:text-[2.2rem] lg:leading-[1.2]">
                 {item.headlineWhite}{" "}
                 <span className="text-teal">{item.headlineTeal}</span>
               </h2>
 
-              <p className="mt-5 max-w-lg text-base leading-7 text-white/90 sm:text-[17px] sm:leading-8">
+              <p className="mt-4 max-w-lg text-sm leading-6 text-white/90 sm:text-[15px] sm:leading-7">
                 {item.description}
               </p>
+            </div>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-                <a
-                  href={item.phoneHref}
-                  className="inline-flex items-center justify-center gap-2.5 rounded border border-teal px-5 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-teal hover:text-blue"
-                >
-                  <span className="text-teal">
-                    <PhoneIcon />
-                  </span>
-                  {item.phone}
-                </a>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center lg:flex-col lg:items-stretch lg:justify-end">
+              <a
+                href={item.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded border border-teal px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal hover:text-blue lg:min-w-[220px]"
+              >
+                <span className="text-teal">
+                  <PhoneIcon />
+                </span>
+                {item.phone}
+              </a>
 
-                <Link
-                  href={item.buttonHref}
-                  className="inline-flex items-center justify-center rounded bg-teal px-5 py-3 text-[15px] font-bold uppercase tracking-wide text-blue transition-colors hover:bg-white"
-                >
-                  {item.buttonText}
-                </Link>
-              </div>
+              <Link
+                href={item.buttonHref}
+                className="inline-flex items-center justify-center rounded bg-[#fdbf3e] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-blue transition-colors hover:bg-white lg:min-w-[220px] lg:px-8 lg:py-4 lg:text-[15px]"
+              >
+                {item.buttonText}
+              </Link>
             </div>
           </div>
         </section>

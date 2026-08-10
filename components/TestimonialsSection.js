@@ -92,7 +92,7 @@ export default function TestimonialsSection({ content }) {
   };
 
   return (
-    <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24">
+    <section className="relative isolate overflow-hidden py-16 sm:py-[70px] lg:py-24">
       <Image
         src={section.backgroundImage || "/images/testimonial-bg.jpg"}
         alt=""

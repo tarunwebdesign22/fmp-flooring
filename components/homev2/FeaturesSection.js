@@ -88,7 +88,7 @@ export default function FeaturesSection({ content }) {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-20"
+      className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-[70px]"
     >
       <Image
         src={backgroundImage}

@@ -66,9 +66,9 @@ export default function ComparisonSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-20">
+    <section className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-[70px]">
       <Image
-        src="/images/comparision-bg.jpg"
+        src="/images/buy-direct-image0.webp"
         alt=""
         fill
         className="object-cover object-center"
@@ -146,7 +146,7 @@ export default function ComparisonSection({ content }) {
                   <ComparisonCell value={row.traditional} />
                 </div>
                 <div className="bg-[#fdbf3e]/10 px-4 py-4">
-                  <p className="mb-2 text-[11px] font-bold uppercase tracking-wide text-[#fdbf3e]">
+                  <p className="mb-2 text-[11px] font-bold uppercase tracking-wide text-[#2abcaf]">
                     {section.directLabel}
                   </p>
                   <ComparisonCell value={row.direct} highlight />

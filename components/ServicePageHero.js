@@ -378,7 +378,7 @@ export default function ServicePageHero({ content }) {
         />
 
         <div
-          className={`relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20 ${
+          className={`relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-[70px] ${
             hasForm
               ? "grid items-center gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-12"
               : ""
@@ -386,11 +386,11 @@ export default function ServicePageHero({ content }) {
         >
           {hasForm && formOnLeft ? (
             <>
-              <div className="min-w-0 lg:w-full lg:max-w-md">
+              <div className="order-2 min-w-0 lg:order-1 lg:w-full lg:max-w-md">
                 <EstimateForm form={form} />
               </div>
               {hasFinancing ? (
-                <div className="min-w-0">
+                <div className="order-1 min-w-0 lg:order-2">
                   <FinancingContent financing={current.financing} />
                   <SliderControls
                     slides={slides}
@@ -399,7 +399,7 @@ export default function ServicePageHero({ content }) {
                   />
                 </div>
               ) : (
-                <div className="min-w-0">
+                <div className="order-1 min-w-0 lg:order-2">
                   <ServiceContent section={current} />
                   <SliderControls
                     slides={slides}

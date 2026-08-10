@@ -121,7 +121,7 @@ export default function BeforeAfterSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="bg-[color-mix(in_srgb,#fdbf3e_22%,white)] py-14 sm:py-16 lg:py-20">
+    <section className="bg-[color-mix(in_srgb,#fdbf3e_22%,white)] py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:gap-12 lg:px-10">
         <div className="min-w-0">
           <p className="text-sm font-bold uppercase tracking-[0.14em] text-blue">

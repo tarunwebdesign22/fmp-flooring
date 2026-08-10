@@ -63,7 +63,7 @@ export function ServiceIntroSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="bg-white py-14 sm:py-16 lg:py-20">
+    <section className="bg-white py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-2 lg:gap-14 lg:px-10">
         <div>
           {section.eyebrow ? (
@@ -147,7 +147,7 @@ export function ServiceBenefitsSection({ content }) {
   const backgroundImage = section.backgroundImage || "/images/comparision-bg.jpg";
 
   return (
-    <section className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-20">
+    <section className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-[70px]">
       <Image
         src={backgroundImage}
         alt=""

@@ -45,7 +45,7 @@ function MailIcon() {
 export default function ContactUsPage() {
   return (
     <main className="flex flex-1 flex-col bg-white">
-      <section className="relative isolate overflow-hidden bg-blue py-14 text-white sm:py-16 lg:py-20">
+      <section className="relative isolate overflow-hidden bg-blue py-14 text-white sm:py-16 lg:py-[70px]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(42,188,175,0.25),transparent_45%)]" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <p className="text-sm font-bold uppercase tracking-[0.12em] text-[#fdbf3e]">
@@ -71,7 +71,7 @@ export default function ContactUsPage() {
         </div>
       </section>
 
-      <section className="py-14 sm:py-16 lg:py-20">
+      <section className="py-14 sm:py-16 lg:py-[70px]">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 sm:px-8 lg:grid-cols-[1fr_1.2fr] lg:gap-10 lg:px-10">
           <aside className="space-y-5">
             <div className="rounded-2xl border border-grey/70 bg-greylight p-6 shadow-[0_8px_26px_rgba(34,30,83,0.08)]">

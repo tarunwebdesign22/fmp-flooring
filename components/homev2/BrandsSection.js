@@ -41,7 +41,7 @@ export default function BrandsSection({ content }) {
   return (
     <>
       {content.map((section) => (
-        <section key={section.eyebrow} className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-20">
+        <section key={section.eyebrow} className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-[70px]">
           <Image
             src="/images/clientbg.jpg"
             alt=""

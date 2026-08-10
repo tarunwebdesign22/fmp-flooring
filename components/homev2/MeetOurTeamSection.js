@@ -88,7 +88,7 @@ export default function MeetOurTeamSection({ content }) {
   return (
     <>
       {content.map((section) => (
-        <section key={section.eyebrow} className="bg-white py-14 sm:py-16 lg:py-20">
+        <section key={section.eyebrow} className="bg-white py-14 sm:py-16 lg:py-[70px]">
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
             <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
               <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">

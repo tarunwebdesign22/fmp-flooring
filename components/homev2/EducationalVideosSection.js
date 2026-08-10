@@ -125,7 +125,7 @@ export default function EducationalVideosSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="bg-white py-14 sm:py-16 lg:py-20">
+    <section className="bg-white py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-8 text-center sm:mb-10">
           {section.eyebrow ? (

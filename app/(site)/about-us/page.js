@@ -95,7 +95,7 @@ function StarIcon() {
 export default function AboutUsPage() {
   return (
     <main className="flex flex-1 flex-col bg-white">
-      <section className="relative isolate overflow-hidden bg-blue py-14 text-white sm:py-16 lg:py-20">
+      <section className="relative isolate overflow-hidden bg-blue py-14 text-white sm:py-16 lg:py-[70px]">
         <div
           className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(42,188,175,0.22),transparent_46%)]"
           aria-hidden="true"
@@ -123,7 +123,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className="py-14 sm:py-16 lg:py-20">
+      <section className="py-14 sm:py-16 lg:py-[70px]">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-12">
             <div>
@@ -191,7 +191,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <section className="bg-greylight py-14 sm:py-16 lg:py-20">
+      <section className="bg-greylight py-14 sm:py-16 lg:py-[70px]">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="mb-10 text-center sm:mb-12">
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
@@ -219,7 +219,7 @@ export default function AboutUsPage() {
       <BrandsSection content={brandsContent} />
       <MeetOurTeamSection content={teamContent} />
 
-      <section className="py-14 sm:py-16 lg:py-20">
+      <section className="py-14 sm:py-16 lg:py-[70px]">
         <div className="mx-auto max-w-5xl px-6 text-center sm:px-8 lg:px-10">
           <h2 className="text-3xl font-bold text-blue sm:text-4xl">
             Ready to Upgrade Your Flooring?

@@ -332,32 +332,28 @@ const federalContent = [
         icon: "schools",
         description:
           "Durable, safe, and easy-to-maintain flooring for high-traffic educational environments.",
-        image:
-          "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=560&fit=crop",
+        image: "/images/image-school.webp",
       },
       {
         title: "Hospitals",
         icon: "hospitals",
         description:
           "Hygienic, slip-resistant, and compliant flooring solutions for healthcare facilities.",
-        image:
-          "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=560&fit=crop",
+        image: "/images/image-hospital.webp",
       },
       {
         title: "Government",
         icon: "government",
         description:
           "Reliable, specification-ready flooring for government buildings and public agencies.",
-        image:
-          "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=560&fit=crop",
+        image: "/images/image-govt.webp",
       },
       {
         title: "Offices",
         icon: "offices",
         description:
           "Professional, long-lasting flooring systems for municipal and administrative spaces.",
-        image:
-          "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=560&fit=crop",
+        image: "/images/image-office.webp",
       },
     ],
   },

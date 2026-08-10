@@ -17,6 +17,7 @@ import LatestProjectsSection from "@/components/homev2/LatestProjectsSection";
 import MeetOurTeamSection from "@/components/homev2/MeetOurTeamSection";
 import MeetTheFounderSection from "@/components/homev2/MeetTheFounderSection";
 import ProcessSection from "@/components/homev2/ProcessSection";
+import QuoteCtaSection from "@/components/homev2/QuoteCtaSection";
 import TestimonialsSection from "@/components/homev2/TestimonialsSection";
 import WhyChooseSection from "@/components/homev2/WhyChooseSection";
 import SeniorDiscountSection from "@/components/SeniorDiscountSection";
@@ -136,6 +137,17 @@ const ctaContent = [
   },
 ];
 
+const quoteCtaContent = [
+  {
+    eyebrow: "Start Your Project",
+    title: "Ready for Beautiful New Floors?",
+    description:
+      "Tell us about your space and get a free, no-obligation quote from our flooring experts.",
+    buttonText: "Get a Quote",
+    buttonHref: "/estimate",
+  },
+];
+
 const featuresContent = [
   {
     eyebrow: "Our Work USP",
@@ -219,7 +231,7 @@ const founderContent = [
     headline: "Built on Passion. Driven by Purpose",
     headlineAccent: ".",
     description:
-      "FlooriFloor Flooring & Installation Services was founded with a simple belief — every space deserves quality floors and exceptional service. Our mission is to deliver unmatched craftsmanship, honest solutions, and lasting value in every project we take on.",
+      "FMP Flooring & Installation Services was founded with a simple belief — every space deserves quality floors and exceptional service. Our mission is to deliver unmatched craftsmanship, honest solutions, and lasting value in every project we take on.",
     values: [
       {
         icon: "quality",
@@ -291,7 +303,7 @@ const processContent = [
   {
     title: "How We Manage Every Project",
     subtitle: "A simple 5-step process:",
-    backgroundImage: "/images/process-background.webp",
+    backgroundImage: "/images/flooring-process-bg.jpg",
     buttonText: "Start Your Project Today",
     buttonHref: "/estimate",
     steps: [
@@ -393,32 +405,28 @@ const federalContent = [
         icon: "schools",
         description:
           "Durable, safe, and easy-to-maintain flooring for high-traffic educational environments.",
-        image:
-          "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=560&fit=crop",
+        image: "/images/image-school.webp",
       },
       {
         title: "Hospitals",
         icon: "hospitals",
         description:
           "Hygienic, slip-resistant, and compliant flooring solutions for healthcare facilities.",
-        image:
-          "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=560&fit=crop",
+        image: "/images/image-hospital.webp",
       },
       {
         title: "Government",
         icon: "government",
         description:
           "Reliable, specification-ready flooring for government buildings and public agencies.",
-        image:
-          "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=560&fit=crop",
+        image: "/images/image-govt.webp",
       },
       {
         title: "Offices",
         icon: "offices",
         description:
           "Professional, long-lasting flooring systems for municipal and administrative spaces.",
-        image:
-          "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=560&fit=crop",
+        image: "/images/image-office.webp",
       },
     ],
   },
@@ -1018,7 +1026,7 @@ const seniorDiscountContent = [
     description: "Save an additional 10%",
     buttonText: "Free In-Home Estimate",
     buttonHref: "/estimate",
-    image: "/images/senior-citizen.avif",
+    image: "/images/old-flooring-image.jpg",
     imageAlt: "Senior couple reviewing flooring options at home",
   },
 ];
@@ -1056,6 +1064,7 @@ export default function HomeV2() {
       <HeroSection content={heroContent} />
       <FederalContractorSection content={federalContent} />
       <ProcessSection content={processContent} />
+      <QuoteCtaSection content={quoteCtaContent} />
       <MeetTheFounderSection content={founderContent} />
       <FeaturesSection content={featuresContent} />
       <HowWeManageProjectsSection content={howWeManageProjectsContent} />
@@ -1070,6 +1079,7 @@ export default function HomeV2() {
       <WhyChooseSection content={whyChooseContent} />
       
       <ComparisonSection content={whyBuyDirectContent} />
+      <QuoteCtaSection content={quoteCtaContent} />
       
       <SeniorDiscountSection content={healthcareDiscountContent} />
       
@@ -1078,6 +1088,7 @@ export default function HomeV2() {
       <EducationalVideosSection content={educationalVideosContent} />
       <SeniorDiscountSection content={militaryDiscountContent} />
       <TestimonialsSection content={testimonialsContent} />
+      <QuoteCtaSection content={quoteCtaContent} />
       <FaqSection content={faqContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />
       <CtaSection content={ctaContent} />

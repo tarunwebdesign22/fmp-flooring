@@ -240,7 +240,7 @@ export default function Header() {
           <div className="ml-auto flex items-center gap-3">
             <Link
               href="#"
-              className="hidden items-center gap-1.5 rounded-sm border border-teal px-4 py-1.5 text-sm font-bold leading-tight text-teal transition-colors hover:bg-teal hover:text-white sm:inline-flex"
+              className="hidden items-center gap-1.5 rounded-sm bg-teal px-4 py-1.5 text-sm font-bold leading-tight text-white transition-colors hover:bg-blue sm:inline-flex"
             >
               <span className="flex flex-col items-center text-center">
                 <span>In Stock</span>
@@ -320,7 +320,7 @@ export default function Header() {
           <Link
             href="#"
             onClick={() => setMenuOpen(false)}
-            className="mt-5 flex w-full items-center justify-center gap-1.5 rounded-sm border border-teal px-4 py-2.5 text-sm font-bold leading-tight text-teal transition-colors hover:bg-teal hover:text-white sm:hidden"
+            className="mt-5 flex w-full items-center justify-center gap-1.5 rounded-sm bg-teal px-4 py-2.5 text-sm font-bold leading-tight text-white transition-colors hover:bg-blue sm:hidden"
           >
             <span className="flex flex-col items-center text-center">
               <span>In Stock</span>
