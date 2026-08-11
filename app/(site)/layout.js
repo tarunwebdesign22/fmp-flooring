@@ -1,6 +1,6 @@
 import AreasWeServeSection from "@/components/AreasWeServeSection";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Footer from "@/components/homev2/Footer";
+import Header from "@/components/homev2/Header";
 
 export default function SiteLayout({ children }) {
   return (

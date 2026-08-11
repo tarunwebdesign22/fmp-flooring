@@ -68,25 +68,25 @@ export default function ComparisonSection({ content }) {
   return (
     <section className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-[70px]">
       <Image
-        src="/images/buy-direct-image0.webp"
+        src="/images/294-Wood-Flooring.webp"
         alt=""
         fill
         className="object-cover object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-white/85" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-10 text-center sm:mb-12">
           <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
             {section.eyebrow}
           </p>
-          <h2 className="mt-3 text-3xl font-bold text-blue sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
             {section.title}
           </h2>
           <span className="mx-auto mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
           {section.description ? (
-            <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-blue/70">
+            <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-white/80">
               {section.description}
             </p>
           ) : null}
@@ -157,7 +157,7 @@ export default function ComparisonSection({ content }) {
         </ul>
 
         {section.footnote ? (
-          <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-blue/65">
+          <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-white/70">
             {section.footnote}
           </p>
         ) : null}

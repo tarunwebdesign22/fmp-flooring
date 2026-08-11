@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import InitialPageLoader from "@/components/InitialPageLoader";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import "./globals.css";
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
+        <InitialPageLoader />
         {children}
         <ScrollToTopButton />
       </body>

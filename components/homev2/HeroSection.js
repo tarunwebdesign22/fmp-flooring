@@ -544,7 +544,13 @@ export default function HeroSection({ content }) {
           {/* Estimate form — fixed across slides */}
           <div className="min-w-0 lg:w-full lg:max-w-md lg:justify-self-end">
             <div className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(0,0,0,0.35)]">
-              <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
+              {section.form.promoText ? (
+                <p className="bg-[#fdbf3e] px-4 py-3 text-center text-lg font-bold uppercase tracking-wide text-blue">
+                  {section.form.promoText}
+                </p>
+              ) : (
+                <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
+              )}
               <div className="p-6 sm:p-7">
                 <h2 className="text-2xl font-bold text-blue">{section.form.title}</h2>
                 <span className="mt-2 block h-0.5 w-12 bg-teal" aria-hidden="true" />

@@ -36,7 +36,7 @@ function ArrowButton({ direction, onClick }) {
 
 function TeamCard({ member }) {
   return (
-    <article className="mx-1 overflow-hidden rounded-2xl bg-white shadow-[0_6px_24px_rgba(0,0,0,0.08)] sm:mx-2">
+    <article className="mx-1 overflow-hidden rounded-2xl bg-white sm:mx-2">
       <div className="relative aspect-[4/3] bg-greylight">
         <Image
           src={member.image}
@@ -47,7 +47,7 @@ function TeamCard({ member }) {
         />
       </div>
 
-      <div className="flex flex-col items-center px-5 py-6 text-center">
+      <div className="flex flex-col items-center bg-[#fff1d5] px-5 py-6 text-center">
         <h3 className="text-lg font-bold text-blue">{member.name}</h3>
         <p className="mt-1 text-sm font-semibold text-teal">{member.role}</p>
         <span className="mt-3 mb-3 block h-px w-10 bg-teal" aria-hidden="true" />

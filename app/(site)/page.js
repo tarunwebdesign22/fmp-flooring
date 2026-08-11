@@ -1,43 +1,107 @@
-import BeforeAfterSection from "@/components/BeforeAfterSection";
-import BrandsSection from "@/components/BrandsSection";
-import ComparisonSection from "@/components/ComparisonSection";
-import CtaSection from "@/components/CtaSection";
-import EducationalResourcesSection from "@/components/EducationalResourcesSection";
-import ExploreVideosSection from "@/components/ExploreVideosSection";
-import FaqSection from "@/components/FaqSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import FederalContractorSection from "@/components/FederalContractorSection";
-import FederalMarquee from "@/components/FederalMarquee";
-import FinancingSection from "@/components/FinancingSection";
-import GoogleReviewsSection from "@/components/GoogleReviewsSection";
-import HeroSection from "@/components/HeroSection";
-import LatestProjectsSection from "@/components/LatestProjectsSection";
-import MeetOurTeamSection from "@/components/MeetOurTeamSection";
-import MeetTheFounderSection from "@/components/MeetTheFounderSection";
-import ProcessSection from "@/components/ProcessSection";
-import StatsSection from "@/components/StatsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import WhyChooseSection from "@/components/WhyChooseSection";
+import BeforeAfterSection from "@/components/homev2/BeforeAfterSection";
+import BrandsSection from "@/components/homev2/BrandsSection";
+import ComparisonSection from "@/components/homev2/ComparisonSection";
+import CtaSection from "@/components/homev2/CtaSection";
+import EducationalResourcesSection from "@/components/homev2/EducationalResourcesSection";
+import EducationalVideosSection from "@/components/homev2/EducationalVideosSection";
+import ExploreVideosSection from "@/components/homev2/ExploreVideosSection";
+import FacebookFeedSection from "@/components/homev2/FacebookFeedSection";
+import FaqSection from "@/components/homev2/FaqSection";
+import FeaturesSection from "@/components/homev2/FeaturesSection";
+import FederalContractorSection from "@/components/homev2/FederalContractorSection";
+import HowWeManageProjectsSection from "@/components/homev2/HowWeManageProjectsSection";
+import FederalMarquee from "@/components/homev2/FederalMarquee";
+import GoogleReviewsSection from "@/components/homev2/GoogleReviewsSection";
+import HeroSection from "@/components/homev2/HeroSection";
+import LatestProjectsSection from "@/components/homev2/LatestProjectsSection";
+import MeetOurTeamSection from "@/components/homev2/MeetOurTeamSection";
+import MeetTheFounderSection from "@/components/homev2/MeetTheFounderSection";
+import ProcessSection from "@/components/homev2/ProcessSection";
+import QuoteCtaSection from "@/components/homev2/QuoteCtaSection";
+import TestimonialsSection from "@/components/homev2/TestimonialsSection";
+import WhyChooseSection from "@/components/homev2/WhyChooseSection";
+import SeniorDiscountSection from "@/components/SeniorDiscountSection";
 
 const heroContent = [
   {
     topBar: "Federal & State Flooring Contractor",
-    welcome: "Welcome to",
-    headline: "FMP Flooring LLC",
-    backgroundImage: "/images/Hero-Image.jpg",
-    tagline: "Premium flooring solutions for homes and businesses.",
-    trustBadges: [
-      { icon: "experience", label: "25+ Years of Experience" },
-      { icon: "family", label: "Family Owned & Operated" },
-      { icon: "quality", label: "Quality Flooring You Can Trust" },
-    ],
-    ctas: [
-      { label: "Explore Commercial Projects", href: "/commercial" },
-      { label: "Explore Residential Projects", href: "/residential" },
+    slides: [
+      {
+        id: "financing",
+        type: "financing",
+        backgroundImage: "/images/finance-banner.webp",
+        eyebrow: "Flexible Payment Options",
+        title: "Financing Available",
+        description:
+          "Buy now and pay over time! We offer several different financing programs.",
+        benefits: [
+          { icon: "approvals", title: "Fast Approvals*" },
+          { icon: "noPayments", title: "No Payments*" },
+          { icon: "zeroPercent", title: "0% Financing" },
+        ],
+        buttonText: "Explore Financing Options",
+        buttonHref: "/financing",
+        footnote: "*Subject to credit approval. Terms and conditions apply.",
+      },
+      {
+        id: "luxury-vinyl-plank",
+        type: "service",
+        backgroundImage: "/images/lvp-banner.webp",
+        icon: "plank",
+        eyebrow: "Featured Service",
+        title: "Luxury Vinyl Plank",
+        description:
+          "Waterproof, scratch-resistant, and beautifully realistic wood looks — built for busy homes and demanding commercial spaces.",
+        bullets: [
+          "100% waterproof construction",
+          "Pet and kid friendly wear layers",
+          "Warm, quiet underfoot",
+          "Fast professional installation",
+        ],
+        buttonText: "Explore Luxury Vinyl Plank",
+        buttonHref: "/luxury-vinyl-plank",
+      },
+      {
+        id: "broadloom-carpet",
+        type: "service",
+        backgroundImage: "/images/bc-banner.webp",
+        icon: "carpet",
+        eyebrow: "Featured Service",
+        title: "Broadloom Carpet",
+        description:
+          "Soft, sound-absorbing comfort with premium padding included on every carpet installation we complete.",
+        bullets: [
+          '½" premium pad included',
+          "Stain-resistant fiber options",
+          "Residential and commercial grades",
+          "Seamless wall-to-wall coverage",
+        ],
+        buttonText: "Explore Broadloom Carpet",
+        buttonHref: "/broadloom-carpet",
+      },
+      {
+        id: "hardwood",
+        type: "service",
+        backgroundImage: "/images/hardwood-banner.webp",
+        icon: "hardwood",
+        eyebrow: "Featured Service",
+        title: "Hardwood Flooring",
+        description:
+          "Timeless solid and engineered hardwood that adds lasting warmth, character, and resale value to any space.",
+        bullets: [
+          "Solid and engineered options",
+          "Wide plank and classic widths",
+          "Refinishable for decades of use",
+          "Expert subfloor preparation",
+        ],
+        buttonText: "Explore Hardwood",
+        buttonHref: "/hardwood",
+      },
     ],
     form: {
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
+      promoText: "FREE INSTALLATION & 50% OFF",
       buttonText: "Get My Free Estimate",
       services: [
         "Luxury Vinyl Plank",
@@ -50,14 +114,12 @@ const heroContent = [
         "VCT",
       ],
     },
-    products: [
-      { icon: "plank", label: "Luxury Vinyl Plank" },
-      { icon: "carpet", label: "Broadloom Carpet" },
-      { icon: "tile", label: "Carpet Tile" },
-      { icon: "ceramic", label: "Ceramic Flooring" },
-      { icon: "rubber", label: "Rubber" },
-      { icon: "hardwood", label: "Hardwood" },
-      { icon: "vct", label: "VCT" },
+    stats: [
+      { value: "1,000+", label: "Happy Customer" },
+      { text: "Federal & State", label: "Flooring Contractor" },
+      { value: "10+", label: "Years Experience" },
+      { value: "500+", label: "Projects Completed" },
+      { text: "No Middlemen", label: "Direct Importer & Distributor" },
     ],
   },
 ];
@@ -76,62 +138,91 @@ const ctaContent = [
   },
 ];
 
+const quoteCtaContent = [
+  {
+    eyebrow: "Start Your Project",
+    title: "Ready for Beautiful New Floors?",
+    description:
+      "Tell us about your space and get a free, no-obligation quote from our flooring experts.",
+    buttonText: "Get a Quote",
+    buttonHref: "/estimate",
+  },
+];
+
 const featuresContent = [
   {
-    icon: "wind",
-    title: "Dustless Tile Removal",
-    description:
-      "Qualifying purchases include advanced containment systems that minimize dust and disruption.",
-    image: "/images/features/1.jpg",
+    eyebrow: "Our Work USP",
+    title: "Service Highlights",
+    backgroundImage: "/images/294-Wood-Flooring.webp",
+    cards: [
+      {
+        icon: "furniture",
+        title: "We move furniture before installation.",
+      },
+      {
+        icon: "preparation",
+        title: "We prepare the floor before installation.",
+      },
+      {
+        icon: "challenges",
+        title: "We handle all flooring preparation and installation challenges.",
+      },
+      {
+        icon: "hassleFree",
+        title: "We ensure a hassle-free installation process.",
+      },
+    ],
   },
+];
+
+const howWeManageProjectsContent = [
   {
-    icon: "wrench",
-    title: "Professional Floor Prep Included",
+    eyebrow: "Project Management",
+    title: "How We Manage Every Project",
     description:
-      "Subfloors properly prepared to ensure stability, longevity, and flawless finished installations.",
-    image: "/images/features/2.jpg",
-  },
-  {
-    icon: "paintbrush",
-    title: "Painted Wall Base",
-    description:
-      "Clean, finished wall bases professionally painted for a polished, move-in-ready appearance.",
-    image: "/images/features/3.jpg",
-  },
-  {
-    icon: "layers",
-    title: '½" Premium Carpet Pad on All Carpet Installations',
-    description:
-      "Thicker premium padding improves comfort, durability, sound reduction, and carpet performance.",
-    image: "/images/features/6.jpg",
-  },
-  {
-    icon: "wind",
-    title: "Free Air-Duct Cleaning (Included with Qualified Purchases)",
-    description:
-      "Improves indoor air quality while removing construction dust at no cost.",
-    image: "/images/features/04-1.jpg",
-  },
-  {
-    icon: "user",
-    title: "Manager Check-In During Install",
-    description:
-      "On-site management oversight ensures quality standards, timelines, and customer communication.",
-    image: "/images/features/Renwick Oak01.jpg",
-  },
-  {
-    icon: "search",
-    title: "Final Walkthrough with a Flooring Expert",
-    description:
-      "Detailed inspection confirms craftsmanship, addresses questions, and ensures complete satisfaction.",
-    image: "/images/features/67700 - 433RB Bloomington Oak-01.png",
-  },
-  {
-    icon: "shield",
-    title: "Lifetime Labor Guarantee",
-    description:
-      "Installation workmanship guaranteed for life, providing long-term confidence and protection.",
-    image: "/images/features/13.jpg",
+      "A clear, step-by-step process so every flooring project stays organized, efficient, and stress-free from start to finish.",
+    steps: [
+      {
+        step: "01",
+        title: "Moving Furniture",
+        description:
+          "We carefully move and protect your furniture so installation can begin with a clear, ready workspace.",
+        image: "/images/process-feature/01-furniture-moving.jpg",
+        imageAlt: "Crew moving and protecting furniture before flooring work",
+      },
+      {
+        step: "02",
+        title: "Floor Preparation",
+        description:
+          "Subfloors are inspected, leveled, and prepared to create a solid foundation for lasting results.",
+        image: "/images/process-feature/02-floor-preparation.jpg",
+        imageAlt: "Technician preparing and leveling the subfloor",
+      },
+      {
+        step: "03",
+        title: "Flooring Installation",
+        description:
+          "Our installers lay your flooring with precision for a clean, professional finish throughout the space.",
+        image: "/images/process-feature/03-installation.jpg",
+        imageAlt: "Professional installing new flooring planks",
+      },
+      {
+        step: "04",
+        title: "Bathroom & Toilet Removal/Reinstallation",
+        description:
+          "When required, we remove and reinstall toilets and bathroom fixtures for a seamless flooring transition.",
+        image: "/images/process-feature/how-to-replace-bathroom-tiles.jpg",
+        imageAlt: "Bathroom tile and fixture work for flooring installation",
+      },
+      {
+        step: "05",
+        title: "Trim Installation & Finishing",
+        description:
+          "Baseboards, trim, and finishing details are installed for a polished, complete look.",
+        image: "/images/process-feature/06-trim-finishing.jpg",
+        imageAlt: "Finished flooring with trim and final walkthrough",
+      },
+    ],
   },
 ];
 
@@ -141,7 +232,7 @@ const founderContent = [
     headline: "Built on Passion. Driven by Purpose",
     headlineAccent: ".",
     description:
-      "FlooriFloor Flooring & Installation Services was founded with a simple belief — every space deserves quality floors and exceptional service. Our mission is to deliver unmatched craftsmanship, honest solutions, and lasting value in every project we take on.",
+      "FMP Flooring & Installation Services was founded with a simple belief — every space deserves quality floors and exceptional service. Our mission is to deliver unmatched craftsmanship, honest solutions, and lasting value in every project we take on.",
     values: [
       {
         icon: "quality",
@@ -163,24 +254,7 @@ const founderContent = [
     buttonHref: "/about-us",
     videoSrc: "/images/MicrosoftTeams-video (1).webm",
     videoPoster: "/images/founder-portrait.png",
-  },
-];
-
-const financingContent = [
-  {
-    eyebrow: "Flexible Payment Options",
-    title: "Financing Available",
-    description:
-      "Buy now and pay over time! We offer several different financing programs.",
-    backgroundImage: "/images/finance-banner.webp",
-    benefits: [
-      { icon: "approvals", title: "Fast Approvals*" },
-      { icon: "noPayments", title: "No Payments*" },
-      { icon: "zeroPercent", title: "0% Financing" },
-    ],
-    buttonText: "Explore Financing Options",
-    buttonHref: "/financing",
-    footnote: "*Subject to credit approval. Terms and conditions apply.",
+    videoAspectRatio: "576 / 1024",
   },
 ];
 
@@ -230,7 +304,7 @@ const processContent = [
   {
     title: "How We Manage Every Project",
     subtitle: "A simple 5-step process:",
-    backgroundImage: "/images/process-background.webp",
+    backgroundImage: "/images/flooring-process-bg.jpg",
     buttonText: "Start Your Project Today",
     buttonHref: "/estimate",
     steps: [
@@ -389,6 +463,27 @@ const videosContent = [
               "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=450&fit=crop",
             duration: "1:35",
           },
+          {
+            title: "Showroom tour 4",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&h=450&fit=crop",
+            duration: "1:24",
+          },
+          {
+            title: "Showroom tour 5",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=450&fit=crop",
+            duration: "1:18",
+          },
+          {
+            title: "Showroom tour 6",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=450&fit=crop",
+            duration: "1:35",
+          },
         ],
       },
       {
@@ -412,6 +507,27 @@ const videosContent = [
           },
           {
             title: "Warehouse overview 3",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&h=450&fit=crop",
+            duration: "1:05",
+          },
+          {
+            title: "Warehouse overview 4",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=450&fit=crop",
+            duration: "1:18",
+          },
+          {
+            title: "Warehouse overview 5",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=450&fit=crop",
+            duration: "1:42",
+          },
+          {
+            title: "Warehouse overview 6",
             src: "/images/dummyvideo.webm",
             poster:
               "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&h=450&fit=crop",
@@ -445,6 +561,27 @@ const videosContent = [
               "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=450&fit=crop",
             duration: "1:28",
           },
+          {
+            title: "Installation 4",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=450&fit=crop",
+            duration: "1:35",
+          },
+          {
+            title: "Installation 5",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=450&fit=crop",
+            duration: "2:10",
+          },
+          {
+            title: "Installation 6",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=450&fit=crop",
+            duration: "1:28",
+          },
         ],
       },
       {
@@ -468,6 +605,27 @@ const videosContent = [
           },
           {
             title: "Customer story 3",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=450&fit=crop",
+            duration: "1:45",
+          },
+          {
+            title: "Customer story 4",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=450&fit=crop",
+            duration: "0:58",
+          },
+          {
+            title: "Customer story 5",
+            src: "/images/dummyvideo.webm",
+            poster:
+              "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=450&fit=crop",
+            duration: "1:12",
+          },
+          {
+            title: "Customer story 6",
             src: "/images/dummyvideo.webm",
             poster:
               "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=450&fit=crop",
@@ -552,18 +710,6 @@ const testimonialsContent = [
   },
 ];
 
-const statsContent = [
-  {
-    eyebrow: "Our Track Record",
-    title: "Trusted Flooring Results",
-    items: [
-      { value: "1,000+", label: "Happy Customer" },
-      { value: "5", label: "Company Rating", stars: 5 },
-      { value: "10+", label: "Years Experience" },
-    ],
-  },
-];
-
 const googleReviewsContent = [
   {
     eyebrow: "Customer Reviews",
@@ -620,6 +766,21 @@ const googleReviewsContent = [
         text: "Impressed with the selection and quality. The flooring we chose looks amazing and fits perfectly with our home's aesthetic. Highly recommend FMP Flooring LLC!",
       },
     ],
+  },
+];
+
+const facebookFeedContent = [
+  {
+    eyebrow: "Social Updates",
+    title: "Follow Us On Social Media",
+    description:
+      "See the latest project photos, flooring tips, and community updates from FMP Flooring on Facebook and Instagram.",
+    pageUrl: "https://www.facebook.com/people/FMP-Flooring/100084480100386/",
+    embedPageUrl: "https://www.facebook.com/profile.php?id=100084480100386",
+    buttonText: "Visit Our Facebook Page",
+    instagramUrl: "https://www.instagram.com/fmpflooring/",
+    instagramEmbedUrl: "https://www.instagram.com/fmpflooring/embed",
+    instagramButtonText: "Visit Our Instagram",
   },
 ];
 
@@ -790,27 +951,146 @@ const educationalResourcesContent = [
   },
 ];
 
+const educationalVideosContent = [
+  {
+    eyebrow: "Watch & Learn",
+    title: "Educational Videos",
+    description:
+      "Short videos covering flooring tips, product education, and installation insights to help you make confident decisions.",
+    buttonText: "View Our Youtube Channel",
+    buttonHref: "https://www.youtube.com/@furnishmyplace4954",
+    videos: [
+      {
+        title: "Showroom tour 1",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&h=450&fit=crop",
+        duration: "1:24",
+      },
+      {
+        title: "Showroom tour 2",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=450&fit=crop",
+        duration: "1:18",
+      },
+      {
+        title: "Showroom tour 3",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=450&fit=crop",
+        duration: "1:35",
+      },
+      {
+        title: "Warehouse overview 1",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=450&fit=crop",
+        duration: "1:18",
+      },
+      {
+        title: "Warehouse overview 2",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=450&fit=crop",
+        duration: "1:42",
+      },
+      {
+        title: "Installation 1",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=450&fit=crop",
+        duration: "1:35",
+      },
+      {
+        title: "Installation 2",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=450&fit=crop",
+        duration: "2:10",
+      },
+      {
+        title: "Customer story 1",
+        youtubeId: "M7lc1UVf-VE",
+        poster:
+          "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=450&fit=crop",
+        duration: "0:58",
+      },
+    ],
+  },
+];
+
+const seniorDiscountContent = [
+  {
+    highlight: "Save 10%",
+    title: "Senior Citizen Discounts",
+    description: "Save an additional 10%",
+    buttonText: "Free In-Home Estimate",
+    buttonHref: "/estimate",
+    image: "/images/old-flooring-image.webp",
+    imageAlt: "Senior couple reviewing flooring options at home",
+  },
+];
+
+const healthcareDiscountContent = [
+  {
+    theme: "yellow",
+    highlight: "Save 10%",
+    title: "Healthcare Workers",
+    description: "Save an additional 10%",
+    buttonText: "Free In-Home Estimate",
+    buttonHref: "/estimate",
+    image: "/images/heathcare.jpg",
+    imageAlt: "Healthcare worker smiling outdoors",
+  },
+];
+
+const militaryDiscountContent = [
+  {
+    theme: "teal",
+    highlight: "Save 10%",
+    title: "Military & Veterans",
+    description: "Save an additional 10%",
+    buttonText: "Free In-Home Estimate",
+    buttonHref: "/estimate",
+    image: "/images/miltary.webp",
+    imageAlt: "Thank you for your service chalkboard with American flag",
+  },
+];
+
 export default function Home() {
   return (
     <main className="flex flex-1 flex-col">
+      <FederalMarquee items={federalContent[0].marqueeItems} />
       <HeroSection content={heroContent} />
-      <FinancingSection content={financingContent} />
       <FederalContractorSection content={federalContent} />
       <ProcessSection content={processContent} />
+      <QuoteCtaSection content={quoteCtaContent} />
       <MeetTheFounderSection content={founderContent} />
-      <FeaturesSection title="Included with Features" features={featuresContent} />
+      <FeaturesSection content={featuresContent} />
+      <HowWeManageProjectsSection content={howWeManageProjectsContent} />
       <ExploreVideosSection content={videosContent} />
-      <StatsSection content={statsContent} />
       <GoogleReviewsSection content={googleReviewsContent} />
       <BrandsSection content={brandsContent} />
+      <FacebookFeedSection content={facebookFeedContent} />
       <BeforeAfterSection content={beforeAfterContent} />
       <MeetOurTeamSection content={teamContent} />
+      <SeniorDiscountSection content={seniorDiscountContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />
       <WhyChooseSection content={whyChooseContent} />
+      
       <ComparisonSection content={whyBuyDirectContent} />
+      
+      
+      <SeniorDiscountSection content={healthcareDiscountContent} />
+      
       <LatestProjectsSection content={latestProjectsContent} />
+      <QuoteCtaSection content={quoteCtaContent} />
       <EducationalResourcesSection content={educationalResourcesContent} />
+      <EducationalVideosSection content={educationalVideosContent} />
+      <SeniorDiscountSection content={militaryDiscountContent} />
       <TestimonialsSection content={testimonialsContent} />
+      <QuoteCtaSection content={quoteCtaContent} />
       <FaqSection content={faqContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />
       <CtaSection content={ctaContent} />

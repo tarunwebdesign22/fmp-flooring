@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const DEFAULT_AREAS = [
   "Ahwatukee",
   "Anthem",
@@ -67,8 +69,17 @@ export default function AreasWeServeSection({
   );
 
   return (
-    <section className="bg-greylight">
-      <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
+    <section className="relative isolate overflow-hidden bg-greylight">
+      <Image
+        src="/images/concord-map1.webp"
+        alt=""
+        fill
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-white/75" aria-hidden="true" />
+
+      <div className="relative mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
         <h2 className="text-center text-2xl font-bold text-blue sm:text-3xl lg:text-4xl">
           {title}
         </h2>
