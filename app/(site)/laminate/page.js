@@ -170,6 +170,7 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose Laminate Flooring?",
+    backgroundImage: "/images/294-Wood-Flooring.webp",
     items: [
       {
         icon: "durable",
@@ -249,7 +250,7 @@ const tipsContent = [
     title: "Maintenance Tips",
     description:
       "Keep your laminate floors looking their best with a simple, consistent cleaning routine that protects the wear layer and finish.",
-    backgroundImage: "/images/process-background.webp",
+    backgroundImage: "/images/294-Wood-Flooring.webp",
     tips: [
       "Sweep or vacuum daily to remove dirt and debris that can cause scratches.",
       "Use a soft-bristle broom or a vacuum with a hard-floor setting.",

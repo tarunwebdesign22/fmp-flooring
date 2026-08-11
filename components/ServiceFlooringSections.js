@@ -155,7 +155,7 @@ export function ServiceBenefitsSection({ content }) {
         className="object-cover object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-white/85" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-10 text-center sm:mb-12">
@@ -164,7 +164,7 @@ export function ServiceBenefitsSection({ content }) {
               {section.eyebrow}
             </p>
           ) : null}
-          <h2 className="mt-3 text-3xl font-bold text-blue sm:text-4xl">{section.title}</h2>
+          <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">{section.title}</h2>
           <span className="mx-auto mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
         </div>
 

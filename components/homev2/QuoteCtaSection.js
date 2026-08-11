@@ -22,7 +22,7 @@ export default function QuoteCtaSection({ content }) {
 
   return (
     <section className="py-6 sm:py-8">
-      <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="relative overflow-hidden rounded-xl bg-blue px-5 py-6 text-center shadow-[0_8px_24px_rgba(34,30,83,0.12)] sm:px-8 sm:py-7">
           <div
             className="pointer-events-none absolute inset-2.5 rounded-lg border border-dashed border-white/25"

@@ -1027,7 +1027,7 @@ const seniorDiscountContent = [
     description: "Save an additional 10%",
     buttonText: "Free In-Home Estimate",
     buttonHref: "/estimate",
-    image: "/images/old-flooring-image.webp",
+    image: "/images/old-flooring-image001.webp",
     imageAlt: "Senior couple reviewing flooring options at home",
   },
 ];
@@ -1040,7 +1040,7 @@ const healthcareDiscountContent = [
     description: "Save an additional 10%",
     buttonText: "Free In-Home Estimate",
     buttonHref: "/estimate",
-    image: "/images/heathcare.jpg",
+    image: "/images/medical-flooring-image001.webp",
     imageAlt: "Healthcare worker smiling outdoors",
   },
 ];
