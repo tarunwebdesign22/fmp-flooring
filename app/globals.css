@@ -64,6 +64,47 @@ body {
   color: var(--teal);
 }
 
+/* Our Flooring Services — slick slider */
+.services-slider .slick-list {
+  margin: 0 -0.5rem;
+  padding: 4px 0 8px;
+}
+
+.services-slider .slick-slide > div {
+  height: 100%;
+  padding: 0 0.25rem;
+}
+
+.services-slider .slick-dots {
+  bottom: -2rem;
+}
+
+.services-slider .slick-dots li {
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+}
+
+.services-slider .slick-dots li button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+}
+
+.services-slider .slick-dots li button:before {
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  font-size: 10px;
+  color: #d9d9d9;
+  opacity: 1;
+}
+
+.services-slider .slick-dots li.slick-active button:before {
+  color: var(--teal);
+  opacity: 1;
+}
+
 /* Manufacturer logos — slick slider (2-row grid) */
 .brands-slider .slick-list {
   margin: 0;

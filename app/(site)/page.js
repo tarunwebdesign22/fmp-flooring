@@ -21,6 +21,7 @@ import QuoteCtaSection from "@/components/homev2/QuoteCtaSection";
 import TestimonialsSection from "@/components/homev2/TestimonialsSection";
 import WhyChooseSection from "@/components/homev2/WhyChooseSection";
 import SeniorDiscountSection from "@/components/SeniorDiscountSection";
+import ServicesSection from "@/components/homev2/ServicesSection";
 
 const heroContent = [
   {
@@ -146,6 +147,74 @@ const quoteCtaContent = [
       "Tell us about your space and get a free, no-obligation quote from our flooring experts.",
     buttonText: "Get a Quote",
     buttonHref: "/estimate",
+  },
+];
+
+const servicesContent = [
+  {
+    eyebrow: "What We Offer",
+    title: "Our Flooring Services",
+    description:
+      "Explore durable, stylish flooring solutions for residential and commercial spaces — installed with care by our expert team.",
+    services: [
+      {
+        title: "Carpet Tile",
+        description:
+          "Flexible, modular carpet tiles built for busy offices and high-traffic spaces with easy replacement and installation.",
+        image: "/images/home-services/Carpet-Tile-Services-benefits.png.webp",
+        href: "/carpet-tile",
+      },
+      {
+        title: "Broadloom Carpet",
+        description:
+          "Soft, wall-to-wall carpet that brings cozy elegance, warmth, and comfort to living spaces.",
+        image: "/images/home-services/Carpet-Broadloom-work.png.webp",
+        href: "/broadloom-carpet",
+      },
+      {
+        title: "Hardwood",
+        description:
+          "Timeless natural beauty and lasting durability that elevates any room with classic hardwood craftsmanship.",
+        image: "/images/home-services/Hardwood-FLOORING.webp",
+        href: "/hardwood",
+        badge: "New",
+      },
+      {
+        title: "Laminate",
+        description:
+          "An elegant, budget-friendly alternative to hardwood with realistic wood looks and everyday durability.",
+        image: "/images/home-services/Laminates-flooring-1024x576.jpg.webp",
+        href: "/laminate",
+      },
+      {
+        title: "Rubber Flooring",
+        description:
+          "Slip-resistant rubber flooring ideal for gyms, play areas, and spaces that demand performance and safety.",
+        image: "/images/home-services/Rubber-Flooring-1024x768.jpg.webp",
+        href: "/rubber",
+      },
+      {
+        title: "Vinyl Composition Tiles (VCT)",
+        description:
+          "Durable VCT flooring designed for schools, hospitals, and commercial spaces that need robust, easy-care floors.",
+        image: "/images/home-services/Vinyl-Composition-Tiles-work.webp",
+        href: "/vct",
+      },
+      {
+        title: "Luxury Vinyl Plank (LVP/LVT)",
+        description:
+          "High-end wood and tile looks with waterproof performance, comfort underfoot, and easy maintenance.",
+        image: "/images/home-services/Vinyl-Plank-Flooringss-1024x731.jpg.webp",
+        href: "/luxury-vinyl-plank",
+      },
+      {
+        title: "Ceramic Flooring",
+        description:
+          "Stylish ceramic tile flooring that delivers water resistance, long-term durability, and design versatility.",
+        image: "/images/home-services/Luxury-Vinyl-Tile-flooring-services.png.webp",
+        href: "/ceramic-flooring",
+      },
+    ],
   },
 ];
 
@@ -1065,6 +1134,7 @@ export default function Home() {
       <HeroSection content={heroContent} />
       <FederalContractorSection content={federalContent} />
       <ProcessSection content={processContent} />
+      <ServicesSection content={servicesContent} />
       <QuoteCtaSection content={quoteCtaContent} />
       <MeetTheFounderSection content={founderContent} />
       <FeaturesSection content={featuresContent} />
