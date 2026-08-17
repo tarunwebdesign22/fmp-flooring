@@ -5,7 +5,7 @@ import FederalMarquee from "@/components/FederalMarquee";
 import FinanceBannerSection from "@/components/FinanceBannerSection";
 import ImageGallerySection from "@/components/ImageGallerySection";
 import MailingListSection from "@/components/MailingListSection";
-import SeniorDiscountSection from "@/components/SeniorDiscountSection";
+import OffersSliderSection from "@/components/OffersSliderSection";
 import {
   ServiceBenefitsSection,
   ServiceHighlightsStrip,
@@ -341,41 +341,22 @@ const faqContent = [
   },
 ];
 
-const seniorDiscountContent = [
+const offersContent = [
   {
-    highlight: "Save 10%",
-    title: "Senior Citizen Discounts",
-    description: "Save an additional 10%",
-    buttonText: "Free In-Home Estimate",
-    buttonHref: "/estimate",
-    image: "/images/old-flooring-image.jpg",
-    imageAlt: "Senior couple reviewing flooring options at home",
-  },
-];
-
-const healthcareDiscountContent = [
-  {
-    theme: "yellow",
-    highlight: "Save 10%",
-    title: "Healthcare Workers",
-    description: "Save an additional 10%",
-    buttonText: "Free In-Home Estimate",
-    buttonHref: "/estimate",
-    image: "/images/heathcare.jpg",
-    imageAlt: "Healthcare worker smiling outdoors",
-  },
-];
-
-const militaryDiscountContent = [
-  {
-    theme: "teal",
-    highlight: "Save 10%",
-    title: "Military & Veterans",
-    description: "Save an additional 10%",
-    buttonText: "Free In-Home Estimate",
-    buttonHref: "/estimate",
-    image: "/images/miltary.webp",
-    imageAlt: "Thank you for your service chalkboard with American flag",
+    eyebrow: "Special Offers",
+    title: "Exclusive Savings",
+    offers: [
+      {
+        theme: "teal",
+        highlight: "Special Discount",
+        title: "Military, Veterans & Senior Citizens",
+        description: "Thank you for your service and loyalty.",
+        buttonText: "Free In-Home Estimate",
+        buttonHref: "/estimate",
+        image: "/images/medical-flooring-image001.webp",
+        imageAlt: "Healthcare worker smiling outdoors",
+      },
+    ],
   },
 ];
 
@@ -515,16 +496,12 @@ export default function LaminatePage() {
       <FinanceBannerSection content={financeBannerContent} />
       <ServiceBenefitsSection content={benefitsContent} />
       <ServiceHighlightsStrip content={highlightsContent} />
-      <SeniorDiscountSection content={seniorDiscountContent} />
+      <OffersSliderSection content={offersContent} />
       <ServiceTipsSection content={tipsContent} />
       <ServiceApplicationsSection content={applicationsContent} />
-      <SeniorDiscountSection content={healthcareDiscountContent} />
       <ServiceCompareSection content={compareContent} />
       <ServiceInstallSection content={installContent} />
       <CommercialProjectsSection content={commercialProjectsContent} />
-      
-      
-      <SeniorDiscountSection content={militaryDiscountContent} />
       <ImageGallerySection content={galleryContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
