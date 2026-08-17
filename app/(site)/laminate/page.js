@@ -17,7 +17,6 @@ import {
   ServiceCompareSection,
   ServiceInstallSection,
   ServiceTipsSection,
-  ServiceTypesSection,
 } from "@/components/ServicePageSections";
 import SimpleProcessSection from "@/components/SimpleProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -60,7 +59,7 @@ const heroContent = [
           benefits: [
             { icon: "approvals", title: "Fast Approvals*" },
             { icon: "noPayments", title: "No Payments*" },
-            { icon: "zeroPercent", title: "0% Financing" },
+            { icon: "zeroPercent", title: "Financing" },
           ],
           buttonText: "Explore Financing Options",
           buttonHref: "/financing",
@@ -213,33 +212,6 @@ const highlightsContent = [
       { icon: "consultation", title: "Free Consultations" },
       { icon: "support", title: "Expert Support" },
       { icon: "selection", title: "Wide Selection of Flooring Types" },
-    ],
-  },
-];
-
-const typesContent = [
-  {
-    eyebrow: "Product Options",
-    title: "Types of Laminate Flooring",
-    items: [
-      {
-        title: "Wood-Look Laminate Flooring",
-        description:
-          "Designed to mimic natural hardwood with authentic textures and patterns — plus superior durability for everyday living.",
-        image: "/images/features/67700 - 433RB Bloomington Oak-01.png",
-      },
-      {
-        title: "Waterproof & Water-Resistant Laminate",
-        description:
-          "Advanced laminate options provide enhanced protection against moisture and spills in busy homes and light commercial spaces.",
-        image: "/images/features/3.jpg",
-      },
-      {
-        title: "Click-Lock Laminate Flooring",
-        description:
-          "Floating laminate floors with click-lock installation for a fast, secure, and glue-free professional finish.",
-        image: "/images/features/6.jpg",
-      },
     ],
   },
 ];
@@ -544,7 +516,6 @@ export default function LaminatePage() {
       <ServiceBenefitsSection content={benefitsContent} />
       <ServiceHighlightsStrip content={highlightsContent} />
       <SeniorDiscountSection content={seniorDiscountContent} />
-      <ServiceTypesSection content={typesContent} />
       <ServiceTipsSection content={tipsContent} />
       <ServiceApplicationsSection content={applicationsContent} />
       <SeniorDiscountSection content={healthcareDiscountContent} />

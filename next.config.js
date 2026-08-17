@@ -14,6 +14,16 @@ const nextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/flooring/closeout",
+        destination: "/in-stock-specials",
+        permanent: true,
+      },
+      {
+        source: "/closeout",
+        destination: "/in-stock-specials",
+        permanent: true,
+      },
     ];
   },
 };

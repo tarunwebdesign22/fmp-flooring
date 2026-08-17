@@ -38,6 +38,13 @@ const sectorIcons = {
       <path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2" />
     </svg>
   ),
+  military: (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <path d="M12 2 4 7v11h16V7l-8-5z" />
+      <path d="M8 11h8M8 15h8" />
+      <path d="M12 7v4" />
+    </svg>
+  ),
 };
 
 function ArrowButton({ direction, onClick }) {
@@ -63,24 +70,24 @@ function ArrowButton({ direction, onClick }) {
 
 function SectorCard({ sector }) {
   return (
-    <article className="mx-1 rounded-2xl bg-blue shadow-[0_6px_24px_rgba(0,0,0,0.1)] sm:mx-2">
-      <div className="relative aspect-[16/11] overflow-hidden rounded-t-2xl bg-greylight">
+    <article className="mx-1 flex h-full flex-col rounded-2xl bg-blue shadow-[0_6px_24px_rgba(0,0,0,0.1)] sm:mx-2">
+      <div className="relative h-48 shrink-0 overflow-hidden rounded-t-2xl bg-greylight sm:h-52">
         <Image
           src={sector.image}
           alt={sector.title}
           fill
-          className="object-cover"
+          className="object-cover object-center"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>
 
-      <div className="relative rounded-b-2xl px-5 pb-7 pt-11 text-center sm:px-6">
+      <div className="relative flex flex-1 flex-col rounded-b-2xl px-5 pb-7 pt-11 text-center sm:px-6">
         <span className="absolute left-1/2 top-0 z-10 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[3px] border-[#fdbf3e] bg-white text-[#fdbf3e] shadow-sm">
           {sectorIcons[sector.icon] || sectorIcons.offices}
         </span>
 
         <h3 className="text-xl font-bold text-white">{sector.title}</h3>
-        <p className="mt-2 text-sm leading-6 text-white/85">{sector.description}</p>
+        <p className="mt-2 flex-1 text-sm leading-6 text-white/85">{sector.description}</p>
       </div>
     </article>
   );
@@ -148,7 +155,7 @@ export default function FederalContractorSection({ content }) {
                   {ready ? (
                     <Slider key={slidesToShow} ref={sliderRef} {...settings}>
                       {section.sectors.map((sector) => (
-                        <div key={sector.title} className="h-auto">
+                        <div key={sector.title} className="h-full">
                           <SectorCard sector={sector} />
                         </div>
                       ))}

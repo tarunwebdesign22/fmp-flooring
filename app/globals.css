@@ -105,6 +105,25 @@ body {
   opacity: 1;
 }
 
+.offers-slider .slick-dots {
+  bottom: -0.5rem;
+}
+
+.offers-slider .slick-dots li {
+  margin: 0 5px;
+}
+
+.offers-slider .slick-dots li button:before {
+  font-size: 10px;
+  color: #d9d9d9;
+  opacity: 1;
+}
+
+.offers-slider .slick-dots li.slick-active button:before {
+  color: var(--teal);
+  opacity: 1;
+}
+
 /* Manufacturer logos — slick slider (2-row grid) */
 .brands-slider .slick-list {
   margin: 0;

@@ -13,6 +13,7 @@ const serviceLinks = [
 const usefulLinks = [
   { label: "About us", href: "/about-us" },
   { label: "Contact us", href: "/contact-us" },
+  { label: "In Stock Specials", href: "/in-stock-specials" },
   { label: "Blogs", href: "/blog" },
   { label: "Privacy Policy", href: "/privacy-policy" },
 ];

@@ -20,7 +20,7 @@ import ProcessSection from "@/components/homev2/ProcessSection";
 import QuoteCtaSection from "@/components/homev2/QuoteCtaSection";
 import TestimonialsSection from "@/components/homev2/TestimonialsSection";
 import WhyChooseSection from "@/components/homev2/WhyChooseSection";
-import SeniorDiscountSection from "@/components/SeniorDiscountSection";
+import OffersSliderSection from "@/components/OffersSliderSection";
 import ServicesSection from "@/components/homev2/ServicesSection";
 
 const heroContent = [
@@ -38,7 +38,7 @@ const heroContent = [
         benefits: [
           { icon: "approvals", title: "Fast Approvals*" },
           { icon: "noPayments", title: "No Payments*" },
-          { icon: "zeroPercent", title: "0% Financing" },
+          { icon: "zeroPercent", title: "Financing" },
         ],
         buttonText: "Explore Financing Options",
         buttonHref: "/financing",
@@ -498,6 +498,41 @@ const federalContent = [
           "Professional, long-lasting flooring systems for municipal and administrative spaces.",
         image: "/images/image-office.webp",
       },
+      {
+        title: "Universities",
+        icon: "schools",
+        description:
+          "High-performance flooring for campus buildings, lecture halls, and student facilities.",
+        image: "/images/university.jpg",
+      },
+      {
+        title: "Courthouses",
+        icon: "government",
+        description:
+          "Durable, professional flooring solutions for courtrooms and judicial facilities.",
+        image: "/images/court-house.jpg",
+      },
+      {
+        title: "Military Bases",
+        icon: "military",
+        description:
+          "Reliable flooring built for demanding military and defense facility environments.",
+        image: "/images/miltary.webp",
+      },
+      {
+        title: "Colleges",
+        icon: "schools",
+        description:
+          "Stylish, durable flooring for college campuses and academic buildings.",
+        image: "/images/image-school.webp",
+      },
+      {
+        title: "Social Service Offices",
+        icon: "offices",
+        description:
+          "Welcoming, easy-care flooring for social service and community support offices.",
+        image: "/images/Social-Service.jpg",
+      },
     ],
   },
 ];
@@ -843,13 +878,10 @@ const facebookFeedContent = [
     eyebrow: "Social Updates",
     title: "Follow Us On Social Media",
     description:
-      "See the latest project photos, flooring tips, and community updates from FMP Flooring on Facebook and Instagram.",
+      "See the latest project photos, flooring tips, and community updates from FMP Flooring on Facebook.",
     pageUrl: "https://www.facebook.com/people/FMP-Flooring/100084480100386/",
     embedPageUrl: "https://www.facebook.com/profile.php?id=100084480100386",
     buttonText: "Visit Our Facebook Page",
-    instagramUrl: "https://www.instagram.com/fmpflooring/",
-    instagramEmbedUrl: "https://www.instagram.com/fmpflooring/embed",
-    instagramButtonText: "Visit Our Instagram",
   },
 ];
 
@@ -1089,41 +1121,22 @@ const educationalVideosContent = [
   },
 ];
 
-const seniorDiscountContent = [
+const offersContent = [
   {
-    highlight: "Save 10%",
-    title: "Senior Citizen Discounts",
-    description: "Save an additional 10%",
-    buttonText: "Free In-Home Estimate",
-    buttonHref: "/estimate",
-    image: "/images/old-flooring-image001.webp",
-    imageAlt: "Senior couple reviewing flooring options at home",
-  },
-];
-
-const healthcareDiscountContent = [
-  {
-    theme: "yellow",
-    highlight: "Save 10%",
-    title: "Healthcare Workers",
-    description: "Save an additional 10%",
-    buttonText: "Free In-Home Estimate",
-    buttonHref: "/estimate",
-    image: "/images/medical-flooring-image001.webp",
-    imageAlt: "Healthcare worker smiling outdoors",
-  },
-];
-
-const militaryDiscountContent = [
-  {
-    theme: "teal",
-    highlight: "Save 10%",
-    title: "Military & Veterans",
-    description: "Save an additional 10%",
-    buttonText: "Free In-Home Estimate",
-    buttonHref: "/estimate",
-    image: "/images/miltary.webp",
-    imageAlt: "Thank you for your service chalkboard with American flag",
+    eyebrow: "Special Offers",
+    title: "Exclusive Savings",
+    offers: [
+      {
+        theme: "teal",
+        highlight: "Special Discount",
+        title: "Military, Veterans & Senior Citizens",
+        description: "Thank you for your service and loyalty.",
+        buttonText: "Free In-Home Estimate",
+        buttonHref: "/estimate",
+        image: "/images/medical-flooring-image001.webp",
+        imageAlt: "Healthcare worker smiling outdoors",
+      },
+    ],
   },
 ];
 
@@ -1145,20 +1158,17 @@ export default function Home() {
       <FacebookFeedSection content={facebookFeedContent} />
       <BeforeAfterSection content={beforeAfterContent} />
       <MeetOurTeamSection content={teamContent} />
-      <SeniorDiscountSection content={seniorDiscountContent} />
+      <OffersSliderSection content={offersContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />
       <WhyChooseSection content={whyChooseContent} />
       
       <ComparisonSection content={whyBuyDirectContent} />
       
       
-      <SeniorDiscountSection content={healthcareDiscountContent} />
-      
       <LatestProjectsSection content={latestProjectsContent} />
       <QuoteCtaSection content={quoteCtaContent} />
       <EducationalResourcesSection content={educationalResourcesContent} />
       <EducationalVideosSection content={educationalVideosContent} />
-      <SeniorDiscountSection content={militaryDiscountContent} />
       <TestimonialsSection content={testimonialsContent} />
       <QuoteCtaSection content={quoteCtaContent} />
       <FaqSection content={faqContent} />

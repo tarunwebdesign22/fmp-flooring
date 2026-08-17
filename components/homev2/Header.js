@@ -23,6 +23,7 @@ const resourceLinks = [
   { label: "Pricing", href: "/pricing" },
   { label: "Commercial", href: "/commercial" },
   { label: "Special Offers", href: "/special-offers" },
+  { label: "In Stock Specials", href: "/in-stock-specials" },
   { label: "Financing", href: "/financing" },
   { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/careers" },
@@ -144,16 +145,13 @@ export default function Header() {
 
           <div className="ml-auto flex items-center gap-3">
             <Link
-              href="#"
+              href="/in-stock-specials"
               className="hidden items-center gap-1.5 rounded-sm bg-teal px-4 py-1.5 text-sm font-bold leading-tight text-white transition-colors hover:bg-blue sm:inline-flex"
             >
               <span className="flex flex-col items-center text-center">
                 <span>In Stock</span>
                 <span>Specials</span>
               </span>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" />
-              </svg>
             </Link>
 
             <button
@@ -223,7 +221,7 @@ export default function Header() {
           </ul>
 
           <Link
-            href="#"
+            href="/in-stock-specials"
             onClick={() => setMenuOpen(false)}
             className="mt-5 flex w-full items-center justify-center gap-1.5 rounded-sm bg-teal px-4 py-2.5 text-sm font-bold leading-tight text-white transition-colors hover:bg-blue sm:hidden"
           >
@@ -231,9 +229,6 @@ export default function Header() {
               <span>In Stock</span>
               <span>Specials</span>
             </span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
           </Link>
         </div>
       </div>
