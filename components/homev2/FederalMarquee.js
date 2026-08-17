@@ -1,6 +1,8 @@
 const DEFAULT_ITEMS = [
   "Federal & State Flooring Contractor",
   "Direct Importer & Distributor – No Middlemen",
+  "Financing Available",
+  "In-Home Free Estimate",
 ];
 
 function MarqueeSeparator() {
