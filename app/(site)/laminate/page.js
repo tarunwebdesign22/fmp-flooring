@@ -66,7 +66,7 @@ const heroContent = [
           footnote: "*Subject to credit approval. Terms and conditions apply.",
         },
       },
-    ],
+    ], 
     form: {
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
