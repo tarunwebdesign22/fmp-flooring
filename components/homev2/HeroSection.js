@@ -186,7 +186,7 @@ function useCountUp(target, enabled, duration = 1600) {
   return value;
 }
 
-function HeroStatItem({ value, label, text, stars, animate, showDivider }) {
+function HeroStatItem({ value, label, text, stars, animate, dividerClassName, className = "" }) {
   const hasTextOnly = Boolean(text);
   const { target, suffix, hasComma } = parseStatValue(value || "0");
   const current = useCountUp(target, animate);
@@ -194,43 +194,34 @@ function HeroStatItem({ value, label, text, stars, animate, showDivider }) {
 
   return (
     <li
-      className={`flex flex-col items-center justify-center px-3 py-6 text-center sm:px-4 sm:py-7 ${
-        showDivider
-          ? "border-t border-grey/60 sm:border-t-0 sm:border-l lg:border-l"
-          : ""
-      }`}
+      className={`grid h-full grid-rows-[1fr_auto] justify-items-center px-2 py-3.5 text-center sm:px-4 sm:py-7 ${dividerClassName} ${className}`}
     >
       {hasTextOnly ? (
-        <>
-          <p className="text-base font-bold leading-tight tracking-wide text-teal sm:text-lg lg:text-xl">
-            {text}
-          </p>
-          {label ? (
-            <p className="mt-1.5 text-xs font-bold tracking-wide text-blue sm:text-sm">
-              {label}
-            </p>
-          ) : null}
-        </>
+        <p className="self-end text-sm font-bold leading-tight tracking-wide text-teal sm:text-lg lg:text-xl">
+          {text}
+        </p>
       ) : (
-        <>
-          <p className="text-2xl font-bold tracking-tight text-teal sm:text-3xl lg:text-[2.3rem]">
-            {display}
-          </p>
-          <p className="mt-1.5 text-xs font-bold tracking-wide text-blue sm:text-sm">
+        <p className="self-end text-xl font-bold leading-none tracking-tight text-teal sm:text-3xl lg:text-[2.3rem]">
+          {display}
+        </p>
+      )}
+      <div className="mt-1 flex w-full flex-col items-center justify-start sm:mt-2 lg:min-h-[2.5em]">
+        {label ? (
+          <p className="text-[11px] font-bold leading-snug tracking-wide text-blue sm:text-sm">
             {label}
           </p>
-        </>
-      )}
-      {stars && !hasTextOnly ? (
-        <span
-          className="mt-1.5 inline-flex items-center gap-0.5 text-[#fdbf3e]"
-          aria-label={`${stars} out of 5 stars`}
-        >
-          {Array.from({ length: stars }).map((_, i) => (
-            <StarIcon key={i} />
-          ))}
-        </span>
-      ) : null}
+        ) : null}
+        {stars && !hasTextOnly ? (
+          <span
+            className="mt-1 inline-flex items-center gap-0.5 text-[#fdbf3e] sm:mt-1.5"
+            aria-label={`${stars} out of 5 stars`}
+          >
+            {Array.from({ length: stars }).map((_, i) => (
+              <StarIcon key={i} />
+            ))}
+          </span>
+        ) : null}
+      </div>
     </li>
   );
 }
@@ -260,23 +251,35 @@ function HeroStatsStrip({ items }) {
   if (!items?.length) return null;
 
   return (
-    <div className="relative z-20 -mt-14 -mb-14 px-4 sm:-mt-16 sm:-mb-16 sm:px-6 lg:px-10">
+    <div className="relative z-20 mt-4 mb-4 px-4 sm:-mt-16 sm:-mb-16 sm:px-6 lg:px-10">
       <div
         ref={stripRef}
         className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_rgba(34,30,83,0.18)]"
       >
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
-          {items.map((item, index) => (
-            <HeroStatItem
-              key={item.label || item.text || `${index}`}
-              value={item.value}
-              label={item.label}
-              text={item.text}
-              stars={item.stars}
-              animate={inView}
-              showDivider={index > 0}
-            />
-          ))}
+        <ul className="grid grid-cols-2 lg:grid-cols-5">
+          {items.map((item, index) => {
+            const dividerClassName =
+              index === 0
+                ? ""
+                : `border-grey/60 ${index % 2 === 1 ? "border-l" : ""} ${
+                    index >= 2 ? "border-t" : ""
+                  } lg:border-t-0 lg:border-l`;
+
+            return (
+              <HeroStatItem
+                key={item.label || item.text || `${index}`}
+                value={item.value}
+                label={item.label}
+                text={item.text}
+                stars={item.stars}
+                animate={inView}
+                dividerClassName={dividerClassName}
+                className={
+                  index === items.length - 1 ? "col-span-2 lg:col-span-1" : ""
+                }
+              />
+            );
+          })}
         </ul>
       </div>
     </div>
@@ -442,6 +445,140 @@ function SlideContent({ slide }) {
   return <MainSlide slide={slide} />;
 }
 
+function MobileSlideContent({ slide }) {
+  const title =
+    slide.title ||
+    `${slide.titleBefore || ""}${slide.titleHighlightValue || ""}${slide.titleAfter || ""}`.trim();
+  const ctas =
+    slide.ctas?.length
+      ? slide.ctas
+      : slide.buttonText && slide.buttonHref
+        ? [{ label: slide.buttonText, href: slide.buttonHref }]
+        : [];
+
+  return (
+    <div className="w-full max-w-sm text-center">
+      <h1 className="text-4xl font-bold leading-tight text-white">{title}</h1>
+      {ctas.length ? (
+        <div className="mt-5 flex flex-col gap-2.5">
+          {ctas.map((cta) => (
+            <Link
+              key={`${cta.label}-${cta.href}`}
+              href={cta.href}
+              className="mx-auto inline-flex w-fit max-w-full items-center justify-center gap-2 rounded-lg border-2 border-[#fdbf3e] bg-black/15 px-3.5 py-2.5 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+            >
+              {cta.label}
+              <span aria-hidden="true">→</span>
+            </Link>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function EstimateFormCard({ section, submitted, formData, onChange, onSubmit, className = "" }) {
+  return (
+    <div className={`overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(0,0,0,0.35)] ${className}`}>
+      {section.form.promoText ? (
+        <p className="bg-[#fdbf3e] px-4 py-3 text-center text-lg font-bold uppercase tracking-wide text-blue">
+          {section.form.promoText}
+        </p>
+      ) : (
+        <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
+      )}
+      <div className="p-6 sm:p-7">
+        <h2 className="text-2xl font-bold text-blue">{section.form.title}</h2>
+        <span className="mt-2 block h-0.5 w-12 bg-teal" aria-hidden="true" />
+        <p className="mt-3 text-sm text-blue/65">{section.form.description}</p>
+
+        {submitted ? (
+          <p className="mt-8 rounded-lg bg-greylight px-4 py-6 text-center text-sm font-medium text-blue">
+            Thank you! We&apos;ll get back to you shortly.
+          </p>
+        ) : (
+          <form onSubmit={onSubmit} className="mt-6 space-y-3.5">
+            <label className="relative block">
+              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                {fieldIcons.name}
+              </span>
+              <input
+                type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={onChange}
+                placeholder="Full Name"
+                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+              />
+            </label>
+
+            <label className="relative block">
+              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                {fieldIcons.phone}
+              </span>
+              <input
+                type="tel"
+                name="phone"
+                required
+                value={formData.phone}
+                onChange={onChange}
+                placeholder="Phone Number"
+                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+              />
+            </label>
+
+            <label className="relative block">
+              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                {fieldIcons.email}
+              </span>
+              <input
+                type="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={onChange}
+                placeholder="Email Address"
+                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+              />
+            </label>
+
+            <label className="relative block">
+              <select
+                name="service"
+                required
+                value={formData.service}
+                onChange={onChange}
+                className="w-full appearance-none rounded-lg border border-grey bg-white py-3 pr-10 pl-3 text-sm text-blue outline-none transition-colors focus:border-teal"
+              >
+                <option value="" disabled>
+                  Service Interested In
+                </option>
+                {section.form.services.map((service) => (
+                  <option key={service} value={service}>
+                    {service}
+                  </option>
+                ))}
+              </select>
+              <span className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-blue/45" aria-hidden="true">
+                ▾
+              </span>
+            </label>
+
+            <button
+              type="submit"
+              className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
+            >
+              {section.form.buttonText}
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function HeroSection({ content }) {
   const section = content?.[0];
   const slides = section?.slides || [];
@@ -490,7 +627,63 @@ export default function HeroSection({ content }) {
   return (
     <div className="relative">
       <section
-        className="relative isolate overflow-hidden"
+        className="relative isolate overflow-hidden lg:hidden"
+        aria-roledescription="carousel"
+        aria-label="Featured offers"
+      >
+        {slides.map((slide, index) => (
+          <Image
+            key={slide.id}
+            src={slide.backgroundImage}
+            alt=""
+            fill
+            priority={index === 0}
+            className={`object-cover object-center transition-opacity duration-700 ${
+              index === activeIndex ? "opacity-100" : "opacity-0"
+            }`}
+            sizes="100vw"
+          />
+        ))}
+        <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
+
+        <div className="relative mx-auto flex aspect-square max-w-7xl items-end justify-center px-4 pb-8 pt-8">
+          <div key={`mobile-${activeSlide.id}`} className="hero-slide-content w-full" aria-live="polite">
+            <MobileSlideContent slide={activeSlide} />
+          </div>
+        </div>
+
+        {slides.length > 1 ? (
+          <div className="relative z-10 -mt-1 flex justify-center pb-6">
+            <div className="flex items-center gap-2">
+              {slides.map((slide, index) => (
+                <button
+                  key={`mobile-dot-${slide.id}`}
+                  type="button"
+                  onClick={() => goTo(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                  aria-current={index === activeIndex}
+                  className={`h-2 rounded-full transition-all ${
+                    index === activeIndex ? "w-7 bg-teal" : "w-2 bg-white/55 hover:bg-white/80"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </section>
+
+      <div className="relative z-20 -mt-5 px-4 pb-6 lg:hidden">
+        <EstimateFormCard
+          section={section}
+          submitted={submitted}
+          formData={formData}
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+        />
+      </div>
+
+      <section
+        className="relative isolate hidden overflow-hidden lg:block"
         aria-roledescription="carousel"
         aria-label="Featured offers"
       >
@@ -543,103 +736,13 @@ export default function HeroSection({ content }) {
 
           {/* Estimate form — fixed across slides */}
           <div className="min-w-0 lg:w-full lg:max-w-md lg:justify-self-end">
-            <div className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(0,0,0,0.35)]">
-              {section.form.promoText ? (
-                <p className="bg-[#fdbf3e] px-4 py-3 text-center text-lg font-bold uppercase tracking-wide text-blue">
-                  {section.form.promoText}
-                </p>
-              ) : (
-                <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
-              )}
-              <div className="p-6 sm:p-7">
-                <h2 className="text-2xl font-bold text-blue">{section.form.title}</h2>
-                <span className="mt-2 block h-0.5 w-12 bg-teal" aria-hidden="true" />
-                <p className="mt-3 text-sm text-blue/65">{section.form.description}</p>
-
-                {submitted ? (
-                  <p className="mt-8 rounded-lg bg-greylight px-4 py-6 text-center text-sm font-medium text-blue">
-                    Thank you! We&apos;ll get back to you shortly.
-                  </p>
-                ) : (
-                  <form onSubmit={handleSubmit} className="mt-6 space-y-3.5">
-                    <label className="relative block">
-                      <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-                        {fieldIcons.name}
-                      </span>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Full Name"
-                        className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-                      />
-                    </label>
-
-                    <label className="relative block">
-                      <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-                        {fieldIcons.phone}
-                      </span>
-                      <input
-                        type="tel"
-                        name="phone"
-                        required
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="Phone Number"
-                        className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-                      />
-                    </label>
-
-                    <label className="relative block">
-                      <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-                        {fieldIcons.email}
-                      </span>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Email Address"
-                        className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-                      />
-                    </label>
-
-                    <label className="relative block">
-                      <select
-                        name="service"
-                        required
-                        value={formData.service}
-                        onChange={handleChange}
-                        className="w-full appearance-none rounded-lg border border-grey bg-white py-3 pr-10 pl-3 text-sm text-blue outline-none transition-colors focus:border-teal"
-                      >
-                        <option value="" disabled>
-                          Service Interested In
-                        </option>
-                        {section.form.services.map((service) => (
-                          <option key={service} value={service}>
-                            {service}
-                          </option>
-                        ))}
-                      </select>
-                      <span className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-blue/45" aria-hidden="true">
-                        ▾
-                      </span>
-                    </label>
-
-                    <button
-                      type="submit"
-                      className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
-                    >
-                      {section.form.buttonText}
-                      <span aria-hidden="true">→</span>
-                    </button>
-                  </form>
-                )}
-              </div>
-            </div>
+            <EstimateFormCard
+              section={section}
+              submitted={submitted}
+              formData={formData}
+              onChange={handleChange}
+              onSubmit={handleSubmit}
+            />
           </div>
         </div>
       </section>

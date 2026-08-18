@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 const STOCK_SHEET_URL =
   "https://docs.google.com/spreadsheets/d/1RlUhMkR4c4v0CxALcL2McMDJ0jS-ov1cOjfEc8_wX0w/export?format=csv&gid=1631855389";
@@ -215,24 +215,24 @@ function ProductPricingPanel({ product, size = "card" }) {
         isLarge ? "mt-6" : "mt-3"
       }`}
     >
-      <div className="grid grid-cols-2 divide-x divide-[#fdbf3e]/35 bg-greylight/60">
+      <div className="grid grid-cols-2 divide-x divide-white/20 bg-blue">
         <div className={isLarge ? "px-4 py-3" : "px-2.5 py-2"}>
           <p
-            className={`font-bold uppercase tracking-[0.12em] text-blue/40 ${
+            className={`font-bold uppercase tracking-[0.12em] text-white/70 ${
               isLarge ? "text-[10px]" : "text-[8px]"
             }`}
           >
             Material
           </p>
           <p
-            className={`mt-0.5 font-extrabold leading-none text-blue ${
+            className={`mt-0.5 font-extrabold leading-none text-white ${
               isLarge ? "text-2xl" : "text-lg"
             }`}
           >
             {material.amount}
             {material.unit ? (
               <span
-                className={`ml-0.5 font-semibold italic text-blue/55 ${
+                className={`ml-0.5 font-semibold italic text-white/70 ${
                   isLarge ? "text-sm" : "text-[11px]"
                 }`}
               >
@@ -257,14 +257,14 @@ function ProductPricingPanel({ product, size = "card" }) {
                 Material &amp; Install
               </p>
               <p
-                className={`mt-0.5 font-extrabold leading-none text-blue ${
+                className={`mt-0.5 font-extrabold leading-none text-white ${
                   isLarge ? "text-xl" : "text-base"
                 }`}
               >
                 {installed.amount}
                 {installed.unit ? (
                   <span
-                    className={`ml-0.5 font-semibold italic text-blue/55 ${
+                    className={`ml-0.5 font-semibold italic text-white/70 ${
                       isLarge ? "text-xs" : "text-[10px]"
                     }`}
                   >
@@ -275,7 +275,7 @@ function ProductPricingPanel({ product, size = "card" }) {
             </div>
           ) : (
             <p
-              className={`font-bold uppercase leading-tight text-teal ${
+              className={`font-bold uppercase leading-tight text-white ${
                 isLarge ? "text-[11px] tracking-[0.08em]" : "text-[8px] tracking-[0.06em]"
               }`}
             >
@@ -531,7 +531,58 @@ function QuickViewModal({ product, onClose, stockMap, stockLoading }) {
 export default function CloseoutProductsSection({ collections, products }) {
   const [activeId, setActiveId] = useState("all");
   const [selected, setSelected] = useState(null);
+  const [stickyTop, setStickyTop] = useState(80);
   const { stockMap, loading: stockLoading } = useStockMap();
+  const tabsRef = useRef(null);
+  const listRef = useRef(null);
+  const stickyTopRef = useRef(stickyTop);
+  const hasSelectedTab = useRef(false);
+
+  stickyTopRef.current = stickyTop;
+
+  useEffect(() => {
+    const header = document.querySelector("header");
+    if (!header) return undefined;
+
+    const updateTop = () => {
+      setStickyTop(Math.round(header.getBoundingClientRect().height));
+    };
+
+    updateTop();
+    const observer = new ResizeObserver(updateTop);
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToItems = () => {
+    const list = listRef.current;
+    const tabs = tabsRef.current;
+    if (!list) return;
+
+    const tabsBottom = tabs
+      ? tabs.getBoundingClientRect().bottom
+      : stickyTopRef.current;
+    const nextTop =
+      window.scrollY + list.getBoundingClientRect().top - tabsBottom - 8;
+
+    window.scrollTo({ top: Math.max(0, nextTop), behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    if (!hasSelectedTab.current) return;
+
+    const frame = window.requestAnimationFrame(scrollToItems);
+    return () => window.cancelAnimationFrame(frame);
+  }, [activeId]);
+
+  const handleFilterClick = (id) => {
+    hasSelectedTab.current = true;
+    if (id === activeId) {
+      scrollToItems();
+      return;
+    }
+    setActiveId(id);
+  };
 
   const filters = useMemo(
     () => [{ id: "all", label: "All Specials" }, ...collections.map((c) => ({ id: c.id, label: c.filterLabel || c.title }))],
@@ -551,8 +602,12 @@ export default function CloseoutProductsSection({ collections, products }) {
 
   return (
     <section id="specials" className="scroll-mt-28 bg-white py-14 sm:py-16 lg:py-[70px]">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-        <div className="mb-8 overflow-x-auto pb-1">
+      <div
+        ref={tabsRef}
+        className="sticky z-40 mb-8 bg-white/95 py-3 backdrop-blur-md"
+        style={{ top: stickyTop }}
+      >
+        <div className="mx-auto max-w-7xl overflow-x-auto px-6 sm:px-8 lg:px-10">
           <div className="flex min-w-max items-center justify-center gap-2 sm:flex-wrap sm:min-w-0">
             {filters.map((filter) => {
               const isActive = filter.id === activeId;
@@ -560,7 +615,7 @@ export default function CloseoutProductsSection({ collections, products }) {
                 <button
                   key={filter.id}
                   type="button"
-                  onClick={() => setActiveId(filter.id)}
+                  onClick={() => handleFilterClick(filter.id)}
                   className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide transition-colors sm:text-[13px] ${
                     isActive
                       ? "bg-teal text-white"
@@ -573,7 +628,9 @@ export default function CloseoutProductsSection({ collections, products }) {
             })}
           </div>
         </div>
+      </div>
 
+      <div ref={listRef} className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="flex flex-col gap-16 sm:gap-20">
           {visibleCollections.map((collection) => {
             const items = productsByCollection[collection.id] || [];

@@ -13,7 +13,7 @@ function ArrowButton({ direction, onClick }) {
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous services" : "Next services"}
-      className="absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-grey bg-white text-teal shadow-sm transition-colors hover:border-teal hover:bg-teal hover:text-white"
+      className="absolute top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-grey bg-white text-teal shadow-sm transition-colors hover:border-teal hover:bg-teal hover:text-white sm:flex"
       style={{ [direction === "prev" ? "left" : "right"]: 0 }}
     >
       <svg
@@ -37,7 +37,7 @@ function ArrowButton({ direction, onClick }) {
 
 function ServiceCard({ service }) {
   return (
-    <article className="mx-1.5 flex h-full flex-col overflow-hidden rounded-2xl border border-grey/70 bg-white sm:mx-2">
+    <article className="mx-0 flex h-full flex-col overflow-hidden rounded-2xl border border-grey/70 bg-white sm:mx-2">
       <div className="relative aspect-[4/3] bg-greylight">
         <Image
           src={service.image}
@@ -120,7 +120,7 @@ export default function ServicesSection({ content }) {
           ) : null}
         </div>
 
-        <div className="relative px-10 pb-8 sm:px-12">
+        <div className="relative px-[15px] pb-8 sm:px-12">
           <ArrowButton
             direction="prev"
             onClick={() => sliderRef.current?.slickPrev()}

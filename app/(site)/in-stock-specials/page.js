@@ -186,7 +186,7 @@ const ctaContent = [
 
 function PromoStrip() {
   return (
-    <section className="bg-teal py-4 sm:py-5">
+    <section className="bg-blue py-4 sm:py-5">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-2 px-6 text-center sm:flex-row sm:gap-3 sm:px-8 lg:px-10">
         <span className="text-lg" aria-hidden="true">
           🎁

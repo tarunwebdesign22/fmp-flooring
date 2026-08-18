@@ -511,7 +511,7 @@ const federalContent = [
         title: "Courthouses",
         icon: "government",
         description:
-          "Durable, professional flooring solutions for courtrooms and judicial facilities.",
+          "Durable, professional, impact-resistant flooring solutions for courtrooms and judicial facilities.",
         image: "/images/court-house.jpg",
       },
       {
@@ -525,7 +525,7 @@ const federalContent = [
         title: "Colleges",
         icon: "schools",
         description:
-          "Stylish, durable flooring for college campuses and academic buildings.",
+          "Stylish, durable, slip-resistant flooring for college campuses and academic buildings.",
         image: "/images/image-school.webp",
       },
       {

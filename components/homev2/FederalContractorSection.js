@@ -53,7 +53,7 @@ function ArrowButton({ direction, onClick }) {
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous sectors" : "Next sectors"}
-      className={`absolute top-[42%] z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-grey bg-white text-teal shadow-md transition-colors hover:border-teal hover:bg-teal hover:text-white ${
+      className={`absolute top-[42%] z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-grey bg-white text-teal shadow-md transition-colors hover:border-teal hover:bg-teal hover:text-white sm:flex ${
         direction === "prev" ? "left-0" : "right-0"
       }`}
     >
@@ -70,7 +70,7 @@ function ArrowButton({ direction, onClick }) {
 
 function SectorCard({ sector }) {
   return (
-    <article className="mx-1 flex h-full flex-col rounded-2xl bg-blue shadow-[0_6px_24px_rgba(0,0,0,0.1)] sm:mx-2">
+    <article className="mx-0 flex h-full flex-col rounded-2xl bg-blue shadow-[0_6px_24px_rgba(0,0,0,0.1)] sm:mx-2">
       <div className="relative h-48 shrink-0 overflow-hidden rounded-t-2xl bg-greylight sm:h-52">
         <Image
           src={sector.image}
@@ -147,7 +147,7 @@ export default function FederalContractorSection({ content }) {
                 </Link>
               </div>
 
-              <div className="relative min-w-0 px-8 sm:px-10">
+              <div className="relative min-w-0 px-[15px] sm:px-10">
                 <ArrowButton direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
                 <ArrowButton direction="next" onClick={() => sliderRef.current?.slickNext()} />
 
