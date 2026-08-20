@@ -123,14 +123,16 @@ const mailingListContent = [
 const simpleProcessContent = [
   {
     title: "Get Brand New Laminate in 3 Simple Steps",
+    buttonText: "Free In Home Estimate",
+    buttonHref: "/estimate",
     steps: [
       {
         number: "1",
         title: "Schedule a Free In-Home Consult with a Flooring Expert",
+        description:
+          "Book a free visit with a flooring expert who will come to your home, review your space, and help you get started with confidence.",
         image: "/images/process-feature/04-final-walkthrough.jpg",
         imageAlt: "Scheduling a free in-home flooring consultation",
-        buttonText: "Get Started Now",
-        buttonHref: "/estimate",
       },
       {
         number: "2",

@@ -644,7 +644,10 @@ export default function HeroSection({ content }) {
             sizes="100vw"
           />
         ))}
-        <div className="absolute inset-0 bg-black/45" aria-hidden="true" />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent"
+          aria-hidden="true"
+        />
 
         <div className="relative mx-auto flex aspect-square max-w-7xl items-end justify-center px-4 pb-8 pt-8">
           <div key={`mobile-${activeSlide.id}`} className="hero-slide-content w-full" aria-live="polite">
@@ -700,7 +703,10 @@ export default function HeroSection({ content }) {
             sizes="100vw"
           />
         ))}
-        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent"
+          aria-hidden="true"
+        />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 pb-16 sm:px-8 sm:pb-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12 lg:px-10 lg:py-16 lg:pb-24 xl:py-20 xl:pb-24">
           {/* Left content — changes per slide */}

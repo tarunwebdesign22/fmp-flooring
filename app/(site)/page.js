@@ -22,6 +22,7 @@ import TestimonialsSection from "@/components/homev2/TestimonialsSection";
 import WhyChooseSection from "@/components/homev2/WhyChooseSection";
 import OffersSliderSection from "@/components/OffersSliderSection";
 import ServicesSection from "@/components/homev2/ServicesSection";
+import ImageGallerySection from "@/components/ImageGallerySection";
 
 const heroContent = [
   {
@@ -30,7 +31,7 @@ const heroContent = [
       {
         id: "financing",
         type: "financing",
-        backgroundImage: "/images/finance-banner.webp",
+        backgroundImage: "/images/finance-banner-image.webp",
         eyebrow: "Flexible Payment Options",
         title: "Financing Available",
         description:
@@ -43,6 +44,24 @@ const heroContent = [
         buttonText: "Explore Financing Options",
         buttonHref: "/financing",
         footnote: "*Subject to credit approval. Terms and conditions apply.",
+      },
+      {
+        id: "in-stock-specials",
+        type: "service",
+        backgroundImage: "/images/instock-banner-1.webp",
+        icon: "plank",
+        eyebrow: "Limited Time Deals",
+        title: "In Stock Specials",
+        description:
+          "Closeout flooring deals ready to install — waterproof LVP, laminate, and engineered hardwood at prices you won’t see again.",
+        bullets: [
+          "In-stock closeout pricing from $1/sf",
+          "FREE quarter round with LVP purchases",
+          "Limited quantities — once gone, gone",
+          "Professional installation available",
+        ],
+        buttonText: "Shop In Stock Specials",
+        buttonHref: "/in-stock-specials",
       },
       {
         id: "luxury-vinyl-plank",
@@ -65,7 +84,7 @@ const heroContent = [
       {
         id: "broadloom-carpet",
         type: "service",
-        backgroundImage: "/images/bc-banner.webp",
+        backgroundImage: "/images/broadloom-carpet-image.webp",
         icon: "carpet",
         eyebrow: "Featured Service",
         title: "Broadloom Carpet",
@@ -83,7 +102,7 @@ const heroContent = [
       {
         id: "hardwood",
         type: "service",
-        backgroundImage: "/images/hardwood-banner.webp",
+        backgroundImage: "/images/hardwood-banner-image.webp",
         icon: "hardwood",
         eyebrow: "Featured Service",
         title: "Hardwood Flooring",
@@ -253,43 +272,35 @@ const howWeManageProjectsContent = [
     steps: [
       {
         step: "01",
-        title: "Moving Furniture",
+        title: "Furniture & Fixture Removal",
         description:
-          "We carefully move and protect your furniture so installation can begin with a clear, ready workspace.",
+          "We carefully move and protect your furniture and remove toilets or other fixtures when needed to prepare the space for installation.",
         image: "/images/process-feature/01-furniture-moving.jpg",
         imageAlt: "Crew moving and protecting furniture before flooring work",
       },
       {
         step: "02",
-        title: "Floor Preparation",
+        title: "Subfloor Preparation",
         description:
-          "Subfloors are inspected, leveled, and prepared to create a solid foundation for lasting results.",
+          "We inspect, level, and prepare the subfloor to create a smooth, stable foundation for your new flooring.",
         image: "/images/process-feature/02-floor-preparation.jpg",
         imageAlt: "Technician preparing and leveling the subfloor",
       },
       {
         step: "03",
-        title: "Flooring Installation",
+        title: "Professional Flooring Installation",
         description:
-          "Our installers lay your flooring with precision for a clean, professional finish throughout the space.",
+          "Our experienced installers precisely lay your new flooring for a clean, seamless, and professional finish.",
         image: "/images/process-feature/03-installation.jpg",
         imageAlt: "Professional installing new flooring planks",
       },
       {
         step: "04",
-        title: "Bathroom & Toilet Removal/Reinstallation",
+        title: "Trim, Fixtures & Final Touches",
         description:
-          "When required, we remove and reinstall toilets and bathroom fixtures for a seamless flooring transition.",
+          "We complete the installation with trim and finishing details, then reinstall removed fixtures and ensure everything is clean, polished, and ready to enjoy.",
         image: "/images/process-feature/how-to-replace-bathroom-tiles.jpg",
         imageAlt: "Bathroom tile and fixture work for flooring installation",
-      },
-      {
-        step: "05",
-        title: "Trim Installation & Finishing",
-        description:
-          "Baseboards, trim, and finishing details are installed for a polished, complete look.",
-        image: "/images/process-feature/06-trim-finishing.jpg",
-        imageAlt: "Finished flooring with trim and final walkthrough",
       },
     ],
   },
@@ -1135,9 +1146,44 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/medical-flooring-image001.webp",
+        image: "/images/Offer-banner-image.webp",
         imageAlt: "Healthcare worker smiling outdoors",
       },
+    ],
+  },
+];
+
+const workShowcaseContent = [
+  {
+    eyebrow: "Our Work",
+    title: "Work Showcase",
+    description:
+      "Browse real flooring projects from FMP Flooring — completed installs, product looks, and spaces transformed by our team.",
+    images: [
+      { src: "/images/home-gallery/01-1.jpg", alt: "Completed flooring installation project" },
+      { src: "/images/home-gallery/04-1.jpg", alt: "Flooring project showcase" },
+      { src: "/images/home-gallery/05-1.jpg", alt: "Installed flooring detail" },
+      { src: "/images/home-gallery/3.jpg", alt: "Residential flooring project" },
+      { src: "/images/home-gallery/5.jpg", alt: "Flooring installation result" },
+      { src: "/images/home-gallery/6.jpeg", alt: "Finished flooring room" },
+      { src: "/images/home-gallery/7.jpg", alt: "Flooring project photo" },
+      { src: "/images/home-gallery/9.jpeg", alt: "Completed flooring space" },
+      { src: "/images/home-gallery/9.jpg", alt: "Installed floor surface" },
+      { src: "/images/home-gallery/10.jpeg", alt: "Flooring showcase image" },
+      { src: "/images/home-gallery/10.jpg", alt: "Professional flooring install" },
+      { src: "/images/home-gallery/12.jpg", alt: "Flooring project gallery photo" },
+      {
+        src: "/images/home-gallery/67700 - 433RB Bloomington Oak-01.png",
+        alt: "Bloomington Oak flooring sample",
+      },
+      { src: "/images/home-gallery/67756653 (1).jpg", alt: "Flooring installation showcase" },
+      { src: "/images/home-gallery/n7 (1).jpg", alt: "Flooring project photo 1" },
+      { src: "/images/home-gallery/n7 (2).jpg", alt: "Flooring project photo 2" },
+      { src: "/images/home-gallery/n7 (3).jpg", alt: "Flooring project photo 3" },
+      { src: "/images/home-gallery/new10.jpg", alt: "Recent flooring project" },
+      { src: "/images/home-gallery/new11.jpg", alt: "Recent flooring install" },
+      { src: "/images/home-gallery/new13.jpg", alt: "Recent flooring showcase" },
+      { src: "/images/home-gallery/Renwick Oak01.jpg", alt: "Renwick Oak flooring look" },
     ],
   },
 ];
@@ -1168,6 +1214,7 @@ export default function Home() {
       
       
       <LatestProjectsSection content={latestProjectsContent} />
+      <ImageGallerySection content={workShowcaseContent} />
       <QuoteCtaSection content={quoteCtaContent} />
       <EducationalResourcesSection content={educationalResourcesContent} />
       <EducationalVideosSection content={educationalVideosContent} />

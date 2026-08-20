@@ -49,21 +49,21 @@ export default function SimpleProcessSection({ content }) {
                     {step.description}
                   </p>
                 ) : null}
-
-                {step.buttonText && step.buttonHref ? (
-                  <div className="mt-6">
-                    <Link
-                      href={step.buttonHref}
-                      className="inline-flex items-center justify-center rounded bg-blue px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-teal"
-                    >
-                      {step.buttonText}
-                    </Link>
-                  </div>
-                ) : null}
               </div>
             </li>
           ))}
         </ol>
+
+        {section.buttonText && section.buttonHref ? (
+          <div className="mt-10 flex justify-center sm:mt-12">
+            <Link
+              href={section.buttonHref}
+              className="inline-flex items-center justify-center rounded bg-blue px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-teal"
+            >
+              {section.buttonText}
+            </Link>
+          </div>
+        ) : null}
       </div>
     </section>
   );

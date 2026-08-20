@@ -71,7 +71,7 @@ export default function AreasWeServeSection({
   return (
     <section className="relative isolate overflow-hidden bg-greylight">
       <Image
-        src="/images/concord-map1.webp"
+        src=""
         alt=""
         fill
         className="object-cover object-center"
