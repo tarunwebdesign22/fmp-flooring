@@ -4,6 +4,7 @@ import Link from "next/link";
 const serviceLinks = [
   { label: "Carpet Broadloom", href: "/broadloom-carpet" },
   { label: "Carpet Tile Services", href: "/carpet-tile" },
+  { label: "Ceramic Flooring", href: "/ceramic" },
   { label: "Rubber Flooring", href: "/rubber" },
   { label: "Hardwood Flooring", href: "/hardwood" },
   { label: "Laminate Services", href: "/laminate" },

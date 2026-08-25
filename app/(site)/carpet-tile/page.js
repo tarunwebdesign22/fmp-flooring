@@ -22,40 +22,40 @@ import SimpleProcessSection from "@/components/SimpleProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 
 export const metadata = {
-  title: "Laminate Flooring | Durable & Affordable Laminate Floors | FMP Flooring",
+  title: "Carpet Tile Flooring | Commercial & Residential Carpet Tiles | FMP Flooring",
   description:
-    "Stylish, durable, and cost-effective laminate flooring installation from FMP Flooring. Wood-look finishes, waterproof options, and professional installation for homes and commercial spaces.",
+    "Durable modular carpet tile flooring from FMP Flooring. Commercial and residential carpet tiles with easy installation, design flexibility, and professional installation.",
 };
 
 const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Laminate Services" },
+      { label: "Carpet Tile Services" },
     ],
     slides: [
       {
-        id: "laminate-service",
-        backgroundImage: "/images/laminate-page-banner.webp",
+        id: "carpet-tile-service",
+        backgroundImage: "/images/carpet-tile-page-banner.png",
         financing: {
-          eyebrow: "Laminate Services",
-          titleBefore: "We Offer High-Quality Laminate Flooring — ",
+          eyebrow: "Carpet Tile Services",
+          titleBefore: "We Offer High-Quality Carpet Tile Flooring — ",
           titleHighlightValue: "65%  Off Sale",
           titleAfter: "",
           description:
-            "Upgrade your space with professional laminate flooring installation designed for busy homes and light commercial spaces.",
+            "Upgrade your space with durable modular carpet tiles designed for offices, retail, schools, and modern homes.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
       },
       {
-        id: "laminate-financing",
+        id: "carpet-tile-financing",
         backgroundImage: "/images/finance-banner.webp",
         financing: {
           eyebrow: "Flexible Payment Options",
           title: "Financing Available",
           description:
-            "Buy now and pay over time! We offer several different financing programs for your laminate flooring project.",
+            "Buy now and pay over time! We offer several different financing programs for your carpet tile flooring project.",
           benefits: [
             { icon: "approvals", title: "Fast Approvals*" },
             { icon: "noPayments", title: "No Payments*" },
@@ -66,12 +66,12 @@ const heroContent = [
           footnote: "*Subject to credit approval. Terms and conditions apply.",
         },
       },
-    ], 
+    ],
     form: {
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
-      defaultService: "Laminate",
+      defaultService: "Carpet Tile",
       highlight: "Free Installation & 50% Off Vinyl",
       services: [
         "Luxury Vinyl Plank",
@@ -89,14 +89,14 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Laminate Services",
-    title: "Stylish, Durable & Cost-Effective Flooring",
+    eyebrow: "Carpet Tile Services",
+    title: "Carpet Tile Flooring – Durable, Modular & Modern Flooring Solution",
     paragraphs: [
-      "Laminate flooring is a popular and affordable flooring option that delivers the look of natural hardwood or tile with enhanced durability and easy maintenance. Designed for modern living, laminate floors are ideal for residential and light commercial spaces where style, performance, and value matter.",
-      "At FMP Flooring, we offer high-quality laminate flooring installation with a wide range of colors, textures, and wood-look finishes to suit every space and budget.",
+      "Carpet tile flooring, also known as modular carpet tiles, is a versatile, durable, and cost-effective flooring solution for both commercial and residential spaces. Designed for high-traffic environments, carpet tiles are widely used in offices, retail stores, schools, healthcare facilities, and modern homes.",
+      "At FMP Flooring, we specialize in commercial carpet tile flooring and residential carpet tiles that combine performance, comfort, and design flexibility. Whether you are upgrading an office or remodeling your home, carpet tile flooring offers long-lasting value and easy maintenance.",
     ],
-    image: "/images/features/Renwick Oak01.jpg",
-    imageAlt: "Wood-look laminate flooring in a modern living space",
+    image: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
+    imageAlt: "Modular carpet tile flooring in a commercial space",
     offer: {
       topLabel: "Huge Savings",
       value: "65",
@@ -122,7 +122,7 @@ const mailingListContent = [
 
 const simpleProcessContent = [
   {
-    title: "Get Brand New Laminate in 3 Simple Steps",
+    title: "Get Brand New Carpet Tile in 3 Simple Steps",
     buttonText: "Free In Home Estimate",
     buttonHref: "/estimate",
     steps: [
@@ -148,7 +148,7 @@ const simpleProcessContent = [
         description:
           "Upon approval, you will be able to finance your purchase and schedule your professional installation.",
         image: "/images/process-feature/03-installation.jpg",
-        imageAlt: "Professional crew installing laminate flooring",
+        imageAlt: "Professional crew installing carpet tile flooring",
       },
     ],
   },
@@ -170,38 +170,38 @@ const financeBannerContent = [
 const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
-    title: "Why Choose Laminate Flooring?",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+    title: "Why Choose Carpet Tile Flooring?",
+    backgroundImage: "/images/carpet-tile-gallery/interior-design-of-ethnic-living-room.jpg",
     items: [
       {
         icon: "durable",
-        title: "Durable & Scratch-Resistant",
+        title: "Durable Carpet Tiles for High-Traffic Areas",
         description:
-          "Engineered with a strong wear layer that resists scratches, dents, and everyday wear — ideal for high-traffic areas, pets, and active households.",
+          "Carpet tiles are engineered for durability, making them ideal for commercial flooring applications such as offices, hallways, conference rooms, and retail spaces. High-performance fibers resist wear, stains, and crushing caused by heavy foot traffic.",
       },
       {
         icon: "affordable",
-        title: "Affordable Flooring Option",
+        title: "Easy Installation & Tile Replacement",
         description:
-          "Get the appearance of hardwood or tile at a fraction of the cost, without sacrificing style or long-term performance.",
+          "Unlike traditional broadloom carpet, carpet tile flooring installs quickly and efficiently. Individual tiles can be replaced if damaged or stained, eliminating the need to replace the entire floor.",
       },
       {
         icon: "maintenance",
-        title: "Easy Maintenance",
+        title: "Low-Maintenance Carpet Flooring",
         description:
-          "Regular sweeping and occasional damp mopping keep laminate floors looking new with minimal effort.",
-      },
-      {
-        icon: "moisture",
-        title: "Moisture-Resistant Options",
-        description:
-          "Many modern laminate products offer improved moisture resistance for kitchens, hallways, and living areas.",
+          "Carpet tiles are easy to maintain with routine vacuuming and spot cleaning. Their modular design helps reduce long-term maintenance and repair costs.",
       },
       {
         icon: "styles",
-        title: "Wide Range of Styles",
+        title: "Design Flexibility with Modular Carpet Tiles",
         description:
-          "Choose realistic wood-look laminate, stone-look designs, and a variety of plank sizes and finishes.",
+          "Available in a wide range of colors, textures, and patterns, carpet tiles allow you to create custom layouts, modern designs, and unique flooring patterns for any space.",
+      },
+      {
+        icon: "moisture",
+        title: "Eco-Friendly Carpet Tile Options",
+        description:
+          "Many carpet tiles are manufactured using recycled materials and are recyclable at the end of their life cycle, making them a sustainable flooring choice.",
       },
     ],
   },
@@ -221,15 +221,15 @@ const highlightsContent = [
 const tipsContent = [
   {
     eyebrow: "Care Guide",
-    title: "Maintenance Tips",
+    title: "Carpet Tile Maintenance Tips",
     description:
-      "Keep your laminate floors looking their best with a simple, consistent cleaning routine that protects the wear layer and finish.",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+      "To keep your carpet tiles in top condition, vacuum regularly to remove dirt and debris. Address spills quickly with a mild cleaner and perform periodic deep cleans to maintain their appearance and durability.",
+    backgroundImage: "/images/carpet-tile-gallery/interior-design-of-ethnic-living-room.jpg",
     tips: [
-      "Sweep or vacuum daily to remove dirt and debris that can cause scratches.",
-      "Use a soft-bristle broom or a vacuum with a hard-floor setting.",
-      "Damp mop occasionally — avoid standing water and harsh cleaners.",
-      "Place mats at entryways and felt pads under furniture legs.",
+      "Vacuum regularly to remove dirt and debris from carpet tile surfaces.",
+      "Address spills quickly with a mild cleaner to prevent staining.",
+      "Perform periodic deep cleans to maintain appearance and durability.",
+      "Replace individual damaged tiles instead of the entire floor when needed.",
     ],
   },
 ];
@@ -237,15 +237,18 @@ const tipsContent = [
 const applicationsContent = [
   {
     eyebrow: "Where It Works",
-    title: "Laminate Flooring Applications",
-    description: "Laminate flooring is ideal for residential and light commercial spaces, including:",
+    title: "Carpet Tile Flooring Applications",
+    description:
+      "Carpet tile flooring is suitable for a wide range of commercial and residential uses, including:",
     items: [
-      "Living rooms and family rooms",
-      "Bedrooms and hallways",
+      "Commercial office carpet tile flooring",
+      "Corporate and coworking spaces",
+      "Retail stores and showrooms",
+      "Conference and meeting rooms",
+      "Schools and educational facilities",
+      "Healthcare and medical offices",
       "Home offices",
-      "Dining rooms",
-      "Retail spaces and light commercial areas",
-      "Rental properties and remodels",
+      "Basements and playrooms",
     ],
   },
 ];
@@ -253,15 +256,30 @@ const applicationsContent = [
 const compareContent = [
   {
     eyebrow: "Compare Options",
-    title: "Laminate Flooring vs Other Flooring Types",
+    title: "Carpet Tile Flooring vs Broadloom Carpet",
     featureLabel: "Feature",
-    columns: ["Laminate Flooring", "Hardwood Flooring", "Vinyl Flooring"],
+    columns: ["Carpet Tile Flooring", "Broadloom Carpet"],
     rows: [
-      { feature: "Cost", values: ["Low", "High", "Moderate"] },
-      { feature: "Scratch Resistance", values: ["High", "Moderate", "High"] },
-      { feature: "Moisture Resistance", values: ["Moderate", "Low", "High"] },
-      { feature: "Maintenance", values: ["Easy", "Moderate", "Easy"] },
-      { feature: "Natural Wood", values: [false, true, false] },
+      {
+        feature: "Installation",
+        values: ["Modular tile installation", "One-piece installation"],
+      },
+      {
+        feature: "Replacement",
+        values: ["Easy tile replacement", "Entire floor replacement"],
+      },
+      {
+        feature: "Design Options",
+        values: ["Flexible design options", "Fixed design"],
+      },
+      {
+        feature: "High-Traffic Performance",
+        values: ["Ideal for high-traffic areas", "Wears faster in traffic zones"],
+      },
+      {
+        feature: "Long-Term Maintenance",
+        values: ["Lower long-term maintenance", "Higher maintenance costs"],
+      },
     ],
   },
 ];
@@ -269,18 +287,19 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Laminate Flooring Installation",
+    title: "Professional Carpet Tile Installation Services",
     description:
-      "Our experienced installers specialize in laminate flooring installation, ensuring proper subfloor preparation, precise plank placement, and a clean, professional finish.",
-    servicesTitle: "Our Laminate Flooring Services Include:",
+      "We provide expert carpet tile installation for both commercial and residential projects. Our experienced installers ensure proper layout, secure adhesion, and a clean, professional finish.",
+    servicesTitle: "Our Carpet Tile Services Include:",
     services: [
-      "Free in-home consultations",
-      "Accurate project estimates",
-      "Professional laminate floor installation",
-      "Residential and commercial laminate solutions",
+      "Free on-site consultations",
+      "Accurate flooring estimates",
+      "Professional carpet tile installation",
+      "Commercial and residential flooring solutions",
     ],
-    image: "/images/features/2.jpg",
-    imageAlt: "Professional laminate flooring installation",
+    image:
+      "/images/carpet-tile-gallery/Professional-Carpet-Tile-Installation-Services.png",
+    imageAlt: "Professional carpet tile flooring installation",
     offer: {
       topLabel: "Interest Free",
       value: "60",
@@ -298,18 +317,18 @@ const testimonialsContent = [
     items: [
       {
         quote:
-          "The team at FMP Flooring LLC provided us with exceptional service from start to finish. They helped us choose the perfect flooring that suits our high-traffic environment. The laminate has held up tremendously well, and cleaning it is a breeze.",
-        author: "Lewis Bennett",
+          "From start to finish, the team at FMP Flooring LLC provided exceptional service. The carpet tiles look fantastic and are holding up great. The installation was quick, and we couldn't be happier with the results!",
+        author: "John M",
       },
       {
         quote:
-          "We chose FMP Flooring LLC for our new laminate flooring, and the results exceeded our expectations. The installation process was quick and hassle-free, and we received numerous compliments on the new look.",
-        author: "Mike J",
+          "FMP Flooring LLC transformed our office with their carpet tile installation. The process was seamless, and the results exceeded our expectations. The tiles are not only stylish but also durable—highly recommend their services!",
+        author: "Emily T",
       },
       {
         quote:
-          "Working with FMP Flooring LLC was a great experience. Their attention to detail and commitment to quality was evident throughout the project. The new laminate flooring looks fantastic and is incredibly durable.",
-        author: "Lisa R",
+          "FMP Flooring LLC did a stellar job with our new carpet tiles. The installation was efficient, and the tiles have been incredibly easy to maintain. The eco-friendly options were a huge plus for us!",
+        author: "Michael R",
       },
     ],
   },
@@ -317,27 +336,27 @@ const testimonialsContent = [
 
 const faqContent = [
   {
-    title: "Laminate Flooring FAQs",
+    title: "Carpet Tile Flooring FAQs",
     items: [
       {
-        question: "What is laminate flooring made of?",
+        question: "What are carpet tiles made of?",
         answer:
-          "Laminate flooring is made of multiple layers, including a high-density fiberboard core and a durable wear layer.",
+          "Carpet tiles are commonly made from nylon, polypropylene, polyester, or recycled fibers for durability and stain resistance.",
       },
       {
-        question: "Is laminate flooring waterproof?",
+        question: "Are carpet tiles waterproof?",
         answer:
-          "Standard laminate is water-resistant, and newer waterproof laminate options provide additional protection.",
+          "Carpet tiles are moisture-resistant but not waterproof. They perform well in areas with occasional spills.",
       },
       {
-        question: "Is laminate flooring good for pets?",
+        question: "How much does carpet tile flooring cost?",
         answer:
-          "Yes. Laminate floors are scratch-resistant and easy to clean, making them ideal for pet-friendly homes.",
+          "The cost of carpet tile flooring varies based on material, quality, and design. Contact us for a customized quote.",
       },
       {
-        question: "How long does laminate flooring last?",
+        question: "Are carpet tiles good for offices?",
         answer:
-          "With proper care, laminate flooring can last 15–25 years or longer.",
+          "Yes. Commercial carpet tiles are one of the most popular flooring options for offices due to durability, noise reduction, and easy replacement.",
       },
     ],
   },
@@ -365,45 +384,33 @@ const offersContent = [
 const galleryContent = [
   {
     eyebrow: "Project Gallery",
-    title: "Laminate Flooring Gallery",
+    title: "Carpet Tile Flooring Gallery",
     description:
-      "Browse real laminate installations — wood-look finishes, living spaces, and professional project results from FMP Flooring.",
+      "Browse modular carpet tile installations — commercial offices, residential spaces, and professional project results from FMP Flooring.",
     images: [
       {
-        src: "/images/laminate-gallery/Professional-Laminate-Flooring-Installation.png.webp",
-        alt: "Professional laminate flooring installation",
+        src: "/images/carpet-tile-gallery/Professional-Carpet-Tile-Installation-Services.png",
+        alt: "Professional carpet tile installation services",
       },
       {
-        src: "/images/laminate-gallery/Laminating-Services-installation.png.webp",
-        alt: "Laminate services installation",
+        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
+        alt: "Carpet tile flooring benefits",
       },
       {
-        src: "/images/laminate-gallery/1.jpg",
-        alt: "Laminate flooring project 1",
+        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-cost.png",
+        alt: "Carpet tile flooring project",
       },
       {
-        src: "/images/laminate-gallery/2.jpg",
-        alt: "Laminate flooring project 2",
+        src: "/images/carpet-tile-gallery/Carpet-Tile-Installation-Services.png",
+        alt: "Carpet tile installation services",
       },
       {
-        src: "/images/laminate-gallery/3.jpg",
-        alt: "Laminate flooring project 3",
+        src: "/images/carpet-tile-gallery/interior-design-of-ethnic-living-room.jpg",
+        alt: "Interior space with flooring",
       },
       {
-        src: "/images/laminate-gallery/8.jpg",
-        alt: "Laminate flooring project 8",
-      },
-      {
-        src: "/images/laminate-gallery/06 Jul 2023-3.jpg",
-        alt: "Laminate flooring installation July 2023",
-      },
-      {
-        src: "/images/laminate-gallery/06 Jul 2023-4.jpg",
-        alt: "Completed laminate flooring project",
-      },
-      {
-        src: "/images/laminate-gallery/06 Jul 2023-5.jpg",
-        alt: "Laminate flooring detail",
+        src: "/images/carpet-tile-gallery/image-3.png",
+        alt: "Carpet tile flooring detail",
       },
     ],
   },
@@ -476,9 +483,9 @@ const commercialProjectsContent = [
 const ctaContent = [
   {
     headlineWhite: "Get a Free",
-    headlineTeal: "Laminate Flooring Quote",
+    headlineTeal: "Carpet Tile Flooring Quote",
     description:
-      "Upgrade your space with stylish, durable laminate flooring. Contact FMP Flooring today for a free estimate and expert installation.",
+      "Upgrade your space with durable, stylish carpet tile flooring. Whether you need commercial carpet tile flooring or residential carpet tiles, our team is ready to help. Contact FMP Flooring today for a free estimate and professional carpet tile installation.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
     buttonText: "Free In-Home Estimate",
@@ -487,7 +494,7 @@ const ctaContent = [
   },
 ];
 
-export default function LaminatePage() {
+export default function CarpetTilePage() {
   return (
     <main className="flex flex-1 flex-col">
       <ServicePageHero content={heroContent} />

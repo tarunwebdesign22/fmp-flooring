@@ -8,7 +8,7 @@ const primaryLinks = [
   { label: "Luxury Vinyl Plank", href: "/luxury-vinyl-plank", square: "teal" },
   { label: "Broadloom Carpet", href: "/broadloom-carpet", square: "blue" },
   { label: "Carpet Tile", href: "/carpet-tile", square: "teal" },
-  { label: "Ceramic Flooring", href: "/ceramic-flooring", square: "blue" },
+  { label: "Ceramic Flooring", href: "/ceramic", square: "blue" },
   { label: "Rubber", href: "/rubber", square: "teal" },
   { label: "Hardwood", href: "/hardwood", square: "blue" },
   { label: "Laminate", href: "/laminate", square: "teal" },

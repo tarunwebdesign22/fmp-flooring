@@ -22,40 +22,40 @@ import SimpleProcessSection from "@/components/SimpleProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 
 export const metadata = {
-  title: "Laminate Flooring | Durable & Affordable Laminate Floors | FMP Flooring",
+  title: "Rubber Flooring | Durable Commercial & Residential Rubber Floors | FMP Flooring",
   description:
-    "Stylish, durable, and cost-effective laminate flooring installation from FMP Flooring. Wood-look finishes, waterproof options, and professional installation for homes and commercial spaces.",
+    "Premium rubber flooring installation from FMP Flooring. Durable, slip-resistant, and comfortable rubber floors for gyms, schools, healthcare facilities, garages, and homes.",
 };
 
 const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Laminate Services" },
+      { label: "Rubber Flooring" },
     ],
     slides: [
       {
-        id: "laminate-service",
-        backgroundImage: "/images/laminate-page-banner.webp",
+        id: "rubber-service",
+        backgroundImage: "/images/rubber-page-banner.webp",
         financing: {
-          eyebrow: "Laminate Services",
-          titleBefore: "We Offer High-Quality Laminate Flooring — ",
+          eyebrow: "Rubber Flooring",
+          titleBefore: "We Offer High-Quality Rubber Flooring — ",
           titleHighlightValue: "65%  Off Sale",
           titleAfter: "",
           description:
-            "Upgrade your space with professional laminate flooring installation designed for busy homes and light commercial spaces.",
+            "Upgrade your space with professional rubber flooring installation — durable, slip-resistant floors for gyms, schools, and commercial projects.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
       },
       {
-        id: "laminate-financing",
+        id: "rubber-financing",
         backgroundImage: "/images/finance-banner.webp",
         financing: {
           eyebrow: "Flexible Payment Options",
           title: "Financing Available",
           description:
-            "Buy now and pay over time! We offer several different financing programs for your laminate flooring project.",
+            "Buy now and pay over time! We offer several different financing programs for your rubber flooring project.",
           benefits: [
             { icon: "approvals", title: "Fast Approvals*" },
             { icon: "noPayments", title: "No Payments*" },
@@ -66,12 +66,12 @@ const heroContent = [
           footnote: "*Subject to credit approval. Terms and conditions apply.",
         },
       },
-    ], 
+    ],
     form: {
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
-      defaultService: "Laminate",
+      defaultService: "Rubber",
       highlight: "Free Installation & 50% Off Vinyl",
       services: [
         "Luxury Vinyl Plank",
@@ -89,14 +89,14 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Laminate Services",
-    title: "Stylish, Durable & Cost-Effective Flooring",
+    eyebrow: "Rubber Flooring",
+    title: "Rubber Flooring – Resilient, Comfortable & Long-Lasting",
     paragraphs: [
-      "Laminate flooring is a popular and affordable flooring option that delivers the look of natural hardwood or tile with enhanced durability and easy maintenance. Designed for modern living, laminate floors are ideal for residential and light commercial spaces where style, performance, and value matter.",
-      "At FMP Flooring, we offer high-quality laminate flooring installation with a wide range of colors, textures, and wood-look finishes to suit every space and budget.",
+      "Rubber flooring is a versatile, heavy-duty flooring solution ideal for commercial and residential use. Known for its durability, slip resistance, comfort underfoot, and noise-reducing performance, rubber floors are perfect for gyms, fitness centers, playrooms, schools, healthcare facilities, garages, and more.",
+      "At FMP Flooring, we offer premium commercial rubber flooring and residential rubber flooring options in a range of thicknesses, colors, and styles to match your project’s needs.",
     ],
-    image: "/images/features/Renwick Oak01.jpg",
-    imageAlt: "Wood-look laminate flooring in a modern living space",
+    image: "/images/rubber-gallery/Flooring-ruber-school.png.webp",
+    imageAlt: "Rubber flooring in a school hallway",
     offer: {
       topLabel: "Huge Savings",
       value: "65",
@@ -122,7 +122,7 @@ const mailingListContent = [
 
 const simpleProcessContent = [
   {
-    title: "Get Brand New Laminate in 3 Simple Steps",
+    title: "Get Brand New Rubber Flooring in 3 Simple Steps",
     buttonText: "Free In Home Estimate",
     buttonHref: "/estimate",
     steps: [
@@ -148,7 +148,7 @@ const simpleProcessContent = [
         description:
           "Upon approval, you will be able to finance your purchase and schedule your professional installation.",
         image: "/images/process-feature/03-installation.jpg",
-        imageAlt: "Professional crew installing laminate flooring",
+        imageAlt: "Professional crew installing rubber flooring",
       },
     ],
   },
@@ -170,38 +170,38 @@ const financeBannerContent = [
 const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
-    title: "Why Choose Laminate Flooring?",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+    title: "Why Choose Rubber Flooring?",
+    backgroundImage: "/images/home-services/Rubber-Flooring-1024x768.jpg.webp",
     items: [
       {
         icon: "durable",
-        title: "Durable & Scratch-Resistant",
+        title: "Extremely Durable & Long-Lasting",
         description:
-          "Engineered with a strong wear layer that resists scratches, dents, and everyday wear — ideal for high-traffic areas, pets, and active households.",
+          "Rubber flooring is engineered to withstand high-traffic areas and impact, making it ideal for commercial rubber flooring, gym flooring, and busy spaces that require long-lasting performance.",
       },
       {
         icon: "affordable",
-        title: "Affordable Flooring Option",
+        title: "Comfortable & Shock-Absorbing",
         description:
-          "Get the appearance of hardwood or tile at a fraction of the cost, without sacrificing style or long-term performance.",
-      },
-      {
-        icon: "maintenance",
-        title: "Easy Maintenance",
-        description:
-          "Regular sweeping and occasional damp mopping keep laminate floors looking new with minimal effort.",
+          "Rubber floors provide cushioning underfoot, reducing fatigue and minimizing stress on joints — perfect for fitness rooms, gyms, childcare areas, and standing workstations.",
       },
       {
         icon: "moisture",
-        title: "Moisture-Resistant Options",
+        title: "Slip-Resistant & Safe",
         description:
-          "Many modern laminate products offer improved moisture resistance for kitchens, hallways, and living areas.",
+          "Rubber flooring delivers excellent traction and slip resistance, making it a safe choice for gyms, school hallways, and wet areas such as locker rooms or poolsides.",
+      },
+      {
+        icon: "maintenance",
+        title: "Low-Maintenance & Easy to Clean",
+        description:
+          "Rubber floors are simple to maintain. Regular sweeping and damp mopping keep your rubber flooring looking great without special cleaners.",
       },
       {
         icon: "styles",
-        title: "Wide Range of Styles",
+        title: "Eco-Friendly & Recyclable Options",
         description:
-          "Choose realistic wood-look laminate, stone-look designs, and a variety of plank sizes and finishes.",
+          "Many rubber flooring products are made from recycled materials and can be recycled again at end of life, making them a sustainable flooring choice.",
       },
     ],
   },
@@ -223,13 +223,11 @@ const tipsContent = [
     eyebrow: "Care Guide",
     title: "Maintenance Tips",
     description:
-      "Keep your laminate floors looking their best with a simple, consistent cleaning routine that protects the wear layer and finish.",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+      "Maintaining rubber flooring is crucial for longevity. Regular sweeping and damp mopping with mild cleaners will keep it looking fresh.",
+    backgroundImage: "/images/home-services/Rubber-Flooring-1024x768.jpg.webp",
     tips: [
-      "Sweep or vacuum daily to remove dirt and debris that can cause scratches.",
-      "Use a soft-bristle broom or a vacuum with a hard-floor setting.",
-      "Damp mop occasionally — avoid standing water and harsh cleaners.",
-      "Place mats at entryways and felt pads under furniture legs.",
+      "Regular sweeping and damp mopping with mild cleaners will keep it looking fresh.",
+      "Address stubborn stains promptly with a soft brush and gentle solution to prevent lasting damage.",
     ],
   },
 ];
@@ -237,15 +235,17 @@ const tipsContent = [
 const applicationsContent = [
   {
     eyebrow: "Where It Works",
-    title: "Laminate Flooring Applications",
-    description: "Laminate flooring is ideal for residential and light commercial spaces, including:",
+    title: "Applications for Rubber Flooring",
+    description: "Rubber flooring is ideal for:",
     items: [
-      "Living rooms and family rooms",
-      "Bedrooms and hallways",
-      "Home offices",
-      "Dining rooms",
-      "Retail spaces and light commercial areas",
-      "Rental properties and remodels",
+      "Commercial gym and fitness center flooring",
+      "Home gym flooring",
+      "Childcare and preschool play areas",
+      "Healthcare facilities and clinics",
+      "School hallways and classrooms",
+      "Locker rooms and wet zones",
+      "Garages and workshop floors",
+      "Retail and commercial spaces",
     ],
   },
 ];
@@ -253,15 +253,15 @@ const applicationsContent = [
 const compareContent = [
   {
     eyebrow: "Compare Options",
-    title: "Laminate Flooring vs Other Flooring Types",
+    title: "Rubber Flooring vs Other Floor Types",
     featureLabel: "Feature",
-    columns: ["Laminate Flooring", "Hardwood Flooring", "Vinyl Flooring"],
+    columns: ["Rubber Flooring", "Vinyl Flooring", "Carpet Flooring"],
     rows: [
-      { feature: "Cost", values: ["Low", "High", "Moderate"] },
-      { feature: "Scratch Resistance", values: ["High", "Moderate", "High"] },
-      { feature: "Moisture Resistance", values: ["Moderate", "Low", "High"] },
-      { feature: "Maintenance", values: ["Easy", "Moderate", "Easy"] },
-      { feature: "Natural Wood", values: [false, true, false] },
+      { feature: "Durability", values: ["Excellent", "Good", "Moderate"] },
+      { feature: "Moisture Resistance", values: ["Very Good", "Very Good", "Poor"] },
+      { feature: "Comfort Underfoot", values: ["High", "Moderate", "High"] },
+      { feature: "Slip Resistance", values: ["Excellent", "Good", "Poor"] },
+      { feature: "Best For Gyms/Play Areas", values: [true, "Partial", false] },
     ],
   },
 ];
@@ -269,18 +269,18 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Laminate Flooring Installation",
+    title: "Professional Rubber Flooring Installation",
     description:
-      "Our experienced installers specialize in laminate flooring installation, ensuring proper subfloor preparation, precise plank placement, and a clean, professional finish.",
-    servicesTitle: "Our Laminate Flooring Services Include:",
+      "Our experienced flooring professionals ensure proper layout, precise cuts, and secure installation for every rubber flooring project — whether commercial or residential.",
+    servicesTitle: "Our Rubber Flooring Services Include:",
     services: [
-      "Free in-home consultations",
-      "Accurate project estimates",
-      "Professional laminate floor installation",
-      "Residential and commercial laminate solutions",
+      "Free on-site consultation and measurement",
+      "Accurate project quotes",
+      "Professional rubber flooring installation",
+      "Commercial and residential rubber flooring solutions",
     ],
-    image: "/images/features/2.jpg",
-    imageAlt: "Professional laminate flooring installation",
+    image: "/images/rubber-gallery/Untitled-design-5.png.webp",
+    imageAlt: "Professional rubber flooring installation",
     offer: {
       topLabel: "Interest Free",
       value: "60",
@@ -298,18 +298,18 @@ const testimonialsContent = [
     items: [
       {
         quote:
-          "The team at FMP Flooring LLC provided us with exceptional service from start to finish. They helped us choose the perfect flooring that suits our high-traffic environment. The laminate has held up tremendously well, and cleaning it is a breeze.",
-        author: "Lewis Bennett",
+          "FMP Flooring LLC provided exceptional service from start to finish. Their knowledge and expertise helped us choose the perfect flooring for our retail store, enhancing both safety and style.",
+        author: "James T",
       },
       {
         quote:
-          "We chose FMP Flooring LLC for our new laminate flooring, and the results exceeded our expectations. The installation process was quick and hassle-free, and we received numerous compliments on the new look.",
-        author: "Mike J",
+          "The team at FMP Flooring LLC was incredibly helpful in guiding us through the selection process. The rubber flooring they installed in our restaurant has held up beautifully against spills and high foot traffic.",
+        author: "Mike L",
       },
       {
         quote:
-          "Working with FMP Flooring LLC was a great experience. Their attention to detail and commitment to quality was evident throughout the project. The new laminate flooring looks fantastic and is incredibly durable.",
-        author: "Lisa R",
+          "We recently installed rubber flooring from FMP Flooring LLC in our gym, and the difference is astounding! It not only looks fantastic but also provides excellent shock absorption for our fitness classes.",
+        author: "Sarah J",
       },
     ],
   },
@@ -317,27 +317,26 @@ const testimonialsContent = [
 
 const faqContent = [
   {
-    title: "Laminate Flooring FAQs",
+    title: "Rubber Flooring Frequently Asked Questions",
     items: [
       {
-        question: "What is laminate flooring made of?",
+        question: "What is rubber flooring made of?",
         answer:
-          "Laminate flooring is made of multiple layers, including a high-density fiberboard core and a durable wear layer.",
+          "Rubber flooring is typically made from natural or synthetic rubber, often including recycled rubber granules.",
       },
       {
-        question: "Is laminate flooring waterproof?",
+        question: "Is rubber flooring good for gyms?",
         answer:
-          "Standard laminate is water-resistant, and newer waterproof laminate options provide additional protection.",
+          "Yes. Gym rubber flooring is one of the most popular choices due to its durability, shock-absorption, and easy maintenance.",
       },
       {
-        question: "Is laminate flooring good for pets?",
+        question: "Can rubber flooring be used outdoors?",
         answer:
-          "Yes. Laminate floors are scratch-resistant and easy to clean, making them ideal for pet-friendly homes.",
+          "Some rubber flooring products are rated for outdoor use — check product specifications for UV and weather resistance.",
       },
       {
-        question: "How long does laminate flooring last?",
-        answer:
-          "With proper care, laminate flooring can last 15–25 years or longer.",
+        question: "How do you clean rubber floors?",
+        answer: "Sweep or vacuum regularly and mop with a pH-neutral cleaner as needed.",
       },
     ],
   },
@@ -365,45 +364,49 @@ const offersContent = [
 const galleryContent = [
   {
     eyebrow: "Project Gallery",
-    title: "Laminate Flooring Gallery",
+    title: "Rubber Flooring Gallery",
     description:
-      "Browse real laminate installations — wood-look finishes, living spaces, and professional project results from FMP Flooring.",
+      "Browse rubber flooring installations — gym floors, school hallways, and professional project results from FMP Flooring.",
     images: [
       {
-        src: "/images/laminate-gallery/Professional-Laminate-Flooring-Installation.png.webp",
-        alt: "Professional laminate flooring installation",
+        src: "/images/rubber-gallery/Flooring-ruber-school.png.webp",
+        alt: "Rubber flooring in a school hallway",
       },
       {
-        src: "/images/laminate-gallery/Laminating-Services-installation.png.webp",
-        alt: "Laminate services installation",
+        src: "/images/rubber-gallery/Untitled-design-5.png.webp",
+        alt: "Rubber flooring installation",
       },
       {
-        src: "/images/laminate-gallery/1.jpg",
-        alt: "Laminate flooring project 1",
+        src: "/images/rubber-gallery/Rubber-Flooring-services.jpg",
+        alt: "Rubber flooring services",
       },
       {
-        src: "/images/laminate-gallery/2.jpg",
-        alt: "Laminate flooring project 2",
+        src: "/images/rubber-gallery/Rubber-Flooring-benefits.png",
+        alt: "Rubber flooring benefits",
       },
       {
-        src: "/images/laminate-gallery/3.jpg",
-        alt: "Laminate flooring project 3",
+        src: "/images/rubber-gallery/Rubber-Flooring-services-2.png",
+        alt: "Commercial rubber flooring services",
       },
       {
-        src: "/images/laminate-gallery/8.jpg",
-        alt: "Laminate flooring project 8",
+        src: "/images/rubber-gallery/Rubber-Flooring-service-north.png",
+        alt: "Rubber flooring service",
       },
       {
-        src: "/images/laminate-gallery/06 Jul 2023-3.jpg",
-        alt: "Laminate flooring installation July 2023",
+        src: "/images/rubber-gallery/rubber-flooring-services.png",
+        alt: "Rubber flooring project",
       },
       {
-        src: "/images/laminate-gallery/06 Jul 2023-4.jpg",
-        alt: "Completed laminate flooring project",
+        src: "/images/rubber-gallery/Flooring-ruber.png.webp",
+        alt: "Rubber flooring surface",
       },
       {
-        src: "/images/laminate-gallery/06 Jul 2023-5.jpg",
-        alt: "Laminate flooring detail",
+        src: "/images/rubber-gallery/Rubber-Flooring.jpg",
+        alt: "Rubber flooring installation",
+      },
+      {
+        src: "/images/home-services/Rubber-Flooring-1024x768.jpg.webp",
+        alt: "Rubber flooring close-up",
       },
     ],
   },
@@ -476,9 +479,9 @@ const commercialProjectsContent = [
 const ctaContent = [
   {
     headlineWhite: "Get a Free",
-    headlineTeal: "Laminate Flooring Quote",
+    headlineTeal: "Rubber Flooring Quote",
     description:
-      "Upgrade your space with stylish, durable laminate flooring. Contact FMP Flooring today for a free estimate and expert installation.",
+      "Upgrade your space with high-performance rubber flooring — perfect for commercial rubber flooring projects, home gyms, play areas, garages, and more. Our expert team will help you choose the best rubber flooring and provide professional installation.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
     buttonText: "Free In-Home Estimate",
@@ -487,7 +490,7 @@ const ctaContent = [
   },
 ];
 
-export default function LaminatePage() {
+export default function RubberPage() {
   return (
     <main className="flex flex-1 flex-col">
       <ServicePageHero content={heroContent} />

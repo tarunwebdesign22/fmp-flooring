@@ -22,40 +22,40 @@ import SimpleProcessSection from "@/components/SimpleProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 
 export const metadata = {
-  title: "Laminate Flooring | Durable & Affordable Laminate Floors | FMP Flooring",
+  title: "Tile Flooring | Ceramic, Porcelain & All Types of Tile | FMP Flooring",
   description:
-    "Stylish, durable, and cost-effective laminate flooring installation from FMP Flooring. Wood-look finishes, waterproof options, and professional installation for homes and commercial spaces.",
+    "Premium ceramic tile, porcelain tile, and specialty tile flooring from FMP Flooring. Durable, moisture-resistant tile installation for kitchens, bathrooms, homes, and commercial spaces.",
 };
 
 const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Laminate Services" },
+      { label: "Ceramic Flooring Service" },
     ],
     slides: [
       {
-        id: "laminate-service",
-        backgroundImage: "/images/laminate-page-banner.webp",
+        id: "ceramic-service",
+        backgroundImage: "/images/ceramic-page-banner.png",
         financing: {
-          eyebrow: "Laminate Services",
-          titleBefore: "We Offer High-Quality Laminate Flooring — ",
+          eyebrow: "Ceramic Flooring Service",
+          titleBefore: "We Offer High-Quality Ceramic Tile Flooring — ",
           titleHighlightValue: "65%  Off Sale",
           titleAfter: "",
           description:
-            "Upgrade your space with professional laminate flooring installation designed for busy homes and light commercial spaces.",
+            "Upgrade your space with professional ceramic, porcelain, and specialty tile flooring installation for homes and commercial projects.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
       },
       {
-        id: "laminate-financing",
+        id: "ceramic-financing",
         backgroundImage: "/images/finance-banner.webp",
         financing: {
           eyebrow: "Flexible Payment Options",
           title: "Financing Available",
           description:
-            "Buy now and pay over time! We offer several different financing programs for your laminate flooring project.",
+            "Buy now and pay over time! We offer several different financing programs for your ceramic and tile flooring project.",
           benefits: [
             { icon: "approvals", title: "Fast Approvals*" },
             { icon: "noPayments", title: "No Payments*" },
@@ -66,12 +66,12 @@ const heroContent = [
           footnote: "*Subject to credit approval. Terms and conditions apply.",
         },
       },
-    ], 
+    ],
     form: {
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
-      defaultService: "Laminate",
+      defaultService: "Ceramic Flooring",
       highlight: "Free Installation & 50% Off Vinyl",
       services: [
         "Luxury Vinyl Plank",
@@ -89,14 +89,14 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Laminate Services",
-    title: "Stylish, Durable & Cost-Effective Flooring",
+    eyebrow: "Ceramic Flooring Service",
+    title: "Premium Tile Flooring – Ceramic, Porcelain & More",
     paragraphs: [
-      "Laminate flooring is a popular and affordable flooring option that delivers the look of natural hardwood or tile with enhanced durability and easy maintenance. Designed for modern living, laminate floors are ideal for residential and light commercial spaces where style, performance, and value matter.",
-      "At FMP Flooring, we offer high-quality laminate flooring installation with a wide range of colors, textures, and wood-look finishes to suit every space and budget.",
+      "Tile flooring gives your space timeless beauty, long-lasting performance, and easy maintenance. At FMP Flooring, we offer a complete range of ceramic tile, porcelain tile, and specialty tile flooring solutions for residential and commercial spaces. From kitchens and bathrooms to entryways, offices, and retail locations, tile flooring delivers style, durability, and moisture resistance.",
+      "Whether you’re searching for ceramic tile flooring, porcelain tile flooring, glazed or matte-finish tiles, or designer tile floors, we have the perfect options for your project.",
     ],
-    image: "/images/features/Renwick Oak01.jpg",
-    imageAlt: "Wood-look laminate flooring in a modern living space",
+    image: "/images/ceramic-gallery/Ceramic-Flooring-Servicess.png",
+    imageAlt: "Premium ceramic tile flooring installation",
     offer: {
       topLabel: "Huge Savings",
       value: "65",
@@ -122,7 +122,7 @@ const mailingListContent = [
 
 const simpleProcessContent = [
   {
-    title: "Get Brand New Laminate in 3 Simple Steps",
+    title: "Get Brand New Ceramic Tile in 3 Simple Steps",
     buttonText: "Free In Home Estimate",
     buttonHref: "/estimate",
     steps: [
@@ -148,7 +148,7 @@ const simpleProcessContent = [
         description:
           "Upon approval, you will be able to finance your purchase and schedule your professional installation.",
         image: "/images/process-feature/03-installation.jpg",
-        imageAlt: "Professional crew installing laminate flooring",
+        imageAlt: "Professional crew installing ceramic tile flooring",
       },
     ],
   },
@@ -170,38 +170,38 @@ const financeBannerContent = [
 const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
-    title: "Why Choose Laminate Flooring?",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+    title: "Why Choose Tile Flooring?",
+    backgroundImage: "/images/ceramic-gallery/interior-design-of-ethnic-living-room.jpg",
     items: [
       {
         icon: "durable",
-        title: "Durable & Scratch-Resistant",
+        title: "Durable & Long-Lasting",
         description:
-          "Engineered with a strong wear layer that resists scratches, dents, and everyday wear — ideal for high-traffic areas, pets, and active households.",
-      },
-      {
-        icon: "affordable",
-        title: "Affordable Flooring Option",
-        description:
-          "Get the appearance of hardwood or tile at a fraction of the cost, without sacrificing style or long-term performance.",
-      },
-      {
-        icon: "maintenance",
-        title: "Easy Maintenance",
-        description:
-          "Regular sweeping and occasional damp mopping keep laminate floors looking new with minimal effort.",
+          "Tile flooring — including ceramic tile and porcelain tile — is engineered for strength. Tile floors resist scratches, moisture, stains, and heavy foot traffic, making them ideal for high-use areas.",
       },
       {
         icon: "moisture",
-        title: "Moisture-Resistant Options",
+        title: "Moisture & Water Resistant",
         description:
-          "Many modern laminate products offer improved moisture resistance for kitchens, hallways, and living areas.",
+          "Tile flooring performs exceptionally well in moisture-prone environments like kitchens, bathrooms, laundry rooms, and entryways. Porcelain tiles are especially known for their low water absorption rate.",
+      },
+      {
+        icon: "maintenance",
+        title: "Easy to Clean & Maintain",
+        description:
+          "Tile floors are simple to keep clean. Regular sweeping and occasional mopping keep your tile flooring looking new for years.",
       },
       {
         icon: "styles",
-        title: "Wide Range of Styles",
+        title: "Endless Style Options",
         description:
-          "Choose realistic wood-look laminate, stone-look designs, and a variety of plank sizes and finishes.",
+          "Choose from a wide variety of tile shapes, sizes, colors, finishes, and textures. From classic subway tiles and wood-look tiles to large-format porcelain and mosaic accents, there’s a tile look for every design.",
+      },
+      {
+        icon: "affordable",
+        title: "Sustainable & Eco-Friendly",
+        description:
+          "Tile flooring is a sustainable flooring choice. Many tiles are made with natural materials, low VOC finishes, and long lifespans that reduce replacement frequency.",
       },
     ],
   },
@@ -223,13 +223,13 @@ const tipsContent = [
     eyebrow: "Care Guide",
     title: "Maintenance Tips",
     description:
-      "Keep your laminate floors looking their best with a simple, consistent cleaning routine that protects the wear layer and finish.",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+      "Keeping your ceramic floors clean is essential for maintaining their appearance and longevity. Regularly sweep and mop the tiles to remove dirt and debris.",
+    backgroundImage: "/images/ceramic-gallery/interior-design-of-ethnic-living-room.jpg",
     tips: [
-      "Sweep or vacuum daily to remove dirt and debris that can cause scratches.",
-      "Use a soft-bristle broom or a vacuum with a hard-floor setting.",
-      "Damp mop occasionally — avoid standing water and harsh cleaners.",
-      "Place mats at entryways and felt pads under furniture legs.",
+      "Sweep or vacuum regularly to remove dirt and debris from tile surfaces and grout lines.",
+      "Mop with a tile-safe cleaner — avoid harsh chemicals that can damage finishes or grout.",
+      "Wipe up spills promptly to keep floors looking fresh and prevent staining.",
+      "Place mats at entryways to reduce tracked-in grit that can wear tile and grout over time.",
     ],
   },
 ];
@@ -237,15 +237,16 @@ const tipsContent = [
 const applicationsContent = [
   {
     eyebrow: "Where It Works",
-    title: "Laminate Flooring Applications",
-    description: "Laminate flooring is ideal for residential and light commercial spaces, including:",
+    title: "Tile Flooring Applications",
+    description: "Tile flooring is perfect for:",
     items: [
-      "Living rooms and family rooms",
-      "Bedrooms and hallways",
-      "Home offices",
-      "Dining rooms",
-      "Retail spaces and light commercial areas",
-      "Rental properties and remodels",
+      "Kitchen floors and tile backsplashes",
+      "Bathroom floors and walls",
+      "Mudrooms and laundry rooms",
+      "Entryways, foyers, and hallways",
+      "Interior commercial spaces",
+      "Outdoor patios (exterior-rated tiles)",
+      "Living rooms and dining areas",
     ],
   },
 ];
@@ -253,15 +254,15 @@ const applicationsContent = [
 const compareContent = [
   {
     eyebrow: "Compare Options",
-    title: "Laminate Flooring vs Other Flooring Types",
+    title: "Tile Flooring vs Other Floor Types",
     featureLabel: "Feature",
-    columns: ["Laminate Flooring", "Hardwood Flooring", "Vinyl Flooring"],
+    columns: ["Tile Flooring", "Hardwood Flooring", "Vinyl Flooring"],
     rows: [
-      { feature: "Cost", values: ["Low", "High", "Moderate"] },
-      { feature: "Scratch Resistance", values: ["High", "Moderate", "High"] },
-      { feature: "Moisture Resistance", values: ["Moderate", "Low", "High"] },
+      { feature: "Water Resistance", values: ["Excellent", "Poor", "Good"] },
+      { feature: "Durability", values: ["Very High", "Moderate", "Moderate"] },
       { feature: "Maintenance", values: ["Easy", "Moderate", "Easy"] },
-      { feature: "Natural Wood", values: [false, true, false] },
+      { feature: "Style Variety", values: ["Extensive", "Moderate", "Moderate"] },
+      { feature: "Best For Kitchens/Baths", values: [true, false, true] },
     ],
   },
 ];
@@ -269,18 +270,18 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Laminate Flooring Installation",
+    title: "Professional Tile Installation",
     description:
-      "Our experienced installers specialize in laminate flooring installation, ensuring proper subfloor preparation, precise plank placement, and a clean, professional finish.",
-    servicesTitle: "Our Laminate Flooring Services Include:",
+      "Our flooring installers bring years of experience to every tile project. From precise tile layout and leveling to expert grout and seal application, we ensure your tile flooring is installed right the first time.",
+    servicesTitle: "Our Tile Flooring Services Include:",
     services: [
-      "Free in-home consultations",
-      "Accurate project estimates",
-      "Professional laminate floor installation",
-      "Residential and commercial laminate solutions",
+      "Free on-site consultations",
+      "Detailed project estimates",
+      "Professional tile installation",
+      "Residential and commercial tile flooring solutions",
     ],
-    image: "/images/features/2.jpg",
-    imageAlt: "Professional laminate flooring installation",
+    image: "/images/ceramic-gallery/Ceramic-Flooring-Service.png",
+    imageAlt: "Professional ceramic tile flooring installation",
     offer: {
       topLabel: "Interest Free",
       value: "60",
@@ -298,18 +299,18 @@ const testimonialsContent = [
     items: [
       {
         quote:
-          "The team at FMP Flooring LLC provided us with exceptional service from start to finish. They helped us choose the perfect flooring that suits our high-traffic environment. The laminate has held up tremendously well, and cleaning it is a breeze.",
-        author: "Lewis Bennett",
+          "The porcelain tiles we chose from FMP Flooring LLC have truly elevated our office environment. The staff was knowledgeable and guided us through the selection process. The durability and appearance have exceeded our expectations!",
+        author: "David",
       },
       {
         quote:
-          "We chose FMP Flooring LLC for our new laminate flooring, and the results exceeded our expectations. The installation process was quick and hassle-free, and we received numerous compliments on the new look.",
-        author: "Mike J",
+          "FMP Flooring LLC revamped our store with gorgeous glazed ceramic tiles. The variety of styles they offered made it easy to find the perfect look for our space. Our customers frequently compliment the new flooring!",
+        author: "Andrew T. Cano",
       },
       {
         quote:
-          "Working with FMP Flooring LLC was a great experience. Their attention to detail and commitment to quality was evident throughout the project. The new laminate flooring looks fantastic and is incredibly durable.",
-        author: "Lisa R",
+          "We faced serious slip hazards in our restaurant prior to switching to quarry tiles. Thanks to FMP Flooring LLC, our floors are now not only safe but also visually appealing. The installation was quick and the team was professional throughout the entire process.",
+        author: "Crystal J",
       },
     ],
   },
@@ -317,27 +318,27 @@ const testimonialsContent = [
 
 const faqContent = [
   {
-    title: "Laminate Flooring FAQs",
+    title: "Tile Flooring FAQs",
     items: [
       {
-        question: "What is laminate flooring made of?",
+        question: "What is the difference between ceramic and porcelain tile?",
         answer:
-          "Laminate flooring is made of multiple layers, including a high-density fiberboard core and a durable wear layer.",
+          "Porcelain tiles are denser, harder, and have a lower moisture absorption rate than ceramic, making porcelain ideal for high-traffic and moisture-prone areas.",
       },
       {
-        question: "Is laminate flooring waterproof?",
+        question: "Are tile floors easy to clean?",
         answer:
-          "Standard laminate is water-resistant, and newer waterproof laminate options provide additional protection.",
+          "Yes. Sweep or vacuum regularly and mop with a tile-safe cleaner for best results.",
       },
       {
-        question: "Is laminate flooring good for pets?",
+        question: "Is tile flooring good for bathrooms?",
         answer:
-          "Yes. Laminate floors are scratch-resistant and easy to clean, making them ideal for pet-friendly homes.",
+          "Absolutely — tile flooring is one of the best options for bathrooms due to its water resistance and durability.",
       },
       {
-        question: "How long does laminate flooring last?",
+        question: "How long do tile floors last?",
         answer:
-          "With proper care, laminate flooring can last 15–25 years or longer.",
+          "With proper installation and maintenance, tile flooring can last decades.",
       },
     ],
   },
@@ -365,45 +366,29 @@ const offersContent = [
 const galleryContent = [
   {
     eyebrow: "Project Gallery",
-    title: "Laminate Flooring Gallery",
+    title: "Ceramic & Tile Flooring Gallery",
     description:
-      "Browse real laminate installations — wood-look finishes, living spaces, and professional project results from FMP Flooring.",
+      "Browse ceramic, porcelain, and specialty tile installations — kitchens, baths, living spaces, and professional project results from FMP Flooring.",
     images: [
       {
-        src: "/images/laminate-gallery/Professional-Laminate-Flooring-Installation.png.webp",
-        alt: "Professional laminate flooring installation",
+        src: "/images/ceramic-gallery/Ceramic-Flooring-Service.png",
+        alt: "Ceramic flooring service installation",
       },
       {
-        src: "/images/laminate-gallery/Laminating-Services-installation.png.webp",
-        alt: "Laminate services installation",
+        src: "/images/ceramic-gallery/Ceramic-Flooring-Servicess.png",
+        alt: "Ceramic tile flooring project",
       },
       {
-        src: "/images/laminate-gallery/1.jpg",
-        alt: "Laminate flooring project 1",
+        src: "/images/ceramic-gallery/Untitled-design-7.png",
+        alt: "Tile flooring in a styled interior",
       },
       {
-        src: "/images/laminate-gallery/2.jpg",
-        alt: "Laminate flooring project 2",
+        src: "/images/ceramic-gallery/interior-design-of-ethnic-living-room.jpg",
+        alt: "Living room with ceramic tile flooring",
       },
       {
-        src: "/images/laminate-gallery/3.jpg",
-        alt: "Laminate flooring project 3",
-      },
-      {
-        src: "/images/laminate-gallery/8.jpg",
-        alt: "Laminate flooring project 8",
-      },
-      {
-        src: "/images/laminate-gallery/06 Jul 2023-3.jpg",
-        alt: "Laminate flooring installation July 2023",
-      },
-      {
-        src: "/images/laminate-gallery/06 Jul 2023-4.jpg",
-        alt: "Completed laminate flooring project",
-      },
-      {
-        src: "/images/laminate-gallery/06 Jul 2023-5.jpg",
-        alt: "Laminate flooring detail",
+        src: "/images/ceramic-gallery/image-3.png",
+        alt: "Ceramic tile flooring detail",
       },
     ],
   },
@@ -476,9 +461,9 @@ const commercialProjectsContent = [
 const ctaContent = [
   {
     headlineWhite: "Get a Free",
-    headlineTeal: "Laminate Flooring Quote",
+    headlineTeal: "Tile Flooring Quote",
     description:
-      "Upgrade your space with stylish, durable laminate flooring. Contact FMP Flooring today for a free estimate and expert installation.",
+      "Transform your space with beautiful, durable tile flooring — from ceramic tile flooring to porcelain tiles and decorative accent tile. Contact FMP Flooring today for a free estimate and expert installation.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
     buttonText: "Free In-Home Estimate",
@@ -487,7 +472,7 @@ const ctaContent = [
   },
 ];
 
-export default function LaminatePage() {
+export default function CeramicPage() {
   return (
     <main className="flex flex-1 flex-col">
       <ServicePageHero content={heroContent} />

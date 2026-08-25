@@ -23,6 +23,7 @@ import WhyChooseSection from "@/components/homev2/WhyChooseSection";
 import OffersSliderSection from "@/components/OffersSliderSection";
 import ServicesSection from "@/components/homev2/ServicesSection";
 import ImageGallerySection from "@/components/ImageGallerySection";
+import { blogPosts } from "@/data/blog-posts";
 
 const heroContent = [
   {
@@ -230,8 +231,8 @@ const servicesContent = [
         title: "Ceramic Flooring",
         description:
           "Stylish ceramic tile flooring that delivers water resistance, long-term durability, and design versatility.",
-        image: "/images/home-services/Luxury-Vinyl-Tile-flooring-services.png.webp",
-        href: "/ceramic-flooring",
+        image: "/images/ceramic-gallery/Ceramic-Flooring-Servicess.png",
+        href: "/ceramic",
       },
     ],
   },
@@ -488,63 +489,63 @@ const federalContent = [
         icon: "schools",
         description:
           "Durable, safe, and easy-to-maintain flooring for high-traffic educational environments.",
-        image: "/images/image-school.webp",
+        image: "/images/School-Flooring-Image.webp",
       },
       {
         title: "Hospitals",
         icon: "hospitals",
         description:
           "Hygienic, slip-resistant, and compliant flooring solutions for healthcare facilities.",
-        image: "/images/image-hospital.webp",
+        image: "/images/Hospital-Flooring-Image.webp",
       },
       {
         title: "Government",
         icon: "government",
         description:
           "Reliable, specification-ready flooring for government buildings and public agencies.",
-        image: "/images/image-govt.webp",
+        image: "/images/Govt-Flooring-Image.webp",
       },
       {
         title: "Offices",
         icon: "offices",
         description:
           "Professional, long-lasting flooring systems for municipal and administrative spaces.",
-        image: "/images/image-office.webp",
+        image: "/images/Office-Flooring-Image.webp",
       },
       {
         title: "Universities",
         icon: "schools",
         description:
           "High-performance flooring for campus buildings, lecture halls, and student facilities.",
-        image: "/images/university.jpg",
+        image: "/images/Universities-Flooring-Image.webp",
       },
       {
         title: "Courthouses",
         icon: "government",
         description:
           "Durable, professional, impact-resistant flooring solutions for courtrooms and judicial facilities.",
-        image: "/images/court-house.jpg",
+        image: "/images/CourtFlooring-Image.webp",
       },
       {
         title: "Military Bases",
         icon: "military",
         description:
           "Reliable flooring built for demanding military and defense facility environments.",
-        image: "/images/miltary.webp",
+        image: "/images/military-Flooring-Image.webp",
       },
       {
         title: "Colleges",
         icon: "schools",
         description:
           "Stylish, durable, slip-resistant flooring for college campuses and academic buildings.",
-        image: "/images/image-school.webp",
+        image: "/images/College-Flooring-Image.webp",
       },
       {
         title: "Social Service Offices",
         icon: "offices",
         description:
           "Welcoming, easy-care flooring for social service and community support offices.",
-        image: "/images/Social-Service.jpg",
+        image: "/images/Social-Flooring-Image.webp",
       },
     ],
   },
@@ -1024,44 +1025,20 @@ const educationalResourcesContent = [
     eyebrow: "From Our Blog",
     title: "Educational Resources",
     description:
-      "Guides and tips to help you choose smarter — from LVP vs. laminate to wear layers, care, and everyday flooring advice.",
+      "Guides and tips to help you choose smarter — from LVP trends and sound-resistant floors to care tips and buying advice.",
     buttonText: "View All Articles",
     buttonHref: "/blog",
-    posts: [
-      {
-        title: "LVP vs. Laminate: Which Flooring Is Right for You?",
-        excerpt:
-          "Compare durability, water resistance, cost, and style so you can pick the best fit for kitchens, living rooms, and high-traffic spaces.",
-        category: "Comparisons",
-        date: "2025-03-15",
-        dateLabel: "March 15, 2025",
-        image:
-          "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&h=500&fit=crop",
-        href: "/blog/lvp-vs-laminate",
-      },
-      {
-        title: "Understanding Wear Layers: The Key to Durable Vinyl",
-        excerpt:
-          "Learn what mil thickness means, how wear layers protect against scratches and stains, and which rating fits your home or commercial space.",
-        category: "Guides",
-        date: "2025-03-08",
-        dateLabel: "March 8, 2025",
-        image:
-          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=500&fit=crop",
-        href: "/blog/understanding-wear-layers",
-      },
-      {
-        title: "Flooring Tips: Care, Cleaning & Longevity",
-        excerpt:
-          "Simple maintenance habits that protect your investment — from daily sweeping to moisture-safe mopping and high-traffic area tips.",
-        category: "Tips",
-        date: "2025-03-06",
-        dateLabel: "March 6, 2025",
-        image:
-          "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=500&fit=crop",
-        href: "/blog/flooring-care-tips",
-      },
-    ],
+    posts: blogPosts.slice(0, 3).map(
+      ({ title, excerpt, category, date, dateLabel, image, href }) => ({
+        title,
+        excerpt,
+        category,
+        date,
+        dateLabel,
+        image,
+        href,
+      }),
+    ),
   },
 ];
 
