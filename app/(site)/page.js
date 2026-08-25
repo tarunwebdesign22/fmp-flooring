@@ -13,6 +13,7 @@ import HowWeManageProjectsSection from "@/components/homev2/HowWeManageProjectsS
 import FederalMarquee from "@/components/homev2/FederalMarquee";
 import GoogleReviewsSection from "@/components/homev2/GoogleReviewsSection";
 import HeroSection from "@/components/homev2/HeroSection";
+import HeroSectionCopy from "@/components/homev2/HeroSectionCopy";
 import LatestProjectsSection from "@/components/homev2/LatestProjectsSection";
 import MeetOurTeamSection from "@/components/homev2/MeetOurTeamSection";
 import MeetTheFounderSection from "@/components/homev2/MeetTheFounderSection";
@@ -1169,7 +1170,8 @@ export default function Home() {
   return (
     <main className="flex flex-1 flex-col">
       <FederalMarquee items={federalContent[0].marqueeItems} />
-      <HeroSection content={heroContent} />
+      {/* <HeroSection content={heroContent} /> */}
+      <HeroSectionCopy content={heroContent} />
       <FederalContractorSection content={federalContent} />
       <ProcessSection content={processContent} />
       <ServicesSection content={servicesContent} />
