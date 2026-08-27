@@ -101,7 +101,7 @@ export default function ServicesSection({ content }) {
   };
 
   return (
-    <section className="bg-[#fff1d5] py-14 sm:py-16 lg:py-[70px]">
+    <section className="bg-[#eeecff] py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
           {section.eyebrow ? (

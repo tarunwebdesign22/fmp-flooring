@@ -3,7 +3,6 @@ import CtaSection from "@/components/CtaSection";
 import FaqSection from "@/components/FaqSection";
 import FederalMarquee from "@/components/FederalMarquee";
 import FinanceBannerSection from "@/components/FinanceBannerSection";
-import ImageGallerySection from "@/components/ImageGallerySection";
 import MailingListSection from "@/components/MailingListSection";
 import OffersSliderSection from "@/components/OffersSliderSection";
 import {
@@ -72,7 +71,7 @@ const heroContent = [
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
       defaultService: "Rubber",
-      highlight: "Free Installation & 50% Off Vinyl",
+      highlight: "Financing Available Vinyl",
       services: [
         "Luxury Vinyl Plank",
         "Broadloom Carpet",
@@ -348,65 +347,14 @@ const offersContent = [
     title: "Exclusive Savings",
     offers: [
       {
-        theme: "teal",
+        theme: "blue",
         highlight: "Special Discount",
         title: "Military, Veterans & Senior Citizens",
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/Offer-banner-image.webp",
+        image: "/images/Offer-banner-image-remastered.webp",
         imageAlt: "Healthcare worker smiling outdoors",
-      },
-    ],
-  },
-];
-
-const galleryContent = [
-  {
-    eyebrow: "Project Gallery",
-    title: "Rubber Flooring Gallery",
-    description:
-      "Browse rubber flooring installations — gym floors, school hallways, and professional project results from FMP Flooring.",
-    images: [
-      {
-        src: "/images/rubber-gallery/Flooring-ruber-school.png.webp",
-        alt: "Rubber flooring in a school hallway",
-      },
-      {
-        src: "/images/rubber-gallery/Untitled-design-5.png.webp",
-        alt: "Rubber flooring installation",
-      },
-      {
-        src: "/images/rubber-gallery/Rubber-Flooring-services.jpg",
-        alt: "Rubber flooring services",
-      },
-      {
-        src: "/images/rubber-gallery/Rubber-Flooring-benefits.png",
-        alt: "Rubber flooring benefits",
-      },
-      {
-        src: "/images/rubber-gallery/Rubber-Flooring-services-2.png",
-        alt: "Commercial rubber flooring services",
-      },
-      {
-        src: "/images/rubber-gallery/Rubber-Flooring-service-north.png",
-        alt: "Rubber flooring service",
-      },
-      {
-        src: "/images/rubber-gallery/rubber-flooring-services.png",
-        alt: "Rubber flooring project",
-      },
-      {
-        src: "/images/rubber-gallery/Flooring-ruber.png.webp",
-        alt: "Rubber flooring surface",
-      },
-      {
-        src: "/images/rubber-gallery/Rubber-Flooring.jpg",
-        alt: "Rubber flooring installation",
-      },
-      {
-        src: "/images/home-services/Rubber-Flooring-1024x768.jpg.webp",
-        alt: "Rubber flooring close-up",
       },
     ],
   },
@@ -507,7 +455,6 @@ export default function RubberPage() {
       <ServiceCompareSection content={compareContent} />
       <ServiceInstallSection content={installContent} />
       <CommercialProjectsSection content={commercialProjectsContent} />
-      <ImageGallerySection content={galleryContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
       <FederalMarquee />

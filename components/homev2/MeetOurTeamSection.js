@@ -47,7 +47,7 @@ function TeamCard({ member }) {
         />
       </div>
 
-      <div className="flex flex-col items-center bg-[#fff1d5] px-5 py-6 text-center">
+      <div className="flex flex-col items-center bg-[#eeecff] px-5 py-6 text-center">
         <h3 className="text-lg font-bold text-blue">{member.name}</h3>
         <p className="mt-1 text-sm font-semibold text-teal">{member.role}</p>
         <span className="mt-3 mb-3 block h-px w-10 bg-teal" aria-hidden="true" />

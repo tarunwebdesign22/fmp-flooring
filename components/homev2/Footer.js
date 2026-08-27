@@ -45,10 +45,10 @@ const certifications = [
     src: "/images/certifications/Locally-Owned-150x150.webp",
     alt: "Locally Owned",
   },
-  {
-    src: "/images/certifications/2-1-150x150.webp",
-    alt: "Certification badge",
-  },
+  // {
+  //   src: "/images/certifications/2-1-150x150.webp",
+  //   alt: "Certification badge",
+  // },
 ];
 
 function SectionHeading({ children }) {
@@ -129,8 +129,8 @@ export default function Footer() {
             />
           </Link>
           <p className="mt-5 max-w-xs text-[15px] leading-7 text-white/90">
-            Arizona&apos;s preferred choice for tile, carpet, laminate, wood,
-            and vinyl plank flooring installation.
+          We are a fully licensed, bonded, and insured flooring contractor
+          trusted for a wide range of federal and state projects.
           </p>
           <div className="mt-6 flex items-center gap-3">
             <a

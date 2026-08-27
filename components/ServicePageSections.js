@@ -104,7 +104,7 @@ export function ServiceApplicationsSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="bg-[#fff1d5] py-14 sm:py-16 lg:py-[70px]">
+    <section className="bg-[#eeecff] py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-10 text-center sm:mb-12">
           {section.eyebrow ? (
@@ -215,7 +215,7 @@ export function ServiceCompareSection({ content }) {
                     key={`${row.feature}-${valueIndex}`}
                     className={`flex items-center justify-center border-l border-grey/60 px-6 py-4 text-center text-sm ${
                       valueIndex === 0
-                        ? "bg-[#fff1d5] font-semibold text-blue"
+                        ? "bg-[#eeecff] font-semibold text-blue"
                         : "text-blue/70"
                     }`}
                   >

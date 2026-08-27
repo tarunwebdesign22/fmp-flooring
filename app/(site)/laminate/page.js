@@ -3,7 +3,6 @@ import CtaSection from "@/components/CtaSection";
 import FaqSection from "@/components/FaqSection";
 import FederalMarquee from "@/components/FederalMarquee";
 import FinanceBannerSection from "@/components/FinanceBannerSection";
-import ImageGallerySection from "@/components/ImageGallerySection";
 import MailingListSection from "@/components/MailingListSection";
 import OffersSliderSection from "@/components/OffersSliderSection";
 import {
@@ -72,7 +71,7 @@ const heroContent = [
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
       defaultService: "Laminate",
-      highlight: "Free Installation & 50% Off Vinyl",
+      highlight: "Financing Available Vinyl",
       services: [
         "Luxury Vinyl Plank",
         "Broadloom Carpet",
@@ -97,13 +96,13 @@ const introContent = [
     ],
     image: "/images/features/Renwick Oak01.jpg",
     imageAlt: "Wood-look laminate flooring in a modern living space",
-    offer: {
-      topLabel: "Huge Savings",
-      value: "65",
-      suffix: "%",
-      offLabel: "Off",
-      bottomLabel: "Special Offer!",
-    },
+    // offer: {
+    //   topLabel: "Huge Savings",
+    //   value: "65",
+    //   suffix: "%",
+    //   offLabel: "Off",
+    //   bottomLabel: "Special Offer!",
+    // },
     buttonText: "Schedule Consultation",
     buttonHref: "/estimate",
   },
@@ -281,12 +280,12 @@ const installContent = [
     ],
     image: "/images/features/2.jpg",
     imageAlt: "Professional laminate flooring installation",
-    offer: {
-      topLabel: "Interest Free",
-      value: "60",
-      rightLines: ["Month", "", ""],
-      bottomLabel: "Financing",
-    },
+    // offer: {
+    //   topLabel: "Interest Free",
+    //   value: "60",
+    //   rightLines: ["Month", "", ""],
+    //   bottomLabel: "Financing",
+    // },
   },
 ];
 
@@ -349,61 +348,14 @@ const offersContent = [
     title: "Exclusive Savings",
     offers: [
       {
-        theme: "teal",
+        theme: "blue",
         highlight: "Special Discount",
         title: "Military, Veterans & Senior Citizens",
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/Offer-banner-image.webp",
+        image: "/images/Offer-banner-image-remastered.webp",
         imageAlt: "Healthcare worker smiling outdoors",
-      },
-    ],
-  },
-];
-
-const galleryContent = [
-  {
-    eyebrow: "Project Gallery",
-    title: "Laminate Flooring Gallery",
-    description:
-      "Browse real laminate installations — wood-look finishes, living spaces, and professional project results from FMP Flooring.",
-    images: [
-      {
-        src: "/images/laminate-gallery/Professional-Laminate-Flooring-Installation.png.webp",
-        alt: "Professional laminate flooring installation",
-      },
-      {
-        src: "/images/laminate-gallery/Laminating-Services-installation.png.webp",
-        alt: "Laminate services installation",
-      },
-      {
-        src: "/images/laminate-gallery/1.jpg",
-        alt: "Laminate flooring project 1",
-      },
-      {
-        src: "/images/laminate-gallery/2.jpg",
-        alt: "Laminate flooring project 2",
-      },
-      {
-        src: "/images/laminate-gallery/3.jpg",
-        alt: "Laminate flooring project 3",
-      },
-      {
-        src: "/images/laminate-gallery/8.jpg",
-        alt: "Laminate flooring project 8",
-      },
-      {
-        src: "/images/laminate-gallery/06 Jul 2023-3.jpg",
-        alt: "Laminate flooring installation July 2023",
-      },
-      {
-        src: "/images/laminate-gallery/06 Jul 2023-4.jpg",
-        alt: "Completed laminate flooring project",
-      },
-      {
-        src: "/images/laminate-gallery/06 Jul 2023-5.jpg",
-        alt: "Laminate flooring detail",
       },
     ],
   },
@@ -504,7 +456,6 @@ export default function LaminatePage() {
       <ServiceCompareSection content={compareContent} />
       <ServiceInstallSection content={installContent} />
       <CommercialProjectsSection content={commercialProjectsContent} />
-      <ImageGallerySection content={galleryContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
       <FederalMarquee />

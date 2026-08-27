@@ -3,7 +3,6 @@ import CtaSection from "@/components/CtaSection";
 import FaqSection from "@/components/FaqSection";
 import FederalMarquee from "@/components/FederalMarquee";
 import FinanceBannerSection from "@/components/FinanceBannerSection";
-import ImageGallerySection from "@/components/ImageGallerySection";
 import MailingListSection from "@/components/MailingListSection";
 import OffersSliderSection from "@/components/OffersSliderSection";
 import {
@@ -72,7 +71,7 @@ const heroContent = [
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
       defaultService: "Hardwood",
-      highlight: "Free Installation & 50% Off Vinyl",
+      highlight: "Financing Available Vinyl",
       services: [
         "Luxury Vinyl Plank",
         "Broadloom Carpet",
@@ -347,57 +346,14 @@ const offersContent = [
     title: "Exclusive Savings",
     offers: [
       {
-        theme: "teal",
+        theme: "blue",
         highlight: "Special Discount",
         title: "Military, Veterans & Senior Citizens",
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/Offer-banner-image.webp",
+        image: "/images/Offer-banner-image-remastered.webp",
         imageAlt: "Healthcare worker smiling outdoors",
-      },
-    ],
-  },
-];
-
-const galleryContent = [
-  {
-    eyebrow: "Project Gallery",
-    title: "Hardwood Flooring Gallery",
-    description:
-      "Browse real hardwood installations — solid and engineered floors, living spaces, and professional project results from FMP Flooring.",
-    images: [
-      {
-        src: "/images/hardwood-gallery/Professional-Hardwood-Flooring-Installation.png.webp",
-        alt: "Professional hardwood flooring installation",
-      },
-      {
-        src: "/images/hardwood-gallery/Hardwood-Flooring-flooring.png.webp",
-        alt: "Hardwood flooring in a formal dining room",
-      },
-      {
-        src: "/images/hardwood-gallery/hardwood-flooring-benefits.png.webp",
-        alt: "Wide-plank hardwood flooring in a modern living space",
-      },
-      {
-        src: "/images/hardwood-gallery/Hardwood-Flooring-Installation.png.webp",
-        alt: "Hardwood flooring installation in progress",
-      },
-      {
-        src: "/images/hardwood-gallery/Understanding-Hardwood-Flooring.png.webp",
-        alt: "Multi-tonal hardwood flooring in a sunlit home",
-      },
-      {
-        src: "/images/hardwood-gallery/Engineered-Hardwood.png.webp",
-        alt: "Engineered hardwood flooring being measured for install",
-      },
-      {
-        src: "/images/home-services/Hardwood-FLOORING.webp",
-        alt: "Close-up of hardwood flooring grain and finish",
-      },
-      {
-        src: "/images/hardwood-banner-image.webp",
-        alt: "Hardwood flooring banner",
       },
     ],
   },
@@ -498,7 +454,6 @@ export default function HardwoodPage() {
       <ServiceCompareSection content={compareContent} />
       <ServiceInstallSection content={installContent} />
       <CommercialProjectsSection content={commercialProjectsContent} />
-      <ImageGallerySection content={galleryContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
       <FederalMarquee />

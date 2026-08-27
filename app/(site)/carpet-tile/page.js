@@ -3,7 +3,6 @@ import CtaSection from "@/components/CtaSection";
 import FaqSection from "@/components/FaqSection";
 import FederalMarquee from "@/components/FederalMarquee";
 import FinanceBannerSection from "@/components/FinanceBannerSection";
-import ImageGallerySection from "@/components/ImageGallerySection";
 import MailingListSection from "@/components/MailingListSection";
 import OffersSliderSection from "@/components/OffersSliderSection";
 import {
@@ -72,7 +71,7 @@ const heroContent = [
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
       defaultService: "Carpet Tile",
-      highlight: "Free Installation & 50% Off Vinyl",
+      highlight: "Financing Available Vinyl",
       services: [
         "Luxury Vinyl Plank",
         "Broadloom Carpet",
@@ -368,49 +367,14 @@ const offersContent = [
     title: "Exclusive Savings",
     offers: [
       {
-        theme: "teal",
+        theme: "blue",
         highlight: "Special Discount",
         title: "Military, Veterans & Senior Citizens",
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/Offer-banner-image.webp",
+        image: "/images/Offer-banner-image-remastered.webp",
         imageAlt: "Healthcare worker smiling outdoors",
-      },
-    ],
-  },
-];
-
-const galleryContent = [
-  {
-    eyebrow: "Project Gallery",
-    title: "Carpet Tile Flooring Gallery",
-    description:
-      "Browse modular carpet tile installations — commercial offices, residential spaces, and professional project results from FMP Flooring.",
-    images: [
-      {
-        src: "/images/carpet-tile-gallery/Professional-Carpet-Tile-Installation-Services.png",
-        alt: "Professional carpet tile installation services",
-      },
-      {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
-        alt: "Carpet tile flooring benefits",
-      },
-      {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-cost.png",
-        alt: "Carpet tile flooring project",
-      },
-      {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Installation-Services.png",
-        alt: "Carpet tile installation services",
-      },
-      {
-        src: "/images/carpet-tile-gallery/interior-design-of-ethnic-living-room.jpg",
-        alt: "Interior space with flooring",
-      },
-      {
-        src: "/images/carpet-tile-gallery/image-3.png",
-        alt: "Carpet tile flooring detail",
       },
     ],
   },
@@ -511,7 +475,6 @@ export default function CarpetTilePage() {
       <ServiceCompareSection content={compareContent} />
       <ServiceInstallSection content={installContent} />
       <CommercialProjectsSection content={commercialProjectsContent} />
-      <ImageGallerySection content={galleryContent} />
       <TestimonialsSection content={testimonialsContent} />
       <FaqSection content={faqContent} />
       <FederalMarquee />

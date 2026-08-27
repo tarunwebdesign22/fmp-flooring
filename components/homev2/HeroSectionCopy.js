@@ -2,137 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
-
-const trustIcons = {
-  experience: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <path d="M3 21h18" />
-      <path d="M5 21V8l7-4 7 4v13" />
-      <path d="M9 21v-6h6v6" />
-      <path d="M9 11h.01M12 11h.01M15 11h.01" />
-    </svg>
-  ),
-  family: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <circle cx="9" cy="8" r="3" />
-      <circle cx="16" cy="9" r="2.5" />
-      <path d="M3.5 19c1-3.5 3.5-5 5.5-5s4.5 1.5 5.5 5" />
-      <path d="M14 14.5c1.5-.5 3-.2 4.5 1.5.5 1 .8 2 .8 3" />
-    </svg>
-  ),
-  quality: (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <path d="M12 3 5 6v5.5c0 4.5 3.2 7.8 7 9.5 3.8-1.7 7-5 7-9.5V6l-7-3z" />
-      <path d="m9 12 2.2 2.2L15.5 10" />
-    </svg>
-  ),
-};
-
-const serviceIcons = {
-  plank: (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-      <rect x="4" y="4" width="16" height="4" rx="0.5" />
-      <rect x="4" y="10" width="16" height="4" rx="0.5" />
-      <rect x="4" y="16" width="16" height="4" rx="0.5" />
-    </svg>
-  ),
-  carpet: (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-      <path d="M6 8c0-2 2-3.5 6-3.5s6 1.5 6 3.5v2c0 2-2 3.5-6 3.5S6 12 6 10V8z" />
-      <path d="M6 10v7c0 1.5 2 2.5 6 2.5s6-1 6-2.5v-7" />
-    </svg>
-  ),
-  tile: (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-      <rect x="3" y="3" width="6" height="6" />
-      <rect x="9" y="3" width="6" height="6" />
-      <rect x="15" y="3" width="6" height="6" />
-      <rect x="3" y="9" width="6" height="6" />
-      <rect x="9" y="9" width="6" height="6" />
-      <rect x="15" y="9" width="6" height="6" />
-      <rect x="3" y="15" width="6" height="6" />
-      <rect x="9" y="15" width="6" height="6" />
-      <rect x="15" y="15" width="6" height="6" />
-    </svg>
-  ),
-  ceramic: (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-      <path d="M12 3 7 8l5 5 5-5-5-5z" />
-      <path d="M7 8 2 13l5 5 5-5-5-5z" />
-      <path d="M17 8 12 13l5 5 5-5-5-5z" />
-      <path d="M12 13 7 18l5 5 5-5-5-5z" />
-    </svg>
-  ),
-  rubber: (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-      <path d="M4 8h12a4 4 0 0 1 0 8H8" />
-      <path d="M4 8v10a2 2 0 0 0 2 2h10" />
-    </svg>
-  ),
-  hardwood: (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-      <rect x="3" y="7" width="18" height="10" rx="1" />
-      <path d="M7 7v10M12 7v10M17 7v10" />
-    </svg>
-  ),
-  vct: (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-      <rect x="3" y="3" width="8" height="8" />
-      <rect x="13" y="3" width="8" height="8" />
-      <rect x="3" y="13" width="8" height="8" />
-      <rect x="13" y="13" width="8" height="8" />
-    </svg>
-  ),
-};
-
-const benefitIcons = {
-  approvals: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-      <path d="M21 12a9 9 0 1 1-2.6-6.3" />
-      <path d="M21 4v5h-5" />
-      <path d="m9 12 2.2 2.2L15.5 10" />
-    </svg>
-  ),
-  noPayments: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-      <rect x="2.5" y="6" width="19" height="12" rx="2.5" />
-      <path d="M2.5 10h19" />
-      <path d="M6.5 14.5h3.5" />
-      <path d="M4.5 4.5 19.5 19.5" />
-    </svg>
-  ),
-  zeroPercent: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M9 15.5 15 8.5" />
-      <circle cx="9.2" cy="9.2" r="1.35" />
-      <circle cx="14.8" cy="14.8" r="1.35" />
-    </svg>
-  ),
-};
-
-const fieldIcons = {
-  name: (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-      <circle cx="12" cy="8" r="4" />
-      <path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" />
-    </svg>
-  ),
-  phone: (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" />
-    </svg>
-  ),
-  email: (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <path d="m3 7 9 7 9-7" />
-    </svg>
-  ),
-};
-
-const AUTOPLAY_MS = 6500;
+import { useEffect, useRef, useState } from "react";
 
 function StarIcon() {
   return (
@@ -286,128 +156,94 @@ function HeroStatsStrip({ items }) {
   );
 }
 
-function SlideArrow({ direction, onClick }) {
+const fieldIcons = {
+  name: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" />
+    </svg>
+  ),
+  phone: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" />
+    </svg>
+  ),
+  email: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 7 9-7" />
+    </svg>
+  ),
+};
+
+function HighlightedCopy({ segments }) {
+  if (!segments?.length) return null;
+
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={direction === "prev" ? "Previous slide" : "Next slide"}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-[2px] transition-colors hover:border-teal hover:bg-teal"
-    >
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-        {direction === "prev" ? <path d="M15 6l-6 6 6 6" /> : <path d="M9 6l6 6-6 6" />}
-      </svg>
-    </button>
+    <p className="mt-5 max-w-2xl text-[15px] leading-7 text-white/90 sm:text-base sm:leading-8">
+      {segments.map((segment, index) =>
+        segment.highlight ? (
+          <strong key={index} className="font-semibold text-teal">
+            {segment.text}
+          </strong>
+        ) : (
+          <span key={index}>{segment.text}</span>
+        )
+      )}
+    </p>
   );
 }
 
-function MainSlide({ slide }) {
-  const title = slide.headline;
-  const ctas = slide.ctas || [];
-
+function HeroCopy({ section }) {
   return (
-    <>
-      <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
-        {title}
-      </h1>
-      <span className="mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
+    <div className="min-w-0 [text-shadow:0_1px_18px_rgba(0,0,0,0.35)]">
+      {section.badge ? (
+        <p className="inline-flex max-w-full items-center gap-2 rounded-md bg-white/12 px-2.5 py-1.5 ring-1 ring-inset ring-white/25 backdrop-blur-[6px]">
+          <span
+            className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-teal text-white"
+            aria-hidden="true"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M3 21h18" />
+              <path d="M5 21V8l7-4 7 4v13" />
+              <path d="M9 21v-6h6v6" />
+            </svg>
+          </span>
+          <span className="text-xs font-semibold leading-snug text-white sm:text-[12px]">
+            {section.badge}
+          </span>
+        </p>
+      ) : null}
 
-      {ctas.length ? (
+      <h1 className="mt-5 text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[2.85rem]">
+        {section.title}
+        {section.titleHighlight ? (
+          <>
+            {" "}
+            <span className="text-[#fdbf3e]">{section.titleHighlight}</span>
+          </>
+        ) : null}
+      </h1>
+
+      <HighlightedCopy segments={section.description} />
+
+      {section.ctas?.length ? (
         <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-          {ctas.map((cta) => (
-            <Link
-              key={cta.label}
-              href={cta.href}
-              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
-            >
-              {cta.label}
-              <span aria-hidden="true">→</span>
-            </Link>
-          ))}
-        </div>
-      ) : null}
-    </>
-  );
-}
+          {section.ctas.map((cta) => {
+            const isPrimary = cta.variant !== "secondary";
 
-function FinancingSlide({ slide }) {
-  return (
-    <>
-      <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl">
-        {slide.title}
-      </h1>
-      <span className="mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
-
-      {slide.buttonText && slide.buttonHref ? (
-        <div className="mt-7">
-          <Link
-            href={slide.buttonHref}
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
-          >
-            {slide.buttonText}
-            <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-      ) : null}
-    </>
-  );
-}
-
-function ServiceSlide({ slide }) {
-  return (
-    <>
-      <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl">
-        {slide.title}
-      </h1>
-      <span className="mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
-
-      {slide.buttonText && slide.buttonHref ? (
-        <div className="mt-7">
-          <Link
-            href={slide.buttonHref}
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
-          >
-            {slide.buttonText}
-            <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-      ) : null}
-    </>
-  );
-}
-
-function SlideContent({ slide }) {
-  if (slide.type === "financing") return <FinancingSlide slide={slide} />;
-  if (slide.type === "service") return <ServiceSlide slide={slide} />;
-  return <MainSlide slide={slide} />;
-}
-
-function MobileSlideContent({ slide }) {
-  const title =
-    slide.title ||
-    `${slide.titleBefore || ""}${slide.titleHighlightValue || ""}${slide.titleAfter || ""}`.trim();
-  const ctas =
-    slide.ctas?.length
-      ? slide.ctas
-      : slide.buttonText && slide.buttonHref
-        ? [{ label: slide.buttonText, href: slide.buttonHref }]
-        : [];
-
-  return (
-    <div className="w-full max-w-sm text-center">
-      <h1 className="text-4xl font-bold leading-tight text-white">{title}</h1>
-      {ctas.length ? (
-        <div className="mt-5 flex flex-col gap-2.5">
-          {ctas.map((cta) => (
-            <Link
-              key={`${cta.label}-${cta.href}`}
-              href={cta.href}
-              className="mx-auto inline-flex w-fit max-w-full items-center justify-center gap-2 rounded-lg border-2 border-[#fdbf3e] bg-black/15 px-3.5 py-2.5 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
-            >
-              {cta.label}
-              <span aria-hidden="true">→</span>
-            </Link>
-          ))}
+            return (
+              <Link
+                key={cta.label}
+                href={cta.href}
+                className={`inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(0,0,0,0.22)] transition-colors ${
+                  isPrimary ? "bg-teal hover:bg-blue" : "bg-blue hover:bg-teal"
+                }`}
+              >
+                {cta.label}
+              </Link>
+            );
+          })}
         </div>
       ) : null}
     </div>
@@ -415,6 +251,8 @@ function MobileSlideContent({ slide }) {
 }
 
 function EstimateFormCard({ section, submitted, formData, onChange, onSubmit, className = "" }) {
+  if (!section?.form) return null;
+
   return (
     <div className={`overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(0,0,0,0.35)] ${className}`}>
       {section.form.promoText ? (
@@ -518,9 +356,6 @@ function EstimateFormCard({ section, submitted, formData, onChange, onSubmit, cl
 
 export default function HeroSectionCopy({ content }) {
   const section = content?.[0];
-  const slides = section?.slides || [];
-
-  const [activeIndex, setActiveIndex] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -529,27 +364,7 @@ export default function HeroSectionCopy({ content }) {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const goTo = useCallback(
-    (index) => {
-      if (!slides.length) return;
-      setActiveIndex((index + slides.length) % slides.length);
-    },
-    [slides.length]
-  );
-
-  useEffect(() => {
-    if (slides.length < 2) return undefined;
-
-    const id = window.setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % slides.length);
-    }, AUTOPLAY_MS);
-
-    return () => window.clearInterval(id);
-  }, [slides.length, activeIndex]);
-
-  if (!section || !slides.length) return null;
-
-  const activeSlide = slides[activeIndex];
+  if (!section) return null;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -561,134 +376,58 @@ export default function HeroSectionCopy({ content }) {
     setSubmitted(true);
   };
 
+  const formCard = (
+    <EstimateFormCard
+      section={section}
+      submitted={submitted}
+      formData={formData}
+      onChange={handleChange}
+      onSubmit={handleSubmit}
+    />
+  );
+
   return (
     <div className="relative">
-      <section
-        className="relative isolate overflow-hidden lg:hidden"
-        aria-roledescription="carousel"
-        aria-label="Featured offers"
-      >
-        {slides.map((slide, index) => (
-          <Image
-            key={slide.id}
-            src={slide.backgroundImage}
-            alt=""
-            fill
-            priority={index === 0}
-            className={`object-cover object-center transition-opacity duration-700 ${
-              index === activeIndex ? "opacity-100" : "opacity-0"
-            }`}
-            sizes="100vw"
-          />
-        ))}
-        <div
-          className="absolute inset-0 bg-black/30"
-          aria-hidden="true"
+      <section className="relative isolate overflow-hidden lg:hidden" aria-label="Welcome to FMP Flooring">
+        <Image
+          src={section.backgroundImage}
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-center"
         />
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
 
-        <div className="relative mx-auto flex aspect-square max-w-7xl items-center justify-center px-4 pb-8 pt-8">
-          <div key={`mobile-${activeSlide.id}`} className="hero-slide-content w-full" aria-live="polite">
-            <MobileSlideContent slide={activeSlide} />
-          </div>
+        <div className="relative mx-auto max-w-7xl px-4 py-12 pb-16">
+          <HeroCopy section={section} />
         </div>
-
-        {slides.length > 1 ? (
-          <div className="relative z-10 -mt-1 flex justify-center pb-6">
-            <div className="flex items-center gap-2">
-              {slides.map((slide, index) => (
-                <button
-                  key={`mobile-dot-${slide.id}`}
-                  type="button"
-                  onClick={() => goTo(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                  aria-current={index === activeIndex}
-                  className={`h-2 rounded-full transition-all ${
-                    index === activeIndex ? "w-7 bg-teal" : "w-2 bg-white/55 hover:bg-white/80"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        ) : null}
       </section>
 
-      <div className="relative z-20 -mt-5 px-4 pb-6 lg:hidden">
-        <EstimateFormCard
-          section={section}
-          submitted={submitted}
-          formData={formData}
-          onChange={handleChange}
-          onSubmit={handleSubmit}
-        />
-      </div>
+      <div className="relative z-20 -mt-5 px-4 pb-6 lg:hidden">{formCard}</div>
 
-      <section
-        className="relative isolate hidden overflow-hidden lg:block"
-        aria-roledescription="carousel"
-        aria-label="Featured offers"
-      >
-        {slides.map((slide, index) => (
-          <Image
-            key={slide.id}
-            src={slide.backgroundImage}
-            alt=""
-            fill
-            priority={index === 0}
-            className={`object-cover object-center transition-opacity duration-700 ${
-              index === activeIndex ? "opacity-100" : "opacity-0"
-            }`}
-            sizes="100vw"
-          />
-        ))}
+      <section className="relative isolate hidden overflow-hidden lg:block" aria-label="Welcome to FMP Flooring">
+        <Image
+          src={section.backgroundImage}
+          alt=""
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-center"
+        />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/40 to-transparent"
           aria-hidden="true"
         />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-12 pb-16 sm:px-8 sm:pb-20 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:py-16 lg:pb-24 xl:py-20 xl:pb-24">
-          <div className="flex min-w-0 flex-col justify-center">
-            <div key={activeSlide.id} className="hero-slide-content" aria-live="polite">
-              <SlideContent slide={activeSlide} />
-            </div>
-
-            {slides.length > 1 ? (
-              <div className="mt-8 flex items-center gap-4">
-                <SlideArrow direction="prev" onClick={() => goTo(activeIndex - 1)} />
-                <SlideArrow direction="next" onClick={() => goTo(activeIndex + 1)} />
-
-                <div className="flex items-center gap-2">
-                  {slides.map((slide, index) => (
-                    <button
-                      key={slide.id}
-                      type="button"
-                      onClick={() => goTo(index)}
-                      aria-label={`Go to slide ${index + 1}`}
-                      aria-current={index === activeIndex}
-                      className={`h-2 rounded-full transition-all ${
-                        index === activeIndex
-                          ? "w-7 bg-teal"
-                          : "w-2 bg-white/45 hover:bg-white/70"
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
-            ) : null}
-          </div>
-
-          <div className="flex min-w-0 items-center lg:max-w-md lg:justify-self-end">
-            <EstimateFormCard
-              section={section}
-              submitted={submitted}
-              formData={formData}
-              onChange={handleChange}
-              onSubmit={handleSubmit}
-            />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 pb-24 sm:px-8 lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-10 lg:px-10 xl:py-20 xl:pb-28">
+          <HeroCopy section={section} />
+          <div className="w-full shrink-0 lg:w-[28rem] lg:justify-self-end">
+            {formCard}
           </div>
         </div>
       </section>
 
-      {/* Stats strip — half over hero, half over next section */}
       <HeroStatsStrip items={section.stats} />
     </div>
   );

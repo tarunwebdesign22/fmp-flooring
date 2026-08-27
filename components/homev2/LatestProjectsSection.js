@@ -8,7 +8,7 @@ export default function LatestProjectsSection({ content }) {
     "https://trusty.app/embed/project-map/37869d9b-531a-4f71-aaef-2a6d1006f3f3";
 
   return (
-    <section className="bg-white py-14 sm:py-16 lg:py-[70px]">
+    <section id="latest-projects" className="scroll-mt-28 bg-white py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-8 text-center sm:mb-10">
           <h2 className="text-3xl font-bold text-blue sm:text-4xl">{section.title}</h2>

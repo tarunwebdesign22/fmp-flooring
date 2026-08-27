@@ -122,7 +122,11 @@ export default function FederalContractorSection({ content }) {
   return (
     <>
       {content.map((section) => (
-        <section key={section.headlineBlue} className="bg-white">
+        <section
+          key={section.headlineBlue}
+          id="commercial-projects"
+          className="scroll-mt-28 bg-white"
+        >
           <div className="py-14 sm:py-16 lg:py-[70px]">
             <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-[minmax(0,35fr)_minmax(0,65fr)] lg:gap-12 lg:px-10">
               <div className="min-w-0">

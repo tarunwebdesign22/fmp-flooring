@@ -152,7 +152,7 @@ export default function ExploreVideosSection({ content }) {
   const currentTab = section.tabs.find((tab) => tab.id === activeTab) || section.tabs[0];
 
   return (
-    <section className="bg-[color-mix(in_srgb,#fdbf3e_22%,white)] py-14 sm:py-16 lg:py-[70px]">
+    <section className="bg-[#eeecff] py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-8 text-center sm:mb-10">
           <h2 className="text-3xl font-bold text-blue sm:text-4xl">{section.title}</h2>

@@ -28,102 +28,31 @@ import { blogPosts } from "@/data/blog-posts";
 
 const heroContent = [
   {
-    topBar: "Federal & State Flooring Contractor",
-    slides: [
+    backgroundImage: "/images/mainhero.webp",
+    badge: "Family Owned & Operated Since 1995",
+    title: "Commercial & Residential Flooring Contractor",
+    titleHighlight: "in North Carolina & South Carolina",
+    description: [
+      { text: "Explore top-quality flooring solutions tailored for both " },
+      { text: "commercial and residential", highlight: true },
+      { text: " contractors." },
+    ],
+    ctas: [
       {
-        id: "financing",
-        type: "financing",
-        backgroundImage: "/images/finance-banner-image.webp",
-        eyebrow: "Flexible Payment Options",
-        title: "Financing Available",
-        description:
-          "Buy now and pay over time! We offer several different financing programs.",
-        benefits: [
-          { icon: "approvals", title: "Fast Approvals*" },
-          { icon: "noPayments", title: "No Payments*" },
-          { icon: "zeroPercent", title: "Financing" },
-        ],
-        buttonText: "Explore Financing Options",
-        buttonHref: "/financing",
-        footnote: "*Subject to credit approval. Terms and conditions apply.",
+        label: "Explore Commercial Projects",
+        href: "#commercial-projects",
+        variant: "primary",
       },
       {
-        id: "in-stock-specials",
-        type: "service",
-        backgroundImage: "/images/instock-banner-1.webp",
-        icon: "plank",
-        eyebrow: "Limited Time Deals",
-        title: "In Stock Specials",
-        description:
-          "Closeout flooring deals ready to install — waterproof LVP, laminate, and engineered hardwood at prices you won’t see again.",
-        bullets: [
-          "In-stock closeout pricing from $1/sf",
-          "FREE quarter round with LVP purchases",
-          "Limited quantities — once gone, gone",
-          "Professional installation available",
-        ],
-        buttonText: "Shop In Stock Specials",
-        buttonHref: "/in-stock-specials",
-      },
-      {
-        id: "luxury-vinyl-plank",
-        type: "service",
-        backgroundImage: "/images/lvp-banner.webp",
-        icon: "plank",
-        eyebrow: "Featured Service",
-        title: "Luxury Vinyl Plank",
-        description:
-          "Waterproof, scratch-resistant, and beautifully realistic wood looks — built for busy homes and demanding commercial spaces.",
-        bullets: [
-          "100% waterproof construction",
-          "Pet and kid friendly wear layers",
-          "Warm, quiet underfoot",
-          "Fast professional installation",
-        ],
-        buttonText: "Explore Luxury Vinyl Plank",
-        buttonHref: "/luxury-vinyl-plank",
-      },
-      {
-        id: "broadloom-carpet",
-        type: "service",
-        backgroundImage: "/images/broadloom-carpet-image.webp",
-        icon: "carpet",
-        eyebrow: "Featured Service",
-        title: "Broadloom Carpet",
-        description:
-          "Soft, sound-absorbing comfort with premium padding included on every carpet installation we complete.",
-        bullets: [
-          '½" premium pad included',
-          "Stain-resistant fiber options",
-          "Residential and commercial grades",
-          "Seamless wall-to-wall coverage",
-        ],
-        buttonText: "Explore Broadloom Carpet",
-        buttonHref: "/broadloom-carpet",
-      },
-      {
-        id: "hardwood",
-        type: "service",
-        backgroundImage: "/images/hardwood-banner-image.webp",
-        icon: "hardwood",
-        eyebrow: "Featured Service",
-        title: "Hardwood Flooring",
-        description:
-          "Timeless solid and engineered hardwood that adds lasting warmth, character, and resale value to any space.",
-        bullets: [
-          "Solid and engineered options",
-          "Wide plank and classic widths",
-          "Refinishable for decades of use",
-          "Expert subfloor preparation",
-        ],
-        buttonText: "Explore Hardwood",
-        buttonHref: "/hardwood",
+        label: "Explore Residential Projects",
+        href: "#latest-projects",
+        variant: "secondary",
       },
     ],
     form: {
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
-      promoText: "FREE INSTALLATION & 50% OFF",
+      promoText: "Financing Available",
       buttonText: "Get My Free Estimate",
       services: [
         "Luxury Vinyl Plank",
@@ -140,7 +69,7 @@ const heroContent = [
       { value: "1,000+", label: "Happy Customer" },
       { text: "Federal & State", label: "Flooring Contractor" },
       { value: "10+", label: "Years Experience" },
-      { value: "500+", label: "Projects Completed" },
+      { value: "1000+", label: "Projects Completed" },
       { text: "No Middlemen", label: "Direct Importer & Distributor" },
     ],
   },
@@ -386,7 +315,7 @@ const processContent = [
   {
     title: "How We Manage Every Project",
     subtitle: "A simple 5-step process:",
-    backgroundImage: "/images/flooring-process-bg.jpg",
+    backgroundImage: "/images/flooring-process-bg-remastered.webp",
     buttonText: "Start Your Project Today",
     buttonHref: "/estimate",
     steps: [
@@ -1118,13 +1047,13 @@ const offersContent = [
     title: "Exclusive Savings",
     offers: [
       {
-        theme: "teal",
+        theme: "blue",
         highlight: "Special Discount",
         title: "Military, Veterans & Senior Citizens",
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/Offer-banner-image.webp",
+        image: "/images/Offer-banner-image-remastered.webp",
         imageAlt: "Healthcare worker smiling outdoors",
       },
     ],
@@ -1188,12 +1117,11 @@ export default function Home() {
       <OffersSliderSection content={offersContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />
       <WhyChooseSection content={whyChooseContent} />
-      
-      <ComparisonSection content={whyBuyDirectContent} />
-      
+  
+      {/* <ComparisonSection content={whyBuyDirectContent} /> */}
       
       <LatestProjectsSection content={latestProjectsContent} />
-      <ImageGallerySection content={workShowcaseContent} />
+      {/* <ImageGallerySection content={workShowcaseContent} /> */}
       <QuoteCtaSection content={quoteCtaContent} />
       <EducationalResourcesSection content={educationalResourcesContent} />
       <EducationalVideosSection content={educationalVideosContent} />

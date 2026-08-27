@@ -43,7 +43,7 @@ export default function BrandsSection({ content }) {
       {content.map((section) => (
         <section key={section.eyebrow} className="relative isolate overflow-hidden py-14 sm:py-16 lg:py-[70px]">
           <Image
-            src="/images/clientbg.jpg"
+            src="/images/clientbg002.webp"
             alt=""
             fill
             className="object-cover object-center"
