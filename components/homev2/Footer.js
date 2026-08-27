@@ -38,12 +38,12 @@ const certifications = [
     alt: "Licensed, Bonded & Insured",
   },
   {
-    src: "/images/certifications/Limited-Lifetime-Warranty-150x150.webp",
-    alt: "Limited Lifetime Warranty",
-  },
-  {
     src: "/images/certifications/Locally-Owned-150x150.webp",
     alt: "Locally Owned",
+  },
+  {
+    src: "/images/certifications/minority-owned.webp",
+    alt: "Minority Owned Business",
   },
   // {
   //   src: "/images/certifications/2-1-150x150.webp",
