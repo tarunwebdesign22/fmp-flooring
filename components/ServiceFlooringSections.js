@@ -190,27 +190,34 @@ export function ServiceBenefitsSection({ content }) {
 
 const highlightIcons = {
   installation: (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-      <path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6l-2.5 2.5-2.5-2.5 2.5-2.5z" />
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 17h18" />
+      <path d="M3 13h18" />
+      <path d="M3 9h18" />
+      <path d="M12 3v3" />
+      <path d="M9 5l3 3 3-3" />
     </svg>
   ),
   consultation: (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-      <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z" />
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <path d="M16 2v4M8 2v4M3 10h18" />
+      <path d="m9 16 2 2 4-4" />
     </svg>
   ),
   support: (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 8v5" />
-      <path d="M12 16h.01" />
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 11h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H3v-4Z" />
+      <path d="M21 11h-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2v-4Z" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
     </svg>
   ),
   selection: (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-      <path d="M12 2 2 7l10 5 10-5-10-5z" />
-      <path d="m2 12 10 5 10-5" />
-      <path d="m2 17 10 5 10-5" />
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="3" width="7" height="7" rx="1" />
+      <rect x="14" y="3" width="7" height="7" rx="1" />
+      <rect x="3" y="14" width="7" height="7" rx="1" />
+      <rect x="14" y="14" width="7" height="7" rx="1" />
     </svg>
   ),
 };
@@ -222,13 +229,19 @@ export function ServiceHighlightsStrip({ content }) {
   return (
     <section className="bg-blue py-10 sm:py-12">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {section.items.map((item) => (
-            <li key={item.title} className="flex items-center gap-4 text-white">
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-[#fdbf3e] text-[#fdbf3e]">
+            <li key={item.lines?.join("-") || item.title} className="flex items-center gap-4 text-white">
+              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 border-[#fdbf3e] bg-[#fdbf3e] text-blue shadow-[0_4px_14px_rgba(253,191,62,0.45)] ring-4 ring-[#fdbf3e]/25">
                 {highlightIcons[item.icon] || highlightIcons.installation}
               </span>
-              <span className="text-sm font-bold uppercase tracking-wide">{item.title}</span>
+              <span className="flex flex-col justify-center text-sm font-bold uppercase leading-snug tracking-wide sm:text-[0.9375rem]">
+                {item.lines ? (
+                  item.lines.map((line, index) => <span key={index}>{line}</span>)
+                ) : (
+                  <span>{item.title}</span>
+                )}
+              </span>
             </li>
           ))}
         </ul>

@@ -67,10 +67,18 @@ const heroContent = [
     },
     stats: [
       { value: "1,000+", label: "Happy Customer" },
-      { text: "Federal & State", label: "Flooring Contractor" },
       { value: "10+", label: "Years Experience" },
       { value: "1000+", label: "Projects Completed" },
-      { text: "No Middlemen", label: "Direct Importer & Distributor" },
+      {
+        text: "Federal & State",
+        label: "Flooring Contractor",
+        variant: "highlight",
+      },
+      {
+        text: "No Middlemen",
+        label: "Direct Importer & Distributor",
+        variant: "highlight",
+      },
     ],
   },
 ];
@@ -111,57 +119,57 @@ const servicesContent = [
         title: "Carpet Tile",
         description:
           "Flexible, modular carpet tiles built for busy offices and high-traffic spaces with easy replacement and installation.",
-        image: "/images/home-services/Carpet-Tile-Services-benefits.png.webp",
+        image: "/images/home-services/new/Carpet_Tile.webp",
         href: "/carpet-tile",
       },
       {
         title: "Broadloom Carpet",
         description:
           "Soft, wall-to-wall carpet that brings cozy elegance, warmth, and comfort to living spaces.",
-        image: "/images/home-services/Carpet-Broadloom-work.png.webp",
+        image: "/images/home-services/new/Broadloom_Carpet.webp",
         href: "/broadloom-carpet",
       },
       {
         title: "Hardwood",
         description:
           "Timeless natural beauty and lasting durability that elevates any room with classic hardwood craftsmanship.",
-        image: "/images/home-services/Hardwood-FLOORING.webp",
+        image: "/images/home-services/new/Hardwood.webp",
         href: "/hardwood",
-        badge: "New",
+        badge: "",
       },
       {
         title: "Laminate",
         description:
           "An elegant, budget-friendly alternative to hardwood with realistic wood looks and everyday durability.",
-        image: "/images/home-services/Laminates-flooring-1024x576.jpg.webp",
+        image: "/images/home-services/new/Laminate.webp",
         href: "/laminate",
       },
       {
         title: "Rubber Flooring",
         description:
           "Slip-resistant rubber flooring ideal for gyms, play areas, and spaces that demand performance and safety.",
-        image: "/images/home-services/Rubber-Flooring-1024x768.jpg.webp",
+        image: "/images/home-services/new/Rubber_Flooring.webp",
         href: "/rubber",
       },
       {
         title: "Vinyl Composition Tiles (VCT)",
         description:
           "Durable VCT flooring designed for schools, hospitals, and commercial spaces that need robust, easy-care floors.",
-        image: "/images/home-services/Vinyl-Composition-Tiles-work.webp",
+        image: "/images/home-services/new/Vinyl_Composition_Tiles.webp",
         href: "/vct",
       },
       {
         title: "Luxury Vinyl Plank (LVP/LVT)",
         description:
           "High-end wood and tile looks with waterproof performance, comfort underfoot, and easy maintenance.",
-        image: "/images/home-services/Vinyl-Plank-Flooringss-1024x731.jpg.webp",
+        image: "/images/home-services/new/Service_Luxury_Vinyl_Plank.webp",
         href: "/luxury-vinyl-plank",
       },
       {
         title: "Ceramic Flooring",
         description:
           "Stylish ceramic tile flooring that delivers water resistance, long-term durability, and design versatility.",
-        image: "/images/ceramic-gallery/Ceramic-Flooring-Servicess.png",
+        image: "/images/home-services/new/Ceramic_Flooring.webp",
         href: "/ceramic",
       },
     ],
@@ -176,19 +184,23 @@ const featuresContent = [
     cards: [
       {
         icon: "furniture",
-        title: "We move furniture before installation.",
+        title: "Furniture carefully moved and protected before installation.",
       },
       {
         icon: "preparation",
-        title: "We prepare the floor before installation.",
+        title: "Complete floor preparation before new flooring is installed.",
+      },
+      {
+        icon: "removal",
+        title: "Old flooring removed and properly disposed of.",
       },
       {
         icon: "challenges",
-        title: "We handle all flooring preparation and installation challenges.",
+        title: "All preparation and installation challenges handled for you.",
       },
       {
         icon: "hassleFree",
-        title: "We ensure a hassle-free installation process.",
+        title: "A hassle-free installation from start to finish.",
       },
     ],
   },
@@ -419,28 +431,28 @@ const federalContent = [
         icon: "schools",
         description:
           "Durable, safe, and easy-to-maintain flooring for high-traffic educational environments.",
-        image: "/images/School-Flooring-Image.webp",
+        image: "/images/School-Image-Federal.webp",
       },
       {
         title: "Hospitals",
         icon: "hospitals",
         description:
           "Hygienic, slip-resistant, and compliant flooring solutions for healthcare facilities.",
-        image: "/images/Hospital-Flooring-Image.webp",
+        image: "/images/Hostpital-Image-Federal.webp",
       },
       {
         title: "Government",
         icon: "government",
         description:
           "Reliable, specification-ready flooring for government buildings and public agencies.",
-        image: "/images/Govt-Flooring-Image.webp",
+        image: "/images/Govt-Image-Federal.webp",
       },
       {
         title: "Offices",
         icon: "offices",
         description:
           "Professional, long-lasting flooring systems for municipal and administrative spaces.",
-        image: "/images/Office-Flooring-Image.webp",
+        image: "/images/Office-Image-Federal.webp",
       },
       {
         title: "Universities",
@@ -843,12 +855,37 @@ const beforeAfterContent = [
     tagline: "Same room. Same light. Completely new life.",
     paragraphs: [
       "New flooring changes how a space looks, feels, and functions. From worn carpet to refined hardwood or vinyl, every transformation elevates daily living.",
-      "Drag the slider to see the difference. Then schedule a free in-home estimate and start your own before-and-after story.",
+      "Drag the slider to compare each project, browse more transformations, and schedule a free in-home estimate to start your own before-and-after story.",
     ],
     buttonText: "Free In-Home Estimate",
     buttonHref: "/estimate",
-    beforeImage: "/images/before.jpg",
-    afterImage: "/images/after.jpg",
+    projects: [
+      {
+        label: "Project 54",
+        beforeImage: "/images/before-after/54-Before.webp",
+        afterImage: "/images/before-after/54-After.jpg",
+      },
+      {
+        label: "Project 58",
+        beforeImage: "/images/before-after/58-Before.jpg",
+        afterImage: "/images/before-after/58-After.jpg",
+      },
+      {
+        label: "Project 62",
+        beforeImage: "/images/before-after/62-Before.jpg",
+        afterImage: "/images/before-after/62-After.jpeg",
+      },
+      {
+        label: "Project 99",
+        beforeImage: "/images/before-after/99-Before.jpeg",
+        afterImage: "/images/before-after/99-After.jpeg",
+      },
+      {
+        label: "Residential Remodel",
+        beforeImage: "/images/before-after/78-Before.jpeg",
+        afterImage: "/images/before-after/78-After.jpg",
+      },
+    ],
   },
 ];
 

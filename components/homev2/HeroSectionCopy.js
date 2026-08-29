@@ -56,7 +56,17 @@ function useCountUp(target, enabled, duration = 1600) {
   return value;
 }
 
-function HeroStatItem({ value, label, text, stars, animate, dividerClassName, className = "" }) {
+function HeroStatItem({
+  value,
+  label,
+  text,
+  stars,
+  animate,
+  dividerClassName,
+  className = "",
+  variant,
+}) {
+  const isHighlight = variant === "highlight";
   const hasTextOnly = Boolean(text);
   const { target, suffix, hasComma } = parseStatValue(value || "0");
   const current = useCountUp(target, animate);
@@ -64,10 +74,16 @@ function HeroStatItem({ value, label, text, stars, animate, dividerClassName, cl
 
   return (
     <li
-      className={`grid h-full grid-rows-[1fr_auto] justify-items-center px-2 py-3.5 text-center sm:px-4 sm:py-7 ${dividerClassName} ${className}`}
+      className={`grid h-full grid-rows-[1fr_auto] justify-items-center px-2 py-3.5 text-center sm:px-4 sm:py-7 ${
+        isHighlight ? "bg-[#eeecff]" : "bg-white"
+      } ${dividerClassName} ${className}`}
     >
       {hasTextOnly ? (
-        <p className="self-end text-sm font-bold leading-tight tracking-wide text-teal sm:text-lg lg:text-xl">
+        <p
+          className={`self-end text-sm font-bold leading-tight tracking-wide sm:text-lg lg:text-xl ${
+            isHighlight ? "text-blue" : "text-teal"
+          }`}
+        >
           {text}
         </p>
       ) : (
@@ -77,7 +93,11 @@ function HeroStatItem({ value, label, text, stars, animate, dividerClassName, cl
       )}
       <div className="mt-1 flex w-full flex-col items-center justify-start sm:mt-2 lg:min-h-[2.5em]">
         {label ? (
-          <p className="text-[11px] font-bold leading-snug tracking-wide text-blue sm:text-sm">
+          <p
+            className={`text-[11px] font-bold leading-snug tracking-wide sm:text-sm ${
+              isHighlight ? "text-teal" : "text-blue"
+            }`}
+          >
             {label}
           </p>
         ) : null}
@@ -143,6 +163,7 @@ function HeroStatsStrip({ items }) {
                 text={item.text}
                 stars={item.stars}
                 animate={inView}
+                variant={item.variant}
                 dividerClassName={dividerClassName}
                 className={
                   index === items.length - 1 ? "col-span-2 lg:col-span-1" : ""

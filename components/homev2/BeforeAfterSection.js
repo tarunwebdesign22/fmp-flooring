@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function PhoneIcon() {
   return (
@@ -12,10 +15,37 @@ function PhoneIcon() {
   );
 }
 
-function BeforeAfterSlider({ beforeImage, afterImage }) {
+function ArrowButton({ direction, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={direction === "prev" ? "Previous transformation" : "Next transformation"}
+      className={`absolute top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-grey bg-white text-teal shadow-md transition-colors hover:border-teal hover:bg-teal hover:text-white ${
+        direction === "prev" ? "left-0" : "right-0"
+      }`}
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+        {direction === "prev" ? (
+          <path d="M15 6l-6 6 6 6" />
+        ) : (
+          <path d="M9 6l6 6-6 6" />
+        )}
+      </svg>
+    </button>
+  );
+}
+
+function BeforeAfterSlider({ beforeImage, afterImage, active, label }) {
   const containerRef = useRef(null);
   const [position, setPosition] = useState(50);
   const dragging = useRef(false);
+
+  useEffect(() => {
+    if (active) {
+      setPosition(50);
+    }
+  }, [active, beforeImage, afterImage]);
 
   const updatePosition = useCallback((clientX) => {
     const el = containerRef.current;
@@ -41,84 +71,103 @@ function BeforeAfterSlider({ beforeImage, afterImage }) {
   };
 
   return (
-    <div
-      ref={containerRef}
-      className="relative aspect-[16/11] w-full touch-none overflow-hidden rounded-2xl select-none shadow-[0_12px_40px_rgba(34,30,83,0.12)]"
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={onPointerUp}
-      onPointerCancel={onPointerUp}
-      role="img"
-      aria-label="Before and after flooring comparison slider"
-    >
-      {/* After (full base) */}
-      <Image
-        src={afterImage}
-        alt="After flooring transformation"
-        fill
-        className="object-cover"
-        sizes="(max-width: 1024px) 100vw, 60vw"
-        draggable={false}
-      />
-
-      {/* Before (clipped from left) */}
+    <div className="px-1">
       <div
-        className="absolute inset-0"
-        style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+        ref={containerRef}
+        className="relative aspect-[16/11] w-full touch-none overflow-hidden rounded-2xl select-none"
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+        role="img"
+        aria-label={label ? `${label} before and after flooring comparison` : "Before and after flooring comparison slider"}
       >
         <Image
-          src={beforeImage}
-          alt="Before flooring transformation"
+          src={afterImage}
+          alt={label ? `${label} after flooring transformation` : "After flooring transformation"}
           fill
           className="object-cover"
           sizes="(max-width: 1024px) 100vw, 60vw"
           draggable={false}
         />
-      </div>
 
-      {/* Labels */}
-      <span className="absolute bottom-4 left-4 rounded bg-blue px-3 py-1 text-xs font-bold tracking-wide text-white uppercase">
-        Before
-      </span>
-      <span className="absolute right-4 bottom-4 rounded bg-teal px-3 py-1 text-xs font-bold tracking-wide text-white uppercase">
-        After
-      </span>
-
-      {/* Divider + handle */}
-      <div
-        className="absolute top-0 bottom-0 z-10 w-0.5 -translate-x-1/2 bg-white"
-        style={{ left: `${position}%` }}
-      >
-        <div className="absolute top-1/2 left-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-white shadow-md">
-          <span className="flex items-center gap-0.5 text-blue" aria-hidden="true">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-              <path d="M15 6l-6 6 6 6" />
-            </svg>
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-              <path d="M9 6l6 6-6 6" />
-            </svg>
-          </span>
+        <div
+          className="absolute inset-0"
+          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+        >
+          <Image
+            src={beforeImage}
+            alt={label ? `${label} before flooring transformation` : "Before flooring transformation"}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 60vw"
+            draggable={false}
+          />
         </div>
-      </div>
 
-      {/* Accessible range input */}
-      <input
-        type="range"
-        min="5"
-        max="95"
-        value={position}
-        onChange={(e) => setPosition(Number(e.target.value))}
-        className="absolute inset-0 z-20 cursor-ew-resize opacity-0"
-        aria-label="Drag to compare before and after"
-      />
+        <span className="absolute bottom-4 left-4 rounded bg-blue px-3 py-1 text-xs font-bold tracking-wide text-white uppercase">
+          Before
+        </span>
+        <span className="absolute right-4 bottom-4 rounded bg-teal px-3 py-1 text-xs font-bold tracking-wide text-white uppercase">
+          After
+        </span>
+
+        <div
+          className="absolute top-0 bottom-0 z-10 w-0.5 -translate-x-1/2 bg-white"
+          style={{ left: `${position}%` }}
+        >
+          <div className="absolute top-1/2 left-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-white shadow-md">
+            <span className="flex items-center gap-0.5 text-blue" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                <path d="M15 6l-6 6 6 6" />
+              </svg>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                <path d="M9 6l6 6-6 6" />
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <input
+          type="range"
+          min="5"
+          max="95"
+          value={position}
+          onChange={(e) => setPosition(Number(e.target.value))}
+          className="absolute inset-0 z-20 cursor-ew-resize opacity-0"
+          aria-label="Drag to compare before and after"
+        />
+      </div>
     </div>
   );
 }
 
 export default function BeforeAfterSection({ content }) {
   const section = content[0];
+  const sliderRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   if (!section) return null;
+
+  const projects =
+    section.projects?.length > 0
+      ? section.projects
+      : section.beforeImage && section.afterImage
+        ? [{ beforeImage: section.beforeImage, afterImage: section.afterImage }]
+        : [];
+
+  if (projects.length === 0) return null;
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 450,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    swipe: false,
+    beforeChange: (_, next) => setActiveIndex(next),
+  };
 
   return (
     <section className="bg-[#eeecff] py-14 sm:py-16 lg:py-[70px]">
@@ -150,11 +199,28 @@ export default function BeforeAfterSection({ content }) {
           </Link>
         </div>
 
-        <div className="min-w-0">
-          <BeforeAfterSlider
-            beforeImage={section.beforeImage}
-            afterImage={section.afterImage}
-          />
+        <div className="relative min-w-0 px-8 sm:px-10">
+          {projects.length > 1 ? (
+            <>
+              <ArrowButton direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
+              <ArrowButton direction="next" onClick={() => sliderRef.current?.slickNext()} />
+            </>
+          ) : null}
+
+          <div className="before-after-slider w-full overflow-hidden">
+            <Slider ref={sliderRef} {...settings}>
+              {projects.map((project, index) => (
+                <div key={project.label || `${project.beforeImage}-${index}`}>
+                  <BeforeAfterSlider
+                    beforeImage={project.beforeImage}
+                    afterImage={project.afterImage}
+                    label={project.label}
+                    active={activeIndex === index}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
     </section>

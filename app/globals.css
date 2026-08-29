@@ -182,6 +182,30 @@ body {
   color: var(--teal);
 }
 
+/* Before / after transformations slider */
+.before-after-slider .slick-list {
+  overflow: hidden;
+  padding-bottom: 36px;
+}
+
+.before-after-slider .slick-dots {
+  bottom: 0;
+}
+
+.before-after-slider .slick-dots li {
+  margin: 0 4px;
+}
+
+.before-after-slider .slick-dots li button:before {
+  font-size: 10px;
+  color: var(--grey);
+  opacity: 1;
+}
+
+.before-after-slider .slick-dots li.slick-active button:before {
+  color: var(--teal);
+}
+
 /* Federal contractor — yellow marquee */
 .federal-marquee {
   animation: federal-marquee-scroll 40s linear infinite;

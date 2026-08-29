@@ -49,7 +49,7 @@ const heroContent = [
       },
       {
         id: "laminate-financing",
-        backgroundImage: "/images/finance-banner.webp",
+        backgroundImage: "/images/finance-banner-001.webp",
         financing: {
           eyebrow: "Flexible Payment Options",
           title: "Financing Available",
@@ -155,11 +155,11 @@ const simpleProcessContent = [
 
 const financeBannerContent = [
   {
-    title: "Floors Now, Pay Over Time",
+    title: "Financing Available",
     description: "Convenient monthly payments for your budget¹",
     buttonText: "View Financing Options",
     buttonHref: "/financing",
-    backgroundImage: "/images/finance-banner.webp",
+    backgroundImage: "/images/finance-banner-One.webp",
     footnote: "¹With approved credit.",
     footnoteLinkText: "Details",
     footnoteHref: "/financing",
@@ -170,7 +170,7 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose Laminate Flooring?",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+    backgroundImage: "/images/laminate-whychhose-image.webp",
     items: [
       {
         icon: "durable",
@@ -209,10 +209,10 @@ const benefitsContent = [
 const highlightsContent = [
   {
     items: [
-      { icon: "installation", title: "Installation Services Available" },
-      { icon: "consultation", title: "Free Consultations" },
-      { icon: "support", title: "Expert Support" },
-      { icon: "selection", title: "Wide Selection of Flooring Types" },
+      { icon: "installation", lines: ["Installation Services", "Available"] },
+      { icon: "consultation", lines: ["Free", "Consultations"] },
+      { icon: "support", lines: ["Expert", "Support"] },
+      { icon: "selection", lines: ["Wide Selection of", "Flooring Types"] },
     ],
   },
 ];
@@ -278,7 +278,7 @@ const installContent = [
       "Professional laminate floor installation",
       "Residential and commercial laminate solutions",
     ],
-    image: "/images/features/2.jpg",
+    image: "/images/laminate-installing.webp",
     imageAlt: "Professional laminate flooring installation",
     // offer: {
     //   topLabel: "Interest Free",
