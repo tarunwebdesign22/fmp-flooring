@@ -19,7 +19,6 @@ export default function PageLoader({ label = "Loading" } = {}) {
             alt="FMP Flooring"
             width={227}
             height={300}
-            priority
             className="page-loader__logo"
           />
         </div>

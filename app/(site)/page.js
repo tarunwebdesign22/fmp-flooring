@@ -1,30 +1,35 @@
-import BeforeAfterSection from "@/components/homev2/BeforeAfterSection";
-import BrandsSection from "@/components/homev2/BrandsSection";
-import ComparisonSection from "@/components/homev2/ComparisonSection";
-import CtaSection from "@/components/homev2/CtaSection";
-import EducationalResourcesSection from "@/components/homev2/EducationalResourcesSection";
-import EducationalVideosSection from "@/components/homev2/EducationalVideosSection";
-import ExploreVideosSection from "@/components/homev2/ExploreVideosSection";
-import FacebookFeedSection from "@/components/homev2/FacebookFeedSection";
-import FaqSection from "@/components/homev2/FaqSection";
-import FeaturesSection from "@/components/homev2/FeaturesSection";
-import FederalContractorSection from "@/components/homev2/FederalContractorSection";
-import HowWeManageProjectsSection from "@/components/homev2/HowWeManageProjectsSection";
+import dynamic from "next/dynamic";
 import FederalMarquee from "@/components/homev2/FederalMarquee";
-import GoogleReviewsSection from "@/components/homev2/GoogleReviewsSection";
-import HeroSection from "@/components/homev2/HeroSection";
 import HeroSectionCopy from "@/components/homev2/HeroSectionCopy";
-import LatestProjectsSection from "@/components/homev2/LatestProjectsSection";
-import MeetOurTeamSection from "@/components/homev2/MeetOurTeamSection";
-import MeetTheFounderSection from "@/components/homev2/MeetTheFounderSection";
+import FederalContractorSection from "@/components/homev2/FederalContractorSection";
 import ProcessSection from "@/components/homev2/ProcessSection";
-import QuoteCtaSection from "@/components/homev2/QuoteCtaSection";
-import TestimonialsSection from "@/components/homev2/TestimonialsSection";
-import WhyChooseSection from "@/components/homev2/WhyChooseSection";
-import OffersSliderSection from "@/components/OffersSliderSection";
 import ServicesSection from "@/components/homev2/ServicesSection";
-import ImageGallerySection from "@/components/ImageGallerySection";
+import QuoteCtaSection from "@/components/homev2/QuoteCtaSection";
 import { blogPosts } from "@/data/blog-posts";
+
+const MeetTheFounderSection = dynamic(() => import("@/components/homev2/MeetTheFounderSection"));
+const FeaturesSection = dynamic(() => import("@/components/homev2/FeaturesSection"));
+const HowWeManageProjectsSection = dynamic(() =>
+  import("@/components/homev2/HowWeManageProjectsSection"),
+);
+const ExploreVideosSection = dynamic(() => import("@/components/homev2/ExploreVideosSection"));
+const GoogleReviewsSection = dynamic(() => import("@/components/homev2/GoogleReviewsSection"));
+const BrandsSection = dynamic(() => import("@/components/homev2/BrandsSection"));
+const FacebookFeedSection = dynamic(() => import("@/components/homev2/FacebookFeedSection"));
+const BeforeAfterSection = dynamic(() => import("@/components/homev2/BeforeAfterSection"));
+const MeetOurTeamSection = dynamic(() => import("@/components/homev2/MeetOurTeamSection"));
+const OffersSliderSection = dynamic(() => import("@/components/OffersSliderSection"));
+const WhyChooseSection = dynamic(() => import("@/components/homev2/WhyChooseSection"));
+const LatestProjectsSection = dynamic(() => import("@/components/homev2/LatestProjectsSection"));
+const EducationalResourcesSection = dynamic(() =>
+  import("@/components/homev2/EducationalResourcesSection"),
+);
+const EducationalVideosSection = dynamic(() =>
+  import("@/components/homev2/EducationalVideosSection"),
+);
+const TestimonialsSection = dynamic(() => import("@/components/homev2/TestimonialsSection"));
+const FaqSection = dynamic(() => import("@/components/homev2/FaqSection"));
+const CtaSection = dynamic(() => import("@/components/homev2/CtaSection"));
 
 const heroContent = [
   {

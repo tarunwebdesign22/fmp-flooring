@@ -44,8 +44,28 @@ function SocialCard({ title, children, action }) {
 
 export default function FacebookFeedSection({ content }) {
   const section = content?.[0];
+  const sectionRef = useRef(null);
   const pageWrapRef = useRef(null);
   const [pageWidth, setPageWidth] = useState(500);
+  const [shouldLoadEmbed, setShouldLoadEmbed] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoadEmbed(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px" },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const el = pageWrapRef.current;
@@ -60,7 +80,7 @@ export default function FacebookFeedSection({ content }) {
     const observer = new ResizeObserver(update);
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [shouldLoadEmbed]);
 
   if (!section) return null;
 
@@ -69,7 +89,10 @@ export default function FacebookFeedSection({ content }) {
   const pageEmbedSrc = buildPageEmbedSrc(embedPageUrl, pageWidth);
 
   return (
-    <section className="bg-greylight py-14 sm:py-16 lg:py-[70px]">
+    <section
+      ref={sectionRef}
+      className="bg-greylight py-14 sm:py-16 lg:py-[70px]"
+    >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-8 text-center sm:mb-10">
           {section.eyebrow ? (
@@ -105,19 +128,29 @@ export default function FacebookFeedSection({ content }) {
             }
           >
             <div ref={pageWrapRef}>
-              <iframe
-                key={pageEmbedSrc}
-                title="FMP Flooring Facebook timeline"
-                src={pageEmbedSrc}
-                width={pageWidth}
-                height={720}
-                style={{ border: "none", overflow: "hidden", maxWidth: "100%" }}
-                scrolling="no"
-                frameBorder="0"
-                allowFullScreen
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                className="mx-auto block min-h-[720px]"
-              />
+              {shouldLoadEmbed ? (
+                <iframe
+                  key={pageEmbedSrc}
+                  title="FMP Flooring Facebook timeline"
+                  src={pageEmbedSrc}
+                  width={pageWidth}
+                  height={720}
+                  style={{ border: "none", overflow: "hidden", maxWidth: "100%" }}
+                  scrolling="no"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  loading="lazy"
+                  className="mx-auto block min-h-[720px]"
+                />
+              ) : (
+                <div
+                  className="mx-auto flex min-h-[720px] items-center justify-center bg-greylight text-sm text-blue/60"
+                  aria-hidden="true"
+                >
+                  Loading Facebook feed…
+                </div>
+              )}
             </div>
           </SocialCard>
         </div>

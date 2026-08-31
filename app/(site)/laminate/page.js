@@ -17,7 +17,7 @@ import {
   ServiceInstallSection,
   ServiceTipsSection,
 } from "@/components/ServicePageSections";
-import SimpleProcessSection from "@/components/SimpleProcessSection";
+import HowWeManageProjectsSection from "@/components/homev2/HowWeManageProjectsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 
 export const metadata = {
@@ -35,7 +35,7 @@ const heroContent = [
     slides: [
       {
         id: "laminate-service",
-        backgroundImage: "/images/laminate-page-banner.webp",
+        backgroundImage: "/images/laminate-mainbanner.webp",
         financing: {
           eyebrow: "Laminate Services",
           titleBefore: "We Offer High-Quality Laminate Flooring — ",
@@ -94,7 +94,7 @@ const introContent = [
       "Laminate flooring is a popular and affordable flooring option that delivers the look of natural hardwood or tile with enhanced durability and easy maintenance. Designed for modern living, laminate floors are ideal for residential and light commercial spaces where style, performance, and value matter.",
       "At FMP Flooring, we offer high-quality laminate flooring installation with a wide range of colors, textures, and wood-look finishes to suit every space and budget.",
     ],
-    image: "/images/features/Renwick Oak01.jpg",
+    image: "/images/about-laminate.webp",
     imageAlt: "Wood-look laminate flooring in a modern living space",
     // offer: {
     //   topLabel: "Huge Savings",
@@ -121,33 +121,41 @@ const mailingListContent = [
 
 const simpleProcessContent = [
   {
-    title: "Get Brand New Laminate in 3 Simple Steps",
-    buttonText: "Free In Home Estimate",
-    buttonHref: "/estimate",
+    title: "Get Brand New Laminate in 4 Simple Steps",
+    description:
+      "A clear, step-by-step process so your laminate flooring project stays organized, efficient, and stress-free from start to finish.",
     steps: [
       {
-        number: "1",
-        title: "Schedule a Free In-Home Consult with a Flooring Expert",
+        step: "01",
+        title: "Furniture & Fixture Removal",
         description:
-          "Book a free visit with a flooring expert who will come to your home, review your space, and help you get started with confidence.",
-        image: "/images/process-feature/04-final-walkthrough.jpg",
-        imageAlt: "Scheduling a free in-home flooring consultation",
+          "We carefully move and protect your furniture and remove toilets or other fixtures when needed to prepare the space for installation.",
+        image: "/images/process-feature/01-furniture-moving.jpg",
+        imageAlt: "Crew moving and protecting furniture before flooring work",
       },
       {
-        number: "2",
-        title: "No Surprises, No Hidden Fees",
+        step: "02",
+        title: "Subfloor Preparation",
         description:
-          "A flooring expert will bring samples, help you pick the right floors, measure your rooms, and give you an All-Inclusive Price Estimate.",
+          "We inspect, level, and prepare the subfloor to create a smooth, stable foundation for your new flooring.",
         image: "/images/process-feature/02-floor-preparation.jpg",
-        imageAlt: "Flooring expert reviewing samples and estimate with homeowners",
+        imageAlt: "Technician preparing and leveling the subfloor",
       },
       {
-        number: "3",
-        title: "Schedule-Friendly Installation",
+        step: "03",
+        title: "Professional Flooring Installation",
         description:
-          "Upon approval, you will be able to finance your purchase and schedule your professional installation.",
+          "Our experienced installers precisely lay your new flooring for a clean, seamless, and professional finish.",
         image: "/images/process-feature/03-installation.jpg",
-        imageAlt: "Professional crew installing laminate flooring",
+        imageAlt: "Professional installing new laminate flooring",
+      },
+      {
+        step: "04",
+        title: "Trim, Fixtures & Final Touches",
+        description:
+          "We complete the installation with trim and finishing details, then reinstall removed fixtures and ensure everything is clean, polished, and ready to enjoy.",
+        image: "/images/process-feature/how-to-replace-bathroom-tiles.jpg",
+        imageAlt: "Installer completing trim and final flooring touches",
       },
     ],
   },
@@ -446,7 +454,7 @@ export default function LaminatePage() {
       <FederalMarquee />
       <ServiceIntroSection content={introContent} />
       <MailingListSection content={mailingListContent} />
-      <SimpleProcessSection content={simpleProcessContent} />
+      <HowWeManageProjectsSection content={simpleProcessContent} />
       <FinanceBannerSection content={financeBannerContent} />
       <ServiceBenefitsSection content={benefitsContent} />
       <ServiceHighlightsStrip content={highlightsContent} />

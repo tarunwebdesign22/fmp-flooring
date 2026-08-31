@@ -204,9 +204,7 @@ function HeroStatItem({
 
   return (
     <li
-      className={`grid h-full grid-rows-[1fr_auto] justify-items-center px-2 py-3.5 text-center sm:px-4 sm:py-7 ${
-        isHighlight ? "bg-[#eeecff]" : "bg-white"
-      } ${dividerClassName} ${className}`}
+      className={`grid h-full grid-rows-[1fr_auto] justify-items-center bg-transparent px-2 py-3.5 text-center sm:px-4 sm:py-7 ${dividerClassName} ${className}`}
     >
       {hasTextOnly ? (
         <p
@@ -270,38 +268,53 @@ function HeroStatsStrip({ items }) {
 
   if (!items?.length) return null;
 
+  const metrics = items.filter((item) => item.variant !== "highlight");
+  const highlights = items.filter((item) => item.variant === "highlight");
+
   return (
     <div className="relative z-20 mt-4 mb-4 px-4 sm:-mt-16 sm:-mb-16 sm:px-6 lg:px-10">
       <div
         ref={stripRef}
         className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_rgba(34,30,83,0.18)]"
       >
-        <ul className="grid grid-cols-2 lg:grid-cols-5">
-          {items.map((item, index) => {
-            const dividerClassName =
-              index === 0
-                ? ""
-                : `border-grey/60 ${index % 2 === 1 ? "border-l" : ""} ${
-                    index >= 2 ? "border-t" : ""
-                  } lg:border-t-0 lg:border-l`;
-
-            return (
+        <div className="flex flex-col lg:flex-row lg:items-stretch">
+          <ul className="grid flex-[3] grid-cols-2 bg-white sm:grid-cols-3">
+            {metrics.map((item, index) => (
               <HeroStatItem
-                key={item.label || item.text || `${index}`}
+                key={item.label || item.text || `metric-${index}`}
                 value={item.value}
                 label={item.label}
                 text={item.text}
                 stars={item.stars}
                 animate={inView}
                 variant={item.variant}
-                dividerClassName={dividerClassName}
-                className={
-                  index === items.length - 1 ? "col-span-2 lg:col-span-1" : ""
-                }
+                dividerClassName={index === 0 ? "" : "border-grey/60 border-l"}
               />
-            );
-          })}
-        </ul>
+            ))}
+          </ul>
+          {highlights.length > 0 ? (
+            <>
+              <div
+                className="h-px w-full shrink-0 bg-grey/60 lg:h-auto lg:w-px"
+                aria-hidden="true"
+              />
+              <ul className="grid flex-[2] grid-cols-2 bg-[#eeecff]">
+                {highlights.map((item, index) => (
+                  <HeroStatItem
+                    key={item.label || item.text || `highlight-${index}`}
+                    value={item.value}
+                    label={item.label}
+                    text={item.text}
+                    stars={item.stars}
+                    animate={inView}
+                    variant="highlight"
+                    dividerClassName={index === 0 ? "" : "border-grey/60 border-l"}
+                  />
+                ))}
+              </ul>
+            </>
+          ) : null}
+        </div>
       </div>
     </div>
   );
