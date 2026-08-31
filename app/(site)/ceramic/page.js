@@ -17,8 +17,9 @@ import {
   ServiceInstallSection,
   ServiceTipsSection,
 } from "@/components/ServicePageSections";
-import SimpleProcessSection from "@/components/SimpleProcessSection";
+import HowWeManageProjectsSection from "@/components/homev2/HowWeManageProjectsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
   title: "Tile Flooring | Ceramic, Porcelain & All Types of Tile | FMP Flooring",
@@ -119,39 +120,10 @@ const mailingListContent = [
   },
 ];
 
-const simpleProcessContent = [
-  {
-    title: "Get Brand New Ceramic Tile in 3 Simple Steps",
-    buttonText: "Free In Home Estimate",
-    buttonHref: "/estimate",
-    steps: [
-      {
-        number: "1",
-        title: "Schedule a Free In-Home Consult with a Flooring Expert",
-        description:
-          "Book a free visit with a flooring expert who will come to your home, review your space, and help you get started with confidence.",
-        image: "/images/process-feature/04-final-walkthrough.jpg",
-        imageAlt: "Scheduling a free in-home flooring consultation",
-      },
-      {
-        number: "2",
-        title: "No Surprises, No Hidden Fees",
-        description:
-          "A flooring expert will bring samples, help you pick the right floors, measure your rooms, and give you an All-Inclusive Price Estimate.",
-        image: "/images/process-feature/02-floor-preparation.jpg",
-        imageAlt: "Flooring expert reviewing samples and estimate with homeowners",
-      },
-      {
-        number: "3",
-        title: "Schedule-Friendly Installation",
-        description:
-          "Upon approval, you will be able to finance your purchase and schedule your professional installation.",
-        image: "/images/process-feature/03-installation.jpg",
-        imageAlt: "Professional crew installing ceramic tile flooring",
-      },
-    ],
-  },
-];
+const simpleProcessContent = createFlooringProcessContent(
+  "Get Brand New Ceramic Tile in 4 Simple Steps",
+  "A clear, step-by-step process so your ceramic tile flooring project stays organized, efficient, and stress-free from start to finish.",
+);
 
 const financeBannerContent = [
   {
@@ -447,7 +419,7 @@ export default function CeramicPage() {
       <FederalMarquee />
       <ServiceIntroSection content={introContent} />
       <MailingListSection content={mailingListContent} />
-      <SimpleProcessSection content={simpleProcessContent} />
+      <HowWeManageProjectsSection content={simpleProcessContent} />
       <FinanceBannerSection content={financeBannerContent} />
       <ServiceBenefitsSection content={benefitsContent} />
       <ServiceHighlightsStrip content={highlightsContent} />
