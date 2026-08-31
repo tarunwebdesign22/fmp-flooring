@@ -50,7 +50,7 @@ const heroContent = [
       },
       {
         id: "hardwood-financing",
-        backgroundImage: "/images/finance-banner.webp",
+        backgroundImage: "/images/finance-banner-001.webp",
         financing: {
           eyebrow: "Flexible Payment Options",
           title: "Financing Available",
@@ -127,11 +127,11 @@ const simpleProcessContent = createFlooringProcessContent(
 
 const financeBannerContent = [
   {
-    title: "Floors Now, Pay Over Time",
+    title: "Financing Available",
     description: "Convenient monthly payments for your budget¹",
     buttonText: "View Financing Options",
     buttonHref: "/financing",
-    backgroundImage: "/images/finance-banner.webp",
+    backgroundImage: "/images/finance-banner-One.webp",
     footnote: "¹With approved credit.",
     footnoteLinkText: "Details",
     footnoteHref: "/financing",
