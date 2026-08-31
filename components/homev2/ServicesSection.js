@@ -13,7 +13,7 @@ function ArrowButton({ direction, onClick }) {
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous services" : "Next services"}
-      className="absolute top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-grey bg-white text-teal shadow-sm transition-colors hover:border-teal hover:bg-teal hover:text-white sm:flex"
+      className="absolute top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-teal text-white shadow-sm transition-colors hover:bg-blue hover:text-white sm:flex"
       style={{ [direction === "prev" ? "left" : "right"]: 0 }}
     >
       <svg
@@ -60,7 +60,7 @@ function ServiceCard({ service }) {
         </p>
         <Link
           href={service.href}
-          className="mt-5 inline-flex items-center justify-center rounded border border-teal px-5 py-2.5 text-sm font-bold text-teal transition-colors hover:bg-teal hover:text-white"
+          className="mt-5 inline-flex items-center justify-center rounded bg-teal px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-blue hover:text-white"
         >
           Learn more
         </Link>

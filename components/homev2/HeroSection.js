@@ -326,7 +326,7 @@ function SlideArrow({ direction, onClick }) {
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous slide" : "Next slide"}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-[2px] transition-colors hover:border-teal hover:bg-teal"
+      className="flex h-10 w-10 items-center justify-center rounded-full bg-teal text-white transition-colors hover:bg-blue"
     >
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
         {direction === "prev" ? <path d="M15 6l-6 6 6 6" /> : <path d="M9 6l6 6-6 6" />}
@@ -365,7 +365,7 @@ function MainSlide({ slide }) {
           <Link
             key={cta.label}
             href={cta.href}
-            className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-blue transition-colors hover:bg-white hover:text-blue"
           >
             {cta.label}
             <span aria-hidden="true">→</span>
@@ -411,7 +411,7 @@ function FinancingSlide({ slide }) {
         <div className="mt-7">
           <Link
             href={slide.buttonHref}
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-blue transition-colors hover:bg-white hover:text-blue"
           >
             {slide.buttonText}
             <span aria-hidden="true">→</span>
@@ -462,7 +462,7 @@ function ServiceSlide({ slide }) {
         <div className="mt-7">
           <Link
             href={slide.buttonHref}
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-blue transition-colors hover:bg-white hover:text-blue"
           >
             {slide.buttonText}
             <span aria-hidden="true">→</span>
@@ -499,7 +499,7 @@ function MobileSlideContent({ slide }) {
             <Link
               key={`${cta.label}-${cta.href}`}
               href={cta.href}
-              className="mx-auto inline-flex w-fit max-w-full items-center justify-center gap-2 rounded-lg border-2 border-[#fdbf3e] bg-black/15 px-3.5 py-2.5 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+              className="mx-auto inline-flex w-fit max-w-full items-center justify-center gap-2 rounded-lg bg-[#fdbf3e] px-3.5 py-2.5 text-sm font-bold uppercase tracking-wide text-blue transition-colors hover:bg-white hover:text-blue"
             >
               {cta.label}
               <span aria-hidden="true">→</span>
@@ -514,13 +514,7 @@ function MobileSlideContent({ slide }) {
 function EstimateFormCard({ section, submitted, formData, onChange, onSubmit, className = "" }) {
   return (
     <div className={`overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(0,0,0,0.35)] ${className}`}>
-      {section.form.promoText ? (
-        <p className="bg-[#fdbf3e] px-4 py-3 text-center text-lg font-bold uppercase tracking-wide text-blue">
-          {section.form.promoText}
-        </p>
-      ) : (
-        <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
-      )}
+      <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
       <div className="p-6 sm:p-7">
         <h2 className="text-2xl font-bold text-blue">{section.form.title}</h2>
         <span className="mt-2 block h-0.5 w-12 bg-teal" aria-hidden="true" />

@@ -196,7 +196,7 @@ export default function HeroSection({ content }) {
                   <Link
                     key={cta.label}
                     href={cta.href}
-                    className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/75 px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-teal hover:bg-teal hover:text-white"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-blue"
                   >
                     {cta.label}
                   </Link>

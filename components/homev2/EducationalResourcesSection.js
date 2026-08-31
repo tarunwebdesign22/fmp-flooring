@@ -97,7 +97,7 @@ export default function EducationalResourcesSection({ content }) {
           <div className="mt-10 text-center">
             <Link
               href={section.buttonHref}
-              className="inline-flex items-center gap-2 rounded border border-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
+              className="inline-flex items-center gap-2 rounded bg-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue hover:text-white"
             >
               {section.buttonText}
               <ArrowIcon />

@@ -72,7 +72,6 @@ const heroContent = [
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
       defaultService: "Rubber",
-      highlight: "Financing Available Vinyl",
       services: [
         "Luxury Vinyl Plank",
         "Broadloom Carpet",
@@ -265,7 +264,7 @@ const testimonialsContent = [
   {
     eyebrow: "Testimonials",
     title: "What Our Customers Say",
-    backgroundImage: "/images/testimonial-bg.jpg",
+    backgroundImage: "/images/laminate-reviews.webp",
     items: [
       {
         quote:

@@ -160,11 +160,7 @@ function ProductEstimateForm({ productName }) {
 
   return (
     <div className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(34,30,83,0.12)]">
-      <div className="bg-[#fdbf3e] px-5 py-3 text-center">
-        <p className="text-sm font-extrabold uppercase tracking-wide text-blue sm:text-[15px]">
-          FREE Quarter Round with LVP
-        </p>
-      </div>
+      <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
 
       <div className="p-6 sm:p-8">
         <h2 className="text-2xl font-bold text-blue sm:text-3xl">Start Your Flooring Journey Here!</h2>
@@ -410,7 +406,7 @@ export default function CloseoutProductDetailPage({ product, testimonialsContent
                 </a>
                 <Link
                   href="/in-stock-specials"
-                  className="inline-flex items-center justify-center rounded border border-blue/20 px-6 py-3 text-sm font-semibold text-blue transition-colors hover:border-teal hover:text-teal"
+                  className="inline-flex items-center justify-center rounded bg-blue px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-teal hover:text-white"
                 >
                   Back to Specials
                 </Link>
@@ -457,7 +453,7 @@ export default function CloseoutProductDetailPage({ product, testimonialsContent
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <a
                 href={ctaContent[0].phoneHref}
-                className="inline-flex items-center justify-center rounded border border-teal px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal"
+                className="inline-flex items-center justify-center rounded bg-teal px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue"
               >
                 {ctaContent[0].phone}
               </a>

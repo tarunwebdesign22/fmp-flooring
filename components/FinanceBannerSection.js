@@ -63,7 +63,7 @@ export default function FinanceBannerSection({ content }) {
               <div className="shrink-0">
                 <Link
                   href={section.buttonHref}
-                  className="inline-flex items-center justify-center rounded border-2 border-[#fdbf3e] bg-transparent px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue sm:px-8 sm:py-4 sm:text-base"
+                  className="inline-flex items-center justify-center rounded bg-[#fdbf3e] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-blue transition-colors hover:bg-white hover:text-blue sm:px-8 sm:py-4 sm:text-base"
                 >
                   {section.buttonText}
                 </Link>

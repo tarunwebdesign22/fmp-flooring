@@ -262,22 +262,39 @@ function HeroCopy({ section }) {
       <HighlightedCopy segments={section.description} />
 
       {section.ctas?.length ? (
-        <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-          {section.ctas.map((cta) => {
-            const isPrimary = cta.variant !== "secondary";
+        <div className="mt-7 flex flex-col gap-3">
+          {section.ctas.filter((cta) => cta.variant !== "highlight").length ? (
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              {section.ctas
+                .filter((cta) => cta.variant !== "highlight")
+                .map((cta) => {
+                  const variant = cta.variant ?? "primary";
+                  const className =
+                    variant === "secondary" ? "bg-blue hover:bg-teal" : "bg-teal hover:bg-blue";
 
-            return (
+                  return (
+                    <Link
+                      key={cta.label}
+                      href={cta.href}
+                      className={`inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(0,0,0,0.22)] transition-colors ${className}`}
+                    >
+                      {cta.label}
+                    </Link>
+                  );
+                })}
+            </div>
+          ) : null}
+          {section.ctas
+            .filter((cta) => cta.variant === "highlight")
+            .map((cta) => (
               <Link
                 key={cta.label}
                 href={cta.href}
-                className={`inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(0,0,0,0.22)] transition-colors ${
-                  isPrimary ? "bg-teal hover:bg-blue" : "bg-blue hover:bg-teal"
-                }`}
+                className="inline-flex w-fit items-center justify-center rounded-md bg-[#e24b4b] px-5 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(226,75,75,0.45)] ring-2 ring-white/30 transition-colors hover:bg-[#c93d3d]"
               >
                 {cta.label}
               </Link>
-            );
-          })}
+            ))}
         </div>
       ) : null}
     </div>
@@ -289,13 +306,7 @@ function EstimateFormCard({ section, submitted, formData, onChange, onSubmit, cl
 
   return (
     <div className={`overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(0,0,0,0.35)] ${className}`}>
-      {section.form.promoText ? (
-        <p className="bg-[#fdbf3e] px-4 py-3 text-center text-lg font-bold uppercase tracking-wide text-blue">
-          {section.form.promoText}
-        </p>
-      ) : (
-        <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
-      )}
+      <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
       <div className="p-6 sm:p-7">
         <h2 className="text-2xl font-bold text-blue">{section.form.title}</h2>
         <span className="mt-2 block h-0.5 w-12 bg-teal" aria-hidden="true" />

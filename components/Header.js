@@ -255,7 +255,7 @@ export default function Header() {
               aria-controls="mobile-menu"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               onClick={() => setMenuOpen((open) => !open)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-grey text-blue transition-colors hover:border-[#fdbf3e] hover:text-[#fdbf3e] xl:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-sm bg-greylight text-blue transition-colors hover:bg-teal hover:text-white xl:hidden"
             >
               {menuOpen ? (
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">

@@ -162,7 +162,7 @@ export default async function BlogPostPage({ params }) {
             </Link>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 border border-blue px-5 py-3 text-sm font-bold uppercase tracking-wide text-blue transition-colors hover:border-teal hover:text-teal"
+              className="inline-flex items-center gap-2 rounded bg-blue px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-teal hover:text-white"
             >
               Back to Blog
             </Link>

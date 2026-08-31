@@ -12,7 +12,7 @@ function ArrowButton({ direction, onClick }) {
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous testimonials" : "Next testimonials"}
-      className="absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-sm transition-colors hover:border-teal hover:bg-teal hover:text-white"
+      className="absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-teal text-white shadow-sm transition-colors hover:bg-blue hover:text-white"
       style={{ [direction === "prev" ? "left" : "right"]: 0 }}
     >
       <svg
@@ -94,13 +94,13 @@ export default function TestimonialsSection({ content }) {
   return (
     <section className="relative isolate overflow-hidden py-16 sm:py-[70px] lg:py-24">
       <Image
-        src={section.backgroundImage || "/images/testimonial-bg.jpg"}
+        src={section.backgroundImage || "/images/laminate-reviews.webp"}
         alt=""
         fill
         className="object-cover object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-12 text-center sm:mb-14">

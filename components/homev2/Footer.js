@@ -62,26 +62,39 @@ function SectionHeading({ children }) {
 
 function FacebookIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M14 8h3V5h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z" />
+    <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="12" fill="#1877F2" />
+      <path
+        fill="#fff"
+        d="M13.5 12.5h2.5l.5-2.5H13.5V9c0-.8.2-1.3 1.3-1.3h1.7V5.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9V10H8v2.5h2.4V19h3.1v-6.5z"
+      />
     </svg>
   );
 }
 
 function InstagramIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
+      <defs>
+        <linearGradient id="footer-instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#FD5949" />
+          <stop offset="50%" stopColor="#D6249F" />
+          <stop offset="100%" stopColor="#285AEB" />
+        </linearGradient>
+      </defs>
+      <circle cx="12" cy="12" r="12" fill="url(#footer-instagram-gradient)" />
+      <rect x="6.5" y="6.5" width="11" height="11" rx="3" fill="none" stroke="#fff" strokeWidth="1.4" />
+      <circle cx="12" cy="12" r="2.6" fill="none" stroke="#fff" strokeWidth="1.4" />
+      <circle cx="16.8" cy="7.2" r="0.9" fill="#fff" />
     </svg>
   );
 }
 
 function YouTubeIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M23 12.2s0-3.2-.4-4.7c-.2-.9-.9-1.6-1.8-1.8C18.5 5.2 12 5.2 12 5.2s-6.5 0-8.8.5c-.9.2-1.6.9-1.8 1.8C1 9 1 12.2 1 12.2s0 3.2.4 4.7c.2.9.9 1.6 1.8 1.8 2.3.5 8.8.5 8.8.5s6.5 0 8.8-.5c.9-.2 1.6-.9 1.8-1.8.4-1.5.4-4.7.4-4.7zM9.8 15.5v-6.6l5.7 3.3-5.7 3.3z" />
+    <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="12" fill="#FF0000" />
+      <path fill="#fff" d="M10 8.2l6.2 3.8L10 15.8V8.2z" />
     </svg>
   );
 }
@@ -138,7 +151,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="flex h-9 w-9 items-center justify-center rounded bg-[#2a2660] text-white transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+              className="inline-flex h-9 w-9 shrink-0 overflow-hidden rounded-full transition-opacity hover:opacity-80"
             >
               <FacebookIcon />
             </a>
@@ -147,7 +160,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="flex h-9 w-9 items-center justify-center rounded bg-[#2a2660] text-white transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+              className="inline-flex h-9 w-9 shrink-0 overflow-hidden rounded-full transition-opacity hover:opacity-80"
             >
               <InstagramIcon />
             </a>
@@ -156,7 +169,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              className="flex h-9 w-9 items-center justify-center rounded bg-[#2a2660] text-white transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+              className="inline-flex h-9 w-9 shrink-0 overflow-hidden rounded-full transition-opacity hover:opacity-80"
             >
               <YouTubeIcon />
             </a>

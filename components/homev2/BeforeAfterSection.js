@@ -21,7 +21,7 @@ function ArrowButton({ direction, onClick }) {
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous transformation" : "Next transformation"}
-      className={`absolute top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-grey bg-white text-teal shadow-md transition-colors hover:border-teal hover:bg-teal hover:text-white ${
+      className={`absolute top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-teal text-white shadow-md transition-colors hover:bg-blue hover:text-white ${
         direction === "prev" ? "left-0" : "right-0"
       }`}
     >

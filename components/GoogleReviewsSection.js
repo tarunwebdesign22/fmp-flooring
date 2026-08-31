@@ -134,7 +134,7 @@ export default function GoogleReviewsSection({ content }) {
               href={section.viewAllHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded border-2 border-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-blue"
+              className="inline-flex items-center gap-2 rounded bg-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue hover:text-white"
             >
               View All Google Reviews
               <span aria-hidden="true">→</span>
@@ -145,7 +145,7 @@ export default function GoogleReviewsSection({ content }) {
               href={section.writeReviewHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded bg-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
+              className="inline-flex items-center gap-2 rounded bg-blue px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-teal hover:text-white"
             >
               Write a Google Review
             </Link>

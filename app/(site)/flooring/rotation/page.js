@@ -11,7 +11,7 @@ const testimonialsContent = [
   {
     eyebrow: "Testimonials",
     title: "What Our Customers Say",
-    backgroundImage: "/images/clientbg.jpg",
+    backgroundImage: "/images/laminate-reviews.webp",
     items: [
       {
         quote:

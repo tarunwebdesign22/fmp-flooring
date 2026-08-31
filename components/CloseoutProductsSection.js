@@ -492,7 +492,7 @@ function QuickViewModal({ product, onClose, stockMap, stockLoading }) {
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-grey text-blue transition-colors hover:border-teal hover:text-teal"
+              className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal text-white transition-colors hover:bg-blue"
               aria-label="Close"
             >
               <CloseIcon />

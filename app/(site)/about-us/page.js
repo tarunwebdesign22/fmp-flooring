@@ -236,7 +236,7 @@ export default function AboutUsPage() {
             </Link>
             <Link
               href="/estimate"
-              className="inline-flex items-center justify-center rounded border border-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
+              className="inline-flex items-center justify-center rounded bg-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue hover:text-white"
             >
               Free In-Home Estimate
             </Link>

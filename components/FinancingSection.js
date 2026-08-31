@@ -71,7 +71,7 @@ export default function FinancingSection({ content }) {
             <div className="mt-8 flex justify-center lg:justify-start">
               <Link
                 href={section.buttonHref}
-                className="inline-flex items-center gap-2 rounded border-2 border-[#fdbf3e] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-all hover:bg-[#fdbf3e] hover:text-blue"
+                className="inline-flex items-center gap-2 rounded bg-[#fdbf3e] px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-blue transition-all hover:bg-white hover:text-blue"
               >
                 {section.buttonText}
                 <span aria-hidden="true">→</span>

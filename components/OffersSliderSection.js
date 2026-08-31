@@ -13,7 +13,7 @@ function ArrowButton({ direction, onClick }) {
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous offer" : "Next offer"}
-      className="absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-grey bg-white text-teal shadow-sm transition-colors hover:border-teal hover:bg-teal hover:text-white"
+      className="absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-teal text-white shadow-sm transition-colors hover:bg-blue hover:text-white"
       style={{ [direction === "prev" ? "left" : "right"]: -4 }}
     >
       <svg

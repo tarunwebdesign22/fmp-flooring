@@ -83,7 +83,7 @@ export function ServiceIntroSection({ content }) {
           {section.buttonText && section.buttonHref ? (
             <Link
               href={section.buttonHref}
-              className="mt-8 inline-flex items-center gap-2 rounded border border-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
+              className="mt-8 inline-flex items-center gap-2 rounded bg-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue hover:text-white"
             >
               {section.buttonText}
               <span aria-hidden="true">→</span>

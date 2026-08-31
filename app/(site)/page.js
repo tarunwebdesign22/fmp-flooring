@@ -53,11 +53,15 @@ const heroContent = [
         href: "#latest-projects",
         variant: "secondary",
       },
+      {
+        label: "In-Stock Specials",
+        href: "/in-stock-specials",
+        variant: "highlight",
+      },
     ],
     form: {
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
-      promoText: "Financing Available",
       buttonText: "Get My Free Estimate",
       services: [
         "Luxury Vinyl Plank",
@@ -754,7 +758,7 @@ const testimonialsContent = [
   {
     eyebrow: "Testimonials",
     title: "What Our Clients Say",
-    backgroundImage: "/images/testimonial-bg.jpg",
+    backgroundImage: "/images/laminate-reviews.webp",
     items: [
       {
         quote:

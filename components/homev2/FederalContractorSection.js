@@ -53,7 +53,7 @@ function ArrowButton({ direction, onClick }) {
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous sectors" : "Next sectors"}
-      className={`absolute top-[42%] z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-grey bg-white text-teal shadow-md transition-colors hover:border-teal hover:bg-teal hover:text-white sm:flex ${
+      className={`absolute top-[42%] z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-teal text-white shadow-md transition-colors hover:bg-blue hover:text-white sm:flex ${
         direction === "prev" ? "left-0" : "right-0"
       }`}
     >
@@ -144,7 +144,7 @@ export default function FederalContractorSection({ content }) {
 
                 <Link
                   href={section.buttonHref}
-                  className="mt-6 inline-flex items-center gap-2 rounded border border-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
+                  className="mt-6 inline-flex items-center gap-2 rounded bg-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue hover:text-white"
                 >
                   {section.buttonText}
                   <span aria-hidden="true">→</span>

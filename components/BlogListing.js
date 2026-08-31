@@ -90,10 +90,10 @@ export default function BlogListing({ posts, categories }) {
               key={category}
               type="button"
               onClick={() => setActiveCategory(category)}
-              className={`border px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] transition-colors ${
+              className={`rounded px-4 py-2 text-xs font-bold uppercase tracking-[0.1em] transition-colors ${
                 isActive
-                  ? "border-teal bg-teal text-white"
-                  : "border-grey bg-white text-blue hover:border-teal hover:text-teal"
+                  ? "bg-teal text-white"
+                  : "bg-greylight text-blue hover:bg-teal hover:text-white"
               }`}
             >
               {category}

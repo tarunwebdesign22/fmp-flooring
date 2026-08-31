@@ -71,13 +71,7 @@ function EstimateForm({ form }) {
 
   return (
     <div className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(0,0,0,0.25)]">
-      {form.highlight ? (
-        <div className="bg-[#fdbf3e] px-5 py-3 text-center">
-          <p className="text-sm font-extrabold uppercase tracking-wide text-blue sm:text-[15px]">
-            {form.highlight}
-          </p>
-        </div>
-      ) : null}
+      <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
 
       <div className="p-6 sm:p-7">
         <h2 className="text-2xl font-bold text-blue">{form.title}</h2>
@@ -221,7 +215,7 @@ function FinancingContent({ financing }) {
         <div className="mt-7">
           <Link
             href={financing.buttonHref}
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-blue transition-colors hover:bg-white hover:text-blue"
           >
             {financing.buttonText}
             <span aria-hidden="true">→</span>
@@ -258,7 +252,7 @@ function ServiceContent({ section }) {
       {section.buttonText && section.buttonHref ? (
         <Link
           href={section.buttonHref}
-          className="mt-8 inline-flex items-center gap-2 rounded border-2 border-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#fdbf3e] transition-colors hover:bg-[#fdbf3e] hover:text-blue"
+          className="mt-8 inline-flex items-center gap-2 rounded bg-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-blue transition-colors hover:bg-white hover:text-blue"
         >
           {section.buttonText}
           <span aria-hidden="true">→</span>
@@ -308,7 +302,7 @@ function SliderControls({ slides, activeSlide, setActiveSlide }) {
         onClick={() =>
           setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length)
         }
-        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-black/35 text-white transition-colors hover:bg-black/60"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-teal text-white transition-colors hover:bg-blue"
         aria-label="Previous slide"
       >
         ‹
@@ -330,7 +324,7 @@ function SliderControls({ slides, activeSlide, setActiveSlide }) {
       <button
         type="button"
         onClick={() => setActiveSlide((prev) => (prev + 1) % slides.length)}
-        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/50 bg-black/35 text-white transition-colors hover:bg-black/60"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-teal text-white transition-colors hover:bg-blue"
         aria-label="Next slide"
       >
         ›
@@ -373,7 +367,7 @@ export default function ServicePageHero({ content }) {
           sizes="100vw"
         />
         <div
-          className="absolute inset-0 bg-black/65"
+          className="absolute inset-0 bg-black/50"
           aria-hidden="true"
         />
 

@@ -54,9 +54,9 @@ export default function CtaSection({ content }) {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center lg:flex-col lg:items-stretch lg:justify-end">
               <a
                 href={item.phoneHref}
-                className="inline-flex items-center justify-center gap-2 rounded border border-teal px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-teal hover:text-blue lg:min-w-[220px]"
+                className="inline-flex items-center justify-center gap-2 rounded bg-teal px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue hover:text-white lg:min-w-[220px]"
               >
-                <span className="text-teal">
+                <span className="text-white">
                   <PhoneIcon />
                 </span>
                 {item.phone}
