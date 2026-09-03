@@ -22,34 +22,34 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Carpet Tile Flooring | Commercial & Residential Carpet Tiles | FMP Flooring",
+  title: "VCT Flooring | Vinyl Composition Tile Flooring Solutions | FMP Flooring",
   description:
-    "Durable modular carpet tile flooring from FMP Flooring. Commercial and residential carpet tiles with easy installation, design flexibility, and professional installation.",
+    "Durable, cost-effective VCT flooring installation from FMP Flooring. Commercial-grade vinyl composition tile for schools, hospitals, offices, retail, and high-traffic spaces.",
 };
 
 const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Carpet Tile Services" },
+      { label: "Vinyl Composition Tile" },
     ],
     slides: [
       {
-        id: "carpet-tile-service",
-        backgroundImage: "/images/carpet-tile-page-banner.png",
+        id: "vct-service",
+        backgroundImage: "/images/vct-page-banner.png",
         financing: {
-          eyebrow: "Carpet Tile Services",
-          titleBefore: "We Offer High-Quality Carpet Tile Flooring — ",
+          eyebrow: "Vinyl Composition Tile",
+          titleBefore: "We Offer High-Quality VCT Flooring — ",
           titleHighlightValue: "65%  Off Sale",
           titleAfter: "",
           description:
-            "Upgrade your space with durable modular carpet tiles designed for offices, retail, schools, and modern homes.",
+            "Upgrade your facility with durable, cost-effective vinyl composition tile flooring designed for schools, hospitals, offices, and commercial spaces.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
       },
       {
-        id: "carpet-tile-financing",
+        id: "vct-financing",
         backgroundImage: "/images/finance-banner-001.webp",
         financing: {
           eyebrow: "Flexible Payment Options",
@@ -69,7 +69,7 @@ const heroContent = [
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
-      defaultService: "Carpet Tile",
+      defaultService: "VCT",
       services: [
         "Luxury Vinyl Plank",
         "Broadloom Carpet",
@@ -86,32 +86,32 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Carpet Tile Services",
-    title: "Carpet Tile Flooring – Durable, Modular & Modern Flooring Solution",
+    eyebrow: "Vinyl Composition Tile",
+    title: "VCT Flooring – Durable, Cost-Effective & Commercial-Grade Flooring",
     paragraphs: [
-      "Carpet tile flooring, also known as modular carpet tiles, is a versatile, durable, and cost-effective flooring solution for both commercial and residential spaces. Designed for high-traffic environments, carpet tiles are widely used in offices, retail stores, schools, healthcare facilities, and modern homes.",
-      "At FMP Flooring, we specialize in commercial carpet tile flooring and residential carpet tiles that combine performance, comfort, and design flexibility. Whether you are upgrading an office or remodeling your home, carpet tile flooring offers long-lasting value and easy maintenance.",
+      "VCT flooring (Vinyl Composition Tile) is a highly durable, affordable, and proven flooring solution widely used in commercial, institutional, and industrial spaces. Known for its strength, easy maintenance, and long lifespan, vinyl composition tile flooring is ideal for schools, hospitals, offices, retail stores, and high-traffic environments.",
+      "At FMP Flooring, we specialize in commercial VCT flooring installation and provide high-quality VCT tiles designed for performance, durability, and long-term value.",
     ],
     images: [
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
-        alt: "Modular carpet tile flooring in a commercial office",
+        src: "/images/vct-gallery/Vinyl-Composition-Tiles-dining.png",
+        alt: "Vinyl composition tile flooring in a commercial dining space",
       },
       {
-        src: "/images/carpet-tile-gallery/Professional-Carpet-Tile-Installation-Services.png",
-        alt: "Professional carpet tile flooring installation",
+        src: "/images/vct-gallery/Vinyl-Composition-Tiles-others.png",
+        alt: "VCT flooring in a commercial corridor",
       },
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-cost.png",
-        alt: "Carpet tile installation in progress",
+        src: "/images/vct-gallery/Professional-VCT-Flooring-Installation.png",
+        alt: "Professional VCT flooring installation",
       },
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Installation-Services.png",
-        alt: "Carpet tile flooring installation services",
+        src: "/images/vct-gallery/Untitled-design-7.png",
+        alt: "Installed vinyl composition tile flooring",
       },
       {
-        src: "/images/home-services/new/Carpet_Tile.webp",
-        alt: "Installed carpet tile flooring showcase",
+        src: "/images/home-services/new/Vinyl_Composition_Tiles.webp",
+        alt: "Commercial vinyl composition tiles showcase",
       },
     ],
     // offer: {
@@ -138,8 +138,8 @@ const introContent = [
 // ];
 
 const simpleProcessContent = createFlooringProcessContent(
-  "Get Brand New Carpet Tile in 4 Simple Steps",
-  "A clear, step-by-step process so your carpet tile flooring project stays organized, efficient, and stress-free from start to finish.",
+  "Get Brand New VCT Flooring in 4 Simple Steps",
+  "A clear, step-by-step process so your vinyl composition tile project stays organized, efficient, and stress-free from start to finish.",
 );
 
 const financeBannerContent = [
@@ -158,38 +158,38 @@ const financeBannerContent = [
 const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
-    title: "Why Choose Carpet Tile Flooring?",
-    backgroundImage: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
+    title: "Why Choose VCT Flooring?",
+    backgroundImage: "/images/vct-gallery/Vinyl-Composition-Tiles-others.png",
     items: [
       {
         icon: "durable",
-        title: "Durable Carpet Tiles for High-Traffic Areas",
+        title: "Heavy-Duty & Long-Lasting",
         description:
-          "Carpet tiles are engineered for durability, making them ideal for commercial flooring applications such as offices, hallways, conference rooms, and retail spaces. High-performance fibers resist wear, stains, and crushing caused by heavy foot traffic.",
+          "VCT flooring is engineered to handle heavy foot traffic, rolling loads, and daily wear, making it one of the most reliable commercial flooring options available.",
       },
       {
         icon: "affordable",
-        title: "Easy Installation & Tile Replacement",
+        title: "Cost-Effective Flooring Solution",
         description:
-          "Unlike traditional broadloom carpet, carpet tile flooring installs quickly and efficiently. Individual tiles can be replaced if damaged or stained, eliminating the need to replace the entire floor.",
+          "Vinyl composition tile is one of the most budget-friendly commercial flooring materials, offering excellent durability at a lower upfront cost compared to other hard surface floors.",
       },
       {
         icon: "maintenance",
-        title: "Low-Maintenance Carpet Flooring",
+        title: "Easy Maintenance & Repair",
         description:
-          "Carpet tiles are easy to maintain with routine vacuuming and spot cleaning. Their modular design helps reduce long-term maintenance and repair costs.",
-      },
-      {
-        icon: "styles",
-        title: "Design Flexibility with Modular Carpet Tiles",
-        description:
-          "Available in a wide range of colors, textures, and patterns, carpet tiles allow you to create custom layouts, modern designs, and unique flooring patterns for any space.",
+          "VCT flooring is easy to maintain with routine cleaning and periodic polishing. Individual VCT tiles can be replaced without removing the entire floor.",
       },
       {
         icon: "moisture",
-        title: "Eco-Friendly Carpet Tile Options",
+        title: "Slip-Resistant & Safe",
         description:
-          "Many carpet tiles are manufactured using recycled materials and are recyclable at the end of their life cycle, making them a sustainable flooring choice.",
+          "When properly finished, VCT floors provide good slip resistance, making them suitable for schools, healthcare facilities, and commercial buildings.",
+      },
+      {
+        icon: "styles",
+        title: "Wide Range of Colors & Patterns",
+        description:
+          "VCT tiles are available in many colors and patterns, allowing for custom layouts, borders, and design accents.",
       },
     ],
   },
@@ -209,15 +209,15 @@ const highlightsContent = [
 const tipsContent = [
   {
     eyebrow: "Care Guide",
-    title: "Maintenance Tips",
+    title: "VCT Flooring Maintenance",
     description:
-      "Keep your carpet tiles looking their best with a simple, consistent cleaning routine that protects the fibers and modular seams.",
+      "To maximize the lifespan of vinyl composition tile flooring, regular maintenance is recommended.",
     backgroundImage: "/images/294-Wood-Flooring.webp",
     tips: [
-      "Vacuum regularly to remove dirt and debris from carpet tile surfaces.",
-      "Address spills quickly with a mild cleaner to prevent staining.",
-      "Perform periodic deep cleans to maintain appearance and durability.",
-      "Replace individual damaged tiles instead of the entire floor when needed.",
+      "Routine sweeping and damp mopping",
+      "Periodic stripping and waxing",
+      "Prompt spill cleanup",
+      "Tile replacement as needed",
     ],
   },
 ];
@@ -225,18 +225,16 @@ const tipsContent = [
 const applicationsContent = [
   {
     eyebrow: "Where It Works",
-    title: "Carpet Tile Flooring Applications",
-    description:
-      "Carpet tile flooring is suitable for a wide range of commercial and residential uses, including:",
+    title: "VCT Flooring Applications",
+    description: "VCT flooring is ideal for:",
     items: [
-      "Commercial office carpet tile flooring",
-      "Corporate and coworking spaces",
-      "Retail stores and showrooms",
-      "Conference and meeting rooms",
+      "Commercial office buildings",
       "Schools and educational facilities",
-      "Healthcare and medical offices",
-      "Home offices",
-      "Basements and playrooms",
+      "Hospitals and healthcare centers",
+      "Retail stores and supermarkets",
+      "Government buildings",
+      "Industrial and institutional facilities",
+      "Back-of-house commercial spaces",
     ],
   },
 ];
@@ -244,30 +242,15 @@ const applicationsContent = [
 const compareContent = [
   {
     eyebrow: "Compare Options",
-    title: "Carpet Tile Flooring vs Broadloom Carpet",
+    title: "VCT Flooring vs Other Commercial Flooring",
     featureLabel: "Feature",
-    columns: ["Carpet Tile Flooring", "Broadloom Carpet"],
+    columns: ["VCT Flooring", "LVT Flooring", "Ceramic Tile"],
     rows: [
-      {
-        feature: "Installation",
-        values: ["Modular tile installation", "One-piece installation"],
-      },
-      {
-        feature: "Replacement",
-        values: ["Easy tile replacement", "Entire floor replacement"],
-      },
-      {
-        feature: "Design Options",
-        values: ["Flexible design options", "Fixed design"],
-      },
-      {
-        feature: "High-Traffic Performance",
-        values: ["Ideal for high-traffic areas", "Wears faster in traffic zones"],
-      },
-      {
-        feature: "Long-Term Maintenance",
-        values: ["Lower long-term maintenance", "Higher maintenance costs"],
-      },
+      { feature: "Cost", values: ["Low", "Moderate", "High"] },
+      { feature: "Durability", values: ["High", "High", "Very High"] },
+      { feature: "Maintenance", values: ["Moderate", "Low", "Low"] },
+      { feature: "Tile Replacement", values: ["Easy", "Easy", "Difficult"] },
+      { feature: "Best for Large Commercial Areas", values: [true, false, false] },
     ],
   },
 ];
@@ -275,19 +258,18 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Carpet Tile Installation Services",
+    title: "Professional VCT Flooring Installation",
     description:
-      "We provide expert carpet tile installation for both commercial and residential projects. Our experienced installers ensure proper layout, secure adhesion, and a clean, professional finish.",
-    servicesTitle: "Our Carpet Tile Services Include:",
+      "Proper installation is critical for VCT flooring performance. Our professional installers ensure correct subfloor preparation, accurate tile placement, and proper adhesive application.",
+    servicesTitle: "Our VCT Flooring Services Include:",
     services: [
-      "Free on-site consultations",
-      "Accurate flooring estimates",
-      "Professional carpet tile installation",
-      "Commercial and residential flooring solutions",
+      "Free on-site commercial consultations",
+      "Accurate VCT flooring estimates",
+      "Professional VCT flooring installation",
+      "Commercial and institutional flooring solutions",
     ],
-    image:
-      "/images/carpet-tile-gallery/Professional-Carpet-Tile-Installation-Services.png",
-    imageAlt: "Professional carpet tile flooring installation",
+    image: "/images/vct-gallery/Professional-VCT-Flooring-Installation.png",
+    imageAlt: "Professional VCT flooring installation",
     // offer: {
     //   topLabel: "Interest Free",
     //   value: "60",
@@ -305,18 +287,18 @@ const testimonialsContent = [
     items: [
       {
         quote:
-          "From start to finish, the team at FMP Flooring LLC provided exceptional service. The carpet tiles look fantastic and are holding up great. The installation was quick, and we couldn't be happier with the results!",
-        author: "John M",
+          "FMP Flooring LLC transformed our office space with stunning vinyl composition tiles. Their attention to detail and professionalism made the entire process seamless. We receive compliments from clients all the time!",
+        author: "Tom R",
       },
       {
         quote:
-          "FMP Flooring LLC transformed our office with their carpet tile installation. The process was seamless, and the results exceeded our expectations. The tiles are not only stylish but also durable—highly recommend their services!",
-        author: "Emily T",
+          "We needed a flooring solution that would withstand heavy traffic in our retail store. FMP Flooring LLC delivered with their VCT tiles. They were affordable, easy to maintain, and look great!",
+        author: "James K",
       },
       {
         quote:
-          "FMP Flooring LLC did a stellar job with our new carpet tiles. The installation was efficient, and the tiles have been incredibly easy to maintain. The eco-friendly options were a huge plus for us!",
-        author: "Michael R",
+          "Working with FMP Flooring LLC was a wonderful experience. Their expert team guided us through the selection process, and the end result exceeded our expectations. Our space feels fresh and inviting!",
+        author: "Rachel M",
       },
     ],
   },
@@ -324,27 +306,27 @@ const testimonialsContent = [
 
 const faqContent = [
   {
-    title: "Carpet Tile Flooring FAQs",
+    title: "VCT Flooring FAQs",
     items: [
       {
-        question: "What are carpet tiles made of?",
+        question: "What does VCT stand for?",
         answer:
-          "Carpet tiles are commonly made from nylon, polypropylene, polyester, or recycled fibers for durability and stain resistance.",
+          "VCT stands for Vinyl Composition Tile, a commercial-grade flooring material made from vinyl resins and fillers.",
       },
       {
-        question: "Are carpet tiles waterproof?",
+        question: "Is VCT flooring good for commercial use?",
         answer:
-          "Carpet tiles are moisture-resistant but not waterproof. They perform well in areas with occasional spills.",
+          "Yes. VCT flooring is specifically designed for high-traffic commercial and institutional environments.",
       },
       {
-        question: "How much does carpet tile flooring cost?",
+        question: "Is VCT flooring waterproof?",
         answer:
-          "The cost of carpet tile flooring varies based on material, quality, and design. Contact us for a customized quote.",
+          "VCT tiles are moisture-resistant but not fully waterproof. Proper installation and maintenance are essential.",
       },
       {
-        question: "Are carpet tiles good for offices?",
+        question: "How long does VCT flooring last?",
         answer:
-          "Yes. Commercial carpet tiles are one of the most popular flooring options for offices due to durability, noise reduction, and easy replacement.",
+          "With proper care and maintenance, VCT flooring can last 20–30 years or longer.",
       },
     ],
   },
@@ -362,8 +344,8 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
-        imageAlt: "Carpet tile flooring in a commercial office",
+        image: "/images/vct-gallery/Vinyl-Composition-Tiles-dining.png",
+        imageAlt: "Vinyl composition tile flooring in a commercial space",
       },
     ],
   },
@@ -436,9 +418,9 @@ const commercialProjectsContent = [
 const ctaContent = [
   {
     headlineWhite: "Get a Free",
-    headlineTeal: "Carpet Tile Flooring Quote",
+    headlineTeal: "VCT Flooring Quote",
     description:
-      "Upgrade your space with durable, stylish carpet tile flooring. Contact FMP Flooring today for a free estimate and expert installation.",
+      "Upgrade your facility with durable, cost-effective VCT flooring. Whether you need vinyl composition tile for schools, offices, hospitals, or retail spaces, our team is ready to help.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
     buttonText: "Free In-Home Estimate",
@@ -447,7 +429,7 @@ const ctaContent = [
   },
 ];
 
-export default function CarpetTilePage() {
+export default function VctPage() {
   return (
     <main className="flex flex-1 flex-col">
       <ServicePageHero content={heroContent} />

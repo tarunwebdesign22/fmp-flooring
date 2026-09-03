@@ -31,14 +31,14 @@ const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Hardwood Flooring" },
+      { label: "Hardwood Services" },
     ],
     slides: [
       {
         id: "hardwood-service",
         backgroundImage: "/images/hardwood-page-banner.webp",
         financing: {
-          eyebrow: "Hardwood Flooring",
+          eyebrow: "Hardwood Services",
           titleBefore: "We Offer High-Quality Hardwood Flooring — ",
           titleHighlightValue: "65%  Off Sale",
           titleAfter: "",
@@ -55,15 +55,13 @@ const heroContent = [
           eyebrow: "Flexible Payment Options",
           title: "Financing Available",
           description:
-            "Buy now and pay over time! We offer several different financing programs for your hardwood flooring project.",
+            "",
           benefits: [
-            { icon: "approvals", title: "Fast Approvals*" },
-            { icon: "noPayments", title: "No Payments*" },
-            { icon: "zeroPercent", title: "Financing" },
+            
           ],
           buttonText: "Explore Financing Options",
           buttonHref: "/financing",
-          footnote: "*Subject to credit approval. Terms and conditions apply.",
+          footnote: "",
         },
       },
     ],
@@ -88,36 +86,56 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Hardwood Flooring",
+    eyebrow: "Hardwood Services",
     title: "Hardwood Flooring – Timeless Beauty, Strength & Long-Lasting Value",
     paragraphs: [
       "Hardwood flooring is one of the most popular and premium flooring options for homes and commercial spaces. Known for its natural beauty, durability, and long-term value, hardwood floors add warmth, elegance, and character to any interior. Whether you choose solid hardwood flooring or engineered hardwood flooring, hardwood floors offer unmatched style and performance.",
       "At FMP Flooring, we provide high-quality hardwood flooring installation for residential and commercial projects, offering a wide selection of wood species, finishes, and plank styles.",
     ],
-    image: "/images/hardwood-gallery/Hardwood-Flooring-flooring.png.webp",
-    imageAlt: "Hardwood flooring in an elegant dining room",
-    offer: {
-      topLabel: "Huge Savings",
-      value: "65",
-      suffix: "%",
-      offLabel: "Off",
-      bottomLabel: "Special Offer!",
-    },
+    images: [
+      {
+        src: "/images/hardwood-gallery/Hardwood-Flooring-flooring.png.webp",
+        alt: "Hardwood flooring in an elegant dining room",
+      },
+      {
+        src: "/images/hardwood-gallery/Professional-Hardwood-Flooring-Installation.png.webp",
+        alt: "Professional hardwood flooring installation",
+      },
+      {
+        src: "/images/hardwood-gallery/hardwood-flooring-benefits.png.webp",
+        alt: "Wide-plank hardwood flooring in a modern living space",
+      },
+      {
+        src: "/images/hardwood-gallery/Hardwood-Flooring-Installation.png.webp",
+        alt: "Hardwood flooring installation in progress",
+      },
+      {
+        src: "/images/hardwood-gallery/Understanding-Hardwood-Flooring.png.webp",
+        alt: "Installed hardwood flooring showcase",
+      },
+    ],
+    // offer: {
+    //   topLabel: "Huge Savings",
+    //   value: "65",
+    //   suffix: "%",
+    //   offLabel: "Off",
+    //   bottomLabel: "Special Offer!",
+    // },
     buttonText: "Schedule Consultation",
     buttonHref: "/estimate",
   },
 ];
 
-const mailingListContent = [
-  {
-    lineOne: "Join Our Mailing List Today &",
-    highlight: "GET $99 OFF",
-    lineTwo: "Your Next Install!",
-    placeholder: "Email*",
-    buttonText: "Subscribe",
-    successMessage: "Thanks for subscribing! Check your inbox soon.",
-  },
-];
+// const mailingListContent = [
+//   {
+//     lineOne: "Join Our Mailing List Today &",
+//     highlight: "GET $99 OFF",
+//     lineTwo: "Your Next Install!",
+//     placeholder: "Email*",
+//     buttonText: "Subscribe",
+//     successMessage: "Thanks for subscribing! Check your inbox soon.",
+//   },
+// ];
 
 const simpleProcessContent = createFlooringProcessContent(
   "Get Brand New Hardwood in 4 Simple Steps",
@@ -141,7 +159,7 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose Hardwood Flooring?",
-    backgroundImage: "/images/hardwood-banner-image.webp",
+    backgroundImage: "/images/hardwood-gallery/hardwood-flooring-benefits.png.webp",
     items: [
       {
         icon: "styles",
@@ -180,10 +198,10 @@ const benefitsContent = [
 const highlightsContent = [
   {
     items: [
-      { icon: "installation", title: "Installation Services Available" },
-      { icon: "consultation", title: "Free Consultations" },
-      { icon: "support", title: "Expert Support" },
-      { icon: "selection", title: "Wide Selection of Flooring Types" },
+      { icon: "installation", lines: ["Installation Services", "Available"] },
+      { icon: "consultation", lines: ["Free", "Consultations"] },
+      { icon: "support", lines: ["Expert", "Support"] },
+      { icon: "selection", lines: ["Wide Selection of", "Flooring Types"] },
     ],
   },
 ];
@@ -191,14 +209,15 @@ const highlightsContent = [
 const tipsContent = [
   {
     eyebrow: "Care Guide",
-    title: "Maintenance Tips for Hardwood Flooring",
+    title: "Maintenance Tips",
     description:
-      "Regularly sweep or vacuum to remove dirt and protect the finish. Avoid excessive water during cleaning, and use a damp mop with a wood floor cleaner for best results.",
-    backgroundImage: "/images/hardwood-banner-image.webp",
+      "Keep your hardwood floors looking their best with a simple, consistent cleaning routine that protects the finish and natural wood grain.",
+    backgroundImage: "/images/294-Wood-Flooring.webp",
     tips: [
-      "Regularly sweep or vacuum to remove dirt and protect the finish.",
-      "Avoid excessive water during cleaning.",
-      "Use a damp mop with a wood floor cleaner for best results.",
+      "Sweep or vacuum regularly to remove dirt and debris that can scratch the finish.",
+      "Use a soft-bristle broom or a vacuum with a hard-floor setting.",
+      "Damp mop with a hardwood-safe cleaner — avoid standing water and harsh chemicals.",
+      "Place mats at entryways and felt pads under furniture legs.",
     ],
   },
 ];
@@ -250,12 +269,12 @@ const installContent = [
     ],
     image: "/images/hardwood-gallery/Professional-Hardwood-Flooring-Installation.png.webp",
     imageAlt: "Professional hardwood flooring installation",
-    offer: {
-      topLabel: "Interest Free",
-      value: "60",
-      rightLines: ["Month", "", ""],
-      bottomLabel: "Financing",
-    },
+    // offer: {
+    //   topLabel: "Interest Free",
+    //   value: "60",
+    //   rightLines: ["Month", "", ""],
+    //   bottomLabel: "Financing",
+    // },
   },
 ];
 
@@ -323,8 +342,8 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/Offer-banner-image-remastered.webp",
-        imageAlt: "Healthcare worker smiling outdoors",
+        image: "/images/hardwood-gallery/Hardwood-Flooring-flooring.png.webp",
+        imageAlt: "Hardwood flooring in an elegant dining room",
       },
     ],
   },
@@ -340,7 +359,7 @@ const commercialProjectsContent = [
         image: "/images/commercial-projects/cumberland-county.png",
         badge: "Latest",
         buttonText: "Explore More",
-        href: "#",
+        href: "/commercial/cumberland-county",
       },
       {
         title: "Probition Office (Jacksonville)",
@@ -352,7 +371,7 @@ const commercialProjectsContent = [
         title: "Hollings Cancer Center Charleston",
         image: "/images/commercial-projects/hollings-cancer-center-charleston.png",
         buttonText: "Explore More",
-        href: "#",
+        href: "/commercial/holing-cancer-center-charleston-sc",
       },
       {
         title: "Stanley Community",
@@ -376,19 +395,19 @@ const commercialProjectsContent = [
         title: "Pitt County",
         image: "/images/commercial-projects/pitt-county.png",
         buttonText: "Explore More",
-        href: "#",
+        href: "/commercial/pitt-county-schools",
       },
       {
         title: "Johnsonville Elementary",
         image: "/images/commercial-projects/johnsonville-elementary.png",
         buttonText: "Explore More",
-        href: "#",
+        href: "/commercial/johnsonville-elementary-school",
       },
       {
         title: "Orange County",
         image: "/images/commercial-projects/orange-county.png",
         buttonText: "Explore More",
-        href: "#",
+        href: "/commercial/orange-county",
       },
     ],
   },
@@ -399,7 +418,7 @@ const ctaContent = [
     headlineWhite: "Get a Free",
     headlineTeal: "Hardwood Flooring Quote",
     description:
-      "Enhance your space with beautiful, long-lasting hardwood flooring. Whether you’re installing solid hardwood floors or engineered hardwood flooring, our team is ready to help from selection to installation. Contact FMP Flooring today for a free hardwood flooring estimate and professional installation.",
+      "Enhance your space with beautiful, long-lasting hardwood flooring. Contact FMP Flooring today for a free estimate and expert installation.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
     buttonText: "Free In-Home Estimate",
@@ -414,7 +433,7 @@ export default function HardwoodPage() {
       <ServicePageHero content={heroContent} />
       <FederalMarquee />
       <ServiceIntroSection content={introContent} />
-      <MailingListSection content={mailingListContent} />
+      {/* <MailingListSection content={mailingListContent} /> */}
       <HowWeManageProjectsSection content={simpleProcessContent} />
       <FinanceBannerSection content={financeBannerContent} />
       <ServiceBenefitsSection content={benefitsContent} />

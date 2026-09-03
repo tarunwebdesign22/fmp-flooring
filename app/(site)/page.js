@@ -50,12 +50,12 @@ const heroContent = [
     ctas: [
       {
         label: "Explore Commercial Projects",
-        href: "#commercial-projects",
+        href: "/commercial",
         variant: "primary",
       },
       {
         label: "Explore Residential Projects",
-        href: "#latest-projects",
+        href: "/residential",
         variant: "secondary",
       },
       {
@@ -177,7 +177,7 @@ const servicesContent = [
         description:
           "High-end wood and tile looks with waterproof performance, comfort underfoot, and easy maintenance.",
         image: "/images/home-services/new/Service_Luxury_Vinyl_Plank.webp",
-        href: "/luxury-vinyl-plank",
+        href: "/lvp",
       },
       {
         title: "Ceramic Flooring",

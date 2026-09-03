@@ -31,14 +31,14 @@ const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Rubber Flooring" },
+      { label: "Rubber Services" },
     ],
     slides: [
       {
         id: "rubber-service",
         backgroundImage: "/images/rubber-page-banner.webp",
         financing: {
-          eyebrow: "Rubber Flooring",
+          eyebrow: "Rubber Services",
           titleBefore: "We Offer High-Quality Rubber Flooring — ",
           titleHighlightValue: "65%  Off Sale",
           titleAfter: "",
@@ -55,15 +55,13 @@ const heroContent = [
           eyebrow: "Flexible Payment Options",
           title: "Financing Available",
           description:
-            "Buy now and pay over time! We offer several different financing programs for your rubber flooring project.",
+            "",
           benefits: [
-            { icon: "approvals", title: "Fast Approvals*" },
-            { icon: "noPayments", title: "No Payments*" },
-            { icon: "zeroPercent", title: "Financing" },
+            
           ],
           buttonText: "Explore Financing Options",
           buttonHref: "/financing",
-          footnote: "*Subject to credit approval. Terms and conditions apply.",
+          footnote: "",
         },
       },
     ],
@@ -88,36 +86,56 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Rubber Flooring",
+    eyebrow: "Rubber Services",
     title: "Rubber Flooring – Resilient, Comfortable & Long-Lasting",
     paragraphs: [
       "Rubber flooring is a versatile, heavy-duty flooring solution ideal for commercial and residential use. Known for its durability, slip resistance, comfort underfoot, and noise-reducing performance, rubber floors are perfect for gyms, fitness centers, playrooms, schools, healthcare facilities, garages, and more.",
       "At FMP Flooring, we offer premium commercial rubber flooring and residential rubber flooring options in a range of thicknesses, colors, and styles to match your project’s needs.",
     ],
-    image: "/images/rubber-gallery/Flooring-ruber-school.png.webp",
-    imageAlt: "Rubber flooring in a school hallway",
-    offer: {
-      topLabel: "Huge Savings",
-      value: "65",
-      suffix: "%",
-      offLabel: "Off",
-      bottomLabel: "Special Offer!",
-    },
+    images: [
+      {
+        src: "/images/rubber-gallery/Flooring-ruber-school.png.webp",
+        alt: "Rubber flooring in a school playground",
+      },
+      {
+        src: "/images/rubber-gallery/Flooring-ruber.png.webp",
+        alt: "Rubber flooring in a commercial gym",
+      },
+      {
+        src: "/images/rubber-gallery/Rubber-Flooring-benefits.png",
+        alt: "Speckled rubber flooring in a modern interior",
+      },
+      {
+        src: "/images/rubber-gallery/Untitled-design-5.png.webp",
+        alt: "Professional rubber flooring installation in a gym",
+      },
+      {
+        src: "/images/rubber-gallery/rubber-flooring-services.png",
+        alt: "Installed rubber flooring in a commercial office",
+      },
+    ],
+    // offer: {
+    //   topLabel: "Huge Savings",
+    //   value: "65",
+    //   suffix: "%",
+    //   offLabel: "Off",
+    //   bottomLabel: "Special Offer!",
+    // },
     buttonText: "Schedule Consultation",
     buttonHref: "/estimate",
   },
 ];
 
-const mailingListContent = [
-  {
-    lineOne: "Join Our Mailing List Today &",
-    highlight: "GET $99 OFF",
-    lineTwo: "Your Next Install!",
-    placeholder: "Email*",
-    buttonText: "Subscribe",
-    successMessage: "Thanks for subscribing! Check your inbox soon.",
-  },
-];
+// const mailingListContent = [
+//   {
+//     lineOne: "Join Our Mailing List Today &",
+//     highlight: "GET $99 OFF",
+//     lineTwo: "Your Next Install!",
+//     placeholder: "Email*",
+//     buttonText: "Subscribe",
+//     successMessage: "Thanks for subscribing! Check your inbox soon.",
+//   },
+// ];
 
 const simpleProcessContent = createFlooringProcessContent(
   "Get Brand New Rubber Flooring in 4 Simple Steps",
@@ -141,7 +159,7 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose Rubber Flooring?",
-    backgroundImage: "/images/home-services/Rubber-Flooring-1024x768.jpg.webp",
+    backgroundImage: "/images/rubber-gallery/Rubber-Flooring-benefits.png",
     items: [
       {
         icon: "durable",
@@ -180,10 +198,10 @@ const benefitsContent = [
 const highlightsContent = [
   {
     items: [
-      { icon: "installation", title: "Installation Services Available" },
-      { icon: "consultation", title: "Free Consultations" },
-      { icon: "support", title: "Expert Support" },
-      { icon: "selection", title: "Wide Selection of Flooring Types" },
+      { icon: "installation", lines: ["Installation Services", "Available"] },
+      { icon: "consultation", lines: ["Free", "Consultations"] },
+      { icon: "support", lines: ["Expert", "Support"] },
+      { icon: "selection", lines: ["Wide Selection of", "Flooring Types"] },
     ],
   },
 ];
@@ -193,11 +211,13 @@ const tipsContent = [
     eyebrow: "Care Guide",
     title: "Maintenance Tips",
     description:
-      "Maintaining rubber flooring is crucial for longevity. Regular sweeping and damp mopping with mild cleaners will keep it looking fresh.",
-    backgroundImage: "/images/home-services/Rubber-Flooring-1024x768.jpg.webp",
+      "Keep your rubber floors looking their best with a simple, consistent cleaning routine that protects the surface and slip-resistant texture.",
+    backgroundImage: "/images/294-Wood-Flooring.webp",
     tips: [
-      "Regular sweeping and damp mopping with mild cleaners will keep it looking fresh.",
-      "Address stubborn stains promptly with a soft brush and gentle solution to prevent lasting damage.",
+      "Sweep or vacuum regularly to remove dirt and debris from the textured surface.",
+      "Damp mop with a pH-neutral cleaner — avoid harsh chemicals and solvents.",
+      "Address stubborn stains promptly with a soft brush and a gentle solution.",
+      "Place mats at entryways to reduce grit and extend the life of the floor.",
     ],
   },
 ];
@@ -251,12 +271,12 @@ const installContent = [
     ],
     image: "/images/rubber-gallery/Untitled-design-5.png.webp",
     imageAlt: "Professional rubber flooring installation",
-    offer: {
-      topLabel: "Interest Free",
-      value: "60",
-      rightLines: ["Month", "", ""],
-      bottomLabel: "Financing",
-    },
+    // offer: {
+    //   topLabel: "Interest Free",
+    //   value: "60",
+    //   rightLines: ["Month", "", ""],
+    //   bottomLabel: "Financing",
+    // },
   },
 ];
 
@@ -324,8 +344,8 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/Offer-banner-image-remastered.webp",
-        imageAlt: "Healthcare worker smiling outdoors",
+        image: "/images/rubber-gallery/Flooring-ruber.png.webp",
+        imageAlt: "Rubber flooring in a commercial gym",
       },
     ],
   },
@@ -341,7 +361,7 @@ const commercialProjectsContent = [
         image: "/images/commercial-projects/cumberland-county.png",
         badge: "Latest",
         buttonText: "Explore More",
-        href: "#",
+        href: "/commercial/cumberland-county",
       },
       {
         title: "Probition Office (Jacksonville)",
@@ -353,7 +373,7 @@ const commercialProjectsContent = [
         title: "Hollings Cancer Center Charleston",
         image: "/images/commercial-projects/hollings-cancer-center-charleston.png",
         buttonText: "Explore More",
-        href: "#",
+        href: "/commercial/holing-cancer-center-charleston-sc",
       },
       {
         title: "Stanley Community",
@@ -377,19 +397,19 @@ const commercialProjectsContent = [
         title: "Pitt County",
         image: "/images/commercial-projects/pitt-county.png",
         buttonText: "Explore More",
-        href: "#",
+        href: "/commercial/pitt-county-schools",
       },
       {
         title: "Johnsonville Elementary",
         image: "/images/commercial-projects/johnsonville-elementary.png",
         buttonText: "Explore More",
-        href: "#",
+        href: "/commercial/johnsonville-elementary-school",
       },
       {
         title: "Orange County",
         image: "/images/commercial-projects/orange-county.png",
         buttonText: "Explore More",
-        href: "#",
+        href: "/commercial/orange-county",
       },
     ],
   },
@@ -400,7 +420,7 @@ const ctaContent = [
     headlineWhite: "Get a Free",
     headlineTeal: "Rubber Flooring Quote",
     description:
-      "Upgrade your space with high-performance rubber flooring — perfect for commercial rubber flooring projects, home gyms, play areas, garages, and more. Our expert team will help you choose the best rubber flooring and provide professional installation.",
+      "Upgrade your space with high-performance rubber flooring. Contact FMP Flooring today for a free estimate and expert installation.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
     buttonText: "Free In-Home Estimate",
@@ -415,7 +435,7 @@ export default function RubberPage() {
       <ServicePageHero content={heroContent} />
       <FederalMarquee />
       <ServiceIntroSection content={introContent} />
-      <MailingListSection content={mailingListContent} />
+      {/* <MailingListSection content={mailingListContent} /> */}
       <HowWeManageProjectsSection content={simpleProcessContent} />
       <FinanceBannerSection content={financeBannerContent} />
       <ServiceBenefitsSection content={benefitsContent} />

@@ -8,11 +8,14 @@ const serviceLinks = [
   { label: "Rubber Flooring", href: "/rubber" },
   { label: "Hardwood Flooring", href: "/hardwood" },
   { label: "Laminate Services", href: "/laminate" },
-  { label: "Luxury Vinyl Plank", href: "/luxury-vinyl-plank" },
+  { label: "Luxury Vinyl Plank", href: "/lvp" },
+  { label: "Vinyl Composition Tile", href: "/vct" },
 ];
 
 const usefulLinks = [
   { label: "About us", href: "/about-us" },
+  { label: "Commercial Projects", href: "/commercial" },
+  { label: "Residential Projects", href: "/residential" },
   { label: "Contact us", href: "/contact-us" },
   { label: "In Stock Specials", href: "/in-stock-specials" },
   { label: "Blogs", href: "/blog" },

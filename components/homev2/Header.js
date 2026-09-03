@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const primaryLinks = [
-  { label: "Luxury Vinyl Plank", href: "/luxury-vinyl-plank", square: "teal" },
+  { label: "Luxury Vinyl Plank", href: "/lvp", square: "teal" },
   { label: "Broadloom Carpet", href: "/broadloom-carpet", square: "blue" },
   { label: "Carpet Tile", href: "/carpet-tile", square: "teal" },
   { label: "Ceramic Flooring", href: "/ceramic", square: "blue" },
@@ -22,6 +22,7 @@ const resourceLinks = [
   { label: "Installation", href: "/installation" },
   { label: "Pricing", href: "/pricing" },
   { label: "Commercial", href: "/commercial" },
+  { label: "Residential", href: "/residential" },
   { label: "Special Offers", href: "/special-offers" },
   { label: "In Stock Specials", href: "/in-stock-specials" },
   { label: "Financing", href: "/financing" },

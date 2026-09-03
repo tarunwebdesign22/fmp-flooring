@@ -22,34 +22,34 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Carpet Tile Flooring | Commercial & Residential Carpet Tiles | FMP Flooring",
+  title: "Luxury Vinyl Plank | Waterproof LVP Flooring | FMP Flooring",
   description:
-    "Durable modular carpet tile flooring from FMP Flooring. Commercial and residential carpet tiles with easy installation, design flexibility, and professional installation.",
+    "Affordable waterproof luxury vinyl plank flooring from FMP Flooring. Durable wood-look LVP installation for homes and commercial spaces in North Carolina.",
 };
 
 const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Carpet Tile Services" },
+      { label: "LVP Flooring Services" },
     ],
     slides: [
       {
-        id: "carpet-tile-service",
-        backgroundImage: "/images/carpet-tile-page-banner.png",
+        id: "lvp-service",
+        backgroundImage: "/images/lvp-page-banner.webp",
         financing: {
-          eyebrow: "Carpet Tile Services",
-          titleBefore: "We Offer High-Quality Carpet Tile Flooring — ",
+          eyebrow: "LVP Flooring Services",
+          titleBefore: "We Offer High-Quality Luxury Vinyl Plank — ",
           titleHighlightValue: "65%  Off Sale",
           titleAfter: "",
           description:
-            "Upgrade your space with durable modular carpet tiles designed for offices, retail, schools, and modern homes.",
+            "Upgrade your space with waterproof LVP flooring that delivers the look of hardwood with superior durability and easy maintenance.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
       },
       {
-        id: "carpet-tile-financing",
+        id: "lvp-financing",
         backgroundImage: "/images/finance-banner-001.webp",
         financing: {
           eyebrow: "Flexible Payment Options",
@@ -69,7 +69,7 @@ const heroContent = [
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
-      defaultService: "Carpet Tile",
+      defaultService: "Luxury Vinyl Plank",
       services: [
         "Luxury Vinyl Plank",
         "Broadloom Carpet",
@@ -86,32 +86,32 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Carpet Tile Services",
-    title: "Carpet Tile Flooring – Durable, Modular & Modern Flooring Solution",
+    eyebrow: "LVP Flooring Services",
+    title: "Luxury Vinyl Plank Flooring — Waterproof LVP Solutions",
     paragraphs: [
-      "Carpet tile flooring, also known as modular carpet tiles, is a versatile, durable, and cost-effective flooring solution for both commercial and residential spaces. Designed for high-traffic environments, carpet tiles are widely used in offices, retail stores, schools, healthcare facilities, and modern homes.",
-      "At FMP Flooring, we specialize in commercial carpet tile flooring and residential carpet tiles that combine performance, comfort, and design flexibility. Whether you are upgrading an office or remodeling your home, carpet tile flooring offers long-lasting value and easy maintenance.",
+      "Luxury Vinyl Plank flooring (LVP) is one of the most popular modern flooring options for homes and commercial spaces. Designed to replicate the natural look of hardwood, LVP flooring offers superior durability, waterproof performance, and easy maintenance at a more affordable price.",
+      "At FMP Flooring, we offer premium luxury vinyl plank flooring installation for residential and commercial projects, with a wide range of wood-look styles, textures, and plank sizes.",
     ],
     images: [
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
-        alt: "Modular carpet tile flooring in a commercial office",
+        src: "/images/home-services/new/Service_Luxury_Vinyl_Plank.webp",
+        alt: "Luxury vinyl plank flooring in a modern space",
       },
       {
-        src: "/images/carpet-tile-gallery/Professional-Carpet-Tile-Installation-Services.png",
-        alt: "Professional carpet tile flooring installation",
+        src: "/images/lvp-gallery/Urban-Pine-01.png",
+        alt: "Urban Pine luxury vinyl plank flooring",
       },
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-cost.png",
-        alt: "Carpet tile installation in progress",
+        src: "/images/lvp-gallery/Bloomington-Oak.png",
+        alt: "Bloomington Oak LVP flooring",
       },
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Installation-Services.png",
-        alt: "Carpet tile flooring installation services",
+        src: "/images/lvp-gallery/Caramel.jpg",
+        alt: "Caramel luxury vinyl plank flooring",
       },
       {
-        src: "/images/home-services/new/Carpet_Tile.webp",
-        alt: "Installed carpet tile flooring showcase",
+        src: "/images/lvp-gallery/Renwick-Oak01.jpg",
+        alt: "Renwick Oak LVP flooring",
       },
     ],
     // offer: {
@@ -138,8 +138,8 @@ const introContent = [
 // ];
 
 const simpleProcessContent = createFlooringProcessContent(
-  "Get Brand New Carpet Tile in 4 Simple Steps",
-  "A clear, step-by-step process so your carpet tile flooring project stays organized, efficient, and stress-free from start to finish.",
+  "Get Brand New LVP Flooring in 4 Simple Steps",
+  "A clear, step-by-step process so your luxury vinyl plank flooring project stays organized, efficient, and stress-free from start to finish.",
 );
 
 const financeBannerContent = [
@@ -158,38 +158,38 @@ const financeBannerContent = [
 const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
-    title: "Why Choose Carpet Tile Flooring?",
-    backgroundImage: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
+    title: "Why Choose Luxury Vinyl Plank Flooring?",
+    backgroundImage: "/images/lvp-gallery/Urban-Pine-01.png",
     items: [
       {
+        icon: "moisture",
+        title: "Waterproof & Moisture-Resistant",
+        description:
+          "Luxury vinyl plank flooring is 100% waterproof, making it ideal for kitchens, bathrooms, basements, laundry rooms, and high-moisture environments.",
+      },
+      {
         icon: "durable",
-        title: "Durable Carpet Tiles for High-Traffic Areas",
+        title: "Durable & Scratch-Resistant",
         description:
-          "Carpet tiles are engineered for durability, making them ideal for commercial flooring applications such as offices, hallways, conference rooms, and retail spaces. High-performance fibers resist wear, stains, and crushing caused by heavy foot traffic.",
-      },
-      {
-        icon: "affordable",
-        title: "Easy Installation & Tile Replacement",
-        description:
-          "Unlike traditional broadloom carpet, carpet tile flooring installs quickly and efficiently. Individual tiles can be replaced if damaged or stained, eliminating the need to replace the entire floor.",
-      },
-      {
-        icon: "maintenance",
-        title: "Low-Maintenance Carpet Flooring",
-        description:
-          "Carpet tiles are easy to maintain with routine vacuuming and spot cleaning. Their modular design helps reduce long-term maintenance and repair costs.",
+          "LVP flooring is built to handle heavy foot traffic, pets, and everyday wear. Its protective wear layer resists scratches, dents, and stains.",
       },
       {
         icon: "styles",
-        title: "Design Flexibility with Modular Carpet Tiles",
+        title: "Realistic Hardwood Look",
         description:
-          "Available in a wide range of colors, textures, and patterns, carpet tiles allow you to create custom layouts, modern designs, and unique flooring patterns for any space.",
+          "Advanced printing and embossed textures give luxury vinyl plank the appearance of real hardwood without the maintenance challenges.",
       },
       {
-        icon: "moisture",
-        title: "Eco-Friendly Carpet Tile Options",
+        icon: "maintenance",
+        title: "Easy Maintenance",
         description:
-          "Many carpet tiles are manufactured using recycled materials and are recyclable at the end of their life cycle, making them a sustainable flooring choice.",
+          "LVP flooring is easy to clean with regular sweeping and occasional damp mopping. No refinishing or special treatments required.",
+      },
+      {
+        icon: "affordable",
+        title: "Comfortable & Quiet Underfoot",
+        description:
+          "Luxury vinyl plank provides warmth, sound reduction, and comfort compared to traditional hard flooring surfaces.",
       },
     ],
   },
@@ -211,13 +211,13 @@ const tipsContent = [
     eyebrow: "Care Guide",
     title: "Maintenance Tips",
     description:
-      "Keep your carpet tiles looking their best with a simple, consistent cleaning routine that protects the fibers and modular seams.",
+      "Keep your LVP floors looking their best with a simple cleaning routine that protects the wear layer and waterproof surface.",
     backgroundImage: "/images/294-Wood-Flooring.webp",
     tips: [
-      "Vacuum regularly to remove dirt and debris from carpet tile surfaces.",
-      "Address spills quickly with a mild cleaner to prevent staining.",
-      "Perform periodic deep cleans to maintain appearance and durability.",
-      "Replace individual damaged tiles instead of the entire floor when needed.",
+      "Vacuum daily to remove debris from the plank surface.",
+      "Damp mop with a mild vinyl floor cleaner or mild dish soap.",
+      "Clean spills quickly to maintain appearance and longevity.",
+      "Avoid harsh chemicals that can damage the wear layer finish.",
     ],
   },
 ];
@@ -225,18 +225,15 @@ const tipsContent = [
 const applicationsContent = [
   {
     eyebrow: "Where It Works",
-    title: "Carpet Tile Flooring Applications",
-    description:
-      "Carpet tile flooring is suitable for a wide range of commercial and residential uses, including:",
+    title: "Luxury Vinyl Plank Flooring Applications",
+    description: "Luxury vinyl plank flooring is ideal for:",
     items: [
-      "Commercial office carpet tile flooring",
-      "Corporate and coworking spaces",
-      "Retail stores and showrooms",
-      "Conference and meeting rooms",
-      "Schools and educational facilities",
-      "Healthcare and medical offices",
-      "Home offices",
-      "Basements and playrooms",
+      "Living rooms and family rooms",
+      "Kitchens and bathrooms",
+      "Basements and laundry rooms",
+      "Bedrooms and hallways",
+      "Retail spaces and offices",
+      "Rental properties and remodels",
     ],
   },
 ];
@@ -244,30 +241,15 @@ const applicationsContent = [
 const compareContent = [
   {
     eyebrow: "Compare Options",
-    title: "Carpet Tile Flooring vs Broadloom Carpet",
+    title: "LVP Flooring vs Other Flooring Types",
     featureLabel: "Feature",
-    columns: ["Carpet Tile Flooring", "Broadloom Carpet"],
+    columns: ["LVP Flooring", "Hardwood Flooring", "Laminate Flooring"],
     rows: [
-      {
-        feature: "Installation",
-        values: ["Modular tile installation", "One-piece installation"],
-      },
-      {
-        feature: "Replacement",
-        values: ["Easy tile replacement", "Entire floor replacement"],
-      },
-      {
-        feature: "Design Options",
-        values: ["Flexible design options", "Fixed design"],
-      },
-      {
-        feature: "High-Traffic Performance",
-        values: ["Ideal for high-traffic areas", "Wears faster in traffic zones"],
-      },
-      {
-        feature: "Long-Term Maintenance",
-        values: ["Lower long-term maintenance", "Higher maintenance costs"],
-      },
+      { feature: "Waterproof", values: [true, false, "Partial"] },
+      { feature: "Scratch Resistance", values: ["High", "Moderate", "High"] },
+      { feature: "Hardwood Look", values: [true, true, true] },
+      { feature: "Maintenance", values: ["Easy", "Moderate", "Easy"] },
+      { feature: "Pet & Kid Friendly", values: [true, "Partial", true] },
     ],
   },
 ];
@@ -275,19 +257,18 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Carpet Tile Installation Services",
+    title: "Professional Luxury Vinyl Plank Installation",
     description:
-      "We provide expert carpet tile installation for both commercial and residential projects. Our experienced installers ensure proper layout, secure adhesion, and a clean, professional finish.",
-    servicesTitle: "Our Carpet Tile Services Include:",
+      "Our expert installers specialize in luxury vinyl plank flooring installation, ensuring proper subfloor preparation, precise plank placement, and a long-lasting finish.",
+    servicesTitle: "Our LVP Flooring Services Include:",
     services: [
-      "Free on-site consultations",
+      "Free in-home consultations",
       "Accurate flooring estimates",
-      "Professional carpet tile installation",
-      "Commercial and residential flooring solutions",
+      "Professional LVP flooring installation",
+      "Residential and commercial LVP solutions",
     ],
-    image:
-      "/images/carpet-tile-gallery/Professional-Carpet-Tile-Installation-Services.png",
-    imageAlt: "Professional carpet tile flooring installation",
+    image: "/images/lvp-gallery/Bloomington-Oak.png",
+    imageAlt: "Professional luxury vinyl plank flooring installation",
     // offer: {
     //   topLabel: "Interest Free",
     //   value: "60",
@@ -305,18 +286,18 @@ const testimonialsContent = [
     items: [
       {
         quote:
-          "From start to finish, the team at FMP Flooring LLC provided exceptional service. The carpet tiles look fantastic and are holding up great. The installation was quick, and we couldn't be happier with the results!",
-        author: "John M",
+          "We’re very happy with the work this team did for us! They replaced our flooring with beautiful LVP and completely redid our staircase — everything looks stunning and was done with great attention to detail. The crew was professional, respectful, and finished everything on time. Highly recommend them!",
+        author: "Vitalika M",
       },
       {
         quote:
-          "FMP Flooring LLC transformed our office with their carpet tile installation. The process was seamless, and the results exceeded our expectations. The tiles are not only stylish but also durable—highly recommend their services!",
-        author: "Emily T",
+          "The best investment I’ve made! Furnish My Place Flooring’s LVP flooring is high-quality, easy to install and completely transformed my space!! Their attention to detail and commitment to customer satisfaction are outstanding!!!",
+        author: "Georgia Austin",
       },
       {
         quote:
-          "FMP Flooring LLC did a stellar job with our new carpet tiles. The installation was efficient, and the tiles have been incredibly easy to maintain. The eco-friendly options were a huge plus for us!",
-        author: "Michael R",
+          "I recently purchased LVP flooring from Furnish My Place. The quality is outstanding—durable, stylish, and exactly what I was looking for. The prices were incredibly affordable compared to other options I checked out. Highly recommend this company if you're looking for high-quality flooring at great prices!",
+        author: "Philip Kylian",
       },
     ],
   },
@@ -324,27 +305,36 @@ const testimonialsContent = [
 
 const faqContent = [
   {
-    title: "Carpet Tile Flooring FAQs",
+    title: "LVP Flooring FAQs",
     items: [
       {
-        question: "What are carpet tiles made of?",
+        question: "What is luxury vinyl plank flooring?",
         answer:
-          "Carpet tiles are commonly made from nylon, polypropylene, polyester, or recycled fibers for durability and stain resistance.",
+          "Luxury vinyl plank flooring is a durable, waterproof flooring option designed to look like real hardwood.",
       },
       {
-        question: "Are carpet tiles waterproof?",
-        answer:
-          "Carpet tiles are moisture-resistant but not waterproof. They perform well in areas with occasional spills.",
+        question: "Is LVP flooring waterproof?",
+        answer: "Yes. Most luxury vinyl plank flooring is 100% waterproof.",
       },
       {
-        question: "How much does carpet tile flooring cost?",
+        question: "Is luxury vinyl plank good for pets?",
         answer:
-          "The cost of carpet tile flooring varies based on material, quality, and design. Contact us for a customized quote.",
+          "Yes. LVP flooring is scratch-resistant and easy to clean, making it ideal for pet-friendly homes.",
       },
       {
-        question: "Are carpet tiles good for offices?",
+        question: "How long does LVP flooring last?",
         answer:
-          "Yes. Commercial carpet tiles are one of the most popular flooring options for offices due to durability, noise reduction, and easy replacement.",
+          "With proper installation and care, luxury vinyl plank flooring can last 15–25 years or longer.",
+      },
+      {
+        question: "What is the warranty on LVP flooring?",
+        answer:
+          "We offer a lifetime warranty on all LVP flooring products, ensuring long-lasting protection against manufacturing defects.",
+      },
+      {
+        question: "Is LVP Flooring pet and kid friendly?",
+        answer:
+          "Yes, LVP flooring is perfect for homes with pets and children. Its scratch-resistant and waterproof features make it durable enough to handle everyday wear and tear from active households.",
       },
     ],
   },
@@ -362,8 +352,8 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
-        imageAlt: "Carpet tile flooring in a commercial office",
+        image: "/images/lvp-gallery/Caramel.jpg",
+        imageAlt: "Caramel luxury vinyl plank flooring",
       },
     ],
   },
@@ -436,9 +426,9 @@ const commercialProjectsContent = [
 const ctaContent = [
   {
     headlineWhite: "Get a Free",
-    headlineTeal: "Carpet Tile Flooring Quote",
+    headlineTeal: "Luxury Vinyl Plank Quote",
     description:
-      "Upgrade your space with durable, stylish carpet tile flooring. Contact FMP Flooring today for a free estimate and expert installation.",
+      "Upgrade your space with beautiful, durable luxury vinyl plank flooring. Contact FMP Flooring today for a free estimate and expert installation.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
     buttonText: "Free In-Home Estimate",
@@ -447,7 +437,7 @@ const ctaContent = [
   },
 ];
 
-export default function CarpetTilePage() {
+export default function LvpPage() {
   return (
     <main className="flex flex-1 flex-col">
       <ServicePageHero content={heroContent} />

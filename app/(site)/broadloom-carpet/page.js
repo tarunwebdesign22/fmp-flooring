@@ -22,34 +22,34 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Carpet Tile Flooring | Commercial & Residential Carpet Tiles | FMP Flooring",
+  title: "Carpet Broadloom | Residential & Commercial Broadloom Carpet | FMP Flooring",
   description:
-    "Durable modular carpet tile flooring from FMP Flooring. Commercial and residential carpet tiles with easy installation, design flexibility, and professional installation.",
+    "Broadloom carpet installation from FMP Flooring. Soft, quiet, and comfortable wall-to-wall carpet for homes, offices, multi-family properties, and commercial spaces.",
 };
 
 const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Carpet Tile Services" },
+      { label: "Carpet Broadloom Services" },
     ],
     slides: [
       {
-        id: "carpet-tile-service",
-        backgroundImage: "/images/carpet-tile-page-banner.png",
+        id: "carpet-broadloom-service",
+        backgroundImage: "/images/carpet-broadloom-page-banner.png",
         financing: {
-          eyebrow: "Carpet Tile Services",
-          titleBefore: "We Offer High-Quality Carpet Tile Flooring — ",
+          eyebrow: "Carpet Broadloom Services",
+          titleBefore: "We Offer High-Quality Broadloom Carpet — ",
           titleHighlightValue: "65%  Off Sale",
           titleAfter: "",
           description:
-            "Upgrade your space with durable modular carpet tiles designed for offices, retail, schools, and modern homes.",
+            "Upgrade your space with professional carpet broadloom installation for warmer, quieter, more comfortable homes and commercial spaces.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
       },
       {
-        id: "carpet-tile-financing",
+        id: "carpet-broadloom-financing",
         backgroundImage: "/images/finance-banner-001.webp",
         financing: {
           eyebrow: "Flexible Payment Options",
@@ -69,7 +69,7 @@ const heroContent = [
       title: "Free In-Home Estimate",
       description: "Fill out the form below and we'll get back to you shortly.",
       buttonText: "Get My Free Estimate",
-      defaultService: "Carpet Tile",
+      defaultService: "Broadloom Carpet",
       services: [
         "Luxury Vinyl Plank",
         "Broadloom Carpet",
@@ -86,32 +86,32 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Carpet Tile Services",
-    title: "Carpet Tile Flooring – Durable, Modular & Modern Flooring Solution",
+    eyebrow: "Carpet Broadloom Services",
+    title: "Carpet Broadloom Installation (Residential & Commercial)",
     paragraphs: [
-      "Carpet tile flooring, also known as modular carpet tiles, is a versatile, durable, and cost-effective flooring solution for both commercial and residential spaces. Designed for high-traffic environments, carpet tiles are widely used in offices, retail stores, schools, healthcare facilities, and modern homes.",
-      "At FMP Flooring, we specialize in commercial carpet tile flooring and residential carpet tiles that combine performance, comfort, and design flexibility. Whether you are upgrading an office or remodeling your home, carpet tile flooring offers long-lasting value and easy maintenance.",
+      "When you want a space to feel warmer, quieter, and more comfortable, nothing beats carpet broadloom. At FMP Flooring LLC, we supply and install broadloom carpet in a wide range of qualities, thicknesses, and styles—from budget-friendly rentals to premium, high-performance carpet built for busy homes and commercial traffic.",
+      "Whether you’re updating a bedroom, finishing a basement, or replacing carpet across an entire office, we’ll help you choose the right carpet and install it the right way.",
     ],
     images: [
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
-        alt: "Modular carpet tile flooring in a commercial office",
+        src: "/images/carpet-broadloom-gallery/Carpet-Broadloom.png",
+        alt: "Broadloom carpet in a modern living room",
       },
       {
-        src: "/images/carpet-tile-gallery/Professional-Carpet-Tile-Installation-Services.png",
-        alt: "Professional carpet tile flooring installation",
+        src: "/images/carpet-broadloom-gallery/Carpet-Broadloom-work.png",
+        alt: "Cream broadloom carpet in a bright living space",
       },
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-cost.png",
-        alt: "Carpet tile installation in progress",
+        src: "/images/carpet-broadloom-gallery/Broadloom-Carpet.png",
+        alt: "Textured broadloom carpet flooring showcase",
       },
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Installation-Services.png",
-        alt: "Carpet tile flooring installation services",
+        src: "/images/carpet-broadloom-gallery/interior-design-of-ethnic-living-room.jpg",
+        alt: "Broadloom carpet in a stylish residential interior",
       },
       {
-        src: "/images/home-services/new/Carpet_Tile.webp",
-        alt: "Installed carpet tile flooring showcase",
+        src: "/images/home-services/new/Broadloom_Carpet.webp",
+        alt: "Installed broadloom carpet flooring",
       },
     ],
     // offer: {
@@ -138,8 +138,8 @@ const introContent = [
 // ];
 
 const simpleProcessContent = createFlooringProcessContent(
-  "Get Brand New Carpet Tile in 4 Simple Steps",
-  "A clear, step-by-step process so your carpet tile flooring project stays organized, efficient, and stress-free from start to finish.",
+  "Get Brand New Broadloom Carpet in 4 Simple Steps",
+  "A clear, step-by-step process so your carpet broadloom project stays organized, efficient, and stress-free from start to finish.",
 );
 
 const financeBannerContent = [
@@ -158,38 +158,38 @@ const financeBannerContent = [
 const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
-    title: "Why Choose Carpet Tile Flooring?",
-    backgroundImage: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
+    title: "Why Customers Choose Our Broadloom Carpet",
+    backgroundImage: "/images/carpet-broadloom-gallery/Carpet-Broadloom.png",
     items: [
       {
-        icon: "durable",
-        title: "Durable Carpet Tiles for High-Traffic Areas",
-        description:
-          "Carpet tiles are engineered for durability, making them ideal for commercial flooring applications such as offices, hallways, conference rooms, and retail spaces. High-performance fibers resist wear, stains, and crushing caused by heavy foot traffic.",
-      },
-      {
         icon: "affordable",
-        title: "Easy Installation & Tile Replacement",
+        title: "Quality Selections at Every Price Level",
         description:
-          "Unlike traditional broadloom carpet, carpet tile flooring installs quickly and efficiently. Individual tiles can be replaced if damaged or stained, eliminating the need to replace the entire floor.",
-      },
-      {
-        icon: "maintenance",
-        title: "Low-Maintenance Carpet Flooring",
-        description:
-          "Carpet tiles are easy to maintain with routine vacuuming and spot cleaning. Their modular design helps reduce long-term maintenance and repair costs.",
+          "Choose from good, better, and best carpet options so you can match quality, thickness, and budget for rentals, homes, and commercial projects.",
       },
       {
         icon: "styles",
-        title: "Design Flexibility with Modular Carpet Tiles",
+        title: "Right Thickness + Pad Combo",
         description:
-          "Available in a wide range of colors, textures, and patterns, carpet tiles allow you to create custom layouts, modern designs, and unique flooring patterns for any space.",
+          "We help you select the right carpet style, thickness, and pad for bedrooms, living rooms, stairs, and high-traffic commercial areas.",
+      },
+      {
+        icon: "durable",
+        title: "Clean, Professional Installation",
+        description:
+          "Our installers focus on stretching, seam work, edges, and transitions for a finished look that feels smooth underfoot and lasts longer.",
+      },
+      {
+        icon: "maintenance",
+        title: "Built for Homes & Commercial Spaces",
+        description:
+          "Options for stairs, hallways, bedrooms, offices, retail spaces, and multi-family properties with stain-resistant and high-traffic fibers available.",
       },
       {
         icon: "moisture",
-        title: "Eco-Friendly Carpet Tile Options",
+        title: "Clear Communication & Straightforward Pricing",
         description:
-          "Many carpet tiles are manufactured using recycled materials and are recyclable at the end of their life cycle, making them a sustainable flooring choice.",
+          "From free measure and quote to final walkthrough, we keep the process simple with clear recommendations and transparent pricing.",
       },
     ],
   },
@@ -211,13 +211,13 @@ const tipsContent = [
     eyebrow: "Care Guide",
     title: "Maintenance Tips",
     description:
-      "Keep your carpet tiles looking their best with a simple, consistent cleaning routine that protects the fibers and modular seams.",
+      "Maintaining your carpet broadloom involves regular vacuuming, immediate spot cleaning, and periodic professional cleanings to keep it looking fresh and prolong its lifespan.",
     backgroundImage: "/images/294-Wood-Flooring.webp",
     tips: [
-      "Vacuum regularly to remove dirt and debris from carpet tile surfaces.",
-      "Address spills quickly with a mild cleaner to prevent staining.",
-      "Perform periodic deep cleans to maintain appearance and durability.",
-      "Replace individual damaged tiles instead of the entire floor when needed.",
+      "Vacuum regularly to remove dirt and debris from carpet fibers.",
+      "Address spills immediately with a mild cleaner to prevent staining.",
+      "Schedule periodic professional cleanings to refresh appearance and extend lifespan.",
+      "Use mats at entryways and protect high-traffic paths to reduce premature wear.",
     ],
   },
 ];
@@ -225,18 +225,13 @@ const tipsContent = [
 const applicationsContent = [
   {
     eyebrow: "Where It Works",
-    title: "Carpet Tile Flooring Applications",
-    description:
-      "Carpet tile flooring is suitable for a wide range of commercial and residential uses, including:",
+    title: "Great For Homes, Offices & Multi-Family",
+    description: "Broadloom carpet is ideal for:",
     items: [
-      "Commercial office carpet tile flooring",
-      "Corporate and coworking spaces",
-      "Retail stores and showrooms",
-      "Conference and meeting rooms",
-      "Schools and educational facilities",
-      "Healthcare and medical offices",
-      "Home offices",
-      "Basements and playrooms",
+      "Bedrooms, living rooms, basements",
+      "Stairs and hallways",
+      "Offices, suites, and retail spaces",
+      "Apartments, rentals, and multi-family turnover projects",
     ],
   },
 ];
@@ -244,29 +239,29 @@ const applicationsContent = [
 const compareContent = [
   {
     eyebrow: "Compare Options",
-    title: "Carpet Tile Flooring vs Broadloom Carpet",
+    title: "Broadloom Carpet vs Carpet Tile",
     featureLabel: "Feature",
-    columns: ["Carpet Tile Flooring", "Broadloom Carpet"],
+    columns: ["Broadloom Carpet", "Carpet Tile"],
     rows: [
       {
         feature: "Installation",
-        values: ["Modular tile installation", "One-piece installation"],
+        values: ["Wall-to-wall roll installation", "Modular tile installation"],
+      },
+      {
+        feature: "Comfort Underfoot",
+        values: ["Soft and cushioned", "Moderate"],
+      },
+      {
+        feature: "Seamless Look",
+        values: [true, "Partial"],
       },
       {
         feature: "Replacement",
-        values: ["Easy tile replacement", "Entire floor replacement"],
+        values: ["Full-area replacement", "Easy tile replacement"],
       },
       {
-        feature: "Design Options",
-        values: ["Flexible design options", "Fixed design"],
-      },
-      {
-        feature: "High-Traffic Performance",
-        values: ["Ideal for high-traffic areas", "Wears faster in traffic zones"],
-      },
-      {
-        feature: "Long-Term Maintenance",
-        values: ["Lower long-term maintenance", "Higher maintenance costs"],
+        feature: "Best For",
+        values: ["Bedrooms & living spaces", "Offices & high-traffic zones"],
       },
     ],
   },
@@ -275,19 +270,18 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Carpet Tile Installation Services",
+    title: "Professional Carpet Broadloom Installation",
     description:
-      "We provide expert carpet tile installation for both commercial and residential projects. Our experienced installers ensure proper layout, secure adhesion, and a clean, professional finish.",
-    servicesTitle: "Our Carpet Tile Services Include:",
+      "Our experienced installers handle free measuring, carpet selection, old carpet removal, stretching, seam work, edges, and transitions—then finish with a final walkthrough to make sure everything looks and feels right.",
+    servicesTitle: "Our Carpet Broadloom Services Include:",
     services: [
-      "Free on-site consultations",
-      "Accurate flooring estimates",
-      "Professional carpet tile installation",
-      "Commercial and residential flooring solutions",
+      "Free measure and quick quote",
+      "Help selecting carpet style, thickness, and pad",
+      "Removal and disposal of old carpet (if needed)",
+      "Professional residential and commercial installation",
     ],
-    image:
-      "/images/carpet-tile-gallery/Professional-Carpet-Tile-Installation-Services.png",
-    imageAlt: "Professional carpet tile flooring installation",
+    image: "/images/carpet-broadloom-gallery/Carpet-Broadloom-work.png",
+    imageAlt: "Professional broadloom carpet installation",
     // offer: {
     //   topLabel: "Interest Free",
     //   value: "60",
@@ -305,18 +299,18 @@ const testimonialsContent = [
     items: [
       {
         quote:
-          "From start to finish, the team at FMP Flooring LLC provided exceptional service. The carpet tiles look fantastic and are holding up great. The installation was quick, and we couldn't be happier with the results!",
-        author: "John M",
+          "FMP Flooring LLC transformed my living room with their beautiful broadloom carpet. The installation was quick and professional, and the quality is outstanding. Highly recommend!",
+        author: "Sarah T",
       },
       {
         quote:
-          "FMP Flooring LLC transformed our office with their carpet tile installation. The process was seamless, and the results exceeded our expectations. The tiles are not only stylish but also durable—highly recommend their services!",
-        author: "Emily T",
+          "I was impressed by the wide color range and the knowledgeable staff. They helped me choose the perfect carpet for my bedroom. The whole process was seamless and enjoyable.",
+        author: "James M",
       },
       {
         quote:
-          "FMP Flooring LLC did a stellar job with our new carpet tiles. The installation was efficient, and the tiles have been incredibly easy to maintain. The eco-friendly options were a huge plus for us!",
-        author: "Michael R",
+          "Great service from start to finish! The team at FMP Flooring LLC made sure everything was perfect, and my new carpet looks fantastic. Couldn't be happier!",
+        author: "Emily R",
       },
     ],
   },
@@ -324,27 +318,36 @@ const testimonialsContent = [
 
 const faqContent = [
   {
-    title: "Carpet Tile Flooring FAQs",
+    title: "Carpet Broadloom FAQs",
     items: [
       {
-        question: "What are carpet tiles made of?",
+        question: "Is carpet broadloom suitable for all types of rooms?",
         answer:
-          "Carpet tiles are commonly made from nylon, polypropylene, polyester, or recycled fibers for durability and stain resistance.",
+          "Yes, it can be used in various rooms, including bedrooms, living rooms, and offices.",
       },
       {
-        question: "Are carpet tiles waterproof?",
-        answer:
-          "Carpet tiles are moisture-resistant but not waterproof. They perform well in areas with occasional spills.",
+        question: "What are the different types of carpet materials available?",
+        answer: "Common materials include nylon, polyester, wool, and olefin.",
       },
       {
-        question: "How much does carpet tile flooring cost?",
+        question: "What size is broadloom carpet?",
         answer:
-          "The cost of carpet tile flooring varies based on material, quality, and design. Contact us for a customized quote.",
+          "Broadloom carpets typically come in rolls that are 12 to 15 feet wide.",
       },
       {
-        question: "Are carpet tiles good for offices?",
+        question: "What are the benefits of broadloom carpet?",
         answer:
-          "Yes. Commercial carpet tiles are one of the most popular flooring options for offices due to durability, noise reduction, and easy replacement.",
+          "Benefits include comfort, aesthetic appeal, insulation, and sound absorption.",
+      },
+      {
+        question: "What is the most popular residential carpet?",
+        answer:
+          "Plush and textured carpets are very popular in residential settings.",
+      },
+      {
+        question: "How much does broadloom carpet cost?",
+        answer:
+          "The cost can vary, but it generally starts around $0.99 per square foot, depending on the material and quality.",
       },
     ],
   },
@@ -362,8 +365,8 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
-        imageAlt: "Carpet tile flooring in a commercial office",
+        image: "/images/carpet-broadloom-gallery/Carpet-Broadloom.png",
+        imageAlt: "Broadloom carpet in a modern living room",
       },
     ],
   },
@@ -436,9 +439,9 @@ const commercialProjectsContent = [
 const ctaContent = [
   {
     headlineWhite: "Get a Free",
-    headlineTeal: "Carpet Tile Flooring Quote",
+    headlineTeal: "Carpet Broadloom Quote",
     description:
-      "Upgrade your space with durable, stylish carpet tile flooring. Contact FMP Flooring today for a free estimate and expert installation.",
+      "Ready to upgrade your space with carpet broadloom? Contact FMP Flooring today for a free estimate and expert installation.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
     buttonText: "Free In-Home Estimate",
@@ -447,7 +450,7 @@ const ctaContent = [
   },
 ];
 
-export default function CarpetTilePage() {
+export default function CarpetBroadloomPage() {
   return (
     <main className="flex flex-1 flex-col">
       <ServicePageHero content={heroContent} />
