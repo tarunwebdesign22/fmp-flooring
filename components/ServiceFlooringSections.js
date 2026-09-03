@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ServiceIntroImageSlider from "@/components/ServiceIntroImageSlider";
 
 export function OfferBadge({ offer }) {
   if (!offer) return null;
@@ -62,6 +63,12 @@ export function ServiceIntroSection({ content }) {
   const section = content?.[0];
   if (!section) return null;
 
+  const galleryImages = section.images?.length
+    ? section.images
+    : section.image
+      ? [{ src: section.image, alt: section.imageAlt || section.title }]
+      : [];
+
   return (
     <section className="bg-white py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-2 lg:gap-14 lg:px-10">
@@ -91,17 +98,10 @@ export function ServiceIntroSection({ content }) {
           ) : null}
         </div>
 
-        {section.image ? (
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_12px_40px_rgba(34,30,83,0.12)]">
-            <Image
-              src={section.image}
-              alt={section.imageAlt || section.title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+        {galleryImages.length > 0 ? (
+          <ServiceIntroImageSlider images={galleryImages}>
             <OfferBadge offer={section.offer} />
-          </div>
+          </ServiceIntroImageSlider>
         ) : null}
       </div>
     </section>

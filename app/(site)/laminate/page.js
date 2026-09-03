@@ -55,15 +55,13 @@ const heroContent = [
           eyebrow: "Flexible Payment Options",
           title: "Financing Available",
           description:
-            "Buy now and pay over time! We offer several different financing programs for your laminate flooring project.",
+            "",
           benefits: [
-            { icon: "approvals", title: "Fast Approvals*" },
-            { icon: "noPayments", title: "No Payments*" },
-            { icon: "zeroPercent", title: "Financing" },
+            
           ],
           buttonText: "Explore Financing Options",
           buttonHref: "/financing",
-          footnote: "*Subject to credit approval. Terms and conditions apply.",
+          footnote: "",
         },
       },
     ], 
@@ -94,8 +92,28 @@ const introContent = [
       "Laminate flooring is a popular and affordable flooring option that delivers the look of natural hardwood or tile with enhanced durability and easy maintenance. Designed for modern living, laminate floors are ideal for residential and light commercial spaces where style, performance, and value matter.",
       "At FMP Flooring, we offer high-quality laminate flooring installation with a wide range of colors, textures, and wood-look finishes to suit every space and budget.",
     ],
-    image: "/images/about-laminate.webp",
-    imageAlt: "Wood-look laminate flooring in a modern living space",
+    images: [
+      {
+        src: "/images/about-laminate.webp",
+        alt: "Wood-look laminate flooring in a modern living space",
+      },
+      {
+        src: "/images/laminate-gallery/Professional-Laminate-Flooring-Installation.png.webp",
+        alt: "Professional laminate flooring installation",
+      },
+      {
+        src: "/images/laminate-gallery/Laminating-Services-installation.png.webp",
+        alt: "Laminate flooring installation in progress",
+      },
+      {
+        src: "/images/laminate-installing.webp",
+        alt: "Laminate flooring being installed",
+      },
+      {
+        src: "/images/laminate-gallery/1.jpg",
+        alt: "Installed laminate flooring showcase",
+      },
+    ],
     // offer: {
     //   topLabel: "Huge Savings",
     //   value: "65",
@@ -108,16 +126,16 @@ const introContent = [
   },
 ];
 
-const mailingListContent = [
-  {
-    lineOne: "Join Our Mailing List Today &",
-    highlight: "GET $99 OFF",
-    lineTwo: "Your Next Install!",
-    placeholder: "Email*",
-    buttonText: "Subscribe",
-    successMessage: "Thanks for subscribing! Check your inbox soon.",
-  },
-];
+// const mailingListContent = [
+//   {
+//     lineOne: "Join Our Mailing List Today &",
+//     highlight: "GET $99 OFF",
+//     lineTwo: "Your Next Install!",
+//     placeholder: "Email*",
+//     buttonText: "Subscribe",
+//     successMessage: "Thanks for subscribing! Check your inbox soon.",
+//   },
+// ];
 
 const simpleProcessContent = createFlooringProcessContent(
   "Get Brand New Laminate in 4 Simple Steps",
@@ -325,8 +343,8 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/Offer-banner-image-remastered.webp",
-        imageAlt: "Healthcare worker smiling outdoors",
+        image: "/images/Offer-banner-laminate.webp",
+        imageAlt: "Laminate flooring in a bright living room",
       },
     ],
   },
@@ -416,7 +434,7 @@ export default function LaminatePage() {
       <ServicePageHero content={heroContent} />
       <FederalMarquee />
       <ServiceIntroSection content={introContent} />
-      <MailingListSection content={mailingListContent} />
+      {/* <MailingListSection content={mailingListContent} /> */}
       <HowWeManageProjectsSection content={simpleProcessContent} />
       <FinanceBannerSection content={financeBannerContent} />
       <ServiceBenefitsSection content={benefitsContent} />

@@ -401,6 +401,12 @@ function EstimateFormCard({ section, submitted, formData, onChange, onSubmit, cl
 
 export default function HeroSectionCopy({ content }) {
   const section = content?.[0];
+  const backgroundImages = section?.backgroundImages?.length
+    ? section.backgroundImages
+    : section?.backgroundImage
+      ? [section.backgroundImage]
+      : [];
+  const [activeBackground, setActiveBackground] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -408,6 +414,16 @@ export default function HeroSectionCopy({ content }) {
     service: "",
   });
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (backgroundImages.length < 2) return undefined;
+
+    const id = window.setInterval(() => {
+      setActiveBackground((prev) => (prev + 1) % backgroundImages.length);
+    }, 6000);
+
+    return () => window.clearInterval(id);
+  }, [backgroundImages.length]);
 
   if (!section) return null;
 
@@ -435,14 +451,19 @@ export default function HeroSectionCopy({ content }) {
     <>
       <div className="relative isolate overflow-hidden">
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-          <Image
-            src={section.backgroundImage}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+          {backgroundImages.map((src, index) => (
+            <Image
+              key={src}
+              src={src}
+              alt=""
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className={`object-cover object-center transition-opacity duration-1000 ${
+                index === activeBackground ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
           <div className="absolute inset-0 bg-black/40 lg:hidden" />
           <div className="absolute inset-0 hidden bg-gradient-to-r from-black/55 via-black/40 to-transparent lg:block" />
         </div>
