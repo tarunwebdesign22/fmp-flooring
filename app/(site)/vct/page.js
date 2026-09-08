@@ -36,11 +36,11 @@ const heroContent = [
     slides: [
       {
         id: "vct-service",
-        backgroundImage: "/images/vct-page-banner.png",
+        backgroundImage: "/images/vct-mainbanner.webp",
         financing: {
           eyebrow: "Vinyl Composition Tile",
-          titleBefore: "We Offer High-Quality VCT Flooring — ",
-          titleHighlightValue: "65%  Off Sale",
+          titleBefore: "We Offer High-Quality ",
+          titleHighlightValue: "VCT Flooring",
           titleAfter: "",
           description:
             "Upgrade your facility with durable, cost-effective vinyl composition tile flooring designed for schools, hospitals, offices, and commercial spaces.",
@@ -344,7 +344,7 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/vct-gallery/Vinyl-Composition-Tiles-dining.png",
+        image: "/images/vct-special-one.webp",
         imageAlt: "Vinyl composition tile flooring in a commercial space",
       },
     ],

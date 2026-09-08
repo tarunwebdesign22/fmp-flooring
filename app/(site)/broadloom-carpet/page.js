@@ -31,16 +31,16 @@ const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Carpet Broadloom Services" },
+      { label: "Carpet Broadloom Flooring" },
     ],
     slides: [
       {
         id: "carpet-broadloom-service",
         backgroundImage: "/images/carpet-broadloom-page-banner.png",
         financing: {
-          eyebrow: "Carpet Broadloom Services",
-          titleBefore: "We Offer High-Quality Broadloom Carpet — ",
-          titleHighlightValue: "65%  Off Sale",
+          eyebrow: "Carpet Broadloom Flooring",
+          titleBefore: "We Offer High-Quality ",
+          titleHighlightValue: "Broadloom Carpet",
           titleAfter: "",
           description:
             "Upgrade your space with professional carpet broadloom installation for warmer, quieter, more comfortable homes and commercial spaces.",
@@ -86,7 +86,7 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Carpet Broadloom Services",
+    eyebrow: "Carpet Broadloom Flooring",
     title: "Carpet Broadloom Installation (Residential & Commercial)",
     paragraphs: [
       "When you want a space to feel warmer, quieter, and more comfortable, nothing beats carpet broadloom. At FMP Flooring LLC, we supply and install broadloom carpet in a wide range of qualities, thicknesses, and styles—from budget-friendly rentals to premium, high-performance carpet built for busy homes and commercial traffic.",
@@ -273,7 +273,7 @@ const installContent = [
     title: "Professional Carpet Broadloom Installation",
     description:
       "Our experienced installers handle free measuring, carpet selection, old carpet removal, stretching, seam work, edges, and transitions—then finish with a final walkthrough to make sure everything looks and feels right.",
-    servicesTitle: "Our Carpet Broadloom Services Include:",
+    servicesTitle: "Our Carpet Broadloom Flooring Services Include:",
     services: [
       "Free measure and quick quote",
       "Help selecting carpet style, thickness, and pad",

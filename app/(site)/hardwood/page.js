@@ -31,16 +31,16 @@ const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Hardwood Services" },
+      { label: "Hardwood Flooring" },
     ],
     slides: [
       {
         id: "hardwood-service",
         backgroundImage: "/images/hardwood-page-banner.webp",
         financing: {
-          eyebrow: "Hardwood Services",
-          titleBefore: "We Offer High-Quality Hardwood Flooring — ",
-          titleHighlightValue: "65%  Off Sale",
+          eyebrow: "Hardwood Flooring",
+          titleBefore: "We Offer High-Quality ",
+          titleHighlightValue: "Hardwood Flooring",
           titleAfter: "",
           description:
             "Upgrade your space with professional hardwood flooring installation — solid and engineered options for homes and commercial projects.",
@@ -86,7 +86,7 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Hardwood Services",
+    eyebrow: "Hardwood Flooring",
     title: "Hardwood Flooring – Timeless Beauty, Strength & Long-Lasting Value",
     paragraphs: [
       "Hardwood flooring is one of the most popular and premium flooring options for homes and commercial spaces. Known for its natural beauty, durability, and long-term value, hardwood floors add warmth, elegance, and character to any interior. Whether you choose solid hardwood flooring or engineered hardwood flooring, hardwood floors offer unmatched style and performance.",

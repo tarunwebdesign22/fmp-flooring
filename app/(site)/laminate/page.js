@@ -31,16 +31,16 @@ const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Laminate Services" },
+      { label: "Laminate Flooring" },
     ],
     slides: [
       {
         id: "laminate-service",
         backgroundImage: "/images/laminate-mainbanner.webp",
         financing: {
-          eyebrow: "Laminate Services",
-          titleBefore: "We Offer High-Quality Laminate Flooring — ",
-          titleHighlightValue: "65%  Off Sale",
+          eyebrow: "Laminate Flooring",
+          titleBefore: "We Offer High-Quality ",
+          titleHighlightValue: "Laminate Flooring",
           titleAfter: "",
           description:
             "Upgrade your space with professional laminate flooring installation designed for busy homes and light commercial spaces.",
@@ -86,7 +86,7 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Laminate Services",
+    eyebrow: "Laminate Flooring",
     title: "Stylish, Durable & Cost-Effective Flooring",
     paragraphs: [
       "Laminate flooring is a popular and affordable flooring option that delivers the look of natural hardwood or tile with enhanced durability and easy maintenance. Designed for modern living, laminate floors are ideal for residential and light commercial spaces where style, performance, and value matter.",

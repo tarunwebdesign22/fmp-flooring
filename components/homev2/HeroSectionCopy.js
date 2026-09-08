@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -406,7 +405,10 @@ export default function HeroSectionCopy({ content }) {
     : section?.backgroundImage
       ? [section.backgroundImage]
       : [];
+  const backgroundKey = backgroundImages.join("|");
   const [activeBackground, setActiveBackground] = useState(0);
+  const readyRef = useRef(new Set());
+  const failedRef = useRef(new Set());
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -415,15 +417,55 @@ export default function HeroSectionCopy({ content }) {
   });
   const [submitted, setSubmitted] = useState(false);
 
+  // Preload background images only — text/form stay fixed and are not part of the slideshow.
+  useEffect(() => {
+    if (!backgroundImages.length) return undefined;
+
+    readyRef.current = new Set();
+    failedRef.current = new Set();
+    setActiveBackground(0);
+
+    backgroundImages.forEach((src, index) => {
+      const img = new window.Image();
+      img.onload = () => {
+        readyRef.current.add(index);
+      };
+      img.onerror = () => {
+        failedRef.current.add(index);
+        readyRef.current.delete(index);
+        setActiveBackground((prev) => {
+          if (prev !== index) return prev;
+          const total = backgroundImages.length;
+          for (let step = 1; step <= total; step += 1) {
+            const candidate = (prev + step) % total;
+            if (!failedRef.current.has(candidate)) return candidate;
+          }
+          return prev;
+        });
+      };
+      img.src = src;
+    });
+
+    return undefined;
+  }, [backgroundKey]);
+
   useEffect(() => {
     if (backgroundImages.length < 2) return undefined;
 
     const id = window.setInterval(() => {
-      setActiveBackground((prev) => (prev + 1) % backgroundImages.length);
+      setActiveBackground((prev) => {
+        const total = backgroundImages.length;
+        for (let step = 1; step <= total; step += 1) {
+          const next = (prev + step) % total;
+          if (failedRef.current.has(next)) continue;
+          if (readyRef.current.has(next) || next === 0) return next;
+        }
+        return prev;
+      });
     }, 6000);
 
     return () => window.clearInterval(id);
-  }, [backgroundImages.length]);
+  }, [backgroundKey]);
 
   if (!section) return null;
 
@@ -450,33 +492,31 @@ export default function HeroSectionCopy({ content }) {
   return (
     <>
       <div className="relative isolate overflow-hidden">
-        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        {/* Background-only slider (does not affect headline or form) */}
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[#1c2430]" aria-hidden="true">
           {backgroundImages.map((src, index) => (
-            <Image
+            <div
               key={src}
-              src={src}
-              alt=""
-              fill
-              priority={index === 0}
-              sizes="100vw"
-              className={`object-cover object-center transition-opacity duration-1000 ${
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
                 index === activeBackground ? "opacity-100" : "opacity-0"
               }`}
+              style={{ backgroundImage: `url(${src})` }}
             />
           ))}
           <div className="absolute inset-0 bg-black/40 lg:hidden" />
           <div className="absolute inset-0 hidden bg-gradient-to-r from-black/55 via-black/40 to-transparent lg:block" />
         </div>
 
-        <section className="relative lg:hidden" aria-label="Welcome to FMP Flooring">
+        {/* Fixed content — not part of the slider */}
+        <section className="relative z-10 lg:hidden" aria-label="Welcome to FMP Flooring">
           <div className="relative mx-auto max-w-7xl px-4 py-12 pb-16">
             <HeroCopy section={section} />
           </div>
         </section>
 
-        <div className="relative z-20 -mt-5 px-4 pb-6 lg:hidden">{formCard}</div>
+        <div className="relative z-10 -mt-5 px-4 pb-6 lg:hidden">{formCard}</div>
 
-        <section className="relative hidden lg:block" aria-label="Welcome to FMP Flooring">
+        <section className="relative z-10 hidden lg:block" aria-label="Welcome to FMP Flooring">
           <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 pb-24 sm:px-8 lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-10 lg:px-10 xl:py-20 xl:pb-28">
             <HeroCopy section={section} />
             <div className="w-full shrink-0 lg:w-[28rem] lg:justify-self-end">

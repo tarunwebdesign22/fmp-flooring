@@ -31,16 +31,16 @@ const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Ceramic Services" },
+      { label: "Ceramic Flooring" },
     ],
     slides: [
       {
         id: "ceramic-service",
-        backgroundImage: "/images/ceramic-page-banner.png",
+        backgroundImage: "/images/ceramic-mainbanner.webp",
         financing: {
-          eyebrow: "Ceramic Services",
-          titleBefore: "We Offer High-Quality Ceramic Tile Flooring — ",
-          titleHighlightValue: "65%  Off Sale",
+          eyebrow: "Ceramic Flooring",
+          titleBefore: "We Offer High-Quality ",
+          titleHighlightValue: "Ceramic Tile Flooring",
           titleAfter: "",
           description:
             "Upgrade your space with professional ceramic, porcelain, and specialty tile flooring installation for homes and commercial projects.",
@@ -86,7 +86,7 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Ceramic Services",
+    eyebrow: "Ceramic Flooring",
     title: "Premium Tile Flooring – Ceramic, Porcelain & More",
     paragraphs: [
       "Tile flooring gives your space timeless beauty, long-lasting performance, and easy maintenance. At FMP Flooring, we offer a complete range of ceramic tile, porcelain tile, and specialty tile flooring solutions for residential and commercial spaces. From kitchens and bathrooms to entryways, offices, and retail locations, tile flooring delivers style, durability, and moisture resistance.",
@@ -344,7 +344,7 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/ceramic-gallery/Ceramic-Flooring-Servicess.png",
+        image: "/images/Ceramic-Special.webp",
         imageAlt: "Ceramic tile flooring in a commercial lounge",
       },
     ],

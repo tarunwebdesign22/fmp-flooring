@@ -31,16 +31,16 @@ const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Rubber Services" },
+      { label: "Rubber Flooring" },
     ],
     slides: [
       {
         id: "rubber-service",
         backgroundImage: "/images/rubber-page-banner.webp",
         financing: {
-          eyebrow: "Rubber Services",
-          titleBefore: "We Offer High-Quality Rubber Flooring — ",
-          titleHighlightValue: "65%  Off Sale",
+          eyebrow: "Rubber Flooring",
+          titleBefore: "We Offer High-Quality ",
+          titleHighlightValue: "Rubber Flooring",
           titleAfter: "",
           description:
             "Upgrade your space with professional rubber flooring installation — durable, slip-resistant floors for gyms, schools, and commercial projects.",
@@ -86,7 +86,7 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Rubber Services",
+    eyebrow: "Rubber Flooring",
     title: "Rubber Flooring – Resilient, Comfortable & Long-Lasting",
     paragraphs: [
       "Rubber flooring is a versatile, heavy-duty flooring solution ideal for commercial and residential use. Known for its durability, slip resistance, comfort underfoot, and noise-reducing performance, rubber floors are perfect for gyms, fitness centers, playrooms, schools, healthcare facilities, garages, and more.",
