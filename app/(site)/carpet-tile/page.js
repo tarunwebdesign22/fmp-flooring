@@ -31,16 +31,16 @@ const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Carpet Tile Services" },
+      { label: "Carpet Tile Flooring" },
     ],
     slides: [
       {
         id: "carpet-tile-service",
         backgroundImage: "/images/carpet-tile-page-banner.png",
         financing: {
-          eyebrow: "Carpet Tile Services",
-          titleBefore: "We Offer High-Quality Carpet Tile Flooring — ",
-          titleHighlightValue: "65%  Off Sale",
+          eyebrow: "Carpet Tile Flooring",
+          titleBefore: "We Offer High-Quality ",
+          titleHighlightValue: "Carpet Tile Flooring",
           titleAfter: "",
           description:
             "Upgrade your space with durable modular carpet tiles designed for offices, retail, schools, and modern homes.",
@@ -86,7 +86,7 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Carpet Tile Services",
+    eyebrow: "Carpet Tile Flooring",
     title: "Carpet Tile Flooring – Durable, Modular & Modern Flooring Solution",
     paragraphs: [
       "Carpet tile flooring, also known as modular carpet tiles, is a versatile, durable, and cost-effective flooring solution for both commercial and residential spaces. Designed for high-traffic environments, carpet tiles are widely used in offices, retail stores, schools, healthcare facilities, and modern homes.",
@@ -278,7 +278,7 @@ const installContent = [
     title: "Professional Carpet Tile Installation Services",
     description:
       "We provide expert carpet tile installation for both commercial and residential projects. Our experienced installers ensure proper layout, secure adhesion, and a clean, professional finish.",
-    servicesTitle: "Our Carpet Tile Services Include:",
+    servicesTitle: "Our Carpet Tile Flooring Services Include:",
     services: [
       "Free on-site consultations",
       "Accurate flooring estimates",

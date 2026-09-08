@@ -31,16 +31,16 @@ const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "LVP Flooring Services" },
+      { label: "LVP Flooring" },
     ],
     slides: [
       {
         id: "lvp-service",
         backgroundImage: "/images/lvp-page-banner.webp",
         financing: {
-          eyebrow: "LVP Flooring Services",
-          titleBefore: "We Offer High-Quality Luxury Vinyl Plank — ",
-          titleHighlightValue: "65%  Off Sale",
+          eyebrow: "LVP Flooring",
+          titleBefore: "We Offer High-Quality ",
+          titleHighlightValue: "Luxury Vinyl Plank",
           titleAfter: "",
           description:
             "Upgrade your space with waterproof LVP flooring that delivers the look of hardwood with superior durability and easy maintenance.",
@@ -86,7 +86,7 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "LVP Flooring Services",
+    eyebrow: "LVP Flooring",
     title: "Luxury Vinyl Plank Flooring — Waterproof LVP Solutions",
     paragraphs: [
       "Luxury Vinyl Plank flooring (LVP) is one of the most popular modern flooring options for homes and commercial spaces. Designed to replicate the natural look of hardwood, LVP flooring offers superior durability, waterproof performance, and easy maintenance at a more affordable price.",
