@@ -36,7 +36,7 @@ const heroContent = [
     slides: [
       {
         id: "lvp-service",
-        backgroundImage: "/images/lvp-page-banner.webp",
+        backgroundImage: "/images/lvp-gallery/luxury-flooring-banner.webp",
         financing: {
           eyebrow: "LVP Flooring",
           titleBefore: "We Offer High-Quality ",
@@ -94,25 +94,21 @@ const introContent = [
     ],
     images: [
       {
-        src: "/images/home-services/new/Service_Luxury_Vinyl_Plank.webp",
+        src: "/images/lvp-gallery/lvp-gallery-1.webp",
         alt: "Luxury vinyl plank flooring in a modern space",
       },
       {
-        src: "/images/lvp-gallery/Urban-Pine-01.png",
+        src: "/images/lvp-gallery/lvp-gallery-2.webp",
         alt: "Urban Pine luxury vinyl plank flooring",
       },
       {
-        src: "/images/lvp-gallery/Bloomington-Oak.png",
+        src: "/images/lvp-gallery/lvp-gallery-3.webp",
         alt: "Bloomington Oak LVP flooring",
       },
       {
-        src: "/images/lvp-gallery/Caramel.jpg",
+        src: "/images/lvp-gallery/lvp-gallery-4.webp",
         alt: "Caramel luxury vinyl plank flooring",
-      },
-      {
-        src: "/images/lvp-gallery/Renwick-Oak01.jpg",
-        alt: "Renwick Oak LVP flooring",
-      },
+      }
     ],
     // offer: {
     //   topLabel: "Huge Savings",
@@ -159,7 +155,7 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose Luxury Vinyl Plank Flooring?",
-    backgroundImage: "/images/lvp-gallery/Urban-Pine-01.png",
+    backgroundImage: "/images/lvp-gallery/why-choose-luxury-flooring.webp",
     items: [
       {
         icon: "moisture",
@@ -267,7 +263,7 @@ const installContent = [
       "Professional LVP flooring installation",
       "Residential and commercial LVP solutions",
     ],
-    image: "/images/lvp-gallery/Bloomington-Oak.png",
+    image: "/images/lvp-gallery/Professional-Luxury-Image.webp",
     imageAlt: "Professional luxury vinyl plank flooring installation",
     // offer: {
     //   topLabel: "Interest Free",
@@ -352,7 +348,7 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/lvp-gallery/Caramel.jpg",
+        image: "/images/lvp-gallery/Luxury-Flooring-Special-Discount.webp",
         imageAlt: "Caramel luxury vinyl plank flooring",
       },
     ],

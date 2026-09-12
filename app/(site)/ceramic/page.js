@@ -94,25 +94,21 @@ const introContent = [
     ],
     images: [
       {
-        src: "/images/ceramic-gallery/interior-design-of-ethnic-living-room.jpg",
+        src: "/images/ceramic-gallery/ceramic-gallery-image-1.webp",
         alt: "Ceramic tile flooring in a modern living room",
       },
       {
-        src: "/images/ceramic-gallery/Ceramic-Flooring-Servicess.png",
+        src: "/images/ceramic-gallery/ceramic-gallery-image-2.webp",
         alt: "Large-format ceramic tile in a commercial lounge",
       },
       {
-        src: "/images/ceramic-gallery/Ceramic-Flooring-Service.png",
+        src: "/images/ceramic-gallery/ceramic-gallery-image-3.webp",
         alt: "Professional ceramic tile flooring installation",
       },
       {
-        src: "/images/home-services/new/Ceramic_Flooring.webp",
+        src: "/images/ceramic-gallery/ceramic-gallery-image-4.webp",
         alt: "Ceramic tile flooring showcase",
-      },
-      {
-        src: "/images/ceramic-page-banner.png",
-        alt: "Installed ceramic tile flooring",
-      },
+      }
     ],
     // offer: {
     //   topLabel: "Huge Savings",
@@ -159,7 +155,7 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose Tile Flooring?",
-    backgroundImage: "/images/ceramic-gallery/interior-design-of-ethnic-living-room.jpg",
+    backgroundImage: "/images/ceramic-gallery/Ceramic-WhyChoose.webp",
     items: [
       {
         icon: "durable",
@@ -268,7 +264,7 @@ const installContent = [
       "Professional tile installation",
       "Residential and commercial tile flooring solutions",
     ],
-    image: "/images/ceramic-gallery/Ceramic-Flooring-Service.png",
+    image: "/images/ceramic-gallery/Professional-Ceramic-Flooring-Image.webp",
     imageAlt: "Professional ceramic tile flooring installation",
     // offer: {
     //   topLabel: "Interest Free",

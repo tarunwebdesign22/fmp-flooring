@@ -36,7 +36,7 @@ const heroContent = [
     slides: [
       {
         id: "hardwood-service",
-        backgroundImage: "/images/hardwood-page-banner.webp",
+        backgroundImage: "/images/hardwood-gallery/hardwood-flooring-banner.webp",
         financing: {
           eyebrow: "Hardwood Flooring",
           titleBefore: "We Offer High-Quality ",
@@ -94,25 +94,21 @@ const introContent = [
     ],
     images: [
       {
-        src: "/images/hardwood-gallery/Hardwood-Flooring-flooring.png.webp",
+        src: "/images/hardwood-gallery/hardwood-gallery-1.webp",
         alt: "Hardwood flooring in an elegant dining room",
       },
       {
-        src: "/images/hardwood-gallery/Professional-Hardwood-Flooring-Installation.png.webp",
+        src: "/images/hardwood-gallery/hardwood-gallery-2.webp",
         alt: "Professional hardwood flooring installation",
       },
       {
-        src: "/images/hardwood-gallery/hardwood-flooring-benefits.png.webp",
+        src: "/images/hardwood-gallery/hardwood-gallery-3.webp",
         alt: "Wide-plank hardwood flooring in a modern living space",
       },
       {
-        src: "/images/hardwood-gallery/Hardwood-Flooring-Installation.png.webp",
+        src: "/images/hardwood-gallery/hardwood-gallery-4.webp",
         alt: "Hardwood flooring installation in progress",
-      },
-      {
-        src: "/images/hardwood-gallery/Understanding-Hardwood-Flooring.png.webp",
-        alt: "Installed hardwood flooring showcase",
-      },
+      }
     ],
     // offer: {
     //   topLabel: "Huge Savings",
@@ -159,7 +155,7 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose Hardwood Flooring?",
-    backgroundImage: "/images/hardwood-gallery/hardwood-flooring-benefits.png.webp",
+    backgroundImage: "/images/hardwood-gallery/hardwood-WhyChoose-Image.webp",
     items: [
       {
         icon: "styles",
@@ -267,7 +263,7 @@ const installContent = [
       "Professional hardwood floor installation",
       "Residential and commercial hardwood solutions",
     ],
-    image: "/images/hardwood-gallery/Professional-Hardwood-Flooring-Installation.png.webp",
+    image: "/images/hardwood-gallery/Professional-Hardwood-Image.webp",
     imageAlt: "Professional hardwood flooring installation",
     // offer: {
     //   topLabel: "Interest Free",
@@ -342,7 +338,7 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/hardwood-gallery/Hardwood-Flooring-flooring.png.webp",
+        image: "/images/hardwood-gallery/Hardwood-Special-Discount.webp",
         imageAlt: "Hardwood flooring in an elegant dining room",
       },
     ],

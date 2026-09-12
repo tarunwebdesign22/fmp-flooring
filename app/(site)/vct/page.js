@@ -94,25 +94,21 @@ const introContent = [
     ],
     images: [
       {
-        src: "/images/vct-gallery/Vinyl-Composition-Tiles-dining.png",
+        src: "/images/vct-gallery/vct-gallery-1.webp",
         alt: "Vinyl composition tile flooring in a commercial dining space",
       },
       {
-        src: "/images/vct-gallery/Vinyl-Composition-Tiles-others.png",
+        src: "/images/vct-gallery/vct-gallery-2.webp",
         alt: "VCT flooring in a commercial corridor",
       },
       {
-        src: "/images/vct-gallery/Professional-VCT-Flooring-Installation.png",
+        src: "/images/vct-gallery/vct-gallery-3.webp",
         alt: "Professional VCT flooring installation",
       },
       {
-        src: "/images/vct-gallery/Untitled-design-7.png",
+        src: "/images/vct-gallery/vct-gallery-4.webp",
         alt: "Installed vinyl composition tile flooring",
-      },
-      {
-        src: "/images/home-services/new/Vinyl_Composition_Tiles.webp",
-        alt: "Commercial vinyl composition tiles showcase",
-      },
+      }
     ],
     // offer: {
     //   topLabel: "Huge Savings",
@@ -159,7 +155,7 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose VCT Flooring?",
-    backgroundImage: "/images/vct-gallery/Vinyl-Composition-Tiles-others.png",
+    backgroundImage: "/images/vct-gallery/vct-bg-image.webp",
     items: [
       {
         icon: "durable",
@@ -268,7 +264,7 @@ const installContent = [
       "Professional VCT flooring installation",
       "Commercial and institutional flooring solutions",
     ],
-    image: "/images/vct-gallery/Professional-VCT-Flooring-Installation.png",
+    image: "/images/vct-gallery/Professional-VCT.webp",
     imageAlt: "Professional VCT flooring installation",
     // offer: {
     //   topLabel: "Interest Free",

@@ -36,7 +36,7 @@ const heroContent = [
     slides: [
       {
         id: "rubber-service",
-        backgroundImage: "/images/rubber-page-banner.webp",
+        backgroundImage: "/images/rubber-gallery/rubber-flooring-banner.webp",
         financing: {
           eyebrow: "Rubber Flooring",
           titleBefore: "We Offer High-Quality ",
@@ -94,25 +94,21 @@ const introContent = [
     ],
     images: [
       {
-        src: "/images/rubber-gallery/Flooring-ruber-school.png.webp",
+        src: "/images/rubber-gallery/rubber-flooring-gallery-1.webp",
         alt: "Rubber flooring in a school playground",
       },
       {
-        src: "/images/rubber-gallery/Flooring-ruber.png.webp",
+        src: "/images/rubber-gallery/rubber-flooring-gallery-2.webp",
         alt: "Rubber flooring in a commercial gym",
       },
       {
-        src: "/images/rubber-gallery/Rubber-Flooring-benefits.png",
+        src: "/images/rubber-gallery/rubber-flooring-gallery-3.webp",
         alt: "Speckled rubber flooring in a modern interior",
       },
       {
-        src: "/images/rubber-gallery/Untitled-design-5.png.webp",
+        src: "/images/rubber-gallery/rubber-flooring-gallery-4.webp",
         alt: "Professional rubber flooring installation in a gym",
-      },
-      {
-        src: "/images/rubber-gallery/rubber-flooring-services.png",
-        alt: "Installed rubber flooring in a commercial office",
-      },
+      }
     ],
     // offer: {
     //   topLabel: "Huge Savings",
@@ -159,7 +155,7 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose Rubber Flooring?",
-    backgroundImage: "/images/rubber-gallery/Rubber-Flooring-benefits.png",
+    backgroundImage: "/images/rubber-gallery/why-choose-rubber-flooring.webp",
     items: [
       {
         icon: "durable",
@@ -269,7 +265,7 @@ const installContent = [
       "Professional rubber flooring installation",
       "Commercial and residential rubber flooring solutions",
     ],
-    image: "/images/rubber-gallery/Untitled-design-5.png.webp",
+    image: "/images/rubber-gallery/Professional-Rubber-Flooring-Image.webp",
     imageAlt: "Professional rubber flooring installation",
     // offer: {
     //   topLabel: "Interest Free",
@@ -344,7 +340,7 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/rubber-gallery/Flooring-ruber.png.webp",
+        image: "/images/rubber-gallery/Rubber-Flooring-Special-Discount.webp",
         imageAlt: "Rubber flooring in a commercial gym",
       },
     ],

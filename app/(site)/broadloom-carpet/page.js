@@ -36,7 +36,7 @@ const heroContent = [
     slides: [
       {
         id: "carpet-broadloom-service",
-        backgroundImage: "/images/carpet-broadloom-page-banner.png",
+        backgroundImage: "/images/carpet-broadloom-gallery/Broadloom-Carpet-Main-Banner.webp",
         financing: {
           eyebrow: "Carpet Broadloom Flooring",
           titleBefore: "We Offer High-Quality ",
@@ -94,25 +94,21 @@ const introContent = [
     ],
     images: [
       {
-        src: "/images/carpet-broadloom-gallery/Carpet-Broadloom.png",
+        src: "/images/carpet-broadloom-gallery/Broadloom-Gallery-Image-1.webp",
         alt: "Broadloom carpet in a modern living room",
       },
       {
-        src: "/images/carpet-broadloom-gallery/Carpet-Broadloom-work.png",
+        src: "/images/carpet-broadloom-gallery/Broadloom-Gallery-Image-2.webp",
         alt: "Cream broadloom carpet in a bright living space",
       },
       {
-        src: "/images/carpet-broadloom-gallery/Broadloom-Carpet.png",
+        src: "/images/carpet-broadloom-gallery/Broadloom-Gallery-Image-3.webp",
         alt: "Textured broadloom carpet flooring showcase",
       },
       {
-        src: "/images/carpet-broadloom-gallery/interior-design-of-ethnic-living-room.jpg",
+        src: "/images/carpet-broadloom-gallery/Broadloom-Gallery-Image-4.webp",
         alt: "Broadloom carpet in a stylish residential interior",
-      },
-      {
-        src: "/images/home-services/new/Broadloom_Carpet.webp",
-        alt: "Installed broadloom carpet flooring",
-      },
+      }
     ],
     // offer: {
     //   topLabel: "Huge Savings",
@@ -159,7 +155,7 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Customers Choose Our Broadloom Carpet",
-    backgroundImage: "/images/carpet-broadloom-gallery/Carpet-Broadloom.png",
+    backgroundImage: "/images/carpet-broadloom-gallery/why-choose-broadloom-flooring.webp",
     items: [
       {
         icon: "affordable",
@@ -280,7 +276,7 @@ const installContent = [
       "Removal and disposal of old carpet (if needed)",
       "Professional residential and commercial installation",
     ],
-    image: "/images/carpet-broadloom-gallery/Carpet-Broadloom-work.png",
+    image: "/images/carpet-broadloom-gallery/Professional-Broadloom-Image.webp",
     imageAlt: "Professional broadloom carpet installation",
     // offer: {
     //   topLabel: "Interest Free",
@@ -365,7 +361,7 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/carpet-broadloom-gallery/Carpet-Broadloom.png",
+        image: "/images/carpet-broadloom-gallery/Broadloom-Flooring-Special-Discount.webp",
         imageAlt: "Broadloom carpet in a modern living room",
       },
     ],

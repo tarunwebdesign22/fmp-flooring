@@ -36,7 +36,7 @@ const heroContent = [
     slides: [
       {
         id: "carpet-tile-service",
-        backgroundImage: "/images/carpet-tile-page-banner.png",
+        backgroundImage: "/images/carpet-tile-gallery/Carpet-Tile-Banner.webp",
         financing: {
           eyebrow: "Carpet Tile Flooring",
           titleBefore: "We Offer High-Quality ",
@@ -94,25 +94,21 @@ const introContent = [
     ],
     images: [
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
+        src: "/images/carpet-tile-gallery/carpet-tile-gallery-1.webp",
         alt: "Modular carpet tile flooring in a commercial office",
       },
       {
-        src: "/images/carpet-tile-gallery/Professional-Carpet-Tile-Installation-Services.png",
+        src: "/images/carpet-tile-gallery/carpet-tile-gallery-2.webp",
         alt: "Professional carpet tile flooring installation",
       },
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Services-cost.png",
+        src: "/images/carpet-tile-gallery/carpet-tile-gallery-3.webp",
         alt: "Carpet tile installation in progress",
       },
       {
-        src: "/images/carpet-tile-gallery/Carpet-Tile-Installation-Services.png",
+        src: "/images/carpet-tile-gallery/carpet-tile-gallery-4.webp",
         alt: "Carpet tile flooring installation services",
-      },
-      {
-        src: "/images/home-services/new/Carpet_Tile.webp",
-        alt: "Installed carpet tile flooring showcase",
-      },
+      }
     ],
     // offer: {
     //   topLabel: "Huge Savings",
@@ -159,7 +155,7 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose Carpet Tile Flooring?",
-    backgroundImage: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
+    backgroundImage: "/images/carpet-tile-gallery/why-choose-carpet-flooring.webp",
     items: [
       {
         icon: "durable",
@@ -286,7 +282,7 @@ const installContent = [
       "Commercial and residential flooring solutions",
     ],
     image:
-      "/images/carpet-tile-gallery/Professional-Carpet-Tile-Installation-Services.png",
+      "/images/carpet-tile-gallery/Professional-Carpet-Tile-Image.webp",
     imageAlt: "Professional carpet tile flooring installation",
     // offer: {
     //   topLabel: "Interest Free",
@@ -362,7 +358,7 @@ const offersContent = [
         description: "Thank you for your service and loyalty.",
         buttonText: "Free In-Home Estimate",
         buttonHref: "/estimate",
-        image: "/images/carpet-tile-gallery/Carpet-Tile-Services-benefits.png",
+        image: "/images/carpet-tile-gallery/carpet-tile-flooring-special-image.webp",
         imageAlt: "Carpet tile flooring in a commercial office",
       },
     ],
