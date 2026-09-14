@@ -39,6 +39,7 @@ const heroContent = [
         backgroundImage: "/images/hardwood-gallery/hardwood-flooring-banner.webp",
         financing: {
           eyebrow: "Hardwood Flooring",
+          eyebrowAsBadge: true,
           titleBefore: "We Offer High-Quality ",
           titleHighlightValue: "Hardwood Flooring",
           titleAfter: "",

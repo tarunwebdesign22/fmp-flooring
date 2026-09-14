@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -7,6 +8,7 @@ const FACEBOOK_PAGE_URL =
   "https://www.facebook.com/people/FMP-Flooring/100084480100386/";
 const FACEBOOK_EMBED_PAGE_URL =
   "https://www.facebook.com/profile.php?id=100084480100386";
+const FACEBOOK_FEED_IMAGE = "/images/facebook-feed-image.webp";
 
 function FacebookIcon() {
   return (
@@ -28,18 +30,6 @@ function buildPageEmbedSrc(pageUrl, width) {
     show_facepile: "true",
   });
   return `https://www.facebook.com/plugins/page.php?${params.toString()}`;
-}
-
-function SocialCard({ title, children, action }) {
-  return (
-    <div className="flex h-full flex-col">
-      {/* <h3 className="mb-4 text-center text-lg font-bold text-blue">{title}</h3> */}
-      <div className="flex-1 overflow-hidden rounded-[18px] bg-white p-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] sm:p-3">
-        {children}
-      </div>
-      {action ? <div className="mt-6 flex justify-center">{action}</div> : null}
-    </div>
-  );
 }
 
 export default function FacebookFeedSection({ content }) {
@@ -86,6 +76,7 @@ export default function FacebookFeedSection({ content }) {
 
   const pageUrl = section.pageUrl || FACEBOOK_PAGE_URL;
   const embedPageUrl = section.embedPageUrl || FACEBOOK_EMBED_PAGE_URL;
+  const image = section.image || FACEBOOK_FEED_IMAGE;
   const pageEmbedSrc = buildPageEmbedSrc(embedPageUrl, pageWidth);
 
   return (
@@ -94,27 +85,28 @@ export default function FacebookFeedSection({ content }) {
       className="bg-greylight py-14 sm:py-16 lg:py-[70px]"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-        <div className="mb-8 text-center sm:mb-10">
-          {section.eyebrow ? (
-            <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
-              {section.eyebrow}
-            </p>
-          ) : null}
-          <h2 className="mt-3 text-3xl font-bold text-blue sm:text-4xl">
-            {section.title}
-          </h2>
-          <span className="mx-auto mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
-          {section.description ? (
-            <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-blue/70">
-              {section.description}
-            </p>
-          ) : null}
-        </div>
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+          {/* Left — copy + image */}
+          <div className="min-w-0 text-center lg:text-left">
+            {section.eyebrow ? (
+              <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
+                {section.eyebrow}
+              </p>
+            ) : null}
+            <h2 className="mt-3 text-3xl font-bold text-blue sm:text-4xl">
+              {section.title}
+            </h2>
+            <span
+              className="mx-auto mt-3 block h-1 w-16 bg-teal lg:mx-0"
+              aria-hidden="true"
+            />
+            {section.description ? (
+              <p className="mt-5 text-[15px] leading-7 text-blue/70 lg:max-w-xl">
+                {section.description}
+              </p>
+            ) : null}
 
-        <div className="mx-auto max-w-xl">
-          <SocialCard
-            title="Facebook"
-            action={
+            <div className="mt-7 flex justify-center lg:justify-start">
               <Link
                 href={pageUrl}
                 target="_blank"
@@ -125,34 +117,49 @@ export default function FacebookFeedSection({ content }) {
                 {section.buttonText || "Visit Our Facebook Page"}
                 <span aria-hidden="true">→</span>
               </Link>
-            }
-          >
-            <div ref={pageWrapRef}>
-              {shouldLoadEmbed ? (
-                <iframe
-                  key={pageEmbedSrc}
-                  title="FMP Flooring Facebook timeline"
-                  src={pageEmbedSrc}
-                  width={pageWidth}
-                  height={720}
-                  style={{ border: "none", overflow: "hidden", maxWidth: "100%" }}
-                  scrolling="no"
-                  frameBorder="0"
-                  allowFullScreen
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  loading="lazy"
-                  className="mx-auto block min-h-[720px]"
-                />
-              ) : (
-                <div
-                  className="mx-auto flex min-h-[720px] items-center justify-center bg-greylight text-sm text-blue/60"
-                  aria-hidden="true"
-                >
-                  Loading Facebook feed…
-                </div>
-              )}
             </div>
-          </SocialCard>
+
+            <div className="relative mt-8 aspect-[4/3] w-full overflow-hidden rounded-[18px] shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+              <Image
+                src={image}
+                alt={section.imageAlt || "FMP Flooring installation work"}
+                fill
+                className="object-cover object-center"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </div>
+          </div>
+
+          {/* Right — Facebook feed */}
+          <div className="min-w-0">
+            <div className="overflow-hidden rounded-[18px] bg-white p-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] sm:p-3">
+              <div ref={pageWrapRef}>
+                {shouldLoadEmbed ? (
+                  <iframe
+                    key={pageEmbedSrc}
+                    title="FMP Flooring Facebook timeline"
+                    src={pageEmbedSrc}
+                    width={pageWidth}
+                    height={720}
+                    style={{ border: "none", overflow: "hidden", maxWidth: "100%" }}
+                    scrolling="no"
+                    frameBorder="0"
+                    allowFullScreen
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    loading="lazy"
+                    className="mx-auto block min-h-[720px]"
+                  />
+                ) : (
+                  <div
+                    className="mx-auto flex min-h-[720px] items-center justify-center bg-greylight text-sm text-blue/60"
+                    aria-hidden="true"
+                  >
+                    Loading Facebook feed…
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

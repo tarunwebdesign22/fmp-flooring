@@ -39,6 +39,7 @@ const heroContent = [
         backgroundImage: "/images/carpet-tile-gallery/Carpet-Tile-Banner.webp",
         financing: {
           eyebrow: "Carpet Tile Flooring",
+          eyebrowAsBadge: true,
           titleBefore: "We Offer High-Quality ",
           titleHighlightValue: "Carpet Tile Flooring",
           titleAfter: "",

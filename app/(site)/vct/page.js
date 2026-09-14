@@ -39,6 +39,7 @@ const heroContent = [
         backgroundImage: "/images/vct-mainbanner.webp",
         financing: {
           eyebrow: "Vinyl Composition Tile",
+          eyebrowAsBadge: true,
           titleBefore: "We Offer High-Quality ",
           titleHighlightValue: "VCT Flooring",
           titleAfter: "",

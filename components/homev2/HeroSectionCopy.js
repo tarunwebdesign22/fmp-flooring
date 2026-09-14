@@ -216,7 +216,7 @@ function HighlightedCopy({ segments }) {
     <p className="mt-5 max-w-2xl text-[15px] leading-7 text-white/90 sm:text-base sm:leading-8">
       {segments.map((segment, index) =>
         segment.highlight ? (
-          <strong key={index} className="font-semibold text-teal">
+          <strong key={index} className="font-semibold text-[#fdbf3e]">
             {segment.text}
           </strong>
         ) : (

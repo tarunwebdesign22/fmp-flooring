@@ -168,14 +168,34 @@ function EstimateForm({ form }) {
   );
 }
 
+function HeroEyebrow({ children, asBadge }) {
+  if (!children) return null;
+
+  if (asBadge) {
+    return (
+      <p className="inline-flex max-w-full items-center rounded-md bg-white/12 px-2.5 py-1.5 ring-1 ring-inset ring-white/25 backdrop-blur-[6px]">
+        <span className="text-xs font-semibold leading-snug text-white sm:text-[13px]">
+          {children}
+        </span>
+      </p>
+    );
+  }
+
+  return (
+    <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal">
+      {children}
+    </p>
+  );
+}
+
 function FinancingContent({ financing }) {
   if (!financing) return null;
 
   return (
-    <div className="min-w-0">
-      <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal">
+    <div className="min-w-0 [text-shadow:0_1px_18px_rgba(0,0,0,0.35)]">
+      <HeroEyebrow asBadge={financing.eyebrowAsBadge}>
         {financing.eyebrow}
-      </p>
+      </HeroEyebrow>
       <h1 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
         {financing.titleHighlightValue ? (
           <>

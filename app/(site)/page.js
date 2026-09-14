@@ -480,7 +480,7 @@ const federalContent = [
         icon: "government",
         description:
           "Durable, professional, impact-resistant flooring solutions for courtrooms and judicial facilities.",
-        image: "/images/CourtFlooring-Image.webp",
+        image: "/images/CourtFlooringNewImage.webp",
       },
       {
         title: "Military Bases",
@@ -852,6 +852,8 @@ const facebookFeedContent = [
     pageUrl: "https://www.facebook.com/people/FMP-Flooring/100084480100386/",
     embedPageUrl: "https://www.facebook.com/profile.php?id=100084480100386",
     buttonText: "Visit Our Facebook Page",
+    image: "/images/facebook-feed-image.webp",
+    imageAlt: "FMP Flooring team installing new flooring",
   },
 ];
 

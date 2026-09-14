@@ -39,6 +39,7 @@ const heroContent = [
         backgroundImage: "/images/laminate-mainbanner.webp",
         financing: {
           eyebrow: "Laminate Flooring",
+          eyebrowAsBadge: true,
           titleBefore: "We Offer High-Quality ",
           titleHighlightValue: "Laminate Flooring",
           titleAfter: "",

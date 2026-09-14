@@ -39,6 +39,7 @@ const heroContent = [
         backgroundImage: "/images/carpet-broadloom-gallery/Broadloom-Carpet-Main-Banner.webp",
         financing: {
           eyebrow: "Carpet Broadloom Flooring",
+          eyebrowAsBadge: true,
           titleBefore: "We Offer High-Quality ",
           titleHighlightValue: "Broadloom Carpet",
           titleAfter: "",

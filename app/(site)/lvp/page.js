@@ -36,9 +36,10 @@ const heroContent = [
     slides: [
       {
         id: "lvp-service",
-        backgroundImage: "/images/lvp-gallery/luxury-flooring-banner.webp",
+        backgroundImage: "/images/lvp-update-banner.webp",
         financing: {
           eyebrow: "LVP Flooring",
+          eyebrowAsBadge: true,
           titleBefore: "We Offer High-Quality ",
           titleHighlightValue: "Luxury Vinyl Plank",
           titleAfter: "",

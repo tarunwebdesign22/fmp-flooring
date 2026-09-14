@@ -39,6 +39,7 @@ const heroContent = [
         backgroundImage: "/images/ceramic-mainbanner.webp",
         financing: {
           eyebrow: "Ceramic Flooring",
+          eyebrowAsBadge: true,
           titleBefore: "We Offer High-Quality ",
           titleHighlightValue: "Ceramic Tile Flooring",
           titleAfter: "",

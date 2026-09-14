@@ -39,6 +39,7 @@ const heroContent = [
         backgroundImage: "/images/rubber-gallery/rubber-flooring-banner.webp",
         financing: {
           eyebrow: "Rubber Flooring",
+          eyebrowAsBadge: true,
           titleBefore: "We Offer High-Quality ",
           titleHighlightValue: "Rubber Flooring",
           titleAfter: "",
