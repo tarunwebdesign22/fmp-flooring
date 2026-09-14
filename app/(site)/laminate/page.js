@@ -212,7 +212,7 @@ const tipsContent = [
     title: "Maintenance Tips",
     description:
       "Keep your laminate floors looking their best with a simple, consistent cleaning routine that protects the wear layer and finish.",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+    backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
       "Sweep or vacuum daily to remove dirt and debris that can cause scratches.",
       "Use a soft-bristle broom or a vacuum with a hard-floor setting.",
@@ -282,7 +282,7 @@ const testimonialsContent = [
   {
     eyebrow: "Testimonials",
     title: "What Our Customers Say",
-    backgroundImage: "/images/laminate-reviews.webp",
+    backgroundColor: "#221e53",
     items: [
       {
         quote:

@@ -33,7 +33,7 @@ function buildPageEmbedSrc(pageUrl, width) {
 function SocialCard({ title, children, action }) {
   return (
     <div className="flex h-full flex-col">
-      <h3 className="mb-4 text-center text-lg font-bold text-blue">{title}</h3>
+      {/* <h3 className="mb-4 text-center text-lg font-bold text-blue">{title}</h3> */}
       <div className="flex-1 overflow-hidden rounded-[18px] bg-white p-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] sm:p-3">
         {children}
       </div>

@@ -208,7 +208,7 @@ const tipsContent = [
     title: "Maintenance Tips",
     description:
       "Keep your rubber floors looking their best with a simple, consistent cleaning routine that protects the surface and slip-resistant texture.",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+    backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
       "Sweep or vacuum regularly to remove dirt and debris from the textured surface.",
       "Damp mop with a pH-neutral cleaner — avoid harsh chemicals and solvents.",
@@ -280,7 +280,7 @@ const testimonialsContent = [
   {
     eyebrow: "Testimonials",
     title: "What Our Customers Say",
-    backgroundImage: "/images/laminate-reviews.webp",
+    backgroundColor: "#221e53",
     items: [
       {
         quote:

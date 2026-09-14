@@ -208,7 +208,7 @@ const tipsContent = [
     title: "VCT Flooring Maintenance",
     description:
       "To maximize the lifespan of vinyl composition tile flooring, regular maintenance is recommended.",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+    backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
       "Routine sweeping and damp mopping",
       "Periodic stripping and waxing",
@@ -279,7 +279,7 @@ const testimonialsContent = [
   {
     eyebrow: "Testimonials",
     title: "What Our Customers Say",
-    backgroundImage: "/images/laminate-reviews.webp",
+    backgroundColor: "#221e53",
     items: [
       {
         quote:

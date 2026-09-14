@@ -208,7 +208,7 @@ const tipsContent = [
     title: "Maintenance Tips",
     description:
       "Keep your ceramic floors looking their best with a simple, consistent cleaning routine that protects the tile surface and grout lines.",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+    backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
       "Sweep or vacuum regularly to remove dirt and debris from tile surfaces and grout lines.",
       "Mop with a tile-safe cleaner — avoid harsh chemicals that can damage finishes or grout.",
@@ -279,7 +279,7 @@ const testimonialsContent = [
   {
     eyebrow: "Testimonials",
     title: "What Our Customers Say",
-    backgroundImage: "/images/laminate-reviews.webp",
+    backgroundColor: "#221e53",
     items: [
       {
         quote:

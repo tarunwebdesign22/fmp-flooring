@@ -1176,7 +1176,7 @@ export default function Home() {
       <QuoteCtaSection content={quoteCtaContent} />
       <EducationalResourcesSection content={educationalResourcesContent} />
       <EducationalVideosSection content={educationalVideosContent} />
-      <TestimonialsSection content={testimonialsContent} />
+      {/*<TestimonialsSection content={testimonialsContent} />*/}
       <QuoteCtaSection content={quoteCtaContent} />
       <FaqSection content={faqContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />

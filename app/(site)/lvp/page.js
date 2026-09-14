@@ -208,7 +208,7 @@ const tipsContent = [
     title: "Maintenance Tips",
     description:
       "Keep your LVP floors looking their best with a simple cleaning routine that protects the wear layer and waterproof surface.",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+    backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
       "Vacuum daily to remove debris from the plank surface.",
       "Damp mop with a mild vinyl floor cleaner or mild dish soap.",
@@ -278,7 +278,7 @@ const testimonialsContent = [
   {
     eyebrow: "Testimonials",
     title: "What Our Customers Say",
-    backgroundImage: "/images/laminate-reviews.webp",
+    backgroundColor: "#221e53",
     items: [
       {
         quote:

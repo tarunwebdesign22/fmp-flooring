@@ -208,7 +208,7 @@ const tipsContent = [
     title: "Maintenance Tips",
     description:
       "Keep your hardwood floors looking their best with a simple, consistent cleaning routine that protects the finish and natural wood grain.",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+    backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
       "Sweep or vacuum regularly to remove dirt and debris that can scratch the finish.",
       "Use a soft-bristle broom or a vacuum with a hard-floor setting.",
@@ -278,7 +278,7 @@ const testimonialsContent = [
   {
     eyebrow: "Testimonials",
     title: "What Our Customers Say",
-    backgroundImage: "/images/laminate-reviews.webp",
+    backgroundColor: "#221e53",
     items: [
       {
         quote:

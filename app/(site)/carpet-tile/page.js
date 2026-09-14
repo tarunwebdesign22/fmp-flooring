@@ -208,7 +208,7 @@ const tipsContent = [
     title: "Maintenance Tips",
     description:
       "Keep your carpet tiles looking their best with a simple, consistent cleaning routine that protects the fibers and modular seams.",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
+    backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
       "Vacuum regularly to remove dirt and debris from carpet tile surfaces.",
       "Address spills quickly with a mild cleaner to prevent staining.",
@@ -297,7 +297,7 @@ const testimonialsContent = [
   {
     eyebrow: "Testimonials",
     title: "What Our Customers Say",
-    backgroundImage: "/images/laminate-reviews.webp",
+    backgroundColor: "#221e53",
     items: [
       {
         quote:

@@ -91,16 +91,25 @@ export default function TestimonialsSection({ content }) {
     pauseOnHover: true,
   };
 
+  const backgroundColor = section.backgroundColor;
+
   return (
-    <section className="relative isolate overflow-hidden py-16 sm:py-[70px] lg:py-24">
-      <Image
-        src={section.backgroundImage || "/images/laminate-reviews.webp"}
-        alt=""
-        fill
-        className="object-cover object-center"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+    <section
+      className="relative isolate overflow-hidden py-16 sm:py-[70px] lg:py-24"
+      style={backgroundColor ? { backgroundColor } : undefined}
+    >
+      {!backgroundColor ? (
+        <>
+          <Image
+            src={section.backgroundImage || "/images/laminate-reviews.webp"}
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+        </>
+      ) : null}
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="mb-12 text-center sm:mb-14">
