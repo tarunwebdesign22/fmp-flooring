@@ -341,7 +341,7 @@ const processContent = [
   {
     title: "How We Manage Every Project",
     subtitle: "A simple 5-step process:",
-    backgroundImage: "/images/flooring-process-bg-remastered.webp",
+    backgroundImage: "/images/flooring-process-bg-remastered-new.webp",
     buttonText: "Start Your Project Today",
     buttonHref: "/estimate",
     steps: [
