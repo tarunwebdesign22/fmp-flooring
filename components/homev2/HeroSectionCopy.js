@@ -227,6 +227,64 @@ function HighlightedCopy({ segments }) {
   );
 }
 
+function ShieldCheckIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M12 3 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-3z"
+        className="fill-teal/25 stroke-teal"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="m9 12 2 2 4-4"
+        className="stroke-[#fdbf3e]"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function HeroTagline({ segments }) {
+  if (!segments?.length) return null;
+
+  return (
+    <div
+      className="relative mt-5 max-w-2xl overflow-hidden rounded-2xl border border-white/25 bg-gradient-to-br from-white/14 via-white/8 to-teal/15 px-4 py-4 shadow-[0_10px_40px_rgba(0,0,0,0.28)] backdrop-blur-md sm:mt-6 sm:px-5 sm:py-[1.15rem] lg:max-w-xl"
+      role="doc-subtitle"
+    >
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-teal via-teal to-[#fdbf3e]"
+        aria-hidden="true"
+      />
+      <div className="flex items-start gap-3 pl-2">
+        <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/12 ring-1 ring-white/25">
+          <ShieldCheckIcon />
+        </span>
+        <p className="text-[1.05rem] font-semibold leading-snug tracking-tight text-white sm:text-lg lg:text-xl lg:leading-snug">
+          {segments.map((segment, index) =>
+            segment.highlight ? (
+              <span key={index} className="relative mx-0.5 inline-block font-bold">
+                <span className="relative z-10 bg-gradient-to-r from-[#ffe08a] via-[#fdbf3e] to-[#f5a623] bg-clip-text text-transparent">
+                  {segment.text}
+                </span>
+                <span
+                  className="absolute -bottom-0.5 left-0 right-0 z-0 h-2 rounded-sm bg-teal/35"
+                  aria-hidden="true"
+                />
+              </span>
+            ) : (
+              <span key={index}>{segment.text}</span>
+            )
+          )}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function HeroCopy({ section }) {
   return (
     <div className="min-w-0 [text-shadow:0_1px_18px_rgba(0,0,0,0.35)]">
@@ -248,7 +306,9 @@ function HeroCopy({ section }) {
         </p>
       ) : null}
 
-      <h1 className="mt-5 text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl lg:text-[2.85rem]">
+      {section.tagline?.length ? <HeroTagline segments={section.tagline} /> : null}
+
+      <h1 className="mt-5 text-3xl font-bold leading-[1.15] tracking-tight text-white sm:mt-6 sm:text-4xl lg:text-[2.85rem]">
         {section.title}
         {section.titleHighlight ? (
           <>

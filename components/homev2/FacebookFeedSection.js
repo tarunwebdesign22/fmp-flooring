@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const FACEBOOK_PAGE_URL =
   "https://www.facebook.com/people/FMP-Flooring/100084480100386/";
 const FACEBOOK_EMBED_PAGE_URL =
   "https://www.facebook.com/profile.php?id=100084480100386";
 const FACEBOOK_FEED_IMAGE = "/images/facebook-feed-image.webp";
+const DEFAULT_EMBED_HEIGHT = 360;
 
 function FacebookIcon() {
   return (
@@ -18,12 +19,12 @@ function FacebookIcon() {
   );
 }
 
-function buildPageEmbedSrc(pageUrl, width) {
+function buildPageEmbedSrc(pageUrl, width, height) {
   const params = new URLSearchParams({
     href: pageUrl,
     show_posts: "true",
     width: String(width),
-    height: "720",
+    height: String(height),
     small_header: "false",
     adapt_container_width: "true",
     hide_cover: "false",
@@ -35,9 +36,19 @@ function buildPageEmbedSrc(pageUrl, width) {
 export default function FacebookFeedSection({ content }) {
   const section = content?.[0];
   const sectionRef = useRef(null);
+  const leftColRef = useRef(null);
   const pageWrapRef = useRef(null);
   const [pageWidth, setPageWidth] = useState(500);
+  const [embedHeight, setEmbedHeight] = useState(DEFAULT_EMBED_HEIGHT);
+  const [feedCardHeight, setFeedCardHeight] = useState(0);
   const [shouldLoadEmbed, setShouldLoadEmbed] = useState(false);
+
+  const syncFeedCardHeight = useCallback(() => {
+    const left = leftColRef.current;
+    if (!left) return;
+    const next = left.offsetHeight;
+    if (next > 0) setFeedCardHeight(next);
+  }, []);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -58,26 +69,41 @@ export default function FacebookFeedSection({ content }) {
   }, []);
 
   useEffect(() => {
+    const left = leftColRef.current;
+    if (!left) return undefined;
+
+    syncFeedCardHeight();
+    const observer = new ResizeObserver(() => syncFeedCardHeight());
+    observer.observe(left);
+    window.addEventListener("resize", syncFeedCardHeight);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", syncFeedCardHeight);
+    };
+  }, [syncFeedCardHeight]);
+
+  useEffect(() => {
     const el = pageWrapRef.current;
     if (!el) return undefined;
 
     const update = () => {
-      const next = Math.min(Math.max(Math.floor(el.clientWidth - 16), 280), 500);
-      setPageWidth(next);
+      setPageWidth(Math.max(Math.floor(el.clientWidth), 280));
+      setEmbedHeight(Math.max(Math.floor(el.clientHeight), 200));
     };
 
     update();
     const observer = new ResizeObserver(update);
     observer.observe(el);
     return () => observer.disconnect();
-  }, [shouldLoadEmbed]);
+  }, [shouldLoadEmbed, feedCardHeight]);
 
   if (!section) return null;
 
   const pageUrl = section.pageUrl || FACEBOOK_PAGE_URL;
   const embedPageUrl = section.embedPageUrl || FACEBOOK_EMBED_PAGE_URL;
   const image = section.image || FACEBOOK_FEED_IMAGE;
-  const pageEmbedSrc = buildPageEmbedSrc(embedPageUrl, pageWidth);
+  const pageEmbedSrc = buildPageEmbedSrc(embedPageUrl, pageWidth, embedHeight);
 
   return (
     <section
@@ -85,9 +111,9 @@ export default function FacebookFeedSection({ content }) {
       className="bg-greylight py-14 sm:py-16 lg:py-[70px]"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:items-stretch lg:gap-14">
           {/* Left — copy + image */}
-          <div className="min-w-0 text-center lg:text-left">
+          <div ref={leftColRef} className="min-w-0 text-center lg:text-left">
             {section.eyebrow ? (
               <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
                 {section.eyebrow}
@@ -119,39 +145,78 @@ export default function FacebookFeedSection({ content }) {
               </Link>
             </div>
 
-            <div className="relative mt-8 aspect-[4/3] w-full overflow-hidden rounded-[18px] shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+            <div
+              className="relative mt-8 aspect-[4/3] w-full overflow-hidden rounded-[18px] shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+            >
               <Image
                 src={image}
                 alt={section.imageAlt || "FMP Flooring installation work"}
                 fill
                 className="object-cover object-center"
                 sizes="(min-width: 1024px) 50vw, 100vw"
+                onLoad={syncFeedCardHeight}
               />
             </div>
           </div>
 
-          {/* Right — Facebook feed */}
-          <div className="min-w-0">
-            <div className="overflow-hidden rounded-[18px] bg-white p-2 shadow-[0_10px_30px_rgba(0,0,0,0.08)] sm:p-3">
-              <div ref={pageWrapRef}>
+          {/* Right — full-height feed card (top: eyebrow, bottom: image) */}
+          <div className="flex min-w-0 flex-col">
+            <div
+              className="flex min-h-[420px] flex-col overflow-hidden rounded-[18px] border border-blue/10 bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)] sm:min-h-[480px] lg:min-h-0 lg:h-[var(--feed-card-height)]"
+              style={
+                feedCardHeight
+                  ? { "--feed-card-height": `${feedCardHeight}px` }
+                  : undefined
+              }
+            >
+              <div className="flex shrink-0 items-center justify-between gap-3 border-b border-blue/10 px-4 py-3.5 sm:px-5">
+                <div className="flex min-w-0 items-center gap-3">
+                  <span
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#1877F2] text-white"
+                    aria-hidden="true"
+                  >
+                    <FacebookIcon />
+                  </span>
+                  <div className="min-w-0 text-left">
+                    <p className="truncate text-sm font-bold text-blue">FMP Flooring</p>
+                    <p className="text-xs text-blue/50">Facebook timeline</p>
+                  </div>
+                </div>
+                <span
+                  className="shrink-0 rounded-full bg-teal/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-teal"
+                >
+                  Live feed
+                </span>
+              </div>
+
+              <div
+                ref={pageWrapRef}
+                className="relative min-h-0 flex-1 overflow-hidden bg-[#f0f2f5]"
+              >
                 {shouldLoadEmbed ? (
                   <iframe
                     key={pageEmbedSrc}
                     title="FMP Flooring Facebook timeline"
                     src={pageEmbedSrc}
                     width={pageWidth}
-                    height={720}
-                    style={{ border: "none", overflow: "hidden", maxWidth: "100%" }}
+                    height={embedHeight}
+                    style={{
+                      border: "none",
+                      display: "block",
+                      width: "100%",
+                      height: embedHeight,
+                      maxWidth: "100%",
+                    }}
                     scrolling="no"
                     frameBorder="0"
                     allowFullScreen
                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                     loading="lazy"
-                    className="mx-auto block min-h-[720px]"
+                    className="absolute inset-0 h-full w-full bg-white"
                   />
                 ) : (
                   <div
-                    className="mx-auto flex min-h-[720px] items-center justify-center bg-greylight text-sm text-blue/60"
+                    className="flex h-full min-h-[280px] w-full items-center justify-center bg-white text-sm text-blue/60"
                     aria-hidden="true"
                   >
                     Loading Facebook feed…

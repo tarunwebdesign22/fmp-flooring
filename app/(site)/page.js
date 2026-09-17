@@ -40,6 +40,10 @@ const heroContent = [
       "/images/mainhero-3-0.webp",
     ],
     badge: "Family Owned & Operated Since 1995",
+    tagline: [
+      { text: "Company trusted for jobs that " },
+      { text: "can't afford mistakes", highlight: true },
+    ],
     title: "Commercial & Residential Flooring Contractor",
     titleHighlight: "in North Carolina & South Carolina",
     description: [
@@ -852,7 +856,7 @@ const facebookFeedContent = [
     pageUrl: "https://www.facebook.com/people/FMP-Flooring/100084480100386/",
     embedPageUrl: "https://www.facebook.com/profile.php?id=100084480100386",
     buttonText: "Visit Our Facebook Page",
-    image: "/images/facebook-feed-image.webp",
+    image: "/images/flooring-sm.webp",
     imageAlt: "FMP Flooring team installing new flooring",
   },
 ];
