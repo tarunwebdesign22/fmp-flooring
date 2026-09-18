@@ -1,7 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { Playfair_Display } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
+
+const heroLeadFont = Playfair_Display({
+  subsets: ["latin"],
+  style: ["italic"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
 
 function StarIcon() {
   return (
@@ -209,8 +217,28 @@ const fieldIcons = {
   ),
 };
 
-function HighlightedCopy({ segments }) {
+function HighlightedCopy({ segments, variant }) {
   if (!segments?.length) return null;
+
+  const isHeroLead = variant === "heroLead";
+
+  if (isHeroLead) {
+    return (
+      <p
+        className={`${heroLeadFont.className} mt-5 max-w-2xl text-xl font-medium italic leading-snug tracking-[0.01em] text-white sm:mt-6 sm:text-2xl sm:leading-snug lg:text-[1.65rem] lg:leading-snug`}
+      >
+        {segments.map((segment, index) =>
+          segment.highlight ? (
+            <span key={index} className="font-bold text-[#fdbf3e]">
+              {segment.text}
+            </span>
+          ) : (
+            <span key={index}>{segment.text}</span>
+          ),
+        )}
+      </p>
+    );
+  }
 
   return (
     <p className="mt-5 max-w-2xl text-[15px] leading-7 text-white/90 sm:text-base sm:leading-8">
@@ -221,7 +249,7 @@ function HighlightedCopy({ segments }) {
           </strong>
         ) : (
           <span key={index}>{segment.text}</span>
-        )
+        ),
       )}
     </p>
   );
@@ -318,7 +346,7 @@ function HeroCopy({ section }) {
         ) : null}
       </h1>
 
-      <HighlightedCopy segments={section.description} />
+      <HighlightedCopy segments={section.description} variant="heroLead" />
 
       {section.ctas?.length ? (
         <div className="mt-7 flex flex-col gap-3">

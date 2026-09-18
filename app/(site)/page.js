@@ -8,7 +8,9 @@ import QuoteCtaSection from "@/components/homev2/QuoteCtaSection";
 import { blogPosts } from "@/data/blog-posts";
 
 const MeetTheFounderSection = dynamic(() => import("@/components/homev2/MeetTheFounderSection"));
-const FeaturesSection = dynamic(() => import("@/components/homev2/FeaturesSection"));
+const HighlightsWhyChooseSection = dynamic(() =>
+  import("@/components/homev2/HighlightsWhyChooseSection"),
+);
 const HowWeManageProjectsSection = dynamic(() =>
   import("@/components/homev2/HowWeManageProjectsSection"),
 );
@@ -19,7 +21,6 @@ const FacebookFeedSection = dynamic(() => import("@/components/homev2/FacebookFe
 const BeforeAfterSection = dynamic(() => import("@/components/homev2/BeforeAfterSection"));
 const MeetOurTeamSection = dynamic(() => import("@/components/homev2/MeetOurTeamSection"));
 const OffersSliderSection = dynamic(() => import("@/components/OffersSliderSection"));
-const WhyChooseSection = dynamic(() => import("@/components/homev2/WhyChooseSection"));
 const LatestProjectsSection = dynamic(() => import("@/components/homev2/LatestProjectsSection"));
 const EducationalResourcesSection = dynamic(() =>
   import("@/components/homev2/EducationalResourcesSection"),
@@ -40,16 +41,11 @@ const heroContent = [
       "/images/mainhero-3-0.webp",
     ],
     badge: "Family Owned & Operated Since 1995",
-    tagline: [
-      { text: "Company trusted for jobs that " },
-      { text: "can't afford mistakes", highlight: true },
-    ],
     title: "Commercial & Residential Flooring Contractor",
     titleHighlight: "in North Carolina & South Carolina",
     description: [
-      { text: "Explore top-quality flooring solutions tailored for both " },
-      { text: "commercial and residential", highlight: true },
-      { text: " contractors." },
+      { text: "Company trusted for jobs that " },
+      { text: "can't afford mistakes", highlight: true },
     ],
     ctas: [
       {
@@ -911,7 +907,7 @@ const beforeAfterContent = [
 
 const whyChooseContent = [
   {
-    eyebrow: "Why Choose Us",
+    eyebrow:"",
     title: "Why Choose FMP?",
     description:
       "Family owned since 1995 — we bring warehouse pricing, expert installation, and honest guidance to every residential and commercial project.",
@@ -1163,7 +1159,10 @@ export default function Home() {
       <ServicesSection content={servicesContent} />
       <QuoteCtaSection content={quoteCtaContent} />
       <MeetTheFounderSection content={founderContent} />
-      <FeaturesSection content={featuresContent} />
+      <HighlightsWhyChooseSection
+        highlights={featuresContent[0]}
+        whyChoose={whyChooseContent[0]}
+      />
       <HowWeManageProjectsSection content={howWeManageProjectsContent} />
       <ExploreVideosSection content={videosContent} />
       <GoogleReviewsSection content={googleReviewsContent} />
@@ -1173,8 +1172,6 @@ export default function Home() {
       <MeetOurTeamSection content={teamContent} />
       <OffersSliderSection content={offersContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />
-      <WhyChooseSection content={whyChooseContent} />
-  
       {/* <ComparisonSection content={whyBuyDirectContent} /> */}
       
       <LatestProjectsSection content={latestProjectsContent} />
