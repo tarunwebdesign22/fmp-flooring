@@ -5,6 +5,7 @@ const serviceLinks = [
   { label: "Carpet Broadloom", href: "/broadloom-carpet" },
   { label: "Carpet Tile Flooring", href: "/carpet-tile" },
   { label: "Ceramic Flooring", href: "/ceramic" },
+  { label: "Bathroom Remodeling", href: "/bathroom-remodeling-tile-services" },
   { label: "Rubber Flooring", href: "/rubber" },
   { label: "Hardwood Flooring", href: "/hardwood" },
   { label: "Laminate Flooring", href: "/laminate" },
