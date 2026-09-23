@@ -22,7 +22,7 @@ const STEPS = [
     title: "On-Site Consultation",
     description:
       "We start by understanding your space, style, and remodeling goals. Our team evaluates your bathroom, takes precise measurements, and discusses your preferred materials, tile designs, layout, and project requirements.",
-    image: "/images/bathroom-remodeling/step-consultation.jpg",
+    image: "/images/bathroom-on-site-consultation.webp",
     imageAlt: "Luxury bathroom interior for remodeling consultation",
   },
   {
@@ -30,7 +30,7 @@ const STEPS = [
     title: "Design & Material Selection",
     description:
       "Bring your vision to life with the right combination of flooring, wall tile, shower tile, backsplashes, fixtures, and finishes. We help you select quality products that complement your bathroom while fitting your style and budget.",
-    image: "/images/bathroom-remodeling/step-design.jpg",
+    image: "/images/bathroom-design-material-selection.webp",
     imageAlt: "Modern bathroom tile and fixture design selection",
   },
   {
@@ -38,7 +38,7 @@ const STEPS = [
     title: "Professional Installation",
     description:
       "Once everything is planned and materials are ready, our experienced installation team gets to work. From tile preparation and waterproofing to precise tile placement and finishing touches, we focus on delivering a clean, professional result.",
-    image: "/images/bathroom-remodeling/step-installation.jpg",
+    image: "/images/bathroom-professional-installation.webp",
     imageAlt: "Professional shower and wall tile installation",
   },
   {
@@ -46,7 +46,7 @@ const STEPS = [
     title: "Final Walkthrough",
     description:
       "Before we consider the project complete, we inspect the finished work and make sure every detail meets our quality standards. We clean up the work area and walk you through your newly remodeled bathroom so you can enjoy the finished space with confidence.",
-    image: "/images/bathroom-remodeling/step-walkthrough.jpg",
+    image: "/images/bathroom-final-walkthrough.webp",
     imageAlt: "Finished luxury bathroom remodel with tile details",
   },
 ];
