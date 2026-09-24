@@ -22,9 +22,9 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Carpet Tile Flooring | Commercial & Residential Carpet Tiles | FMP Flooring",
+  title: "Carpet Tile Flooring & Installation | FMP Flooring",
   description:
-    "Durable modular carpet tile flooring from FMP Flooring. Commercial and residential carpet tiles with easy installation, design flexibility, and professional installation.",
+    "Explore durable carpet tile flooring for offices, retail spaces, schools, and homes. FMP Flooring provides professional carpet tile selection and installation.",
 };
 
 const heroContent = [
@@ -326,22 +326,52 @@ const faqContent = [
       {
         question: "What are carpet tiles made of?",
         answer:
-          "Carpet tiles are commonly made from nylon, polypropylene, polyester, or recycled fibers for durability and stain resistance.",
+          "Carpet tiles can be made from several types of carpet fibers, including nylon, polypropylene, polyester, and recycled materials. The specific fiber affects characteristics such as durability, appearance, stain resistance, and maintenance requirements.",
       },
       {
         question: "Are carpet tiles waterproof?",
         answer:
-          "Carpet tiles are moisture-resistant but not waterproof. They perform well in areas with occasional spills.",
+          "Carpet tiles are generally not completely waterproof. Their moisture resistance depends on the carpet fiber, backing, installation system, and specific product. For areas exposed to moisture, the flooring should be selected according to the manufacturer's performance specifications.",
       },
       {
         question: "How much does carpet tile flooring cost?",
         answer:
-          "The cost of carpet tile flooring varies based on material, quality, and design. Contact us for a customized quote.",
+          "The cost of carpet tile flooring depends on the product, quality, materials, installation requirements, subfloor condition, project size, and preparation work. The best way to determine your project cost is to request a flooring measurement and estimate based on your specific space.",
       },
       {
         question: "Are carpet tiles good for offices?",
         answer:
-          "Yes. Commercial carpet tiles are one of the most popular flooring options for offices due to durability, noise reduction, and easy replacement.",
+          "Yes. Carpet tiles can be a practical choice for offices because they offer design flexibility, easy maintenance, and convenient individual tile replacement. They are available in options designed for different levels of commercial foot traffic.",
+      },
+      {
+        question: "What is carpet tile flooring?",
+        answer:
+          "Carpet tile flooring is a modular flooring system made from individual carpet tiles that are installed together to cover a floor. Unlike traditional broadloom carpet, damaged or heavily worn sections can often be replaced individually.",
+      },
+      {
+        question: "What are the benefits of carpet tile flooring?",
+        answer:
+          "Carpet tile flooring offers design flexibility, convenient installation, easy maintenance, and individual tile replacement. It can be a useful flooring option for offices, retail spaces, schools, healthcare facilities, apartments, and other areas with regular foot traffic.",
+      },
+      {
+        question: "Where are carpet floor tiles commonly used?",
+        answer:
+          "Carpet floor tiles are commonly used in offices, corporate spaces, coworking areas, retail stores, schools, conference rooms, healthcare offices, home offices, basements, and other residential or commercial spaces.",
+      },
+      {
+        question: "Can individual carpet tiles be replaced?",
+        answer:
+          "Yes. One of the main advantages of modular carpet tiles is that an individual damaged or heavily stained tile can often be removed and replaced without replacing the entire floor.",
+      },
+      {
+        question: "Are carpet tiles good for high traffic areas?",
+        answer:
+          "Carpet tiles can be suitable for high traffic areas when the product is selected according to the expected level of use. Commercial grade options are available for spaces such as offices, hallways, retail environments, schools, and other busy areas.",
+      },
+      {
+        question: "What is the difference between carpet tiles and broadloom carpet?",
+        answer:
+          "Carpet tiles are individual modular pieces that can be installed in different patterns and replaced individually when necessary. Broadloom carpet is supplied in larger continuous rolls and is typically installed wall to wall. The better option depends on the space, design requirements, traffic, maintenance needs, and replacement preferences.",
       },
     ],
   },

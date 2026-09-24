@@ -225,7 +225,7 @@ const howWeManageProjectsContent = [
     eyebrow: "Project Management",
     title: "How We Manage Every Project",
     description:
-      "A clear, step-by-step process so every flooring project stays organized, efficient, and stress-free from start to finish.",
+      "A clear, step by step process helps every flooring project stay organized, efficient, and stress free. From removing your old flooring to completing the final finishing touches, our team manages each stage with care.",
     steps: [
       {
         step: "01",
@@ -510,6 +510,7 @@ const federalContent = [
 const videosContent = [
   {
     title: "Explore Our Work",
+    description: "Take a closer look at our flooring projects, installations, showroom, warehouse, and completed work. See the quality and attention to detail we bring to every project.",
     tabs: [
       {
         id: "showroom",
@@ -716,44 +717,54 @@ const faqContent = [
     title: "People Also Ask",
     items: [
       {
-        question: "Do you offer free estimates?",
+        question: "Do you offer free flooring estimates?",
         answer:
-          "Yes, we provide free, no-obligation estimates for all flooring projects. Contact us to schedule your consultation and get a detailed quote tailored to your needs.",
+          "Yes. FMP Flooring provides free, no obligation estimates for flooring projects. Contact our team to discuss your space, flooring needs, and project requirements and receive a quote tailored to your project.",
       },
       {
         question: "What flooring is best for homes with pets?",
         answer:
-          "We recommend scratch-resistant options like Luxury Vinyl Plank (LVP), tile, or laminate with a durable wear layer. These materials handle paw traffic and are easy to clean.",
+          "Luxury vinyl plank, ceramic flooring, and other durable flooring options can be excellent choices for homes with pets. Our team can help you choose flooring based on your lifestyle, maintenance needs, and preferred style.",
       },
       {
         question: "What areas do you serve?",
         answer:
-          "We proudly serve residential and commercial customers throughout our region. Contact us to confirm service availability in your specific area.",
+          "FMP Flooring serves residential and commercial customers across North Carolina and South Carolina, including the greater Charlotte area. Contact us to confirm service availability for your location.",
       },
       {
-        question: "What is the most durable flooring for high-traffic areas?",
+        question: "What is the most durable flooring for high traffic areas?",
         answer:
-          "For high-traffic areas like hallways, living rooms, and entryways, we recommend porcelain tile, Luxury Vinyl Plank (LVP), or engineered hardwood. These materials are designed to resist wear, scratches, and daily use while maintaining a beautiful appearance for years.",
+          "The best flooring for a high traffic area depends on the type of space and how it is used. Luxury vinyl plank, carpet tile, rubber, VCT, ceramic, and other commercial flooring options can provide excellent durability when properly selected and installed.",
       },
       {
         question: "Can new flooring be installed over existing floors?",
         answer:
-          "In many cases, yes. Depending on the condition of your current flooring, we can often install new flooring directly over it. Our team will assess your subfloor during the consultation.",
+          "In some cases, new flooring can be installed over an existing floor. The existing surface must first be inspected to determine whether it is clean, level, stable, and suitable for the new flooring. Our team can recommend the proper preparation for your project.",
       },
       {
         question: "Do you offer waterproof flooring options?",
         answer:
-          "Yes, we carry a wide selection of 100% waterproof flooring, including LVP and LVT, perfect for kitchens, bathrooms, basements, and laundry rooms.",
+          "Yes. We offer flooring options designed to provide excellent moisture resistance and performance. Luxury vinyl plank is one popular option for spaces where easy maintenance and moisture resistance are important.",
       },
       {
         question: "Can I see flooring samples before purchasing?",
         answer:
-          "Absolutely! Visit our showroom to view our full range of samples, or request an in-home consultation where we bring samples directly to you.",
+          "Yes. Flooring samples can help you compare colors, textures, patterns, and finishes before making a decision. Contact FMP Flooring to discuss available flooring options and samples for your project.",
       },
       {
         question: "How soon can my flooring be installed?",
         answer:
-          "Installation timing depends on product availability and scheduling. Many in-stock products can be installed within just a few days of your order.",
+          "Installation time depends on the flooring type, project size, preparation requirements, and product availability. After reviewing your project, our team can provide a clearer installation timeline.",
+      },
+      {
+        question: "Do you provide commercial flooring installation?",
+        answer:
+          "Yes. FMP Flooring provides commercial flooring installation for offices, retail spaces, schools, healthcare facilities, government buildings, and other commercial environments.",
+      },
+      {
+        question: "Do you provide residential flooring installation?",
+        answer:
+          "Yes. We provide residential flooring installation for homeowners looking for quality flooring products and professional installation. Our team can help with flooring selection, preparation, installation, and finishing.",
       },
     ],
   },
@@ -848,7 +859,7 @@ const facebookFeedContent = [
     eyebrow: "Social Updates",
     title: "Follow Us On Social Media",
     description:
-      "See the latest project photos, flooring tips, and community updates from FMP Flooring on Facebook.",
+      "See our latest flooring projects, installation updates, flooring tips, and company news from FMP Flooring. Follow us on Facebook to stay connected with our latest work.",
     pageUrl: "https://www.facebook.com/people/FMP-Flooring/100084480100386/",
     embedPageUrl: "https://www.facebook.com/profile.php?id=100084480100386",
     buttonText: "Visit Our Facebook Page",
@@ -859,7 +870,9 @@ const facebookFeedContent = [
 
 const latestProjectsContent = [
   {
-    title: "Our Latest Project",
+    title: "Our Latest Flooring Projects",
+    description:
+      "Explore our latest flooring projects and see how FMP Flooring transforms residential, commercial, and public spaces with quality flooring products and professional installation.",
     embedUrl: "https://trusty.app/embed/project-map/37869d9b-531a-4f71-aaef-2a6d1006f3f3",
   },
 ];
@@ -867,13 +880,13 @@ const latestProjectsContent = [
 const beforeAfterContent = [
   {
     eyebrow: "Our Transformations",
-    title: "Before and After Transformations",
+    title: "Before and After Flooring Transformations",
     tagline: "Same room. Same light. Completely new life.",
     paragraphs: [
-      "New flooring changes how a space looks, feels, and functions. From worn carpet to refined hardwood or vinyl, every transformation elevates daily living.",
-      "Drag the slider to compare each project, browse more transformations, and schedule a free in-home estimate to start your own before-and-after story.",
+      "New flooring can completely change how a space looks, feels, and functions. From worn carpet to refined hardwood or luxury vinyl plank, every flooring transformation can bring new life to a home or commercial space.",
+      "Browse our flooring transformations and see the difference professional flooring installation can make.",
     ],
-    buttonText: "Free In-Home Estimate",
+    buttonText: "Free In Home Estimate",
     buttonHref: "/estimate",
     projects: [
       {
@@ -910,43 +923,44 @@ const whyChooseContent = [
     eyebrow:"",
     title: "Why Choose FMP?",
     description:
-      "Family owned since 1995 — we bring warehouse pricing, expert installation, and honest guidance to every residential and commercial project.",
+      "Family owned since 1995, FMP Flooring combines quality materials, professional installation, warehouse pricing, and honest guidance for residential and commercial flooring projects.",
+
     items: [
       {
         icon: "professionals",
         title: "Experienced Professionals",
         description:
-          "Skilled installers with years of industry experience, delivering careful, long-lasting results on every job.",
+          "Skilled flooring installers with industry experience, delivering careful workmanship and dependable results on every project.",
       },
       {
         icon: "selection",
-        title: "Wide Range of Options",
+        title: "Wide Range of Flooring Options",
         description:
-          "Carpet, carpet tile, LVP, laminate, hardwood, ceramic, VCT, rubber, and more — all under one roof.",
+          "Choose from carpet, carpet tile, luxury vinyl plank, laminate, hardwood, ceramic, VCT, rubber, and more.",
       },
       {
         icon: "pricing",
         title: "Affordable & Transparent Pricing",
         description:
-          "No hidden fees. No surprises. Clear estimates and cost-effective solutions without cutting quality.",
+          "Clear estimates, competitive pricing, and straightforward service without unnecessary surprises.",
       },
       {
         icon: "expertise",
         title: "Residential & Commercial Expertise",
         description:
-          "Homes, offices, retail, and large commercial spaces — we understand each project and deliver accordingly.",
+          "We work with homeowners, offices, retail spaces, public facilities, and large commercial projects.",
       },
       {
         icon: "quality",
         title: "Quality Materials & Workmanship",
         description:
-          "Trusted materials and proven installation techniques for durability, performance, and lasting appeal.",
+          "We use trusted flooring products and proven installation methods designed for durability, performance, and lasting appeal.",
       },
       {
         icon: "satisfaction",
         title: "Customer Satisfaction First",
         description:
-          "Clear communication, on-time completion, and dependable service — your satisfaction is our priority.",
+          "Clear communication, dependable service, careful installation, and attention to detail are at the heart of every project.",
       },
     ],
   },

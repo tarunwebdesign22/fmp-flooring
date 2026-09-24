@@ -165,9 +165,15 @@ export default function ExploreVideosSection({ content }) {
   return (
     <section className="bg-[#eeecff] py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-        <div className="mb-8 text-center sm:mb-10">
+        <div className="mx-auto max-w-3xl text-center mb-8 sm:mb-10">
           <h2 className="text-3xl font-bold text-blue sm:text-4xl">{section.title}</h2>
+
           <span className="mx-auto mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
+          {section.description ? (
+            <p className="mt-5 text-[15px] leading-7 text-blue/70 sm:text-base">
+              {section.description}
+            </p>
+          ) : null}
         </div>
 
         {/* Tabs */}

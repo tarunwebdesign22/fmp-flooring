@@ -22,9 +22,9 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Rubber Flooring | Durable Commercial & Residential Rubber Floors | FMP Flooring",
+  title: "Rubber Flooring for Gyms & Commercial Spaces | FMP Flooring",
   description:
-    "Premium rubber flooring installation from FMP Flooring. Durable, slip-resistant, and comfortable rubber floors for gyms, schools, healthcare facilities, garages, and homes.",
+    "Explore durable rubber flooring for gyms, exercise rooms, schools, and commercial spaces. FMP Flooring offers quality rubber flooring and professional installation.",
 };
 
 const heroContent = [
@@ -307,23 +307,49 @@ const faqContent = [
     title: "Rubber Flooring Frequently Asked Questions",
     items: [
       {
-        question: "What is rubber flooring made of?",
+        question: "What is rubber flooring?",
         answer:
-          "Rubber flooring is typically made from natural or synthetic rubber, often including recycled rubber granules.",
+          "Rubber flooring is a resilient flooring material made from natural or synthetic rubber. It is designed to provide durability, traction, impact resistance, and comfort for a wide range of residential and commercial applications.",
       },
       {
         question: "Is rubber flooring good for gyms?",
         answer:
-          "Yes. Gym rubber flooring is one of the most popular choices due to its durability, shock-absorption, and easy maintenance.",
+          "Yes. Rubber flooring is an excellent option for gyms and fitness facilities. It provides durability, impact resistance, traction, and cushioning underfoot, making it suitable for workout areas, weight rooms, and training spaces.",
+      },
+      {
+        question: "Is rubber flooring good for exercise rooms?",
+        answer:
+          "Yes. Rubber exercise room flooring provides a comfortable and durable surface for workout spaces. It can help absorb impact and provide good traction during exercise and training activities.",
       },
       {
         question: "Can rubber flooring be used outdoors?",
         answer:
-          "Some rubber flooring products are rated for outdoor use — check product specifications for UV and weather resistance.",
+          "Some rubber flooring products are designed for outdoor applications, while others are intended for indoor use. The appropriate product should be selected based on exposure to weather, moisture, sunlight, temperature, and the intended application.",
       },
       {
-        question: "How do you clean rubber floors?",
-        answer: "Sweep or vacuum regularly and mop with a pH-neutral cleaner as needed.",
+        question: "How do you clean rubber flooring?",
+        answer:
+          "Regular sweeping or vacuuming followed by damp mopping can help keep rubber flooring clean. Use a suitable pH neutral cleaner and avoid harsh chemicals unless the flooring manufacturer specifically recommends them.",
+      },
+      {
+        question: "How long does rubber flooring last?",
+        answer:
+          "The lifespan of rubber flooring depends on the product, installation, traffic, maintenance, and environment. High quality rubber flooring can provide long lasting performance when properly installed and maintained.",
+      },
+      {
+        question: "What is the difference between rolled rubber flooring and rubber floor mats?",
+        answer:
+          "Rolled rubber flooring is supplied in larger rolls and is generally suited to covering larger areas such as gyms, fitness centers, and exercise rooms. Rubber floor mats are better suited to smaller areas, equipment zones, entrances, and targeted protection.",
+      },
+      {
+        question: "Is rubber flooring suitable for commercial spaces?",
+        answer:
+          "Yes. Commercial rubber flooring is designed for demanding environments where durability, traction, impact resistance, and easy maintenance are important. It can be used in gyms, schools, healthcare facilities, retail spaces, and other commercial environments.",
+      },
+      {
+        question: "Does rubber flooring require professional installation?",
+        answer:
+          "Professional installation can help ensure accurate measurements, proper preparation, precise cuts, and a clean finished result. FMP Flooring provides professional rubber flooring installation for residential and commercial projects.",
       },
     ],
   },
@@ -414,14 +440,13 @@ const commercialProjectsContent = [
 
 const ctaContent = [
   {
-    headlineWhite: "Get a Free",
-    headlineTeal: "Rubber Flooring Quote",
+    title: "Ready for New Rubber Flooring?",
     description:
-      "Upgrade your space with high-performance rubber flooring. Contact FMP Flooring today for a free estimate and expert installation.",
-    phone: "+1 9802521648",
-    phoneHref: "tel:+19802521648",
-    buttonText: "Free In-Home Estimate",
+      "Upgrade your space with durable, comfortable, and reliable rubber flooring. Whether you are planning a gym, exercise room, commercial facility, school, or residential project, FMP Flooring can help you find the right flooring solution.",
+    buttonText: "Get Your Free Estimate",
     buttonHref: "/estimate",
+    secondaryButtonText: "Schedule a Consultation",
+    secondaryButtonHref: "/estimate",
     backgroundImage: "/images/Hero-Image.jpg",
   },
 ];

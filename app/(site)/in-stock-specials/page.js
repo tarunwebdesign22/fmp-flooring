@@ -1,5 +1,6 @@
 import CloseoutProductsSection from "@/components/CloseoutProductsSection";
 import CtaSection from "@/components/CtaSection";
+import FaqSection from "@/components/FaqSection";
 import FederalMarquee from "@/components/FederalMarquee";
 import FinanceBannerSection from "@/components/FinanceBannerSection";
 import GoogleReviewsSection from "@/components/homev2/GoogleReviewsSection";
@@ -82,6 +83,44 @@ const financeBannerContent = [
     footnote: "¹With approved credit.",
     footnoteLinkText: "Details",
     footnoteHref: "/financing",
+  },
+];
+
+const faqContent = [
+  {
+    title: "In Stock Specials FAQs",
+    items: [
+      {
+        question: "What is discount flooring?",
+        answer:
+          "Discount flooring includes flooring products offered at reduced prices due to clearance, closeout, overstock, discontinued styles, or limited remaining inventory. Available products and quantities vary based on current stock.",
+      },
+      {
+        question: "Where can I find discount flooring near me?",
+        answer:
+          "FMP Flooring offers discount, clearance, and in-stock flooring options for customers in Concord and the greater Charlotte area. Contact our team or visit us to check current availability.",
+      },
+      {
+        question: "Do you offer cheap flooring options?",
+        answer:
+          "Yes. Our clearance, closeout, and in-stock selections can provide affordable flooring options for residential and commercial projects. Available products vary based on current inventory.",
+      },
+      {
+        question: "What types of flooring are available in your clearance selection?",
+        answer:
+          "Our clearance and closeout inventory may include luxury vinyl plank, laminate, engineered hardwood, carpet, carpet tile, and other flooring products. Selection and availability change regularly.",
+      },
+      {
+        question: "Do you have LVP flooring deals?",
+        answer:
+          "Yes. Our in-stock and closeout inventory may include luxury vinyl plank flooring at discounted prices. Check the current selection for available LVP flooring deals while supplies last.",
+      },
+      {
+        question: "How long are flooring clearance deals available?",
+        answer:
+          "Clearance and closeout flooring is available only while current inventory lasts. Quantities may be limited, and some products may not be restocked once they are sold.",
+      },
+    ],
   },
 ];
 
@@ -171,13 +210,13 @@ const googleReviewsContent = [
 
 const ctaContent = [
   {
-    headlineWhite: "Get a Free",
-    headlineTeal: "Luxury Vinyl Plank Flooring Quote",
+    eyebrow: "Shop the Current Selection",
+    title: "Find Your Flooring Deal Before It's Gone",
     description:
-      "Upgrade your space with beautiful, durable luxury vinyl plank flooring. Whether you need waterproof LVP for your home or commercial luxury vinyl plank, our team is ready to help. Contact FMP Flooring today for a free estimate and professional installation.",
-    phone: "+1 9802521648",
-    phoneHref: "tel:+19802521648",
-    buttonText: "Free In-Home Estimate",
+      "Our clearance and closeout inventory changes regularly. Explore our current in-stock flooring or contact FMP Flooring to check availability for your project.",
+    secondaryButtonText: "Shop In-Stock Floors",
+    secondaryButtonHref: "#specials",
+    buttonText: "Get a Free Estimate",
     buttonHref: "/estimate",
     backgroundImage: "/images/lvp-banner.webp",
   },
@@ -210,6 +249,7 @@ export default function InStockSpecialsPage() {
         products={closeoutProducts}
       />
       <FinanceBannerSection content={financeBannerContent} />
+      <FaqSection content={faqContent} />
       <TestimonialsSection content={testimonialsContent} />
       <GoogleReviewsSection content={googleReviewsContent} />
       <FederalMarquee />

@@ -22,9 +22,9 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Laminate Flooring | Durable & Affordable Laminate Floors | FMP Flooring",
+  title: "Laminate Flooring & Installation | FMP Flooring",
   description:
-    "Stylish, durable, and cost-effective laminate flooring installation from FMP Flooring. Wood-look finishes, waterproof options, and professional installation for homes and commercial spaces.",
+    "Shop quality laminate flooring for residential and commercial spaces. Explore wood look and waterproof laminate flooring with professional installation from FMP Flooring.",
 };
 
 const heroContent = [
@@ -309,24 +309,54 @@ const faqContent = [
     title: "Laminate Flooring FAQs",
     items: [
       {
-        question: "What is laminate flooring made of?",
+        question: "What is laminate flooring?",
         answer:
-          "Laminate flooring is made of multiple layers, including a high-density fiberboard core and a durable wear layer.",
+          "Laminate flooring is a multi layer flooring product designed with a decorative surface, protective wear layer, and core material. It is available in a wide range of wood look, stone look, colors, textures, and patterns.",
       },
       {
         question: "Is laminate flooring waterproof?",
         answer:
-          "Standard laminate is water-resistant, and newer waterproof laminate options provide additional protection.",
+          "Some laminate flooring products are designed with waterproof or enhanced moisture resistant features, while others are not. Always check the specific product's water resistance rating and installation requirements before choosing laminate flooring for moisture prone areas.",
       },
       {
         question: "Is laminate flooring good for pets?",
         answer:
-          "Yes. Laminate floors are scratch-resistant and easy to clean, making them ideal for pet-friendly homes.",
+          "Laminate flooring can be a practical option for homes with pets because many products are designed to handle everyday wear. Choosing a product with an appropriate wear layer and following recommended maintenance practices can help protect the floor.",
       },
       {
         question: "How long does laminate flooring last?",
         answer:
-          "With proper care, laminate flooring can last 15–25 years or longer.",
+          "The lifespan of laminate flooring depends on product quality, wear layer, installation, traffic, maintenance, and environmental conditions. Choosing the right product for the expected level of use can help support long term performance.",
+      },
+      {
+        question: "Is laminate flooring cheaper than hardwood?",
+        answer:
+          "Laminate flooring is generally available at a lower price point than many hardwood flooring products. However, total project cost depends on the flooring product, installation, subfloor preparation, removal, and other project requirements.",
+      },
+      {
+        question: "How much does laminate flooring installation cost?",
+        answer:
+          "Laminate flooring installation cost varies based on project size, flooring selection, subfloor preparation, existing flooring removal, layout, and finishing requirements. FMP Flooring can provide a project specific estimate after reviewing your space.",
+      },
+      {
+        question: "Is laminate flooring easy to maintain?",
+        answer:
+          "Yes. Regular sweeping or vacuuming can remove dirt and debris, while occasional cleaning with a laminate safe product can help maintain the flooring. Avoid excessive water and follow the manufacturer's care instructions.",
+      },
+      {
+        question: "Can laminate flooring be installed in a kitchen?",
+        answer:
+          "Laminate flooring can be suitable for some kitchens, particularly products designed with enhanced moisture resistance. Spills should be cleaned promptly, and the product's installation and moisture specifications should be followed.",
+      },
+      {
+        question: "What is wood look laminate flooring?",
+        answer:
+          "Wood look laminate flooring is designed to replicate the appearance of natural wood through printed decorative layers, realistic grain patterns, textures, colors, and plank designs.",
+      },
+      {
+        question: "How do I find laminate flooring installers near me?",
+        answer:
+          "Look for experienced flooring installers who offer professional installation, accurate estimates, suitable flooring options, and clear project support. FMP Flooring provides laminate flooring installation for eligible residential and commercial projects.",
       },
     ],
   },
@@ -417,14 +447,13 @@ const commercialProjectsContent = [
 
 const ctaContent = [
   {
-    headlineWhite: "Get a Free",
-    headlineTeal: "Laminate Flooring Quote",
+    title: "Ready for New Laminate Flooring?",
     description:
-      "Upgrade your space with stylish, durable laminate flooring. Contact FMP Flooring today for a free estimate and expert installation.",
-    phone: "+1 9802521648",
-    phoneHref: "tel:+19802521648",
-    buttonText: "Free In-Home Estimate",
+      "Give your space a fresh new look with durable, stylish laminate flooring. Explore wood look and moisture resistant options and work with FMP Flooring for professional installation.",
+    buttonText: "Get Your Free Estimate",
     buttonHref: "/estimate",
+    secondaryButtonText: "Schedule a Consultation",
+    secondaryButtonHref: "/estimate",
     backgroundImage: "/images/Hero-Image.jpg",
   },
 ];

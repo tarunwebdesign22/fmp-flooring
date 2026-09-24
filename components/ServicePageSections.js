@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { OfferBadge } from "@/components/ServiceFlooringSections";
 
 export function ServiceTypesSection({ content }) {
@@ -178,6 +179,11 @@ export function ServiceCompareSection({ content }) {
           ) : null}
           <h2 className="mt-3 text-3xl font-bold text-blue sm:text-4xl">{section.title}</h2>
           <span className="mx-auto mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
+          {section.intro ? (
+            <p className="mx-auto mt-6 max-w-3xl text-[15px] leading-7 text-blue/75 sm:text-base sm:leading-8">
+              {section.intro}
+            </p>
+          ) : null}
         </div>
 
         <div className="hidden overflow-hidden rounded-2xl border border-grey/70 shadow-[0_8px_30px_rgba(34,30,83,0.06)] md:block">
@@ -249,6 +255,12 @@ export function ServiceCompareSection({ content }) {
             </li>
           ))}
         </ul>
+
+        {section.footnote ? (
+          <p className="mx-auto mt-10 max-w-3xl text-center text-[15px] leading-7 text-blue/75 sm:text-base sm:leading-8">
+            {section.footnote}
+          </p>
+        ) : null}
       </div>
     </section>
   );
@@ -300,6 +312,16 @@ export function ServiceInstallSection({ content }) {
               </li>
             ))}
           </ul>
+
+          {section.buttonText && section.buttonHref ? (
+            <Link
+              href={section.buttonHref}
+              className="mt-8 inline-flex items-center gap-2 rounded bg-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue hover:text-white"
+            >
+              {section.buttonText}
+              <span aria-hidden="true">→</span>
+            </Link>
+          ) : null}
         </div>
       </div>
     </section>

@@ -308,22 +308,32 @@ const faqContent = [
       {
         question: "What is the difference between ceramic and porcelain tile?",
         answer:
-          "Porcelain tiles are denser, harder, and have a lower moisture absorption rate than ceramic, making porcelain ideal for high-traffic and moisture-prone areas.",
+          "Ceramic and porcelain tiles are both made from clay based materials, but porcelain is denser and has a lower water absorption rate. Porcelain tile is often preferred for high traffic and moisture prone areas, while ceramic tiles offer a wide range of styles for residential and commercial flooring.",
       },
       {
-        question: "Are tile floors easy to clean?",
+        question: "Are ceramic floor tiles easy to clean?",
         answer:
-          "Yes. Sweep or vacuum regularly and mop with a tile-safe cleaner for best results.",
+          "Yes. Ceramic floor tiles are generally easy to clean and maintain. Regular sweeping or vacuuming followed by occasional mopping with a tile safe cleaner can help keep the surface looking its best.",
       },
       {
-        question: "Is tile flooring good for bathrooms?",
+        question: "Is ceramic tile flooring good for bathrooms?",
         answer:
-          "Absolutely — tile flooring is one of the best options for bathrooms due to its water resistance and durability.",
+          "Yes. Ceramic tile flooring is a popular choice for bathrooms because it is durable, easy to clean, and resistant to moisture when properly installed and maintained.",
       },
       {
-        question: "How long do tile floors last?",
+        question: "How long do ceramic floor tiles last?",
         answer:
-          "With proper installation and maintenance, tile flooring can last decades.",
+          "Properly installed and maintained ceramic floor tiles can provide many years of service. Their lifespan depends on factors such as tile quality, installation, traffic levels, maintenance, and the environment where they are installed.",
+      },
+      {
+        question: "Is ceramic tile flooring good for kitchens?",
+        answer:
+          "Yes. Ceramic tile flooring is well suited for kitchens because it is durable, easy to clean, and available in a wide range of styles, colors, and finishes.",
+      },
+      {
+        question: "What is the difference between ceramic tile and porcelain tile?",
+        answer:
+          "Porcelain is a type of ceramic tile made from more refined materials and fired at higher temperatures. It is generally denser and less porous than standard ceramic tile, making it a strong choice for areas exposed to moisture or heavy traffic.",
       },
     ],
   },

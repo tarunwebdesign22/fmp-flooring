@@ -22,9 +22,9 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Carpet Broadloom | Residential & Commercial Broadloom Carpet | FMP Flooring",
+  title: "Broadloom Carpet Flooring & Installation | FMP Flooring",
   description:
-    "Broadloom carpet installation from FMP Flooring. Soft, quiet, and comfortable wall-to-wall carpet for homes, offices, multi-family properties, and commercial spaces.",
+    "Explore broadloom carpet flooring for homes, offices, apartments, and commercial spaces. FMP Flooring provides professional carpet selection and installation services.",
 };
 
 const heroContent = [
@@ -318,33 +318,29 @@ const faqContent = [
     title: "Carpet Broadloom FAQs",
     items: [
       {
-        question: "Is carpet broadloom suitable for all types of rooms?",
+        question: "What is broadloom carpet flooring?",
         answer:
-          "Yes, it can be used in various rooms, including bedrooms, living rooms, and offices.",
+          "Broadloom carpet flooring is a continuous carpet product typically installed wall to wall across a room or larger space. It provides a seamless carpet appearance and is available in a wide range of styles, colors, textures, fibers, and performance levels.",
       },
       {
-        question: "What are the different types of carpet materials available?",
-        answer: "Common materials include nylon, polyester, wool, and olefin.",
+        question: "Is broadloom carpet good for commercial spaces?",
+        answer:
+          "Yes. Commercial broadloom carpet flooring can be suitable for offices, suites, hospitality environments, apartments, and other commercial areas where comfort, appearance, and wall to wall coverage are important. Carpet selection should be based on expected foot traffic and the specific requirements of the space.",
       },
       {
-        question: "What size is broadloom carpet?",
+        question: "How is broadloom carpet installed?",
         answer:
-          "Broadloom carpets typically come in rolls that are 12 to 15 feet wide.",
+          "Broadloom carpet installation typically involves measuring the space, preparing the subfloor, installing the appropriate carpet pad, positioning the carpet, securing and stretching it properly, completing seams and edges, and finishing transitions.",
       },
       {
-        question: "What are the benefits of broadloom carpet?",
+        question: "How long does broadloom carpet last?",
         answer:
-          "Benefits include comfort, aesthetic appeal, insulation, and sound absorption.",
+          "The lifespan of broadloom carpet depends on the carpet fiber, quality, backing, pad, installation, foot traffic, maintenance, and environment. Choosing an appropriate carpet for the expected level of use can help maximize its service life.",
       },
       {
-        question: "What is the most popular residential carpet?",
+        question: "Is broadloom carpet easy to maintain?",
         answer:
-          "Plush and textured carpets are very popular in residential settings.",
-      },
-      {
-        question: "How much does broadloom carpet cost?",
-        answer:
-          "The cost can vary, but it generally starts around $0.99 per square foot, depending on the material and quality.",
+          "Yes. Regular vacuuming, prompt spot cleaning, entryway mats, and periodic professional cleaning can help keep broadloom carpet looking fresh and performing well.",
       },
     ],
   },

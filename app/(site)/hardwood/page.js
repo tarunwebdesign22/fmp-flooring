@@ -22,9 +22,9 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Hardwood Flooring | Solid & Engineered Hardwood Floors | FMP Flooring",
+  title: "Hardwood Flooring & Installation for Homes & Businesses | FMP Flooring",
   description:
-    "Premium hardwood flooring installation from FMP Flooring. Solid and engineered hardwood floors with timeless beauty, lasting durability, and professional installation for homes and commercial spaces.",
+    "Explore quality hardwood flooring for homes and commercial spaces. Choose from solid and engineered hardwood with professional flooring installation from FMP Flooring.",
 };
 
 const heroContent = [
@@ -305,23 +305,54 @@ const faqContent = [
     title: "Hardwood Flooring FAQs",
     items: [
       {
-        question: "What is the difference between solid and engineered hardwood?",
+        question: "What is the difference between solid and engineered hardwood flooring?",
         answer:
-          "Solid hardwood is made from a single piece of wood, while engineered hardwood has a layered construction for improved stability.",
+          "Solid hardwood flooring is made from a single piece of natural wood, while engineered hardwood flooring consists of a real wood surface attached to a layered core. Both provide the appearance of natural wood, but their construction and suitable applications can differ.",
       },
       {
-        question: "Is hardwood flooring good for kitchens?",
+        question: "Is hardwood flooring a good choice for homes?",
         answer:
-          "Engineered hardwood can be suitable for kitchens when properly installed and maintained.",
+          "Yes. Hardwood flooring is a popular choice for homes because it provides natural beauty, a wide range of design options, and long lasting performance when properly installed and maintained.",
+      },
+      {
+        question: "What is the difference between hardwood flooring and wood flooring?",
+        answer:
+          "Wood flooring is a broad term that can include several types of flooring made with wood, including solid hardwood and engineered hardwood. Hardwood flooring generally refers to flooring made from natural wood designed for use as a finished floor surface.",
       },
       {
         question: "How long does hardwood flooring last?",
-        answer: "With proper care, hardwood flooring can last 30–100 years.",
+        answer:
+          "The lifespan of hardwood flooring depends on the wood species, product quality, installation, traffic, maintenance, and environmental conditions. Properly maintained hardwood flooring can provide many years of service.",
       },
       {
         question: "Can hardwood floors be refinished?",
         answer:
-          "Yes. Solid hardwood floors can be refinished multiple times to restore their appearance.",
+          "Many solid hardwood floors can be sanded and refinished multiple times, depending on their thickness and condition. Some engineered hardwood products can also be refinished, depending on the thickness of the real wood wear layer.",
+      },
+      {
+        question: "Is engineered hardwood flooring durable?",
+        answer:
+          "Yes. Quality engineered hardwood flooring can provide durable performance for residential and commercial applications. Its layered construction also provides dimensional stability compared with solid wood in certain environments.",
+      },
+      {
+        question: "Is hardwood flooring good for kitchens?",
+        answer:
+          "Hardwood flooring can be used in kitchens, but the area should be managed carefully because spills and moisture can affect wood flooring. Promptly cleaning spills and following the flooring manufacturer's care recommendations are important.",
+      },
+      {
+        question: "How do you clean hardwood flooring?",
+        answer:
+          "Regular sweeping or vacuuming can remove dirt and debris. For deeper cleaning, use a hardwood flooring cleaner appropriate for the specific finish and avoid excessive water or standing moisture.",
+      },
+      {
+        question: "How much does hardwood floor installation cost?",
+        answer:
+          "Hardwood flooring installation costs vary depending on the flooring material, project size, subfloor condition, layout, removal requirements, and installation method. FMP Flooring can provide a project specific estimate after evaluating your space.",
+      },
+      {
+        question: "Can FMP Flooring install hardwood flooring near me?",
+        answer:
+          "FMP Flooring provides professional hardwood flooring installation for eligible residential and commercial projects. Contact our team to discuss your location, project requirements, flooring preferences, and installation needs.",
       },
     ],
   },
@@ -412,14 +443,13 @@ const commercialProjectsContent = [
 
 const ctaContent = [
   {
-    headlineWhite: "Get a Free",
-    headlineTeal: "Hardwood Flooring Quote",
+    title: "Ready for Beautiful New Hardwood Flooring?",
     description:
-      "Enhance your space with beautiful, long-lasting hardwood flooring. Contact FMP Flooring today for a free estimate and expert installation.",
-    phone: "+1 9802521648",
-    phoneHref: "tel:+19802521648",
-    buttonText: "Free In-Home Estimate",
+      "Bring natural warmth, character, and lasting style to your space with quality hardwood flooring. Whether you are considering solid hardwood or engineered hardwood, FMP Flooring can help you select and install the right flooring for your project.",
+    buttonText: "Get Your Free Estimate",
     buttonHref: "/estimate",
+    secondaryButtonText: "Schedule a Consultation",
+    secondaryButtonHref: "/estimate",
     backgroundImage: "/images/Hero-Image.jpg",
   },
 ];

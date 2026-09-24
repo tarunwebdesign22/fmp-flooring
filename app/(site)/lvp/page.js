@@ -22,9 +22,9 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Luxury Vinyl Plank | Waterproof LVP Flooring | FMP Flooring",
+  title: "Luxury Vinyl Plank Flooring & Installation | FMP Flooring",
   description:
-    "Affordable waterproof luxury vinyl plank flooring from FMP Flooring. Durable wood-look LVP installation for homes and commercial spaces in North Carolina.",
+    "Discover luxury vinyl plank flooring from FMP Flooring. Explore waterproof, durable LVP flooring and professional vinyl plank flooring installation for homes and businesses.",
 };
 
 const heroContent = [
@@ -307,31 +307,42 @@ const faqContent = [
       {
         question: "What is luxury vinyl plank flooring?",
         answer:
-          "Luxury vinyl plank flooring is a durable, waterproof flooring option designed to look like real hardwood.",
+          "Luxury vinyl plank flooring is a durable flooring solution designed to replicate the appearance of natural hardwood while offering water resistance, easy maintenance, and excellent everyday performance.",
       },
       {
-        question: "Is LVP flooring waterproof?",
-        answer: "Yes. Most luxury vinyl plank flooring is 100% waterproof.",
-      },
-      {
-        question: "Is luxury vinyl plank good for pets?",
+        question: "Is luxury vinyl plank flooring waterproof?",
         answer:
-          "Yes. LVP flooring is scratch-resistant and easy to clean, making it ideal for pet-friendly homes.",
+          "Many luxury vinyl plank flooring products are designed to provide waterproof performance. The exact level of water resistance depends on the specific product and installation system, so product specifications should always be reviewed before installation.",
       },
       {
-        question: "How long does LVP flooring last?",
+        question: "Where can vinyl plank flooring be installed?",
         answer:
-          "With proper installation and care, luxury vinyl plank flooring can last 15–25 years or longer.",
+          "Vinyl plank flooring can be installed in many residential and commercial spaces, including living rooms, bedrooms, kitchens, bathrooms, basements, offices, retail spaces, and rental properties.",
       },
       {
-        question: "What is the warranty on LVP flooring?",
+        question: "How is vinyl plank flooring installed?",
         answer:
-          "We offer a lifetime warranty on all LVP flooring products, ensuring long-lasting protection against manufacturing defects.",
+          "Vinyl plank flooring installation generally involves preparing the subfloor, measuring and planning the layout, installing the planks according to the manufacturer's requirements, and completing trim and finishing work.",
       },
       {
-        question: "Is LVP Flooring pet and kid friendly?",
+        question: "Is luxury vinyl plank flooring easy to maintain?",
         answer:
-          "Yes, LVP flooring is perfect for homes with pets and children. Its scratch-resistant and waterproof features make it durable enough to handle everyday wear and tear from active households.",
+          "Yes. Luxury vinyl plank flooring generally requires regular sweeping or vacuuming and occasional damp mopping with an appropriate floor cleaner.",
+      },
+      {
+        question: "Is vinyl plank flooring good for homes with pets and children?",
+        answer:
+          "Luxury vinyl plank flooring can be a practical choice for busy households because many products offer strong scratch resistance, easy maintenance, and water resistant or waterproof performance.",
+      },
+      {
+        question: "Can luxury vinyl plank flooring be used in commercial spaces?",
+        answer:
+          "Yes. Luxury vinyl plank flooring can be suitable for many commercial environments, including offices, retail spaces, rental properties, and other areas where durability and easy maintenance are important.",
+      },
+      {
+        question: "Why should I choose professional vinyl plank flooring installation?",
+        answer:
+          "Professional installation helps ensure proper subfloor preparation, accurate plank placement, appropriate finishing, and a clean final result. Proper installation can also help support the flooring manufacturer's requirements.",
       },
     ],
   },

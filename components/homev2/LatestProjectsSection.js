@@ -13,6 +13,11 @@ export default function LatestProjectsSection({ content }) {
         <div className="mb-8 text-center sm:mb-10">
           <h2 className="text-3xl font-bold text-blue sm:text-4xl">{section.title}</h2>
           <span className="mx-auto mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
+          {section.description ? (
+            <p className="mx-auto mt-6 max-w-3xl text-[15px] leading-7 text-blue/75 sm:text-base sm:leading-8">
+              {section.description}
+            </p>
+          ) : null}
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-grey shadow-[0_8px_30px_rgba(0,0,0,0.08)]">

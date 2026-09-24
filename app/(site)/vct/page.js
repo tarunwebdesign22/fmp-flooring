@@ -22,9 +22,9 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "VCT Flooring | Vinyl Composition Tile Flooring Solutions | FMP Flooring",
+  title: "VCT Flooring & Installation | Commercial VCT Flooring",
   description:
-    "Durable, cost-effective VCT flooring installation from FMP Flooring. Commercial-grade vinyl composition tile for schools, hospitals, offices, retail, and high-traffic spaces.",
+    "Explore durable VCT flooring for commercial and institutional spaces. FMP Flooring provides vinyl composition tile, professional VCT installation, and flooring solutions.",
 };
 
 const heroContent = [
@@ -308,22 +308,52 @@ const faqContent = [
       {
         question: "What does VCT stand for?",
         answer:
-          "VCT stands for Vinyl Composition Tile, a commercial-grade flooring material made from vinyl resins and fillers.",
+          "VCT stands for Vinyl Composition Tile. It is a resilient flooring product commonly used in commercial, institutional, and high traffic environments.",
+      },
+      {
+        question: "What is VCT flooring?",
+        answer:
+          "VCT flooring is a resilient tile flooring material made primarily from vinyl resins and mineral fillers. VCT floor tiles are available in various colors and patterns and are commonly used in commercial and institutional spaces.",
       },
       {
         question: "Is VCT flooring good for commercial use?",
         answer:
-          "Yes. VCT flooring is specifically designed for high-traffic commercial and institutional environments.",
+          "Yes. VCT flooring is commonly used in commercial and institutional facilities because it can provide durable performance, design flexibility, and practical maintenance for high traffic areas.",
       },
       {
         question: "Is VCT flooring waterproof?",
         answer:
-          "VCT tiles are moisture-resistant but not fully waterproof. Proper installation and maintenance are essential.",
+          "VCT is moisture resistant but should not automatically be considered waterproof. Proper installation, maintenance, and moisture control are important, especially in areas exposed to water. Always follow the flooring manufacturer's specifications.",
       },
       {
         question: "How long does VCT flooring last?",
         answer:
-          "With proper care and maintenance, VCT flooring can last 20–30 years or longer.",
+          "The lifespan of VCT flooring depends on product quality, traffic, installation, maintenance, and facility conditions. Regular cleaning and proper maintenance can help extend the useful life of the flooring.",
+      },
+      {
+        question: "How much does VCT flooring cost?",
+        answer:
+          "VCT flooring cost depends on the product, project size, existing flooring removal, subfloor preparation, installation requirements, and finishing work. FMP Flooring can provide a project specific estimate based on your facility.",
+      },
+      {
+        question: "Is VCT flooring easy to maintain?",
+        answer:
+          "VCT flooring can be maintained with routine sweeping, cleaning, and periodic commercial floor care. Maintenance requirements vary based on traffic and facility use.",
+      },
+      {
+        question: "Can damaged VCT tiles be replaced?",
+        answer:
+          "Yes. One advantage of VCT floor tiles is that individual damaged tiles can often be replaced without removing the entire flooring system, provided matching replacement tiles are available.",
+      },
+      {
+        question: "Where is VCT flooring commonly used?",
+        answer:
+          "VCT flooring is commonly used in schools, healthcare facilities, offices, retail stores, government buildings, institutional facilities, and other commercial spaces.",
+      },
+      {
+        question: "What is the difference between VCT and LVT flooring?",
+        answer:
+          "VCT and LVT are both resilient flooring products, but they differ in construction, appearance, performance characteristics, and typical applications. VCT is commonly selected for practical commercial applications, while LVT is often chosen for more realistic wood and stone designs and additional moisture resistance.",
       },
     ],
   },
@@ -414,14 +444,13 @@ const commercialProjectsContent = [
 
 const ctaContent = [
   {
-    headlineWhite: "Get a Free",
-    headlineTeal: "VCT Flooring Quote",
+    title: "Ready for New VCT Flooring?",
     description:
-      "Upgrade your facility with durable, cost-effective VCT flooring. Whether you need vinyl composition tile for schools, offices, hospitals, or retail spaces, our team is ready to help.",
-    phone: "+1 9802521648",
-    phoneHref: "tel:+19802521648",
-    buttonText: "Free In-Home Estimate",
+      "Upgrade your commercial or institutional space with durable VCT flooring designed for everyday performance. Explore VCT tile options and get professional installation from FMP Flooring.",
+    buttonText: "Get My Free Estimate",
     buttonHref: "/estimate",
+    secondaryButtonText: "Schedule a Consultation",
+    secondaryButtonHref: "/estimate",
     backgroundImage: "/images/Hero-Image.jpg",
   },
 ];
