@@ -31,7 +31,7 @@ const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "LVP Flooring" },
+      { label: "Luxury Vinyl Plank Flooring" },
     ],
     slides: [
       {
@@ -40,11 +40,11 @@ const heroContent = [
         financing: {
           eyebrow: "LVP Flooring",
           eyebrowAsBadge: true,
-          titleBefore: "We Offer High-Quality ",
-          titleHighlightValue: "Luxury Vinyl Plank",
-          titleAfter: "",
+          titleBefore: "",
+          titleHighlightValue: "Luxury Vinyl Plank Flooring",
+          titleAfter: " for Homes & Businesses",
           description:
-            "Upgrade your space with waterproof LVP flooring that delivers the look of hardwood with superior durability and easy maintenance.",
+            "Upgrade your home or commercial space with luxury vinyl plank flooring that combines the realistic look of hardwood with waterproof performance, exceptional durability, and easy maintenance.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
@@ -88,10 +88,10 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "LVP Flooring",
-    title: "Luxury Vinyl Plank Flooring — Waterproof LVP Solutions",
+    title: "Luxury Vinyl Plank Flooring: Waterproof LVP Solutions",
     paragraphs: [
-      "Luxury Vinyl Plank flooring (LVP) is one of the most popular modern flooring options for homes and commercial spaces. Designed to replicate the natural look of hardwood, LVP flooring offers superior durability, waterproof performance, and easy maintenance at a more affordable price.",
-      "At FMP Flooring, we offer premium luxury vinyl plank flooring installation for residential and commercial projects, with a wide range of wood-look styles, textures, and plank sizes.",
+      "Luxury vinyl plank flooring is a popular flooring solution for homes and commercial spaces because it combines the appearance of natural hardwood with excellent durability and water resistance. Available in a wide range of colors, textures, plank sizes, and wood inspired designs, luxury vinyl plank flooring makes it easy to create a stylish and practical space.",
+      "At FMP Flooring, we provide premium luxury vinyl plank flooring solutions for residential and commercial projects. Our flooring options are designed for everyday performance while offering easy maintenance, comfortable underfoot performance, and the realistic appearance of hardwood.",
     ],
     images: [
       {
@@ -135,19 +135,45 @@ const introContent = [
 // ];
 
 const simpleProcessContent = createFlooringProcessContent(
-  "Get Brand New LVP Flooring in 4 Simple Steps",
-  "A clear, step-by-step process so your luxury vinyl plank flooring project stays organized, efficient, and stress-free from start to finish.",
+  "Get New Luxury Vinyl Plank Flooring in 4 Simple Steps",
+  "Our simple installation process keeps your luxury vinyl plank flooring project organized, efficient, and stress free from the initial preparation to the final finishing touches.",
+  [
+    {
+      step: "01",
+      title: "Remove Existing Flooring",
+      description:
+        "We carefully remove your existing carpet, tile, or other flooring and clear the space so it is clean and ready for your new vinyl plank flooring installation.",
+    },
+    {
+      step: "02",
+      title: "Prepare the Subfloor",
+      description:
+        "We inspect, level, and prepare the subfloor to create a smooth, stable foundation for your luxury vinyl plank flooring.",
+    },
+    {
+      step: "03",
+      title: "Professional Vinyl Plank Flooring Installation",
+      description:
+        "Our experienced installers carefully place your new vinyl planks for a clean, seamless, and professional finish. We follow proper installation practices to help ensure long lasting performance.",
+    },
+    {
+      step: "04",
+      title: "Trim, Fixtures & Final Touches",
+      description:
+        "We complete your vinyl plank flooring installation with trim and finishing details, reinstall removed fixtures, and make sure the space is clean, polished, and ready to enjoy.",
+    },
+  ],
 );
 
 const financeBannerContent = [
   {
     title: "Financing Available",
-    description: "Convenient monthly payments for your budget¹",
+    description: "Convenient monthly payment options can make your new luxury vinyl plank flooring project easier to budget.",
     buttonText: "View Financing Options",
     buttonHref: "/financing",
     backgroundImage: "/images/finance-banner-One.webp",
     footnote: "¹With approved credit.",
-    footnoteLinkText: "Details",
+    footnoteLinkText: "Details Apply",
     footnoteHref: "/financing",
   },
 ];
@@ -156,37 +182,39 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose Luxury Vinyl Plank Flooring?",
+    description:
+      "Luxury vinyl plank flooring combines the appearance of hardwood with practical features designed for busy homes and commercial spaces.",
     backgroundImage: "/images/lvp-gallery/why-choose-luxury-flooring.webp",
     items: [
       {
         icon: "moisture",
-        title: "Waterproof & Moisture-Resistant",
+        title: "Waterproof Vinyl Plank Flooring",
         description:
-          "Luxury vinyl plank flooring is 100% waterproof, making it ideal for kitchens, bathrooms, basements, laundry rooms, and high-moisture environments.",
+          "Luxury vinyl plank flooring is designed to provide waterproof performance, making it a practical choice for moisture prone areas such as kitchens, bathrooms, basements, and laundry rooms.",
       },
       {
         icon: "durable",
-        title: "Durable & Scratch-Resistant",
+        title: "Durable & Scratch Resistant Vinyl Flooring",
         description:
-          "LVP flooring is built to handle heavy foot traffic, pets, and everyday wear. Its protective wear layer resists scratches, dents, and stains.",
+          "Luxury vinyl plank flooring is built to handle everyday foot traffic, pets, and normal wear. Its protective wear layer helps resist scratches, dents, and stains while maintaining its appearance.",
       },
       {
         icon: "styles",
         title: "Realistic Hardwood Look",
         description:
-          "Advanced printing and embossed textures give luxury vinyl plank the appearance of real hardwood without the maintenance challenges.",
+          "Advanced printing and embossed textures give luxury vinyl plank flooring the realistic appearance of natural hardwood while providing easier maintenance and everyday durability.",
       },
       {
         icon: "maintenance",
         title: "Easy Maintenance",
         description:
-          "LVP flooring is easy to clean with regular sweeping and occasional damp mopping. No refinishing or special treatments required.",
+          "Luxury vinyl plank flooring is easy to maintain with regular sweeping or vacuuming and occasional damp mopping. Unlike traditional hardwood, it does not require refinishing to maintain its everyday appearance.",
       },
       {
         icon: "affordable",
         title: "Comfortable & Quiet Underfoot",
         description:
-          "Luxury vinyl plank provides warmth, sound reduction, and comfort compared to traditional hard flooring surfaces.",
+          "Luxury vinyl plank flooring provides a comfortable surface underfoot and can offer a quieter feel compared with traditional hard flooring surfaces.",
       },
     ],
   },
@@ -195,10 +223,10 @@ const benefitsContent = [
 const highlightsContent = [
   {
     items: [
-      { icon: "installation", lines: ["Installation Services", "Available"] },
-      { icon: "consultation", lines: ["Free", "Consultations"] },
-      { icon: "support", lines: ["Expert", "Support"] },
-      { icon: "selection", lines: ["Wide Selection of", "Flooring Types"] },
+      { icon: "installation", lines: ["Professional Installation", "Services"] },
+      { icon: "consultation", lines: ["Free In Home", "Consultations"] },
+      { icon: "support", lines: ["Expert Flooring", "Support"] },
+      { icon: "selection", lines: ["Wide Selection of", "Flooring Options"] },
     ],
   },
 ];
@@ -206,15 +234,15 @@ const highlightsContent = [
 const tipsContent = [
   {
     eyebrow: "Care Guide",
-    title: "Maintenance Tips",
+    title: "Luxury Vinyl Plank Flooring Maintenance Tips",
     description:
-      "Keep your LVP floors looking their best with a simple cleaning routine that protects the wear layer and waterproof surface.",
+      "Keep your luxury vinyl plank flooring looking its best with a simple cleaning routine that helps protect the wear layer, maintain its appearance, and preserve its waterproof performance.",
     backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
-      "Vacuum daily to remove debris from the plank surface.",
-      "Damp mop with a mild vinyl floor cleaner or mild dish soap.",
-      "Clean spills quickly to maintain appearance and longevity.",
-      "Avoid harsh chemicals that can damage the wear layer finish.",
+      "Vacuum or sweep regularly to remove dirt, dust, and debris from the luxury vinyl plank surface.",
+      "Damp mop regularly using a manufacturer approved vinyl floor cleaner or other suitable mild cleaning solution.",
+      "Clean spills promptly to help maintain the appearance and long term performance of your vinyl plank flooring.",
+      "Avoid harsh chemicals, abrasive cleaners, and cleaning methods that may damage the protective wear layer.",
     ],
   },
 ];
@@ -223,14 +251,15 @@ const applicationsContent = [
   {
     eyebrow: "Where It Works",
     title: "Luxury Vinyl Plank Flooring Applications",
-    description: "Luxury vinyl plank flooring is ideal for:",
+    description: "Luxury vinyl plank flooring is ideal for residential and commercial spaces where durability, water resistance, easy maintenance, and a hardwood inspired appearance are important.",
+
     items: [
-      "Living rooms and family rooms",
-      "Kitchens and bathrooms",
-      "Basements and laundry rooms",
-      "Bedrooms and hallways",
-      "Retail spaces and offices",
-      "Rental properties and remodels",
+      "Living Rooms and Family Rooms",
+      "Kitchens and Bathrooms",
+      "Basements and Laundry Rooms",
+      "Bedrooms and Hallways",
+      "Retail Spaces and Offices",
+      "Rental Properties and Remodeling Projects",
     ],
   },
 ];
@@ -238,7 +267,7 @@ const applicationsContent = [
 const compareContent = [
   {
     eyebrow: "Compare Options",
-    title: "LVP Flooring vs Other Flooring Types",
+    title: "Luxury Vinyl Plank Flooring vs Hardwood and Laminate Flooring",
     featureLabel: "Feature",
     columns: ["LVP Flooring", "Hardwood Flooring", "Laminate Flooring"],
     rows: [
@@ -254,15 +283,18 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Luxury Vinyl Plank Installation",
-    description:
-      "Our expert installers specialize in luxury vinyl plank flooring installation, ensuring proper subfloor preparation, precise plank placement, and a long-lasting finish.",
-    servicesTitle: "Our LVP Flooring Services Include:",
+    title: "Professional Vinyl Plank Flooring Installation",
+    paragraphs: [
+      "Professional installation helps ensure your luxury vinyl plank flooring looks great and performs as intended. Our experienced installers specialize in proper subfloor preparation, precise plank placement, finishing details, and a clean professional result.",
+    ],
+    servicesTitle: "Our Luxury Vinyl Plank Flooring Services Include:",
     services: [
-      "Free in-home consultations",
+      "Free in home consultations",
       "Accurate flooring estimates",
-      "Professional LVP flooring installation",
-      "Residential and commercial LVP solutions",
+      "Professional vinyl plank flooring installation",
+      "Subfloor preparation",
+      "Residential and commercial flooring solutions",
+      "Final cleanup and finishing",
     ],
     image: "/images/lvp-gallery/Professional-Luxury-Image.webp",
     imageAlt: "Professional luxury vinyl plank flooring installation",
@@ -433,10 +465,10 @@ const commercialProjectsContent = [
 
 const ctaContent = [
   {
-    headlineWhite: "Get a Free",
-    headlineTeal: "Luxury Vinyl Plank Quote",
+    headlineWhite: "Get Your Free",
+    headlineTeal: "Luxury Vinyl Plank Flooring Estimate",
     description:
-      "Upgrade your space with beautiful, durable luxury vinyl plank flooring. Contact FMP Flooring today for a free estimate and expert installation.",
+      "Ready to transform your home or commercial space? Contact FMP Flooring for expert guidance, accurate estimates, and professional luxury vinyl plank flooring installation.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
     buttonText: "Free In-Home Estimate",

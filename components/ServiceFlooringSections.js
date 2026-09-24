@@ -138,6 +138,14 @@ const benefitIcons = {
       <path d="m2 17 10 5 10-5" />
     </svg>
   ),
+  highTraffic: (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <circle cx="9" cy="7" r="3" />
+      <circle cx="17" cy="8" r="2.5" />
+      <path d="M3.5 19c1-3.5 3.5-5 5.5-5s4.5 1.5 5.5 5" />
+      <path d="M14 14.5c1.5-.5 3-.2 4.5 1.5.5 1 .8 2 .8 3" />
+    </svg>
+  ),
 };
 
 export function ServiceBenefitsSection({ content }) {
@@ -166,6 +174,11 @@ export function ServiceBenefitsSection({ content }) {
           ) : null}
           <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">{section.title}</h2>
           <span className="mx-auto mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
+          {section.description ? (
+            <p className="mx-auto mt-5 max-w-3xl text-[15px] leading-7 text-white/85 sm:text-base">
+              {section.description}
+            </p>
+          ) : null}
         </div>
 
         <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">

@@ -40,11 +40,11 @@ const heroContent = [
         financing: {
           eyebrow: "Hardwood Flooring",
           eyebrowAsBadge: true,
-          titleBefore: "We Offer High-Quality ",
+          titleBefore: "Quality ",
           titleHighlightValue: "Hardwood Flooring",
-          titleAfter: "",
+          titleAfter: " for Beautiful, Lasting Spaces",
           description:
-            "Upgrade your space with professional hardwood flooring installation — solid and engineered options for homes and commercial projects.",
+            "Upgrade your space with professional hardwood flooring installation and a wide selection of solid and engineered hardwood options. Choose beautiful wood flooring designed to bring warmth, character, and lasting style to residential and commercial spaces.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
@@ -88,10 +88,10 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Hardwood Flooring",
-    title: "Hardwood Flooring – Timeless Beauty, Strength & Long-Lasting Value",
+    title: "Hardwood Flooring for Timeless Beauty & Lasting Performance",
     paragraphs: [
-      "Hardwood flooring is one of the most popular and premium flooring options for homes and commercial spaces. Known for its natural beauty, durability, and long-term value, hardwood floors add warmth, elegance, and character to any interior. Whether you choose solid hardwood flooring or engineered hardwood flooring, hardwood floors offer unmatched style and performance.",
-      "At FMP Flooring, we provide high-quality hardwood flooring installation for residential and commercial projects, offering a wide selection of wood species, finishes, and plank styles.",
+      "Hardwood flooring is a popular choice for homeowners and businesses looking for a combination of natural beauty, durability, and timeless style. With its natural wood grain, range of colors, and variety of plank styles, hardwood floors can complement traditional, modern, and contemporary interiors.",
+      "At FMP Flooring, we offer hardwood flooring solutions for residential and commercial projects, including solid hardwood flooring and engineered hardwood flooring. Our flooring professionals can help you choose the right wood flooring based on your space, design preferences, lifestyle, and installation requirements.",
     ],
     images: [
       {
@@ -136,18 +136,44 @@ const introContent = [
 
 const simpleProcessContent = createFlooringProcessContent(
   "Get Brand New Hardwood in 4 Simple Steps",
-  "A clear, step-by-step process so your hardwood flooring project stays organized, efficient, and stress-free from start to finish.",
+  "Our clear flooring process keeps your project organized and efficient from the initial consultation through professional installation and final finishing.",
+  [
+    {
+      step: "01",
+      title: "Old Flooring Removal",
+      description:
+        "We remove existing carpet, tile, or other flooring and haul it away, leaving your space clean and ready for hardwood flooring installation.",
+    },
+    {
+      step: "02",
+      title: "Subfloor Preparation",
+      description:
+        "We inspect and prepare the subfloor to create a clean, level, and stable foundation for your new hardwood floor. Proper preparation helps support a smooth and durable installation.",
+    },
+    {
+      step: "03",
+      title: "Professional Hardwood Installation",
+      description:
+        "Our experienced installers carefully place your hardwood flooring with accurate measurements, precise cuts, and attention to detail for a clean and professional finish.",
+    },
+    {
+      step: "04",
+      title: "Trim, Fixtures & Final Touches",
+      description:
+        "We complete the installation with careful trimming and finishing details, reinstall removed fixtures where needed, and make sure your new hardwood floor is clean and ready to enjoy.",
+    },
+  ],
 );
 
 const financeBannerContent = [
   {
     title: "Financing Available",
-    description: "Convenient monthly payments for your budget¹",
+    description: "Convenient monthly payment options can help make your hardwood flooring project easier to manage.",
     buttonText: "View Financing Options",
     buttonHref: "/financing",
     backgroundImage: "/images/finance-banner-One.webp",
     footnote: "¹With approved credit.",
-    footnoteLinkText: "Details",
+    footnoteLinkText: "Details Apply",
     footnoteHref: "/financing",
   },
 ];
@@ -162,31 +188,37 @@ const benefitsContent = [
         icon: "styles",
         title: "Timeless & Elegant Appearance",
         description:
-          "Hardwood flooring delivers a classic, upscale look that never goes out of style. Natural wood grain patterns and rich finishes enhance any room’s design.",
+          "Hardwood flooring brings natural warmth and character to an interior. Wood grain, plank patterns, colors, and finishes provide a timeless look that works across a wide range of design styles.",
       },
       {
         icon: "durable",
-        title: "Durable & Long-Lasting",
+        title: "Durable & Long Lasting",
         description:
-          "High-quality hardwood floors can last for decades. With proper care, solid hardwood flooring can be sanded and refinished multiple times.",
+          "Quality hardwood flooring can provide long lasting performance when properly installed and maintained. Solid hardwood can also be sanded and refinished when appropriate, helping refresh its appearance over time.",
       },
       {
-        icon: "affordable",
-        title: "Adds Value to Your Property",
+        icon: "styles",
+        title: "Wide Range of Styles",
         description:
-          "Hardwood flooring increases home resale value and is highly attractive to buyers, making it a smart long-term investment.",
+          "Choose from different wood species, colors, finishes, plank widths, and patterns to create a hardwood floor that complements the style of your home or commercial space.",
       },
       {
         icon: "maintenance",
         title: "Easy to Clean & Maintain",
         description:
-          "Hardwood floors are easy to maintain with regular sweeping and occasional mopping using hardwood-safe cleaners.",
+          "Hardwood floors can be maintained with regular sweeping, dust removal, and occasional cleaning using products recommended for the specific flooring finish.",
       },
       {
-        icon: "moisture",
-        title: "Healthy Indoor Flooring Option",
+        icon: "affordable",
+        title: "Solid & Engineered Options",
         description:
-          "Hardwood flooring does not trap dust, allergens, or pet dander, making it a great choice for healthier indoor air quality.",
+          "FMP Flooring offers both solid hardwood flooring and engineered hardwood flooring, giving you options based on your space, design goals, and installation requirements.",
+      },
+      {
+        icon: "highTraffic",
+        title: "Versatile for Residential & Commercial Spaces",
+        description:
+          "Hardwood flooring can add warmth and character to homes, offices, retail spaces, and other interiors where natural wood flooring is a good fit.",
       },
     ],
   },
@@ -206,15 +238,31 @@ const highlightsContent = [
 const tipsContent = [
   {
     eyebrow: "Care Guide",
-    title: "Maintenance Tips",
+    title: "Hardwood Flooring Maintenance Tips",
     description:
-      "Keep your hardwood floors looking their best with a simple, consistent cleaning routine that protects the finish and natural wood grain.",
+      "Keep your hardwood floors looking their best with a simple, consistent cleaning routine that helps protect the finish and natural wood surface.",
     backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
-      "Sweep or vacuum regularly to remove dirt and debris that can scratch the finish.",
-      "Use a soft-bristle broom or a vacuum with a hard-floor setting.",
-      "Damp mop with a hardwood-safe cleaner — avoid standing water and harsh chemicals.",
-      "Place mats at entryways and felt pads under furniture legs.",
+      {
+        title: "Sweep or Vacuum Regularly",
+        description:
+          "Remove dust, dirt, and debris regularly to help prevent particles from scratching or wearing the flooring finish.",
+      },
+      {
+        title: "Use the Right Vacuum Setting",
+        description:
+          "Use a soft-bristle broom or a vacuum designed for hard floors. Avoid attachments or settings that may scratch the surface.",
+      },
+      {
+        title: "Clean With a Suitable Hardwood Cleaner",
+        description:
+          "Use a cleaner recommended for your hardwood flooring and finish. Avoid excessive water, standing moisture, and harsh cleaning chemicals.",
+      },
+      {
+        title: "Protect High Traffic Areas",
+        description:
+          "Place mats at entryways and use felt pads under furniture legs to help reduce dirt, moisture, and scratches on the floor.",
+      },
     ],
   },
 ];
@@ -223,14 +271,16 @@ const applicationsContent = [
   {
     eyebrow: "Where It Works",
     title: "Hardwood Flooring Applications",
-    description: "Hardwood flooring is perfect for:",
+    description: "Hardwood flooring can bring natural warmth and style to a wide variety of residential and commercial spaces.",
     items: [
-      "Living rooms and family rooms",
-      "Bedrooms and hallways",
-      "Dining rooms",
-      "Home offices",
-      "Commercial offices and retail spaces",
-      "Stairs and upper levels",
+      "Living Rooms & Family Rooms",
+      "Bedrooms & Hallways",
+      "Dining Rooms",
+      "Home Offices",
+      "Commercial Offices & Retail Spaces",
+      "Stairs & Upper Levels",
+      "Entryways & Foyers",
+      "Open Concept Living Spaces",
     ],
   },
 ];
@@ -239,15 +289,41 @@ const compareContent = [
   {
     eyebrow: "Compare Options",
     title: "Hardwood Flooring vs Other Flooring Types",
+    intro:
+      "Every flooring material has different characteristics. Compare hardwood flooring with laminate and vinyl to help determine which option fits your project.",
     featureLabel: "Feature",
     columns: ["Hardwood Flooring", "Laminate Flooring", "Vinyl Flooring"],
     rows: [
       { feature: "Natural Wood", values: [true, false, false] },
-      { feature: "Durability", values: ["High", "Moderate", "Moderate"] },
-      { feature: "Refinishable", values: [true, false, false] },
-      { feature: "Adds Home Value", values: [true, false, "Partial"] },
-      { feature: "Timeless Style", values: [true, "Partial", "Partial"] },
+      {
+        feature: "Natural Wood Grain",
+        values: [true, "Partial", "Partial"],
+      },
+      {
+        feature: "Refinishing Potential*",
+        values: [true, false, false],
+      },
+      {
+        feature: "Design Options",
+        values: ["Excellent", "Excellent", "Excellent"],
+      },
+      { feature: "Durability", values: ["High", "High", "High"] },
+      {
+        feature: "Moisture Resistance",
+        values: ["Limited", "Moderate", "Excellent"],
+      },
+      {
+        feature: "Long Term Appeal",
+        values: ["Excellent", "Good", "Good"],
+      },
+      {
+        feature: "Residential Applications",
+        values: ["Excellent", "Excellent", "Excellent"],
+      },
     ],
+    note: "*Refinishing depends on the specific hardwood product, thickness, finish, and condition.",
+    footnote:
+      "Hardwood flooring is a strong choice when natural wood appearance, long term style, and refinishing potential are important. Laminate and vinyl can be suitable alternatives where specific durability, moisture, maintenance, or budget requirements take priority.",
   },
 ];
 
@@ -255,14 +331,17 @@ const installContent = [
   {
     eyebrow: "Professional Installation",
     title: "Professional Hardwood Flooring Installation",
-    description:
-      "Our expert installers specialize in hardwood flooring installation, ensuring precise plank placement, proper subfloor preparation, and a flawless finish.",
+    paragraphs: [
+      "Professional installation helps ensure that your hardwood flooring is properly planned, measured, prepared, and installed. Our flooring professionals pay close attention to layout, plank placement, cuts, transitions, and finishing details throughout the installation process.",
+      "Whether you are installing solid hardwood flooring or engineered hardwood flooring, FMP Flooring provides professional flooring installation for residential and commercial projects.",
+    ],
     servicesTitle: "Our Hardwood Flooring Services Include:",
     services: [
-      "Free in-home consultations",
+      "Free in home consultations",
       "Accurate flooring estimates",
       "Professional hardwood floor installation",
-      "Residential and commercial hardwood solutions",
+      "Solid and engineered hardwood flooring options",
+      "Residential and commercial hardwood flooring solutions",
     ],
     image: "/images/hardwood-gallery/Professional-Hardwood-Image.webp",
     imageAlt: "Professional hardwood flooring installation",

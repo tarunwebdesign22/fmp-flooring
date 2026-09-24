@@ -40,11 +40,11 @@ const heroContent = [
         financing: {
           eyebrow: "Rubber Flooring",
           eyebrowAsBadge: true,
-          titleBefore: "We Offer High-Quality ",
+          titleBefore: "Durable ",
           titleHighlightValue: "Rubber Flooring",
-          titleAfter: "",
+          titleAfter: " for Gyms, Exercise Rooms & Commercial Spaces",
           description:
-            "Upgrade your space with professional rubber flooring installation — durable, slip-resistant floors for gyms, schools, and commercial projects.",
+            "Create a safer, more comfortable space with high quality rubber flooring designed for demanding environments. Our rubber flooring solutions provide durability, excellent traction, impact resistance, and comfortable performance for gyms, exercise rooms, schools, and commercial spaces.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
@@ -88,10 +88,10 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Rubber Flooring",
-    title: "Rubber Flooring – Resilient, Comfortable & Long-Lasting",
+    title: "Rubber Flooring That Is Durable, Comfortable & Long Lasting",
     paragraphs: [
-      "Rubber flooring is a versatile, heavy-duty flooring solution ideal for commercial and residential use. Known for its durability, slip resistance, comfort underfoot, and noise-reducing performance, rubber floors are perfect for gyms, fitness centers, playrooms, schools, healthcare facilities, garages, and more.",
-      "At FMP Flooring, we offer premium commercial rubber flooring and residential rubber flooring options in a range of thicknesses, colors, and styles to match your project’s needs.",
+      "Rubber flooring is a versatile flooring solution designed to handle high traffic, heavy equipment, and everyday use. Its resilient surface provides excellent durability, slip resistance, and comfort underfoot, making it a practical choice for both commercial and residential spaces.",
+      "Rubber flooring is especially popular for gyms, fitness centers, exercise rooms, schools, childcare facilities, healthcare spaces, garages, and other areas where performance and durability matter. FMP Flooring offers a range of rubber flooring options to help you find the right solution for your space and project requirements.",
     ],
     images: [
       {
@@ -136,18 +136,44 @@ const introContent = [
 
 const simpleProcessContent = createFlooringProcessContent(
   "Get Brand New Rubber Flooring in 4 Simple Steps",
-  "A clear, step-by-step process so your rubber flooring project stays organized, efficient, and stress-free from start to finish.",
+  "Our straightforward flooring process keeps your project organized, efficient, and stress free from the first consultation to the final installation.",
+  [
+    {
+      step: "01",
+      title: "Old Flooring Removal",
+      description:
+        "We remove existing carpet, tile, or other flooring and haul it away so your space is clean and ready for the next stage of your flooring project.",
+    },
+    {
+      step: "02",
+      title: "Subfloor Preparation",
+      description:
+        "We inspect and prepare the subfloor to create a clean, level, and stable foundation for your new rubber flooring. Proper preparation helps support a smooth and long lasting installation.",
+    },
+    {
+      step: "03",
+      title: "Professional Rubber Flooring Installation",
+      description:
+        "Our experienced flooring professionals carefully install your new rubber flooring with accurate layouts, precise cuts, and attention to detail for a clean and professional finish.",
+    },
+    {
+      step: "04",
+      title: "Finishing & Final Touches",
+      description:
+        "We complete the installation with careful trimming and finishing details, reinstall removed fixtures where needed, and make sure your new floor is clean and ready to use.",
+    },
+  ],
 );
 
 const financeBannerContent = [
   {
     title: "Financing Available",
-    description: "Convenient monthly payments for your budget¹",
+    description: "Convenient monthly payment options can help make your new flooring project easier to manage.",
     buttonText: "View Financing Options",
     buttonHref: "/financing",
     backgroundImage: "/images/finance-banner-One.webp",
     footnote: "¹With approved credit.",
-    footnoteLinkText: "Details",
+    footnoteLinkText: "Details Apply",
     footnoteHref: "/financing",
   },
 ];
@@ -160,33 +186,39 @@ const benefitsContent = [
     items: [
       {
         icon: "durable",
-        title: "Extremely Durable & Long-Lasting",
+        title: "Extremely Durable & Long Lasting",
         description:
-          "Rubber flooring is engineered to withstand high-traffic areas and impact, making it ideal for commercial rubber flooring, gym flooring, and busy spaces that require long-lasting performance.",
+          "Rubber flooring is designed to withstand heavy traffic, daily use, and impact. Its resilient construction makes it a dependable choice for gyms, fitness centers, schools, and commercial spaces.",
       },
       {
-        icon: "affordable",
-        title: "Comfortable & Shock-Absorbing",
+        icon: "highTraffic",
+        title: "Comfortable & Shock Absorbing",
         description:
-          "Rubber floors provide cushioning underfoot, reducing fatigue and minimizing stress on joints — perfect for fitness rooms, gyms, childcare areas, and standing workstations.",
+          "Rubber flooring provides cushioning underfoot and helps absorb impact. This makes it a comfortable option for exercise rooms, fitness areas, training spaces, and areas where people spend extended periods standing.",
       },
       {
         icon: "moisture",
-        title: "Slip-Resistant & Safe",
+        title: "Slip Resistant & Safe",
         description:
-          "Rubber flooring delivers excellent traction and slip resistance, making it a safe choice for gyms, school hallways, and wet areas such as locker rooms or poolsides.",
+          "Rubber flooring provides excellent traction and slip resistance, helping create a safer surface for gyms, schools, locker rooms, exercise areas, and other active spaces.",
+      },
+      {
+        icon: "moisture",
+        title: "Moisture Resistant",
+        description:
+          "Rubber flooring can perform well in areas exposed to moisture when the appropriate product and installation method are selected. It is a practical option for locker rooms, fitness facilities, and other high use areas.",
       },
       {
         icon: "maintenance",
-        title: "Low-Maintenance & Easy to Clean",
+        title: "Low Maintenance & Easy to Clean",
         description:
-          "Rubber floors are simple to maintain. Regular sweeping and damp mopping keep your rubber flooring looking great without special cleaners.",
+          "Rubber floors are simple to maintain. Regular sweeping or vacuuming followed by damp mopping can help keep the surface clean and looking its best.",
       },
       {
         icon: "styles",
-        title: "Eco-Friendly & Recyclable Options",
+        title: "Recycled & Sustainable Options",
         description:
-          "Many rubber flooring products are made from recycled materials and can be recycled again at end of life, making them a sustainable flooring choice.",
+          "Many rubber flooring products are available with recycled material content. These options can provide a durable flooring solution while supporting projects with sustainability goals.",
       },
     ],
   },
@@ -206,15 +238,31 @@ const highlightsContent = [
 const tipsContent = [
   {
     eyebrow: "Care Guide",
-    title: "Maintenance Tips",
+    title: "Rubber Flooring Maintenance Tips",
     description:
-      "Keep your rubber floors looking their best with a simple, consistent cleaning routine that protects the surface and slip-resistant texture.",
+      "Keep your rubber flooring looking its best with a simple cleaning routine that helps protect the surface and maintain its performance.",
     backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
-      "Sweep or vacuum regularly to remove dirt and debris from the textured surface.",
-      "Damp mop with a pH-neutral cleaner — avoid harsh chemicals and solvents.",
-      "Address stubborn stains promptly with a soft brush and a gentle solution.",
-      "Place mats at entryways to reduce grit and extend the life of the floor.",
+      {
+        title: "Sweep or Vacuum Regularly",
+        description:
+          "Sweep or vacuum regularly to remove dirt, dust, and debris from the surface before they build up.",
+      },
+      {
+        title: "Use a Suitable Cleaner",
+        description:
+          "Damp mop the floor with a suitable pH neutral cleaner. Avoid harsh chemicals and cleaning products that may damage the flooring surface.",
+      },
+      {
+        title: "Clean Spills Quickly",
+        description:
+          "Address spills and stubborn stains promptly using an appropriate cleaning solution and a soft brush or mop.",
+      },
+      {
+        title: "Use Mats at Entrances",
+        description:
+          "Place mats at entrances to help reduce dirt and grit being brought onto the floor and to support easier daily maintenance.",
+      },
     ],
   },
 ];
@@ -223,16 +271,17 @@ const applicationsContent = [
   {
     eyebrow: "Where It Works",
     title: "Applications for Rubber Flooring",
-    description: "Rubber flooring is ideal for:",
+    description: "Rubber flooring is a practical choice for spaces that need durability, traction, comfort, and easy maintenance.",
     items: [
-      "Commercial gym and fitness center flooring",
-      "Home gym flooring",
-      "Childcare and preschool play areas",
-      "Healthcare facilities and clinics",
-      "School hallways and classrooms",
-      "Locker rooms and wet zones",
-      "Garages and workshop floors",
-      "Retail and commercial spaces",
+      "Commercial Gyms & Fitness Centers",
+      "Home Gyms",
+      "Exercise Rooms",
+      "Childcare & Preschool Play Areas",
+      "Healthcare Facilities & Clinics",
+      "Schools & Educational Facilities",
+      "Locker Rooms & Wet Areas",
+      "Garages & Workshop Floors",
+      "Retail & Commercial Spaces",
     ],
   },
 ];
@@ -241,15 +290,37 @@ const compareContent = [
   {
     eyebrow: "Compare Options",
     title: "Rubber Flooring vs Other Floor Types",
+    intro:
+      "Choosing the right flooring depends on how the space will be used. Compare rubber flooring with other common flooring options to understand which solution may work best for your project.",
     featureLabel: "Feature",
     columns: ["Rubber Flooring", "Vinyl Flooring", "Carpet Flooring"],
     rows: [
       { feature: "Durability", values: ["Excellent", "Good", "Moderate"] },
-      { feature: "Moisture Resistance", values: ["Very Good", "Very Good", "Poor"] },
+      {
+        feature: "Moisture Resistance",
+        values: ["Very Good", "Very Good", "Limited"],
+      },
       { feature: "Comfort Underfoot", values: ["High", "Moderate", "High"] },
-      { feature: "Slip Resistance", values: ["Excellent", "Good", "Poor"] },
-      { feature: "Best For Gyms/Play Areas", values: [true, "Partial", false] },
+      {
+        feature: "Impact Absorption",
+        values: ["Excellent", "Moderate", "Moderate"],
+      },
+      {
+        feature: "Slip Resistance",
+        values: ["Excellent", "Good", "Moderate"],
+      },
+      {
+        feature: "Gym & Exercise Areas",
+        values: ["Excellent", "Good", "Limited"],
+      },
+      {
+        feature: "High Traffic Areas",
+        values: ["Excellent", "Good", "Moderate"],
+      },
+      { feature: "Maintenance", values: ["Easy", "Easy", "Moderate"] },
     ],
+    footnote:
+      "Rubber flooring is particularly well suited to active environments where durability, impact resistance, traction, and comfort are important. Vinyl and carpet may be better suited to other applications depending on the space and project requirements.",
   },
 ];
 
@@ -257,14 +328,16 @@ const installContent = [
   {
     eyebrow: "Professional Installation",
     title: "Professional Rubber Flooring Installation",
-    description:
-      "Our experienced flooring professionals ensure proper layout, precise cuts, and secure installation for every rubber flooring project — whether commercial or residential.",
+    paragraphs: [
+      "Proper installation plays an important role in the appearance, performance, and longevity of your rubber flooring. Our experienced flooring professionals handle the installation process with careful planning, accurate measurements, precise cuts, and detailed finishing.",
+      "Whether you need rubber gym flooring, rubber exercise room flooring, or commercial rubber flooring, we can help you plan and complete your flooring project with professional service from start to finish.",
+    ],
     servicesTitle: "Our Rubber Flooring Services Include:",
     services: [
-      "Free on-site consultation and measurement",
+      "Free on site consultation and measurement",
       "Accurate project quotes",
       "Professional rubber flooring installation",
-      "Commercial and residential rubber flooring solutions",
+      "Commercial and residential flooring solutions",
     ],
     image: "/images/rubber-gallery/Professional-Rubber-Flooring-Image.webp",
     imageAlt: "Professional rubber flooring installation",

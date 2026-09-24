@@ -40,11 +40,11 @@ const heroContent = [
         financing: {
           eyebrow: "Ceramic Flooring",
           eyebrowAsBadge: true,
-          titleBefore: "We Offer High-Quality ",
+          titleBefore: "High Quality ",
           titleHighlightValue: "Ceramic Tile Flooring",
-          titleAfter: "",
+          titleAfter: " for Homes & Businesses",
           description:
-            "Upgrade your space with professional ceramic, porcelain, and specialty tile flooring installation for homes and commercial projects.",
+            "Upgrade your space with durable and stylish ceramic floor tiles, porcelain tile, and specialty tile flooring. We provide professional tile installation for residential and commercial spaces.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
@@ -88,10 +88,10 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Ceramic Flooring",
-    title: "Premium Tile Flooring – Ceramic, Porcelain & More",
+    title: "Premium Ceramic Tile Flooring for Every Space",
     paragraphs: [
-      "Tile flooring gives your space timeless beauty, long-lasting performance, and easy maintenance. At FMP Flooring, we offer a complete range of ceramic tile, porcelain tile, and specialty tile flooring solutions for residential and commercial spaces. From kitchens and bathrooms to entryways, offices, and retail locations, tile flooring delivers style, durability, and moisture resistance.",
-      "Whether you’re searching for ceramic tile flooring, porcelain tile flooring, glazed or matte-finish tiles, or designer tile floors, we have the perfect options for your project.",
+      "Ceramic tile flooring combines timeless style, durability, and easy maintenance, making it a practical choice for both residential and commercial spaces. At FMP Flooring, we offer a wide selection of ceramic floor tiles, porcelain tile, and specialty tile flooring for kitchens, bathrooms, entryways, offices, retail locations, and more.",
+      "Our ceramic floor tiles are available in a variety of colors, patterns, sizes, textures, and finishes, allowing you to create a look that complements your space. Whether you need durable flooring for a busy commercial property or stylish tile for your home, we can help you choose the right flooring solution for your project.",
     ],
     images: [
       {
@@ -135,8 +135,34 @@ const introContent = [
 // ];
 
 const simpleProcessContent = createFlooringProcessContent(
-  "Get Brand New Ceramic Tile in 4 Simple Steps",
-  "A clear, step-by-step process so your ceramic tile flooring project stays organized, efficient, and stress-free from start to finish.",
+  "Get New Ceramic Tile Flooring in 4 Simple Steps",
+  "A clear, step-by-step process so your ceramic tile flooring project stays organized, efficient, and stress free from start to finish",
+  [
+    {
+      step: "01",
+      title: "Old Flooring & Haul Away",
+      description:
+        "We remove your existing carpet, tile, or other flooring and haul it away so the space is clear and ready for installation.",
+    },
+    {
+      step: "02",
+      title: "Subfloor Preparation",
+      description:
+        "We inspect, level, and prepare the subfloor to create a smooth, stable foundation for your new ceramic tile flooring.",
+    },
+    {
+      step: "03",
+      title: "Professional Tile Installation",
+      description:
+        "Our experienced installers precisely lay your ceramic floor tiles for a clean, level, seamless, and professional finish.",
+    },
+    {
+      step: "04",
+      title: "Trim, Fixtures & Final Touches",
+      description:
+        "We complete the installation with trim and finishing details, then reinstall removed fixtures and ensure everything is clean, polished, and ready to enjoy.",
+    },
+  ],
 );
 
 const financeBannerContent = [
@@ -160,33 +186,33 @@ const benefitsContent = [
     items: [
       {
         icon: "durable",
-        title: "Durable & Long-Lasting",
+        title: "Durable & Long Lasting",
         description:
-          "Tile flooring — including ceramic tile and porcelain tile — is engineered for strength. Tile floors resist scratches, moisture, stains, and heavy foot traffic, making them ideal for high-use areas.",
+          "Ceramic and porcelain tile flooring is designed for durability and everyday performance. Ceramic floor tiles resist scratches, moisture, stains, and heavy foot traffic, making them suitable for busy residential and commercial spaces.",
       },
       {
         icon: "moisture",
         title: "Moisture & Water Resistant",
         description:
-          "Tile flooring performs exceptionally well in moisture-prone environments like kitchens, bathrooms, laundry rooms, and entryways. Porcelain tiles are especially known for their low water absorption rate.",
+          "Ceramic tile flooring performs well in moisture prone areas such as kitchens, bathrooms, laundry rooms, and entryways. Porcelain tile offers especially low water absorption for areas where moisture resistance is important.",
       },
       {
         icon: "maintenance",
         title: "Easy to Clean & Maintain",
         description:
-          "Tile floors are simple to keep clean. Regular sweeping and occasional mopping keep your tile flooring looking new for years.",
+          "Ceramic floor tiles are simple to clean and maintain. Regular sweeping and occasional mopping help keep tile flooring looking fresh while reducing everyday maintenance.",
       },
       {
         icon: "styles",
         title: "Endless Style Options",
         description:
-          "Choose from a wide variety of tile shapes, sizes, colors, finishes, and textures. From classic subway tiles and wood-look tiles to large-format porcelain and mosaic accents, there’s a tile look for every design.",
+          "Choose from a wide range of ceramic tiles in different shapes, sizes, colors, patterns, finishes, and textures. From classic designs to modern styles, ceramic floor tiles can complement almost any interior.",
       },
       {
         icon: "affordable",
-        title: "Sustainable & Eco-Friendly",
+        title: "Sustainable & Eco Friendly",
         description:
-          "Tile flooring is a sustainable flooring choice. Many tiles are made with natural materials, low VOC finishes, and long lifespans that reduce replacement frequency.",
+          "Tile flooring can be a sustainable flooring choice because many tile products are made from natural materials and offer long service lives. Durable ceramic floor tiles can help reduce the need for frequent flooring replacement.",
       },
     ],
   },
@@ -206,15 +232,31 @@ const highlightsContent = [
 const tipsContent = [
   {
     eyebrow: "Care Guide",
-    title: "Maintenance Tips",
+    title: "Ceramic Tile Flooring Maintenance Tips",
     description:
-      "Keep your ceramic floors looking their best with a simple, consistent cleaning routine that protects the tile surface and grout lines.",
+      "Keep your ceramic floors looking their best with a simple, consistent cleaning routine that protects tile surfaces and grout lines.",
     backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
-      "Sweep or vacuum regularly to remove dirt and debris from tile surfaces and grout lines.",
-      "Mop with a tile-safe cleaner — avoid harsh chemicals that can damage finishes or grout.",
-      "Wipe up spills promptly to keep floors looking fresh and prevent staining.",
-      "Place mats at entryways to reduce tracked-in grit that can wear tile and grout over time.",
+      {
+        title: "Sweep or Vacuum Regularly",
+        description:
+          "Remove dirt and debris from ceramic floor tiles and grout lines to help prevent scratches and buildup.",
+      },
+      {
+        title: "Use a Tile Safe Cleaner",
+        description:
+          "Mop with a suitable tile cleaner and avoid harsh chemicals that may damage tile finishes or grout.",
+      },
+      {
+        title: "Clean Spills Promptly",
+        description:
+          "Wipe up spills quickly to keep ceramic tile flooring looking clean and help prevent staining.",
+      },
+      {
+        title: "Use Mats at Entryways",
+        description:
+          "Place mats near entrances to reduce tracked in dirt and grit that can wear tile surfaces and grout over time.",
+      },
     ],
   },
 ];
@@ -223,14 +265,15 @@ const applicationsContent = [
   {
     eyebrow: "Where It Works",
     title: "Tile Flooring Applications",
-    description: "Tile flooring is perfect for:",
+    description: "Ceramic tile flooring is a versatile choice for residential and commercial spaces, including:",
+
     items: [
       "Kitchen floors and tile backsplashes",
       "Bathroom floors and walls",
       "Mudrooms and laundry rooms",
       "Entryways, foyers, and hallways",
       "Interior commercial spaces",
-      "Outdoor patios (exterior-rated tiles)",
+      "Outdoor patios with exterior rated tiles",
       "Living rooms and dining areas",
     ],
   },
@@ -239,15 +282,18 @@ const applicationsContent = [
 const compareContent = [
   {
     eyebrow: "Compare Options",
-    title: "Tile Flooring vs Other Floor Types",
+    title: "Ceramic Tile Flooring vs Other Floor Types",
     featureLabel: "Feature",
-    columns: ["Tile Flooring", "Hardwood Flooring", "Vinyl Flooring"],
+    columns: ["Ceramic Tile Flooring", "Hardwood Flooring", "Vinyl Flooring"],
     rows: [
       { feature: "Water Resistance", values: ["Excellent", "Poor", "Good"] },
       { feature: "Durability", values: ["Very High", "Moderate", "Moderate"] },
       { feature: "Maintenance", values: ["Easy", "Moderate", "Easy"] },
       { feature: "Style Variety", values: ["Extensive", "Moderate", "Moderate"] },
-      { feature: "Best For Kitchens/Baths", values: [true, false, true] },
+      {
+        feature: "Best for Kitchens & Bathrooms",
+        values: [true, false, true],
+      },
     ],
   },
 ];
@@ -255,14 +301,15 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Tile Installation",
-    description:
-      "Our flooring installers bring years of experience to every tile project. From precise tile layout and leveling to expert grout and seal application, we ensure your tile flooring is installed right the first time.",
+    title: "Professional Ceramic Tile Installation",
+    paragraphs: [
+      "Our experienced flooring installers bring years of experience to every ceramic tile flooring project. From precise tile layout and leveling to expert grout and seal application, we ensure your ceramic floor tiles are installed correctly for a clean, durable, and professional finish.",
+    ],
     servicesTitle: "Our Tile Flooring Services Include:",
     services: [
-      "Free on-site consultations",
+      "Free on site consultations",
       "Detailed project estimates",
-      "Professional tile installation",
+      "Professional ceramic tile installation",
       "Residential and commercial tile flooring solutions",
     ],
     image: "/images/ceramic-gallery/Professional-Ceramic-Flooring-Image.webp",

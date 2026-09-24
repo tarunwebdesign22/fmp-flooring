@@ -58,7 +58,9 @@ function LocationIcon() {
 }
 
 export default function AreasWeServeSection({
-  title = "Areas We Serve",
+  eyebrow = "FLOORING CONTRACTOR SERVICE AREAS",
+  title = "Serving North Carolina & South Carolina",
+  description = "FMP Flooring provides residential, commercial, and professional flooring installation services across North Carolina and South Carolina. Our team works with homeowners, businesses, contractors, government facilities, and other organizations looking for dependable flooring solutions.",
   areas = DEFAULT_AREAS,
 }) {
   if (!areas?.length) return null;
@@ -80,9 +82,25 @@ export default function AreasWeServeSection({
       <div className="absolute inset-0 bg-white/75" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
-        <h2 className="text-center text-2xl font-bold text-blue sm:text-3xl lg:text-4xl">
-          {title}
-        </h2>
+        <div className="mx-auto max-w-3xl text-center">
+          {eyebrow ? (
+            <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
+              {eyebrow}
+            </p>
+          ) : null}
+          <h2 className="mt-3 text-3xl font-bold text-blue sm:text-4xl">
+            {title}
+          </h2>
+          <span
+            className="mx-auto mt-3 block h-1 w-16 bg-teal"
+            aria-hidden="true"
+          />
+          {description ? (
+            <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-blue/70 sm:text-base">
+              {description}
+            </p>
+          ) : null}
+        </div>
 
         <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-2 sm:mt-10 sm:gap-x-12 md:grid-cols-4 lg:mt-12 lg:gap-x-16">
           {columnLists.map((column, colIndex) => (

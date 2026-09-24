@@ -40,11 +40,11 @@ const heroContent = [
         financing: {
           eyebrow: "Vinyl Composition Tile",
           eyebrowAsBadge: true,
-          titleBefore: "We Offer High-Quality ",
+          titleBefore: "High Quality ",
           titleHighlightValue: "VCT Flooring",
-          titleAfter: "",
+          titleAfter: " for Commercial & High Traffic Spaces",
           description:
-            "Upgrade your facility with durable, cost-effective vinyl composition tile flooring designed for schools, hospitals, offices, and commercial spaces.",
+            "Upgrade your facility with durable, cost effective VCT flooring designed for schools, healthcare facilities, offices, retail spaces, and other commercial environments.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
@@ -88,10 +88,10 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Vinyl Composition Tile",
-    title: "VCT Flooring – Durable, Cost-Effective & Commercial-Grade Flooring",
+    title: "VCT Flooring for Durable, Cost Effective Commercial Spaces",
     paragraphs: [
-      "VCT flooring (Vinyl Composition Tile) is a highly durable, affordable, and proven flooring solution widely used in commercial, institutional, and industrial spaces. Known for its strength, easy maintenance, and long lifespan, vinyl composition tile flooring is ideal for schools, hospitals, offices, retail stores, and high-traffic environments.",
-      "At FMP Flooring, we specialize in commercial VCT flooring installation and provide high-quality VCT tiles designed for performance, durability, and long-term value.",
+      "VCT flooring, or vinyl composition tile, is a durable and versatile flooring option commonly used in commercial, institutional, and high traffic environments. VCT floor tiles are available in a wide range of colors and patterns, making them suitable for both practical flooring needs and custom interior designs.",
+      "At FMP Flooring, we provide VCT flooring solutions and professional installation for facilities that need dependable performance, easy maintenance, and long term value. From schools and healthcare facilities to offices, retail stores, and other commercial spaces, we can help you select and install flooring suited to your project.",
     ],
     images: [
       {
@@ -136,18 +136,44 @@ const introContent = [
 
 const simpleProcessContent = createFlooringProcessContent(
   "Get Brand New VCT Flooring in 4 Simple Steps",
-  "A clear, step-by-step process so your vinyl composition tile project stays organized, efficient, and stress-free from start to finish.",
+  "Our straightforward installation process helps keep your VCT flooring project organized, efficient, and ready for long term performance.",
+  [
+    {
+      step: "01",
+      title: "Existing Flooring Removal",
+      description:
+        "We remove existing flooring and prepare the area for your new VCT installation, helping create a clean workspace for the next stage of the project.",
+    },
+    {
+      step: "02",
+      title: "Subfloor Preparation",
+      description:
+        "We inspect and prepare the subfloor to create a smooth, clean, and stable surface for VCT tile installation. Proper preparation helps support a professional finished floor.",
+    },
+    {
+      step: "03",
+      title: "Professional VCT Installation",
+      description:
+        "Our experienced installers carefully measure, cut, and place VCT tiles according to the project layout, creating a clean and consistent finished floor.",
+    },
+    {
+      step: "04",
+      title: "Finishing & Final Inspection",
+      description:
+        "We complete the project with finishing details, inspect the installed flooring, and make sure the space is clean and ready for use.",
+    },
+  ],
 );
 
 const financeBannerContent = [
   {
     title: "Financing Available",
-    description: "Convenient monthly payments for your budget¹",
+    description: "Convenient monthly payment options can help make your flooring project easier to manage",
     buttonText: "View Financing Options",
     buttonHref: "/financing",
     backgroundImage: "/images/finance-banner-One.webp",
     footnote: "¹With approved credit.",
-    footnoteLinkText: "Details",
+    footnoteLinkText: "Details Apply",
     footnoteHref: "/financing",
   },
 ];
@@ -160,33 +186,39 @@ const benefitsContent = [
     items: [
       {
         icon: "durable",
-        title: "Heavy-Duty & Long-Lasting",
+        title: "Durable & Long Lasting",
         description:
-          "VCT flooring is engineered to handle heavy foot traffic, rolling loads, and daily wear, making it one of the most reliable commercial flooring options available.",
+          "VCT flooring is designed for everyday commercial use and can handle regular foot traffic when the right product is selected and properly maintained.",
       },
       {
         icon: "affordable",
-        title: "Cost-Effective Flooring Solution",
+        title: "Cost Effective Flooring Solution",
         description:
-          "Vinyl composition tile is one of the most budget-friendly commercial flooring materials, offering excellent durability at a lower upfront cost compared to other hard surface floors.",
+          "VCT can provide a practical flooring solution for large commercial spaces where durability, maintenance, and project budget are important considerations.",
       },
       {
         icon: "maintenance",
         title: "Easy Maintenance & Repair",
         description:
-          "VCT flooring is easy to maintain with routine cleaning and periodic polishing. Individual VCT tiles can be replaced without removing the entire floor.",
+          "VCT flooring can be maintained through routine cleaning and periodic care. Individual damaged tiles can also be replaced without replacing the entire floor.",
       },
       {
         icon: "moisture",
-        title: "Slip-Resistant & Safe",
+        title: "Slip Resistant Options",
         description:
-          "When properly finished, VCT floors provide good slip resistance, making them suitable for schools, healthcare facilities, and commercial buildings.",
+          "VCT products are available with different surface characteristics and performance specifications. Choosing the right product can help meet the safety and usage requirements of your facility.",
       },
       {
         icon: "styles",
         title: "Wide Range of Colors & Patterns",
         description:
-          "VCT tiles are available in many colors and patterns, allowing for custom layouts, borders, and design accents.",
+          "VCT tiles are available in many colors and patterns, allowing facilities to create custom layouts, borders, directional patterns, and design accents.",
+      },
+      {
+        icon: "highTraffic",
+        title: "Ideal for High Traffic Areas",
+        description:
+          "VCT is commonly used in facilities that experience regular foot traffic, including schools, healthcare facilities, offices, retail spaces, and institutional buildings.",
       },
     ],
   },
@@ -208,13 +240,29 @@ const tipsContent = [
     eyebrow: "Care Guide",
     title: "VCT Flooring Maintenance",
     description:
-      "To maximize the lifespan of vinyl composition tile flooring, regular maintenance is recommended.",
+      "Proper maintenance helps keep VCT flooring clean, attractive, and ready for everyday commercial use.",
     backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
-      "Routine sweeping and damp mopping",
-      "Periodic stripping and waxing",
-      "Prompt spill cleanup",
-      "Tile replacement as needed",
+      {
+        title: "Routine Sweeping & Cleaning",
+        description:
+          "Sweep or dust mop regularly to remove dirt, dust, and debris before they can build up on the flooring surface.",
+      },
+      {
+        title: "Damp Mopping",
+        description:
+          "Use appropriate cleaning products and damp mopping methods recommended for VCT flooring. Avoid excessive moisture and follow the manufacturer's care instructions.",
+      },
+      {
+        title: "Periodic Stripping & Finishing",
+        description:
+          "Commercial VCT floors may require periodic stripping and finishing as part of their maintenance program. The frequency depends on traffic levels, facility use, and the flooring manufacturer's recommendations.",
+      },
+      {
+        title: "Replace Damaged Tiles",
+        description:
+          "One advantage of VCT tile flooring is that individual damaged tiles can often be replaced without removing the entire floor.",
+      },
     ],
   },
 ];
@@ -223,7 +271,7 @@ const applicationsContent = [
   {
     eyebrow: "Where It Works",
     title: "VCT Flooring Applications",
-    description: "VCT flooring is ideal for:",
+    description: "VCT flooring is well suited for commercial, institutional, and high traffic environments, including:",
     items: [
       "Commercial office buildings",
       "Schools and educational facilities",
@@ -240,15 +288,23 @@ const compareContent = [
   {
     eyebrow: "Compare Options",
     title: "VCT Flooring vs Other Commercial Flooring",
+    intro:
+      "Different commercial flooring materials offer different advantages. Compare VCT with LVT and ceramic tile to help determine which option fits your facility.",
     featureLabel: "Feature",
     columns: ["VCT Flooring", "LVT Flooring", "Ceramic Tile"],
     rows: [
-      { feature: "Cost", values: ["Low", "Moderate", "High"] },
+      { feature: "Cost", values: ["Low to Moderate", "Moderate", "Moderate to High"] },
       { feature: "Durability", values: ["High", "High", "Very High"] },
       { feature: "Maintenance", values: ["Moderate", "Low", "Low"] },
-      { feature: "Tile Replacement", values: ["Easy", "Easy", "Difficult"] },
-      { feature: "Best for Large Commercial Areas", values: [true, false, false] },
+      { feature: "Tile Replacement", values: ["Easy", "Easy", "More Difficult"] },
+      { feature: "Design Options", values: ["Wide", "Wide", "Wide"] },
+      {
+        feature: "Large Commercial Areas",
+        values: ["Excellent", "Excellent", "Good"],
+      },
     ],
+    footnote:
+      "VCT flooring can be a practical choice for large commercial facilities where cost, durability, maintenance, and tile replacement are important considerations. LVT may be preferred when design realism and moisture resistance are priorities, while ceramic tile can be suitable when a hard, highly durable surface is required.",
   },
 ];
 
@@ -256,13 +312,16 @@ const installContent = [
   {
     eyebrow: "Professional Installation",
     title: "Professional VCT Flooring Installation",
-    description:
-      "Proper installation is critical for VCT flooring performance. Our professional installers ensure correct subfloor preparation, accurate tile placement, and proper adhesive application.",
+    paragraphs: [
+      "Proper installation is an important part of VCT flooring performance. Our professional installers prepare the subfloor, plan the tile layout, make accurate cuts, and install VCT tiles using appropriate installation methods for the project.",
+      "Whether you are replacing flooring in an office, school, healthcare facility, retail space, or another commercial environment, FMP Flooring provides professional VCT flooring installation based on your facility's requirements.",
+    ],
     servicesTitle: "Our VCT Flooring Services Include:",
     services: [
-      "Free on-site commercial consultations",
+      "Free on site commercial consultations",
       "Accurate VCT flooring estimates",
       "Professional VCT flooring installation",
+      "Subfloor preparation",
       "Commercial and institutional flooring solutions",
     ],
     image: "/images/vct-gallery/Professional-VCT.webp",

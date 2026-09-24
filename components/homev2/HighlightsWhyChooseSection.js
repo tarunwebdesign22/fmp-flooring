@@ -85,12 +85,12 @@ const chooseIcons = {
   ),
 };
 
-function HighlightRow({ card, index, visible }) {
+function HighlightRow({ card, index, visible, children }) {
   const icon = featureIcons[card.icon] || featureIcons.hassleFree;
 
   return (
     <li
-      className={`flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 backdrop-blur-sm transition-all duration-500 ease-out ${
+      className={`flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 backdrop-blur-sm transition-all duration-500 ease-out align-items-center ${
         visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
       }`}
       style={{ transitionDelay: visible ? `${120 + index * 70}ms` : "0ms" }}
@@ -98,7 +98,10 @@ function HighlightRow({ card, index, visible }) {
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#fdbf3e]/20 text-[#fdbf3e]">
         {icon}
       </span>
-      <p className="text-[14px] font-medium leading-6 text-white/95 sm:text-[15px]">{card.title}</p>
+   
+        <p className="text-[14px] font-medium leading-6 text-white/95 sm:text-[15px]">{card.title}</p>
+ 
+    
     </li>
   );
 }
@@ -262,11 +265,18 @@ export default function HighlightsWhyChooseSection({ highlights, whyChoose }) {
                 >
                   {highlights.title}
                 </h2>
+                {highlights.description ? (
+                  <p className="mt-4 max-w-2xl text-[15px] leading-7 text-white/95">{highlights.description}</p>
+                ) : null}
                 <span className="mt-3 block h-1 w-14 rounded-full bg-teal" aria-hidden="true" />
 
                 <ul className="mt-6 flex flex-1 flex-col gap-2.5 sm:mt-8 sm:gap-3">
                   {highlights.cards.map((card, index) => (
-                    <HighlightRow key={card.title} card={card} index={index} visible={visible} />
+                    <HighlightRow key={card.title} card={card} index={index} visible={visible}>
+                      {card.description ? (
+                        <p className="text-[14px] font-medium leading-6 text-white/95 sm:text-[15px]">{card.description}</p>
+                      ) : null}
+                    </HighlightRow>
                   ))}
                 </ul>
               </div>

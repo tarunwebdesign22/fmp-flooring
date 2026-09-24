@@ -40,11 +40,11 @@ const heroContent = [
         financing: {
           eyebrow: "Laminate Flooring",
           eyebrowAsBadge: true,
-          titleBefore: "We Offer High-Quality ",
+          titleBefore: "High Quality ",
           titleHighlightValue: "Laminate Flooring",
-          titleAfter: "",
+          titleAfter: " for Stylish, Durable Spaces",
           description:
-            "Upgrade your space with professional laminate flooring installation designed for busy homes and light commercial spaces.",
+            "Upgrade your space with quality laminate flooring and professional installation. Choose from realistic wood look styles and moisture resistant options designed for busy homes and commercial spaces.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
@@ -88,10 +88,10 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Laminate Flooring",
-    title: "Stylish, Durable & Cost-Effective Flooring",
+    title: "Laminate Flooring That Combines Style, Durability & Value",
     paragraphs: [
-      "Laminate flooring is a popular and affordable flooring option that delivers the look of natural hardwood or tile with enhanced durability and easy maintenance. Designed for modern living, laminate floors are ideal for residential and light commercial spaces where style, performance, and value matter.",
-      "At FMP Flooring, we offer high-quality laminate flooring installation with a wide range of colors, textures, and wood-look finishes to suit every space and budget.",
+      "Laminate flooring is a versatile flooring option that delivers the look of natural wood and other materials with practical performance for everyday spaces. Available in a wide range of colors, patterns, textures, and plank styles, laminate can complement both traditional and modern interiors.",
+      "At FMP Flooring, we offer laminate flooring for residential and commercial projects, including wood look laminate flooring and moisture resistant options. Our team can help you choose the right flooring based on your space, design preferences, traffic levels, and project requirements.",
     ],
     images: [
       {
@@ -140,18 +140,44 @@ const introContent = [
 
 const simpleProcessContent = createFlooringProcessContent(
   "Get Brand New Laminate in 4 Simple Steps",
-  "A clear, step-by-step process so your laminate flooring project stays organized, efficient, and stress-free from start to finish.",
+  "Our clear, step by step process keeps your laminate flooring project organized and efficient from preparation through professional installation.",
+  [
+    {
+      step: "01",
+      title: "Old Flooring Removal",
+      description:
+        "We remove existing carpet, tile, or other flooring and haul it away so your space is clean and ready for the new laminate flooring installation.",
+    },
+    {
+      step: "02",
+      title: "Subfloor Preparation",
+      description:
+        "We inspect and prepare the subfloor to create a clean, level, and stable foundation for your new laminate floor. Proper preparation helps support a smooth installation.",
+    },
+    {
+      step: "03",
+      title: "Professional Laminate Installation",
+      description:
+        "Our experienced installers carefully place your laminate flooring with precise measurements, cuts, and plank placement for a clean and professional result.",
+    },
+    {
+      step: "04",
+      title: "Trim, Fixtures & Final Touches",
+      description:
+        "We complete the project with trim and finishing details, reinstall removed fixtures where needed, and make sure your new flooring is clean and ready to enjoy.",
+    },
+  ],
 );
 
 const financeBannerContent = [
   {
     title: "Financing Available",
-    description: "Convenient monthly payments for your budget¹",
+    description: "Convenient monthly payment options can help make your laminate flooring project easier to manage.",
     buttonText: "View Financing Options",
     buttonHref: "/financing",
     backgroundImage: "/images/finance-banner-One.webp",
     footnote: "¹With approved credit.",
-    footnoteLinkText: "Details",
+    footnoteLinkText: "Details Apply",
     footnoteHref: "/financing",
   },
 ];
@@ -164,33 +190,39 @@ const benefitsContent = [
     items: [
       {
         icon: "durable",
-        title: "Durable & Scratch-Resistant",
+        title: "Durable for Everyday Living",
         description:
-          "Engineered with a strong wear layer that resists scratches, dents, and everyday wear — ideal for high-traffic areas, pets, and active households.",
+          "Quality laminate flooring is designed to handle everyday foot traffic and can be a practical choice for busy homes, offices, and other frequently used spaces.",
       },
       {
         icon: "affordable",
         title: "Affordable Flooring Option",
         description:
-          "Get the appearance of hardwood or tile at a fraction of the cost, without sacrificing style or long-term performance.",
+          "Laminate flooring can provide the appearance of wood or other flooring materials at a more accessible price point, making it a practical option for many flooring projects.",
       },
       {
         icon: "maintenance",
-        title: "Easy Maintenance",
+        title: "Easy to Maintain",
         description:
-          "Regular sweeping and occasional damp mopping keep laminate floors looking new with minimal effort.",
+          "Laminate floors are simple to maintain with regular sweeping or vacuuming and occasional cleaning using products recommended for laminate flooring.",
       },
       {
         icon: "moisture",
-        title: "Moisture-Resistant Options",
+        title: "Moisture Resistant Options",
         description:
-          "Many modern laminate products offer improved moisture resistance for kitchens, hallways, and living areas.",
+          "Many modern laminate products are available with improved moisture resistance. These options can be suitable for areas such as kitchens, hallways, and living spaces when installed and maintained according to the product specifications.",
       },
       {
         icon: "styles",
         title: "Wide Range of Styles",
         description:
-          "Choose realistic wood-look laminate, stone-look designs, and a variety of plank sizes and finishes.",
+          "Choose from realistic wood look laminate flooring, stone inspired designs, different plank sizes, colors, textures, and finishes to complement your interior.",
+      },
+      {
+        icon: "highTraffic",
+        title: "Suitable for Residential & Commercial Spaces",
+        description:
+          "Laminate flooring can work well in homes, offices, retail environments, rental properties, and other spaces where style, durability, and value are important.",
       },
     ],
   },
@@ -210,15 +242,31 @@ const highlightsContent = [
 const tipsContent = [
   {
     eyebrow: "Care Guide",
-    title: "Maintenance Tips",
+    title: "Laminate Flooring Maintenance Tips",
     description:
-      "Keep your laminate floors looking their best with a simple, consistent cleaning routine that protects the wear layer and finish.",
+      "Keep your laminate floors looking their best with a simple cleaning routine that helps protect the surface and maintain its appearance.",
     backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
-      "Sweep or vacuum daily to remove dirt and debris that can cause scratches.",
-      "Use a soft-bristle broom or a vacuum with a hard-floor setting.",
-      "Damp mop occasionally — avoid standing water and harsh cleaners.",
-      "Place mats at entryways and felt pads under furniture legs.",
+      {
+        title: "Sweep or Vacuum Regularly",
+        description:
+          "Remove dirt, dust, and debris regularly to help prevent particles from scratching or wearing the surface of your laminate flooring.",
+      },
+      {
+        title: "Use a Suitable Vacuum Setting",
+        description:
+          "Use a soft broom or a vacuum designed for hard flooring. Avoid tools or attachments that could damage the laminate surface.",
+      },
+      {
+        title: "Clean With Limited Moisture",
+        description:
+          "Damp mop when needed using a cleaner recommended for laminate flooring. Avoid excessive water, standing moisture, and harsh cleaning products.",
+      },
+      {
+        title: "Protect High Traffic Areas",
+        description:
+          "Place mats near entrances and use felt pads under furniture legs to help reduce dirt, moisture, and scratches.",
+      },
     ],
   },
 ];
@@ -227,7 +275,7 @@ const applicationsContent = [
   {
     eyebrow: "Where It Works",
     title: "Laminate Flooring Applications",
-    description: "Laminate flooring is ideal for residential and light commercial spaces, including:",
+    description: "Laminate flooring is a versatile option for residential and light commercial spaces, including:",
     items: [
       "Living rooms and family rooms",
       "Bedrooms and hallways",
@@ -243,15 +291,34 @@ const compareContent = [
   {
     eyebrow: "Compare Options",
     title: "Laminate Flooring vs Other Flooring Types",
+    intro:
+      "Different flooring materials offer different advantages. Compare laminate flooring with hardwood and vinyl to determine which option best fits your project.",
     featureLabel: "Feature",
     columns: ["Laminate Flooring", "Hardwood Flooring", "Vinyl Flooring"],
     rows: [
-      { feature: "Cost", values: ["Low", "High", "Moderate"] },
-      { feature: "Scratch Resistance", values: ["High", "Moderate", "High"] },
-      { feature: "Moisture Resistance", values: ["Moderate", "Low", "High"] },
+      { feature: "Cost", values: ["Low to Moderate", "High", "Moderate"] },
+      {
+        feature: "Scratch Resistance",
+        values: ["High*", "Moderate", "High*"],
+      },
+      {
+        feature: "Moisture Resistance",
+        values: ["Moderate to High*", "Low", "High"],
+      },
       { feature: "Maintenance", values: ["Easy", "Moderate", "Easy"] },
+      {
+        feature: "Wood Look Designs",
+        values: ["Excellent", "Natural", "Excellent"],
+      },
       { feature: "Natural Wood", values: [false, true, false] },
+      {
+        feature: "Style Options",
+        values: ["Excellent", "Excellent", "Excellent"],
+      },
     ],
+    note: "*Performance varies by product. Always check the manufacturer's specifications for scratch and moisture resistance.",
+    footnote:
+      "Laminate flooring can be a strong choice when you want realistic designs, easy maintenance, and practical everyday performance. Hardwood may be preferred for natural wood construction and refinishing potential, while vinyl can be a better fit for areas where moisture resistance is a primary concern.",
   },
 ];
 
@@ -259,14 +326,17 @@ const installContent = [
   {
     eyebrow: "Professional Installation",
     title: "Professional Laminate Flooring Installation",
-    description:
-      "Our experienced installers specialize in laminate flooring installation, ensuring proper subfloor preparation, precise plank placement, and a clean, professional finish.",
+    paragraphs: [
+      "Professional installation helps ensure your laminate flooring is properly measured, prepared, and installed. Our installers pay attention to subfloor preparation, plank placement, cuts, transitions, and finishing details throughout the project.",
+      "Whether you are updating one room or completing a larger residential or commercial project, FMP Flooring provides professional laminate flooring installation based on your space and project requirements.",
+    ],
     servicesTitle: "Our Laminate Flooring Services Include:",
     services: [
-      "Free in-home consultations",
+      "Free in home consultations",
       "Accurate project estimates",
       "Professional laminate floor installation",
-      "Residential and commercial laminate solutions",
+      "Wood look and moisture resistant flooring options",
+      " Residential and commercial laminate flooring solutions"
     ],
     image: "/images/laminate-installing.webp",
     imageAlt: "Professional laminate flooring installation",

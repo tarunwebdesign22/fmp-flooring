@@ -99,13 +99,13 @@ const heroContent = [
 
 const ctaContent = [
   {
-    headlineWhite: "WE BRING OUR FLOORS AND YOU",
-    headlineTeal: "NEVER PAY MORE.",
+    eyebrow: "START YOUR FLOORING PROJECT",
+    title: "Let's Transform Your Space With Quality Flooring",
     description:
-      "Experience the convenience of in-home shopping. Our professionally trained design consultants bring large flooring samples to your home for free at a time most convenient for you.",
+      "Whether you need flooring for your home, office, commercial facility, or public project, FMP Flooring is ready to help. Get expert guidance, quality flooring options, and professional installation from start to finish.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
-    buttonText: "FREE IN-HOME ESTIMATE",
+    buttonText: "GET YOUR FREE ESTIMATE",
     buttonHref: "/estimate",
     backgroundImage: "/images/Hero-Image.jpg",
   },
@@ -116,7 +116,7 @@ const quoteCtaContent = [
     eyebrow: "Start Your Project",
     title: "Ready for Beautiful New Floors?",
     description:
-      "Tell us about your space and get a free, no-obligation quote from our flooring experts.",
+      "Tell us about your space and get a free, no obligation quote from our flooring experts.",
     buttonText: "Get a Quote",
     buttonHref: "/estimate",
   },
@@ -127,26 +127,34 @@ const servicesContent = [
     eyebrow: "What We Offer",
     title: "Our Flooring Services",
     description:
-      "Explore durable, stylish flooring solutions for residential and commercial spaces — installed with care by our expert team.",
+      "Explore durable and stylish flooring solutions for residential and commercial spaces, professionally installed by our experienced team.",    
     services: [
+      
       {
-        title: "Carpet Tile",
+        title: "Luxury Vinyl Plank Flooring",
         description:
-          "Flexible, modular carpet tiles built for busy offices and high-traffic spaces with easy replacement and installation.",
-        image: "/images/home-services/new/Carpet_Tile.webp",
-        href: "/carpet-tile",
+          "Durable and stylish luxury vinyl plank flooring that combines the look of natural materials with easy maintenance and everyday performance.",
+        image: "/images/home-services/new/Service_Luxury_Vinyl_Plank.webp",
+        href: "/lvp",
       },
       {
-        title: "Broadloom Carpet",
+        title: "Broadloom Carpet Flooring",
         description:
-          "Soft, wall-to-wall carpet that brings cozy elegance, warmth, and comfort to living spaces.",
+          "Soft, comfortable wall to wall carpet that adds warmth, style, and comfort to residential and commercial spaces.",
         image: "/images/home-services/new/Broadloom_Carpet.webp",
         href: "/broadloom-carpet",
       },
       {
+        title: "Carpet Tile",
+        description:
+          "Flexible modular carpet tiles designed for offices and high traffic spaces with convenient installation, maintenance, and replacement.",
+        image: "/images/home-services/new/Carpet_Tile.webp",
+        href: "/carpet-tile",
+      },
+      {
         title: "Hardwood",
         description:
-          "Timeless natural beauty and lasting durability that elevates any room with classic hardwood craftsmanship.",
+          "Timeless hardwood flooring that brings natural beauty, durability, and lasting value to your home or commercial space.",
         image: "/images/home-services/new/Hardwood.webp",
         href: "/hardwood",
         badge: "",
@@ -154,37 +162,30 @@ const servicesContent = [
       {
         title: "Laminate",
         description:
-          "An elegant, budget-friendly alternative to hardwood with realistic wood looks and everyday durability.",
+          "Attractive and durable laminate flooring that provides the look of natural materials with easy maintenance and everyday practicality.",
         image: "/images/home-services/new/Laminate.webp",
         href: "/laminate",
       },
       {
+        title: "Ceramic Flooring",
+        description:
+          "Durable ceramic flooring available in a range of styles for residential, commercial, and high use environments.",
+        image: "/images/home-services/new/Ceramic_Flooring.webp",
+        href: "/ceramic",
+      },
+      {
         title: "Rubber Flooring",
         description:
-          "Slip-resistant rubber flooring ideal for gyms, play areas, and spaces that demand performance and safety.",
+          "Resilient rubber flooring designed for durability, comfort, safety, and performance in demanding environments.",
         image: "/images/home-services/new/Rubber_Flooring.webp",
         href: "/rubber",
       },
       {
         title: "Vinyl Composition Tiles (VCT)",
         description:
-          "Durable VCT flooring designed for schools, hospitals, and commercial spaces that need robust, easy-care floors.",
+          "Versatile vinyl composition tile flooring designed for commercial environments that require durability, easy maintenance, and long lasting performance.",
         image: "/images/home-services/new/Vinyl_Composition_Tiles.webp",
         href: "/vct",
-      },
-      {
-        title: "Luxury Vinyl Plank (LVP/LVT)",
-        description:
-          "High-end wood and tile looks with waterproof performance, comfort underfoot, and easy maintenance.",
-        image: "/images/home-services/new/Service_Luxury_Vinyl_Plank.webp",
-        href: "/lvp",
-      },
-      {
-        title: "Ceramic Flooring",
-        description:
-          "Stylish ceramic tile flooring that delivers water resistance, long-term durability, and design versatility.",
-        image: "/images/home-services/new/Ceramic_Flooring.webp",
-        href: "/ceramic",
       },
     ],
   },
@@ -194,27 +195,34 @@ const featuresContent = [
   {
     eyebrow: "Our Work USP",
     title: "Service Highlights",
+    description: "From preparation to installation, we take care of the details that make your flooring project easier and more successful.",
     backgroundImage: "/images/294-Wood-Flooring.webp",
+
     cards: [
       {
         icon: "furniture",
-        title: "Furniture carefully moved and protected before installation.",
+        title: "Furniture Carefully Moved",
+       
       },
       {
         icon: "preparation",
-        title: "Complete floor preparation before new flooring is installed.",
+        title: "Complete Floor Preparation",
+       
       },
       {
         icon: "removal",
-        title: "Old flooring removed and properly disposed of.",
+        title: "Old Flooring Removal",
+        
       },
       {
         icon: "challenges",
-        title: "All preparation and installation challenges handled for you.",
+        title: "Installation Challenges Handled",
+        
       },
       {
         icon: "hassleFree",
-        title: "A hassle-free installation from start to finish.",
+        title: "Hassle Free Installation",
+        
       },
     ],
   },
@@ -269,22 +277,23 @@ const founderContent = [
     headline: "Built on Passion. Driven by Purpose",
     headlineAccent: ".",
     description:
-      "FMP Flooring & Installation Services was founded with a simple belief — every space deserves quality floors and exceptional service. Our mission is to deliver unmatched craftsmanship, honest solutions, and lasting value in every project we take on.",
+      "FMP Flooring & Installation Services was founded with a simple belief: every space deserves quality flooring and exceptional service. Our mission is to provide dependable flooring solutions, honest guidance, skilled installation, and lasting value for every project we take on.",
+
     values: [
       {
         icon: "quality",
         title: "Quality",
-        description: "We never compromise on materials or craftsmanship.",
+        description: "We never compromise on the quality of our materials, workmanship, or finished results.",
       },
       {
         icon: "integrity",
         title: "Integrity",
-        description: "Honest communication and transparent processes.",
+        description: "We believe in honest communication, transparent processes, and dependable service.",
       },
       {
         icon: "commitment",
         title: "Commitment",
-        description: "We treat every project like it's our own.",
+        description: "We treat every flooring project like it is our own and remain committed from start to finish.",
       },
     ],
     buttonText: "Learn More About Our Story",

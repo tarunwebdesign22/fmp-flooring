@@ -33,12 +33,17 @@ const FLOORING_PROCESS_STEPS = [
   },
 ];
 
-export function createFlooringProcessContent(title, description) {
+export function createFlooringProcessContent(title, description, stepOverrides) {
+  const steps = FLOORING_PROCESS_STEPS.map((step) => {
+    const override = stepOverrides?.find((item) => item.step === step.step);
+    return override ? { ...step, ...override } : step;
+  });
+
   return [
     {
       title,
       description,
-      steps: FLOORING_PROCESS_STEPS,
+      steps,
     },
   ];
 }

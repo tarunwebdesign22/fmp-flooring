@@ -83,17 +83,36 @@ export function ServiceTipsSection({ content }) {
         </div>
 
         <ul className="space-y-4">
-          {section.tips?.map((tip, index) => (
-            <li
-              key={tip}
-              className="flex gap-4 rounded-xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm"
-            >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fdbf3e] text-sm font-bold text-blue">
-                {index + 1}
-              </span>
-              <p className="text-sm leading-6 text-white/90">{tip}</p>
-            </li>
-          ))}
+          {section.tips?.map((tip, index) => {
+            const isObject = typeof tip === "object" && tip !== null;
+            const title = isObject ? tip.title : null;
+            const description = isObject ? tip.description : tip;
+
+            return (
+              <li
+                key={title || description}
+                className="flex gap-4 rounded-xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#fdbf3e] text-sm font-bold text-blue">
+                  {index + 1}
+                </span>
+                <div className="min-w-0">
+                  {title ? (
+                    <h3 className="text-sm font-bold text-white sm:text-[15px]">
+                      {title}
+                    </h3>
+                  ) : null}
+                  <p
+                    className={`text-sm leading-6 text-white/90 ${
+                      title ? "mt-1" : ""
+                    }`}
+                  >
+                    {description}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
@@ -256,8 +275,18 @@ export function ServiceCompareSection({ content }) {
           ))}
         </ul>
 
+        {section.note ? (
+          <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-6 text-blue/60 italic sm:text-[15px]">
+            {section.note}
+          </p>
+        ) : null}
+
         {section.footnote ? (
-          <p className="mx-auto mt-10 max-w-3xl text-center text-[15px] leading-7 text-blue/75 sm:text-base sm:leading-8">
+          <p
+            className={`mx-auto max-w-3xl text-center text-[15px] leading-7 text-blue/75 sm:text-base sm:leading-8 ${
+              section.note ? "mt-5" : "mt-10"
+            }`}
+          >
             {section.footnote}
           </p>
         ) : null}
@@ -294,7 +323,15 @@ export function ServiceInstallSection({ content }) {
           ) : null}
           <h2 className="mt-3 text-3xl font-bold text-blue sm:text-4xl">{section.title}</h2>
           <span className="mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
-          <p className="mt-5 text-[15px] leading-7 text-blue/75">{section.description}</p>
+          {section.paragraphs?.length
+            ? section.paragraphs.map((paragraph) => (
+                <p key={paragraph} className="mt-5 text-[15px] leading-7 text-blue/75">
+                  {paragraph}
+                </p>
+              ))
+            : section.description ? (
+                <p className="mt-5 text-[15px] leading-7 text-blue/75">{section.description}</p>
+              ) : null}
 
           {section.servicesTitle ? (
             <h3 className="mt-8 text-base font-bold text-blue">{section.servicesTitle}</h3>
