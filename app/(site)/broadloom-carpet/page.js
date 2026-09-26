@@ -31,20 +31,20 @@ const heroContent = [
   {
     breadcrumbs: [
       { label: "Home", href: "/" },
-      { label: "Carpet Broadloom Flooring" },
+      { label: " Broadloom Carpet Flooring" },
     ],
     slides: [
       {
         id: "carpet-broadloom-service",
         backgroundImage: "/images/carpet-broadloom-gallery/Broadloom-Carpet-Main-Banner.webp",
         financing: {
-          eyebrow: "Carpet Broadloom Flooring",
+          eyebrow: "Broadloom Carpet Flooring",
           eyebrowAsBadge: true,
-          titleBefore: "We Offer High-Quality ",
-          titleHighlightValue: "Broadloom Carpet",
-          titleAfter: "",
+          titleBefore: "High Quality ",
+          titleHighlightValue: "Broadloom Carpet Flooring",
+          titleAfter: " for Homes & Businesses",
           description:
-            "Upgrade your space with professional carpet broadloom installation for warmer, quieter, more comfortable homes and commercial spaces.",
+            "Create a warmer, quieter, and more comfortable space with broadloom carpet flooring professionally selected and installed for residential and commercial environments.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
@@ -88,10 +88,10 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Carpet Broadloom Flooring",
-    title: "Carpet Broadloom Installation (Residential & Commercial)",
+    title: "Broadloom Carpet Flooring Installation for Residential & Commercial Spaces",
     paragraphs: [
-      "When you want a space to feel warmer, quieter, and more comfortable, nothing beats carpet broadloom. At FMP Flooring LLC, we supply and install broadloom carpet in a wide range of qualities, thicknesses, and styles—from budget-friendly rentals to premium, high-performance carpet built for busy homes and commercial traffic.",
-      "Whether you’re updating a bedroom, finishing a basement, or replacing carpet across an entire office, we’ll help you choose the right carpet and install it the right way.",
+      "Broadloom carpet flooring is a wall to wall carpet solution designed to create a comfortable, finished look across an entire room or larger space. It is available in a wide range of colors, patterns, textures, thicknesses, and performance levels, making it suitable for both residential and commercial environments.",
+      "At FMP Flooring, we help homeowners, property managers, businesses, and contractors select the right broadloom carpet for their space, budget, and expected level of foot traffic. From bedrooms and living rooms to offices, apartments, and larger commercial areas, we provide professional carpet selection and installation.",
     ],
     images: [
       {
@@ -135,8 +135,34 @@ const introContent = [
 // ];
 
 const simpleProcessContent = createFlooringProcessContent(
-  "Get Brand New Broadloom Carpet in 4 Simple Steps",
-  "A clear, step-by-step process so your carpet broadloom project stays organized, efficient, and stress-free from start to finish.",
+  "Get New Broadloom Carpet Flooring in 4 Simple Steps",
+  "Our straightforward installation process keeps your broadloom carpet flooring project organized and efficient from initial preparation through final finishing.",
+  [
+    {
+      step: "01",
+      title: "Remove Existing Flooring",
+      description:
+        "We carefully remove existing carpet, tile, or other flooring and clear the space so it is ready for your new broadloom carpet flooring installation.",
+    },
+    {
+      step: "02",
+      title: "Prepare the Subfloor",
+      description:
+        "We inspect and prepare the subfloor to create a clean, smooth, and stable foundation for your new broadloom carpet flooring.",
+    },
+    {
+      step: "03",
+      title: "Professional Broadloom Carpet Installation",
+      description:
+        "Our experienced installers carefully install your broadloom carpet for a smooth, secure, and professional wall to wall finish.",
+    },
+    {
+      step: "04",
+      title: "Finishing Details & Final Walkthrough",
+      description:
+        "We complete the installation with finishing details, transitions, and final adjustments, then clean the space and walk through the completed project with you.",
+    },
+  ],
 );
 
 const financeBannerContent = [
@@ -155,38 +181,40 @@ const financeBannerContent = [
 const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
-    title: "Why Customers Choose Our Broadloom Carpet",
+    title: "Why Customers Choose Our Broadloom Carpet Flooring",
+    description:
+      "We make it easier to choose, budget, and install the right broadloom carpet for your home, rental property, office, or commercial space.",
     backgroundImage: "/images/carpet-broadloom-gallery/why-choose-broadloom-flooring.webp",
     items: [
       {
         icon: "affordable",
-        title: "Quality Selections at Every Price Level",
+        title: "Quality Broadloom Carpet at Every Price Level",
         description:
-          "Choose from good, better, and best carpet options so you can match quality, thickness, and budget for rentals, homes, and commercial projects.",
+          "Choose from a range of broadloom carpet styles, qualities, thicknesses, and price points to find an option that fits your space, performance needs, and budget.",
       },
       {
         icon: "styles",
-        title: "Right Thickness + Pad Combo",
+        title: "The Right Carpet, Thickness & Pad",
         description:
-          "We help you select the right carpet style, thickness, and pad for bedrooms, living rooms, stairs, and high-traffic commercial areas.",
+          "We help you choose the right broadloom carpet style, thickness, and carpet pad based on the room, expected foot traffic, comfort needs, and budget.",
       },
       {
         icon: "durable",
-        title: "Clean, Professional Installation",
+        title: "Clean, Professional Carpet Installation",
         description:
-          "Our installers focus on stretching, seam work, edges, and transitions for a finished look that feels smooth underfoot and lasts longer.",
+          "Our installers focus on proper stretching, seams, edges, transitions, and finishing details to create a smooth, secure, and professional carpet installation.",
       },
       {
         icon: "maintenance",
-        title: "Built for Homes & Commercial Spaces",
+        title: "Broadloom Carpet for Homes & Commercial Spaces",
         description:
-          "Options for stairs, hallways, bedrooms, offices, retail spaces, and multi-family properties with stain-resistant and high-traffic fibers available.",
+          "Choose carpet options for bedrooms, stairs, hallways, offices, retail spaces, apartments, and multi family properties, including options designed for higher traffic areas.",
       },
       {
         icon: "moisture",
-        title: "Clear Communication & Straightforward Pricing",
+        title: "Clear Recommendations & Straightforward Pricing",
         description:
-          "From free measure and quote to final walkthrough, we keep the process simple with clear recommendations and transparent pricing.",
+          "From measuring and carpet selection to installation and final walkthrough, we keep the process simple with clear recommendations and straightforward pricing.",
       },
     ],
   },
@@ -195,10 +223,10 @@ const benefitsContent = [
 const highlightsContent = [
   {
     items: [
-      { icon: "installation", lines: ["Installation Services", "Available"] },
-      { icon: "consultation", lines: ["Free", "Consultations"] },
-      { icon: "support", lines: ["Expert", "Support"] },
-      { icon: "selection", lines: ["Wide Selection of", "Flooring Types"] },
+      { icon: "installation", lines: ["Professional Carpet", "Installation"] },
+      { icon: "consultation", lines: ["Free In Home", "Consultations"] },
+      { icon: "support", lines: ["Expert Flooring", "Support"] },
+      { icon: "selection", lines: ["Wide Selection of", "Carpet Options"] },
     ],
   },
 ];
@@ -206,15 +234,15 @@ const highlightsContent = [
 const tipsContent = [
   {
     eyebrow: "Care Guide",
-    title: "Maintenance Tips",
+    title: "Broadloom Carpet Maintenance Tips",
     description:
-      "Maintaining your carpet broadloom involves regular vacuuming, immediate spot cleaning, and periodic professional cleanings to keep it looking fresh and prolong its lifespan.",
+      "Proper maintenance helps keep broadloom carpet flooring looking clean and comfortable while extending its appearance and service life. Regular vacuuming, prompt spot cleaning, and periodic professional cleaning can help protect your carpet.",
     backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
-      "Vacuum regularly to remove dirt and debris from carpet fibers.",
-      "Address spills immediately with a mild cleaner to prevent staining.",
-      "Schedule periodic professional cleanings to refresh appearance and extend lifespan.",
-      "Use mats at entryways and protect high-traffic paths to reduce premature wear.",
+      "Vacuum regularly to remove dirt, dust, and debris before they become embedded in the carpet fibers.",
+      "Clean spills promptly using an appropriate carpet cleaning solution to help prevent stains from setting into the fibers.",
+      "Schedule professional carpet cleaning periodically to refresh the appearance and help extend the life of your broadloom carpet.",
+      "Use entryway mats and consider protective measures in high traffic areas to help reduce dirt buildup and premature carpet wear.",
     ],
   },
 ];
@@ -222,13 +250,13 @@ const tipsContent = [
 const applicationsContent = [
   {
     eyebrow: "Where It Works",
-    title: "Great For Homes, Offices & Multi-Family",
-    description: "Broadloom carpet is ideal for:",
+    title: "Broadloom Carpet Flooring for Homes, Offices & Multi Family Properties",
+    description: "Broadloom carpet flooring is a versatile option for residential and commercial spaces that benefit from warmth, comfort, noise reduction, and a finished wall to wall appearance.",
     items: [
-      "Bedrooms, living rooms, basements",
-      "Stairs and hallways",
-      "Offices, suites, and retail spaces",
-      "Apartments, rentals, and multi-family turnover projects",
+      "Bedrooms, Living Rooms & Basements",
+      "Stairs & Hallways",
+      "Offices, Suites & Retail Spaces",
+      "Apartments, Rental Properties & Multi Family Projects",
     ],
   },
 ];
@@ -236,13 +264,15 @@ const applicationsContent = [
 const compareContent = [
   {
     eyebrow: "Compare Options",
-    title: "Broadloom Carpet vs Carpet Tile",
+    title: "Broadloom Carpet Flooring vs Carpet Tile",
+    intro:
+      "Compare broadloom carpet and carpet tile to determine which flooring format is better suited to your space, installation needs, appearance, and maintenance requirements.",
     featureLabel: "Feature",
     columns: ["Broadloom Carpet", "Carpet Tile"],
     rows: [
       {
         feature: "Installation",
-        values: ["Wall-to-wall roll installation", "Modular tile installation"],
+        values: ["Wall to wall carpet installation", "Modular tile installation"],
       },
       {
         feature: "Comfort Underfoot",
@@ -254,11 +284,14 @@ const compareContent = [
       },
       {
         feature: "Replacement",
-        values: ["Full-area replacement", "Easy tile replacement"],
+        values: ["Full area replacement", "Individual tile replacement"],
       },
       {
         feature: "Best For",
-        values: ["Bedrooms & living spaces", "Offices & high-traffic zones"],
+        values: [
+          "Bedrooms, living spaces, offices, and larger areas",
+          "Offices and high traffic areas",
+        ],
       },
     ],
   },
@@ -267,15 +300,18 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Carpet Broadloom Installation",
-    description:
-      "Our experienced installers handle free measuring, carpet selection, old carpet removal, stretching, seam work, edges, and transitions—then finish with a final walkthrough to make sure everything looks and feels right.",
-    servicesTitle: "Our Carpet Broadloom Flooring Services Include:",
+    title: "Professional Broadloom Carpet Flooring Installation",
+    paragraphs: [
+      "Our experienced installers provide complete broadloom carpet flooring installation from measuring and product selection to old carpet removal, stretching, seam work, edges, transitions, and final cleanup.",
+    ],
+    servicesTitle: "Our Broadloom Carpet Flooring Services Include:",
     services: [
-      "Free measure and quick quote",
+      "Free measuring and quick quotes",
       "Help selecting carpet style, thickness, and pad",
-      "Removal and disposal of old carpet (if needed)",
-      "Professional residential and commercial installation",
+      "Removal and disposal of old carpet when needed",
+      "Professional residential and commercial carpet installation",
+      "Stretching, seam, edge, and transition work",
+      "Final cleanup and project walkthrough",
     ],
     image: "/images/carpet-broadloom-gallery/Professional-Broadloom-Image.webp",
     imageAlt: "Professional broadloom carpet installation",
@@ -342,6 +378,7 @@ const faqContent = [
         answer:
           "Yes. Regular vacuuming, prompt spot cleaning, entryway mats, and periodic professional cleaning can help keep broadloom carpet looking fresh and performing well.",
       },
+
     ],
   },
 ];

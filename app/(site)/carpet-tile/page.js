@@ -40,11 +40,11 @@ const heroContent = [
         financing: {
           eyebrow: "Carpet Tile Flooring",
           eyebrowAsBadge: true,
-          titleBefore: "We Offer High-Quality ",
+          titleBefore: "Durable ",
           titleHighlightValue: "Carpet Tile Flooring",
-          titleAfter: "",
+          titleAfter: " for Commercial & Residential Spaces",
           description:
-            "Upgrade your space with durable modular carpet tiles designed for offices, retail, schools, and modern homes.",
+            "Upgrade your space with versatile carpet tile flooring designed for offices, retail spaces, schools, and modern homes. Choose from durable styles that offer easy maintenance and flexible replacement.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
@@ -88,10 +88,10 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Carpet Tile Flooring",
-    title: "Carpet Tile Flooring – Durable, Modular & Modern Flooring Solution",
+    title: "Carpet Tile Flooring for Commercial & Residential Spaces",
     paragraphs: [
-      "Carpet tile flooring, also known as modular carpet tiles, is a versatile, durable, and cost-effective flooring solution for both commercial and residential spaces. Designed for high-traffic environments, carpet tiles are widely used in offices, retail stores, schools, healthcare facilities, and modern homes.",
-      "At FMP Flooring, we specialize in commercial carpet tile flooring and residential carpet tiles that combine performance, comfort, and design flexibility. Whether you are upgrading an office or remodeling your home, carpet tile flooring offers long-lasting value and easy maintenance.",
+      "Carpet tile flooring, also known as modular carpet flooring, is a practical flooring solution for spaces that need durability, design flexibility, and easy maintenance. Unlike traditional wall to wall carpet, carpet tiles are installed as individual sections, making them easier to replace when a specific area becomes worn or damaged.",
+      "At FMP Flooring, we provide carpet tile and flooring solutions for offices, retail stores, schools, healthcare facilities, apartments, home offices, and other residential or commercial spaces. We help you select carpet tiles based on traffic, appearance, maintenance needs, and budget, then provide professional installation for a clean and finished result.",
     ],
     images: [
       {
@@ -135,19 +135,45 @@ const introContent = [
 // ];
 
 const simpleProcessContent = createFlooringProcessContent(
-  "Get Brand New Carpet Tile in 4 Simple Steps",
-  "A clear, step-by-step process so your carpet tile flooring project stays organized, efficient, and stress-free from start to finish.",
+  "Get New Carpet Tile Flooring in 4 Simple Steps",
+  "Our straightforward installation process keeps your carpet tile flooring project organized and efficient from initial preparation through final finishing.",
+  [
+    {
+      step: "01",
+      title: "Remove Existing Flooring",
+      description:
+        "We carefully remove existing carpet, tile, or other flooring and clear the space so it is ready for your new carpet tile flooring installation.",
+    },
+    {
+      step: "02",
+      title: "Prepare the Subfloor",
+      description:
+        "We inspect and prepare the subfloor to create a clean, smooth, and stable foundation for your new carpet floor tiles.",
+    },
+    {
+      step: "03",
+      title: "Professional Carpet Tile Installation",
+      description:
+        "Our experienced installers carefully position and install each carpet tile to create a clean, secure, and professional finished floor.",
+    },
+    {
+      step: "04",
+      title: "Finishing Details & Final Walkthrough",
+      description:
+        "We complete the installation with edges, transitions, trim, and other finishing details, then clean the space and perform a final walkthrough.",
+    },
+  ],
 );
 
 const financeBannerContent = [
   {
     title: "Financing Available",
-    description: "Convenient monthly payments for your budget¹",
+    description: "Convenient monthly payment options may help make your new carpet tile flooring more manageable for your budget.",
     buttonText: "View Financing Options",
     buttonHref: "/financing",
     backgroundImage: "/images/finance-banner-One.webp",
     footnote: "¹With approved credit.",
-    footnoteLinkText: "Details",
+    footnoteLinkText: "Details Apply",
     footnoteHref: "/financing",
   },
 ];
@@ -156,37 +182,39 @@ const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
     title: "Why Choose Carpet Tile Flooring?",
+    description:
+      "Carpet tile flooring combines durability, design flexibility, easy maintenance, and convenient replacement, making it a practical choice for many residential and commercial spaces.",
     backgroundImage: "/images/carpet-tile-gallery/why-choose-carpet-flooring.webp",
     items: [
       {
         icon: "durable",
-        title: "Durable Carpet Tiles for High-Traffic Areas",
+        title: "Durable Carpet Tiles for High Traffic Areas",
         description:
-          "Carpet tiles are engineered for durability, making them ideal for commercial flooring applications such as offices, hallways, conference rooms, and retail spaces. High-performance fibers resist wear, stains, and crushing caused by heavy foot traffic.",
+          "Carpet tiles are available in durable options designed for busy spaces such as offices, hallways, conference rooms, and retail areas. The right carpet tile can provide reliable performance in areas with frequent foot traffic.",
       },
       {
         icon: "affordable",
-        title: "Easy Installation & Tile Replacement",
+        title: "Easy Installation & Individual Tile Replacement",
         description:
-          "Unlike traditional broadloom carpet, carpet tile flooring installs quickly and efficiently. Individual tiles can be replaced if damaged or stained, eliminating the need to replace the entire floor.",
+          "Carpet tile flooring offers a practical advantage when repairs are needed. Individual carpet tiles can often be replaced when they become damaged or heavily stained, reducing the need to replace the entire floor.",
       },
       {
         icon: "maintenance",
-        title: "Low-Maintenance Carpet Flooring",
+        title: "Low Maintenance Carpet Tile Flooring",
         description:
-          "Carpet tiles are easy to maintain with routine vacuuming and spot cleaning. Their modular design helps reduce long-term maintenance and repair costs.",
+          "Routine vacuuming and prompt spot cleaning can help keep carpet tiles looking their best. Because the flooring is modular, individual damaged areas can be addressed without replacing the entire installation.",
       },
       {
         icon: "styles",
-        title: "Design Flexibility with Modular Carpet Tiles",
+        title: "Flexible Designs with Modular Carpet Tiles",
         description:
-          "Available in a wide range of colors, textures, and patterns, carpet tiles allow you to create custom layouts, modern designs, and unique flooring patterns for any space.",
+          "Carpet tiles are available in a wide range of colors, textures, patterns, and layouts. Their modular format makes it easier to create distinctive designs that complement offices, retail spaces, schools, and modern interiors.",
       },
       {
         icon: "moisture",
-        title: "Eco-Friendly Carpet Tile Options",
+        title: "Eco Friendly Carpet Tile Options",
         description:
-          "Many carpet tiles are manufactured using recycled materials and are recyclable at the end of their life cycle, making them a sustainable flooring choice.",
+          "Some carpet tile products are manufactured with recycled materials or designed with recycling programs in mind. Product availability and sustainability features vary by manufacturer, so we can help you select an option that fits your project requirements.",
       },
     ],
   },
@@ -195,10 +223,10 @@ const benefitsContent = [
 const highlightsContent = [
   {
     items: [
-      { icon: "installation", lines: ["Installation Services", "Available"] },
-      { icon: "consultation", lines: ["Free", "Consultations"] },
-      { icon: "support", lines: ["Expert", "Support"] },
-      { icon: "selection", lines: ["Wide Selection of", "Flooring Types"] },
+      { icon: "installation", lines: ["Professional Carpet ", "Tile Installation"] },
+      { icon: "consultation", lines: ["Free Flooring", "Consultations"] },
+      { icon: "support", lines: ["Expert Flooring", "Support"] },
+      { icon: "selection", lines: ["Wide Selection of", "Carpet Tile Options"] },
     ],
   },
 ];
@@ -206,15 +234,15 @@ const highlightsContent = [
 const tipsContent = [
   {
     eyebrow: "Care Guide",
-    title: "Maintenance Tips",
+    title: "Carpet Tile Flooring Maintenance Tips",
     description:
-      "Keep your carpet tiles looking their best with a simple, consistent cleaning routine that protects the fibers and modular seams.",
+      "Regular maintenance helps keep carpet tile flooring clean, attractive, and ready for everyday use. Vacuum regularly, address spills promptly, and replace individual tiles when necessary to maintain the appearance of your floor.",
     backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
     tips: [
-      "Vacuum regularly to remove dirt and debris from carpet tile surfaces.",
-      "Address spills quickly with a mild cleaner to prevent staining.",
-      "Perform periodic deep cleans to maintain appearance and durability.",
-      "Replace individual damaged tiles instead of the entire floor when needed.",
+      "Vacuum regularly to remove dirt, dust, and debris before they become embedded in carpet tile fibers.",
+      "Clean spills promptly using an appropriate carpet cleaning solution to help prevent stains from setting into the carpet fibers.",
+      "Schedule periodic professional or deep cleaning based on the carpet tile manufacturer's care recommendations to maintain appearance and performance.",
+      "Replace individual damaged or heavily stained carpet tiles when needed instead of replacing the entire floor.",
     ],
   },
 ];
@@ -224,16 +252,16 @@ const applicationsContent = [
     eyebrow: "Where It Works",
     title: "Carpet Tile Flooring Applications",
     description:
-      "Carpet tile flooring is suitable for a wide range of commercial and residential uses, including:",
+      "Carpet tile flooring works well in a variety of commercial and residential spaces where durability, design flexibility, and easy maintenance are important.",
     items: [
-      "Commercial office carpet tile flooring",
-      "Corporate and coworking spaces",
-      "Retail stores and showrooms",
-      "Conference and meeting rooms",
-      "Schools and educational facilities",
-      "Healthcare and medical offices",
-      "Home offices",
-      "Basements and playrooms",
+      "Commercial Office Carpet Tile Flooring",
+      "Corporate & Coworking Spaces",
+      "Retail Stores & Showrooms",
+      "Conference & Meeting Rooms",
+      "Schools & Educational Facilities",
+      "Healthcare & Medical Offices",
+      "Home Offices",
+      "Basements & Playrooms",
     ],
   },
 ];
@@ -242,28 +270,36 @@ const compareContent = [
   {
     eyebrow: "Compare Options",
     title: "Carpet Tile Flooring vs Broadloom Carpet",
+    intro:
+      "Compare carpet tile flooring and broadloom carpet to determine which option better fits your space, maintenance needs, design preferences, and replacement requirements.",
     featureLabel: "Feature",
     columns: ["Carpet Tile Flooring", "Broadloom Carpet"],
     rows: [
       {
         feature: "Installation",
-        values: ["Modular tile installation", "One-piece installation"],
+        values: ["Modular tile installation", "Wall to wall installation"],
       },
       {
         feature: "Replacement",
-        values: ["Easy tile replacement", "Entire floor replacement"],
+        values: ["Individual tile replacement", "Larger area replacement"],
       },
       {
         feature: "Design Options",
-        values: ["Flexible design options", "Fixed design"],
+        values: ["Flexible patterns and layouts", "Wide range of colors and styles"],
       },
       {
-        feature: "High-Traffic Performance",
-        values: ["Ideal for high-traffic areas", "Wears faster in traffic zones"],
+        feature: "High Traffic Performance",
+        values: [
+          "Well suited for many high traffic areas",
+          "Performance varies by carpet type",
+        ],
       },
       {
-        feature: "Long-Term Maintenance",
-        values: ["Lower long-term maintenance", "Higher maintenance costs"],
+        feature: "Maintenance",
+        values: [
+          "Individual tiles can be replaced when needed",
+          "Damaged areas may require larger replacement",
+        ],
       },
     ],
   },
@@ -272,15 +308,18 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Carpet Tile Installation Services",
-    description:
-      "We provide expert carpet tile installation for both commercial and residential projects. Our experienced installers ensure proper layout, secure adhesion, and a clean, professional finish.",
+    title: "Professional Carpet Tile Flooring Installation Services",
+    paragraphs: [
+      "Our experienced installers provide professional carpet tile flooring installation for commercial and residential projects. We focus on accurate layout, proper preparation, secure installation, clean edges, and a finished appearance that fits your space.",
+    ],
     servicesTitle: "Our Carpet Tile Flooring Services Include:",
     services: [
-      "Free on-site consultations",
-      "Accurate flooring estimates",
+      "Free on site flooring consultations",
+      "Accurate flooring measurements and estimates",
       "Professional carpet tile installation",
-      "Commercial and residential flooring solutions",
+      "Commercial and residential carpet tile solutions",
+      "Proper layout and tile positioning",
+      "Final cleanup and project walkthrough",
     ],
     image:
       "/images/carpet-tile-gallery/Professional-Carpet-Tile-Image.webp",
@@ -462,13 +501,13 @@ const commercialProjectsContent = [
 
 const ctaContent = [
   {
-    headlineWhite: "Get a Free",
-    headlineTeal: "Carpet Tile Flooring Quote",
+    eyebrow: "READY FOR NEW CARPET?",
+    title: "Find the Right Carpet Tile Flooring for Your Space",
     description:
-      "Upgrade your space with durable, stylish carpet tile flooring. Contact FMP Flooring today for a free estimate and expert installation.",
+      "Whether you are updating an office, retail space, school, apartment, or home, FMP Flooring can help you choose the right carpet tiles and provide professional installation.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
-    buttonText: "Free In-Home Estimate",
+    buttonText: "Get Your Free Estimate",
     buttonHref: "/estimate",
     backgroundImage: "/images/Hero-Image.jpg",
   },
