@@ -62,6 +62,7 @@ export default function AreasWeServeSection({
   title = "Serving North Carolina & South Carolina",
   description = "FMP Flooring provides residential, commercial, and professional flooring installation services across North Carolina and South Carolina. Our team works with homeowners, businesses, contractors, government facilities, and other organizations looking for dependable flooring solutions.",
   areas = DEFAULT_AREAS,
+  backgroundImage = null,
 }) {
   if (!areas?.length) return null;
 
@@ -72,14 +73,18 @@ export default function AreasWeServeSection({
 
   return (
     <section className="relative isolate overflow-hidden bg-greylight">
-      <Image
-        src=""
-        alt=""
-        fill
-        className="object-cover object-center"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-white/75" aria-hidden="true" />
+      {backgroundImage ? (
+        <>
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-white/75" aria-hidden="true" />
+        </>
+      ) : null}
 
       <div className="relative mx-auto max-w-7xl px-6 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-16">
         <div className="mx-auto max-w-3xl text-center">

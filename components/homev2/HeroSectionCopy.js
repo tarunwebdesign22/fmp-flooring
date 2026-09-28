@@ -1,15 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Playfair_Display } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
-
-const heroLeadFont = Playfair_Display({
-  subsets: ["latin"],
-  style: ["italic"],
-  weight: ["500", "600", "700"],
-  display: "swap",
-});
 
 function StarIcon() {
   return (
@@ -224,13 +216,15 @@ function HighlightedCopy({ segments, variant }) {
 
   if (isHeroLead) {
     return (
-      <p
-        className={`${heroLeadFont.className} mt-5 max-w-2xl text-xl font-medium italic leading-snug tracking-[0.01em] text-white sm:mt-6 sm:text-2xl sm:leading-snug lg:text-[1.65rem] lg:leading-snug`}
-      >
+      <p className="mt-5 max-w-2xl text-base font-semibold leading-snug tracking-tight text-white sm:mt-6 sm:text-lg lg:text-xl lg:leading-snug">
         {segments.map((segment, index) =>
           segment.highlight ? (
-            <span key={index} className="font-bold text-[#fdbf3e]">
-              {segment.text}
+            <span key={index} className="relative mx-0.5 inline-block font-bold">
+              <span className="relative z-10 text-[#fdbf3e]">{segment.text}</span>
+              <span
+                className="absolute -bottom-0.5 left-0 right-0 z-0 h-2 rounded-sm bg-teal/40"
+                aria-hidden="true"
+              />
             </span>
           ) : (
             <span key={index}>{segment.text}</span>

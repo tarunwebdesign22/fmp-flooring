@@ -191,40 +191,54 @@ const servicesContent = [
   },
 ];
 
-const featuresContent = [
+const whyFmpContent = [
   {
-    eyebrow: "Our Work USP",
-    title: "Service Highlights",
-    description: "From preparation to installation, we take care of the details that make your flooring project easier and more successful.",
-    backgroundImage: "/images/294-Wood-Flooring.webp",
-
-    cards: [
+    eyebrow: "Why FMP Flooring",
+    title: "Everything You Need for a Better Flooring Project",
+    description:
+      "From preparation and removal to professional installation, FMP Flooring handles the details that make your project easier. With experienced professionals, quality materials, transparent pricing, and expertise across residential and commercial spaces, we help you get the job done right.",
+    points: [
       {
-        icon: "furniture",
-        title: "Furniture Carefully Moved",
-       
-      },
-      {
+        step: "01",
         icon: "preparation",
         title: "Complete Floor Preparation",
-       
+        description:
+          "Furniture moving, old flooring removal, and floor preparation handled before installation.",
       },
       {
-        icon: "removal",
-        title: "Old Flooring Removal",
-        
+        step: "02",
+        icon: "installation",
+        title: "Professional Installation",
+        description:
+          "Experienced professionals handle installation challenges and deliver a clean, hassle-free finish.",
       },
       {
-        icon: "challenges",
-        title: "Installation Challenges Handled",
-        
+        step: "03",
+        icon: "options",
+        title: "Quality Flooring Options",
+        description:
+          "A wide range of flooring materials for different styles, spaces, and project requirements.",
       },
       {
-        icon: "hassleFree",
-        title: "Hassle Free Installation",
-        
+        step: "04",
+        icon: "pricing",
+        title: "Transparent, Competitive Pricing",
+        description:
+          "Warehouse pricing and straightforward guidance without unnecessary surprises.",
+      },
+      {
+        step: "05",
+        icon: "expertise",
+        title: "Residential & Commercial Expertise",
+        description:
+          "From homes and offices to retail spaces, public facilities, and large commercial projects.",
       },
     ],
+    trustLine: "Experienced team • Quality materials • Hassle-free service",
+    trustNote: {
+      eyebrow: "Family owned since 1995",
+      text: "Quality materials. Experienced professionals. Honest guidance.",
+    },
   },
 ];
 
@@ -872,7 +886,7 @@ const facebookFeedContent = [
     pageUrl: "https://www.facebook.com/people/FMP-Flooring/100084480100386/",
     embedPageUrl: "https://www.facebook.com/profile.php?id=100084480100386",
     buttonText: "Visit Our Facebook Page",
-    image: "/images/flooring-sm.webp",
+    image: "/images/flooring-sm-updated.webp",
     imageAlt: "FMP Flooring team installing new flooring",
   },
 ];
@@ -922,54 +936,6 @@ const beforeAfterContent = [
         label: "Residential Remodel",
         beforeImage: "/images/before-after/78-Before.jpeg",
         afterImage: "/images/before-after/78-After.jpg",
-      },
-    ],
-  },
-];
-
-const whyChooseContent = [
-  {
-    eyebrow:"",
-    title: "Why Choose FMP?",
-    description:
-      "Family owned since 1995, FMP Flooring combines quality materials, professional installation, warehouse pricing, and honest guidance for residential and commercial flooring projects.",
-
-    items: [
-      {
-        icon: "professionals",
-        title: "Experienced Professionals",
-        description:
-          "Skilled flooring installers with industry experience, delivering careful workmanship and dependable results on every project.",
-      },
-      {
-        icon: "selection",
-        title: "Wide Range of Flooring Options",
-        description:
-          "Choose from carpet, carpet tile, luxury vinyl plank, laminate, hardwood, ceramic, VCT, rubber, and more.",
-      },
-      {
-        icon: "pricing",
-        title: "Affordable & Transparent Pricing",
-        description:
-          "Clear estimates, competitive pricing, and straightforward service without unnecessary surprises.",
-      },
-      {
-        icon: "expertise",
-        title: "Residential & Commercial Expertise",
-        description:
-          "We work with homeowners, offices, retail spaces, public facilities, and large commercial projects.",
-      },
-      {
-        icon: "quality",
-        title: "Quality Materials & Workmanship",
-        description:
-          "We use trusted flooring products and proven installation methods designed for durability, performance, and lasting appeal.",
-      },
-      {
-        icon: "satisfaction",
-        title: "Customer Satisfaction First",
-        description:
-          "Clear communication, dependable service, careful installation, and attention to detail are at the heart of every project.",
       },
     ],
   },
@@ -1178,14 +1144,11 @@ export default function Home() {
       {/* <HeroSection content={heroContent} /> */}
       <HeroSectionCopy content={heroContent} />
       <FederalContractorSection content={federalContent} />
-      <ProcessSection content={processContent} />
+      {/* <ProcessSection content={processContent} /> */}
       <ServicesSection content={servicesContent} />
       <QuoteCtaSection content={quoteCtaContent} />
       <MeetTheFounderSection content={founderContent} />
-      <HighlightsWhyChooseSection
-        highlights={featuresContent[0]}
-        whyChoose={whyChooseContent[0]}
-      />
+      <HighlightsWhyChooseSection content={whyFmpContent} />
       <HowWeManageProjectsSection content={howWeManageProjectsContent} />
       <ExploreVideosSection content={videosContent} />
       <GoogleReviewsSection content={googleReviewsContent} />
