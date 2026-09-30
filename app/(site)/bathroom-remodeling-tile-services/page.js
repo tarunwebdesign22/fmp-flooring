@@ -408,7 +408,7 @@ export default function BathroomRemodelingTileServicesPage() {
       </section>
 
       {/* Services */}
-      <section className="bg-[#eeecff] py-14 sm:py-16 lg:py-20">
+      <section id="services" className="scroll-mt-28 bg-[#eeecff] py-14 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-bold text-blue sm:text-4xl">
