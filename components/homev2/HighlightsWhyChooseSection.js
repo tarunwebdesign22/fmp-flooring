@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const pointIcons = {
@@ -99,134 +100,163 @@ export default function HighlightsWhyChooseSection({ content }) {
     >
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div
-          className={`mx-auto max-w-3xl text-center transition-all duration-700 ${
+          className={`grid items-start gap-6 transition-all duration-700 lg:grid-cols-2 lg:gap-12 ${
             visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
-          {section.eyebrow ? (
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-teal sm:text-sm">
-              {section.eyebrow}
-            </p>
-          ) : null}
-          <h2
-            id="why-fmp-heading"
-            className="mt-3 text-3xl font-bold tracking-tight text-blue sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]"
-          >
-            {section.title}
-          </h2>
-          <span className="mx-auto mt-4 block h-1 w-16 rounded-full bg-teal" aria-hidden="true" />
+          <div className="text-left">
+            {section.eyebrow ? (
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-teal sm:text-sm">
+                {section.eyebrow}
+              </p>
+            ) : null}
+            <h2
+              id="why-fmp-heading"
+              className="mt-3 text-3xl font-bold tracking-tight text-blue sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]"
+            >
+              {section.title}
+            </h2>
+            <span className="mt-4 block h-1 w-16 rounded-full bg-teal" aria-hidden="true" />
+          </div>
           {section.description ? (
-            <p className="mt-5 text-[15px] leading-7 text-blue/65 sm:text-base sm:leading-8">
+            <p className="text-left text-[15px] leading-7 text-blue/65 sm:text-base sm:leading-8 lg:pt-8">
               {section.description}
             </p>
           ) : null}
         </div>
 
-        {/* Selectable benefit tabs */}
         <div
-          role="tablist"
-          aria-label="Why FMP Flooring benefits"
-          className={`mt-10 grid grid-cols-1 gap-3 transition-all duration-700 sm:mt-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-3 ${
+          className={`mt-10 grid items-stretch gap-5 transition-all duration-700 sm:mt-12 lg:grid-cols-[minmax(220px,280px)_minmax(0,1fr)_minmax(220px,320px)] lg:gap-6 ${
             visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
-          {points.map((point, index) => {
-            const selected = index === activeIndex;
-            const step = point.step || String(index + 1).padStart(2, "0");
-
-            return (
-              <button
-                key={point.title}
-                type="button"
-                role="tab"
-                id={`why-fmp-tab-${index}`}
-                aria-selected={selected}
-                aria-controls="why-fmp-panel"
-                tabIndex={selected ? 0 : -1}
-                onClick={() => selectPoint(index)}
-                className={`group relative overflow-hidden rounded-2xl border px-4 py-4 text-left transition-all duration-300 ${
-                  selected
-                    ? "border-teal bg-white shadow-[0_8px_24px_rgba(42,188,175,0.15)]"
-                    : "border-blue/8 bg-white/70 hover:-translate-y-0.5 hover:border-teal/35 hover:bg-white hover:shadow-[0_8px_22px_rgba(34,30,83,0.08)]"
-                }`}
-              >
-                <span
-                  className={`text-xs font-bold tracking-[0.14em] ${
-                    selected ? "text-teal" : "text-blue/40"
-                  }`}
-                >
-                  {step}
-                </span>
-                <span
-                  className={`mt-2 block text-sm font-bold leading-snug ${
-                    selected ? "text-blue" : "text-blue/80"
-                  }`}
-                >
-                  {point.title}
-                </span>
-                {selected ? (
-                  <span
-                    key={`progress-${activeIndex}`}
-                    className="absolute inset-x-0 bottom-0 h-0.5 bg-teal why-fmp-tab-progress"
-                    style={{ animationDuration: `${AUTO_ADVANCE_MS}ms` }}
-                    aria-hidden="true"
-                  />
-                ) : null}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Spotlight feature */}
-        <div
-          id="why-fmp-panel"
-          role="tabpanel"
-          aria-labelledby={`why-fmp-tab-${activeIndex}`}
-          className={`relative mt-5 overflow-hidden rounded-[28px] bg-blue text-white shadow-[0_20px_50px_rgba(34,30,83,0.22)] transition-all duration-700 sm:mt-6 ${
-            visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-          }`}
-        >
+          {/* Selectable benefit tabs */}
           <div
-            className="pointer-events-none absolute -right-8 -top-10 text-[9rem] font-black leading-none text-white/[0.06] sm:text-[12rem] lg:right-6 lg:text-[14rem]"
-            aria-hidden="true"
+            role="tablist"
+            aria-label="Why FMP Flooring benefits"
+            className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1 lg:content-start"
           >
-            {activeStep}
+            {points.map((point, index) => {
+              const selected = index === activeIndex;
+              const step = point.step || String(index + 1).padStart(2, "0");
+
+              return (
+                <button
+                  key={point.title}
+                  type="button"
+                  role="tab"
+                  id={`why-fmp-tab-${index}`}
+                  aria-selected={selected}
+                  aria-controls="why-fmp-panel"
+                  tabIndex={selected ? 0 : -1}
+                  onClick={() => selectPoint(index)}
+                  className={`group relative overflow-hidden rounded-2xl border px-4 py-4 text-left transition-all duration-300 ${
+                    selected
+                      ? "border-teal bg-white shadow-[0_8px_24px_rgba(42,188,175,0.15)]"
+                      : "border-blue/8 bg-white/70 hover:-translate-y-0.5 hover:border-teal/35 hover:bg-white hover:shadow-[0_8px_22px_rgba(34,30,83,0.08)]"
+                  }`}
+                >
+                  <span className="flex items-start gap-3">
+                    <span
+                      className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${
+                        selected
+                          ? "bg-[#fdbf3e] text-blue"
+                          : "bg-blue/5 text-blue/55 group-hover:bg-[#fdbf3e]/20 group-hover:text-blue"
+                      }`}
+                      aria-hidden="true"
+                    >
+                      {pointIcons[point.icon] || pointIcons.expertise}
+                    </span>
+                    <span className="min-w-0">
+                      <span
+                        className={`block text-xs font-bold tracking-[0.14em] ${
+                          selected ? "text-teal" : "text-blue/40"
+                        }`}
+                      >
+                        {step}
+                      </span>
+                      <span
+                        className={`mt-1.5 block text-sm font-bold leading-snug ${
+                          selected ? "text-blue" : "text-blue/80"
+                        }`}
+                      >
+                        {point.title}
+                      </span>
+                    </span>
+                  </span>
+                  {selected ? (
+                    <span
+                      key={`progress-${activeIndex}`}
+                      className="absolute inset-x-0 bottom-0 h-0.5 bg-teal why-fmp-tab-progress"
+                      style={{ animationDuration: `${AUTO_ADVANCE_MS}ms` }}
+                      aria-hidden="true"
+                    />
+                  ) : null}
+                </button>
+              );
+            })}
           </div>
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(42,188,175,0.22),transparent_45%)]" aria-hidden="true" />
 
+          {/* Spotlight feature */}
           <div
-            key={panelKey}
-            className="relative grid gap-8 p-7 why-fmp-panel-enter sm:p-9 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-12 lg:p-11"
+            id="why-fmp-panel"
+            role="tabpanel"
+            aria-labelledby={`why-fmp-tab-${activeIndex}`}
+            className="relative min-h-full overflow-hidden rounded-[28px] bg-blue text-white shadow-[0_20px_50px_rgba(34,30,83,0.22)]"
           >
-            <div className="max-w-2xl">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#fdbf3e] text-blue shadow-[0_8px_22px_rgba(253,191,62,0.35)]">
-                  {pointIcons[active.icon] || pointIcons.expertise}
-                </span>
+            <div
+              className="pointer-events-none absolute -right-8 -top-10 text-[9rem] font-black leading-none text-white/[0.06] sm:text-[12rem] lg:right-4 lg:text-[11rem]"
+              aria-hidden="true"
+            >
+              {activeStep}
+            </div>
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(42,188,175,0.22),transparent_45%)]" aria-hidden="true" />
+
+            <div
+              key={panelKey}
+              className="relative flex h-full min-h-[280px] flex-col justify-between gap-8 p-7 why-fmp-panel-enter sm:min-h-[340px] sm:p-9 lg:p-10"
+            >
+              <div className="max-w-xl">
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#fdbf3e]">
                   Benefit {activeStep}
                 </p>
+                <h3 className="mt-4 text-2xl font-bold leading-snug sm:text-3xl lg:text-[2rem]">
+                  {active.title}
+                </h3>
+                <span className="mt-4 block h-0.5 w-14 rounded-full bg-teal" aria-hidden="true" />
+                <p className="mt-4 text-[15px] leading-7 text-white/80 sm:text-base sm:leading-8">
+                  {active.description}
+                </p>
               </div>
-              <h3 className="mt-5 text-2xl font-bold leading-snug sm:text-3xl lg:text-[2.15rem]">
-                {active.title}
-              </h3>
-              <span className="mt-4 block h-0.5 w-14 rounded-full bg-teal" aria-hidden="true" />
-              <p className="mt-4 text-[15px] leading-7 text-white/80 sm:text-base sm:leading-8">
-                {active.description}
-              </p>
-            </div>
 
-            <div className="flex items-center gap-2 lg:pb-1" aria-hidden="true">
-              {points.map((_, index) => (
-                <span
-                  key={index}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    index === activeIndex ? "w-8 bg-[#fdbf3e]" : "w-1.5 bg-white/30"
-                  }`}
-                />
-              ))}
+              <div className="flex items-center gap-2" aria-hidden="true">
+                {points.map((_, index) => (
+                  <span
+                    key={index}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      index === activeIndex ? "w-8 bg-[#fdbf3e]" : "w-1.5 bg-white/30"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
+
+          {/* Benefit image */}
+          {active.image ? (
+            <div
+              key={`image-${panelKey}`}
+              className="relative min-h-[240px] overflow-hidden rounded-[28px] shadow-[0_16px_40px_rgba(34,30,83,0.14)] why-fmp-panel-enter sm:min-h-[300px] lg:min-h-full"
+            >
+              <Image
+                src={active.image}
+                alt={active.imageAlt || active.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 320px"
+              />
+            </div>
+          ) : null}
         </div>
 
         {/* Trust strip */}

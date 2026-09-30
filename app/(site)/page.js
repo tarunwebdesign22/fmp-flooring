@@ -204,6 +204,8 @@ const whyFmpContent = [
         title: "Complete Floor Preparation",
         description:
           "Furniture moving, old flooring removal, and floor preparation handled before installation.",
+        image: "/images/why-fmp/01-floor-preparation.jpg",
+        imageAlt: "Floor preparation before professional flooring installation",
       },
       {
         step: "02",
@@ -211,6 +213,8 @@ const whyFmpContent = [
         title: "Professional Installation",
         description:
           "Experienced professionals handle installation challenges and deliver a clean, hassle-free finish.",
+        image: "/images/why-fmp/02-installation.jpg",
+        imageAlt: "Professional flooring installation in progress",
       },
       {
         step: "03",
@@ -218,6 +222,8 @@ const whyFmpContent = [
         title: "Quality Flooring Options",
         description:
           "A wide range of flooring materials for different styles, spaces, and project requirements.",
+        image: "/images/why-fmp/03-flooring-options.jpg",
+        imageAlt: "Quality hardwood and flooring material options",
       },
       {
         step: "04",
@@ -225,6 +231,8 @@ const whyFmpContent = [
         title: "Transparent, Competitive Pricing",
         description:
           "Warehouse pricing and straightforward guidance without unnecessary surprises.",
+        image: "/images/why-fmp/04-pricing.jpg",
+        imageAlt: "Transparent flooring pricing consultation with a homeowner",
       },
       {
         step: "05",
@@ -232,6 +240,8 @@ const whyFmpContent = [
         title: "Residential & Commercial Expertise",
         description:
           "From homes and offices to retail spaces, public facilities, and large commercial projects.",
+        image: "/images/why-fmp/05-expertise.jpg",
+        imageAlt: "Residential and commercial flooring expertise",
       },
     ],
     trustLine: "Experienced team • Quality materials • Hassle-free service",
