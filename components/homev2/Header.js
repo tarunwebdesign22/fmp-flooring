@@ -221,7 +221,7 @@ export default function Header() {
             </Link>
 
             <nav ref={navRef} aria-label="Primary" className="hidden min-w-0 flex-1 lg:block">
-              <ul className="flex items-center justify-center gap-x-3 xl:gap-x-4">
+              <ul className="mt-8 flex items-center justify-center gap-x-3 xl:gap-x-4">
                 {menu.map((item, index) => {
                   const active = itemIsActive(item, pathname);
                   const expanded = openMenu === item.label;
@@ -239,10 +239,12 @@ export default function Header() {
                               document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" });
                             }
                           }}
-                          className="inline-flex items-center gap-1.5 px-3 py-2 text-[16px] font-semibold whitespace-nowrap text-blue transition-colors hover:text-[#fdbf3e] xl:text-[17px]"
+                          className="group inline-flex items-center gap-1.5 px-3 py-2 text-[16px] font-semibold whitespace-nowrap text-blue transition-colors hover:text-[#fdbf3e] xl:text-[17px]"
                         >
                           <MenuSquare color={square} />
-                          {item.label}
+                          <span className="border-b border-transparent group-hover:border-[#fdbf3e]">
+                            {item.label}
+                          </span>
                         </Link>
                       </li>
                     );
@@ -269,12 +271,20 @@ export default function Header() {
                           if (hoverOpened.current) return;
                           setOpenMenu((current) => (current === item.label ? null : item.label));
                         }}
-                        className={`inline-flex items-center gap-1.5 px-3 py-2 text-[16px] font-semibold whitespace-nowrap transition-colors xl:text-[17px] ${
+                        className={`group inline-flex items-center gap-1.5 px-3 py-2 text-[16px] font-semibold whitespace-nowrap transition-colors xl:text-[17px] ${
                           active || expanded ? "text-[#fdbf3e]" : "text-blue hover:text-[#fdbf3e]"
                         }`}
                       >
                         <MenuSquare color={square} />
-                        {item.label}
+                        <span
+                          className={`border-b ${
+                            active || expanded
+                              ? "border-[#fdbf3e]"
+                              : "border-transparent group-hover:border-[#fdbf3e]"
+                          }`}
+                        >
+                          {item.label}
+                        </span>
                         <ChevronIcon open={expanded} />
                       </button>
 
