@@ -221,7 +221,7 @@ export default function Header() {
             </Link>
 
             <nav ref={navRef} aria-label="Primary" className="hidden min-w-0 flex-1 lg:block">
-              <ul className="flex items-center justify-center gap-x-1 xl:gap-x-2">
+              <ul className="flex items-center justify-center gap-x-3 xl:gap-x-4">
                 {menu.map((item, index) => {
                   const active = itemIsActive(item, pathname);
                   const expanded = openMenu === item.label;
@@ -239,7 +239,7 @@ export default function Header() {
                               document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" });
                             }
                           }}
-                          className="inline-flex items-center gap-1.5 px-3 py-2 text-[14px] font-semibold whitespace-nowrap text-blue transition-colors hover:text-[#fdbf3e] xl:text-[15px]"
+                          className="inline-flex items-center gap-1.5 px-3 py-2 text-[16px] font-semibold whitespace-nowrap text-blue transition-colors hover:text-[#fdbf3e] xl:text-[17px]"
                         >
                           <MenuSquare color={square} />
                           {item.label}
@@ -269,7 +269,7 @@ export default function Header() {
                           if (hoverOpened.current) return;
                           setOpenMenu((current) => (current === item.label ? null : item.label));
                         }}
-                        className={`inline-flex items-center gap-1.5 px-3 py-2 text-[14px] font-semibold whitespace-nowrap transition-colors xl:text-[15px] ${
+                        className={`inline-flex items-center gap-1.5 px-3 py-2 text-[16px] font-semibold whitespace-nowrap transition-colors xl:text-[17px] ${
                           active || expanded ? "text-[#fdbf3e]" : "text-blue hover:text-[#fdbf3e]"
                         }`}
                       >
@@ -312,12 +312,9 @@ export default function Header() {
             <div className="ml-auto flex items-center gap-3">
               <Link
                 href="/in-stock-specials"
-                className="hidden items-center gap-1.5 rounded-sm bg-teal px-4 py-1.5 text-sm font-bold leading-tight text-white transition-colors hover:bg-blue sm:inline-flex"
+                className="hidden items-center justify-center rounded-lg bg-teal px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-teal/90 sm:inline-flex"
               >
-                <span className="flex flex-col items-center text-center">
-                  <span>In Stock</span>
-                  <span>Specials</span>
-                </span>
+                In Stock Specials
               </Link>
 
               <button
@@ -363,7 +360,7 @@ export default function Header() {
                             document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" });
                           }
                         }}
-                        className="block px-2 py-3.5 text-[15px] font-semibold text-blue"
+                        className="block px-2 py-3.5 text-[17px] font-semibold text-blue"
                       >
                         {item.label}
                       </Link>
@@ -379,7 +376,7 @@ export default function Header() {
                       type="button"
                       aria-expanded={expanded}
                       onClick={() => setOpenSection((current) => (current === item.label ? null : item.label))}
-                      className="flex w-full items-center justify-between gap-3 px-2 py-3.5 text-left text-[15px] font-semibold text-blue"
+                      className="flex w-full items-center justify-between gap-3 px-2 py-3.5 text-left text-[17px] font-semibold text-blue"
                     >
                       {item.label}
                       <ChevronIcon open={expanded} />
@@ -407,12 +404,9 @@ export default function Header() {
             <Link
               href="/in-stock-specials"
               onClick={closeMenus}
-              className="mt-4 flex w-full items-center justify-center rounded-sm bg-teal px-4 py-2.5 text-sm font-bold leading-tight text-white transition-colors hover:bg-blue sm:hidden"
+              className="mt-4 flex w-full items-center justify-center rounded-lg bg-teal px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-teal/90 sm:hidden"
             >
-              <span className="flex flex-col items-center text-center">
-                <span>In Stock</span>
-                <span>Specials</span>
-              </span>
+              In Stock Specials
             </Link>
           </div>
         </div>
