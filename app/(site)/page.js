@@ -593,7 +593,7 @@ const categoryCardsContent = [
           },
           {
             title: "Bathtub Replacement",
-            image: "/images/bathroom-remodeling/designed-for-you.jpg",
+            image: "/images/Bathtub-Replacement.jpg",
             imageAlt: "Bathtub replacement remodel",
             href: "/bathroom-remodeling-tile-services#services",
           },
