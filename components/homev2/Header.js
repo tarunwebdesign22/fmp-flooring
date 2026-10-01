@@ -321,7 +321,7 @@ export default function Header() {
               </ul>
             </nav>
 
-            <div className="ml-auto flex items-center gap-3">
+            <div className="mt-7 ml-auto flex items-center gap-3">
               <Link
                 href="/in-stock-specials"
                 className="hidden items-center justify-center rounded-lg bg-teal px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-teal/90 sm:inline-flex"
