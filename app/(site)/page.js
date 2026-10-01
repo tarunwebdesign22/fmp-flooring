@@ -41,6 +41,7 @@ const heroContent = [
     backgroundImages: [
       "/images/mainhero.webp",
       "/images/mainhero-2.webp",
+      "/images/mainhero-4.webp",
       "/images/mainhero-3-0.webp",
     ],
     badge: "Family Owned & Operated Since 1995",
