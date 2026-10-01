@@ -9,12 +9,14 @@ const menu = [
   {
     label: "Flooring",
     children: [
-      { label: "LVP", href: "/lvp" },
-      { label: "Laminate", href: "/laminate" },
+      { label: "Luxury Vinyl Plank", href: "/lvp" },
+      { label: "Broadloom Carpet", href: "/broadloom-carpet" },
+      { label: "Carpet Tile", href: "/carpet-tile" },
+      { label: "Ceramic Flooring", href: "/ceramic" },
+      { label: "Rubber", href: "/rubber" },
       { label: "Hardwood", href: "/hardwood" },
-      { label: "Carpet", href: "/broadloom-carpet" },
-      { label: "Tiles", href: "/ceramic" },
-      { label: "Commercial Flooring", href: "/commercial" },
+      { label: "Laminate", href: "/laminate" },
+      { label: "VCT", href: "/vct" },
     ],
   },
   {

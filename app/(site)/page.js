@@ -1,6 +1,9 @@
 import dynamic from "next/dynamic";
 import FederalMarquee from "@/components/homev2/FederalMarquee";
 import HeroSectionCopy from "@/components/homev2/HeroSectionCopy";
+import FlooringWindowSection from "@/components/homev2/FlooringWindowSection";
+import CategoryCardsSection from "@/components/homev2/CategoryCardsSection";
+import FeaturedProjectsSection from "@/components/homev2/FeaturedProjectsSection";
 import FederalContractorSection from "@/components/homev2/FederalContractorSection";
 import ProcessSection from "@/components/homev2/ProcessSection";
 import ServicesSection from "@/components/homev2/ServicesSection";
@@ -454,6 +457,227 @@ const brandsContent = [
         logo: "/images/manufacturer/Portobello-1-150x150.png",
       },
       { name: "Schluter", logo: "/images/manufacturer/SCHLUTER-150x150.png" },
+    ],
+  },
+];
+
+const flooringWindowContent = [
+  {
+    cards: [
+      {
+        badge: "Flooring",
+        badgeTone: "gold",
+        title: [
+          { text: "Beautiful Floors. " },
+          { text: "For Every " },
+          { text: "Space.", highlight: true },
+        ],
+        tags: ["LVP", "Laminate", "Hardwood", "Carpet", "Tile", "Commercial"],
+        buttonText: "Explore Flooring",
+        buttonHref: "/residential",
+        buttonTone: "blue",
+        image: "/images/294-Wood-Flooring.webp",
+        imageAlt: "Bright living room with beautiful hardwood flooring",
+      },
+      {
+        badge: "Bathroom Remodeling",
+        badgeTone: "blue",
+        title: [
+          { text: "Transform Your " },
+          { text: "Bathroom.", highlight: true },
+        ],
+        tags: [
+          "Custom Showers",
+          "Tub-to-Shower Conversions",
+          "Tile",
+          "Vanities",
+          "Complete Remodeling",
+        ],
+        buttonText: "Explore Bathroom Remodeling",
+        buttonHref: "/bathroom-remodeling-tile-services",
+        buttonTone: "teal",
+        image: "/images/intro-accent-02.webp",
+        imageAlt: "Modern bathroom remodel with walk-in shower and tile",
+      },
+    ],
+  },
+];
+
+const categoryCardsContent = [
+  {
+    id: "flooring-bathroom-categories",
+    blocks: [
+      {
+        title: [
+          { text: "Our " },
+          { text: "Flooring", highlight: true, tone: "gold" },
+          { text: " Products" },
+        ],
+        slider: true,
+        items: [
+          {
+            title: "Luxury Vinyl Plank",
+            image: "/images/home-services/new/Service_Luxury_Vinyl_Plank.webp",
+            imageAlt: "Luxury vinyl plank flooring sample",
+            href: "/lvp",
+          },
+          {
+            title: "Broadloom Carpet",
+            image: "/images/home-services/new/Broadloom_Carpet.webp",
+            imageAlt: "Broadloom carpet flooring",
+            href: "/broadloom-carpet",
+          },
+          {
+            title: "Carpet Tile",
+            image: "/images/home-services/new/Carpet_Tile.webp",
+            imageAlt: "Carpet tile flooring",
+            href: "/carpet-tile",
+          },
+          {
+            title: "Ceramic Flooring",
+            image: "/images/home-services/new/Ceramic_Flooring.webp",
+            imageAlt: "Ceramic flooring",
+            href: "/ceramic",
+          },
+          {
+            title: "Rubber",
+            image: "/images/home-services/new/Rubber_Flooring.webp",
+            imageAlt: "Rubber flooring",
+            href: "/rubber",
+          },
+          {
+            title: "Hardwood",
+            image: "/images/home-services/new/Hardwood.webp",
+            imageAlt: "Hardwood flooring",
+            href: "/hardwood",
+          },
+          {
+            title: "Laminate",
+            image: "/images/home-services/new/Laminate.webp",
+            imageAlt: "Laminate flooring",
+            href: "/laminate",
+          },
+          {
+            title: "VCT",
+            image: "/images/home-services/new/Vinyl_Composition_Tiles.webp",
+            imageAlt: "Vinyl composition tile flooring",
+            href: "/vct",
+          },
+        ],
+      },
+      {
+        title: [
+          { text: "Our " },
+          { text: "Bathroom Remodeling", highlight: true, tone: "teal" },
+          { text: " Services" },
+        ],
+        sliderMobileOnly: true,
+        items: [
+          {
+            title: "Complete Bathroom Remodels",
+            image: "/images/bathroom-hero-banner.webp",
+            imageAlt: "Complete bathroom remodel",
+            href: "/bathroom-remodeling-tile-services",
+          },
+          {
+            title: "Custom Tile Showers",
+            image: "/images/bathroom-professional-installation.webp",
+            imageAlt: "Custom tile shower installation",
+            href: "/bathroom-remodeling-tile-services#services",
+          },
+          {
+            title: "Tub-to-Shower Conversions",
+            image: "/images/intro-accent-02.webp",
+            imageAlt: "Tub to shower conversion",
+            href: "/bathroom-remodeling-tile-services#services",
+          },
+          {
+            title: "Bathtub Replacement",
+            image: "/images/bathroom-remodeling/designed-for-you.jpg",
+            imageAlt: "Bathtub replacement remodel",
+            href: "/bathroom-remodeling-tile-services#services",
+          },
+          {
+            title: "Bathroom Tile",
+            subtitle: "Floor | Wall | Mosaic",
+            image: "/images/bathroom-design-material-selection.webp",
+            imageAlt: "Bathroom floor and wall tile",
+            href: "/bathroom-remodeling-tile-services#services",
+          },
+          {
+            title: "Vanities & Fixtures",
+            image: "/images/bathroom-final-walkthrough.webp",
+            imageAlt: "Bathroom vanities and fixtures",
+            href: "/bathroom-remodeling-tile-services#services",
+          },
+        ],
+      },
+    ],
+  },
+];
+
+const featuredProjectsContent = [
+  {
+    eyebrow: "Featured Projects",
+    title: "Residential, Commercial & Government",
+    filters: ["All", "Residential", "Commercial", "Government"],
+    projects: [
+      {
+        title: "Schools",
+        subtitle: "Education Facilities",
+        category: "Government",
+        image: "/images/School-Image-Federal.webp",
+        imageAlt: "School hallway flooring project",
+      },
+      {
+        title: "Healthcare",
+        subtitle: "Hospitals & Medical Centers",
+        category: "Government",
+        image: "/images/Hostpital-Image-Federal.webp",
+        imageAlt: "Healthcare facility flooring project",
+      },
+      {
+        title: "Government",
+        subtitle: "Courthouses & Public Buildings",
+        category: "Government",
+        image: "/images/Govt-Image-Federal.webp",
+        imageAlt: "Government building flooring project",
+      },
+      {
+        title: "Commercial",
+        subtitle: "Offices & Retail Spaces",
+        category: "Commercial",
+        image: "/images/Office-Image-Federal.webp",
+        imageAlt: "Commercial office flooring project",
+      },
+      {
+        title: "Residential Homes",
+        subtitle: "Living Rooms & Bedrooms",
+        category: "Residential",
+        image: "/images/residential-projects/001-1-project.jpg",
+        imageAlt: "Residential flooring project",
+      },
+      {
+        title: "Family Living Spaces",
+        subtitle: "Custom Home Installations",
+        category: "Residential",
+        image: "/images/residential-projects/002-2-project.jpg",
+        imageAlt: "Residential living space flooring",
+      },
+      {
+        title: "Retail Spaces",
+        subtitle: "Stores & Showrooms",
+        category: "Commercial",
+        image: "/images/commercial-projects/family-dollar-statesville-nc/family-dollar-statesville-nc-1.jpg",
+        imageAlt: "Retail commercial flooring project",
+      },
+      {
+        title: "Courthouses",
+        subtitle: "Judicial Facilities",
+        category: "Government",
+        image: "/images/CourtFlooringNewImage.webp",
+        imageAlt: "Courthouse flooring project",
+      },
     ],
   },
 ];
@@ -1153,10 +1377,15 @@ export default function Home() {
       <FederalMarquee items={federalContent[0].marqueeItems} />
       {/* <HeroSection content={heroContent} /> */}
       <HeroSectionCopy content={heroContent} />
-      <FederalContractorSection content={federalContent} />
-      {/* <ProcessSection content={processContent} /> */}
-      <ServicesSection content={servicesContent} />
+      <FlooringWindowSection content={flooringWindowContent} />
+      <CategoryCardsSection content={categoryCardsContent} />
       <QuoteCtaSection content={quoteCtaContent} />
+      {/* <ServicesSection content={servicesContent} /> */}
+      <FeaturedProjectsSection content={featuredProjectsContent} />
+      {/* <FederalContractorSection content={federalContent} /> */}
+      {/* <ProcessSection content={processContent} /> */}
+      
+      
       <MeetTheFounderSection content={founderContent} />
       <HighlightsWhyChooseSection content={whyFmpContent} />
       <HowWeManageProjectsSection content={howWeManageProjectsContent} />
