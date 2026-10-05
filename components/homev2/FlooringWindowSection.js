@@ -21,11 +21,6 @@ function WindowCard({ card }) {
         sizes="(max-width: 768px) 100vw, 50vw"
       />
 
-      <div
-        className="absolute inset-0 bg-gradient-to-r from-white via-white/75 to-transparent"
-        aria-hidden="true"
-      />
-
       <div className="relative z-10 flex h-full min-h-[320px] flex-col p-6 sm:min-h-[360px] sm:p-8 lg:min-h-[400px] lg:p-9">
         <span
           className={`inline-flex w-fit rounded px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.08em] ${badgeClass}`}
@@ -33,7 +28,7 @@ function WindowCard({ card }) {
           {card.badge}
         </span>
 
-        <h3 className="mt-5 max-w-md text-3xl font-bold leading-tight text-blue sm:text-4xl">
+        <h3 className="mt-5 max-w-md text-3xl font-bold leading-tight text-blue [text-shadow:0_2px_10px_rgba(255,255,255,0.95),0_4px_18px_rgba(255,255,255,0.85),0_0_28px_rgba(255,255,255,0.7)] sm:text-4xl">
           {card.title.map((part, index) =>
             part.highlight ? (
               <span key={`${part.text}-${index}`} className="text-teal">

@@ -160,7 +160,7 @@ export default function HowWeManageProjectsSection({ content }) {
   };
 
   return (
-    <section className="bg-greylight py-14 sm:py-16 lg:py-[70px]">
+    <section className="bg-white py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
           {/* Left: title, subtitle, one image */}

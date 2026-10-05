@@ -73,7 +73,7 @@ function HeroStatItem({
 
   return (
     <li
-      className={`grid h-full grid-rows-[1fr_auto] justify-items-center bg-transparent px-2 py-3.5 text-center sm:px-4 sm:py-7 ${dividerClassName} ${className}`}
+      className={`grid h-full grid-rows-[1fr_auto] justify-items-center bg-transparent px-1.5 py-3 text-center sm:px-4 sm:py-7 ${dividerClassName} ${className}`}
     >
       {hasTextOnly ? (
         <p
@@ -84,14 +84,14 @@ function HeroStatItem({
           {text}
         </p>
       ) : (
-        <p className="self-end text-xl font-bold leading-none tracking-tight text-teal sm:text-3xl lg:text-[2.3rem]">
+        <p className="self-end text-lg font-bold leading-none tracking-tight text-teal sm:text-3xl lg:text-[2.3rem]">
           {display}
         </p>
       )}
       <div className="mt-1 flex w-full flex-col items-center justify-start sm:mt-2 lg:min-h-[2.5em]">
         {label ? (
           <p
-            className={`text-[11px] font-bold leading-snug tracking-wide sm:text-sm ${
+            className={`text-[10px] font-bold leading-snug tracking-wide sm:text-sm ${
               isHighlight ? "text-teal" : "text-blue"
             }`}
           >
@@ -147,7 +147,7 @@ function HeroStatsStrip({ items }) {
         className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_rgba(34,30,83,0.18)]"
       >
         <div className="flex flex-col lg:flex-row lg:items-stretch">
-          <ul className="grid flex-[3] grid-cols-2 bg-white sm:grid-cols-3">
+          <ul className="grid flex-[3] grid-cols-3 bg-white">
             {metrics.map((item, index) => (
               <HeroStatItem
                 key={item.label || item.text || `metric-${index}`}
@@ -544,7 +544,7 @@ export default function HeroSectionCopy({ content }) {
         }
         return prev;
       });
-    }, 6000);
+    }, 3000);
 
     return () => window.clearInterval(id);
   }, [backgroundKey]);
@@ -585,8 +585,6 @@ export default function HeroSectionCopy({ content }) {
               style={{ backgroundImage: `url(${src})` }}
             />
           ))}
-          <div className="absolute inset-0 bg-black/40 lg:hidden" />
-          <div className="absolute inset-0 hidden bg-gradient-to-r from-black/55 via-black/40 to-transparent lg:block" />
         </div>
 
         {/* Fixed content — not part of the slider */}

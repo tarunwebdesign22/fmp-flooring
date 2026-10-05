@@ -60,6 +60,7 @@ const menu = [
     children: [
       { label: "About Us", href: "/about-us" },
       { label: "Blogs", href: "/blog" },
+      { label: "Educational Videos", href: "/educational-videos" },
       { label: "Contact Us", href: "/contact-us" },
     ],
   },

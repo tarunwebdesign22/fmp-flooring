@@ -1,0 +1,600 @@
+﻿"use client";
+
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+
+function StarIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17.3 6.6 19.8l1-6.1L3.2 9.4l6.1-.9L12 3z" />
+    </svg>
+  );
+}
+
+function parseStatValue(value) {
+  const raw = String(value).trim();
+  const suffixMatch = raw.match(/([^0-9.,]+)$/);
+  const suffix = suffixMatch ? suffixMatch[1] : "";
+  const numericPart = raw.replace(/[^0-9.]/g, "");
+  const target = Number(numericPart) || 0;
+  const hasComma = raw.includes(",");
+  return { target, suffix, hasComma };
+}
+
+function formatStatValue(current, hasComma, suffix) {
+  const rounded = Math.round(current);
+  const numberText = hasComma ? rounded.toLocaleString("en-US") : String(rounded);
+  return `${numberText}${suffix}`;
+}
+
+function useCountUp(target, enabled, duration = 1600) {
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!enabled) {
+      setValue(0);
+      return undefined;
+    }
+
+    let frameId = 0;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - (1 - progress) ** 3;
+      setValue(target * eased);
+      if (progress < 1) {
+        frameId = requestAnimationFrame(tick);
+      }
+    };
+
+    frameId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frameId);
+  }, [enabled, target, duration]);
+
+  return value;
+}
+
+function HeroStatItem({
+  value,
+  label,
+  text,
+  stars,
+  animate,
+  dividerClassName,
+  className = "",
+  variant,
+}) {
+  const isHighlight = variant === "highlight";
+  const hasTextOnly = Boolean(text);
+  const { target, suffix, hasComma } = parseStatValue(value || "0");
+  const current = useCountUp(target, animate);
+  const display = animate ? formatStatValue(current, hasComma, suffix) : value;
+
+  return (
+    <li
+      className={`grid h-full grid-rows-[1fr_auto] justify-items-center bg-transparent px-1.5 py-3 text-center sm:px-4 sm:py-7 ${dividerClassName} ${className}`}
+    >
+      {hasTextOnly ? (
+        <p
+          className={`self-end text-sm font-bold leading-tight tracking-wide sm:text-lg lg:text-xl ${
+            isHighlight ? "text-blue" : "text-teal"
+          }`}
+        >
+          {text}
+        </p>
+      ) : (
+        <p className="self-end text-lg font-bold leading-none tracking-tight text-teal sm:text-3xl lg:text-[2.3rem]">
+          {display}
+        </p>
+      )}
+      <div className="mt-1 flex w-full flex-col items-center justify-start sm:mt-2 lg:min-h-[2.5em]">
+        {label ? (
+          <p
+            className={`text-[10px] font-bold leading-snug tracking-wide sm:text-sm ${
+              isHighlight ? "text-teal" : "text-blue"
+            }`}
+          >
+            {label}
+          </p>
+        ) : null}
+        {stars && !hasTextOnly ? (
+          <span
+            className="mt-1 inline-flex items-center gap-0.5 text-[#fdbf3e] sm:mt-1.5"
+            aria-label={`${stars} out of 5 stars`}
+          >
+            {Array.from({ length: stars }).map((_, i) => (
+              <StarIcon key={i} />
+            ))}
+          </span>
+        ) : null}
+      </div>
+    </li>
+  );
+}
+
+function HeroStatsStrip({ items }) {
+  const stripRef = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = stripRef.current;
+    if (!el) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  if (!items?.length) return null;
+
+  const metrics = items.filter((item) => item.variant !== "highlight");
+  const highlights = items.filter((item) => item.variant === "highlight");
+
+  return (
+    <div className="relative z-20 mt-4 mb-4 px-4 sm:-mt-16 sm:-mb-16 sm:px-6 lg:px-10">
+      <div
+        ref={stripRef}
+        className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_rgba(34,30,83,0.18)]"
+      >
+        <div className="flex flex-col lg:flex-row lg:items-stretch">
+          <ul className="grid flex-[3] grid-cols-3 bg-white">
+            {metrics.map((item, index) => (
+              <HeroStatItem
+                key={item.label || item.text || `metric-${index}`}
+                value={item.value}
+                label={item.label}
+                text={item.text}
+                stars={item.stars}
+                animate={inView}
+                variant={item.variant}
+                dividerClassName={index === 0 ? "" : "border-grey/60 border-l"}
+              />
+            ))}
+          </ul>
+          {highlights.length > 0 ? (
+            <>
+              <div
+                className="h-px w-full shrink-0 bg-grey/60 lg:h-auto lg:w-px"
+                aria-hidden="true"
+              />
+              <ul className="grid flex-[2] grid-cols-2 bg-[#eeecff]">
+                {highlights.map((item, index) => (
+                  <HeroStatItem
+                    key={item.label || item.text || `highlight-${index}`}
+                    value={item.value}
+                    label={item.label}
+                    text={item.text}
+                    stars={item.stars}
+                    animate={inView}
+                    variant="highlight"
+                    dividerClassName={index === 0 ? "" : "border-grey/60 border-l"}
+                  />
+                ))}
+              </ul>
+            </>
+          ) : null}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const fieldIcons = {
+  name: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <circle cx="12" cy="8" r="4" />
+      <path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" />
+    </svg>
+  ),
+  phone: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" />
+    </svg>
+  ),
+  email: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 7 9-7" />
+    </svg>
+  ),
+};
+
+function HighlightedCopy({ segments, variant }) {
+  if (!segments?.length) return null;
+
+  const isHeroLead = variant === "heroLead";
+
+  if (isHeroLead) {
+    return (
+      <p className="mt-3.5 max-w-2xl text-[15px] font-semibold leading-snug tracking-tight text-white sm:mt-4 sm:text-base">
+        {segments.map((segment, index) =>
+          segment.highlight ? (
+            <span key={index} className="relative mx-0.5 inline-block font-bold">
+              <span className="relative z-10 text-[#fdbf3e]">{segment.text}</span>
+              <span
+                className="absolute -bottom-0.5 left-0 right-0 z-0 h-2 rounded-sm bg-teal/40"
+                aria-hidden="true"
+              />
+            </span>
+          ) : (
+            <span key={index}>{segment.text}</span>
+          ),
+        )}
+      </p>
+    );
+  }
+
+  return (
+    <p className="mt-5 max-w-2xl text-[15px] leading-7 text-white/90 sm:text-base sm:leading-8">
+      {segments.map((segment, index) =>
+        segment.highlight ? (
+          <strong key={index} className="font-semibold text-[#fdbf3e]">
+            {segment.text}
+          </strong>
+        ) : (
+          <span key={index}>{segment.text}</span>
+        ),
+      )}
+    </p>
+  );
+}
+
+function ShieldCheckIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M12 3 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-3z"
+        className="fill-teal/25 stroke-teal"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="m9 12 2 2 4-4"
+        className="stroke-[#fdbf3e]"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function HeroTagline({ segments }) {
+  if (!segments?.length) return null;
+
+  return (
+    <div
+      className="relative mt-5 max-w-2xl overflow-hidden rounded-2xl border border-white/25 bg-gradient-to-br from-white/14 via-white/8 to-teal/15 px-4 py-4 shadow-[0_10px_40px_rgba(0,0,0,0.28)] backdrop-blur-md sm:mt-6 sm:px-5 sm:py-[1.15rem] lg:max-w-xl"
+      role="doc-subtitle"
+    >
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-teal via-teal to-[#fdbf3e]"
+        aria-hidden="true"
+      />
+      <div className="flex items-start gap-3 pl-2">
+        <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/12 ring-1 ring-white/25">
+          <ShieldCheckIcon />
+        </span>
+        <p className="text-[1.05rem] font-semibold leading-snug tracking-tight text-white sm:text-lg lg:text-xl lg:leading-snug">
+          {segments.map((segment, index) =>
+            segment.highlight ? (
+              <span key={index} className="relative mx-0.5 inline-block font-bold">
+                <span className="relative z-10 bg-gradient-to-r from-[#ffe08a] via-[#fdbf3e] to-[#f5a623] bg-clip-text text-transparent">
+                  {segment.text}
+                </span>
+                <span
+                  className="absolute -bottom-0.5 left-0 right-0 z-0 h-2 rounded-sm bg-teal/35"
+                  aria-hidden="true"
+                />
+              </span>
+            ) : (
+              <span key={index}>{segment.text}</span>
+            )
+          )}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function HeroCopy({ section }) {
+  return (
+    <div className="min-w-0 [text-shadow:0_1px_18px_rgba(0,0,0,0.35)]">
+      {section.badge ? (
+        <p className="inline-flex max-w-full items-center gap-2 rounded-md bg-white/12 px-2.5 py-1.5 ring-1 ring-inset ring-white/25 backdrop-blur-[6px]">
+          <span
+            className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-teal text-white"
+            aria-hidden="true"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M3 21h18" />
+              <path d="M5 21V8l7-4 7 4v13" />
+              <path d="M9 21v-6h6v6" />
+            </svg>
+          </span>
+          <span className="text-xs font-semibold leading-snug text-white sm:text-[12px]">
+            {section.badge}
+          </span>
+        </p>
+      ) : null}
+
+      {section.tagline?.length ? <HeroTagline segments={section.tagline} /> : null}
+
+      <h1 className="mt-4 max-w-2xl text-2xl font-bold leading-snug tracking-tight text-white sm:mt-5 sm:text-3xl lg:text-[2.1rem]">
+        {section.title}
+        {section.titleHighlight ? (
+          <>
+            {" "}
+            <span className="text-[#fdbf3e]">{section.titleHighlight}</span>
+          </>
+        ) : null}
+      </h1>
+
+      <HighlightedCopy segments={section.description} variant="heroLead" />
+
+      {section.ctas?.length ? (
+        <div className="mt-5 flex flex-wrap items-center gap-2.5">
+          {section.ctas.map((cta) => {
+            const variant = cta.variant ?? "primary";
+            const className =
+              variant === "highlight"
+                ? "bg-[#e24b4b] shadow-[0_8px_24px_rgba(226,75,75,0.45)] ring-2 ring-white/30 hover:bg-[#c93d3d]"
+                : variant === "secondary"
+                  ? "bg-blue shadow-[0_8px_20px_rgba(0,0,0,0.22)] hover:bg-teal"
+                  : "bg-teal shadow-[0_8px_20px_rgba(0,0,0,0.22)] hover:bg-blue";
+
+            return (
+              <Link
+                key={cta.label}
+                href={cta.href}
+                className={`inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-white transition-colors ${className}`}
+              >
+                {cta.label}
+              </Link>
+            );
+          })}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function EstimateFormCard({ section, submitted, formData, onChange, onSubmit, className = "" }) {
+  if (!section?.form) return null;
+
+  return (
+    <div className={`overflow-hidden rounded-2xl border border-white/40 bg-white/55 shadow-[0_16px_50px_rgba(0,0,0,0.28)] backdrop-blur-md ${className}`}>
+      <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
+      <div className="p-5 sm:p-6">
+        <h2 className="text-xl font-bold text-blue sm:text-2xl">{section.form.title}</h2>
+        <span className="mt-2 block h-0.5 w-12 bg-teal" aria-hidden="true" />
+        <p className="mt-3 text-sm text-blue/65">{section.form.description}</p>
+
+        {submitted ? (
+          <p className="mt-8 rounded-lg bg-greylight px-4 py-6 text-center text-sm font-medium text-blue">
+            Thank you! We&apos;ll get back to you shortly.
+          </p>
+        ) : (
+          <form onSubmit={onSubmit} className="mt-6 space-y-3.5">
+            <label className="relative block">
+              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                {fieldIcons.name}
+              </span>
+              <input
+                type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={onChange}
+                placeholder="Full Name"
+                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+              />
+            </label>
+
+            <label className="relative block">
+              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                {fieldIcons.phone}
+              </span>
+              <input
+                type="tel"
+                name="phone"
+                required
+                value={formData.phone}
+                onChange={onChange}
+                placeholder="Phone Number"
+                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+              />
+            </label>
+
+            <label className="relative block">
+              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                {fieldIcons.email}
+              </span>
+              <input
+                type="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={onChange}
+                placeholder="Email Address"
+                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+              />
+            </label>
+
+            <label className="relative block">
+              <select
+                name="service"
+                required
+                value={formData.service}
+                onChange={onChange}
+                className="w-full appearance-none rounded-lg border border-grey bg-white py-3 pr-10 pl-3 text-sm text-blue outline-none transition-colors focus:border-teal"
+              >
+                <option value="" disabled>
+                  Service Interested In
+                </option>
+                {section.form.services.map((service) => (
+                  <option key={service} value={service}>
+                    {service}
+                  </option>
+                ))}
+              </select>
+              <span className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-blue/45" aria-hidden="true">
+                Γû╛
+              </span>
+            </label>
+
+            <button
+              type="submit"
+              className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
+            >
+              {section.form.buttonText}
+              <span aria-hidden="true">ΓåÆ</span>
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default function HeroSectionCopy({ content }) {
+  const section = content?.[0];
+  const backgroundImages = section?.backgroundImages?.length
+    ? section.backgroundImages
+    : section?.backgroundImage
+      ? [section.backgroundImage]
+      : [];
+  const backgroundKey = backgroundImages.join("|");
+  const [activeBackground, setActiveBackground] = useState(0);
+  const readyRef = useRef(new Set());
+  const failedRef = useRef(new Set());
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  // Preload background images only ΓÇö text/form stay fixed and are not part of the slideshow.
+  useEffect(() => {
+    if (!backgroundImages.length) return undefined;
+
+    readyRef.current = new Set();
+    failedRef.current = new Set();
+    setActiveBackground(0);
+
+    backgroundImages.forEach((src, index) => {
+      const img = new window.Image();
+      img.onload = () => {
+        readyRef.current.add(index);
+      };
+      img.onerror = () => {
+        failedRef.current.add(index);
+        readyRef.current.delete(index);
+        setActiveBackground((prev) => {
+          if (prev !== index) return prev;
+          const total = backgroundImages.length;
+          for (let step = 1; step <= total; step += 1) {
+            const candidate = (prev + step) % total;
+            if (!failedRef.current.has(candidate)) return candidate;
+          }
+          return prev;
+        });
+      };
+      img.src = src;
+    });
+
+    return undefined;
+  }, [backgroundKey]);
+
+  useEffect(() => {
+    if (backgroundImages.length < 2) return undefined;
+
+    const id = window.setInterval(() => {
+      setActiveBackground((prev) => {
+        const total = backgroundImages.length;
+        for (let step = 1; step <= total; step += 1) {
+          const next = (prev + step) % total;
+          if (failedRef.current.has(next)) continue;
+          if (readyRef.current.has(next) || next === 0) return next;
+        }
+        return prev;
+      });
+    }, 3000);
+
+    return () => window.clearInterval(id);
+  }, [backgroundKey]);
+
+  if (!section) return null;
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  const formCard = (
+    <EstimateFormCard
+      section={section}
+      submitted={submitted}
+      formData={formData}
+      onChange={handleChange}
+      onSubmit={handleSubmit}
+    />
+  );
+
+  return (
+    <>
+      <div className="relative isolate overflow-hidden">
+        {/* Background-only slider (does not affect headline or form) */}
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[#1c2430]" aria-hidden="true">
+          {backgroundImages.map((src, index) => (
+            <div
+              key={src}
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+                index === activeBackground ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ backgroundImage: `url(${src})` }}
+            />
+          ))}
+        </div>
+
+        {/* Fixed content ΓÇö not part of the slider */}
+        <section className="relative z-10 lg:hidden" aria-label="Welcome to FMP Flooring">
+          <div className="relative mx-auto max-w-7xl px-4 py-12 pb-16">
+            <HeroCopy section={section} />
+          </div>
+        </section>
+
+        <div className="relative z-10 mx-auto -mt-5 w-full max-w-[22rem] px-4 pb-6 lg:hidden">{formCard}</div>
+
+        <section className="relative z-10 hidden lg:block" aria-label="Welcome to FMP Flooring">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 pb-24 sm:px-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10 lg:px-10 xl:py-20 xl:pb-28">
+            <HeroCopy section={section} />
+            <div className="w-full shrink-0 lg:w-[22rem] lg:justify-self-end">
+              {formCard}
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <HeroStatsStrip items={section.stats} />
+    </>
+  );
+}
+
