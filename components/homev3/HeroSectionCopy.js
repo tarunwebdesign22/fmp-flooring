@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import FederalMarquee from "@/components/homev3/FederalMarquee";
 
 function StarIcon() {
   return (
@@ -141,49 +142,44 @@ function HeroStatsStrip({ items }) {
   const highlights = items.filter((item) => item.variant === "highlight");
 
   return (
-    <div className="relative z-20 mt-4 mb-4 px-4 sm:-mt-16 sm:-mb-16 sm:px-6 lg:px-10">
-      <div
-        ref={stripRef}
-        className="mx-auto max-w-7xl overflow-hidden rounded-2xl bg-white shadow-[0_10px_40px_rgba(34,30,83,0.18)]"
-      >
-        <div className="flex flex-col lg:flex-row lg:items-stretch">
-          <ul className="grid flex-[3] grid-cols-3 bg-white">
-            {metrics.map((item, index) => (
-              <HeroStatItem
-                key={item.label || item.text || `metric-${index}`}
-                value={item.value}
-                label={item.label}
-                text={item.text}
-                stars={item.stars}
-                animate={inView}
-                variant={item.variant}
-                dividerClassName={index === 0 ? "" : "border-grey/60 border-l"}
-              />
-            ))}
-          </ul>
-          {highlights.length > 0 ? (
-            <>
-              <div
-                className="h-px w-full shrink-0 bg-grey/60 lg:h-auto lg:w-px"
-                aria-hidden="true"
-              />
-              <ul className="grid flex-[2] grid-cols-2 bg-[#eeecff]">
-                {highlights.map((item, index) => (
-                  <HeroStatItem
-                    key={item.label || item.text || `highlight-${index}`}
-                    value={item.value}
-                    label={item.label}
-                    text={item.text}
-                    stars={item.stars}
-                    animate={inView}
-                    variant="highlight"
-                    dividerClassName={index === 0 ? "" : "border-grey/60 border-l"}
-                  />
-                ))}
-              </ul>
-            </>
-          ) : null}
-        </div>
+    <div ref={stripRef} className="relative z-20 w-full bg-greylight">
+      <div className="mx-auto flex max-w-7xl flex-col lg:flex-row lg:items-stretch">
+        <ul className="grid flex-[3] grid-cols-3">
+          {metrics.map((item, index) => (
+            <HeroStatItem
+              key={item.label || item.text || `metric-${index}`}
+              value={item.value}
+              label={item.label}
+              text={item.text}
+              stars={item.stars}
+              animate={inView}
+              variant={item.variant}
+              dividerClassName={index === 0 ? "" : "border-grey/70 border-l"}
+            />
+          ))}
+        </ul>
+        {highlights.length > 0 ? (
+          <>
+            <div
+              className="h-px w-full shrink-0 bg-grey/70 lg:h-auto lg:w-px"
+              aria-hidden="true"
+            />
+            <ul className="grid flex-[2] grid-cols-2 bg-[#e8e6f5]/70">
+              {highlights.map((item, index) => (
+                <HeroStatItem
+                  key={item.label || item.text || `highlight-${index}`}
+                  value={item.value}
+                  label={item.label}
+                  text={item.text}
+                  stars={item.stars}
+                  animate={inView}
+                  variant="highlight"
+                  dividerClassName={index === 0 ? "" : "border-grey/70 border-l"}
+                />
+              ))}
+            </ul>
+          </>
+        ) : null}
       </div>
     </div>
   );
@@ -385,80 +381,86 @@ function EstimateFormCard({ section, submitted, formData, onChange, onSubmit, cl
             Thank you! We&apos;ll get back to you shortly.
           </p>
         ) : (
-          <form onSubmit={onSubmit} className="mt-6 space-y-3.5">
-            <label className="relative block">
-              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-                {fieldIcons.name}
-              </span>
-              <input
-                type="text"
-                name="name"
-                required
-                value={formData.name}
-                onChange={onChange}
-                placeholder="Full Name"
-                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
+          <form onSubmit={onSubmit} className="mt-6 space-y-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <label className="relative block min-w-0">
+                <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                  {fieldIcons.name}
+                </span>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={onChange}
+                  placeholder="Full Name"
+                  className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+                />
+              </label>
 
-            <label className="relative block">
-              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-                {fieldIcons.phone}
-              </span>
-              <input
-                type="tel"
-                name="phone"
-                required
-                value={formData.phone}
-                onChange={onChange}
-                placeholder="Phone Number"
-                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
+              <label className="relative block min-w-0">
+                <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                  {fieldIcons.phone}
+                </span>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  value={formData.phone}
+                  onChange={onChange}
+                  placeholder="Phone Number"
+                  className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+                />
+              </label>
 
-            <label className="relative block">
-              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-                {fieldIcons.email}
-              </span>
-              <input
-                type="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={onChange}
-                placeholder="Email Address"
-                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
+              <label className="relative block min-w-0">
+                <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
+                  {fieldIcons.email}
+                </span>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={onChange}
+                  placeholder="Email Address"
+                  className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
+                />
+              </label>
 
-            <label className="relative block">
-              <select
-                name="service"
-                required
-                value={formData.service}
-                onChange={onChange}
-                className="w-full appearance-none rounded-lg border border-grey bg-white py-3 pr-10 pl-3 text-sm text-blue outline-none transition-colors focus:border-teal"
-              >
-                <option value="" disabled>
-                  Service Interested In
-                </option>
-                {section.form.services.map((service) => (
-                  <option key={service} value={service}>
-                    {service}
+              <label className="relative block min-w-0">
+                <select
+                  name="service"
+                  required
+                  value={formData.service}
+                  onChange={onChange}
+                  className="w-full appearance-none rounded-lg border border-grey bg-white py-3 pr-10 pl-3 text-sm text-blue outline-none transition-colors focus:border-teal"
+                >
+                  <option value="" disabled>
+                    Service Interested In
                   </option>
-                ))}
-              </select>
-              <span className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-blue/45" aria-hidden="true">
-                Γû╛
-              </span>
-            </label>
+                  {section.form.services.map((service) => (
+                    <option key={service} value={service}>
+                      {service}
+                    </option>
+                  ))}
+                </select>
+                <span className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-blue/45" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </span>
+              </label>
+            </div>
 
             <button
               type="submit"
               className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
             >
               {section.form.buttonText}
-              <span aria-hidden="true">ΓåÆ</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
             </button>
           </form>
         )}
@@ -467,7 +469,7 @@ function EstimateFormCard({ section, submitted, formData, onChange, onSubmit, cl
   );
 }
 
-export default function HeroSectionCopy({ content }) {
+export default function HeroSectionCopy({ content, marqueeItems }) {
   const section = content?.[0];
   const backgroundImages = section?.backgroundImages?.length
     ? section.backgroundImages
@@ -560,7 +562,7 @@ export default function HeroSectionCopy({ content }) {
 
   return (
     <>
-      <div className="relative isolate overflow-hidden">
+      <div className="relative isolate min-h-[560px] overflow-hidden sm:min-h-[600px] lg:min-h-[640px] xl:min-h-[680px]">
         {/* Background-only slider (does not affect headline or form) */}
         <div className="pointer-events-none absolute inset-0 z-0 bg-[#1c2430]" aria-hidden="true">
           {backgroundImages.map((src, index) => (
@@ -574,25 +576,26 @@ export default function HeroSectionCopy({ content }) {
           ))}
         </div>
 
-        {/* Fixed content ΓÇö not part of the slider */}
+        {/* Fixed content — not part of the slider */}
         <section className="relative z-10 lg:hidden" aria-label="Welcome to FMP Flooring">
           <div className="relative mx-auto max-w-7xl px-4 py-12 pb-16">
             <HeroCopy section={section} />
           </div>
         </section>
 
-        <div className="relative z-10 mx-auto -mt-5 w-full max-w-[22rem] px-4 pb-6 lg:hidden">{formCard}</div>
+        <div className="relative z-10 mx-auto -mt-5 w-full max-w-[23.1rem] px-4 pb-6 lg:hidden">{formCard}</div>
 
-        <section className="relative z-10 hidden lg:block" aria-label="Welcome to FMP Flooring">
-          <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 pb-24 sm:px-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10 lg:px-10 xl:py-20 xl:pb-28">
+        <section className="relative z-10 hidden h-full min-h-[inherit] lg:block" aria-label="Welcome to FMP Flooring">
+          <div className="relative mx-auto grid h-full min-h-[640px] max-w-7xl items-center gap-10 px-6 py-16 pb-24 sm:px-8 lg:grid-cols-[minmax(0,1fr)_23.1rem] lg:gap-10 lg:px-10 xl:min-h-[680px] xl:py-20 xl:pb-28">
             <HeroCopy section={section} />
-            <div className="w-full shrink-0 lg:w-[22rem] lg:justify-self-end">
+            <div className="w-full shrink-0 lg:w-[23.1rem] lg:justify-self-end">
               {formCard}
             </div>
           </div>
         </section>
       </div>
 
+      {marqueeItems?.length ? <FederalMarquee items={marqueeItems} /> : null}
       <HeroStatsStrip items={section.stats} />
     </>
   );

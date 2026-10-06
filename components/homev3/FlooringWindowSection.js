@@ -81,7 +81,7 @@ export default function FlooringWindowSection({ content }) {
   return (
     <section
       id="flooring-window"
-      className="scroll-mt-28 bg-white pt-14 pb-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-14"
+      className="scroll-mt-28 bg-white pt-10 pb-10 sm:pt-12 sm:pb-12 lg:pt-14 lg:pb-14"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="grid gap-5 md:grid-cols-2 md:gap-6">

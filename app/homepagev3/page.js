@@ -1375,9 +1375,11 @@ const workShowcaseContent = [
 export default function Home() {
   return (
     <main className="flex flex-1 flex-col">
-      <FederalMarquee items={federalContent[0].marqueeItems} />
       {/* <HeroSection content={heroContent} /> */}
-      <HeroSectionCopy content={heroContent} />
+      <HeroSectionCopy
+        content={heroContent}
+        marqueeItems={federalContent[0].marqueeItems}
+      />
       <FlooringWindowSection content={flooringWindowContent} />
       <CategoryCardsSection content={categoryCardsContent} />
       <QuoteCtaSection content={quoteCtaContent} />
