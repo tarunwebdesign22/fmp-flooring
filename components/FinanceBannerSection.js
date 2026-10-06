@@ -6,7 +6,7 @@ export default function FinanceBannerSection({ content }) {
   if (!section) return null;
 
   return (
-    <section className="bg-greylight py-3 sm:py-4 pb-10 sm:pb-14">
+    <section className="bg-greylight py-8 sm:py-10">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="relative isolate overflow-hidden rounded-xl px-5 pt-5 pb-5 sm:px-8 sm:pt-6 sm:pb-6 lg:px-10 lg:pt-7 lg:pb-7">
           <Image

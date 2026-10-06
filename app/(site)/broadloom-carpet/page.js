@@ -487,7 +487,7 @@ export default function CarpetBroadloomPage() {
       <FederalMarquee />
       <ServiceIntroSection content={introContent} />
       {/* <MailingListSection content={mailingListContent} /> */}
-      <HowWeManageProjectsSection content={simpleProcessContent} />
+      {/* <HowWeManageProjectsSection content={simpleProcessContent} /> */}
       <FinanceBannerSection content={financeBannerContent} />
       <ServiceBenefitsSection content={benefitsContent} />
       <ServiceHighlightsStrip content={highlightsContent} />

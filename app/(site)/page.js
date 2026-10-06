@@ -1318,15 +1318,15 @@ export default function Home() {
       {/* <ProcessSection content={processContent} /> */}
       
       
-      <MeetTheFounderSection content={founderContent} />
+      {/* <MeetTheFounderSection content={founderContent} /> */}
       {/* <HighlightsWhyChooseSection content={whyFmpContent} /> */}
       <HowWeManageProjectsSection content={howWeManageProjectsContent} />
-      <ExploreVideosSection content={videosContent} />
+      {/* <ExploreVideosSection content={videosContent} /> */}
       <GoogleReviewsSection content={googleReviewsContent} />
       <BrandsSection content={brandsContent} />
       <FacebookFeedSection content={facebookFeedContent} />
       <BeforeAfterSection content={beforeAfterContent} />
-      <MeetOurTeamSection content={teamContent} />
+      {/* <MeetOurTeamSection content={teamContent} /> */}
       <OffersSliderSection content={offersContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />
       {/* <ComparisonSection content={whyBuyDirectContent} /> */}
