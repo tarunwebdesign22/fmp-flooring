@@ -4,7 +4,7 @@ import Link from "next/link";
 function WindowCard({ card }) {
   const badgeClass =
     card.badgeTone === "gold"
-      ? "bg-[#fdbf3e] text-white"
+      ? "bg-[#fdbf3e] text-blue"
       : "bg-blue text-white";
   const buttonClass =
     card.buttonTone === "teal"
