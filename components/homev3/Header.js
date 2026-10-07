@@ -44,7 +44,7 @@ const menu = [
       //   href: "/bathroom-remodeling-tile-services#services",
       // },
       {
-        label: "Bathroom Acrylic",
+        label: "One-Day Shower Remodel",
         href: "/bathroom-acrylic",
       },
       {

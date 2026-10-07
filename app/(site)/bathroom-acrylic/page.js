@@ -3,7 +3,7 @@ import Link from "next/link";
 import QuoteCtaSection from "@/components/homev2/QuoteCtaSection";
 
 export const metadata = {
-  title: "Bathroom Acrylic Wall Panels | FMP Flooring",
+  title: "One-Day Shower Remodel | FMP Flooring",
   description:
     "Bath Envy acrylic wall panels installed by FMP Flooring — the beauty of tile and stone without the maintenance. Fast install, mold resistant, and low maintenance.",
 };
@@ -128,7 +128,7 @@ const SUBWAY_IMAGES = [
 
 const quoteCtaContent = [
   {
-    eyebrow: "Bathroom Acrylic",
+    eyebrow: "One-Day Shower Remodel",
     title: "Ready for a Beautiful, Low-Maintenance Bathroom?",
     description:
       "Ask us about Bath Envy acrylic wall panels — premium looks, fast installation, and lasting performance for your next remodel.",
@@ -172,30 +172,22 @@ export default function BathroomAcrylicPage() {
             <span className="mx-2" aria-hidden="true">
               /
             </span>
-            <span className="text-white/90">Bathroom Acrylic</span>
+            <span className="text-white/90">One-Day Shower Remodel</span>
           </nav>
 
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#fdbf3e] backdrop-blur-sm">
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              aria-hidden="true"
-            >
-              <path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 6.5-7 11-7 11z" />
-              <circle cx="12" cy="10" r="2.5" />
-            </svg>
-            North & South Carolina
+          <p className="inline-flex w-fit items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#fdbf3e] backdrop-blur-sm">
+            One-Day Shower Remodel
           </p>
 
           <h1 className="mt-5 max-w-4xl text-3xl font-bold leading-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-            Bathroom Acrylic Wall Panels
+            Grout-Free. Hassle-Free.
           </h1>
-          <p className="mt-4 max-w-2xl text-xl font-semibold text-teal sm:text-2xl">
-            The beauty of tile and stone without the maintenance.
+          <p className="mt-4 max-w-2xl text-base leading-7 text-white/90 sm:text-lg">
+            Transform your shower with durable acrylic wall panels designed for a clean, modern look
+            without the maintenance of traditional tile.
+          </p>
+          <p className="mt-4 max-w-2xl text-base font-semibold text-teal sm:text-lg">
+            Fast Installation • Easy to Clean • Low Maintenance
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
