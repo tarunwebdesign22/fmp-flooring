@@ -23,29 +23,29 @@ const menu = [
     label: "Bathroom Remodeling",
     children: [
       {
-        label: "Complete Bathroom Remodeling",
-        href: "/bathroom-remodeling-tile-services",
+        label: "Custom Bathroom Remodel",
+        href: "/custom-bathroom-remodel",
       },
       // Hidden for now
       // {
       //   label: "Custom Tile Showers",
-      //   href: "/bathroom-remodeling-tile-services#services",
+      //   href: "/custom-bathroom-remodel#services",
       // },
       // {
       //   label: "Tub-to-Shower Conversions",
-      //   href: "/bathroom-remodeling-tile-services#services",
+      //   href: "/custom-bathroom-remodel#services",
       // },
       // {
       //   label: "Bathtub Replacement",
-      //   href: "/bathroom-remodeling-tile-services#services",
+      //   href: "/custom-bathroom-remodel#services",
       // },
       // {
       //   label: "Bathroom Tile & Flooring",
-      //   href: "/bathroom-remodeling-tile-services#services",
+      //   href: "/custom-bathroom-remodel#services",
       // },
       {
         label: "One-Day Shower Remodel",
-        href: "/bathroom-acrylic",
+        href: "/one-day-shower-remodel",
       },
       {
         label: "Bathroom Gallery",

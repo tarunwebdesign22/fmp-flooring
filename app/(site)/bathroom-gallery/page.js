@@ -46,10 +46,10 @@ export default function BathroomGalleryPage() {
               /
             </span>
             <Link
-              href="/bathroom-remodeling-tile-services"
+              href="/custom-bathroom-remodel"
               className="transition-colors hover:text-[#fdbf3e]"
             >
-              Bathroom Remodeling
+              Custom Bathroom Remodel
             </Link>
             <span className="mx-2" aria-hidden="true">
               /

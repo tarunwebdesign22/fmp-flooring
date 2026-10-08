@@ -15,6 +15,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/bathroom-acrylic",
+        destination: "/one-day-shower-remodel",
+        permanent: true,
+      },
+      {
+        source: "/bathroom-remodeling-tile-services",
+        destination: "/custom-bathroom-remodel",
+        permanent: true,
+      },
+      {
         source: "/flooring/closeout",
         destination: "/in-stock-specials",
         permanent: true,

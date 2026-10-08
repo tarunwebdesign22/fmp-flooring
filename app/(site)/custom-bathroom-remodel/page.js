@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Bathroom Remodeling & Tile Services | North & South Carolina | FMP Flooring",
+  title: "Custom Bathroom Remodel | North & South Carolina | FMP Flooring",
   description:
-    "Professional bathroom remodeling and tile installation across North Carolina and South Carolina. Shower tile, floor tile, waterproofing, and complete bathroom upgrades from FMP Flooring.",
+    "Professional custom bathroom remodel services across North Carolina and South Carolina. Shower tile, floor tile, waterproofing, and complete bathroom upgrades from FMP Flooring.",
 };
 
 const IMAGES = {
@@ -172,11 +172,65 @@ const SERVICES = [
   { label: "Complete bathroom remodeling", icon: SERVICE_ICONS.fullRemodel },
 ];
 
+const HERO_FEATURES = [
+  "Custom Shower & Tub Designs",
+  "Tile & Wall Options",
+  "Modern Vanities",
+  "Fixtures & Finishes",
+  "Personalized Layouts",
+  "Professional Installation",
+];
+
+const FEATURED_SERVICES = [
+  {
+    title: "Custom Shower & Tub Designs",
+    description:
+      "Walk-in showers, tub-to-shower conversions, and spa-inspired surrounds built around how you use the space every day.",
+    image: "/images/bathroom-remodeling/Custom-Shower-Tub-Designs.webp",
+    imageAlt: "Custom shower and tub remodel design",
+  },
+  {
+    title: "Tile & Wall Options",
+    description:
+      "Large-format floors, statement walls, and patterned accents — curated materials that elevate the entire bathroom.",
+    image: "/images/bathroom-remodeling/Tile-Wall-Options.webp",
+    imageAlt: "Bathroom tile and wall material options",
+  },
+  {
+    title: "Modern Vanities",
+    description:
+      "Clean-lined vanities with storage that works — styles and finishes chosen to balance beauty and everyday function.",
+    image: "/images/bathroom-remodeling/Modern-Vanities.webp",
+    imageAlt: "Modern bathroom vanity installation",
+  },
+  {
+    title: "Fixtures & Finishes",
+    description:
+      "Faucets, lighting, hardware, and finishes coordinated so every detail feels intentional and cohesive.",
+    image: "/images/bathroom-remodeling/Fixtures-Finishes.webp",
+    imageAlt: "Bathroom fixtures and finish selections",
+  },
+  {
+    title: "Personalized Layouts",
+    description:
+      "Smarter floor plans that improve flow, storage, and comfort — tailored to your room size and lifestyle.",
+    image: "/images/bathroom-remodeling/Personalized-Layouts1.webp",
+    imageAlt: "Personalized bathroom layout planning",
+  },
+  {
+    title: "Professional Installation",
+    description:
+      "Precise prep, waterproofing, and finishing from a team that delivers clean results you can trust for years.",
+    image: "/images/bathroom-remodeling/Professional-Installation.webp",
+    imageAlt: "Professional bathroom remodel installation",
+  },
+];
+
 export default function BathroomRemodelingTileServicesPage() {
   return (
     <main className="flex flex-1 flex-col bg-white">
       {/* Hero */}
-      <section className="relative isolate min-h-[min(64vh,518px)] overflow-hidden bg-[#1c2430] text-white">
+      <section className="relative isolate min-h-[min(72vh,640px)] overflow-hidden bg-[#1c2430] text-white">
         <Image
           src={IMAGES.hero}
           alt=""
@@ -191,26 +245,44 @@ export default function BathroomRemodelingTileServicesPage() {
           aria-hidden="true"
         />
 
-        <div className="relative mx-auto flex min-h-[min(64vh,518px)] max-w-7xl flex-col justify-center px-6 py-12 sm:px-8 lg:px-10 lg:py-14">
+        <div className="relative mx-auto flex min-h-[min(72vh,640px)] max-w-7xl flex-col justify-center px-6 py-12 sm:px-8 lg:px-10 lg:py-14">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/70">
             <Link href="/" className="transition-colors hover:text-[#fdbf3e]">Home</Link>
             <span className="mx-2" aria-hidden="true">/</span>
-            <span className="text-white/90">Bathroom Remodeling & Tile Services</span>
+            <span className="text-white/90">Custom Bathroom Remodel</span>
           </nav>
 
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#fdbf3e] backdrop-blur-sm">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 6.5-7 11-7 11z" />
-              <circle cx="12" cy="10" r="2.5" />
-            </svg>
-            North & South Carolina
+          <p className="inline-flex w-fit items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-[#fdbf3e] backdrop-blur-sm">
+            Custom Bathroom Remodel
           </p>
 
           <h1 className="mt-5 max-w-4xl text-3xl font-bold leading-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-            Bathroom Remodeling & Tile Services in North & South Carolina
+            Designed for Your Style.
+            <br />
+            Built for Your Home.
           </h1>
-          <p className="mt-4 max-w-2xl text-xl font-semibold text-teal sm:text-2xl">
-            Your Bathroom. Your Style. Expertly Remodeled.
+          <p className="mt-4 max-w-2xl text-base leading-7 text-white/90 sm:text-lg">
+            Transform your bathroom with a remodel tailored to your needs, preferences, and space.
+          </p>
+
+          <ul className="mt-6 grid max-w-2xl gap-2.5 sm:grid-cols-2">
+            {HERO_FEATURES.map((feature) => (
+              <li key={feature} className="flex items-center gap-2.5 text-sm font-medium text-white/95 sm:text-[15px]">
+                <span
+                  className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal text-white"
+                  aria-hidden="true"
+                >
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-6 max-w-2xl text-xl font-semibold text-teal sm:text-2xl">
+            Your Bathroom. Your Style. Your Vision.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -238,7 +310,7 @@ export default function BathroomRemodelingTileServicesPage() {
               North & South Carolina
             </p>
             <h2 className="mt-3 text-2xl font-bold text-blue sm:text-3xl lg:text-[2rem] lg:leading-tight">
-              Professional Bathroom Remodeling & Tile Installation
+              Professional Custom Bathroom Remodel
             </h2>
             <span className="mt-3 mb-6 block h-1 w-16 bg-[#fdbf3e]" aria-hidden="true" />
 
@@ -299,8 +371,64 @@ export default function BathroomRemodelingTileServicesPage() {
         </div>
       </section>
 
+      {/* Featured services */}
+      <section id="featured-services" className="relative overflow-hidden bg-[#f7f8fa] py-14 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="mx-auto max-w-3xl text-center">
+            {/* <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
+              What We Deliver
+            </p> */}
+            <h2 className="mt-3 text-3xl font-bold text-blue sm:text-4xl">
+              Every Detail of Your Custom Remodel
+            </h2>
+            <span className="mx-auto mt-3 block h-1 w-16 bg-[#2abcaf]" aria-hidden="true" />
+            <p className="mt-5 text-[15px] leading-7 text-blue/70 sm:text-base">
+              From showers and tile to vanities, fixtures, and finish work — we design and install a bathroom built around you.
+            </p>
+          </div>
+
+          <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+            {FEATURED_SERVICES.map((service, index) => (
+              <li
+                key={service.title}
+                className="group relative overflow-hidden rounded-2xl bg-[#1c2430] shadow-[0_12px_40px_rgba(28,36,48,0.12)]"
+              >
+                <div className="relative aspect-[4/5] sm:aspect-[5/6]">
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-[#1c2430] via-[#1c2430]/55 to-[#1c2430]/10"
+                    aria-hidden="true"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 flex flex-col p-6 sm:p-7">
+                    <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/25 bg-white/10 text-xs font-bold tracking-wide text-[#fdbf3e] backdrop-blur-sm">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="text-xl font-bold leading-snug text-white sm:text-[1.35rem]">
+                      {service.title}
+                    </h3>
+                    <span
+                      className="mt-3 mb-3 block h-0.5 w-10 bg-teal transition-all duration-500 group-hover:w-16"
+                      aria-hidden="true"
+                    />
+                    <p className="text-sm leading-6 text-white/85">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* 4 Steps */}
-      <section className="bg-greylight py-14 sm:py-16 lg:py-20">
+      <section className="bg-[#eeecff] py-14 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-blue sm:text-4xl">
@@ -412,7 +540,7 @@ export default function BathroomRemodelingTileServicesPage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-bold text-blue sm:text-4xl">
-              Bathroom Remodeling & Tile Services Across North & South Carolina
+              Custom Bathroom Remodel Across North & South Carolina
             </h2>
             <span className="mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
             <p className="mt-6 text-[15px] leading-7 text-blue/75 sm:text-base sm:leading-8">
