@@ -8,12 +8,12 @@ export const metadata = {
 };
 
 const IMAGES = {
-  hero: "/images/bathroom-hero-banner.webp",
-  introMain: "/images/intro-main-01.webp",
-  introAccent1: "/images/intro-accent-02.webp",
-  introAccent2: "/images/intro-accent-03.webp",
+  hero: "/images/bathroom-hero-banner-1.webp",
+  introMain: "/images/intro-main-01-neo.webp",
+  introAccent1: "/images/intro-accent-02-neo.webp",
+  introAccent2: "/images/intro-accent-03-neo.webp",
   benefitsBg: "/images/Experience-bg.webp",
-  designedForYou: "/images/designed-for-you-01.webp",
+  designedForYou: "/images/designed-for-you-001.webp",
 };
 
 const STEPS = [
@@ -239,12 +239,6 @@ export default function BathroomRemodelingTileServicesPage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/40 lg:hidden" aria-hidden="true" />
-        <div
-          className="absolute inset-0 hidden bg-gradient-to-r from-black/55 via-black/40 to-transparent lg:block"
-          aria-hidden="true"
-        />
-
         <div className="relative mx-auto flex min-h-[min(72vh,640px)] max-w-7xl flex-col justify-center px-6 py-12 sm:px-8 lg:px-10 lg:py-14">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/70">
             <Link href="/" className="transition-colors hover:text-[#fdbf3e]">Home</Link>
@@ -281,7 +275,7 @@ export default function BathroomRemodelingTileServicesPage() {
             ))}
           </ul>
 
-          <p className="mt-6 max-w-2xl text-xl font-semibold text-teal sm:text-2xl">
+          <p className="mt-6 max-w-2xl text-xl font-semibold text-[#fdbf3e] sm:text-2xl">
             Your Bathroom. Your Style. Your Vision.
           </p>
 

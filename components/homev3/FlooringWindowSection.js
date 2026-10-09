@@ -45,21 +45,6 @@ function WindowCard({ card }) {
           )}
         </h3>
 
-        <div className="mt-5 inline-flex w-fit max-w-full items-center rounded-md bg-white/95 px-3 py-2 text-[12px] font-medium leading-5 text-blue/80 shadow-sm sm:text-[13px]">
-          <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
-            {card.tags.map((tag, index) => (
-              <span key={tag} className="inline-flex items-center gap-x-2">
-                {index > 0 ? (
-                  <span className="text-blue/30" aria-hidden="true">
-                    |
-                  </span>
-                ) : null}
-                <span>{tag}</span>
-              </span>
-            ))}
-          </p>
-        </div>
-
         <div className="mt-auto pt-8">
           <Link
             href={card.buttonHref}

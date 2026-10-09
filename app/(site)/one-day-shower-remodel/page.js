@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import QuoteCtaSection from "@/components/homev2/QuoteCtaSection";
+import PatternSpotlightGallery from "@/components/PatternSpotlightGallery";
 
 export const metadata = {
   title: "One-Day Shower Remodel | FMP Flooring",
@@ -142,32 +143,17 @@ export default function BathroomAcrylicPage() {
     <main className="flex flex-1 flex-col bg-white">
       <section className="relative isolate min-h-[min(64vh,518px)] overflow-hidden bg-[#1c2430] text-white">
         <Image
-          src="/images/bathroom-gallery/bathroom-acrylic-banner.webp"
+          src="/images/oneday-remodelling-banner.webp"
           alt=""
           fill
           className="object-cover object-center"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/40 lg:hidden" aria-hidden="true" />
-        <div
-          className="absolute inset-0 hidden bg-gradient-to-r from-black/55 via-black/40 to-transparent lg:block"
-          aria-hidden="true"
-        />
-
         <div className="relative mx-auto flex min-h-[min(64vh,518px)] max-w-7xl flex-col justify-center px-6 py-12 sm:px-8 lg:px-10 lg:py-14">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/70">
             <Link href="/" className="transition-colors hover:text-[#fdbf3e]">
               Home
-            </Link>
-            <span className="mx-2" aria-hidden="true">
-              /
-            </span>
-            <Link
-              href="/custom-bathroom-remodel"
-              className="transition-colors hover:text-[#fdbf3e]"
-            >
-              Custom Bathroom Remodel
             </Link>
             <span className="mx-2" aria-hidden="true">
               /
@@ -186,7 +172,7 @@ export default function BathroomAcrylicPage() {
             Transform your shower with durable acrylic wall panels designed for a clean, modern look
             without the maintenance of traditional tile.
           </p>
-          <p className="mt-4 max-w-2xl text-base font-semibold text-teal sm:text-lg">
+          <p className="mt-4 max-w-2xl text-base font-semibold text-[#fdbf3e] sm:text-lg">
             Fast Installation • Easy to Clean • Low Maintenance
           </p>
 
@@ -289,21 +275,7 @@ export default function BathroomAcrylicPage() {
             </p>
           </div>
 
-          <ul className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 lg:grid-cols-4 lg:gap-5">
-            {TOPSAIL_IMAGES.map((image) => (
-              <li key={image.src}>
-                <div className="group relative aspect-[4/3] overflow-hidden rounded-xl bg-greylight shadow-[0_6px_18px_rgba(34,30,83,0.08)]">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    sizes="(max-width: 640px) 50vw, 25vw"
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+          <PatternSpotlightGallery images={TOPSAIL_IMAGES} thumbnailBg="bg-greylight" />
         </div>
       </section>
 
@@ -323,21 +295,7 @@ export default function BathroomAcrylicPage() {
             </p>
           </div>
 
-          <ul className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 lg:grid-cols-4 lg:gap-5">
-            {TANGLEWOOD_IMAGES.map((image) => (
-              <li key={image.src}>
-                <div className="group relative aspect-[4/3] overflow-hidden rounded-xl bg-white shadow-[0_6px_18px_rgba(34,30,83,0.08)]">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    sizes="(max-width: 640px) 50vw, 25vw"
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+          <PatternSpotlightGallery images={TANGLEWOOD_IMAGES} thumbnailBg="bg-white" />
         </div>
       </section>
 
@@ -356,21 +314,7 @@ export default function BathroomAcrylicPage() {
             </p>
           </div>
 
-          <ul className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 lg:grid-cols-4 lg:gap-5">
-            {CAROLINA_DUNES_IMAGES.map((image) => (
-              <li key={image.src}>
-                <div className="group relative aspect-[4/3] overflow-hidden rounded-xl bg-greylight shadow-[0_6px_18px_rgba(34,30,83,0.08)]">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    sizes="(max-width: 640px) 50vw, 25vw"
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+          <PatternSpotlightGallery images={CAROLINA_DUNES_IMAGES} thumbnailBg="bg-greylight" />
         </div>
       </section>
 
@@ -390,21 +334,7 @@ export default function BathroomAcrylicPage() {
             </p>
           </div>
 
-          <ul className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 lg:grid-cols-4 lg:gap-5">
-            {VISION_IMAGES.map((image) => (
-              <li key={image.src}>
-                <div className="group relative aspect-[4/3] overflow-hidden rounded-xl bg-white shadow-[0_6px_18px_rgba(34,30,83,0.08)]">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    sizes="(max-width: 640px) 50vw, 25vw"
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+          <PatternSpotlightGallery images={VISION_IMAGES} thumbnailBg="bg-white" />
         </div>
       </section>
 
@@ -423,21 +353,7 @@ export default function BathroomAcrylicPage() {
             </p>
           </div>
 
-          <ul className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 lg:grid-cols-4 lg:gap-5">
-            {SUBWAY_IMAGES.map((image) => (
-              <li key={image.src}>
-                <div className="group relative aspect-[4/3] overflow-hidden rounded-xl bg-greylight shadow-[0_6px_18px_rgba(34,30,83,0.08)]">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    sizes="(max-width: 640px) 50vw, 25vw"
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
+          <PatternSpotlightGallery images={SUBWAY_IMAGES} thumbnailBg="bg-greylight" />
         </div>
       </section>
 

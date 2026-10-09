@@ -7,7 +7,6 @@ import FeaturedProjectsSection from "@/components/homev3/FeaturedProjectsSection
 import FederalContractorSection from "@/components/homev3/FederalContractorSection";
 import ProcessSection from "@/components/homev3/ProcessSection";
 import ServicesSection from "@/components/homev3/ServicesSection";
-import QuoteCtaSection from "@/components/homev3/QuoteCtaSection";
 import { blogPosts } from "@/data/blog-posts";
 
 const MeetTheFounderSection = dynamic(() => import("@/components/homev3/MeetTheFounderSection"));
@@ -112,17 +111,6 @@ const ctaContent = [
     buttonText: "GET YOUR FREE ESTIMATE",
     buttonHref: "/estimate",
     backgroundImage: "/images/Hero-Image.jpg",
-  },
-];
-
-const quoteCtaContent = [
-  {
-    eyebrow: "Start Your Project",
-    title: "Ready for Beautiful New Floors?",
-    description:
-      "Tell us about your space and get a free, no obligation quote from our flooring experts.",
-    buttonText: "Get a Quote",
-    buttonHref: "/estimate",
   },
 ];
 
@@ -473,7 +461,6 @@ const flooringWindowContent = [
           { text: "For Every " },
           { text: "Space.", highlight: true },
         ],
-        tags: ["LVP", "Laminate", "Hardwood", "Carpet", "Tile", "Commercial"],
         buttonText: "Explore Flooring",
         buttonHref: "/residential",
         buttonTone: "blue",
@@ -486,13 +473,6 @@ const flooringWindowContent = [
         title: [
           { text: "Transform Your " },
           { text: "Bathroom.", highlight: true },
-        ],
-        tags: [
-          "Custom Showers",
-          "Tub-to-Shower Conversions",
-          "Tile",
-          "Vanities",
-          "Complete Remodeling",
         ],
         buttonText: "Explore Custom Bathroom Remodel",
         buttonHref: "/custom-bathroom-remodel",
@@ -581,35 +561,16 @@ const categoryCardsContent = [
             href: "/custom-bathroom-remodel",
           },
           {
-            title: "Custom Tile Showers",
-            image: "/images/bathroom-professional-installation.webp",
-            imageAlt: "Custom tile shower installation",
-            href: "/custom-bathroom-remodel#services",
+            title: "One-Day Shower Remodel",
+            image: "/images/bathroom-gallery/bathroom-acrylic-banner.webp",
+            imageAlt: "One-day shower remodel with acrylic wall panels",
+            href: "/one-day-shower-remodel",
           },
           {
-            title: "Tub-to-Shower Conversions",
-            image: "/images/intro-accent-02.webp",
-            imageAlt: "Tub to shower conversion",
-            href: "/custom-bathroom-remodel#services",
-          },
-          {
-            title: "Bathtub Replacement",
-            image: "/images/Bathtub-Replacement.jpg",
-            imageAlt: "Bathtub replacement remodel",
-            href: "/custom-bathroom-remodel#services",
-          },
-          {
-            title: "Bathroom Tile",
-            subtitle: "Floor | Wall | Mosaic",
-            image: "/images/bathroom-design-material-selection.webp",
-            imageAlt: "Bathroom floor and wall tile",
-            href: "/custom-bathroom-remodel#services",
-          },
-          {
-            title: "Vanities & Fixtures",
-            image: "/images/bathroom-final-walkthrough.webp",
-            imageAlt: "Bathroom vanities and fixtures",
-            href: "/custom-bathroom-remodel#services",
+            title: "Bathroom Gallery",
+            image: "/images/bathroom-gallery/df5cb4_1aafeb0b06d84944a6ae69ae37a7ef9dmv2.jpg",
+            imageAlt: "Completed bathroom remodeling gallery",
+            href: "/bathroom-gallery",
           },
         ],
       },
@@ -1382,7 +1343,6 @@ export default function Home() {
       />
       <FlooringWindowSection content={flooringWindowContent} />
       <CategoryCardsSection content={categoryCardsContent} />
-      <QuoteCtaSection content={quoteCtaContent} />
       {/* <ServicesSection content={servicesContent} /> */}
       <FeaturedProjectsSection content={featuredProjectsContent} />
       {/* <FederalContractorSection content={federalContent} /> */}
@@ -1404,11 +1364,9 @@ export default function Home() {
       
       <LatestProjectsSection content={latestProjectsContent} />
       {/* <ImageGallerySection content={workShowcaseContent} /> */}
-      <QuoteCtaSection content={quoteCtaContent} />
       <EducationalResourcesSection content={educationalResourcesContent} />
       <EducationalVideosSection content={educationalVideosContent} />
       {/*<TestimonialsSection content={testimonialsContent} />*/}
-      <QuoteCtaSection content={quoteCtaContent} />
       <FaqSection content={faqContent} />
       <FederalMarquee items={federalContent[0].marqueeItems} />
       <CtaSection content={ctaContent} />
