@@ -239,6 +239,10 @@ export default function BathroomRemodelingTileServicesPage() {
           priority
           sizes="100vw"
         />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/15 to-transparent"
+          aria-hidden="true"
+        />
         <div className="relative mx-auto flex min-h-[min(72vh,640px)] max-w-7xl flex-col justify-center px-6 py-12 sm:px-8 lg:px-10 lg:py-14">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-white/70">
             <Link href="/" className="transition-colors hover:text-[#fdbf3e]">Home</Link>
