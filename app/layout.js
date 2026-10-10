@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import InitialPageLoader from "@/components/InitialPageLoader";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import "./globals.css";
@@ -26,6 +27,12 @@ export default function RootLayout({ children }) {
         <InitialPageLoader />
         {children}
         <ScrollToTopButton />
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          strategy="afterInteractive"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6abac794e46af600dd568e85"
+        />
       </body>
     </html>
   );
