@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { submitForm } from "@/lib/submit-form";
 
 function MailIcon() {
   return (
@@ -16,12 +17,23 @@ export default function MailingListSection({ content }) {
   const section = content?.[0];
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   if (!section) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setSubmitting(true);
+    try {
+      await submitForm({ email }, "Mailing list signup");
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -52,26 +64,32 @@ export default function MailingListSection({ content }) {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="flex w-full flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-0"
+              className="flex w-full flex-col gap-3"
             >
-              <label className="sr-only" htmlFor="mailing-list-email">
-                Email
-              </label>
-              <input
-                id="mailing-list-email"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={section.placeholder || "Email*"}
-                className="w-full rounded-lg border-0 bg-white px-4 py-3.5 text-sm text-blue outline-none placeholder:text-blue/45 sm:rounded-r-none sm:rounded-l-lg"
-              />
-              <button
-                type="submit"
-                className="rounded-lg bg-teal px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#fdbf3e] hover:text-blue sm:rounded-l-none sm:rounded-r-lg"
-              >
-                {section.buttonText || "Subscribe"}
-              </button>
+              <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-0">
+                <label className="sr-only" htmlFor="mailing-list-email">
+                  Email
+                </label>
+                <input
+                  id="mailing-list-email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={section.placeholder || "Email*"}
+                  className="w-full rounded-lg border-0 bg-white px-4 py-3.5 text-sm text-blue outline-none placeholder:text-blue/45 sm:rounded-r-none sm:rounded-l-lg"
+                />
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="rounded-lg bg-teal px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#fdbf3e] hover:text-blue disabled:cursor-not-allowed disabled:opacity-70 sm:rounded-l-none sm:rounded-r-lg"
+                >
+                  {submitting ? "Sending..." : section.buttonText || "Subscribe"}
+                </button>
+              </div>
+              {error ? (
+                <p className="text-center text-sm font-medium text-red-200">{error}</p>
+              ) : null}
             </form>
           )}
         </div>

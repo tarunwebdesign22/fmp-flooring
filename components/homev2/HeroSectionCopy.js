@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { submitForm } from "@/lib/submit-form";
 
 function StarIcon() {
   return (
@@ -382,7 +383,16 @@ function HeroCopy({ section }) {
   );
 }
 
-function EstimateFormCard({ section, submitted, formData, onChange, onSubmit, className = "" }) {
+function EstimateFormCard({
+  section,
+  submitted,
+  submitting = false,
+  error = "",
+  formData,
+  onChange,
+  onSubmit,
+  className = "",
+}) {
   if (!section?.form) return null;
 
   return (
@@ -466,11 +476,16 @@ function EstimateFormCard({ section, submitted, formData, onChange, onSubmit, cl
               </span>
             </label>
 
+            {error ? (
+              <p className="text-center text-sm font-medium text-red-600">{error}</p>
+            ) : null}
+
             <button
               type="submit"
-              className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
+              disabled={submitting}
+              className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue disabled:cursor-not-allowed disabled:opacity-70"
             >
-              {section.form.buttonText}
+              {submitting ? "Sending..." : section.form.buttonText}
               <span aria-hidden="true">→</span>
             </button>
           </form>
@@ -498,6 +513,8 @@ export default function HeroSectionCopy({ content }) {
     service: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   // Preload background images only — text/form stay fixed and are not part of the slideshow.
   useEffect(() => {
@@ -556,15 +573,26 @@ export default function HeroSectionCopy({ content }) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setSubmitting(true);
+    try {
+      await submitForm(formData, "Home estimate form");
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const formCard = (
     <EstimateFormCard
       section={section}
       submitted={submitted}
+      submitting={submitting}
+      error={error}
       formData={formData}
       onChange={handleChange}
       onSubmit={handleSubmit}

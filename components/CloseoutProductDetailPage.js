@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import FaqSection from "@/components/FaqSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import { submitForm } from "@/lib/submit-form";
 
 const STOCK_SHEET_URL =
   "https://docs.google.com/spreadsheets/d/1RlUhMkR4c4v0CxALcL2McMDJ0jS-ov1cOjfEc8_wX0w/export?format=csv&gid=1631855389";
@@ -138,6 +139,8 @@ function GiftIcon() {
 
 function ProductEstimateForm({ productName }) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -153,9 +156,21 @@ function ProductEstimateForm({ productName }) {
     setFormData((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setSubmitting(true);
+    try {
+      await submitForm(
+        { ...formData, productName },
+        "Closeout product inquiry"
+      );
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -262,11 +277,16 @@ function ProductEstimateForm({ productName }) {
               </span>
             </label>
 
+            {error ? (
+              <p className="sm:col-span-2 text-center text-sm font-medium text-red-600">{error}</p>
+            ) : null}
+
             <button
               type="submit"
-              className="sm:col-span-2 mt-1 flex w-full items-center justify-center gap-2 rounded bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
+              disabled={submitting}
+              className="sm:col-span-2 mt-1 flex w-full items-center justify-center gap-2 rounded bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue disabled:cursor-not-allowed disabled:opacity-70"
             >
-              Submit
+              {submitting ? "Sending..." : "Submit"}
               <span aria-hidden="true">→</span>
             </button>
           </form>

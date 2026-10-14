@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { submitForm } from "@/lib/submit-form";
 
 const trustIcons = {
   experience: (
@@ -115,6 +116,8 @@ export default function HeroSection({ content }) {
     service: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   if (!section) return null;
 
@@ -123,9 +126,18 @@ export default function HeroSection({ content }) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setSubmitting(true);
+    try {
+      await submitForm(formData, "Home estimate form");
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -289,11 +301,16 @@ export default function HeroSection({ content }) {
                     </span>
                   </label>
 
+                  {error ? (
+                    <p className="text-center text-sm font-medium text-red-600">{error}</p>
+                  ) : null}
+
                   <button
                     type="submit"
-                    className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
+                    disabled={submitting}
+                    className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue disabled:cursor-not-allowed disabled:opacity-70"
                   >
-                    {section.form.buttonText}
+                    {submitting ? "Sending..." : section.form.buttonText}
                     <span aria-hidden="true">→</span>
                   </button>
                 </form>
