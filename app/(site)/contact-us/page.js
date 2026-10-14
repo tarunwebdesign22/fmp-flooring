@@ -1,20 +1,11 @@
 import Link from "next/link";
+import ContactUsForm from "@/components/ContactUsForm";
 
 export const metadata = {
   title: "Contact us | FMP Flooring",
   description:
     "Get in touch with FMP Flooring for flooring services, estimates, and order support.",
 };
-
-const services = [
-  "Luxury Vinyl Plank",
-  "Broadloom Carpet",
-  "Carpet Tile",
-  "Rubber Flooring",
-  "Hardwood Flooring",
-  "Laminate Flooring",
-  "VCT Flooring",
-];
 
 function MapPinIcon() {
   return (
@@ -122,96 +113,7 @@ export default function ContactUsPage() {
               Fill out the form and our team will follow up shortly.
             </p>
 
-            <form className="mt-7 space-y-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-semibold text-blue">Name *</span>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    className="w-full rounded-lg border border-grey bg-white px-4 py-3 text-sm text-blue outline-none transition-colors focus:border-teal"
-                  />
-                </label>
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-semibold text-blue">Phone Number *</span>
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    className="w-full rounded-lg border border-grey bg-white px-4 py-3 text-sm text-blue outline-none transition-colors focus:border-teal"
-                  />
-                </label>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-semibold text-blue">Email *</span>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="w-full rounded-lg border border-grey bg-white px-4 py-3 text-sm text-blue outline-none transition-colors focus:border-teal"
-                  />
-                </label>
-                <label className="block">
-                  <span className="mb-1.5 block text-sm font-semibold text-blue">Address *</span>
-                  <input
-                    type="text"
-                    name="address"
-                    required
-                    className="w-full rounded-lg border border-grey bg-white px-4 py-3 text-sm text-blue outline-none transition-colors focus:border-teal"
-                  />
-                </label>
-              </div>
-
-              <label className="block">
-                <span className="mb-1.5 block text-sm font-semibold text-blue">Services *</span>
-                <select
-                  name="service"
-                  required
-                  defaultValue=""
-                  className="w-full rounded-lg border border-grey bg-white px-4 py-3 text-sm text-blue outline-none transition-colors focus:border-teal"
-                >
-                  <option value="" disabled>
-                    Select a service
-                  </option>
-                  {services.map((service) => (
-                    <option key={service} value={service}>
-                      {service}
-                    </option>
-                  ))}
-                </select>
-              </label>
-
-              <label className="block">
-                <span className="mb-1.5 block text-sm font-semibold text-blue">Comment or Message *</span>
-                <textarea
-                  name="message"
-                  required
-                  rows={5}
-                  className="w-full rounded-lg border border-grey bg-white px-4 py-3 text-sm text-blue outline-none transition-colors focus:border-teal"
-                />
-              </label>
-
-              <label className="flex items-start gap-3 rounded-lg border border-grey/80 bg-greylight p-4">
-                <input type="checkbox" name="smsConsent" className="mt-1 h-4 w-4 accent-teal" />
-                <span className="text-xs leading-6 text-blue/75">
-                  I agree to receive communications by text message regarding order updates,
-                  shipping notifications, promotional offers, and account notifications from
-                  FMP Flooring. You may opt out by replying STOP or ask for more information by
-                  replying HELP. Message frequency varies. Message and data rates may apply.
-                  You may review our Privacy Policy to learn how your data is used.
-                </span>
-              </label>
-
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center rounded-lg bg-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue"
-              >
-                Submit
-              </button>
-            </form>
+            <ContactUsForm />
           </section>
         </div>
       </section>
