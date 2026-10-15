@@ -615,6 +615,12 @@ export default function HeroSectionCopy({ content }) {
           ))}
         </div>
 
+        {/* Mobile-only overlay — improves text contrast over bright slides */}
+        <div
+          className="pointer-events-none absolute inset-0 z-[1] bg-black/55 lg:hidden"
+          aria-hidden="true"
+        />
+
         {/* Fixed content — not part of the slider */}
         <section className="relative z-10 lg:hidden" aria-label="Welcome to FMP Flooring">
           <div className="relative mx-auto max-w-7xl px-4 py-12 pb-16">
