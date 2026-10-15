@@ -556,7 +556,7 @@ const categoryCardsContent = [
         items: [
           {
             title: "Custom Bathroom Remodel",
-            image: "/images/bathroom-hero-banner.webp",
+            image: "/images/bathroom-hero-banner-1.webp",
             imageAlt: "Custom bathroom remodel",
             href: "/custom-bathroom-remodel",
           },
