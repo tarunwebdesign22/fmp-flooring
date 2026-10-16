@@ -325,7 +325,7 @@ function HeroCopy({ section }) {
               <path d="M9 21v-6h6v6" />
             </svg>
           </span>
-          <span className="text-xs font-semibold leading-snug text-white sm:text-[12px]">
+          <span className="text-xs font-semibold leading-snug text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.65),0_2px_10px_rgba(0,0,0,0.45)] sm:text-[12px]">
             {section.badge}
           </span>
         </p>
