@@ -12,6 +12,7 @@ export default function HomepageV3Layout({ children }) {
     <>
       <Header />
       {children}
+  
       <AreasWeServeSection />
       <Footer />
     </>

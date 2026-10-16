@@ -217,11 +217,13 @@ function HighlightedCopy({ segments, variant }) {
 
   if (isHeroLead) {
     return (
-      <p className="mt-5 max-w-2xl text-base font-semibold leading-snug tracking-tight text-white sm:mt-6 sm:text-lg lg:text-xl lg:leading-snug">
+      <p className="mt-5 max-w-2xl text-base font-semibold leading-snug tracking-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_20px_rgba(0,0,0,0.35)] sm:mt-6 sm:text-lg lg:text-xl lg:leading-snug">
         {segments.map((segment, index) =>
           segment.highlight ? (
             <span key={index} className="relative mx-0.5 inline-block font-bold">
-              <span className="relative z-10 text-[#fdbf3e]">{segment.text}</span>
+              <span className="relative z-10 text-[#fdbf3e] [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_20px_rgba(0,0,0,0.35)]">
+                {segment.text}
+              </span>
               <span
                 className="absolute -bottom-0.5 left-0 right-0 z-0 h-2 rounded-sm bg-teal/40"
                 aria-hidden="true"
@@ -310,7 +312,7 @@ function HeroTagline({ segments }) {
 
 function HeroCopy({ section }) {
   return (
-    <div className="min-w-0 [text-shadow:0_1px_18px_rgba(0,0,0,0.35)]">
+    <div className="min-w-0">
       {section.badge ? (
         <p className="inline-flex max-w-full items-center gap-2 rounded-md bg-white/12 px-2.5 py-1.5 ring-1 ring-inset ring-white/25 backdrop-blur-[6px]">
           <span
@@ -331,12 +333,14 @@ function HeroCopy({ section }) {
 
       {section.tagline?.length ? <HeroTagline segments={section.tagline} /> : null}
 
-      <h1 className="mt-5 text-3xl font-bold leading-[1.15] tracking-tight text-white sm:mt-6 sm:text-4xl lg:text-[2.85rem]">
+      <h1 className="mt-5 text-3xl font-bold leading-[1.15] tracking-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_24px_rgba(0,0,0,0.4)] sm:mt-6 sm:text-4xl lg:text-[2.85rem]">
         {section.title}
         {section.titleHighlight ? (
           <>
             {" "}
-            <span className="text-[#fdbf3e]">{section.titleHighlight}</span>
+            <span className="text-[#fdbf3e] [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_24px_rgba(0,0,0,0.4)]">
+              {section.titleHighlight}
+            </span>
           </>
         ) : null}
       </h1>
@@ -615,9 +619,9 @@ export default function HeroSectionCopy({ content }) {
           ))}
         </div>
 
-        {/* Mobile-only overlay — improves text contrast over bright slides */}
+        {/* Overlay — mobile only */}
         <div
-          className="pointer-events-none absolute inset-0 z-[1] bg-black/55 lg:hidden"
+          className="pointer-events-none absolute inset-0 z-[1] bg-black/40 lg:hidden"
           aria-hidden="true"
         />
 
