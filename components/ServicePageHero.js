@@ -403,6 +403,7 @@ export default function ServicePageHero({ content }) {
           className="object-cover object-center"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
 
         <div
           className={`relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-[70px] ${
