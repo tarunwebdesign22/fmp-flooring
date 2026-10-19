@@ -197,17 +197,8 @@ function GiftIcon({ className = "", size = 16 }) {
   );
 }
 
-function formatPriceParts(priceLabel = "") {
-  const [amount = priceLabel, unit = ""] = priceLabel.split("/");
-  return { amount: amount.trim(), unit: unit ? `/${unit.trim()}` : "" };
-}
-
-function ProductPricingPanel({ product, size = "card" }) {
+function ProductPromoPanel({ size = "card" }) {
   const isLarge = size === "modal";
-  const material = formatPriceParts(product.priceLabel);
-  const installed = product.installPriceLabel
-    ? formatPriceParts(product.installPriceLabel)
-    : null;
 
   return (
     <div
@@ -215,78 +206,18 @@ function ProductPricingPanel({ product, size = "card" }) {
         isLarge ? "mt-6" : "mt-3"
       }`}
     >
-      <div className="grid grid-cols-2 divide-x divide-white/20 bg-blue">
-        <div className={isLarge ? "px-4 py-3" : "px-2.5 py-2"}>
-          <p
-            className={`font-bold uppercase tracking-[0.12em] text-white/70 ${
-              isLarge ? "text-[10px]" : "text-[8px]"
-            }`}
-          >
-            Material
-          </p>
-          <p
-            className={`mt-0.5 font-extrabold leading-none text-white ${
-              isLarge ? "text-2xl" : "text-lg"
-            }`}
-          >
-            {material.amount}
-            {material.unit ? (
-              <span
-                className={`ml-0.5 font-semibold italic text-white/70 ${
-                  isLarge ? "text-sm" : "text-[11px]"
-                }`}
-              >
-                {material.unit}
-              </span>
-            ) : null}
-          </p>
-        </div>
-
-        <div
-          className={`flex items-center justify-center text-center ${
-            isLarge ? "px-3 py-3" : "px-2 py-2"
+      <div
+        className={`flex items-center justify-center bg-blue text-center ${
+          isLarge ? "px-4 py-3.5" : "px-2.5 py-2.5"
+        }`}
+      >
+        <p
+          className={`font-bold uppercase leading-tight tracking-[0.08em] text-white ${
+            isLarge ? "text-xs" : "text-[9px]"
           }`}
         >
-          {installed ? (
-            <div>
-              <p
-                className={`font-bold uppercase tracking-[0.1em] text-teal ${
-                  isLarge ? "text-[10px]" : "text-[8px]"
-                }`}
-              >
-                Material &amp; Install
-              </p>
-              <p
-                className={`mt-0.5 font-extrabold leading-none text-white ${
-                  isLarge ? "text-xl" : "text-base"
-                }`}
-              >
-                {installed.amount}
-                {installed.unit ? (
-                  <span
-                    className={`ml-0.5 font-semibold italic text-white/70 ${
-                      isLarge ? "text-xs" : "text-[10px]"
-                    }`}
-                  >
-                    {installed.unit}
-                  </span>
-                ) : null}
-              </p>
-            </div>
-          ) : (
-            <p
-              className={`font-bold uppercase leading-tight text-white ${
-                isLarge ? "text-[11px] tracking-[0.08em]" : "text-[8px] tracking-[0.06em]"
-              }`}
-            >
-              Installation
-              <br />
-              Services
-              <br />
-              Available
-            </p>
-          )}
-        </div>
+          Installation Services Available
+        </p>
       </div>
 
       <div
@@ -382,7 +313,7 @@ function ProductCard({ product, onQuickView, stockMap, stockLoading }) {
           ))}
         </div>
 
-        <ProductPricingPanel product={product} />
+        <ProductPromoPanel />
       </div>
     </article>
   );
@@ -513,8 +444,7 @@ function QuickViewModal({ product, onClose, stockMap, stockLoading }) {
             ))}
           </div>
 
-          <ProductPricingPanel product={product} size="modal" />
-          <p className="mt-3 text-sm text-blue/60">Installation services available</p>
+          <ProductPromoPanel size="modal" />
 
           <Link
             href="/estimate"

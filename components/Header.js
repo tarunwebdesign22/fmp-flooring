@@ -20,7 +20,6 @@ const resourceLinks = [
   { label: "FAQ", href: "/faq" },
   { label: "Warranty", href: "/warranty" },
   { label: "Installation", href: "/installation" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Commercial", href: "/commercial" },
   { label: "Residential", href: "/residential" },
   { label: "Special Offers", href: "/special-offers" },

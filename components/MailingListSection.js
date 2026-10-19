@@ -48,7 +48,7 @@ export default function MailingListSection({ content }) {
               {section.lineOne || "Join Our Mailing List Today &"}
             </p>
             <p className="mt-0.5 text-2xl font-bold leading-tight text-[#fdbf3e] sm:text-3xl">
-              {section.highlight || "Get $150 Off"}
+              {section.highlight || "Stay Updated"}
             </p>
             <p className="mt-0.5 text-base leading-snug text-white sm:text-lg">
               {section.lineTwo || "Your Next Install!"}

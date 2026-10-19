@@ -144,7 +144,7 @@ export default async function BlogPostPage({ params }) {
               Looking for flooring that fits your space, budget, and lifestyle? FMP Flooring
               helps homeowners and commercial clients choose the right products — from luxury
               vinyl plank and SPC to hardwood, laminate, carpet tile, and more — with
-              professional installation and clear, competitive pricing.
+              professional installation and clear project guidance.
             </p>
             <p>
               Schedule a free consultation to review samples, get an all-inclusive estimate, and

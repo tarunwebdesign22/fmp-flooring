@@ -13,7 +13,7 @@ const quoteCtaContent = [
     eyebrow: "Commercial Flooring",
     title: "Planning a Commercial Project?",
     description:
-      "From schools to military bases, we deliver competitive pricing, reliable schedules, and floors built for heavy use.",
+      "From schools to military bases, we deliver reliable schedules and floors built for heavy use.",
     buttonText: "Request a Commercial Quote",
     buttonHref: "/contact-us",
   },

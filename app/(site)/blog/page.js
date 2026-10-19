@@ -14,8 +14,8 @@ export const metadata = {
 const mailingListContent = [
   {
     lineOne: "Join Our Mailing List Today &",
-    highlight: "GET $99 OFF",
-    lineTwo: "Your Next Install!",
+    highlight: "Stay In The Loop",
+    lineTwo: "For Flooring Tips & Updates!",
     placeholder: "Email*",
     buttonText: "Subscribe",
     successMessage: "Thanks for subscribing! Check your inbox soon.",

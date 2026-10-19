@@ -11,7 +11,7 @@ import { closeoutCollections, closeoutProducts } from "@/data/closeout-products"
 export const metadata = {
   title: "In Stock Specials | Closeout Flooring Deals | FMP Flooring",
   description:
-    "Shop in-stock flooring specials from FMP Flooring. Waterproof LVP, laminate, and engineered hardwood at closeout prices — plus FREE quarter round with LVP purchases.",
+    "Shop in-stock flooring specials from FMP Flooring. Waterproof LVP, laminate, and engineered hardwood ready to install — plus FREE quarter round with LVP purchases.",
 };
 
 const heroContent = [
@@ -27,10 +27,10 @@ const heroContent = [
         financing: {
           eyebrow: "In Stock Specials",
           titleBefore: "Closeout Flooring Deals — ",
-          titleHighlightValue: "From $1/sf",
+          titleHighlightValue: "Limited Stock",
           titleAfter: "",
           description:
-            "Waterproof LVP, laminate, and engineered hardwood ready to install. Limited quantities at closeout pricing — once they’re gone, they’re gone.",
+            "Waterproof LVP, laminate, and engineered hardwood ready to install. Limited quantities — once they’re gone, they’re gone.",
           buttonText: "Shop In-Stock Floors",
           buttonHref: "#specials",
         },
@@ -91,19 +91,19 @@ const faqContent = [
     title: "In Stock Specials FAQs",
     items: [
       {
-        question: "What is discount flooring?",
+        question: "What is closeout flooring?",
         answer:
-          "Discount flooring includes flooring products offered at reduced prices due to clearance, closeout, overstock, discontinued styles, or limited remaining inventory. Available products and quantities vary based on current stock.",
+          "Closeout flooring includes products from clearance, overstock, discontinued styles, or limited remaining inventory. Available products and quantities vary based on current stock.",
       },
       {
-        question: "Where can I find discount flooring near me?",
+        question: "Where can I find in-stock flooring near me?",
         answer:
-          "FMP Flooring offers discount, clearance, and in-stock flooring options for customers in Concord and the greater Charlotte area. Contact our team or visit us to check current availability.",
+          "FMP Flooring offers clearance and in-stock flooring options for customers in Concord and the greater Charlotte area. Contact our team or visit us to check current availability.",
       },
       {
-        question: "Do you offer cheap flooring options?",
+        question: "Do you offer closeout flooring options?",
         answer:
-          "Yes. Our clearance, closeout, and in-stock selections can provide affordable flooring options for residential and commercial projects. Available products vary based on current inventory.",
+          "Yes. Our clearance, closeout, and in-stock selections can provide quality flooring options for residential and commercial projects. Available products vary based on current inventory.",
       },
       {
         question: "What types of flooring are available in your clearance selection?",
@@ -111,9 +111,9 @@ const faqContent = [
           "Our clearance and closeout inventory may include luxury vinyl plank, laminate, engineered hardwood, carpet, carpet tile, and other flooring products. Selection and availability change regularly.",
       },
       {
-        question: "Do you have LVP flooring deals?",
+        question: "Do you have LVP flooring in stock?",
         answer:
-          "Yes. Our in-stock and closeout inventory may include luxury vinyl plank flooring at discounted prices. Check the current selection for available LVP flooring deals while supplies last.",
+          "Yes. Our in-stock and closeout inventory may include luxury vinyl plank flooring. Check the current selection while supplies last.",
       },
       {
         question: "How long are flooring clearance deals available?",
@@ -156,7 +156,7 @@ const googleReviewsContent = [
     rating: "5.0",
     reviewCount: "43",
     description:
-      "See what homeowners say about our in-stock LVP, installation quality, and closeout pricing.",
+      "See what homeowners say about our in-stock LVP and installation quality.",
     viewAllHref:
       "https://www.google.com/maps/search/?api=1&query=FMP+Flooring+LLC+4013+Dearborn+Pl+Concord+NC+28027",
     writeReviewHref:

@@ -4,7 +4,7 @@ import { rotationProduct } from "@/data/products/rotation";
 export const metadata = {
   title: "Rotation LVP Flooring | 20 MIL Waterproof | FMP Flooring",
   description:
-    "Shop Rotation luxury vinyl plank flooring — 20 MIL wear layer, 7″ × 60″ waterproof SPC planks with attached pad. In-stock closeout pricing at $1.99/sf from FMP Flooring.",
+    "Shop Rotation luxury vinyl plank flooring — 20 MIL wear layer, 7″ × 60″ waterproof SPC planks with attached pad. In-stock closeout from FMP Flooring.",
 };
 
 const testimonialsContent = [

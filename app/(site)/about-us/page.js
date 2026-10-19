@@ -18,7 +18,7 @@ const highlights = [
   {
     title: "Direct Flooring Wholesaler",
     description:
-      "We remove middlemen and pass competitive pricing directly to homeowners and businesses.",
+      "We remove middlemen and work directly with homeowners and businesses.",
   },
   {
     title: "Wide Product Expertise",
@@ -142,9 +142,8 @@ export default function AboutUsPage() {
                   reliability, and long-lasting results.
                 </p>
                 <p>
-                  As a direct flooring wholesaler, we eliminate the middleman to offer the
-                  most competitive pricing on high-quality materials-saving you money by
-                  providing products directly from the manufacturer. We specialize in
+                  As a direct flooring wholesaler, we eliminate the middleman to bring
+                  high-quality materials directly from the manufacturer. We specialize in
                   LVP/LVT, hardwood, carpet tile, broadloom carpet, rubber flooring, sheet
                   vinyl, laminate, and VCT.
                 </p>

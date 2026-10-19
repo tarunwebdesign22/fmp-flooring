@@ -384,16 +384,10 @@ export default function CloseoutProductDetailPage({ product, testimonialsContent
               <h1 className="mt-2 text-4xl font-bold text-blue sm:text-5xl">{product.name}</h1>
 
               <div className="mt-6 overflow-hidden rounded-xl border border-grey/70 bg-white shadow-sm">
-                <div className="grid grid-cols-2 divide-x divide-grey/60">
-                  <div className="px-4 py-4 sm:px-5 sm:py-5">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-teal">Material</p>
-                    <p className="mt-1 text-2xl font-extrabold text-blue">{product.priceLabel}</p>
-                  </div>
-                  <div className="px-4 py-4 sm:px-5 sm:py-5">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-teal">
-                      Installation Services Available
-                    </p>
-                  </div>
+                <div className="px-4 py-4 text-center sm:px-5 sm:py-5">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-teal">
+                    Installation Services Available
+                  </p>
                 </div>
                 <div className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#fdbf3e] via-[#ffcc5c] to-[#fdbf3e] px-4 py-2.5">
                   <GiftIcon />

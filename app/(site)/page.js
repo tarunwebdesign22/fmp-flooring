@@ -185,7 +185,7 @@ const whyFmpContent = [
     eyebrow: "Why FMP Flooring",
     title: "Everything You Need for a Better Flooring Project",
     description:
-      "From preparation and removal to professional installation, FMP Flooring handles the details that make your project easier. With experienced professionals, quality materials, transparent pricing, and expertise across residential and commercial spaces, we help you get the job done right.",
+      "From preparation and removal to professional installation, FMP Flooring handles the details that make your project easier. With experienced professionals, quality materials, honest guidance, and expertise across residential and commercial spaces, we help you get the job done right.",
     points: [
       {
         step: "01",
@@ -217,11 +217,11 @@ const whyFmpContent = [
       {
         step: "04",
         icon: "pricing",
-        title: "Transparent, Competitive Pricing",
+        title: "Honest Guidance & Clear Estimates",
         description:
-          "Warehouse pricing and straightforward guidance without unnecessary surprises.",
+          "Straightforward recommendations and free estimates without unnecessary surprises.",
         image: "/images/why-fmp/04-pricing.jpg",
-        imageAlt: "Transparent flooring pricing consultation with a homeowner",
+        imageAlt: "Flooring consultation with a homeowner",
       },
       {
         step: "05",
@@ -1142,15 +1142,15 @@ const whyBuyDirectContent = [
     eyebrow: "Buy Direct Advantage",
     title: "Why Buy Direct?",
     description:
-      "Skip the retail markups. When you buy direct from FMP, you get warehouse pricing, a fuller selection, and professional installation — without the middleman.",
+      "Skip the retail markups. When you buy direct from FMP, you get a fuller selection and professional installation — without the middleman.",
     featureLabel: "Compare",
     traditionalLabel: "Traditional Retail",
     directLabel: "Buy Direct with FMP",
     rows: [
       {
-        feature: "Pricing",
+        feature: "Buying process",
         traditional: "Retail markups & middlemen",
-        direct: "Warehouse / direct pricing",
+        direct: "Direct from the warehouse",
       },
       {
         feature: "Product selection",
@@ -1158,7 +1158,7 @@ const whyBuyDirectContent = [
         direct: "Full warehouse inventory",
       },
       {
-        feature: "Transparent estimates",
+        feature: "Clear project estimates",
         traditional: false,
         direct: true,
       },

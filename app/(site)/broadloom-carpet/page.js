@@ -188,9 +188,9 @@ const benefitsContent = [
     items: [
       {
         icon: "affordable",
-        title: "Quality Broadloom Carpet at Every Price Level",
+        title: "Quality Broadloom Carpet for Every Project",
         description:
-          "Choose from a range of broadloom carpet styles, qualities, thicknesses, and price points to find an option that fits your space, performance needs, and budget.",
+          "Choose from a range of broadloom carpet styles, qualities, and thicknesses to find an option that fits your space and performance needs.",
       },
       {
         icon: "styles",
@@ -212,9 +212,9 @@ const benefitsContent = [
       },
       {
         icon: "moisture",
-        title: "Clear Recommendations & Straightforward Pricing",
+        title: "Clear Recommendations & Simple Process",
         description:
-          "From measuring and carpet selection to installation and final walkthrough, we keep the process simple with clear recommendations and straightforward pricing.",
+          "From measuring and carpet selection to installation and final walkthrough, we keep the process simple with clear recommendations every step of the way.",
       },
     ],
   },

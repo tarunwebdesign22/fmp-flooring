@@ -20,11 +20,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Faithville NC"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$74000"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "12000 SF"
@@ -80,11 +76,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Charleston, SC"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$109000"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "20000 SF"
@@ -130,11 +122,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Cameron NC"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$68000"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "15000 SF"
@@ -194,11 +182,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Orange County NC"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$40000"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "10000 SF"
@@ -248,11 +232,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Columbia SC"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$93000"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "10000 SF"
@@ -307,11 +287,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Loris, SC"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$60000"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "5000SF"
@@ -371,11 +347,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Salisbury NC"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$113000"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "40000 SF"
@@ -417,11 +389,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Wilmington NC"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$197100"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "32000 SF"
@@ -481,11 +449,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Kenansville NC"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$53,700"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "9000 SF"
@@ -545,11 +509,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Columbus GA"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$35000"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "5000 SF"
@@ -647,11 +607,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Smithfield, NC"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$12500"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "33000 SF"
@@ -711,11 +667,7 @@ export const commercialProjectDetails = [
       {
         "label": "Location",
         "value": "Philadelphia TN"
-      },
-      {
-        "label": "Estimate Budget",
-        "value": "$183000"
-      },
+      },
       {
         "label": "Square Feet",
         "value": "25000 SF"

@@ -4,7 +4,6 @@ export const rotationProduct = {
   sku: "HEM407-Rotation",
   image: "/images/closeout/rotation.jpg",
   gallery: ["/images/closeout/rotation.jpg", "/images/products/rotation/detail.jpg"],
-  priceLabel: "$1.99/sf",
   specs: "20 MIL Waterproof 7″ × 60″ 5.5mm Attached Pad",
   tags: ["20 MIL", "Waterproof", "7″ × 60″"],
   stockName: "Rotation",
@@ -168,11 +167,6 @@ export const rotationProduct = {
         "LVP stands for Luxury Vinyl Plank. The Luxury Vinyl Plank flooring looks like wood but is made of vinyl, offering a cost-effective and waterproof vinyl plank flooring, an alternative to hardwood.",
     },
     {
-      question: "How Much Does LVP Flooring Cost?",
-      answer:
-        "LVP flooring from FMP Flooring starts at $1.49 per square foot, making it an affordable choice for luxury flooring.",
-    },
-    {
       question: "Is LVP Flooring Waterproof?",
       answer:
         "Yes, LVP flooring is waterproof. Waterproof vinyl plank flooring is an excellent choice for areas prone to moisture, such as bathrooms and kitchens.",
@@ -193,9 +187,9 @@ export const rotationProduct = {
         "Waterproof vinyl flooring can be easily cleaned daily using a vacuum to remove debris, a damp mop with a mild vinyl floor cleaner, or a mild dish soap. Avoid harsh chemicals and clean spills quickly to maintain their shelf life.",
     },
     {
-      question: "Is LVP Flooring available at wholesale prices?",
+      question: "Do you offer LVP flooring for bulk or commercial projects?",
       answer:
-        "Yes, we provide wholesale pricing for bulk orders, making it an ideal option for large-scale projects or commercial installations.",
+        "Yes, we support bulk orders and large-scale projects, making LVP an ideal option for commercial installations.",
     },
     {
       question: "What is the thickness of LVP Flooring?",
