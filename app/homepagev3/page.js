@@ -654,7 +654,7 @@ const federalContent = [
     marqueeItems: [
       "Federal & State Flooring Contractor",
       "Direct Importer & Distributor – No Middlemen",
-      "Financing Available",
+      "Zero % Financing",
       "In-Home Free Estimate",
     ],
     headlineBlue: "Federal & State",

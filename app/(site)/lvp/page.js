@@ -54,7 +54,7 @@ const heroContent = [
         backgroundImage: "/images/finance-banner-001.webp",
         financing: {
           eyebrow: "Flexible Payment Options",
-          title: "Financing Available",
+          title: "Zero % Financing",
           description:
             "",
           benefits: [
@@ -167,7 +167,7 @@ const simpleProcessContent = createFlooringProcessContent(
 
 const financeBannerContent = [
   {
-    title: "Financing Available",
+    title: "Zero % Financing",
     description: "Convenient monthly payment options can make your new luxury vinyl plank flooring project easier to budget.",
     buttonText: "View Financing Options",
     buttonHref: "/financing",
