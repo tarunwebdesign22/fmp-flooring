@@ -284,6 +284,11 @@ const howWeManageProjectsContent = [
         imageAlt: "Installer fitting baseboard trim on newly installed flooring",
       },
     ],
+    guarantee: {
+      title: "Lifetime Labor Guarantee",
+      description:
+        "Installation workmanship guaranteed for life, providing long-term confidence and protection.",
+    },
   },
 ];
 

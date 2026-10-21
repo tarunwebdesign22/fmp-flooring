@@ -31,6 +31,45 @@ function useIsDesktop() {
   return isDesktop;
 }
 
+function ShieldCheckIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M12 3 4.5 6.2v5.3c0 4.5 3.1 7.7 7.5 9.1 4.4-1.4 7.5-4.6 7.5-9.1V6.2L12 3z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path
+        d="m9 12 2.1 2.1L15.2 10"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function GuaranteeCallout({ guarantee }) {
+  if (!guarantee?.title) return null;
+
+  return (
+    <div className="mt-8 flex items-start gap-4 rounded-2xl border border-teal/25 bg-white px-5 py-5 shadow-[0_10px_28px_rgba(34,30,83,0.08)] sm:mt-10 sm:px-6 sm:py-6">
+      <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-teal text-white shadow-[0_8px_24px_rgba(42,188,175,0.35)]">
+        <ShieldCheckIcon />
+      </span>
+      <div className="min-w-0 pt-0.5">
+        <h3 className="text-lg font-bold leading-snug text-blue sm:text-xl">{guarantee.title}</h3>
+        <span className="mt-2.5 mb-2.5 block h-0.5 w-10 bg-teal" aria-hidden="true" />
+        {guarantee.description ? (
+          <p className="text-[15px] leading-7 text-blue/70">{guarantee.description}</p>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
 function TimelineStep({ card, index, visible, reduceMotion, stepRef, status }) {
   const step = card.step || String(index + 1).padStart(2, "0");
   const isActive = status === "active";
@@ -317,39 +356,43 @@ export default function HowWeManageProjectsSection({ content }) {
           </div>
 
           {/* Right: steps — horizontal scroll on mobile, vertical timeline on desktop */}
-          <div
-            ref={trackRef}
-            onPointerDown={pauseAutoScroll}
-            onTouchStart={pauseAutoScroll}
-            onWheel={pauseAutoScroll}
-            className="relative -mx-6 overflow-x-auto overflow-y-visible overscroll-x-contain px-6 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] snap-x snap-mandatory lg:mx-0 lg:overflow-visible lg:px-0 lg:pb-0 lg:snap-none [&::-webkit-scrollbar]:hidden"
-          >
-            {/* Desktop vertical progress line */}
+          <div>
             <div
-              className="pointer-events-none absolute top-2 bottom-2 left-[1.35rem] hidden w-px bg-grey lg:block"
-              aria-hidden="true"
+              ref={trackRef}
+              onPointerDown={pauseAutoScroll}
+              onTouchStart={pauseAutoScroll}
+              onWheel={pauseAutoScroll}
+              className="relative -mx-6 overflow-x-auto overflow-y-visible overscroll-x-contain px-6 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] snap-x snap-mandatory lg:mx-0 lg:overflow-visible lg:px-0 lg:pb-0 lg:snap-none [&::-webkit-scrollbar]:hidden"
             >
+              {/* Desktop vertical progress line */}
               <div
-                className="absolute top-0 left-0 w-full origin-top bg-teal transition-[height] duration-150 ease-out"
-                style={{ height: `${lineProgress * 100}%` }}
-              />
+                className="pointer-events-none absolute top-2 bottom-2 left-[1.35rem] hidden w-px bg-grey lg:block"
+                aria-hidden="true"
+              >
+                <div
+                  className="absolute top-0 left-0 w-full origin-top bg-teal transition-[height] duration-150 ease-out"
+                  style={{ height: `${lineProgress * 100}%` }}
+                />
+              </div>
+
+              <ol className="relative flex flex-row gap-5 pr-6 lg:flex-col lg:gap-0 lg:pr-0">
+                {section.steps.map((card, index) => (
+                  <TimelineStep
+                    key={card.title}
+                    card={card}
+                    index={index}
+                    visible={visibleSteps.has(index)}
+                    reduceMotion={reduceMotion}
+                    status={getStatus(index)}
+                    stepRef={(el) => {
+                      itemRefs.current[index] = el;
+                    }}
+                  />
+                ))}
+              </ol>
             </div>
 
-            <ol className="relative flex flex-row gap-5 pr-6 lg:flex-col lg:gap-0 lg:pr-0">
-              {section.steps.map((card, index) => (
-                <TimelineStep
-                  key={card.title}
-                  card={card}
-                  index={index}
-                  visible={visibleSteps.has(index)}
-                  reduceMotion={reduceMotion}
-                  status={getStatus(index)}
-                  stepRef={(el) => {
-                    itemRefs.current[index] = el;
-                  }}
-                />
-              ))}
-            </ol>
+            <GuaranteeCallout guarantee={section.guarantee} />
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { submitForm } from "@/lib/submit-form";
+import LeadConnectorForm from "@/components/LeadConnectorForm";
 
 function StarIcon() {
   return (
@@ -190,26 +190,6 @@ function HeroStatsStrip({ items }) {
   );
 }
 
-const fieldIcons = {
-  name: (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-      <circle cx="12" cy="8" r="4" />
-      <path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" />
-    </svg>
-  ),
-  phone: (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-      <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" />
-    </svg>
-  ),
-  email: (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <path d="m3 7 9 7 9-7" />
-    </svg>
-  ),
-};
-
 function HighlightedCopy({ segments, variant }) {
   if (!segments?.length) return null;
 
@@ -387,113 +367,18 @@ function HeroCopy({ section }) {
   );
 }
 
-function EstimateFormCard({
-  section,
-  submitted,
-  submitting = false,
-  error = "",
-  formData,
-  onChange,
-  onSubmit,
-  className = "",
-}) {
-  if (!section?.form) return null;
-
+function EstimateFormCard({ className = "" }) {
   return (
-    <div className={`overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(0,0,0,0.35)] ${className}`}>
+    <div
+      className={`overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(0,0,0,0.35)] ${className}`}
+    >
       <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
-      <div className="p-6 sm:p-7">
-        <h2 className="text-2xl font-bold text-blue">{section.form.title}</h2>
-        <span className="mt-2 block h-0.5 w-12 bg-teal" aria-hidden="true" />
-        <p className="mt-3 text-sm text-blue/65">{section.form.description}</p>
-
-        {submitted ? (
-          <p className="mt-8 rounded-lg bg-greylight px-4 py-6 text-center text-sm font-medium text-blue">
-            Thank you! We&apos;ll get back to you shortly.
-          </p>
-        ) : (
-          <form onSubmit={onSubmit} className="mt-6 space-y-3.5">
-            <label className="relative block">
-              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-                {fieldIcons.name}
-              </span>
-              <input
-                type="text"
-                name="name"
-                required
-                value={formData.name}
-                onChange={onChange}
-                placeholder="Full Name"
-                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
-
-            <label className="relative block">
-              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-                {fieldIcons.phone}
-              </span>
-              <input
-                type="tel"
-                name="phone"
-                required
-                value={formData.phone}
-                onChange={onChange}
-                placeholder="Phone Number"
-                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
-
-            <label className="relative block">
-              <span className="absolute top-1/2 left-3 -translate-y-1/2 text-blue/45">
-                {fieldIcons.email}
-              </span>
-              <input
-                type="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={onChange}
-                placeholder="Email Address"
-                className="w-full rounded-lg border border-grey bg-white py-3 pr-3 pl-10 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
-
-            <label className="relative block">
-              <select
-                name="service"
-                required
-                value={formData.service}
-                onChange={onChange}
-                className="w-full appearance-none rounded-lg border border-grey bg-white py-3 pr-10 pl-3 text-sm text-blue outline-none transition-colors focus:border-teal"
-              >
-                <option value="" disabled>
-                  Service Interested In
-                </option>
-                {section.form.services.map((service) => (
-                  <option key={service} value={service}>
-                    {service}
-                  </option>
-                ))}
-              </select>
-              <span className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-blue/45" aria-hidden="true">
-                ▾
-              </span>
-            </label>
-
-            {error ? (
-              <p className="text-center text-sm font-medium text-red-600">{error}</p>
-            ) : null}
-
-            <button
-              type="submit"
-              disabled={submitting}
-              className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue disabled:cursor-not-allowed disabled:opacity-70"
-            >
-              {submitting ? "Sending..." : section.form.buttonText}
-              <span aria-hidden="true">→</span>
-            </button>
-          </form>
-        )}
+      <div className="p-1.5 sm:p-2">
+        <LeadConnectorForm
+          iframeId="inline-qvI3LVdUNkwaVf8kgsKE-homev2"
+          height={560}
+          className="rounded-xl"
+        />
       </div>
     </div>
   );
@@ -510,15 +395,6 @@ export default function HeroSectionCopy({ content }) {
   const [activeBackground, setActiveBackground] = useState(0);
   const readyRef = useRef(new Set());
   const failedRef = useRef(new Set());
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    service: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState("");
 
   // Preload background images only — text/form stay fixed and are not part of the slideshow.
   useEffect(() => {
@@ -572,37 +448,6 @@ export default function HeroSectionCopy({ content }) {
 
   if (!section) return null;
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    setSubmitting(true);
-    try {
-      await submitForm(formData, "Home estimate form");
-      setSubmitted(true);
-    } catch (err) {
-      setError(err.message || "Something went wrong. Please try again.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
-  const formCard = (
-    <EstimateFormCard
-      section={section}
-      submitted={submitted}
-      submitting={submitting}
-      error={error}
-      formData={formData}
-      onChange={handleChange}
-      onSubmit={handleSubmit}
-    />
-  );
-
   return (
     <>
       <div className="relative isolate overflow-hidden">
@@ -625,20 +470,12 @@ export default function HeroSectionCopy({ content }) {
           aria-hidden="true"
         />
 
-        {/* Fixed content — not part of the slider */}
-        <section className="relative z-10 lg:hidden" aria-label="Welcome to FMP Flooring">
-          <div className="relative mx-auto max-w-7xl px-4 py-12 pb-16">
+        {/* Fixed content — single form instance for mobile + desktop */}
+        <section className="relative z-10" aria-label="Welcome to FMP Flooring">
+          <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-4 py-12 pb-16 sm:px-8 lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-10 lg:px-10 lg:py-16 lg:pb-24 xl:py-20 xl:pb-28">
             <HeroCopy section={section} />
-          </div>
-        </section>
-
-        <div className="relative z-10 -mt-5 px-4 pb-6 lg:hidden">{formCard}</div>
-
-        <section className="relative z-10 hidden lg:block" aria-label="Welcome to FMP Flooring">
-          <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 pb-24 sm:px-8 lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-10 lg:px-10 xl:py-20 xl:pb-28">
-            <HeroCopy section={section} />
-            <div className="w-full shrink-0 lg:w-[28rem] lg:justify-self-end">
-              {formCard}
+            <div className="w-full max-w-[28rem] justify-self-center lg:w-[28rem] lg:max-w-none lg:justify-self-end">
+              <EstimateFormCard />
             </div>
           </div>
         </section>

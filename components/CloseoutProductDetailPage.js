@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import FaqSection from "@/components/FaqSection";
+import LeadConnectorForm from "@/components/LeadConnectorForm";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import { submitForm } from "@/lib/submit-form";
 
 const STOCK_SHEET_URL =
   "https://docs.google.com/spreadsheets/d/1RlUhMkR4c4v0CxALcL2McMDJ0jS-ov1cOjfEc8_wX0w/export?format=csv&gid=1631855389";
@@ -138,159 +138,18 @@ function GiftIcon() {
 }
 
 function ProductEstimateForm({ productName }) {
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState("");
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    quantity: "",
-    email: "",
-    address: "",
-    message: "",
-    consent: false,
-  });
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    setSubmitting(true);
-    try {
-      await submitForm(
-        { ...formData, productName },
-        "Closeout product inquiry"
-      );
-      setSubmitted(true);
-    } catch (err) {
-      setError(err.message || "Something went wrong. Please try again.");
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
   return (
     <div className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(34,30,83,0.12)]">
       <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
-
-      <div className="p-6 sm:p-8">
+      <div className="p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-blue sm:text-3xl">Start Your Flooring Journey Here!</h2>
         <span className="mt-2 block h-0.5 w-12 bg-teal" aria-hidden="true" />
         <p className="mt-3 text-sm text-blue/65">
           Let us know your preferences for {productName} and we&apos;ll get back to you.
         </p>
-
-        {submitted ? (
-          <p className="mt-8 rounded-lg bg-greylight px-4 py-6 text-center text-sm font-medium text-blue">
-            Thank you! We&apos;ll get back to you shortly.
-          </p>
-        ) : (
-          <form onSubmit={handleSubmit} className="mt-6 grid gap-3.5 sm:grid-cols-2">
-            <label className="block sm:col-span-1">
-              <span className="mb-1 block text-xs font-semibold text-blue/70">Name *</span>
-              <input
-                type="text"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full rounded-lg border border-grey bg-white px-3 py-3 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
-
-            <label className="block sm:col-span-1">
-              <span className="mb-1 block text-xs font-semibold text-blue/70">Phone Number *</span>
-              <input
-                type="tel"
-                name="phone"
-                required
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full rounded-lg border border-grey bg-white px-3 py-3 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
-
-            <label className="block sm:col-span-1">
-              <span className="mb-1 block text-xs font-semibold text-blue/70">Quantity (Per Sqft.) *</span>
-              <input
-                type="text"
-                name="quantity"
-                required
-                value={formData.quantity}
-                onChange={handleChange}
-                className="w-full rounded-lg border border-grey bg-white px-3 py-3 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
-
-            <label className="block sm:col-span-1">
-              <span className="mb-1 block text-xs font-semibold text-blue/70">Email *</span>
-              <input
-                type="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full rounded-lg border border-grey bg-white px-3 py-3 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
-
-            <label className="block sm:col-span-2">
-              <span className="mb-1 block text-xs font-semibold text-blue/70">Address *</span>
-              <input
-                type="text"
-                name="address"
-                required
-                value={formData.address}
-                onChange={handleChange}
-                className="w-full rounded-lg border border-grey bg-white px-3 py-3 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
-
-            <label className="block sm:col-span-2">
-              <span className="mb-1 block text-xs font-semibold text-blue/70">Comment or Message</span>
-              <textarea
-                name="message"
-                rows={3}
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full resize-y rounded-lg border border-grey bg-white px-3 py-3 text-sm text-blue outline-none transition-colors placeholder:text-blue/40 focus:border-teal"
-              />
-            </label>
-
-            <label className="flex items-start gap-2 sm:col-span-2">
-              <input
-                type="checkbox"
-                name="consent"
-                required
-                checked={formData.consent}
-                onChange={handleChange}
-                className="mt-1 h-4 w-4 shrink-0 accent-teal"
-              />
-              <span className="text-xs leading-5 text-blue/65">
-                I agree to receive communications by text message regarding order updates, shipping
-                notifications, promotional offers, and account notifications from FMP Flooring. You may opt
-                out by replying STOP or ask for more information by replying HELP.
-              </span>
-            </label>
-
-            {error ? (
-              <p className="sm:col-span-2 text-center text-sm font-medium text-red-600">{error}</p>
-            ) : null}
-
-            <button
-              type="submit"
-              disabled={submitting}
-              className="sm:col-span-2 mt-1 flex w-full items-center justify-center gap-2 rounded bg-teal px-5 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-blue disabled:cursor-not-allowed disabled:opacity-70"
-            >
-              {submitting ? "Sending..." : "Submit"}
-              <span aria-hidden="true">→</span>
-            </button>
-          </form>
-        )}
+        <div className="mt-6">
+          <LeadConnectorForm iframeId="inline-qvI3LVdUNkwaVf8kgsKE-closeout" height={640} />
+        </div>
       </div>
     </div>
   );
