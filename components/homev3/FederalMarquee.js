@@ -1,7 +1,7 @@
 const DEFAULT_ITEMS = [
   "Federal & State Flooring Contractor",
   "Direct Importer & Distributor – No Middlemen",
-  "Zero % Financing",
+  "0 % Financing",
   "In-Home Free Estimate",
 ];
 

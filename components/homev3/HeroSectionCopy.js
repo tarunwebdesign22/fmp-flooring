@@ -286,7 +286,7 @@ function HeroTagline({ segments }) {
 
 function HeroCopy({ section }) {
   return (
-    <div className="min-w-0 [text-shadow:0_1px_18px_rgba(0,0,0,0.35)]">
+    <div className="min-w-0 lg:pt-2 [text-shadow:0_1px_18px_rgba(0,0,0,0.35)]">
       {section.badge ? (
         <p className="inline-flex max-w-full items-center gap-2 rounded-md bg-white/12 px-2.5 py-1.5 ring-1 ring-inset ring-white/25 backdrop-blur-[6px]">
           <span
@@ -355,7 +355,6 @@ function EstimateFormCard({ className = "" }) {
       <div className="p-1.5 sm:p-2">
         <LeadConnectorForm
           iframeId="inline-qvI3LVdUNkwaVf8kgsKE-home"
-          height={560}
           className="rounded-xl"
         />
       </div>
@@ -429,7 +428,7 @@ export default function HeroSectionCopy({ content, marqueeItems }) {
 
   return (
     <>
-      <div className="relative isolate min-h-[560px] overflow-hidden sm:min-h-[600px] lg:min-h-[640px] xl:min-h-[680px]">
+      <div className="relative isolate overflow-hidden">
         {/* Background-only slider (does not affect headline or form) */}
         <div className="pointer-events-none absolute inset-0 z-0 bg-[#1c2430]" aria-hidden="true">
           {backgroundImages.map((src, index) => (
@@ -444,10 +443,10 @@ export default function HeroSectionCopy({ content, marqueeItems }) {
         </div>
 
         {/* Fixed content — single form instance for mobile + desktop */}
-        <section className="relative z-10 h-full min-h-[inherit]" aria-label="Welcome to FMP Flooring">
-          <div className="relative mx-auto grid h-full min-h-[640px] max-w-7xl items-center gap-6 px-4 py-12 pb-16 sm:px-8 lg:grid-cols-[minmax(0,1fr)_23.1rem] lg:gap-10 lg:px-10 lg:py-16 lg:pb-24 xl:min-h-[680px] xl:py-20 xl:pb-28">
+        <section className="relative z-10" aria-label="Welcome to FMP Flooring">
+          <div className="relative mx-auto grid max-w-7xl items-start gap-6 px-4 py-8 pb-10 sm:px-8 lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-8 lg:px-10 lg:py-10 lg:pb-14 xl:py-12 xl:pb-16">
             <HeroCopy section={section} />
-            <div className="w-full max-w-[23.1rem] justify-self-center lg:w-[23.1rem] lg:max-w-none lg:justify-self-end">
+            <div className="w-full max-w-[26rem] justify-self-center lg:w-[26rem] lg:max-w-none lg:justify-self-end">
               <EstimateFormCard />
             </div>
           </div>

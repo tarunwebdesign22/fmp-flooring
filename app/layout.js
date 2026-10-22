@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <ScrollToTopButton />
         <Script
           src="https://link.msgsndr.com/js/form_embed.js"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
         <Script
           src="https://widgets.leadconnectorhq.com/loader.js"

@@ -148,7 +148,7 @@ function ProductEstimateForm({ productName }) {
           Let us know your preferences for {productName} and we&apos;ll get back to you.
         </p>
         <div className="mt-6">
-          <LeadConnectorForm iframeId="inline-qvI3LVdUNkwaVf8kgsKE-closeout" height={640} />
+          <LeadConnectorForm iframeId="inline-qvI3LVdUNkwaVf8kgsKE-closeout" />
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import PageLoader from "@/components/PageLoader";
 
 const MIN_DISPLAY_MS = 350;
-const MAX_DISPLAY_MS = 2500;
+const MAX_DISPLAY_MS = 1800;
 
 export default function InitialPageLoader() {
   const [visible, setVisible] = useState(true);

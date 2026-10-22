@@ -35,10 +35,9 @@ function EstimateForm() {
   return (
     <div className="overflow-hidden rounded-2xl border border-white/40 bg-white/55 shadow-[0_16px_50px_rgba(0,0,0,0.28)] backdrop-blur-md">
       <div className="h-1.5 w-full bg-teal" aria-hidden="true" />
-      <div className="p-2 sm:p-3">
+      <div className="p-1.5 sm:p-2">
         <LeadConnectorForm
           iframeId="inline-qvI3LVdUNkwaVf8kgsKE-service"
-          height={560}
           className="rounded-xl"
         />
       </div>
@@ -51,8 +50,8 @@ function HeroEyebrow({ children, asBadge }) {
 
   if (asBadge) {
     return (
-      <p className="inline-flex max-w-full items-center rounded-md bg-white/12 px-2.5 py-1.5 ring-1 ring-inset ring-white/25 backdrop-blur-[6px]">
-        <span className="text-xs font-semibold leading-snug text-white sm:text-[13px]">
+      <p className="inline-flex max-w-full items-center rounded-md bg-white/12 px-3 py-1.5 ring-1 ring-inset ring-white/25 backdrop-blur-[6px]">
+        <span className="text-sm font-semibold leading-snug text-white sm:text-[15px]">
           {children}
         </span>
       </p>
@@ -60,7 +59,7 @@ function HeroEyebrow({ children, asBadge }) {
   }
 
   return (
-    <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal">
+    <p className="text-base font-bold uppercase tracking-[0.18em] text-teal">
       {children}
     </p>
   );
@@ -74,7 +73,7 @@ function FinancingContent({ financing }) {
       <HeroEyebrow asBadge={financing.eyebrowAsBadge}>
         {financing.eyebrow}
       </HeroEyebrow>
-      <h1 className="mt-3 max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]">
+      <h1 className="mt-4 max-w-xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.15rem] lg:leading-[1.12]">
         {financing.titleHighlightValue ? (
           <>
             {financing.titleBefore}
@@ -85,9 +84,9 @@ function FinancingContent({ financing }) {
           financing.title
         )}
       </h1>
-      <span className="mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
+      <span className="mt-4 block h-1 w-16 bg-teal" aria-hidden="true" />
 
-      <p className="mt-5 max-w-xl text-base leading-7 text-white">
+      <p className="mt-5 max-w-xl text-lg leading-8 text-white sm:text-xl sm:leading-8">
         {financing.description}
       </p>
 
@@ -101,7 +100,7 @@ function FinancingContent({ financing }) {
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#fdbf3e]/50 bg-[#fdbf3e]/15 text-[#fdbf3e]">
                 {benefitIcons[benefit.icon] || benefitIcons.approvals}
               </span>
-              <span className="text-[13px] font-bold leading-snug text-white">
+              <span className="text-sm font-bold leading-snug text-white sm:text-[15px]">
                 {benefit.title}
               </span>
             </li>
@@ -113,7 +112,7 @@ function FinancingContent({ financing }) {
         <div className="mt-7">
           <Link
             href={financing.buttonHref}
-            className="inline-flex items-center gap-2 rounded-lg bg-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-blue [text-shadow:none] transition-colors hover:bg-white hover:text-blue"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#fdbf3e] px-6 py-3.5 text-base font-bold uppercase tracking-wide text-blue [text-shadow:none] transition-colors hover:bg-white hover:text-blue"
           >
             {financing.buttonText}
             <span aria-hidden="true">→</span>
@@ -122,7 +121,7 @@ function FinancingContent({ financing }) {
       ) : null}
 
       {financing.footnote ? (
-        <p className="mt-5 text-xs leading-5 text-white/55">{financing.footnote}</p>
+        <p className="mt-5 text-sm leading-6 text-white/55">{financing.footnote}</p>
       ) : null}
     </div>
   );
@@ -132,17 +131,17 @@ function ServiceContent({ section }) {
   return (
     <div className="min-w-0 [text-shadow:0_1px_2px_rgba(0,0,0,0.85),0_2px_10px_rgba(0,0,0,0.55),0_0_28px_rgba(0,0,0,0.35)]">
       {section.eyebrow ? (
-        <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal">
+        <p className="text-base font-bold uppercase tracking-[0.16em] text-teal">
           {section.eyebrow}
         </p>
       ) : null}
 
-      <h1 className="mt-3 max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]">
+      <h1 className="mt-4 max-w-xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.15rem] lg:leading-[1.12]">
         {section.title}
       </h1>
 
       {section.description ? (
-        <p className="mt-5 max-w-2xl text-sm leading-5 text-white sm:text-[15px] sm:leading-6 lg:text-base lg:leading-6">
+        <p className="mt-5 max-w-2xl text-base leading-7 text-white sm:text-lg sm:leading-8 lg:text-xl lg:leading-8">
           {section.description}
         </p>
       ) : null}
@@ -150,7 +149,7 @@ function ServiceContent({ section }) {
       {section.buttonText && section.buttonHref ? (
         <Link
           href={section.buttonHref}
-          className="mt-8 inline-flex items-center gap-2 rounded bg-[#fdbf3e] px-6 py-3 text-sm font-bold uppercase tracking-wide text-blue [text-shadow:none] transition-colors hover:bg-white hover:text-blue"
+          className="mt-8 inline-flex items-center gap-2 rounded bg-[#fdbf3e] px-6 py-3.5 text-base font-bold uppercase tracking-wide text-blue [text-shadow:none] transition-colors hover:bg-white hover:text-blue"
         >
           {section.buttonText}
           <span aria-hidden="true">→</span>
@@ -267,15 +266,15 @@ export default function ServicePageHero({ content }) {
         <div className="absolute inset-0 bg-black/20" aria-hidden="true" />
 
         <div
-          className={`relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-[70px] ${
+          className={`relative mx-auto max-w-7xl px-6 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14 ${
             hasForm
-              ? "grid items-center gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-12"
+              ? "grid items-start gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-10"
               : ""
           }`}
         >
           {hasForm && formOnLeft ? (
             <>
-              <div className="order-2 min-w-0 lg:order-1 lg:w-full lg:max-w-[22rem]">
+              <div className="order-2 min-w-0 lg:order-1 lg:w-full lg:max-w-[24rem]">
                 <EstimateForm />
               </div>
               {hasFinancing ? (
@@ -320,7 +319,7 @@ export default function ServicePageHero({ content }) {
                 </div>
               )}
               {hasForm ? (
-                <div className="min-w-0 lg:w-full lg:max-w-[22rem] lg:justify-self-end">
+                <div className="min-w-0 lg:w-full lg:max-w-[24rem] lg:justify-self-end">
                   <EstimateForm />
                 </div>
               ) : null}

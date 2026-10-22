@@ -40,7 +40,7 @@ const heroContent = [
         backgroundImage: "/images/finance-banner.webp",
         financing: {
           eyebrow: "Flexible Payment Options",
-          title: "Zero % Financing",
+          title: "0 % Financing",
           description:
             "Buy now and pay over time! We offer several different financing programs for your flooring project.",
           benefits: [

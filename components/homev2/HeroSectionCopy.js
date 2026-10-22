@@ -197,17 +197,14 @@ function HighlightedCopy({ segments, variant }) {
 
   if (isHeroLead) {
     return (
-      <p className="mt-5 max-w-2xl text-base font-semibold leading-snug tracking-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_20px_rgba(0,0,0,0.35)] sm:mt-6 sm:text-lg lg:text-xl lg:leading-snug">
+      <p className="mt-3 max-w-2xl text-lg font-semibold leading-snug tracking-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_20px_rgba(0,0,0,0.35)] sm:mt-4 sm:text-xl lg:text-2xl lg:leading-snug">
         {segments.map((segment, index) =>
           segment.highlight ? (
-            <span key={index} className="relative mx-0.5 inline-block font-bold">
-              <span className="relative z-10 text-[#fdbf3e] [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_20px_rgba(0,0,0,0.35)]">
-                {segment.text}
-              </span>
-              <span
-                className="absolute -bottom-0.5 left-0 right-0 z-0 h-2 rounded-sm bg-teal/40"
-                aria-hidden="true"
-              />
+            <span
+              key={index}
+              className="font-bold text-teal [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_20px_rgba(0,0,0,0.35)]"
+            >
+              {segment.text}
             </span>
           ) : (
             <span key={index}>{segment.text}</span>
@@ -292,7 +289,7 @@ function HeroTagline({ segments }) {
 
 function HeroCopy({ section }) {
   return (
-    <div className="min-w-0">
+    <div className="min-w-0 lg:pt-2">
       {section.badge ? (
         <p className="inline-flex max-w-full items-center gap-2 rounded-md bg-white/12 px-2.5 py-1.5 ring-1 ring-inset ring-white/25 backdrop-blur-[6px]">
           <span
@@ -305,7 +302,7 @@ function HeroCopy({ section }) {
               <path d="M9 21v-6h6v6" />
             </svg>
           </span>
-          <span className="text-xs font-semibold leading-snug text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.65),0_2px_10px_rgba(0,0,0,0.45)] sm:text-[12px]">
+          <span className="text-sm font-semibold leading-snug text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.65),0_2px_10px_rgba(0,0,0,0.45)] sm:text-[15px]">
             {section.badge}
           </span>
         </p>
@@ -313,7 +310,7 @@ function HeroCopy({ section }) {
 
       {section.tagline?.length ? <HeroTagline segments={section.tagline} /> : null}
 
-      <h1 className="mt-5 text-3xl font-bold leading-[1.15] tracking-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_24px_rgba(0,0,0,0.4)] sm:mt-6 sm:text-4xl lg:text-[2.85rem]">
+      <h1 className="mt-4 text-4xl font-bold leading-[1.1] tracking-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_24px_rgba(0,0,0,0.4)] sm:mt-5 sm:text-5xl lg:text-[3.25rem]">
         {section.title}
         {section.titleHighlight ? (
           <>
@@ -328,9 +325,9 @@ function HeroCopy({ section }) {
       <HighlightedCopy segments={section.description} variant="heroLead" />
 
       {section.ctas?.length ? (
-        <div className="mt-7 flex flex-col gap-3">
+        <div className="mt-5 flex flex-col gap-2.5">
           {section.ctas.filter((cta) => cta.variant !== "highlight").length ? (
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center">
               {section.ctas
                 .filter((cta) => cta.variant !== "highlight")
                 .map((cta) => {
@@ -342,7 +339,7 @@ function HeroCopy({ section }) {
                     <Link
                       key={cta.label}
                       href={cta.href}
-                      className={`inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(0,0,0,0.22)] transition-colors ${className}`}
+                      className={`inline-flex items-center justify-center rounded-md px-5 py-3 text-base font-semibold text-white shadow-[0_8px_20px_rgba(0,0,0,0.22)] transition-colors ${className}`}
                     >
                       {cta.label}
                     </Link>
@@ -356,7 +353,7 @@ function HeroCopy({ section }) {
               <Link
                 key={cta.label}
                 href={cta.href}
-                className="inline-flex w-fit items-center justify-center rounded-md bg-[#e24b4b] px-5 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(226,75,75,0.45)] ring-2 ring-white/30 transition-colors hover:bg-[#c93d3d]"
+                className="inline-flex w-fit items-center justify-center rounded-md bg-[#e24b4b] px-5 py-3 text-base font-semibold text-white shadow-[0_8px_24px_rgba(226,75,75,0.45)] ring-2 ring-white/30 transition-colors hover:bg-[#c93d3d]"
               >
                 {cta.label}
               </Link>
@@ -376,7 +373,6 @@ function EstimateFormCard({ className = "" }) {
       <div className="p-1.5 sm:p-2">
         <LeadConnectorForm
           iframeId="inline-qvI3LVdUNkwaVf8kgsKE-homev2"
-          height={560}
           className="rounded-xl"
         />
       </div>
@@ -472,9 +468,9 @@ export default function HeroSectionCopy({ content }) {
 
         {/* Fixed content — single form instance for mobile + desktop */}
         <section className="relative z-10" aria-label="Welcome to FMP Flooring">
-          <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-4 py-12 pb-16 sm:px-8 lg:grid-cols-[minmax(0,1fr)_28rem] lg:gap-10 lg:px-10 lg:py-16 lg:pb-24 xl:py-20 xl:pb-28">
+          <div className="relative mx-auto grid max-w-7xl items-start gap-6 px-4 pt-14 pb-10 sm:px-8 sm:pt-16 lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-8 lg:px-10 lg:pt-20 lg:pb-14 xl:pt-24 xl:pb-16">
             <HeroCopy section={section} />
-            <div className="w-full max-w-[28rem] justify-self-center lg:w-[28rem] lg:max-w-none lg:justify-self-end">
+            <div className="w-full max-w-[26rem] justify-self-center lg:w-[26rem] lg:max-w-none lg:justify-self-end">
               <EstimateFormCard />
             </div>
           </div>
