@@ -145,7 +145,7 @@ export default function PatternSpotlightGallery({ images, thumbnailBg = "bg-grey
             <button
               type="button"
               onClick={() => setActiveIndex(index)}
-              className={`group relative aspect-[4/3] w-full overflow-hidden rounded-xl text-left shadow-[0_6px_18px_rgba(34,30,83,0.08)] ${thumbnailBg}`}
+              className={`group relative aspect-[4/5] w-full overflow-hidden rounded-xl text-left shadow-[0_6px_18px_rgba(34,30,83,0.08)] ${thumbnailBg}`}
               aria-label={`View ${image.alt}`}
             >
               <Image
