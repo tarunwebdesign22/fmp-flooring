@@ -29,9 +29,6 @@ function ProjectCard({ project }) {
       </div>
 
       <h3 className="mt-8 text-lg font-bold text-blue">{project.title}</h3>
-      {project.subtitle ? (
-        <p className="mt-1 text-sm leading-6 text-blue/60">{project.subtitle}</p>
-      ) : null}
     </article>
   );
 }
