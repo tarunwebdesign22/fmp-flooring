@@ -34,6 +34,22 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-poppins), sans-serif;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Keep media from forcing horizontal scroll on small screens */
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+}
+
+/* Safer default for long unbroken strings / buttons on mobile */
+button,
+a {
+  max-width: 100%;
 }
 
 /* Meet Our Team — slick slider */

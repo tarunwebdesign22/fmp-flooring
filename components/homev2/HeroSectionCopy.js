@@ -310,7 +310,7 @@ function HeroCopy({ section }) {
 
       {section.tagline?.length ? <HeroTagline segments={section.tagline} /> : null}
 
-      <h1 className="mt-4 text-4xl font-bold leading-[1.1] tracking-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_24px_rgba(0,0,0,0.4)] sm:mt-5 sm:text-5xl lg:text-[3.25rem]">
+      <h1 className="mt-4 text-[1.75rem] font-bold leading-[1.12] tracking-tight text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_24px_rgba(0,0,0,0.4)] sm:mt-5 sm:text-4xl md:text-5xl lg:text-[3.25rem]">
         {section.title}
         {section.titleHighlight ? (
           <>

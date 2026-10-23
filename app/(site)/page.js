@@ -734,201 +734,49 @@ const federalContent = [
 const videosContent = [
   {
     title: "Explore Our Work",
-    description: "Take a closer look at our flooring projects, installations, showroom, warehouse, and completed work. See the quality and attention to detail we bring to every project.",
+    description:
+      "Take a closer look at our flooring projects, installations, showroom, warehouse, and completed work. See the quality and attention to detail we bring to every project.",
     tabs: [
       {
         id: "showroom",
-        label: "Showroom",
+        label: "Our Work",
         icon: "showroom",
         videos: [
           {
-            title: "Showroom tour 1",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&h=450&fit=crop",
-            duration: "1:24",
+            title: "Video 1",
+            src: "/videos/video-1.mp4",
+            poster: "/images/Hero-Image.jpg",
+            duration: "Video",
           },
           {
-            title: "Showroom tour 2",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=450&fit=crop",
-            duration: "1:18",
+            title: "Video 2",
+            src: "/videos/video-2.mp4",
+            poster: "/images/Hero-Image.jpg",
+            duration: "Video",
           },
           {
-            title: "Showroom tour 3",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=450&fit=crop",
-            duration: "1:35",
+            title: "Video 3",
+            src: "/videos/video-3.mp4",
+            poster: "/images/Hero-Image.jpg",
+            duration: "Video",
           },
           {
-            title: "Showroom tour 4",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&h=450&fit=crop",
-            duration: "1:24",
+            title: "Video 4",
+            src: "/videos/video-4.mp4",
+            poster: "/images/Hero-Image.jpg",
+            duration: "Video",
           },
           {
-            title: "Showroom tour 5",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=450&fit=crop",
-            duration: "1:18",
+            title: "Video 5",
+            src: "/videos/video-5.mp4",
+            poster: "/images/Hero-Image.jpg",
+            duration: "Video",
           },
           {
-            title: "Showroom tour 6",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=450&fit=crop",
-            duration: "1:35",
-          },
-        ],
-      },
-      {
-        id: "warehouse",
-        label: "Warehouse",
-        icon: "warehouse",
-        videos: [
-          {
-            title: "Warehouse overview 1",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=450&fit=crop",
-            duration: "1:18",
-          },
-          {
-            title: "Warehouse overview 2",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=450&fit=crop",
-            duration: "1:42",
-          },
-          {
-            title: "Warehouse overview 3",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&h=450&fit=crop",
-            duration: "1:05",
-          },
-          {
-            title: "Warehouse overview 4",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=450&fit=crop",
-            duration: "1:18",
-          },
-          {
-            title: "Warehouse overview 5",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=450&fit=crop",
-            duration: "1:42",
-          },
-          {
-            title: "Warehouse overview 6",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&h=450&fit=crop",
-            duration: "1:05",
-          },
-        ],
-      },
-      {
-        id: "installations",
-        label: "Educational Videos",
-        icon: "installations",
-        videos: [
-          {
-            title: "Installation 1",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=450&fit=crop",
-            duration: "1:35",
-          },
-          {
-            title: "Installation 2",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=450&fit=crop",
-            duration: "2:10",
-          },
-          {
-            title: "Installation 3",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=450&fit=crop",
-            duration: "1:28",
-          },
-          {
-            title: "Installation 4",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=450&fit=crop",
-            duration: "1:35",
-          },
-          {
-            title: "Installation 5",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=450&fit=crop",
-            duration: "2:10",
-          },
-          {
-            title: "Installation 6",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=450&fit=crop",
-            duration: "1:28",
-          },
-        ],
-      },
-      {
-        id: "testimonials",
-        label: "Testimonials",
-        icon: "testimonials",
-        videos: [
-          {
-            title: "Customer story 1",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=450&fit=crop",
-            duration: "0:58",
-          },
-          {
-            title: "Customer story 2",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=450&fit=crop",
-            duration: "1:12",
-          },
-          {
-            title: "Customer story 3",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=450&fit=crop",
-            duration: "1:45",
-          },
-          {
-            title: "Customer story 4",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=450&fit=crop",
-            duration: "0:58",
-          },
-          {
-            title: "Customer story 5",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=450&fit=crop",
-            duration: "1:12",
-          },
-          {
-            title: "Customer story 6",
-            src: "/images/dummyvideo.webm",
-            poster:
-              "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=450&fit=crop",
-            duration: "1:45",
+            title: "Video 6",
+            src: "/videos/video-6.mp4",
+            poster: "/images/Hero-Image.jpg",
+            duration: "Video",
           },
         ],
       },
@@ -1286,7 +1134,7 @@ export default function Home() {
       {/* <MeetTheFounderSection content={founderContent} /> */}
       {/* <HighlightsWhyChooseSection content={whyFmpContent} /> */}
       <HowWeManageProjectsSection content={howWeManageProjectsContent} />
-      {/* <ExploreVideosSection content={videosContent} /> */}
+      <ExploreVideosSection content={videosContent} />
       <GoogleReviewsSection content={googleReviewsContent} />
       <BrandsSection content={brandsContent} />
       {/* <FacebookFeedSection content={facebookFeedContent} /> */}

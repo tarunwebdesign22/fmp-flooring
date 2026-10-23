@@ -17,20 +17,6 @@ function usePrefersReducedMotion() {
   return reduced;
 }
 
-function useIsDesktop() {
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1024px)");
-    const update = () => setIsDesktop(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
-
-  return isDesktop;
-}
-
 function ShieldCheckIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -55,15 +41,15 @@ function GuaranteeCallout({ guarantee }) {
   if (!guarantee?.title) return null;
 
   return (
-    <div className="mt-8 flex items-start gap-4 rounded-2xl border border-teal/25 bg-greylight px-5 py-5 shadow-[0_10px_28px_rgba(34,30,83,0.08)] sm:mt-10 sm:px-6 sm:py-6">
-      <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-teal text-white shadow-[0_8px_24px_rgba(42,188,175,0.35)]">
+    <div className="mt-6 flex items-start gap-3 rounded-2xl border border-teal/25 bg-greylight px-4 py-4 shadow-[0_10px_28px_rgba(34,30,83,0.08)] sm:mt-10 sm:gap-4 sm:px-6 sm:py-6">
+      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal text-white shadow-[0_8px_24px_rgba(42,188,175,0.35)] sm:h-12 sm:w-12">
         <ShieldCheckIcon />
       </span>
       <div className="min-w-0 pt-0.5">
-        <h3 className="text-lg font-bold leading-snug text-blue sm:text-xl">{guarantee.title}</h3>
-        <span className="mt-2.5 mb-2.5 block h-0.5 w-10 bg-teal" aria-hidden="true" />
+        <h3 className="text-base font-bold leading-snug text-blue sm:text-lg lg:text-xl">{guarantee.title}</h3>
+        <span className="mt-2 mb-2 block h-0.5 w-10 bg-teal sm:mt-2.5 sm:mb-2.5" aria-hidden="true" />
         {guarantee.description ? (
-          <p className="text-[15px] leading-7 text-blue/70">{guarantee.description}</p>
+          <p className="text-sm leading-6 text-blue/70 sm:text-[15px] sm:leading-7">{guarantee.description}</p>
         ) : null}
       </div>
     </div>
@@ -86,7 +72,7 @@ function TimelineStep({ card, index, visible, reduceMotion, stepRef, status }) {
   return (
     <li
       ref={stepRef}
-      className={`relative grid w-[min(78vw,18.5rem)] shrink-0 snap-center grid-cols-1 items-start gap-3 transition-all duration-700 ease-out lg:w-auto lg:snap-none lg:grid-cols-[auto_1fr] lg:gap-6 lg:pb-12 lg:last:pb-0 ${
+      className={`relative grid w-full grid-cols-[auto_1fr] items-start gap-4 pb-8 transition-all duration-700 ease-out last:pb-0 sm:gap-5 sm:pb-10 lg:gap-6 lg:pb-12 ${
         visible || reduceMotion ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
       style={{
@@ -95,75 +81,50 @@ function TimelineStep({ card, index, visible, reduceMotion, stepRef, status }) {
     >
       <div className="relative z-10 flex flex-col items-start pt-0.5">
         <span
-          className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-bold ring-4 transition-all duration-500 ${nodeClass}`}
+          className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold ring-4 transition-all duration-500 sm:h-11 sm:w-11 ${nodeClass}`}
         >
           {step}
         </span>
       </div>
 
       <div
-        className={`min-w-0 pt-1 text-left transition-opacity duration-500 ${
+        className={`min-w-0 pt-0.5 text-left transition-opacity duration-500 sm:pt-1 ${
           status === "upcoming" && !reduceMotion ? "opacity-55" : "opacity-100"
         }`}
       >
         <p
-          className={`text-xs font-bold uppercase tracking-[0.14em] transition-colors duration-500 ${labelClass}`}
+          className={`text-[11px] font-bold uppercase tracking-[0.14em] transition-colors duration-500 sm:text-xs ${labelClass}`}
         >
           Step {step}
         </p>
-        <h3 className="mt-2.5 text-lg font-bold leading-snug text-blue sm:mt-3 sm:text-xl">
+        <h3 className="mt-2 text-base font-bold leading-snug text-blue sm:mt-2.5 sm:text-lg lg:text-xl">
           {card.title}
         </h3>
         <span
-          className={`mt-3 mb-3 block h-0.5 w-10 transition-colors duration-500 sm:mt-3.5 sm:mb-3.5 ${barClass}`}
+          className={`mt-2.5 mb-2.5 block h-0.5 w-10 transition-colors duration-500 sm:mt-3.5 sm:mb-3.5 ${barClass}`}
           aria-hidden="true"
         />
         {card.description ? (
-          <p className="text-[15px] leading-7 text-blue/70 lg:max-w-xl">{card.description}</p>
+          <p className="text-sm leading-6 text-blue/70 sm:text-[15px] sm:leading-7 lg:max-w-xl">
+            {card.description}
+          </p>
         ) : null}
       </div>
     </li>
   );
 }
 
-const AUTO_SCROLL_MS = 4000;
-const AUTO_SCROLL_RESUME_MS = 6000;
-
 export default function HowWeManageProjectsSection({ content }) {
   const section = content?.[0];
   const trackRef = useRef(null);
   const itemRefs = useRef([]);
-  const autoIndexRef = useRef(0);
-  const pauseUntilRef = useRef(0);
   const reduceMotion = usePrefersReducedMotion();
-  const isDesktop = useIsDesktop();
   const [visibleSteps, setVisibleSteps] = useState(() => new Set());
   const [lineProgress, setLineProgress] = useState(0);
   const [reachedIndex, setReachedIndex] = useState(-1);
 
   const activeStepIndex = Math.max(0, reachedIndex);
   const stepImages = (section?.steps || []).filter((step) => step.image);
-
-  const scrollToStep = (index, behavior = "smooth") => {
-    const track = trackRef.current;
-    const el = itemRefs.current[index];
-    if (!track || !el) return;
-
-    const trackRect = track.getBoundingClientRect();
-    const stepRect = el.getBoundingClientRect();
-    const nextLeft =
-      track.scrollLeft +
-      (stepRect.left - trackRect.left) -
-      (trackRect.width - stepRect.width) / 2;
-
-    track.scrollTo({ left: Math.max(0, nextLeft), behavior });
-    setReachedIndex(index);
-    autoIndexRef.current = index;
-  };
-
-  const pauseAutoScroll = () => {
-    pauseUntilRef.current = Date.now() + AUTO_SCROLL_RESUME_MS;
-  };
 
   useEffect(() => {
     if (!section?.steps?.length) return undefined;
@@ -172,12 +133,6 @@ export default function HowWeManageProjectsSection({ content }) {
       setVisibleSteps(new Set(section.steps.map((_, i) => i)));
       setLineProgress(1);
       setReachedIndex(section.steps.length - 1);
-      return undefined;
-    }
-
-    // On mobile horizontal scroll, reveal all steps once the section enters view
-    if (!isDesktop) {
-      setVisibleSteps(new Set(section.steps.map((_, i) => i)));
       return undefined;
     }
 
@@ -197,19 +152,19 @@ export default function HowWeManageProjectsSection({ content }) {
             observer.disconnect();
           }
         },
-        { threshold: 0.35, rootMargin: "0px 0px -10% 0px" }
+        { threshold: 0.25, rootMargin: "0px 0px -8% 0px" }
       );
       observer.observe(el);
       observers.push(observer);
     });
 
     return () => observers.forEach((o) => o.disconnect());
-  }, [section?.steps?.length, reduceMotion, isDesktop]);
+  }, [section?.steps?.length, reduceMotion]);
 
   useEffect(() => {
     if (reduceMotion || !section?.steps?.length) return undefined;
 
-    const updateFromVerticalScroll = () => {
+    const onScroll = () => {
       const track = trackRef.current;
       if (!track) return;
 
@@ -228,79 +183,15 @@ export default function HowWeManageProjectsSection({ content }) {
       setReachedIndex(nextReached);
     };
 
-    const updateFromHorizontalScroll = () => {
-      const track = trackRef.current;
-      if (!track) return;
-
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      const progress = maxScroll > 0 ? track.scrollLeft / maxScroll : 0;
-      setLineProgress(Math.min(1, Math.max(0, progress)));
-
-      const trackRect = track.getBoundingClientRect();
-      const centerX = trackRect.left + trackRect.width / 2;
-      let closestIndex = 0;
-      let closestDistance = Infinity;
-
-      itemRefs.current.forEach((el, index) => {
-        if (!el) return;
-        const stepRect = el.getBoundingClientRect();
-        const stepCenter = stepRect.left + stepRect.width / 2;
-        const distance = Math.abs(stepCenter - centerX);
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestIndex = index;
-        }
-      });
-      setReachedIndex(closestIndex);
-      autoIndexRef.current = closestIndex;
-    };
-
-    const onScroll = () => {
-      if (window.matchMedia("(min-width: 1024px)").matches) {
-        updateFromVerticalScroll();
-      } else {
-        updateFromHorizontalScroll();
-      }
-    };
-
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
 
-    const track = trackRef.current;
-    track?.addEventListener("scroll", onScroll, { passive: true });
-
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
-      track?.removeEventListener("scroll", onScroll);
     };
   }, [section?.steps?.length, reduceMotion]);
-
-  // Mobile auto-scroll through steps
-  useEffect(() => {
-    if (reduceMotion || isDesktop || !section?.steps?.length) return undefined;
-
-    const stepsCount = section.steps.length;
-    autoIndexRef.current = Math.max(0, reachedIndex);
-
-    const timer = window.setInterval(() => {
-      if (Date.now() < pauseUntilRef.current) return;
-
-      const track = trackRef.current;
-      if (!track) return;
-
-      // Only auto-advance when the section is roughly in view
-      const rect = track.getBoundingClientRect();
-      const inView = rect.top < window.innerHeight * 0.9 && rect.bottom > window.innerHeight * 0.15;
-      if (!inView) return;
-
-      const nextIndex = (autoIndexRef.current + 1) % stepsCount;
-      scrollToStep(nextIndex, "smooth");
-    }, AUTO_SCROLL_MS);
-
-    return () => window.clearInterval(timer);
-  }, [section?.steps?.length, reduceMotion, isDesktop]);
 
   if (!section?.steps?.length) return null;
 
@@ -312,28 +203,28 @@ export default function HowWeManageProjectsSection({ content }) {
   };
 
   return (
-    <section className="bg-white py-14 sm:py-16 lg:py-[70px]">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
+    <section className="bg-white py-12 sm:py-16 lg:py-[70px]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
+        <div className="grid items-start gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
           {/* Left: title, subtitle, one image */}
           <div className="lg:sticky lg:top-28">
             {section.eyebrow ? (
-              <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
+              <p className="text-xs font-bold uppercase tracking-[0.12em] text-teal sm:text-sm">
                 {section.eyebrow}
               </p>
             ) : null}
-            <h2 className="mt-3 text-3xl font-bold text-blue sm:text-4xl">
+            <h2 className="mt-2.5 text-2xl font-bold leading-tight text-blue sm:mt-3 sm:text-3xl lg:text-4xl">
               {section.title}
             </h2>
             <span className="mt-3 block h-1 w-16 bg-teal" aria-hidden="true" />
             {section.description ? (
-              <p className="mt-5 max-w-xl text-[15px] leading-7 text-blue/70 sm:text-base">
+              <p className="mt-4 max-w-xl text-sm leading-6 text-blue/70 sm:mt-5 sm:text-[15px] sm:leading-7 md:text-base">
                 {section.description}
               </p>
             ) : null}
 
             {stepImages.length ? (
-              <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-[18px] bg-white shadow-[0_12px_36px_rgba(34,30,83,0.1)] sm:mt-10">
+              <div className="relative mt-6 aspect-[4/3] overflow-hidden rounded-2xl bg-white shadow-[0_12px_36px_rgba(34,30,83,0.1)] sm:mt-8 sm:rounded-[18px] lg:mt-10">
                 {section.steps.map((step, index) => {
                   if (!step.image) return null;
                   const isShown = index === activeStepIndex;
@@ -355,18 +246,11 @@ export default function HowWeManageProjectsSection({ content }) {
             ) : null}
           </div>
 
-          {/* Right: steps — horizontal scroll on mobile, vertical timeline on desktop */}
+          {/* Right: vertical timeline on all screen sizes */}
           <div>
-            <div
-              ref={trackRef}
-              onPointerDown={pauseAutoScroll}
-              onTouchStart={pauseAutoScroll}
-              onWheel={pauseAutoScroll}
-              className="relative -mx-6 overflow-x-auto overflow-y-visible overscroll-x-contain px-6 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] snap-x snap-mandatory lg:mx-0 lg:overflow-visible lg:px-0 lg:pb-0 lg:snap-none [&::-webkit-scrollbar]:hidden"
-            >
-              {/* Desktop vertical progress line */}
+            <div ref={trackRef} className="relative">
               <div
-                className="pointer-events-none absolute top-2 bottom-2 left-[1.35rem] hidden w-px bg-grey lg:block"
+                className="pointer-events-none absolute top-2 bottom-2 left-5 w-px bg-grey sm:left-[1.35rem]"
                 aria-hidden="true"
               >
                 <div
@@ -375,7 +259,7 @@ export default function HowWeManageProjectsSection({ content }) {
                 />
               </div>
 
-              <ol className="relative flex flex-row gap-5 pr-6 lg:flex-col lg:gap-0 lg:pr-0">
+              <ol className="relative flex flex-col">
                 {section.steps.map((card, index) => (
                   <TimelineStep
                     key={card.title}
