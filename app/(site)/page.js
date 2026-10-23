@@ -733,13 +733,13 @@ const federalContent = [
 
 const videosContent = [
   {
-    title: "Explore Our Work",
+    title: "Educational Videos",
     description:
-      "Take a closer look at our flooring projects, installations, showroom, warehouse, and completed work. See the quality and attention to detail we bring to every project.",
+      "Short videos covering flooring tips, product education, and installation insights to help you make confident decisions.",
     tabs: [
       {
         id: "showroom",
-        label: "Our Work",
+        label: "Educational Videos",
         icon: "showroom",
         videos: [
           {
