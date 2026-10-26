@@ -202,7 +202,7 @@ function HighlightedCopy({ segments, variant }) {
           segment.highlight ? (
             <span
               key={index}
-              className="font-bold text-teal [text-shadow:0_2px_8px_rgba(0,0,0,0.55),0_4px_20px_rgba(0,0,0,0.35)]"
+              className="mx-0.5 inline box-decoration-clone rounded-[4px] bg-[#fdbf3e] px-1.5 py-0.5 font-bold text-blue shadow-[0_2px_12px_rgba(0,0,0,0.35)] [text-shadow:none]"
             >
               {segment.text}
             </span>
@@ -325,9 +325,9 @@ function HeroCopy({ section }) {
       <HighlightedCopy segments={section.description} variant="heroLead" />
 
       {section.ctas?.length ? (
-        <div className="mt-5 flex flex-col gap-2.5">
+        <div className="mt-8 flex flex-col gap-4 sm:mt-9 sm:gap-5">
           {section.ctas.filter((cta) => cta.variant !== "highlight").length ? (
-            <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="flex flex-col items-start gap-4 sm:gap-5">
               {section.ctas
                 .filter((cta) => cta.variant !== "highlight")
                 .map((cta) => {

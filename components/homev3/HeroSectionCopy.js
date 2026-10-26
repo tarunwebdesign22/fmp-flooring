@@ -193,15 +193,14 @@ function HighlightedCopy({ segments, variant }) {
 
   if (isHeroLead) {
     return (
-      <p className="mt-3.5 max-w-2xl text-[15px] font-semibold leading-snug tracking-tight text-white sm:mt-4 sm:text-base">
+      <p className="mt-6 max-w-2xl text-[15px] font-semibold leading-snug tracking-tight text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:mt-7 sm:text-base">
         {segments.map((segment, index) =>
           segment.highlight ? (
-            <span key={index} className="relative mx-0.5 inline-block font-bold">
-              <span className="relative z-10 text-[#fdbf3e]">{segment.text}</span>
-              <span
-                className="absolute -bottom-0.5 left-0 right-0 z-0 h-2 rounded-sm bg-teal/40"
-                aria-hidden="true"
-              />
+            <span
+              key={index}
+              className="mx-0.5 inline box-decoration-clone rounded-[4px] bg-[#fdbf3e] px-1.5 py-0.5 font-bold text-blue shadow-[0_2px_12px_rgba(0,0,0,0.35)] [text-shadow:none]"
+            >
+              {segment.text}
             </span>
           ) : (
             <span key={index}>{segment.text}</span>
@@ -307,7 +306,7 @@ function HeroCopy({ section }) {
 
       {section.tagline?.length ? <HeroTagline segments={section.tagline} /> : null}
 
-      <h1 className="mt-4 max-w-2xl text-2xl font-bold leading-snug tracking-tight text-white sm:mt-5 sm:text-3xl lg:text-[2.1rem]">
+      <h1 className="mt-6 max-w-2xl text-2xl font-bold leading-[1.3] tracking-tight text-white sm:mt-7 sm:text-3xl lg:text-[2.1rem]">
         {section.title}
         {section.titleHighlight ? (
           <>
@@ -320,26 +319,37 @@ function HeroCopy({ section }) {
       <HighlightedCopy segments={section.description} variant="heroLead" />
 
       {section.ctas?.length ? (
-        <div className="mt-5 flex flex-wrap items-center gap-2.5">
-          {section.ctas.map((cta) => {
-            const variant = cta.variant ?? "primary";
-            const className =
-              variant === "highlight"
-                ? "bg-[#e24b4b] shadow-[0_8px_24px_rgba(226,75,75,0.45)] ring-2 ring-white/30 hover:bg-[#c93d3d]"
-                : variant === "secondary"
+        <div className="mt-8 flex flex-col items-start gap-4 sm:mt-9 sm:gap-5">
+          {section.ctas
+            .filter((cta) => cta.variant !== "highlight")
+            .map((cta) => {
+              const variant = cta.variant ?? "primary";
+              const className =
+                variant === "secondary"
                   ? "bg-blue shadow-[0_8px_20px_rgba(0,0,0,0.22)] hover:bg-teal"
                   : "bg-teal shadow-[0_8px_20px_rgba(0,0,0,0.22)] hover:bg-blue";
 
-            return (
+              return (
+                <Link
+                  key={cta.label}
+                  href={cta.href}
+                  className={`inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-white transition-colors ${className}`}
+                >
+                  {cta.label}
+                </Link>
+              );
+            })}
+          {section.ctas
+            .filter((cta) => cta.variant === "highlight")
+            .map((cta) => (
               <Link
                 key={cta.label}
                 href={cta.href}
-                className={`inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-white transition-colors ${className}`}
+                className="inline-flex items-center justify-center rounded-md bg-[#e24b4b] px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-white shadow-[0_8px_24px_rgba(226,75,75,0.45)] ring-2 ring-white/30 transition-colors hover:bg-[#c93d3d]"
               >
                 {cta.label}
               </Link>
-            );
-          })}
+            ))}
         </div>
       ) : null}
     </div>

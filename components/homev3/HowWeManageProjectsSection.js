@@ -51,6 +51,72 @@ function ShieldCheckIcon() {
   );
 }
 
+function ArrowIcon({ direction, size = 22 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {direction === "prev" ? (
+        <path d="M19 12H5M11 6l-6 6 6 6" />
+      ) : (
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      )}
+    </svg>
+  );
+}
+
+function StepsPager({ count, activeIndex, onPrev, onNext, onSelect }) {
+  if (count < 2) return null;
+
+  return (
+    <div className="mt-5 flex items-center justify-center gap-3 lg:hidden" role="navigation" aria-label="Process steps">
+      <button
+        type="button"
+        onClick={onPrev}
+        aria-label="Previous step"
+        className="flex h-9 w-9 shrink-0 items-center justify-center text-teal transition-colors hover:text-blue"
+      >
+        <ArrowIcon direction="prev" />
+      </button>
+
+      <div className="flex items-center gap-2.5">
+        {Array.from({ length: count }, (_, index) => {
+          const isActive = index === activeIndex;
+          return (
+            <button
+              key={index}
+              type="button"
+              onClick={() => onSelect(index)}
+              aria-label={`Go to step ${index + 1}`}
+              aria-current={isActive ? "true" : undefined}
+              className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                isActive ? "bg-teal" : "bg-grey hover:bg-blue/30"
+              }`}
+            />
+          );
+        })}
+      </div>
+
+      <button
+        type="button"
+        onClick={onNext}
+        aria-label="Next step"
+        className="flex h-9 w-9 shrink-0 items-center justify-center text-teal transition-colors hover:text-blue"
+      >
+        <ArrowIcon direction="next" />
+      </button>
+    </div>
+  );
+}
+
 function GuaranteeCallout({ guarantee }) {
   if (!guarantee?.title) return null;
 
@@ -86,7 +152,7 @@ function TimelineStep({ card, index, visible, reduceMotion, stepRef, status }) {
   return (
     <li
       ref={stepRef}
-      className={`relative grid w-[min(78vw,18.5rem)] shrink-0 snap-center grid-cols-1 items-start gap-3 transition-all duration-700 ease-out lg:w-auto lg:snap-none lg:grid-cols-[auto_1fr] lg:gap-6 lg:pb-12 lg:last:pb-0 ${
+      className={`relative grid w-[calc(100vw-3rem)] max-w-[22rem] shrink-0 snap-center grid-cols-1 items-start gap-3 transition-all duration-700 ease-out lg:w-auto lg:max-w-none lg:snap-none lg:grid-cols-[auto_1fr] lg:gap-6 lg:pb-12 lg:last:pb-0 ${
         visible || reduceMotion ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
       style={{
@@ -163,6 +229,13 @@ export default function HowWeManageProjectsSection({ content }) {
 
   const pauseAutoScroll = () => {
     pauseUntilRef.current = Date.now() + AUTO_SCROLL_RESUME_MS;
+  };
+
+  const goToStep = (index) => {
+    if (!section?.steps?.length) return;
+    const next = ((index % section.steps.length) + section.steps.length) % section.steps.length;
+    pauseAutoScroll();
+    scrollToStep(next, "smooth");
   };
 
   useEffect(() => {
@@ -312,11 +385,11 @@ export default function HowWeManageProjectsSection({ content }) {
   };
 
   return (
-    <section className="bg-greylight py-14 sm:py-16 lg:py-[70px]">
+    <section className="overflow-x-clip bg-greylight py-14 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
+        <div className="grid min-w-0 items-start gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
           {/* Left: title, subtitle, one image */}
-          <div className="lg:sticky lg:top-28">
+          <div className="min-w-0 lg:sticky lg:top-28">
             {section.eyebrow ? (
               <p className="text-sm font-bold uppercase tracking-[0.12em] text-teal">
                 {section.eyebrow}
@@ -356,13 +429,13 @@ export default function HowWeManageProjectsSection({ content }) {
           </div>
 
           {/* Right: steps — horizontal scroll on mobile, vertical timeline on desktop */}
-          <div>
+          <div className="min-w-0">
             <div
               ref={trackRef}
               onPointerDown={pauseAutoScroll}
               onTouchStart={pauseAutoScroll}
               onWheel={pauseAutoScroll}
-              className="relative -mx-6 overflow-x-auto overflow-y-visible overscroll-x-contain px-6 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] snap-x snap-mandatory lg:mx-0 lg:overflow-visible lg:px-0 lg:pb-0 lg:snap-none [&::-webkit-scrollbar]:hidden"
+              className="relative -mx-6 touch-pan-x overflow-x-auto overscroll-x-contain px-6 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] snap-x snap-mandatory lg:mx-0 lg:overflow-visible lg:px-0 lg:pb-0 lg:snap-none lg:touch-auto [&::-webkit-scrollbar]:hidden"
             >
               {/* Desktop vertical progress line */}
               <div
@@ -375,7 +448,7 @@ export default function HowWeManageProjectsSection({ content }) {
                 />
               </div>
 
-              <ol className="relative flex flex-row gap-5 pr-6 lg:flex-col lg:gap-0 lg:pr-0">
+              <ol className="relative flex w-max flex-row gap-4 pr-6 lg:w-auto lg:flex-col lg:gap-0 lg:pr-0">
                 {section.steps.map((card, index) => (
                   <TimelineStep
                     key={card.title}
@@ -391,6 +464,14 @@ export default function HowWeManageProjectsSection({ content }) {
                 ))}
               </ol>
             </div>
+
+            <StepsPager
+              count={section.steps.length}
+              activeIndex={activeStepIndex}
+              onPrev={() => goToStep(activeStepIndex - 1)}
+              onNext={() => goToStep(activeStepIndex + 1)}
+              onSelect={goToStep}
+            />
 
             <GuaranteeCallout guarantee={section.guarantee} />
           </div>
