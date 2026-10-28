@@ -20,12 +20,12 @@ function ArrowIcon() {
 function BlogCard({ post }) {
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-grey/70 bg-white shadow-[0_6px_24px_rgba(34,30,83,0.06)] transition-shadow hover:shadow-[0_10px_32px_rgba(34,30,83,0.12)]">
-      <Link href={post.href} className="relative block aspect-[16/10] overflow-hidden bg-greylight">
+      <Link href={post.href} className="relative block aspect-[2/1] overflow-hidden bg-greylight">
         <Image
           src={post.image}
           alt={post.title}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, 33vw"
         />
         {post.category ? (

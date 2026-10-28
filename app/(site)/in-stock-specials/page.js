@@ -49,7 +49,7 @@ const heroContent = [
             { icon: "zeroPercent", title: "Financing" },
           ],
           buttonText: "Explore Financing Options",
-          buttonHref: "/financing",
+          buttonHref: "/contact-us",
           footnote: "*Subject to credit approval. Terms and conditions apply.",
         },
       },
@@ -78,11 +78,11 @@ const financeBannerContent = [
     title: "Floors Now, Pay Over Time",
     description: "Convenient monthly payments for your budget¹",
     buttonText: "View Financing Options",
-    buttonHref: "/financing",
+    buttonHref: "/contact-us",
     backgroundImage: "/images/finance-banner.webp",
     footnote: "¹With approved credit.",
     footnoteLinkText: "Details",
-    footnoteHref: "/financing",
+    footnoteHref: "/contact-us",
   },
 ];
 

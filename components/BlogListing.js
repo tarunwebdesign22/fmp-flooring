@@ -23,12 +23,12 @@ function ArrowIcon() {
 function BlogCard({ post }) {
   return (
     <article className="group flex h-full flex-col overflow-hidden border border-grey/60 bg-white transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(34,30,83,0.12)]">
-      <Link href={post.href} className="relative block aspect-[16/10] overflow-hidden bg-greylight">
+      <Link href={post.href} className="relative block aspect-[2/1] overflow-hidden bg-greylight">
         <Image
           src={post.image}
           alt={post.title}
           fill
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <span className="absolute inset-0 bg-gradient-to-t from-blue/35 via-transparent to-transparent opacity-80" />
@@ -104,17 +104,17 @@ export default function BlogListing({ posts, categories }) {
 
       {featured ? (
         <article className="group relative mb-10 overflow-hidden border border-grey/60 bg-white lg:mb-12">
-          <div className="grid lg:grid-cols-2">
+          <div className="grid lg:grid-cols-2 lg:items-center">
             <Link
               href={featured.href}
-              className="relative block min-h-[260px] overflow-hidden bg-greylight sm:min-h-[320px] lg:min-h-full"
+              className="relative block aspect-[2/1] overflow-hidden bg-greylight"
             >
               <Image
                 src={featured.image}
                 alt={featured.title}
                 fill
                 priority
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <span className="absolute inset-0 bg-gradient-to-r from-blue/20 to-transparent" />

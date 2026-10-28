@@ -42,19 +42,8 @@ export default function FinanceBannerSection({ content }) {
 
               {section.footnote ? (
                 <p className="mt-3 text-[11px] leading-4 text-white/55">
-                  {section.footnoteHref ? (
-                    <>
-                      {section.footnote}{" "}
-                      <Link
-                        href={section.footnoteHref}
-                        className="underline underline-offset-2 transition-colors hover:text-[#fdbf3e]"
-                      >
-                        {section.footnoteLinkText || "Details"}
-                      </Link>
-                    </>
-                  ) : (
-                    section.footnote
-                  )}
+                  {section.footnote}
+                  {section.footnoteLinkText ? ` ${section.footnoteLinkText}` : null}
                 </p>
               ) : null}
             </div>

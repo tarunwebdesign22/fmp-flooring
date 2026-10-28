@@ -61,7 +61,7 @@ const heroContent = [
             
           ],
           buttonText: "Explore Financing Options",
-          buttonHref: "/financing",
+          buttonHref: "/contact-us",
           footnote: "",
         },
       },
@@ -174,11 +174,11 @@ const financeBannerContent = [
     title: "0 % Financing",
     description: "Convenient monthly payment options can help make your laminate flooring project easier to manage.",
     buttonText: "View Financing Options",
-    buttonHref: "/financing",
+    buttonHref: "/contact-us",
     backgroundImage: "/images/finance-banner-One.webp",
     footnote: "¹With approved credit.",
     footnoteLinkText: "Details Apply",
-    footnoteHref: "/financing",
+    footnoteHref: "/contact-us",
   },
 ];
 

@@ -625,13 +625,6 @@ const featuredProjectsContent = [
         imageAlt: "Residential flooring project",
       },
       {
-        title: "Family Living Spaces",
-        subtitle: "Custom Home Installations",
-        category: "Residential",
-        image: "/images/residential-projects/002-2-project.jpg",
-        imageAlt: "Residential living space flooring",
-      },
-      {
         title: "Retail Spaces",
         subtitle: "Stores & Showrooms",
         category: "Commercial",
@@ -1248,8 +1241,7 @@ const educationalVideosContent = [
       {
         title: "Warehouse overview 1",
         youtubeId: "M7lc1UVf-VE",
-        poster:
-          "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=450&fit=crop",
+        poster: "/images/educational-videos/showroom-consultation.webp",
         duration: "1:18",
       },
       {
@@ -1367,7 +1359,8 @@ export default function Home() {
       <FederalMarquee items={federalContent[0].marqueeItems} />
       {/* <ComparisonSection content={whyBuyDirectContent} /> */}
       
-      <LatestProjectsSection content={latestProjectsContent} />
+      {/* Hidden for now: Our Latest Flooring Projects */}
+      {/* <LatestProjectsSection content={latestProjectsContent} /> */}
       {/* <ImageGallerySection content={workShowcaseContent} /> */}
       <EducationalResourcesSection content={educationalResourcesContent} />
       <EducationalVideosSection content={educationalVideosContent} />
