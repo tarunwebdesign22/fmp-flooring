@@ -112,7 +112,7 @@ export default function FeaturedProjectsSection({ content }) {
       <div className="mx-auto mb-8 grid max-w-7xl grid-cols-1 items-end gap-5 px-6 sm:mb-10 sm:px-8 lg:grid-cols-2 lg:gap-8 lg:px-10">
         <div className="min-w-0">
           {section.eyebrow ? (
-            <p className="text-sm font-bold uppercase tracking-[0.14em] text-teal">
+            <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-teal">
               {section.eyebrow}
             </p>
           ) : null}

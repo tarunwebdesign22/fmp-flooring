@@ -40,7 +40,7 @@ function WindowCard({ card }) {
           )}
         </h3>
 
-        <div className="mt-auto pt-8">
+        <div className="mt-6">
           <Link
             href={card.buttonHref}
             className={`inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-bold text-white transition-colors ${buttonClass}`}

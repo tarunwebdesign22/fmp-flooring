@@ -7,6 +7,30 @@ import { residentialProjects } from "@/data/residential-projects";
 
 const PAGE_SIZE = 12;
 
+function getVisiblePages(current, total) {
+  if (total <= 5) return Array.from({ length: total }, (_, i) => i + 1);
+
+  const pages = new Set([1, total, current]);
+  if (current - 1 > 1) pages.add(current - 1);
+  if (current + 1 < total) pages.add(current + 1);
+  if (current <= 3) {
+    pages.add(2);
+    pages.add(3);
+  }
+  if (current >= total - 2) {
+    pages.add(total - 1);
+    pages.add(total - 2);
+  }
+
+  const sorted = [...pages].filter((p) => p >= 1 && p <= total).sort((a, b) => a - b);
+  const result = [];
+  for (let i = 0; i < sorted.length; i += 1) {
+    if (i > 0 && sorted[i] - sorted[i - 1] > 1) result.push("ellipsis");
+    result.push(sorted[i]);
+  }
+  return result;
+}
+
 export default function ResidentialProjectsGallery() {
   const [page, setPage] = useState(1);
   const totalPages = Math.max(1, Math.ceil(residentialProjects.length / PAGE_SIZE));
@@ -15,6 +39,8 @@ export default function ResidentialProjectsGallery() {
     const start = (page - 1) * PAGE_SIZE;
     return residentialProjects.slice(start, start + PAGE_SIZE);
   }, [page]);
+
+  const visiblePages = useMemo(() => getVisiblePages(page, totalPages), [page, totalPages]);
 
   useEffect(() => {
     if (page > totalPages) setPage(totalPages);
@@ -102,16 +128,17 @@ export default function ResidentialProjectsGallery() {
               Page {page} of {totalPages} · {residentialProjects.length} projects
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-2">
+            <div className="flex w-full flex-nowrap items-center justify-center gap-1 overflow-x-auto px-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               <button
                 type="button"
                 onClick={() => goToPage(page - 1)}
                 disabled={page === 1}
-                className="inline-flex h-10 items-center gap-1.5 rounded-lg border border-grey/80 bg-white px-3.5 text-sm font-bold text-blue transition-colors hover:border-teal hover:text-teal disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-grey/80 disabled:hover:text-blue"
+                aria-label="Previous page"
+                className="inline-flex h-8 shrink-0 items-center gap-0.5 rounded-md border border-grey/80 bg-white px-2 text-[11px] font-bold text-blue transition-colors hover:border-teal hover:text-teal disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-grey/80 disabled:hover:text-blue"
               >
                 <svg
-                  width="14"
-                  height="14"
+                  width="11"
+                  height="11"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -123,21 +150,33 @@ export default function ResidentialProjectsGallery() {
                 Prev
               </button>
 
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => {
-                const isActive = pageNumber === page;
+              {visiblePages.map((item, index) => {
+                if (item === "ellipsis") {
+                  return (
+                    <span
+                      key={`ellipsis-${index}`}
+                      className="inline-flex h-8 min-w-6 shrink-0 items-center justify-center text-xs font-bold text-blue/40"
+                      aria-hidden="true"
+                    >
+                      …
+                    </span>
+                  );
+                }
+
+                const isActive = item === page;
                 return (
                   <button
-                    key={pageNumber}
+                    key={item}
                     type="button"
-                    onClick={() => goToPage(pageNumber)}
+                    onClick={() => goToPage(item)}
                     aria-current={isActive ? "page" : undefined}
-                    className={`inline-flex h-10 min-w-10 items-center justify-center rounded-lg px-3 text-sm font-bold transition-colors ${
+                    className={`inline-flex h-8 min-w-7 shrink-0 items-center justify-center rounded-md px-1.5 text-[11px] font-bold transition-colors ${
                       isActive
                         ? "bg-teal text-white"
                         : "border border-grey/80 bg-white text-blue hover:border-teal hover:text-teal"
                     }`}
                   >
-                    {pageNumber}
+                    {item}
                   </button>
                 );
               })}
@@ -146,12 +185,13 @@ export default function ResidentialProjectsGallery() {
                 type="button"
                 onClick={() => goToPage(page + 1)}
                 disabled={page === totalPages}
-                className="inline-flex h-10 items-center gap-1.5 rounded-lg border border-grey/80 bg-white px-3.5 text-sm font-bold text-blue transition-colors hover:border-teal hover:text-teal disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-grey/80 disabled:hover:text-blue"
+                aria-label="Next page"
+                className="inline-flex h-8 shrink-0 items-center gap-0.5 rounded-md border border-grey/80 bg-white px-2 text-[11px] font-bold text-blue transition-colors hover:border-teal hover:text-teal disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-grey/80 disabled:hover:text-blue"
               >
                 Next
                 <svg
-                  width="14"
-                  height="14"
+                  width="11"
+                  height="11"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"

@@ -13,8 +13,9 @@ function ArrowButton({ direction, onClick }) {
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous offer" : "Next offer"}
-      className="absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-teal text-white shadow-sm transition-colors hover:bg-blue hover:text-white"
-      style={{ [direction === "prev" ? "left" : "right"]: -4 }}
+      className={`absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-teal text-white shadow-sm transition-colors hover:bg-blue hover:text-white ${
+        direction === "prev" ? "left-3 sm:-left-1" : "right-3 sm:-right-1"
+      }`}
     >
       <svg
         width="18"
@@ -133,7 +134,7 @@ export default function OffersSliderSection({ content }) {
 
   return (
     <section className="bg-white py-8 sm:py-10">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl px-[15px] sm:px-8 lg:px-10">
         {section.eyebrow || section.title ? (
           <div className="mb-8 text-center sm:mb-10">
             {section.eyebrow ? (
@@ -150,7 +151,7 @@ export default function OffersSliderSection({ content }) {
           </div>
         ) : null}
 
-        <div className="relative px-8 sm:px-10">
+        <div className="relative px-0 sm:px-10">
           {section.offers.length > 1 ? (
             <>
               <ArrowButton

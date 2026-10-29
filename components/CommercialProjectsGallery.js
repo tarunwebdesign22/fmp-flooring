@@ -108,16 +108,16 @@ export default function CommercialProjectsGallery() {
               Page {page} of {totalPages} · {commercialProjects.length} projects
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-2">
+            <div className="flex flex-nowrap items-center justify-center gap-1.5">
               <button
                 type="button"
                 onClick={() => goToPage(page - 1)}
                 disabled={page === 1}
-                className="inline-flex h-10 items-center gap-1.5 rounded-lg border border-grey/80 bg-white px-3.5 text-sm font-bold text-blue transition-colors hover:border-teal hover:text-teal disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-grey/80 disabled:hover:text-blue"
+                className="inline-flex h-8 items-center gap-1 rounded-md border border-grey/80 bg-white px-2.5 text-xs font-bold text-blue transition-colors hover:border-teal hover:text-teal disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-grey/80 disabled:hover:text-blue"
               >
                 <svg
-                  width="14"
-                  height="14"
+                  width="12"
+                  height="12"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -137,7 +137,7 @@ export default function CommercialProjectsGallery() {
                     type="button"
                     onClick={() => goToPage(pageNumber)}
                     aria-current={isActive ? "page" : undefined}
-                    className={`inline-flex h-10 min-w-10 items-center justify-center rounded-lg px-3 text-sm font-bold transition-colors ${
+                    className={`inline-flex h-8 min-w-8 items-center justify-center rounded-md px-2 text-xs font-bold transition-colors ${
                       isActive
                         ? "bg-teal text-white"
                         : "border border-grey/80 bg-white text-blue hover:border-teal hover:text-teal"
@@ -152,12 +152,12 @@ export default function CommercialProjectsGallery() {
                 type="button"
                 onClick={() => goToPage(page + 1)}
                 disabled={page === totalPages}
-                className="inline-flex h-10 items-center gap-1.5 rounded-lg border border-grey/80 bg-white px-3.5 text-sm font-bold text-blue transition-colors hover:border-teal hover:text-teal disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-grey/80 disabled:hover:text-blue"
+                className="inline-flex h-8 items-center gap-1 rounded-md border border-grey/80 bg-white px-2.5 text-xs font-bold text-blue transition-colors hover:border-teal hover:text-teal disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-grey/80 disabled:hover:text-blue"
               >
                 Next
                 <svg
-                  width="14"
-                  height="14"
+                  width="12"
+                  height="12"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
