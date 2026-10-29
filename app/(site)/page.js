@@ -317,7 +317,7 @@ const founderContent = [
     buttonText: "Learn More About Our Story",
     buttonHref: "/about-us",
     videoSrc: "/images/MicrosoftTeams-video (1).webm",
-    videoPoster: "/images/founder-portrait.png",
+    videoPoster: "/images/educational-videos/showroom-consultation.webp",
     videoAspectRatio: "576 / 1024",
   },
 ];
@@ -736,9 +736,9 @@ const videosContent = [
         icon: "showroom",
         videos: [
           {
-            title: "Video 1",
-            src: "/videos/video-1.mp4",
-            poster: "/images/Hero-Image.jpg",
+            title: "Showroom consultation",
+            src: "/images/MicrosoftTeams-video (1).webm",
+            poster: "/images/educational-videos/showroom-consultation.webp",
             duration: "Video",
           },
           {

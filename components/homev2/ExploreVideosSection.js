@@ -55,21 +55,24 @@ function VideoCard({ video, onPlay }) {
   const frameReadyRef = useRef(false);
   const [failed, setFailed] = useState(false);
   const [frameReady, setFrameReady] = useState(false);
+  const [posterSrc, setPosterSrc] = useState(video.poster || FALLBACK_POSTER);
+  const usePosterImage = Boolean(video.poster);
 
   useEffect(() => {
     frameReadyRef.current = false;
     setFailed(false);
     setFrameReady(false);
-  }, [video.src]);
+    setPosterSrc(video.poster || FALLBACK_POSTER);
+  }, [video.src, video.poster]);
 
   useEffect(() => {
-    if (failed || frameReady) return undefined;
+    if (usePosterImage || failed || frameReady) return undefined;
     const id = window.setTimeout(() => {
       frameReadyRef.current = true;
       setFrameReady(true);
     }, 4000);
     return () => window.clearTimeout(id);
-  }, [failed, frameReady, video.src]);
+  }, [failed, frameReady, usePosterImage, video.src]);
 
   const markReady = () => {
     videoRef.current?.pause();
@@ -106,13 +109,18 @@ function VideoCard({ video, onPlay }) {
       className="group relative aspect-[9/16] w-full overflow-hidden rounded-xl bg-blue/10 text-left shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
       aria-label={`Play video ${video.title || ""}`}
     >
-      {failed ? (
+      {usePosterImage || failed ? (
         <Image
-          src={video.poster || FALLBACK_POSTER}
+          src={posterSrc}
           alt={video.title || "Video thumbnail"}
           fill
           className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          onError={() => {
+            if (posterSrc !== FALLBACK_POSTER) {
+              setPosterSrc(FALLBACK_POSTER);
+            }
+          }}
         />
       ) : (
         <>
@@ -188,8 +196,8 @@ function VideoModal({ video, onClose }) {
           <CloseIcon />
         </button>
         <video
-          src={video.src}
-          poster={video.poster}
+          src={encodeURI(video.src)}
+          poster={video.poster ? encodeURI(video.poster) : undefined}
           controls
           autoPlay
           playsInline
