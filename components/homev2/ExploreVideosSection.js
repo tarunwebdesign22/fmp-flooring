@@ -50,19 +50,27 @@ function CloseIcon() {
 
 const FALLBACK_POSTER = "/images/Hero-Image.jpg";
 
+/** Only explicit assets under educational-videos/ use a still; others use MP4 frame previews. */
+function hasCustomPoster(poster) {
+  return Boolean(poster?.includes("/educational-videos/"));
+}
+
 function VideoCard({ video, onPlay }) {
   const videoRef = useRef(null);
   const frameReadyRef = useRef(false);
   const [failed, setFailed] = useState(false);
   const [frameReady, setFrameReady] = useState(false);
-  const [posterSrc, setPosterSrc] = useState(video.poster || FALLBACK_POSTER);
-  const usePosterImage = Boolean(video.poster);
+  const customPoster = hasCustomPoster(video.poster);
+  const [posterSrc, setPosterSrc] = useState(
+    customPoster ? video.poster : FALLBACK_POSTER,
+  );
+  const usePosterImage = customPoster;
 
   useEffect(() => {
     frameReadyRef.current = false;
     setFailed(false);
     setFrameReady(false);
-    setPosterSrc(video.poster || FALLBACK_POSTER);
+    setPosterSrc(hasCustomPoster(video.poster) ? video.poster : FALLBACK_POSTER);
   }, [video.src, video.poster]);
 
   useEffect(() => {
@@ -129,7 +137,7 @@ function VideoCard({ video, onPlay }) {
           ) : null}
           <video
             ref={videoRef}
-            src={video.src}
+            src={encodeURI(video.src)}
             muted
             playsInline
             preload="auto"

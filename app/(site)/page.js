@@ -317,7 +317,7 @@ const founderContent = [
     buttonText: "Learn More About Our Story",
     buttonHref: "/about-us",
     videoSrc: "/images/MicrosoftTeams-video (1).webm",
-    videoPoster: "/images/educational-videos/showroom-consultation.webp",
+    videoPoster: "/images/founder-portrait.png",
     videoAspectRatio: "576 / 1024",
   },
 ];
@@ -736,21 +736,18 @@ const videosContent = [
         icon: "showroom",
         videos: [
           {
-            title: "Showroom consultation",
-            src: "/images/MicrosoftTeams-video (1).webm",
-            poster: "/images/educational-videos/showroom-consultation.webp",
+            title: "Video 1",
+            src: "/videos/video-1.mp4",
             duration: "Video",
           },
           {
             title: "Video 2",
             src: "/videos/video-2.mp4",
-            poster: "/images/Hero-Image.jpg",
             duration: "Video",
           },
           {
             title: "Video 3",
             src: "/videos/video-3.mp4",
-            poster: "/images/Hero-Image.jpg",
             duration: "Video",
           },
           {
@@ -762,13 +759,11 @@ const videosContent = [
           {
             title: "Video 5",
             src: "/videos/video-5.mp4",
-            poster: "/images/Hero-Image.jpg",
             duration: "Video",
           },
           {
             title: "Video 6",
             src: "/videos/video-6.mp4",
-            poster: "/images/Hero-Image.jpg",
             duration: "Video",
           },
         ],
