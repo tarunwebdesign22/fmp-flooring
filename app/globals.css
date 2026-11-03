@@ -132,6 +132,51 @@ a {
   padding: 0 0.25rem;
 }
 
+.featured-projects-slider .slick-dots,
+.featured-projects-slider .featured-projects-dots {
+  position: absolute;
+  bottom: -2.25rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.featured-projects-slider .slick-dots li,
+.featured-projects-slider .featured-projects-dots li {
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
+
+.featured-projects-slider .slick-dots li button,
+.featured-projects-slider .featured-projects-dots li button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+}
+
+.featured-projects-slider .slick-dots li button:before,
+.featured-projects-slider .featured-projects-dots li button:before {
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  font-size: 10px;
+  color: #d9d9d9;
+  opacity: 1;
+}
+
+.featured-projects-slider .slick-dots li.slick-active button:before,
+.featured-projects-slider .featured-projects-dots li.slick-active button:before {
+  color: var(--teal);
+  opacity: 1;
+}
+
 /* Category cards — slick slider */
 .category-cards-slider .slick-list {
   margin: 0 -0.5rem;

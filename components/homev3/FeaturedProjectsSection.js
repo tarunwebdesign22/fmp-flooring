@@ -15,19 +15,52 @@ function LocationPinIcon() {
   );
 }
 
-function ArrowButton({ direction, onClick }) {
+function ArrowIcon({ direction, size = 22 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {direction === "prev" ? (
+        <path d="M19 12H5M11 6l-6 6 6 6" />
+      ) : (
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      )}
+    </svg>
+  );
+}
+
+function SliderArrow({ direction, onClick }) {
   return (
     <button
       type="button"
       onClick={onClick}
       aria-label={direction === "prev" ? "Previous projects" : "Next projects"}
-      className={`absolute top-[32%] z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-blue text-white shadow-md transition-colors hover:bg-teal hover:text-white ${
+      className={`absolute top-[32%] z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center text-teal transition-colors hover:text-blue lg:flex ${
         direction === "prev" ? "left-0" : "right-0"
       }`}
     >
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-        {direction === "prev" ? <path d="M15 6l-6 6 6 6" /> : <path d="M9 6l6 6-6 6" />}
-      </svg>
+      <ArrowIcon direction={direction} size={28} />
+    </button>
+  );
+}
+
+function MobileDotArrow({ direction, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={direction === "prev" ? "Previous projects" : "Next projects"}
+      className="flex h-9 w-9 shrink-0 items-center justify-center text-teal transition-colors hover:text-blue"
+    >
+      <ArrowIcon direction={direction} />
     </button>
   );
 }
@@ -51,13 +84,12 @@ function ProjectCard({ project }) {
         </span>
       </div>
 
-      <h3 className="mt-8 text-lg font-bold text-blue">{project.title}</h3>
+      <h3 className="mt-8 text-[14px] font-bold text-blue sm:text-lg">{project.title}</h3>
     </article>
   );
 }
 
 function getFeaturedSlidesToShow(width) {
-  if (width < 640) return 1;
   if (width < 1024) return 2;
   return 4;
 }
@@ -69,7 +101,8 @@ export default function FeaturedProjectsSection({ content }) {
 
   const sliderRef = useRef(null);
   const [activeFilter, setActiveFilter] = useState(filters[0] || "All");
-  const [slidesToShow, setSlidesToShow] = useState(4);
+  const [slidesToShow, setSlidesToShow] = useState(2);
+  const [isDesktop, setIsDesktop] = useState(false);
   const [ready, setReady] = useState(false);
 
   const filteredProjects = useMemo(() => {
@@ -79,10 +112,15 @@ export default function FeaturedProjectsSection({ content }) {
     );
   }, [activeFilter, projects]);
 
-  const needsSlider = filteredProjects.length > slidesToShow;
+  // Same pattern as Bathroom Remodeling Services: slider below desktop, grid on desktop
+  const useSlider = ready && (!isDesktop || filteredProjects.length > slidesToShow);
 
   useEffect(() => {
-    const update = () => setSlidesToShow(getFeaturedSlidesToShow(window.innerWidth));
+    const update = () => {
+      const width = window.innerWidth;
+      setSlidesToShow(getFeaturedSlidesToShow(width));
+      setIsDesktop(width >= 1024);
+    };
     update();
     setReady(true);
     window.addEventListener("resize", update);
@@ -96,12 +134,27 @@ export default function FeaturedProjectsSection({ content }) {
   if (!section || !projects.length) return null;
 
   const settings = {
-    dots: false,
+    dots: !isDesktop,
     infinite: true,
     speed: 450,
     slidesToShow,
     slidesToScroll: 1,
     arrows: false,
+    appendDots: (dots) => (
+      <div className="featured-projects-dots">
+        <div className="flex items-center justify-center gap-2 lg:hidden">
+          <MobileDotArrow
+            direction="prev"
+            onClick={() => sliderRef.current?.slickPrev()}
+          />
+          <ul className="!m-0 !flex !items-center !justify-center !p-0">{dots}</ul>
+          <MobileDotArrow
+            direction="next"
+            onClick={() => sliderRef.current?.slickNext()}
+          />
+        </div>
+      </div>
+    ),
   };
 
   return (
@@ -148,46 +201,46 @@ export default function FeaturedProjectsSection({ content }) {
         </div>
       </div>
 
-      <div className="relative mx-auto max-w-7xl pb-2">
-        {needsSlider ? (
-          <>
-            <ArrowButton direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
-            <ArrowButton direction="next" onClick={() => sliderRef.current?.slickNext()} />
-          </>
-        ) : null}
+      {useSlider ? (
+        <div className={`relative mx-auto max-w-7xl ${isDesktop ? "pb-2" : "pb-8"}`}>
+          {isDesktop && filteredProjects.length > slidesToShow ? (
+            <>
+              <SliderArrow direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
+              <SliderArrow direction="next" onClick={() => sliderRef.current?.slickNext()} />
+            </>
+          ) : null}
 
-        <div className="px-6 sm:px-8 lg:px-10">
-          {ready && filteredProjects.length ? (
-            needsSlider ? (
-              <div className="featured-projects-slider">
-                <Slider
-                  key={`${activeFilter}-${slidesToShow}`}
-                  ref={sliderRef}
-                  {...settings}
-                >
-                  {filteredProjects.map((project) => (
-                    <div key={`${project.category}-${project.title}`} className="h-full px-2 pb-2">
-                      <ProjectCard project={project} />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="featured-projects-slider w-full px-6 sm:px-8 lg:px-10">
+            {ready && filteredProjects.length ? (
+              <Slider
+                key={`${activeFilter}-${slidesToShow}-${isDesktop ? "desk" : "mob"}`}
+                ref={sliderRef}
+                {...settings}
+              >
                 {filteredProjects.map((project) => (
-                  <div key={`${project.category}-${project.title}`} className="px-2">
+                  <div key={`${project.category}-${project.title}`} className="px-1.5 pb-2 sm:px-2">
                     <ProjectCard project={project} />
                   </div>
                 ))}
+              </Slider>
+            ) : (
+              <div className="mx-auto max-w-sm">
+                {filteredProjects[0] ? <ProjectCard project={filteredProjects[0]} /> : null}
               </div>
-            )
-          ) : (
-            <div className="mx-auto max-w-sm">
-              {filteredProjects[0] ? <ProjectCard project={filteredProjects[0]} /> : null}
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            {filteredProjects.map((project) => (
+              <div key={`${project.category}-${project.title}`}>
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {section.viewMoreHref ? (
         <div className="mx-auto mt-6 flex max-w-7xl justify-end px-6 sm:mt-8 sm:px-8 lg:px-10">
