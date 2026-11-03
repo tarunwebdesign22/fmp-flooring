@@ -22,7 +22,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Rubber Flooring for Gyms & Commercial Spaces | FMP Flooring",
+  title: "Rubber Flooring in Concord, NC for Gyms & Commercial Spaces | FMP Flooring",
   description:
     "Explore durable rubber flooring for gyms, exercise rooms, schools, and commercial spaces. FMP Flooring offers quality rubber flooring and professional installation.",
 };
@@ -42,7 +42,7 @@ const heroContent = [
           eyebrowAsBadge: true,
           titleBefore: "Durable ",
           titleHighlightValue: "Rubber Flooring",
-          titleAfter: " for Gyms, Exercise Rooms & Commercial Spaces",
+          titleAfter: " in Concord, NC for Gyms, Exercise Rooms & Commercial Spaces",
           description:
             "Create a safer, more comfortable space with high quality rubber flooring designed for demanding environments. Our rubber flooring solutions provide durability, excellent traction, impact resistance, and comfortable performance for gyms, exercise rooms, schools, and commercial spaces.",
           buttonText: "Get My Free Estimate",
@@ -91,7 +91,7 @@ const introContent = [
     title: "Rubber Flooring That Is Durable, Comfortable & Long Lasting",
     paragraphs: [
       "Rubber flooring is a versatile flooring solution designed to handle high traffic, heavy equipment, and everyday use. Its resilient surface provides excellent durability, slip resistance, and comfort underfoot, making it a practical choice for both commercial and residential spaces.",
-      "Rubber flooring is especially popular for gyms, fitness centers, exercise rooms, schools, childcare facilities, healthcare spaces, garages, and other areas where performance and durability matter. FMP Flooring offers a range of rubber flooring options to help you find the right solution for your space and project requirements.",
+      "Rubber flooring is especially popular for gyms, fitness centers, exercise rooms, schools, childcare facilities, healthcare spaces, garages, and other areas where performance and durability matter. FMP Flooring offers rubber flooring in Concord, NC, with options for gyms, fitness centers, schools and commercial spaces.",
     ],
     images: [
       {
@@ -274,9 +274,9 @@ const applicationsContent = [
     description: "Rubber flooring is a practical choice for spaces that need durability, traction, comfort, and easy maintenance.",
     items: [
       "Commercial Gyms & Fitness Centers",
-      "Home Gyms",
+      "Commercial Fitness Centers",
       "Exercise Rooms",
-      "Childcare & Preschool Play Areas",
+      "Institutional & Recreational Facilities",
       "Healthcare Facilities & Clinics",
       "Schools & Educational Facilities",
       "Locker Rooms & Wet Areas",
@@ -327,7 +327,7 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Rubber Flooring Installation",
+    title: "Professional Rubber Flooring Installation in Concord, NC",
     paragraphs: [
       "Proper installation plays an important role in the appearance, performance, and longevity of your rubber flooring. Our experienced flooring professionals handle the installation process with careful planning, accurate measurements, precise cuts, and detailed finishing.",
       "Whether you need rubber gym flooring, rubber exercise room flooring, or commercial rubber flooring, we can help you plan and complete your flooring project with professional service from start to finish.",

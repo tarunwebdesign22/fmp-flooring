@@ -145,7 +145,7 @@ export default function Footer() {
             />
           </Link>
           <p className="mt-5 max-w-xs text-[15px] leading-7 text-white/90">
-          We are a fully licensed, bonded, and insured flooring contractor
+          We are a fully licensed, bonded, and insured flooring service provider
           trusted for a wide range of federal and state projects.
           </p>
           <div className="mt-6 flex items-center gap-3">

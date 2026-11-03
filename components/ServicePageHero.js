@@ -73,7 +73,7 @@ function FinancingContent({ financing }) {
       <HeroEyebrow asBadge={financing.eyebrowAsBadge}>
         {financing.eyebrow}
       </HeroEyebrow>
-      <h1 className="mt-4 max-w-xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.15rem] lg:leading-[1.12]">
+      <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.15rem] lg:leading-[1.12]">
         {financing.titleHighlightValue ? (
           <>
             {financing.titleBefore}
@@ -86,7 +86,7 @@ function FinancingContent({ financing }) {
       </h1>
       <span className="mt-4 block h-1 w-16 bg-teal" aria-hidden="true" />
 
-      <p className="mt-5 max-w-xl text-lg leading-8 text-white sm:text-xl sm:leading-8">
+      <p className="mt-5 max-w-3xl text-lg leading-8 text-white sm:text-xl sm:leading-8">
         {financing.description}
       </p>
 
@@ -136,12 +136,12 @@ function ServiceContent({ section }) {
         </p>
       ) : null}
 
-      <h1 className="mt-4 max-w-xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.15rem] lg:leading-[1.12]">
+      <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.15rem] lg:leading-[1.12]">
         {section.title}
       </h1>
 
       {section.description ? (
-        <p className="mt-5 max-w-2xl text-base leading-7 text-white sm:text-lg sm:leading-8 lg:text-xl lg:leading-8">
+        <p className="mt-5 max-w-3xl text-base leading-7 text-white sm:text-lg sm:leading-8 lg:text-xl lg:leading-8">
           {section.description}
         </p>
       ) : null}
@@ -268,7 +268,7 @@ export default function ServicePageHero({ content }) {
         <div
           className={`relative mx-auto max-w-7xl px-6 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14 ${
             hasForm
-              ? "grid items-start gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-10"
+              ? "grid items-start gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-center lg:gap-10"
               : ""
           }`}
         >

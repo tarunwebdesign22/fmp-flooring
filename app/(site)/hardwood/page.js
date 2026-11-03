@@ -22,7 +22,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Hardwood Flooring & Installation for Homes & Businesses | FMP Flooring",
+  title: "Hardwood Flooring & Installation in Concord, NC | FMP Flooring",
   description:
     "Explore quality hardwood flooring for homes and commercial spaces. Choose from solid and engineered hardwood with professional flooring installation from FMP Flooring.",
 };
@@ -38,10 +38,10 @@ const heroContent = [
         id: "hardwood-service",
         backgroundImage: "/images/hardwood-gallery/hardwood-flooring-banner.webp",
         financing: {
-          eyebrow: "Hardwood Flooring",
+          eyebrow: "Hardwood Flooring in Concord, NC",
           eyebrowAsBadge: true,
           titleBefore: "Quality ",
-          titleHighlightValue: "Hardwood Flooring",
+          titleHighlightValue: "Hardwood Flooring in Concord, NC",
           titleAfter: " for Beautiful, Lasting Spaces",
           description:
             "Upgrade your space with professional hardwood flooring installation and a wide selection of solid and engineered hardwood options. Choose beautiful wood flooring designed to bring warmth, character, and lasting style to residential and commercial spaces.",
@@ -87,8 +87,8 @@ const heroContent = [
 
 const introContent = [
   {
-    eyebrow: "Hardwood Flooring",
-    title: "Hardwood Flooring for Timeless Beauty & Lasting Performance",
+    eyebrow: "Hardwood Flooring in Concord, NC",
+    title: "Hardwood Flooring in Concord, NC for Timeless Beauty & Lasting Performance",
     paragraphs: [
       "Hardwood flooring is a popular choice for homeowners and businesses looking for a combination of natural beauty, durability, and timeless style. With its natural wood grain, range of colors, and variety of plank styles, hardwood floors can complement traditional, modern, and contemporary interiors.",
       "At FMP Flooring, we offer hardwood flooring solutions for residential and commercial projects, including solid hardwood flooring and engineered hardwood flooring. Our flooring professionals can help you choose the right wood flooring based on your space, design preferences, lifestyle, and installation requirements.",
@@ -273,7 +273,7 @@ const applicationsContent = [
     title: "Hardwood Flooring Applications",
     description: "Hardwood flooring can bring natural warmth and style to a wide variety of residential and commercial spaces.",
     items: [
-      "Living Rooms & Family Rooms",
+      "Living Rooms",
       "Bedrooms & Hallways",
       "Dining Rooms",
       "Home Offices",
@@ -330,10 +330,10 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Hardwood Flooring Installation",
+    title: "Professional Hardwood Flooring Installation in Concord, NC",
     paragraphs: [
       "Professional installation helps ensure that your hardwood flooring is properly planned, measured, prepared, and installed. Our flooring professionals pay close attention to layout, plank placement, cuts, transitions, and finishing details throughout the installation process.",
-      "Whether you are installing solid hardwood flooring or engineered hardwood flooring, FMP Flooring provides professional flooring installation for residential and commercial projects.",
+      "For hardwood flooring installation in Concord, NC, FMP Flooring provides professional installation of solid and engineered hardwood flooring for residential and commercial projects.",
     ],
     servicesTitle: "Our Hardwood Flooring Services Include:",
     services: [
@@ -429,7 +429,7 @@ const faqContent = [
           "Hardwood flooring installation costs vary depending on the flooring material, project size, subfloor condition, layout, removal requirements, and installation method. FMP Flooring can provide a project specific estimate after evaluating your space.",
       },
       {
-        question: "Can FMP Flooring install hardwood flooring near me?",
+        question: "Can FMP Flooring install hardwood flooring in Concord, NC?",
         answer:
           "FMP Flooring provides professional hardwood flooring installation for eligible residential and commercial projects. Contact our team to discuss your location, project requirements, flooring preferences, and installation needs.",
       },

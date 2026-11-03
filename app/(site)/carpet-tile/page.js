@@ -22,7 +22,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Carpet Tile Flooring & Installation | FMP Flooring",
+  title: "Carpet Tile Flooring in Concord, NC | FMP Flooring",
   description:
     "Explore durable carpet tile flooring for offices, retail spaces, schools, and homes. FMP Flooring provides professional carpet tile selection and installation.",
 };
@@ -42,7 +42,7 @@ const heroContent = [
           eyebrowAsBadge: true,
           titleBefore: "Durable ",
           titleHighlightValue: "Carpet Tile Flooring",
-          titleAfter: " for Commercial & Residential Spaces",
+          titleAfter: " in Concord, NC for Commercial & Residential Spaces",
           description:
             "Upgrade your space with versatile carpet tile flooring designed for offices, retail spaces, schools, and modern homes. Choose from durable styles that offer easy maintenance and flexible replacement.",
           buttonText: "Get My Free Estimate",
@@ -88,7 +88,7 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Carpet Tile Flooring",
-    title: "Carpet Tile Flooring for Commercial & Residential Spaces",
+    title: "Carpet Tile Flooring in Concord, NC for Commercial & Residential Spaces",
     paragraphs: [
       "Carpet tile flooring, also known as modular carpet flooring, is a practical flooring solution for spaces that need durability, design flexibility, and easy maintenance. Unlike traditional wall to wall carpet, carpet tiles are installed as individual sections, making them easier to replace when a specific area becomes worn or damaged.",
       "At FMP Flooring, we provide carpet tile and flooring solutions for offices, retail stores, schools, healthcare facilities, apartments, home offices, and other residential or commercial spaces. We help you select carpet tiles based on traffic, appearance, maintenance needs, and budget, then provide professional installation for a clean and finished result.",
@@ -181,7 +181,7 @@ const financeBannerContent = [
 const benefitsContent = [
   {
     eyebrow: "Why Choose Us",
-    title: "Why Choose Carpet Tile Flooring?",
+    title: "Why Choose Carpet Tile Flooring in Concord, NC?",
     description:
       "Carpet tile flooring combines durability, design flexibility, easy maintenance, and convenient replacement, making it a practical choice for many residential and commercial spaces.",
     backgroundImage: "/images/carpet-tile-gallery/why-choose-carpet-flooring.webp",
@@ -234,7 +234,7 @@ const highlightsContent = [
 const tipsContent = [
   {
     eyebrow: "Care Guide",
-    title: "Carpet Tile Flooring Maintenance Tips",
+    title: "Carpet Tile Flooring in Concord, NC: Maintenance Tips",
     description:
       "Regular maintenance helps keep carpet tile flooring clean, attractive, and ready for everyday use. Vacuum regularly, address spills promptly, and replace individual tiles when necessary to maintain the appearance of your floor.",
     backgroundImage: "/images/Maintenance-Tips-Banner-Image.webp",
@@ -250,7 +250,7 @@ const tipsContent = [
 const applicationsContent = [
   {
     eyebrow: "Where It Works",
-    title: "Carpet Tile Flooring Applications",
+    title: "Carpet Tile Flooring Applications in Concord, NC",
     description:
       "Carpet tile flooring works well in a variety of commercial and residential spaces where durability, design flexibility, and easy maintenance are important.",
     items: [
@@ -260,8 +260,8 @@ const applicationsContent = [
       "Conference & Meeting Rooms",
       "Schools & Educational Facilities",
       "Healthcare & Medical Offices",
-      "Home Offices",
-      "Basements & Playrooms",
+      "Commercial Workspaces",
+      "Hospitality & Common Areas",
     ],
   },
 ];
@@ -269,7 +269,7 @@ const applicationsContent = [
 const compareContent = [
   {
     eyebrow: "Compare Options",
-    title: "Carpet Tile Flooring vs Broadloom Carpet",
+    title: "Carpet Tile Flooring in Concord, NC vs Broadloom Carpet",
     intro:
       "Compare carpet tile flooring and broadloom carpet to determine which option better fits your space, maintenance needs, design preferences, and replacement requirements.",
     featureLabel: "Feature",
@@ -308,7 +308,7 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Carpet Tile Flooring Installation Services",
+    title: "Professional Carpet Tile Flooring Installation Services in Concord, NC",
     paragraphs: [
       "Our experienced installers provide professional carpet tile flooring installation for commercial and residential projects. We focus on accurate layout, proper preparation, secure installation, clean edges, and a finished appearance that fits your space.",
     ],
@@ -360,7 +360,7 @@ const testimonialsContent = [
 
 const faqContent = [
   {
-    title: "Carpet Tile Flooring FAQs",
+    title: "Carpet Tile Flooring in Concord, NC FAQs",
     items: [
       {
         question: "What are carpet tiles made of?",
@@ -502,7 +502,7 @@ const commercialProjectsContent = [
 const ctaContent = [
   {
     eyebrow: "READY FOR NEW CARPET?",
-    title: "Find the Right Carpet Tile Flooring for Your Space",
+    title: "Find the Right Carpet Tile Flooring in Concord, NC for Your Space",
     description:
       "Whether you are updating an office, retail space, school, apartment, or home, FMP Flooring can help you choose the right carpet tiles and provide professional installation.",
     phone: "+1 9802521648",

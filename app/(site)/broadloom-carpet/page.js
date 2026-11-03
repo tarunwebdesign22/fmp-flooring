@@ -22,7 +22,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Broadloom Carpet Flooring & Installation | FMP Flooring",
+  title: "Broadloom Carpet Flooring in Concord, NC | FMP Flooring",
   description:
     "Explore broadloom carpet flooring for homes, offices, apartments, and commercial spaces. FMP Flooring provides professional carpet selection and installation services.",
 };
@@ -42,7 +42,7 @@ const heroContent = [
           eyebrowAsBadge: true,
           titleBefore: "High Quality ",
           titleHighlightValue: "Broadloom Carpet Flooring",
-          titleAfter: " for Homes & Businesses",
+          titleAfter: " in Concord, NC for Homes & Businesses",
           description:
             "Create a warmer, quieter, and more comfortable space with broadloom carpet flooring professionally selected and installed for residential and commercial environments.",
           buttonText: "Get My Free Estimate",
@@ -88,7 +88,7 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Carpet Broadloom Flooring",
-    title: "Broadloom Carpet Flooring Installation for Residential & Commercial Spaces",
+    title: "Broadloom Carpet Flooring Installation in Concord, NC for Residential & Commercial Spaces",
     paragraphs: [
       "Broadloom carpet flooring is a wall to wall carpet solution designed to create a comfortable, finished look across an entire room or larger space. It is available in a wide range of colors, patterns, textures, thicknesses, and performance levels, making it suitable for both residential and commercial environments.",
       "At FMP Flooring, we help homeowners, property managers, businesses, and contractors select the right broadloom carpet for their space, budget, and expected level of foot traffic. From bedrooms and living rooms to offices, apartments, and larger commercial areas, we provide professional carpet selection and installation.",
@@ -208,7 +208,7 @@ const benefitsContent = [
         icon: "maintenance",
         title: "Broadloom Carpet for Homes & Commercial Spaces",
         description:
-          "Choose carpet options for bedrooms, stairs, hallways, offices, retail spaces, apartments, and multi family properties, including options designed for higher traffic areas.",
+          "Choose carpet options for bedrooms, stairs, hallways, offices, retail spaces, and apartments, including options designed for higher traffic areas.",
       },
       {
         icon: "moisture",
@@ -250,13 +250,12 @@ const tipsContent = [
 const applicationsContent = [
   {
     eyebrow: "Where It Works",
-    title: "Broadloom Carpet Flooring for Homes, Offices & Multi Family Properties",
+    title: "Broadloom Carpet Flooring for Homes, Offices & Commercial Properties",
     description: "Broadloom carpet flooring is a versatile option for residential and commercial spaces that benefit from warmth, comfort, noise reduction, and a finished wall to wall appearance.",
     items: [
       "Bedrooms, Living Rooms & Basements",
       "Stairs & Hallways",
       "Offices, Suites & Retail Spaces",
-      "Apartments, Rental Properties & Multi Family Projects",
     ],
   },
 ];
@@ -300,7 +299,7 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Broadloom Carpet Flooring Installation",
+    title: "Professional Broadloom Carpet Flooring Installation in Concord, NC",
     paragraphs: [
       "Our experienced installers provide complete broadloom carpet flooring installation from measuring and product selection to old carpet removal, stretching, seam work, edges, transitions, and final cleanup.",
     ],
@@ -469,7 +468,7 @@ const commercialProjectsContent = [
 const ctaContent = [
   {
     headlineWhite: "Get a Free",
-    headlineTeal: "Carpet Broadloom Quote",
+    headlineTeal: "Broadloom Carpet Flooring Quote in Concord, NC",
     description:
       "Ready to upgrade your space with carpet broadloom? Contact FMP Flooring today for a free estimate and expert installation.",
     phone: "+1 9802521648",

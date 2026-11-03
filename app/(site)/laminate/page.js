@@ -22,7 +22,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Laminate Flooring & Installation | FMP Flooring",
+  title: "Laminate Flooring & Installation in Concord, NC | FMP Flooring",
   description:
     "Shop quality laminate flooring for residential and commercial spaces. Explore wood look and waterproof laminate flooring with professional installation from FMP Flooring.",
 };
@@ -42,7 +42,7 @@ const heroContent = [
           eyebrowAsBadge: true,
           titleBefore: "High Quality ",
           titleHighlightValue: "Laminate Flooring",
-          titleAfter: " for Stylish, Durable Spaces",
+          titleAfter: " in Concord, NC for Stylish, Durable Spaces",
           description:
             "Upgrade your space with quality laminate flooring and professional installation. Choose from realistic wood look styles and moisture resistant options designed for busy homes and commercial spaces.",
           buttonText: "Get My Free Estimate",
@@ -88,10 +88,10 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Laminate Flooring",
-    title: "Laminate Flooring That Combines Style, Durability & Value",
+    title: "Laminate Flooring in Concord, NC That Combines Style, Durability & Value",
     paragraphs: [
       "Laminate flooring is a versatile flooring option that delivers the look of natural wood and other materials with practical performance for everyday spaces. Available in a wide range of colors, patterns, textures, and plank styles, laminate can complement both traditional and modern interiors.",
-      "At FMP Flooring, we offer laminate flooring for residential and commercial projects, including wood look laminate flooring and moisture resistant options. Our team can help you choose the right flooring based on your space, design preferences, traffic levels, and project requirements.",
+      "At FMP Flooring, we offer laminate flooring in Concord, NC for residential and commercial projects, including wood look laminate flooring and moisture resistant options. Our team can help you choose the right flooring based on your space, design preferences, traffic levels, and project requirements.",
     ],
     images: [
       {
@@ -274,13 +274,13 @@ const tipsContent = [
 const applicationsContent = [
   {
     eyebrow: "Where It Works",
-    title: "Laminate Flooring Applications",
-    description: "Laminate flooring is a versatile option for residential and light commercial spaces, including:",
+    title: "Laminate Flooring Applications in Concord, NC",
+    description: "Laminate flooring is a versatile option for residential and light commercial spaces in Concord, NC, including:",
     items: [
-      "Living rooms and family rooms",
+      "Commercial Office Spaces",
       "Bedrooms and hallways",
       "Home offices",
-      "Dining rooms",
+      "Commercial Reception Areas",
       "Retail spaces and light commercial areas",
       "Rental properties and remodels",
     ],
@@ -325,7 +325,7 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Laminate Flooring Installation",
+    title: "Professional Laminate Flooring Installation in Concord, NC",
     paragraphs: [
       "Professional installation helps ensure your laminate flooring is properly measured, prepared, and installed. Our installers pay attention to subfloor preparation, plank placement, cuts, transitions, and finishing details throughout the project.",
       "Whether you are updating one room or completing a larger residential or commercial project, FMP Flooring provides professional laminate flooring installation based on your space and project requirements.",
@@ -424,9 +424,9 @@ const faqContent = [
           "Wood look laminate flooring is designed to replicate the appearance of natural wood through printed decorative layers, realistic grain patterns, textures, colors, and plank designs.",
       },
       {
-        question: "How do I find laminate flooring installers near me?",
+        question: "Where can I find laminate flooring installers in Concord, NC?",
         answer:
-          "Look for experienced flooring installers who offer professional installation, accurate estimates, suitable flooring options, and clear project support. FMP Flooring provides laminate flooring installation for eligible residential and commercial projects.",
+          "Look for experienced flooring installers who offer professional installation, accurate estimates, suitable flooring options, and clear project support. FMP Flooring provides laminate flooring installation in Concord, NC for eligible residential and commercial projects.",
       },
     ],
   },
@@ -517,7 +517,7 @@ const commercialProjectsContent = [
 
 const ctaContent = [
   {
-    title: "Ready for New Laminate Flooring?",
+    title: "Looking for Laminate Flooring in Concord, NC?",
     description:
       "Give your space a fresh new look with durable, stylish laminate flooring. Explore wood look and moisture resistant options and work with FMP Flooring for professional installation.",
     buttonText: "Get Your Free Estimate",

@@ -22,7 +22,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Tile Flooring | Ceramic, Porcelain & All Types of Tile | FMP Flooring",
+  title: "Ceramic Tile Flooring in Concord, NC | FMP Flooring",
   description:
     "Premium ceramic tile, porcelain tile, and specialty tile flooring from FMP Flooring. Durable, moisture-resistant tile installation for kitchens, bathrooms, homes, and commercial spaces.",
 };
@@ -42,9 +42,9 @@ const heroContent = [
           eyebrowAsBadge: true,
           titleBefore: "High Quality ",
           titleHighlightValue: "Ceramic Tile Flooring",
-          titleAfter: " for Homes & Businesses",
+          titleAfter: " in Concord, NC for Homes & Businesses",
           description:
-            "Upgrade your space with durable and stylish ceramic floor tiles, porcelain tile, and specialty tile flooring. We provide professional tile installation for residential and commercial spaces.",
+            "Upgrade your space with durable and stylish ceramic floor tiles, porcelain tile, and specialty tile flooring. We provide professional ceramic tile flooring installation in Concord, NC, for residential and commercial spaces.",
           buttonText: "Get My Free Estimate",
           buttonHref: "/estimate",
         },
@@ -88,9 +88,9 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Ceramic Flooring",
-    title: "Premium Ceramic Tile Flooring for Every Space",
+    title: "Premium Ceramic Tile Flooring in Concord, NC",
     paragraphs: [
-      "Ceramic tile flooring combines timeless style, durability, and easy maintenance, making it a practical choice for both residential and commercial spaces. At FMP Flooring, we offer a wide selection of ceramic floor tiles, porcelain tile, and specialty tile flooring for kitchens, bathrooms, entryways, offices, retail locations, and more.",
+      "Ceramic tile flooring combines timeless style, durability, and easy maintenance, making it a practical choice for both residential and commercial spaces. At FMP Flooring, we offer a wide selection of ceramic floor tiles, porcelain tile, and specialty tile flooring in Concord, NC, for kitchens, bathrooms, entryways, offices, retail locations, and more.",
       "Our ceramic floor tiles are available in a variety of colors, patterns, sizes, textures, and finishes, allowing you to create a look that complements your space. Whether you need durable flooring for a busy commercial property or stylish tile for your home, we can help you choose the right flooring solution for your project.",
     ],
     images: [
@@ -274,7 +274,7 @@ const applicationsContent = [
       "Entryways, foyers, and hallways",
       "Interior commercial spaces",
       "Outdoor patios with exterior rated tiles",
-      "Living rooms and dining areas",
+      "Commercial Lobbies & Reception Areas",
     ],
   },
 ];
@@ -301,9 +301,9 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Ceramic Tile Installation",
+    title: "Professional Ceramic Tile Flooring Installation in Concord, NC",
     paragraphs: [
-      "Our experienced flooring installers bring years of experience to every ceramic tile flooring project. From precise tile layout and leveling to expert grout and seal application, we ensure your ceramic floor tiles are installed correctly for a clean, durable, and professional finish.",
+      "Our experienced flooring installers bring years of experience to ceramic tile flooring projects in Concord, NC. From precise tile layout and leveling to expert grout and seal application, we ensure your ceramic floor tiles are installed correctly for a clean, durable, and professional finish.",
     ],
     servicesTitle: "Our Tile Flooring Services Include:",
     services: [
@@ -472,7 +472,7 @@ const commercialProjectsContent = [
 const ctaContent = [
   {
     headlineWhite: "Get a Free",
-    headlineTeal: "Tile Flooring Quote",
+    headlineTeal: "Ceramic Tile Flooring Quote in Concord, NC",
     description:
       "Transform your space with beautiful, durable tile flooring. Contact FMP Flooring today for a free estimate and expert installation.",
     phone: "+1 9802521648",

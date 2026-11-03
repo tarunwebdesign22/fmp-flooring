@@ -111,8 +111,8 @@ function AreaItem({ area }) {
 
 export default function AreasWeServeSection({
   eyebrow = "FLOORING CONTRACTOR SERVICE AREAS",
-  title = "Serving North Carolina & South Carolina",
-  description = "FMP Flooring provides residential, commercial, and professional flooring installation services across North Carolina and South Carolina. Our team works with homeowners, businesses, contractors, government facilities, and other organizations looking for dependable flooring solutions.",
+  title = "Flooring & Remodeling Services in Concord, NC and Surrounding Areas",
+  description = "FMP Flooring provides residential and commercial flooring solutions and bathroom remodeling services in Concord, NC. We also serve homeowners, businesses, contractors, and organizations across Charlotte, Kannapolis, Harrisburg, Huntersville, Mooresville and other communities in North Carolina and South Carolina.",
   areas = DEFAULT_AREAS,
   backgroundImage = null,
 }) {

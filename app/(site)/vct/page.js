@@ -22,7 +22,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "VCT Flooring & Installation | Commercial VCT Flooring",
+  title: "VCT Flooring in Concord, NC | Commercial VCT Flooring Installation",
   description:
     "Explore durable VCT flooring for commercial and institutional spaces. FMP Flooring provides vinyl composition tile, professional VCT installation, and flooring solutions.",
 };
@@ -42,7 +42,7 @@ const heroContent = [
           eyebrowAsBadge: true,
           titleBefore: "High Quality ",
           titleHighlightValue: "VCT Flooring",
-          titleAfter: " for Commercial & High Traffic Spaces",
+          titleAfter: " in Concord, NC for Commercial & High-Traffic Spaces",
           description:
             "Upgrade your facility with durable, cost effective VCT flooring designed for schools, healthcare facilities, offices, retail spaces, and other commercial environments.",
           buttonText: "Get My Free Estimate",
@@ -88,7 +88,7 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "Vinyl Composition Tile",
-    title: "VCT Flooring for Durable, Cost Effective Commercial Spaces",
+    title: "VCT Flooring in Concord, NC for Durable, Cost-Effective Commercial Spaces",
     paragraphs: [
       "VCT flooring, or vinyl composition tile, is a durable and versatile flooring option commonly used in commercial, institutional, and high traffic environments. VCT floor tiles are available in a wide range of colors and patterns, making them suitable for both practical flooring needs and custom interior designs.",
       "At FMP Flooring, we provide VCT flooring solutions and professional installation for facilities that need dependable performance, easy maintenance, and long term value. From schools and healthcare facilities to offices, retail stores, and other commercial spaces, we can help you select and install flooring suited to your project.",
@@ -311,7 +311,7 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional VCT Flooring Installation",
+    title: "Professional VCT Flooring Installation in Concord, NC",
     paragraphs: [
       "Proper installation is an important part of VCT flooring performance. Our professional installers prepare the subfloor, plan the tile layout, make accurate cuts, and install VCT tiles using appropriate installation methods for the project.",
       "Whether you are replacing flooring in an office, school, healthcare facility, retail space, or another commercial environment, FMP Flooring provides professional VCT flooring installation based on your facility's requirements.",
@@ -503,7 +503,7 @@ const commercialProjectsContent = [
 
 const ctaContent = [
   {
-    title: "Ready for New VCT Flooring?",
+    title: "Ready for VCT Flooring in Concord, NC?",
     description:
       "Upgrade your commercial or institutional space with durable VCT flooring designed for everyday performance. Explore VCT tile options and get professional installation from FMP Flooring.",
     buttonText: "Get My Free Estimate",

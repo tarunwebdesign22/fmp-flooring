@@ -31,6 +31,12 @@ const TestimonialsSection = dynamic(() => import("@/components/homev2/Testimonia
 const FaqSection = dynamic(() => import("@/components/homev2/FaqSection"));
 const CtaSection = dynamic(() => import("@/components/homev2/CtaSection"));
 
+export const metadata = {
+  title: "Flooring & Bathroom Remodeling in Concord, NC | FMP Flooring",
+  description:
+    "Explore hardwood, carpet, luxury vinyl plank, tile and commercial flooring solutions in Concord, NC. FMP Flooring also offers professional bathroom and shower remodeling services.",
+};
+
 const heroContent = [
   {
     backgroundImage: "/images/mainhero.webp",
@@ -41,8 +47,8 @@ const heroContent = [
       "/images/mainhero-3-0.webp",
     ],
     badge: "Family Owned & Operated Since 1995",
-    title: "Commercial & Residential Flooring Contractor",
-    titleHighlight: "in North Carolina & South Carolina",
+    title: "Commercial & Residential Flooring Services",
+    titleHighlight: "in Concord, NC",
     description: [
       { text: "Company trusted for jobs that " },
       { text: "can't afford mistakes", highlight: true },
@@ -85,7 +91,7 @@ const heroContent = [
       { value: "1000+", label: "Projects Completed" },
       {
         text: "Federal & State",
-        label: "Flooring Contractor",
+        label: "Flooring Solutions",
         variant: "highlight",
       },
       {
@@ -102,7 +108,7 @@ const ctaContent = [
     eyebrow: "START YOUR FLOORING PROJECT",
     title: "Let's Transform Your Space With Quality Flooring",
     description:
-      "Whether you need flooring for your home, office, commercial facility, or public project, FMP Flooring is ready to help. Get expert guidance, quality flooring options, and professional installation from start to finish.",
+      "Whether you need new flooring for your home, office, commercial facility, or public project in Concord, NC, FMP Flooring offers expert guidance, quality flooring options, and professional floor installation from start to finish.",
     phone: "+1 9802521648",
     phoneHref: "tel:+19802521648",
     buttonText: "GET YOUR FREE ESTIMATE",
@@ -266,7 +272,7 @@ const howWeManageProjectsContent = [
       },
       {
         step: "03",
-        title: "Professional Flooring Installation",
+        title: "Expert Floor Installation",
         description:
           "Our experienced installers precisely lay your new flooring for a clean, seamless, and professional finish.",
         image: "/images/process-feature/03-flooring-installation.jpg",
@@ -645,13 +651,13 @@ const featuredProjectsContent = [
 const federalContent = [
   {
     marqueeItems: [
-      "Federal & State Flooring Contractor",
+      "Federal & State Flooring Solutions",
       "Direct Importer & Distributor – No Middlemen",
       "0 % Financing",
       "In-Home Free Estimate",
     ],
     headlineBlue: "Federal & State",
-    headlineTeal: "Flooring Contractor",
+    headlineTeal: "Flooring Solutions",
     description:
       "We specialize in high-performance flooring solutions for federal, state, and public sector facilities. Our experience, compliance, and commitment to quality make us a trusted partner for projects that serve our communities.",
     buttonText: "Learn More About Our Services",
@@ -817,14 +823,14 @@ const faqContent = [
           "Installation time depends on the flooring type, project size, preparation requirements, and product availability. After reviewing your project, our team can provide a clearer installation timeline.",
       },
       {
-        question: "Do you provide commercial flooring installation?",
+        question: "Do you offer commercial flooring services in Concord, NC?",
         answer:
-          "Yes. FMP Flooring provides commercial flooring installation for offices, retail spaces, schools, healthcare facilities, government buildings, and other commercial environments.",
+          "Yes. FMP Flooring provides commercial flooring services in Concord, NC for offices, retail spaces, schools, healthcare facilities, government buildings, and other commercial environments.",
       },
       {
-        question: "Do you provide residential flooring installation?",
+        question: "Do you offer residential flooring services in Concord, NC?",
         answer:
-          "Yes. We provide residential flooring installation for homeowners looking for quality flooring products and professional installation. Our team can help with flooring selection, preparation, installation, and finishing.",
+          "Yes. We provide residential flooring services in Concord, NC for homeowners looking for quality flooring products and professional installation. Our team can help with flooring selection, preparation, installation, and finishing.",
       },
     ],
   },
@@ -944,7 +950,7 @@ const beforeAfterContent = [
     tagline: "Same room. Same light. Completely new life.",
     paragraphs: [
       "New flooring can completely change how a space looks, feels, and functions. From worn carpet to refined hardwood or luxury vinyl plank, every flooring transformation can bring new life to a home or commercial space.",
-      "Browse our flooring transformations and see the difference professional flooring installation can make.",
+      "Browse our flooring transformations and see the difference expert floor installation can make.",
     ],
     buttonText: "Free In Home Estimate",
     buttonHref: "/estimate",
