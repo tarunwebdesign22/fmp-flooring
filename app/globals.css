@@ -177,6 +177,121 @@ a {
   opacity: 1;
 }
 
+/* Educational videos — slick slider (same pattern as featured projects) */
+.explore-videos-slider .slick-list {
+  margin: 0 -0.5rem;
+  padding: 4px 0 8px;
+}
+
+.explore-videos-slider .slick-slide > div {
+  height: 100%;
+  padding: 0 0.25rem;
+}
+
+.explore-videos-slider .slick-dots,
+.explore-videos-slider .explore-videos-dots {
+  position: absolute;
+  bottom: -2.25rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.explore-videos-slider .slick-dots li,
+.explore-videos-slider .explore-videos-dots li {
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
+
+.explore-videos-slider .slick-dots li button,
+.explore-videos-slider .explore-videos-dots li button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+}
+
+.explore-videos-slider .slick-dots li button:before,
+.explore-videos-slider .explore-videos-dots li button:before {
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  font-size: 10px;
+  color: #d9d9d9;
+  opacity: 1;
+}
+
+.explore-videos-slider .slick-dots li.slick-active button:before,
+.explore-videos-slider .explore-videos-dots li.slick-active button:before {
+  color: var(--teal);
+  opacity: 1;
+}
+
+/* Manufacturer / brand logos — slick slider (same pattern as featured projects) */
+.brands-logos-slider .slick-list {
+  margin: 0 -0.25rem;
+  padding: 0 0 4px;
+}
+
+.brands-logos-slider .slick-slide > div {
+  height: 100%;
+  padding: 0 0.125rem;
+}
+
+.brands-logos-slider .slick-dots,
+.brands-logos-slider .brands-logos-dots {
+  position: static;
+  width: 100%;
+  display: block;
+  padding: 0;
+  margin: 1rem 0 0;
+  list-style: none;
+  text-align: center;
+}
+
+.brands-logos-slider .brands-logos-dots > div {
+  flex-wrap: wrap;
+  row-gap: 0.35rem;
+  max-width: 100%;
+}
+
+.brands-logos-slider .slick-dots li,
+.brands-logos-slider .brands-logos-dots li {
+  margin: 2px;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+
+.brands-logos-slider .slick-dots li button,
+.brands-logos-slider .brands-logos-dots li button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+}
+
+.brands-logos-slider .slick-dots li button:before,
+.brands-logos-slider .brands-logos-dots li button:before {
+  width: 8px;
+  height: 8px;
+  line-height: 8px;
+  font-size: 8px;
+  color: #d9d9d9;
+  opacity: 1;
+}
+
+.brands-logos-slider .slick-dots li.slick-active button:before,
+.brands-logos-slider .brands-logos-dots li.slick-active button:before {
+  color: var(--teal);
+  opacity: 1;
+}
+
 /* Category cards — slick slider */
 .category-cards-slider .slick-list {
   margin: 0 -0.5rem;

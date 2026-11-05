@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const tabIcons = {
   showroom: (
@@ -46,6 +49,46 @@ function CloseIcon() {
       <path d="M6 6l12 12M18 6 6 18" />
     </svg>
   );
+}
+
+function ArrowIcon({ direction, size = 22 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {direction === "prev" ? (
+        <path d="M19 12H5M11 6l-6 6 6 6" />
+      ) : (
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      )}
+    </svg>
+  );
+}
+
+function MobileDotArrow({ direction, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={direction === "prev" ? "Previous videos" : "Next videos"}
+      className="flex h-9 w-9 shrink-0 items-center justify-center text-teal transition-colors hover:text-blue"
+    >
+      <ArrowIcon direction={direction} />
+    </button>
+  );
+}
+
+function getVideoSlidesToShow(width) {
+  if (width < 1024) return 2;
+  return 3;
 }
 
 const FALLBACK_POSTER = "/images/Hero-Image.jpg";
@@ -220,15 +263,57 @@ export default function ExploreVideosSection({ content }) {
   const section = content[0];
   const [activeTab, setActiveTab] = useState(section?.tabs?.[0]?.id || "showroom");
   const [activeVideo, setActiveVideo] = useState(null);
+  const sliderRef = useRef(null);
+  const [slidesToShow, setSlidesToShow] = useState(2);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const update = () => {
+      const width = window.innerWidth;
+      setSlidesToShow(getVideoSlidesToShow(width));
+      setIsDesktop(width >= 1024);
+    };
+    update();
+    setReady(true);
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   if (!section) return null;
 
   const currentTab = section.tabs.find((tab) => tab.id === activeTab) || section.tabs[0];
   const videos = currentTab?.videos || [];
   const showTabs = section.tabs.length > 1;
+  // Same pattern as Featured Projects: slider on mobile/tablet, grid on desktop
+  const useSlider = ready && !isDesktop;
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 450,
+    slidesToShow,
+    slidesToScroll: 1,
+    arrows: false,
+    appendDots: (dots) => (
+      <div className="explore-videos-dots">
+        <div className="flex items-center justify-center gap-2">
+          <MobileDotArrow
+            direction="prev"
+            onClick={() => sliderRef.current?.slickPrev()}
+          />
+          <ul className="!m-0 !flex !items-center !justify-center !p-0">{dots}</ul>
+          <MobileDotArrow
+            direction="next"
+            onClick={() => sliderRef.current?.slickNext()}
+          />
+        </div>
+      </div>
+    ),
+  };
 
   return (
-    <section className="bg-[#eeecff] py-12 sm:py-16 lg:py-[70px]">
+    <section className="overflow-x-clip bg-[#eeecff] py-12 sm:py-16 lg:py-[70px]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="mx-auto mb-7 max-w-3xl text-center sm:mb-10">
           <h2 className="text-2xl font-bold text-blue sm:text-3xl lg:text-4xl">{section.title}</h2>
@@ -276,10 +361,35 @@ export default function ExploreVideosSection({ content }) {
             })}
           </div>
         ) : null}
+      </div>
 
+      {useSlider ? (
+        <div className="relative mx-auto mt-7 max-w-7xl pb-8 sm:mt-10" role="tabpanel">
+          <div className="explore-videos-slider w-full px-4 sm:px-6 lg:px-8 xl:px-10">
+            {ready ? (
+              <Slider key={`${activeTab}-${slidesToShow}`} ref={sliderRef} {...settings}>
+                {videos.map((video, index) => (
+                  <div
+                    key={`${currentTab.id}-${video.src}-${index}`}
+                    className="px-1.5 pb-2 sm:px-2"
+                  >
+                    <VideoCard video={video} onPlay={setActiveVideo} />
+                  </div>
+                ))}
+              </Slider>
+            ) : (
+              <div className="mx-auto grid max-w-sm grid-cols-1 gap-3">
+                {videos[0] ? (
+                  <VideoCard video={videos[0]} onPlay={setActiveVideo} />
+                ) : null}
+              </div>
+            )}
+          </div>
+        </div>
+      ) : (
         <div
           role="tabpanel"
-          className="mt-7 grid grid-cols-2 gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-5 lg:gap-6"
+          className="mx-auto mt-7 grid max-w-7xl grid-cols-2 gap-3 px-4 sm:mt-10 sm:grid-cols-3 sm:gap-5 sm:px-6 lg:gap-6 lg:px-8 xl:px-10"
         >
           {videos.map((video, index) => (
             <VideoCard
@@ -289,7 +399,7 @@ export default function ExploreVideosSection({ content }) {
             />
           ))}
         </div>
-      </div>
+      )}
 
       <VideoModal video={activeVideo} onClose={() => setActiveVideo(null)} />
     </section>
