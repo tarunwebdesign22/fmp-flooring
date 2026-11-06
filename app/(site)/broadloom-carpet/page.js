@@ -41,8 +41,8 @@ const heroContent = [
           eyebrow: "Broadloom Carpet Flooring",
           eyebrowAsBadge: true,
           titleBefore: "High Quality ",
-          titleHighlightValue: "Broadloom Carpet Flooring",
-          titleAfter: " in Concord, NC for Homes & Businesses",
+          titleHighlightValue: "Broadloom Carpet Flooring in Concord, NC",
+          titleAfter: " for Homes & Businesses",
           description:
             "Create a warmer, quieter, and more comfortable space with broadloom carpet flooring professionally selected and installed for residential and commercial environments.",
           buttonText: "Get My Free Estimate",

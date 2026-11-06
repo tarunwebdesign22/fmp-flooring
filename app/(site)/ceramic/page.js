@@ -41,8 +41,8 @@ const heroContent = [
           eyebrow: "Ceramic Flooring",
           eyebrowAsBadge: true,
           titleBefore: "High Quality ",
-          titleHighlightValue: "Ceramic Tile Flooring",
-          titleAfter: " in Concord, NC for Homes & Businesses",
+          titleHighlightValue: "Ceramic Tile Flooring in Concord, NC",
+          titleAfter: " for Homes & Businesses",
           description:
             "Upgrade your space with durable and stylish ceramic floor tiles, porcelain tile, and specialty tile flooring. We provide professional ceramic tile flooring installation in Concord, NC, for residential and commercial spaces.",
           buttonText: "Get My Free Estimate",

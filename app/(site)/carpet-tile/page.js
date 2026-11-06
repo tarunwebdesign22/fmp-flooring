@@ -41,8 +41,8 @@ const heroContent = [
           eyebrow: "Carpet Tile Flooring",
           eyebrowAsBadge: true,
           titleBefore: "Durable ",
-          titleHighlightValue: "Carpet Tile Flooring",
-          titleAfter: " in Concord, NC for Commercial & Residential Spaces",
+          titleHighlightValue: "Carpet Tile Flooring in Concord, NC",
+          titleAfter: " for Commercial & Residential Spaces",
           description:
             "Upgrade your space with versatile carpet tile flooring designed for offices, retail spaces, schools, and modern homes. Choose from durable styles that offer easy maintenance and flexible replacement.",
           buttonText: "Get My Free Estimate",

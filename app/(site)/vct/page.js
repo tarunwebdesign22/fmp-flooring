@@ -41,8 +41,8 @@ const heroContent = [
           eyebrow: "Vinyl Composition Tile",
           eyebrowAsBadge: true,
           titleBefore: "High Quality ",
-          titleHighlightValue: "VCT Flooring",
-          titleAfter: " in Concord, NC for Commercial & High-Traffic Spaces",
+          titleHighlightValue: "VCT Flooring in Concord, NC",
+          titleAfter: " for Commercial & High-Traffic Spaces",
           description:
             "Upgrade your facility with durable, cost effective VCT flooring designed for schools, healthcare facilities, offices, retail spaces, and other commercial environments.",
           buttonText: "Get My Free Estimate",

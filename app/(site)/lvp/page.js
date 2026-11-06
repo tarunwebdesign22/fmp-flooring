@@ -22,7 +22,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import { createFlooringProcessContent } from "@/data/flooring-process-content";
 
 export const metadata = {
-  title: "Luxury Vinyl Plank Flooring & Installation | FMP Flooring",
+  title: "Luxury Vinyl Plank Flooring in Concord, NC | FMP Flooring",
   description:
     "Discover luxury vinyl plank flooring from FMP Flooring. Explore waterproof, durable LVP flooring and professional vinyl plank flooring installation for homes and businesses.",
 };
@@ -41,7 +41,7 @@ const heroContent = [
           eyebrow: "LVP Flooring",
           eyebrowAsBadge: true,
           titleBefore: "",
-          titleHighlightValue: "Luxury Vinyl Plank Flooring",
+          titleHighlightValue: "Luxury Vinyl Plank Flooring in Concord, NC",
           titleAfter: " for Homes & Businesses",
           description:
             "Upgrade your home or commercial space with luxury vinyl plank flooring that combines the realistic look of hardwood with waterproof performance, exceptional durability, and easy maintenance.",
@@ -88,7 +88,7 @@ const heroContent = [
 const introContent = [
   {
     eyebrow: "LVP Flooring",
-    title: "Luxury Vinyl Plank Flooring: Waterproof LVP Solutions",
+    title: "Luxury Vinyl Plank Flooring in Concord, NC: Waterproof LVP Solutions",
     paragraphs: [
       "Luxury vinyl plank flooring is a popular flooring solution for homes and commercial spaces because it combines the appearance of natural hardwood with excellent durability and water resistance. Available in a wide range of colors, textures, plank sizes, and wood inspired designs, luxury vinyl plank flooring makes it easy to create a stylish and practical space.",
       "At FMP Flooring, we provide premium luxury vinyl plank flooring solutions for residential and commercial projects. Our flooring options are designed for everyday performance while offering easy maintenance, comfortable underfoot performance, and the realistic appearance of hardwood.",
@@ -250,7 +250,7 @@ const tipsContent = [
 const applicationsContent = [
   {
     eyebrow: "Where It Works",
-    title: "Luxury Vinyl Plank Flooring Applications",
+    title: "Luxury Vinyl Plank Flooring Applications in Concord, NC",
     description: "Luxury vinyl plank flooring is ideal for residential and commercial spaces where durability, water resistance, easy maintenance, and a hardwood inspired appearance are important.",
 
     items: [
@@ -283,7 +283,7 @@ const compareContent = [
 const installContent = [
   {
     eyebrow: "Professional Installation",
-    title: "Professional Vinyl Plank Flooring Installation",
+    title: "Professional Luxury Vinyl Plank Flooring Installation in Concord, NC",
     paragraphs: [
       "Professional installation helps ensure your luxury vinyl plank flooring looks great and performs as intended. Our experienced installers specialize in proper subfloor preparation, precise plank placement, finishing details, and a clean professional result.",
     ],
@@ -466,7 +466,7 @@ const commercialProjectsContent = [
 const ctaContent = [
   {
     headlineWhite: "Get Your Free",
-    headlineTeal: "Luxury Vinyl Plank Flooring Estimate",
+    headlineTeal: "Luxury Vinyl Plank Flooring Estimate in Concord, NC",
     description:
       "Ready to transform your home or commercial space? Contact FMP Flooring for expert guidance, accurate estimates, and professional luxury vinyl plank flooring installation.",
     phone: "+1 9802521648",

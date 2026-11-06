@@ -41,8 +41,8 @@ const heroContent = [
           eyebrow: "Laminate Flooring",
           eyebrowAsBadge: true,
           titleBefore: "High Quality ",
-          titleHighlightValue: "Laminate Flooring",
-          titleAfter: " in Concord, NC for Stylish, Durable Spaces",
+          titleHighlightValue: "Laminate Flooring in Concord, NC",
+          titleAfter: " for Stylish, Durable Spaces",
           description:
             "Upgrade your space with quality laminate flooring and professional installation. Choose from realistic wood look styles and moisture resistant options designed for busy homes and commercial spaces.",
           buttonText: "Get My Free Estimate",

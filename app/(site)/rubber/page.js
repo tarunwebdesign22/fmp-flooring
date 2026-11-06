@@ -41,8 +41,8 @@ const heroContent = [
           eyebrow: "Rubber Flooring",
           eyebrowAsBadge: true,
           titleBefore: "Durable ",
-          titleHighlightValue: "Rubber Flooring",
-          titleAfter: " in Concord, NC for Gyms, Exercise Rooms & Commercial Spaces",
+          titleHighlightValue: "Rubber Flooring in Concord, NC",
+          titleAfter: " for Gyms, Exercise Rooms & Commercial Spaces",
           description:
             "Create a safer, more comfortable space with high quality rubber flooring designed for demanding environments. Our rubber flooring solutions provide durability, excellent traction, impact resistance, and comfortable performance for gyms, exercise rooms, schools, and commercial spaces.",
           buttonText: "Get My Free Estimate",
